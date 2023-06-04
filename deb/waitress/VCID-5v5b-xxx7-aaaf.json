@@ -1,0 +1,135 @@
+{
+    "vulnerability_id": "VCID-5v5b-xxx7-aaaf",
+    "aliases": [
+        "CVE-2019-16789",
+        "GHSA-968f-66r5-5v74"
+    ],
+    "summary": "In Waitress through version 1.4.0, if a proxy server is used in front of waitress, an invalid request may be sent by an attacker that bypasses the front-end and is parsed differently by waitress leading to a potential for HTTP request smuggling. Specially crafted requests containing special whitespace characters in the Transfer-Encoding header would get parsed by Waitress as being a chunked request, but a front-end server would use the Content-Length instead as the Transfer-Encoding header is considered invalid due to containing invalid characters. If a front-end server does HTTP pipelining to a backend Waitress server this could lead to HTTP request splitting which may lead to potential cache poisoning or unexpected information disclosure. This issue is fixed in Waitress 1.4.1 through more strict HTTP field validation.",
+    "affected_purls": [
+        "pkg:pypi/waitress@0.1",
+        "pkg:pypi/waitress@0.2",
+        "pkg:pypi/waitress@0.3",
+        "pkg:pypi/waitress@0.4",
+        "pkg:pypi/waitress@0.5",
+        "pkg:pypi/waitress@0.6",
+        "pkg:pypi/waitress@0.6.1",
+        "pkg:pypi/waitress@0.7",
+        "pkg:pypi/waitress@0.8",
+        "pkg:pypi/waitress@0.8.1",
+        "pkg:pypi/waitress@0.8.10",
+        "pkg:pypi/waitress@0.8.11b0",
+        "pkg:pypi/waitress@0.8.2",
+        "pkg:pypi/waitress@0.8.3",
+        "pkg:pypi/waitress@0.8.4",
+        "pkg:pypi/waitress@0.8.5",
+        "pkg:pypi/waitress@0.8.6",
+        "pkg:pypi/waitress@0.8.7",
+        "pkg:pypi/waitress@0.8.8",
+        "pkg:pypi/waitress@0.8.9",
+        "pkg:pypi/waitress@0.9.0",
+        "pkg:pypi/waitress@0.9.0b0",
+        "pkg:pypi/waitress@0.9.0b1",
+        "pkg:pypi/waitress@1.0.0",
+        "pkg:pypi/waitress@1.0.1",
+        "pkg:pypi/waitress@1.0.2",
+        "pkg:pypi/waitress@1.0a1",
+        "pkg:pypi/waitress@1.0a2",
+        "pkg:pypi/waitress@1.1.0",
+        "pkg:pypi/waitress@1.2.0",
+        "pkg:pypi/waitress@1.2.0b1",
+        "pkg:pypi/waitress@1.2.0b2",
+        "pkg:pypi/waitress@1.2.0b3",
+        "pkg:pypi/waitress@1.2.1",
+        "pkg:pypi/waitress@1.3.0",
+        "pkg:pypi/waitress@1.3.0b0",
+        "pkg:pypi/waitress@1.3.1",
+        "pkg:pypi/waitress@1.4.0",
+        "pkg:pypi/waitress@1.4.1"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/waitress@1.2.0~b2-2%2Bdeb10u1?distro=sid",
+        "pkg:deb/debian/waitress@1.4.1-1?distro=sid",
+        "pkg:deb/debian/waitress@1.4.4-1.1%2Bdeb11u1?distro=sid",
+        "pkg:deb/debian/waitress@2.1.2-2?distro=sid",
+        "pkg:pypi/waitress@1.4.2"
+    ],
+    "severities": [
+        {
+            "id": 20956,
+            "reference_id": 148447,
+            "scoring_system": "cvssv3.1_qr",
+            "value": "HIGH",
+            "scoring_elements": ""
+        },
+        {
+            "id": 20955,
+            "reference_id": 148443,
+            "scoring_system": "cvssv3.1_qr",
+            "value": "HIGH",
+            "scoring_elements": ""
+        }
+    ],
+    "references": [
+        {
+            "id": 148436,
+            "url": "https://access.redhat.com/errata/RHSA-2020:0720",
+            "reference_id": ""
+        },
+        {
+            "id": 130535,
+            "url": "https://docs.pylonsproject.org/projects/waitress/en/latest/#security-fixes",
+            "reference_id": ""
+        },
+        {
+            "id": 148445,
+            "url": "https://github.com/github/advisory-review/pull/14604",
+            "reference_id": ""
+        },
+        {
+            "id": 148446,
+            "url": "https://github.com/Pylons/waitress/commit/11d9e138125ad46e951027184b13242a3c1de017",
+            "reference_id": ""
+        },
+        {
+            "id": 148437,
+            "url": "https://lists.debian.org/debian-lts-announce/2022/05/msg00011.html",
+            "reference_id": ""
+        },
+        {
+            "id": 148434,
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GVDHR2DNKCNQ7YQXISJ45NT4IQDX3LJ7/",
+            "reference_id": ""
+        },
+        {
+            "id": 148435,
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LYEOTGWJZVKPRXX2HBNVIYWCX73QYPM5/",
+            "reference_id": ""
+        },
+        {
+            "id": 134611,
+            "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+            "reference_id": ""
+        },
+        {
+            "id": 128729,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947433",
+            "reference_id": "947433"
+        },
+        {
+            "id": 148444,
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-16789",
+            "reference_id": "CVE-2019-16789"
+        },
+        {
+            "id": 148447,
+            "url": "https://github.com/advisories/GHSA-968f-66r5-5v74",
+            "reference_id": "GHSA-968f-66r5-5v74"
+        },
+        {
+            "id": 148443,
+            "url": "https://github.com/Pylons/waitress/security/advisories/GHSA-968f-66r5-5v74",
+            "reference_id": "GHSA-968f-66r5-5v74"
+        }
+    ],
+    "weaknesses": []
+}

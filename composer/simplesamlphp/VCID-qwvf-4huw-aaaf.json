@@ -1,0 +1,61 @@
+{
+    "vulnerability_id": "VCID-qwvf-4huw-aaaf",
+    "aliases": [
+        "CVE-2020-5226",
+        "GHSA-mj9p-v2r8-wf8w"
+    ],
+    "summary": "Cross-site scripting in SimpleSAMLphp before version 1.18.4. The www/erroreport.php script allows error reports to be submitted and sent to the system administrator. Starting with SimpleSAMLphp 1.18.0, a new SimpleSAML\\Utils\\EMail class was introduced to handle sending emails, implemented as a wrapper of an external dependency. This new wrapper allows us to use Twig templates in order to create the email sent with an error report. Since Twig provides automatic escaping of variables, manual escaping of the free-text field in www/errorreport.php was removed to avoid double escaping. However, for those not using the new user interface yet, an email template is hardcoded into the class itself in plain PHP. Since no escaping is provided in this template, it is then possible to inject HTML inside the template by manually crafting the contents of the free-text field.",
+    "affected_purls": [
+        "pkg:composer/simplesamlphp/simplesamlphp@1.18.0",
+        "pkg:composer/simplesamlphp/simplesamlphp@1.18.1",
+        "pkg:composer/simplesamlphp/simplesamlphp@1.18.2",
+        "pkg:composer/simplesamlphp/simplesamlphp@1.18.3"
+    ],
+    "fixed_purl": [
+        "pkg:composer/simplesamlphp/simplesamlphp@1.18.4",
+        "pkg:deb/debian/simplesamlphp@0?distro=sid",
+        "pkg:deb/debian/simplesamlphp@1.16.3-1%2Bdeb10u2?distro=sid",
+        "pkg:deb/debian/simplesamlphp@1.18.4-1?distro=sid",
+        "pkg:deb/debian/simplesamlphp@1.19.0-1?distro=sid",
+        "pkg:deb/debian/simplesamlphp@1.19.7-1?distro=sid"
+    ],
+    "severities": [
+        {
+            "id": 22208,
+            "reference_id": 154738,
+            "scoring_system": "cvssv3.1_qr",
+            "value": "LOW",
+            "scoring_elements": ""
+        },
+        {
+            "id": 22207,
+            "reference_id": 154735,
+            "scoring_system": "cvssv3.1_qr",
+            "value": "LOW",
+            "scoring_elements": ""
+        }
+    ],
+    "references": [
+        {
+            "id": 154736,
+            "url": "https://simplesamlphp.org/security/202001-01",
+            "reference_id": ""
+        },
+        {
+            "id": 154737,
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5226",
+            "reference_id": "CVE-2020-5226"
+        },
+        {
+            "id": 154738,
+            "url": "https://github.com/advisories/GHSA-mj9p-v2r8-wf8w",
+            "reference_id": "GHSA-mj9p-v2r8-wf8w"
+        },
+        {
+            "id": 154735,
+            "url": "https://github.com/simplesamlphp/simplesamlphp/security/advisories/GHSA-mj9p-v2r8-wf8w",
+            "reference_id": "GHSA-mj9p-v2r8-wf8w"
+        }
+    ],
+    "weaknesses": []
+}

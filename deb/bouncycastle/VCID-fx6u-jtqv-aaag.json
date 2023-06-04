@@ -1,0 +1,68 @@
+{
+    "vulnerability_id": "VCID-fx6u-jtqv-aaag",
+    "aliases": [
+        "CVE-2018-5382",
+        "GHSA-8477-3v39-ggpm"
+    ],
+    "summary": "The default BKS keystore use an HMAC that is only 16 bits long, which can allow an attacker to compromise the integrity of a BKS keystore. Bouncy Castle release 1.47 changes the BKS format to a format which uses a 160 bit HMAC instead. This applies to any BKS keystore generated prior to BC 1.47. For situations where people need to create the files for legacy reasons a specific keystore type \"BKS-V1\" was introduced in 1.49. It should be noted that the use of \"BKS-V1\" is discouraged by the library authors and should only be used where it is otherwise safe to do so, as in where the use of a 16 bit checksum for the file integrity check is not going to cause a security issue in itself.",
+    "affected_purls": [
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.46",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.47",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.48",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.49"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/bouncycastle@1.48%2Bdfsg-2?distro=sid",
+        "pkg:deb/debian/bouncycastle@1.60-1?distro=sid",
+        "pkg:deb/debian/bouncycastle@1.68-2?distro=sid",
+        "pkg:deb/debian/bouncycastle@1.72-2?distro=sid",
+        "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.50"
+    ],
+    "severities": [
+        {
+            "id": 20410,
+            "reference_id": 145474,
+            "scoring_system": "cvssv3.1_qr",
+            "value": "MODERATE",
+            "scoring_elements": ""
+        }
+    ],
+    "references": [
+        {
+            "id": 138643,
+            "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+            "reference_id": ""
+        },
+        {
+            "id": 145471,
+            "url": "https://www.bouncycastle.org/releasenotes.html",
+            "reference_id": ""
+        },
+        {
+            "id": 145472,
+            "url": "https://www.kb.cert.org/vuls/id/306792",
+            "reference_id": ""
+        },
+        {
+            "id": 135896,
+            "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "reference_id": ""
+        },
+        {
+            "id": 145473,
+            "url": "http://www.securityfocus.com/bid/103453",
+            "reference_id": ""
+        },
+        {
+            "id": 145470,
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5382",
+            "reference_id": "CVE-2018-5382"
+        },
+        {
+            "id": 145474,
+            "url": "https://github.com/advisories/GHSA-8477-3v39-ggpm",
+            "reference_id": "GHSA-8477-3v39-ggpm"
+        }
+    ],
+    "weaknesses": []
+}

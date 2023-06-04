@@ -1,0 +1,28 @@
+{
+    "vulnerability_id": "VCID-z7ep-wqd3-aaan",
+    "aliases": [
+        "CVE-2021-3909"
+    ],
+    "summary": "OctoRPKI does not limit the length of a connection, allowing for a slowloris DOS attack to take place which makes OctoRPKI wait forever. Specifically, the repository that OctoRPKI sends HTTP requests to will keep the connection open for a day before a response is returned, but does keep drip feeding new bytes to keep the connection alive.",
+    "affected_purls": [
+        "pkg:deb/debian/rpki-client@6.8p1-2"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/cfrpki@1.4.0-1?distro=sid",
+        "pkg:deb/debian/cfrpki@1.4.2-1~deb11u1?distro=sid",
+        "pkg:deb/debian/cfrpki@1.4.4-1?distro=sid",
+        "pkg:deb/debian/fort-validator@1.5.3-1?distro=sid",
+        "pkg:deb/debian/fort-validator@1.5.3-1~deb11u1?distro=sid",
+        "pkg:deb/debian/fort-validator@1.5.4-1?distro=sid",
+        "pkg:deb/debian/rpki-client@8.2-2"
+    ],
+    "severities": [],
+    "references": [
+        {
+            "id": 130019,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=929024",
+            "reference_id": "929024"
+        }
+    ],
+    "weaknesses": []
+}

@@ -1,0 +1,50 @@
+{
+    "vulnerability_id": "VCID-wgmj-wjh3-aaar",
+    "aliases": [
+        "CVE-2019-16764"
+    ],
+    "summary": "### Impact\n\nThe use of `String.to_atom/1` in PowAssent is susceptible to denial of\nservice attacks. In `PowAssent.Phoenix.AuthorizationController` a value is\nfetched from the user provided params, and `String.to_atom/1` is used to\nconvert the binary value to an atom so it can be used to fetch the provider\nconfiguration value. This is unsafe as it's user provided data, and can be\nused to fill up the whole atom table of ~1M which will cause the app to\ncrash.\n\n### Workarounds\n\nA plug can be used to validate `conn.params[\"provider\"]` before it reaches\nthe `PowAssent.Phoenix.AuthorizationController`.\n\n### References\n\nhttp://erlang.org/doc/efficiency_guide/commoncaveats.html#list_to_atom-1\n",
+    "affected_purls": [
+        "pkg:hex/pow_assent@0.1.0",
+        "pkg:hex/pow_assent@0.1.0-alpha",
+        "pkg:hex/pow_assent@0.1.0-alpha.1",
+        "pkg:hex/pow_assent@0.1.0-alpha.10",
+        "pkg:hex/pow_assent@0.1.0-alpha.11",
+        "pkg:hex/pow_assent@0.1.0-alpha.12",
+        "pkg:hex/pow_assent@0.1.0-alpha.2",
+        "pkg:hex/pow_assent@0.1.0-alpha.3",
+        "pkg:hex/pow_assent@0.1.0-alpha.4",
+        "pkg:hex/pow_assent@0.1.0-alpha.5",
+        "pkg:hex/pow_assent@0.1.0-alpha.6",
+        "pkg:hex/pow_assent@0.1.0-alpha.7",
+        "pkg:hex/pow_assent@0.1.0-alpha.8",
+        "pkg:hex/pow_assent@0.1.0-alpha.9",
+        "pkg:hex/pow_assent@0.1.0-rc.0",
+        "pkg:hex/pow_assent@0.1.0-rc.1",
+        "pkg:hex/pow_assent@0.1.0-rc.2",
+        "pkg:hex/pow_assent@0.2.0",
+        "pkg:hex/pow_assent@0.2.1",
+        "pkg:hex/pow_assent@0.2.2",
+        "pkg:hex/pow_assent@0.2.3",
+        "pkg:hex/pow_assent@0.2.4",
+        "pkg:hex/pow_assent@0.3.0",
+        "pkg:hex/pow_assent@0.3.1",
+        "pkg:hex/pow_assent@0.3.2",
+        "pkg:hex/pow_assent@0.4.0",
+        "pkg:hex/pow_assent@0.4.1",
+        "pkg:hex/pow_assent@0.4.2",
+        "pkg:hex/pow_assent@0.4.3"
+    ],
+    "fixed_purl": [
+        "pkg:hex/pow_assent@0.4.4"
+    ],
+    "severities": [],
+    "references": [
+        {
+            "id": 178871,
+            "url": "https://github.com/pow-auth/pow_assent/security/advisories/GHSA-368c-xvrv-x986",
+            "reference_id": ""
+        }
+    ],
+    "weaknesses": []
+}
