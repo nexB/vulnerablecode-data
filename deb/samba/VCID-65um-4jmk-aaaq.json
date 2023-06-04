@@ -1,0 +1,22 @@
+{
+    "vulnerability_id": "VCID-65um-4jmk-aaaq",
+    "aliases": [
+        "CVE-2021-20254"
+    ],
+    "summary": "A flaw was found in samba. The Samba smbd file server must map Windows group identities (SIDs) into unix group ids (gids). The code that performs this had a flaw that could allow it to read data beyond the end of the array in the case where a negative cache entry had been added to the mapping cache. This could cause the calling code to return those values into the process token that stores the group membership for a user. The highest threat from this vulnerability is to data confidentiality and integrity.",
+    "affected_purls": [
+        "pkg:deb/debian/samba@2:4.9.5%2Bdfsg-5%2Bdeb10u3"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/samba@2:4.13.13%2Bdfsg-1~deb11u5"
+    ],
+    "severities": [],
+    "references": [
+        {
+            "id": 129584,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=987811",
+            "reference_id": "987811"
+        }
+    ],
+    "weaknesses": []
+}

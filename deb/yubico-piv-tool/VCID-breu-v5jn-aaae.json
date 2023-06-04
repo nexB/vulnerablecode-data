@@ -1,0 +1,22 @@
+{
+    "vulnerability_id": "VCID-breu-v5jn-aaae",
+    "aliases": [
+        "CVE-2020-13131"
+    ],
+    "summary": "An issue was discovered in Yubico libykpiv before 2.1.0. lib/util.c in this library (which is included in yubico-piv-tool) does not properly check embedded length fields during device communication. A malicious PIV token can misreport the returned length fields during RSA key generation. This will cause stack memory to be copied into heap allocated memory that gets returned to the caller. The leaked memory could include PINs, passwords, key material, and other sensitive information depending on the integration. During further processing by the caller, this information could leak across trust boundaries. Note that RSA key generation is triggered by the host and cannot directly be triggered by the token.",
+    "affected_purls": [],
+    "fixed_purl": [
+        "pkg:deb/debian/yubico-piv-tool@2.1.1-1?distro=sid",
+        "pkg:deb/debian/yubico-piv-tool@2.2.0-1?distro=sid",
+        "pkg:deb/debian/yubico-piv-tool@2.2.0-1.1?distro=sid"
+    ],
+    "severities": [],
+    "references": [
+        {
+            "id": 129121,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=975612",
+            "reference_id": "975612"
+        }
+    ],
+    "weaknesses": []
+}

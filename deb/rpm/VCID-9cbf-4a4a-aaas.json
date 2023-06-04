@@ -1,0 +1,520 @@
+{
+    "vulnerability_id": "VCID-9cbf-4a4a-aaas",
+    "aliases": [
+        "CVE-2005-4889"
+    ],
+    "summary": "lib/fsm.c in RPM before 4.4.3 does not properly reset the metadata of an executable file during deletion of the file in an RPM package removal, which might allow local users to gain privileges by creating a hard link to a vulnerable (1) setuid or (2) setgid file, a related issue to CVE-2010-2059.",
+    "affected_purls": [
+        "pkg:rpm/redhat/rpm@4.3.3-33_nonptl.el4_8?arch=1"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/rpm@4.14.2.1%2Bdfsg1-1?distro=sid",
+        "pkg:deb/debian/rpm@4.16.1.2%2Bdfsg1-3?distro=sid",
+        "pkg:deb/debian/rpm@4.18.0%2Bdfsg-1?distro=sid",
+        "pkg:deb/debian/rpm@4.7.0-1?distro=sid"
+    ],
+    "severities": [
+        {
+            "id": 14985,
+            "reference_id": 106320,
+            "scoring_system": "cvssv2",
+            "value": "7.2",
+            "scoring_elements": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+    ],
+    "references": [
+        {
+            "id": 106322,
+            "url": "http://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/rpm/files/rpm/rpm-4.4/rpm-4.4.3.tar.gz",
+            "reference_id": ""
+        },
+        {
+            "id": 106329,
+            "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-4889.json",
+            "reference_id": ""
+        },
+        {
+            "id": 106321,
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=125517",
+            "reference_id": ""
+        },
+        {
+            "id": 70537,
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=598775",
+            "reference_id": ""
+        },
+        {
+            "id": 106325,
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4889",
+            "reference_id": ""
+        },
+        {
+            "id": 106324,
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/59426",
+            "reference_id": ""
+        },
+        {
+            "id": 106323,
+            "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:180",
+            "reference_id": ""
+        },
+        {
+            "id": 106326,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=584257",
+            "reference_id": "584257"
+        },
+        {
+            "id": 106327,
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=625756",
+            "reference_id": "625756"
+        },
+        {
+            "id": 106307,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:*:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106262,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106281,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106309,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.3.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.3.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106248,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106256,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106243,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.2\\/a:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.2\\/a:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106235,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106242,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106278,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106298,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106296,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:1.4.7:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:1.4.7:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106273,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106255,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106249,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.10:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.10:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106279,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.11:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.11:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106274,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106311,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106308,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106293,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106241,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106258,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.7:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.7:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106267,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.8:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.8:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106301,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.0.9:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.0.9:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106302,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106264,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.1.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.1.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106284,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.1.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.1.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106283,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106254,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106303,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.10:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.10:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106252,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.11:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.11:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106318,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106282,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106292,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.3.10:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.3.10:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106238,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.3.11:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.3.11:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106286,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106317,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106289,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106319,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.7:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.7:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106260,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.8:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.8:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106287,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.2.9:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.2.9:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106268,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106313,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106275,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106304,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106306,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106233,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106290,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106305,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.7:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.7:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106240,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.8:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.8:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106285,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.3.9:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.3.9:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106244,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106247,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2..4.10:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2..4.10:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106300,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.11:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.11:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106294,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.12:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.12:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106277,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106276,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106239,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106250,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106315,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106270,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.8:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.8:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106245,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.4.9:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.4.9:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106291,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106316,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106299,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106288,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106295,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106266,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106272,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.5.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.5.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106246,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:2.6.7:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:2.6.7:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106297,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106236,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106261,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106257,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106271,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106280,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.5:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.5:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106310,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:3.0.6:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:3.0.6:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106263,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.0.:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.0.:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106251,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.0.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.0.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106259,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.0.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.0.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106314,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.0.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.0.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106253,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.0.4:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.0.4:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106237,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106265,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.3.3:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.3.3:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106312,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.4.2.:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.4.2.:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106234,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.4.2.1:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.4.2.1:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106269,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:rpm:4.4.2.2:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:rpm:rpm:4.4.2.2:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 106320,
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2005-4889",
+            "reference_id": "CVE-2005-4889"
+        },
+        {
+            "id": 106328,
+            "url": "https://access.redhat.com/errata/RHSA-2010:0678",
+            "reference_id": "RHSA-2010:0678"
+        }
+    ],
+    "weaknesses": [
+        "CWE-264"
+    ]
+}

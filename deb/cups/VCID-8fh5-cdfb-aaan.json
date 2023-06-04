@@ -1,0 +1,570 @@
+{
+    "vulnerability_id": "VCID-8fh5-cdfb-aaan",
+    "aliases": [
+        "CVE-2005-3627"
+    ],
+    "summary": "Stream.cc in Xpdf, as used in products such as gpdf, kpdf, pdftohtml, poppler, teTeX, CUPS, libextractor, and others, allows attackers to modify memory and possibly execute arbitrary code via a DCTDecode stream with (1) a large \"number of components\" value that is not checked by DCTStream::readBaselineSOF or DCTStream::readProgressiveSOF, (2) a large \"Huffman table index\" value that is not checked by DCTStream::readHuffmanTables, and (3) certain uses of the scanInfo.numComps value by DCTStream::readScanInfo.",
+    "affected_purls": [
+        "pkg:rpm/redhat/cups@1:1.1.17-13.3?arch=36",
+        "pkg:rpm/redhat/cups@1:1.1.22-0.rc1.9?arch=10",
+        "pkg:rpm/redhat/gpdf@2.8.2-7?arch=4",
+        "pkg:rpm/redhat/kdegraphics@7:3.3.1-3?arch=6",
+        "pkg:rpm/redhat/tetex@1.0.7-67?arch=9",
+        "pkg:rpm/redhat/tetex@2.0.2-22.EL4?arch=7",
+        "pkg:rpm/redhat/xpdf@1:2.02-9?arch=8",
+        "pkg:rpm/redhat/xpdf@1:3.00-11?arch=10"
+    ],
+    "fixed_purl": [
+        "pkg:deb/debian/cups@1.1.22-7?distro=sid",
+        "pkg:deb/debian/cups@2.2.10-6%2Bdeb10u6?distro=sid",
+        "pkg:deb/debian/cups@2.3.3op2-3%2Bdeb11u2?distro=sid",
+        "pkg:deb/debian/cups@2.4.2-3?distro=sid",
+        "pkg:deb/debian/libextractor@0.5.9-1?distro=sid",
+        "pkg:deb/debian/libextractor@1:1.11-2?distro=sid",
+        "pkg:deb/debian/libextractor@1:1.11-7?distro=sid",
+        "pkg:deb/debian/libextractor@1:1.8-2%2Bdeb10u1?distro=sid",
+        "pkg:deb/debian/poppler@0.4.4-1?distro=sid",
+        "pkg:deb/debian/poppler@0.71.0-5?distro=sid",
+        "pkg:deb/debian/poppler@20.09.0-3.1%2Bdeb11u1?distro=sid",
+        "pkg:deb/debian/poppler@22.12.0-2?distro=sid",
+        "pkg:deb/debian/xpdf@3.01-4?distro=sid",
+        "pkg:deb/debian/xpdf@3.04-13?distro=sid",
+        "pkg:deb/debian/xpdf@3.04%2Bgit20210103-3?distro=sid",
+        "pkg:deb/debian/xpdf@3.04%2Bgit20220601-1?distro=sid",
+        "pkg:ebuild/app-office/koffice@1.4.2-r6",
+        "pkg:ebuild/app-office/koffice@3.4.3-r3",
+        "pkg:ebuild/app-office/kword@1.4.2-r6",
+        "pkg:ebuild/app-office/kword@3.4.3-r3",
+        "pkg:ebuild/app-text/gpdf@0.4.3-r4",
+        "pkg:ebuild/app-text/gpdf@2.10.0-r3",
+        "pkg:ebuild/app-text/gpdf@3.01-r5",
+        "pkg:ebuild/app-text/pdftohtml@0.36-r4",
+        "pkg:ebuild/app-text/pdftohtml@0.4.3-r4",
+        "pkg:ebuild/app-text/pdftohtml@0.5.9",
+        "pkg:ebuild/app-text/pdftohtml@2.10.0-r3",
+        "pkg:ebuild/app-text/pdftohtml@3.01-r5",
+        "pkg:ebuild/app-text/poppler@0.4.3-r4",
+        "pkg:ebuild/app-text/poppler@3.01-r5",
+        "pkg:ebuild/app-text/xpdf@3.01-r5",
+        "pkg:ebuild/kde-base/kdegraphics@3.4.3-r3",
+        "pkg:ebuild/kde-base/kpdf@3.4.3-r3",
+        "pkg:ebuild/media-libs/libextractor@0.4.3-r4",
+        "pkg:ebuild/media-libs/libextractor@0.5.9",
+        "pkg:ebuild/media-libs/libextractor@2.10.0-r3",
+        "pkg:ebuild/media-libs/libextractor@3.01-r5"
+    ],
+    "severities": [
+        {
+            "id": 13832,
+            "reference_id": 96656,
+            "scoring_system": "cvssv2",
+            "value": "7.5",
+            "scoring_elements": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+    ],
+    "references": [
+        {
+            "id": 93286,
+            "url": "ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2006.15/SCOSA-2006.15.txt",
+            "reference_id": ""
+        },
+        {
+            "id": 90895,
+            "url": "ftp://patches.sgi.com/support/free/security/advisories/20051201-01-U",
+            "reference_id": ""
+        },
+        {
+            "id": 52068,
+            "url": "ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U",
+            "reference_id": ""
+        },
+        {
+            "id": 93284,
+            "url": "ftp://patches.sgi.com/support/free/security/advisories/20060201-01-U",
+            "reference_id": ""
+        },
+        {
+            "id": 93262,
+            "url": "http://lists.suse.com/archive/suse-security-announce/2006-Jan/0001.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96612,
+            "url": "http://rhn.redhat.com/errata/RHSA-2006-0177.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96662,
+            "url": "https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-3627.json",
+            "reference_id": ""
+        },
+        {
+            "id": 93338,
+            "url": "http://scary.beasts.org/security/CESA-2005-003.txt",
+            "reference_id": ""
+        },
+        {
+            "id": 96660,
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3627",
+            "reference_id": ""
+        },
+        {
+            "id": 93291,
+            "url": "http://secunia.com/advisories/18147",
+            "reference_id": ""
+        },
+        {
+            "id": 93273,
+            "url": "http://secunia.com/advisories/18303",
+            "reference_id": ""
+        },
+        {
+            "id": 96608,
+            "url": "http://secunia.com/advisories/18312",
+            "reference_id": ""
+        },
+        {
+            "id": 93255,
+            "url": "http://secunia.com/advisories/18313",
+            "reference_id": ""
+        },
+        {
+            "id": 96609,
+            "url": "http://secunia.com/advisories/18329",
+            "reference_id": ""
+        },
+        {
+            "id": 96610,
+            "url": "http://secunia.com/advisories/18332",
+            "reference_id": ""
+        },
+        {
+            "id": 96611,
+            "url": "http://secunia.com/advisories/18334",
+            "reference_id": ""
+        },
+        {
+            "id": 96643,
+            "url": "http://secunia.com/advisories/18335",
+            "reference_id": ""
+        },
+        {
+            "id": 96613,
+            "url": "http://secunia.com/advisories/18338",
+            "reference_id": ""
+        },
+        {
+            "id": 93265,
+            "url": "http://secunia.com/advisories/18349",
+            "reference_id": ""
+        },
+        {
+            "id": 96625,
+            "url": "http://secunia.com/advisories/18373",
+            "reference_id": ""
+        },
+        {
+            "id": 96614,
+            "url": "http://secunia.com/advisories/18375",
+            "reference_id": ""
+        },
+        {
+            "id": 93292,
+            "url": "http://secunia.com/advisories/18380",
+            "reference_id": ""
+        },
+        {
+            "id": 93266,
+            "url": "http://secunia.com/advisories/18385",
+            "reference_id": ""
+        },
+        {
+            "id": 93263,
+            "url": "http://secunia.com/advisories/18387",
+            "reference_id": ""
+        },
+        {
+            "id": 93267,
+            "url": "http://secunia.com/advisories/18389",
+            "reference_id": ""
+        },
+        {
+            "id": 84701,
+            "url": "http://secunia.com/advisories/18398",
+            "reference_id": ""
+        },
+        {
+            "id": 84702,
+            "url": "http://secunia.com/advisories/18407",
+            "reference_id": ""
+        },
+        {
+            "id": 96626,
+            "url": "http://secunia.com/advisories/18414",
+            "reference_id": ""
+        },
+        {
+            "id": 93264,
+            "url": "http://secunia.com/advisories/18416",
+            "reference_id": ""
+        },
+        {
+            "id": 96615,
+            "url": "http://secunia.com/advisories/18423",
+            "reference_id": ""
+        },
+        {
+            "id": 96623,
+            "url": "http://secunia.com/advisories/18425",
+            "reference_id": ""
+        },
+        {
+            "id": 93293,
+            "url": "http://secunia.com/advisories/18428",
+            "reference_id": ""
+        },
+        {
+            "id": 93294,
+            "url": "http://secunia.com/advisories/18436",
+            "reference_id": ""
+        },
+        {
+            "id": 93268,
+            "url": "http://secunia.com/advisories/18448",
+            "reference_id": ""
+        },
+        {
+            "id": 96624,
+            "url": "http://secunia.com/advisories/18463",
+            "reference_id": ""
+        },
+        {
+            "id": 52071,
+            "url": "http://secunia.com/advisories/18517",
+            "reference_id": ""
+        },
+        {
+            "id": 93271,
+            "url": "http://secunia.com/advisories/18534",
+            "reference_id": ""
+        },
+        {
+            "id": 90896,
+            "url": "http://secunia.com/advisories/18554",
+            "reference_id": ""
+        },
+        {
+            "id": 93272,
+            "url": "http://secunia.com/advisories/18582",
+            "reference_id": ""
+        },
+        {
+            "id": 96617,
+            "url": "http://secunia.com/advisories/18642",
+            "reference_id": ""
+        },
+        {
+            "id": 96618,
+            "url": "http://secunia.com/advisories/18644",
+            "reference_id": ""
+        },
+        {
+            "id": 93279,
+            "url": "http://secunia.com/advisories/18674",
+            "reference_id": ""
+        },
+        {
+            "id": 93280,
+            "url": "http://secunia.com/advisories/18675",
+            "reference_id": ""
+        },
+        {
+            "id": 93281,
+            "url": "http://secunia.com/advisories/18679",
+            "reference_id": ""
+        },
+        {
+            "id": 93282,
+            "url": "http://secunia.com/advisories/18908",
+            "reference_id": ""
+        },
+        {
+            "id": 93283,
+            "url": "http://secunia.com/advisories/18913",
+            "reference_id": ""
+        },
+        {
+            "id": 93285,
+            "url": "http://secunia.com/advisories/19230",
+            "reference_id": ""
+        },
+        {
+            "id": 93287,
+            "url": "http://secunia.com/advisories/19377",
+            "reference_id": ""
+        },
+        {
+            "id": 84710,
+            "url": "http://secunia.com/advisories/25729",
+            "reference_id": ""
+        },
+        {
+            "id": 96658,
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24024",
+            "reference_id": ""
+        },
+        {
+            "id": 96657,
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24025",
+            "reference_id": ""
+        },
+        {
+            "id": 93289,
+            "url": "http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.472683",
+            "reference_id": ""
+        },
+        {
+            "id": 93288,
+            "url": "http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.474747",
+            "reference_id": ""
+        },
+        {
+            "id": 96659,
+            "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10200",
+            "reference_id": ""
+        },
+        {
+            "id": 84709,
+            "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102972-1",
+            "reference_id": ""
+        },
+        {
+            "id": 96630,
+            "url": "https://usn.ubuntu.com/236-1/",
+            "reference_id": ""
+        },
+        {
+            "id": 93257,
+            "url": "http://www.debian.org/security/2005/dsa-931",
+            "reference_id": ""
+        },
+        {
+            "id": 93258,
+            "url": "http://www.debian.org/security/2005/dsa-932",
+            "reference_id": ""
+        },
+        {
+            "id": 93259,
+            "url": "http://www.debian.org/security/2005/dsa-937",
+            "reference_id": ""
+        },
+        {
+            "id": 93260,
+            "url": "http://www.debian.org/security/2005/dsa-938",
+            "reference_id": ""
+        },
+        {
+            "id": 93261,
+            "url": "http://www.debian.org/security/2005/dsa-940",
+            "reference_id": ""
+        },
+        {
+            "id": 84700,
+            "url": "http://www.debian.org/security/2006/dsa-936",
+            "reference_id": ""
+        },
+        {
+            "id": 93269,
+            "url": "http://www.debian.org/security/2006/dsa-950",
+            "reference_id": ""
+        },
+        {
+            "id": 93274,
+            "url": "http://www.debian.org/security/2006/dsa-961",
+            "reference_id": ""
+        },
+        {
+            "id": 93275,
+            "url": "http://www.debian.org/security/2006/dsa-962",
+            "reference_id": ""
+        },
+        {
+            "id": 93253,
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200601-02.xml",
+            "reference_id": ""
+        },
+        {
+            "id": 96616,
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200601-17.xml",
+            "reference_id": ""
+        },
+        {
+            "id": 93252,
+            "url": "http://www.kde.org/info/security/advisory-20051207-2.txt",
+            "reference_id": ""
+        },
+        {
+            "id": 93301,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:003",
+            "reference_id": ""
+        },
+        {
+            "id": 93302,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:004",
+            "reference_id": ""
+        },
+        {
+            "id": 93303,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:005",
+            "reference_id": ""
+        },
+        {
+            "id": 93304,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:006",
+            "reference_id": ""
+        },
+        {
+            "id": 93305,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:008",
+            "reference_id": ""
+        },
+        {
+            "id": 93317,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:010",
+            "reference_id": ""
+        },
+        {
+            "id": 93307,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:011",
+            "reference_id": ""
+        },
+        {
+            "id": 93306,
+            "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:012",
+            "reference_id": ""
+        },
+        {
+            "id": 96642,
+            "url": "http://www.redhat.com/archives/fedora-announce-list/2006-January/msg00010.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96641,
+            "url": "http://www.redhat.com/archives/fedora-announce-list/2006-January/msg00011.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96621,
+            "url": "http://www.redhat.com/archives/fedora-announce-list/2006-January/msg00030.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96622,
+            "url": "http://www.redhat.com/archives/fedora-announce-list/2006-January/msg00031.html",
+            "reference_id": ""
+        },
+        {
+            "id": 93270,
+            "url": "http://www.redhat.com/support/errata/RHSA-2006-0160.html",
+            "reference_id": ""
+        },
+        {
+            "id": 96619,
+            "url": "http://www.redhat.com/support/errata/RHSA-2006-0163.html",
+            "reference_id": ""
+        },
+        {
+            "id": 84715,
+            "url": "http://www.securityfocus.com/archive/1/427053/100/0/threaded",
+            "reference_id": ""
+        },
+        {
+            "id": 84714,
+            "url": "http://www.securityfocus.com/archive/1/427990/100/0/threaded",
+            "reference_id": ""
+        },
+        {
+            "id": 96607,
+            "url": "http://www.securityfocus.com/bid/16143",
+            "reference_id": ""
+        },
+        {
+            "id": 96620,
+            "url": "http://www.trustix.org/errata/2006/0002/",
+            "reference_id": ""
+        },
+        {
+            "id": 96627,
+            "url": "http://www.vupen.com/english/advisories/2006/0047",
+            "reference_id": ""
+        },
+        {
+            "id": 84711,
+            "url": "http://www.vupen.com/english/advisories/2007/2280",
+            "reference_id": ""
+        },
+        {
+            "id": 96661,
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1617829",
+            "reference_id": "1617829"
+        },
+        {
+            "id": 96632,
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=342286",
+            "reference_id": "342286"
+        },
+        {
+            "id": 96655,
+            "url": "https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:*:*:*:*:*:*:*:*",
+            "reference_id": "cpe:2.3:a:xpdf:xpdf:*:*:*:*:*:*:*:*"
+        },
+        {
+            "id": 96656,
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2005-3627",
+            "reference_id": "CVE-2005-3627"
+        },
+        {
+            "id": 96634,
+            "url": "https://security.gentoo.org/glsa/200601-02",
+            "reference_id": "GLSA-200601-02"
+        },
+        {
+            "id": 96633,
+            "url": "https://security.gentoo.org/glsa/200601-17",
+            "reference_id": "GLSA-200601-17"
+        },
+        {
+            "id": 93327,
+            "url": "https://access.redhat.com/errata/RHSA-2005:840",
+            "reference_id": "RHSA-2005:840"
+        },
+        {
+            "id": 93330,
+            "url": "https://access.redhat.com/errata/RHSA-2005:868",
+            "reference_id": "RHSA-2005:868"
+        },
+        {
+            "id": 93326,
+            "url": "https://access.redhat.com/errata/RHSA-2006:0160",
+            "reference_id": "RHSA-2006:0160"
+        },
+        {
+            "id": 96638,
+            "url": "https://access.redhat.com/errata/RHSA-2006:0163",
+            "reference_id": "RHSA-2006:0163"
+        },
+        {
+            "id": 96637,
+            "url": "https://access.redhat.com/errata/RHSA-2006:0177",
+            "reference_id": "RHSA-2006:0177"
+        },
+        {
+            "id": 96635,
+            "url": "https://usn.ubuntu.com/236-2/",
+            "reference_id": "USN-236-2"
+        }
+    ],
+    "weaknesses": [
+        "CWE-119"
+    ]
+}
