@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2018-19518
+fixed_purl:
+- pkg:deb/debian/php7.3@7.3.0-1?distro=buster
+- pkg:deb/debian/php7.3@7.3.31-1~deb10u1?distro=buster
+- pkg:deb/debian/uw-imap@8:2007f~dfsg-6?distro=sid
+- pkg:deb/debian/uw-imap@8:2007f~dfsg-7?distro=sid
+references:
+- id: 128136
+  reference_id: '913775'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913775
+severities: []
+summary: University of Washington IMAP Toolkit 2007f on UNIX, as used in imap_open()
+  in PHP and other products, launches an rsh command (by means of the imap_rimap function
+  in c-client/imap4r1.c and the tcp_aopen function in osdep/unix/tcp_unix.c) without
+  preventing argument injection, which might allow remote attackers to execute arbitrary
+  OS commands if the IMAP server name is untrusted input (e.g., entered by a user
+  of a web application) and if rsh has been replaced by a program with different argument
+  semantics. For example, if rsh is a link to ssh (as seen on Debian and Ubuntu systems),
+  then the attack can use an IMAP server name containing a "-oProxyCommand" argument.
+vulnerability_id: VCID-z2b5-7wv5-aaam
+weaknesses: []

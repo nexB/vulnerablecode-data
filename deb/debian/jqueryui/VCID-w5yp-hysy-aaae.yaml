@@ -1,0 +1,85 @@
+vulnerability_id: VCID-w5yp-hysy-aaae
+aliases:
+  - CVE-2022-31160
+  - GHSA-h6gj-6jjq-h8g9
+summary: jQuery UI is a curated set of user interface interactions, effects, widgets, and themes
+  built on top of jQuery. Versions prior to 1.13.2 are potentially vulnerable to cross-site
+  scripting. Initializing a checkboxradio widget on an input enclosed within a label makes that
+  parent label contents considered as the input label. Calling `.checkboxradio( "refresh" )`
+  on such a widget and the initial HTML contained encoded HTML entities will make them erroneously
+  get decoded. This can lead to potentially executing JavaScript code. The bug has been patched
+  in jQuery UI 1.13.2. To remediate the issue, someone who can change the initial HTML can wrap
+  all the non-input contents of the `label` in a `span`.
+severities:
+  - id: 639640
+    reference_id: 1179073
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 639639
+    reference_id: 1179072
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 640389
+    reference_id: 1178661
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 707140
+    reference_id: 1378778
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 707139
+    reference_id: 1378777
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1179073
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-31160.json
+    reference_id:
+  - id: 1178658
+    url: https://blog.jqueryui.com/2022/07/jquery-ui-1-13-2-released/
+    reference_id:
+  - id: 1178659
+    url: https://github.com/jquery/jquery-ui/commit/8cc5bae1caa1fcf96bf5862c5646c787020ba3f9
+    reference_id:
+  - id: 1468756
+    url: https://lists.debian.org/debian-lts-announce/2022/12/msg00015.html
+    reference_id:
+  - id: 1468753
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6XBR3G3JR5ZIOJDO4224M3INXDS2VFDD/
+    reference_id:
+  - id: 1468754
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J5LGNTICB5BRFAG3DHVVELS6H3CZSQMO/
+    reference_id:
+  - id: 1468755
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QB2FJQXCNHO32VGVOC6DY6IPGVE4VDU6/
+    reference_id:
+  - id: 1468752
+    url: https://security.netapp.com/advisory/ntap-20220909-0007/
+    reference_id:
+  - id: 1183479
+    url: https://www.drupal.org/sa-contrib-2022-052
+    reference_id:
+  - id: 1179025
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1015982
+    reference_id: 1015982
+  - id: 1179072
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2110705
+    reference_id: 2110705
+  - id: 1180344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jqueryui:jquery_ui:*:*:*:*:*:jquery:*:*
+    reference_id: cpe:2.3:a:jqueryui:jquery_ui:*:*:*:*:*:jquery:*:*
+  - id: 1178661
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-31160
+    reference_id: CVE-2022-31160
+  - id: 1378778
+    url: https://github.com/advisories/GHSA-h6gj-6jjq-h8g9
+    reference_id: GHSA-h6gj-6jjq-h8g9
+  - id: 1378777
+    url: https://github.com/jquery/jquery-ui/security/advisories/GHSA-h6gj-6jjq-h8g9
+    reference_id: GHSA-h6gj-6jjq-h8g9
+weaknesses: []

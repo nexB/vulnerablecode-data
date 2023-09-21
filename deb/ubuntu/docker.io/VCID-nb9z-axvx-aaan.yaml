@@ -1,0 +1,81 @@
+vulnerability_id: VCID-nb9z-axvx-aaan
+aliases:
+  - CVE-2017-16539
+summary: The DefaultLinuxSpec function in oci/defaults.go in Docker Moby through 17.03.2-ce
+  does not block /proc/scsi pathnames, which allows attackers to trigger data loss (when certain
+  older Linux kernels are used) by leveraging Docker container access to write a "scsi remove-single-device"
+  line to /proc/scsi/scsi, aka SCSI MICDROP.
+severities:
+  - id: 676474
+    reference_id: 1440889
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619867
+    reference_id: 938494
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 676475
+    reference_id: 1440890
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676476
+    reference_id: 688492
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619866
+    reference_id: 938493
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 271092
+    reference_id: 688493
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 271090
+    reference_id: 688493
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1440889
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16539.html
+    reference_id:
+  - id: 938494
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-16539.json
+    reference_id:
+  - id: 1440890
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16539
+    reference_id:
+  - id: 688488
+    url: https://github.com/moby/moby/pull/35399
+    reference_id:
+  - id: 688489
+    url: https://github.com/moby/moby/pull/35399/commits/a21ecdf3c8a343a7c94e4c4d01b178c87ca7aaa1
+    reference_id:
+  - id: 688490
+    url: https://marc.info/?l=linux-scsi&m=150985062200941&w=2
+    reference_id:
+  - id: 688491
+    url: https://marc.info/?l=linux-scsi&m=150985455801444&w=2
+    reference_id:
+  - id: 688492
+    url: https://twitter.com/ewindisch/status/926443521820774401
+    reference_id:
+  - id: 938493
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1516205
+    reference_id: 1516205
+  - id: 40538
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=900140
+    reference_id: 900140
+  - id: 688494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mobyproject:moby:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mobyproject:moby:*:*:*:*:*:*:*:*
+  - id: 688493
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16539
+    reference_id: CVE-2017-16539
+weaknesses: []

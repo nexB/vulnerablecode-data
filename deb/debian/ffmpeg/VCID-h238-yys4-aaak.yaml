@@ -1,0 +1,68 @@
+vulnerability_id: VCID-h238-yys4-aaak
+aliases:
+  - CVE-2015-6818
+summary: The decode_ihdr_chunk function in libavcodec/pngdec.c in FFmpeg before 2.7.2 does not
+  enforce uniqueness of the IHDR (aka image header) chunk in a PNG image, which allows remote
+  attackers to cause a denial of service (out-of-bounds array access) or possibly have unspecified
+  other impact via a crafted image with two or more of these chunks.
+severities:
+  - id: 661765
+    reference_id: 166885
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663412
+    reference_id: 1430447
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663413
+    reference_id: 1430448
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658332
+    reference_id: 1426396
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 41866
+    reference_id: 166888
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+references:
+  - id: 166885
+    url: http://ffmpeg.org/security.html
+    reference_id:
+  - id: 166886
+    url: http://git.videolan.org/?p=ffmpeg.git;a=commit;h=47f4e2d8960ca756ca153ab8e3e93d80449b8c91
+    reference_id:
+  - id: 1430447
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-6818.html
+    reference_id:
+  - id: 1430448
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6818
+    reference_id:
+  - id: 166600
+    url: https://lists.debian.org/debian-lts-announce/2018/12/msg00009.html
+    reference_id:
+  - id: 1426396
+    url: https://ubuntu.com/security/notices/USN-2944-1
+    reference_id:
+  - id: 166887
+    url: http://www.securitytracker.com/id/1033483
+    reference_id:
+  - id: 160221
+    url: http://www.ubuntu.com/usn/USN-2944-1
+    reference_id:
+  - id: 162297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 166888
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-6818
+    reference_id: CVE-2015-6818
+weaknesses: []

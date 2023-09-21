@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2017-14316
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+- pkg:deb/debian/xen@4.8.2%2Bxsa245-0%2Bdeb9u1?distro=sid
+references: []
+severities: []
+summary: A parameter verification issue was discovered in Xen through 4.9.x. The function
+  `alloc_heap_pages` allows callers to specify the first NUMA node that should be
+  used for allocations through the `memflags` parameter; the node is extracted using
+  the `MEMF_get_node` macro. While the function checks to see if the special constant
+  `NUMA_NO_NODE` is specified, it otherwise does not handle the case where `node >=
+  MAX_NUMNODES`. This allows an out-of-bounds access to an internal array.
+vulnerability_id: VCID-uwsn-3ky1-aaad
+weaknesses: []

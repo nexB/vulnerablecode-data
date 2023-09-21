@@ -1,0 +1,155 @@
+vulnerability_id: VCID-abdp-9w3t-aaac
+aliases:
+  - CVE-2015-6855
+summary: hw/ide/core.c in QEMU does not properly restrict the commands accepted by an ATAPI
+  device, which allows guest users to cause a denial of service or possibly have unspecified
+  other impact via certain IDE commands, as demonstrated by a WIN_READ_NATIVE_MAX command to
+  an empty drive, which triggers a divide-by-zero error and instance crash.
+severities:
+  - id: 663450
+    reference_id: 1430483
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663452
+    reference_id: 1430484
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663453
+    reference_id: 167133
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 662663
+    reference_id: 1429860
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663451
+    reference_id: 167130
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 53601
+    reference_id: 178673
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 42000
+    reference_id: 167134
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 41998
+    reference_id: 167134
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 167127
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168602.html
+    reference_id:
+  - id: 158644
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169036.html
+    reference_id:
+  - id: 158161
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169039.html
+    reference_id:
+  - id: 167128
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169327.html
+    reference_id:
+  - id: 167129
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-October/169341.html
+    reference_id:
+  - id: 158645
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167369.html
+    reference_id:
+  - id: 158646
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-10/msg00019.html
+    reference_id:
+  - id: 1430483
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-6855.html
+    reference_id:
+  - id: 178674
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-6855.json
+    reference_id:
+  - id: 1430484
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6855
+    reference_id:
+  - id: 167133
+    url: https://lists.gnu.org/archive/html/qemu-devel/2015-09/msg02479.html
+    reference_id:
+  - id: 158172
+    url: https://security.gentoo.org/glsa/201602-01
+    reference_id:
+  - id: 1429860
+    url: https://ubuntu.com/security/notices/USN-2745-1
+    reference_id:
+  - id: 158266
+    url: https://www.arista.com/en/support/advisories-notices/security-advisories/1188-security-advisory-14
+    reference_id:
+  - id: 158651
+    url: http://www.debian.org/security/2015/dsa-3361
+    reference_id:
+  - id: 158652
+    url: http://www.debian.org/security/2015/dsa-3362
+    reference_id:
+  - id: 167130
+    url: http://www.openwall.com/lists/oss-security/2015/09/10/1
+    reference_id:
+  - id: 167131
+    url: http://www.openwall.com/lists/oss-security/2015/09/10/2
+    reference_id:
+  - id: 167132
+    url: http://www.securityfocus.com/bid/76691
+    reference_id:
+  - id: 158264
+    url: http://www.ubuntu.com/usn/USN-2745-1
+    reference_id:
+  - id: 178673
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1260080
+    reference_id: 1260080
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 167135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:arista:eos:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:arista:eos:-:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 157852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+  - id: 157853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+  - id: 157871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:23:*:*:*:*:*:*:*
+  - id: 167136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:-:*:*:*:*:*:*
+  - id: 167137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:-:*:*:*:*:*:*
+  - id: 167134
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-6855
+    reference_id: CVE-2015-6855
+weaknesses: []

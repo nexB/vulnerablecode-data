@@ -1,0 +1,56 @@
+vulnerability_id: VCID-kb5v-35ak-aaaa
+aliases:
+  - CVE-2020-27534
+summary: util/binfmt_misc/check.go in Builder in Docker Engine before 19.03.9 calls os.OpenFile
+  with a potentially unsafe qemu-check temporary pathname, constructed with an empty first argument
+  in an ioutil.TempDir call.
+severities:
+  - id: 605451
+    reference_id: 928004
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 605450
+    reference_id: 928003
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 466681
+    reference_id: 837272
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 466679
+    reference_id: 837272
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 928004
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27534.json
+    reference_id:
+  - id: 837268
+    url: https://github.com/moby/buildkit/pull/1462
+    reference_id:
+  - id: 837269
+    url: https://github.com/moby/moby/pull/40877
+    reference_id:
+  - id: 837270
+    url: https://golang.org/pkg/io/ioutil/#TempDir
+    reference_id:
+  - id: 837271
+    url: https://golang.org/pkg/os/#TempDir
+    reference_id:
+  - id: 837267
+    url: http://web.archive.org/web/20200530054359/https://docs.docker.com/engine/release-notes/
+    reference_id:
+  - id: 928003
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1921154
+    reference_id: '1921154'
+  - id: 549575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:docker:docker:*:*:*:*:*:*:*:*
+  - id: 837272
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27534
+    reference_id: CVE-2020-27534
+weaknesses: []

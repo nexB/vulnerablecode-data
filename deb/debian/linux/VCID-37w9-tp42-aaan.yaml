@@ -1,0 +1,168 @@
+vulnerability_id: VCID-37w9-tp42-aaan
+aliases:
+  - CVE-2014-3940
+summary: The Linux kernel through 3.14.5 does not properly consider the presence of hugetlb
+  entries, which allows local users to cause a denial of service (memory corruption or system
+  crash) by accessing certain memory locations, as demonstrated by triggering a race condition
+  via numa_maps read operations during hugepage migration, related to fs/proc/task_mmu.c and
+  mm/mempolicy.c.
+severities:
+  - id: 656767
+    reference_id: 1425162
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 656769
+    reference_id: 569783
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 656770
+    reference_id: 1425163
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 656771
+    reference_id: 569784
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 655205
+    reference_id: 1424175
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 655206
+    reference_id: 1424176
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656768
+    reference_id: 569781
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 181355
+    reference_id: 569786
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:L/AC:H/Au:N/C:N/I:N/A:C
+  - id: 59232
+    reference_id: 185780
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 56232
+    reference_id: 181818
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55692
+    reference_id: 181050
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1425162
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-3940.html
+    reference_id:
+  - id: 568391
+    url: http://rhn.redhat.com/errata/RHSA-2015-0290.html
+    reference_id:
+  - id: 564917
+    url: http://rhn.redhat.com/errata/RHSA-2015-1272.html
+    reference_id:
+  - id: 187078
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-3940.json
+    reference_id:
+  - id: 569783
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1104097
+    reference_id:
+  - id: 1425163
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3940
+    reference_id:
+  - id: 569779
+    url: http://secunia.com/advisories/59011
+    reference_id:
+  - id: 569780
+    url: http://secunia.com/advisories/61310
+    reference_id:
+  - id: 569784
+    url: https://lkml.org/lkml/2014/3/18/784
+    reference_id:
+  - id: 569785
+    url: https://support.f5.com/kb/en-us/solutions/public/15000/600/sol15685.html
+    reference_id:
+  - id: 1424175
+    url: https://ubuntu.com/security/notices/USN-2288-1
+    reference_id:
+  - id: 1424176
+    url: https://ubuntu.com/security/notices/USN-2290-1
+    reference_id:
+  - id: 569781
+    url: http://www.openwall.com/lists/oss-security/2014/06/02/5
+    reference_id:
+  - id: 569782
+    url: http://www.securityfocus.com/bid/67786
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 568369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:-:*:*:*:*:*:*
+  - id: 562474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14.1:*:*:*:*:*:*:*
+  - id: 568365
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14.2:*:*:*:*:*:*:*
+  - id: 568366
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14.3:*:*:*:*:*:*:*
+  - id: 568367
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14.4:*:*:*:*:*:*:*
+  - id: 562475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc1:*:*:*:*:*:*
+  - id: 562476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc2:*:*:*:*:*:*
+  - id: 562477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc3:*:*:*:*:*:*
+  - id: 562478
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc4:*:*:*:*:*:*
+  - id: 562479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc5:*:*:*:*:*:*
+  - id: 562480
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc6:*:*:*:*:*:*
+  - id: 562481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc7:*:*:*:*:*:*
+  - id: 562482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.14:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.14:rc8:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 458549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+  - id: 569786
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-3940
+    reference_id: CVE-2014-3940
+  - id: 185780
+    url: https://access.redhat.com/errata/RHSA-2014:0913
+    reference_id: RHSA-2014:0913
+  - id: 181818
+    url: https://access.redhat.com/errata/RHSA-2015:0290
+    reference_id: RHSA-2015:0290
+  - id: 181050
+    url: https://access.redhat.com/errata/RHSA-2015:1272
+    reference_id: RHSA-2015:1272
+weaknesses: []

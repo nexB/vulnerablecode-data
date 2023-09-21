@@ -1,0 +1,144 @@
+vulnerability_id: VCID-xckp-cbse-aaan
+aliases:
+  - CVE-2014-0143
+summary: Multiple integer overflows in the block drivers in QEMU, possibly before 2.0.0, allow
+  local users to cause a denial of service (crash) via a crafted catalog size in (1) the parallels_open
+  function in block/parallels.c or (2) bochs_open function in bochs.c, a large L1 table in the
+  (3) qcow2_snapshot_load_tmp in qcow2-snapshot.c or (4) qcow2_grow_l1_table function in qcow2-cluster.c,
+  (5) a large request in the bdrv_check_byte_request function in block.c and other block drivers,
+  (6) crafted cluster indexes in the get_refcount function in qcow2-refcount.c, or (7) a large
+  number of blocks in the cloop_open function in cloop.c, which trigger buffer overflows, memory
+  corruption, large memory allocations and out-of-bounds read and writes.
+severities:
+  - id: 654149
+    reference_id: 1423347
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 654150
+    reference_id: 1423348
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 652656
+    reference_id: 1422249
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 654147
+    reference_id: 1423345
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 174251
+    reference_id: 550232
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 174249
+    reference_id: 550232
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 59927
+    reference_id: 186782
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 59926
+    reference_id: 186781
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 59928
+    reference_id: 186783
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 59929
+    reference_id: 186784
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 59569
+    reference_id: 186274
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 550224
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=509a41bab5306181044b5fff02eadf96d9c8676a
+    reference_id:
+  - id: 550225
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=6a83f8b5bec6f59e56cc49bd49e4c3f8f805d56f
+    reference_id:
+  - id: 550226
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=8f4754ede56e3f9ea3fd7207f4a7c4453e59285b
+    reference_id:
+  - id: 550227
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=afbcc40bee4ef51731102d7d4b499ee12fc182e1
+    reference_id:
+  - id: 550228
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=cab60de930684c33f67d4e32c7509b567f8c445b
+    reference_id:
+  - id: 550229
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=db8a31d11d6a60f48d6817530640d75aa72a9a2f
+    reference_id:
+  - id: 550230
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=e3737b820b45e54b059656dc3f914f895ac7a88b
+    reference_id:
+  - id: 1423347
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-0143.html
+    reference_id:
+  - id: 550218
+    url: http://rhn.redhat.com/errata/RHSA-2014-0420.html
+    reference_id:
+  - id: 550219
+    url: http://rhn.redhat.com/errata/RHSA-2014-0421.html
+    reference_id:
+  - id: 186932
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-0143.json
+    reference_id:
+  - id: 550231
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1079140
+    reference_id:
+  - id: 1423348
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0143
+    reference_id:
+  - id: 1422249
+    url: https://ubuntu.com/security/notices/USN-2342-1
+    reference_id:
+  - id: 550220
+    url: http://www.debian.org/security/2014/dsa-3044
+    reference_id:
+  - id: 1423345
+    url: http://www.openwall.com/lists/oss-security/2014/03/26
+    reference_id:
+  - id: 111099
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=742730
+    reference_id: 742730
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 550232
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-0143
+    reference_id: CVE-2014-0143
+  - id: 186782
+    url: https://access.redhat.com/errata/RHSA-2014:0420
+    reference_id: RHSA-2014:0420
+  - id: 186781
+    url: https://access.redhat.com/errata/RHSA-2014:0421
+    reference_id: RHSA-2014:0421
+  - id: 186783
+    url: https://access.redhat.com/errata/RHSA-2014:0434
+    reference_id: RHSA-2014:0434
+  - id: 186784
+    url: https://access.redhat.com/errata/RHSA-2014:0435
+    reference_id: RHSA-2014:0435
+  - id: 186274
+    url: https://access.redhat.com/errata/RHSA-2014:0674
+    reference_id: RHSA-2014:0674
+weaknesses: []

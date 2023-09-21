@@ -1,0 +1,77 @@
+vulnerability_id: VCID-5cs4-3qx8-aaaj
+aliases:
+  - CVE-2017-6507
+summary: An issue was discovered in AppArmor before 2.12. Incorrect handling of unknown AppArmor
+  profiles in AppArmor init scripts, upstart jobs, and/or systemd unit files allows an attacker
+  to possibly have increased attack surfaces of processes that were intended to be confined
+  by AppArmor. This is due to the common logic to handle 'restart' operations removing AppArmor
+  profiles that aren't found in the typical filesystem locations, such as /etc/apparmor.d/.
+  Userspace projects that manage their own AppArmor profiles in atypical directories, such as
+  what's done by LXD and Docker, are affected by this flaw in the AppArmor init script logic.
+severities:
+  - id: 679750
+    reference_id: 1443486
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 679751
+    reference_id: 1443487
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 679752
+    reference_id: 1443488
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 290765
+    reference_id: 705810
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 290763
+    reference_id: 705810
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 705805
+    url: http://bazaar.launchpad.net/~apparmor-dev/apparmor/master/revision/3647
+    reference_id:
+  - id: 705806
+    url: http://bazaar.launchpad.net/~apparmor-dev/apparmor/master/revision/3648
+    reference_id:
+  - id: 1443486
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-6507.html
+    reference_id:
+  - id: 705808
+    url: https://bugs.launchpad.net/apparmor/+bug/1668892
+    reference_id:
+  - id: 1443487
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6507
+    reference_id:
+  - id: 705809
+    url: https://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-6507.html
+    reference_id:
+  - id: 1443488
+    url: https://ubuntu.com/security/notices/USN-3247-1
+    reference_id:
+  - id: 705807
+    url: http://www.securityfocus.com/bid/97223
+    reference_id:
+  - id: 39512
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=858768
+    reference_id: 858768
+  - id: 705811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apparmor:apparmor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apparmor:apparmor:*:*:*:*:*:*:*:*
+  - id: 617965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_core:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_core:15.04:*:*:*:*:*:*:*
+  - id: 617966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_touch:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_touch:15.04:*:*:*:*:*:*:*
+  - id: 705810
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-6507
+    reference_id: CVE-2017-6507
+weaknesses: []

@@ -1,0 +1,128 @@
+vulnerability_id: VCID-2bhr-9hej-aaas
+aliases:
+  - CVE-2017-7660
+  - GHSA-c82r-qg3w-q5mv
+summary: |
+  Security Vulnerability in secure inter-node communication
+  This package uses a PKI based mechanism to secure inter-node communication when security is enabled. It is possible to create a specially crafted node name that does not exist as part of the cluster and point it to a malicious node. This can trick the nodes in cluster to believe that the malicious node is a member of the cluster. So, if Solr users have enabled BasicAuth authentication mechanism using the BasicAuthPlugin or if the user has implemented a custom Authentication plugin, which does not implement either `HttpClientInterceptorPlugin` or `HttpClientBuilderPlugin`, his/her servers are vulnerable to this attack. Users who only use SSL without basic authentication or those who use Kerberos are not affected.
+severities:
+  - id: 622257
+    reference_id: 940192
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+  - id: 622256
+    reference_id: 940191
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 294767
+    reference_id: 710130
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 294765
+    reference_id: 710130
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 648166
+    reference_id: 1418665
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 29930
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7660
+    reference_id:
+  - id: 710127
+    url: http://mail-archives.us.apache.org/mod_mbox/www-announce/201707.mbox/%3CCAOOKt53EgrybaD%2BiSn-nBbvFdse-szhg%3DhMoDZuvUvyMme-Z%3Dg%40mail.gmail.com%3E
+    reference_id:
+  - id: 940192
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7660.json
+    reference_id:
+  - id: 1418663
+    url: https://issues.apache.org/jira/browse/SOLR-10624
+    reference_id:
+  - id: 1418664
+    url: https://lists.apache.org/thread/o0g7vpz5sz4yy0pyf1z94vkpv40x6h44
+    reference_id:
+  - id: 710129
+    url: https://security.netapp.com/advisory/ntap-20181127-0003/
+    reference_id:
+  - id: 710128
+    url: http://www.securityfocus.com/bid/99485
+    reference_id:
+  - id: 940191
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1473273
+    reference_id: 1473273
+  - id: 710131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.3.0:*:*:*:*:*:*:*
+  - id: 710132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.3.1:*:*:*:*:*:*:*
+  - id: 710133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.3.2:*:*:*:*:*:*:*
+  - id: 710134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.4.0:*:*:*:*:*:*:*
+  - id: 710135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.4.1:*:*:*:*:*:*:*
+  - id: 710136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.5.0:*:*:*:*:*:*:*
+  - id: 710137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.5.1:*:*:*:*:*:*:*
+  - id: 710138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.5.2:*:*:*:*:*:*:*
+  - id: 710139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.5.3:*:*:*:*:*:*:*
+  - id: 710140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:5.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:5.5.4:*:*:*:*:*:*:*
+  - id: 697915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.0.0:*:*:*:*:*:*:*
+  - id: 697916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.0.1:*:*:*:*:*:*:*
+  - id: 697917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.1.0:*:*:*:*:*:*:*
+  - id: 697918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.2.0:*:*:*:*:*:*:*
+  - id: 697919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.2.1:*:*:*:*:*:*:*
+  - id: 697920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.3.0:*:*:*:*:*:*:*
+  - id: 697921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.0:*:*:*:*:*:*:*
+  - id: 710141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.1:*:*:*:*:*:*:*
+  - id: 710142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.2:*:*:*:*:*:*:*
+  - id: 710143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.5.0:*:*:*:*:*:*:*
+  - id: 710144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.5.1:*:*:*:*:*:*:*
+  - id: 710130
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7660
+    reference_id: CVE-2017-7660
+  - id: 1418665
+    url: https://github.com/advisories/GHSA-c82r-qg3w-q5mv
+    reference_id: GHSA-c82r-qg3w-q5mv
+weaknesses: []

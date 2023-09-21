@@ -1,0 +1,87 @@
+vulnerability_id: VCID-e8wj-8qbu-aaad
+aliases:
+  - CVE-2019-19338
+summary: A flaw was found in the fix for CVE-2019-11135, in the Linux upstream kernel versions
+  before 5.5 where, the way Intel CPUs handle speculative execution of instructions when a TSX
+  Asynchronous Abort (TAA) error occurs. When a guest is running on a host CPU affected by the
+  TAA flaw (TAA_NO=0), but is not affected by the MDS issue (MDS_NO=1), the guest was to clear
+  the affected buffers by using a VERW instruction mechanism. But when the MDS_NO=1 bit was
+  exported to the guests, the guests did not use the VERW mechanism to clear the affected buffers.
+  This issue affects guests running on Cascade Lake CPUs and requires that host has 'TSX' enabled.
+  Confidentiality of data is the highest threat associated with this vulnerability.
+severities:
+  - id: 66022
+    reference_id: '195011'
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 689902
+    reference_id: 789919
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 66020
+    reference_id: '195009'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 396106
+    reference_id: 789921
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 396104
+    reference_id: 789921
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 55242
+    reference_id: 180431
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55241
+    reference_id: 180430
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 66021
+    reference_id: '195010'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: '195011'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19338.json
+    reference_id:
+  - id: 789918
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19338
+    reference_id:
+  - id: 789919
+    url: https://software.intel.com/security-software-guidance/insights/deep-dive-intel-transactional-synchronization-extensions-intel-tsx-asynchronous-abort
+    reference_id:
+  - id: 789920
+    url: https://www.openwall.com/lists/oss-security/2019/12/10/3
+    reference_id:
+  - id: '195009'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1781514
+    reference_id: 1781514
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 789921
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19338
+    reference_id: CVE-2019-19338
+  - id: 180431
+    url: https://access.redhat.com/errata/RHSA-2020:0834
+    reference_id: RHSA-2020:0834
+  - id: 180430
+    url: https://access.redhat.com/errata/RHSA-2020:0839
+    reference_id: RHSA-2020:0839
+  - id: '195010'
+    url: https://access.redhat.com/errata/RHSA-2020:1465
+    reference_id: RHSA-2020:1465
+weaknesses: []

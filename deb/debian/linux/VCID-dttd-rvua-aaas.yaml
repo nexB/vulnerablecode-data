@@ -1,0 +1,134 @@
+vulnerability_id: VCID-dttd-rvua-aaas
+aliases:
+  - CVE-2014-0205
+summary: The futex_wait function in kernel/futex.c in the Linux kernel before 2.6.37 does not
+  properly maintain a certain reference count during requeue operations, which allows local
+  users to cause a denial of service (use-after-free and system crash) or possibly gain privileges
+  via a crafted application that triggers a zero count.
+severities:
+  - id: 654253
+    reference_id: 1423440
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 654254
+    reference_id: 1423441
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 654255
+    reference_id: 1423442
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 654256
+    reference_id: 1423443
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 174387
+    reference_id: 550830
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 58596
+    reference_id: 184962
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58597
+    reference_id: 184963
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58595
+    reference_id: 184961
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 550824
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7ada876a8703f23befbb20a7465a702ee39b1704
+    reference_id:
+  - id: 550825
+    url: http://mirror.linux.org.au/linux/kernel/v2.6/ChangeLog-2.6.37
+    reference_id:
+  - id: 1423440
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-0205.html
+    reference_id:
+  - id: 550826
+    url: http://rhn.redhat.com/errata/RHSA-2014-1365.html
+    reference_id:
+  - id: 550827
+    url: http://rhn.redhat.com/errata/RHSA-2014-1763.html
+    reference_id:
+  - id: 184964
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-0205.json
+    reference_id:
+  - id: 550828
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1094455
+    reference_id:
+  - id: 1423441
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0205
+    reference_id:
+  - id: 550829
+    url: https://github.com/torvalds/linux/commit/7ada876a8703f23befbb20a7465a702ee39b1704
+    reference_id:
+  - id: 1423442
+    url: https://rhn.redhat.com/errata/RHSA-2014-1167.html
+    reference_id:
+  - id: 1423443
+    url: https://ubuntu.com/security/notices/USN-1041-1
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 437241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:*:*:*:*:*:*:*
+  - id: 437304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36.1:*:*:*:*:*:*:*
+  - id: 437305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36.2:*:*:*:*:*:*:*
+  - id: 437306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36.3:*:*:*:*:*:*:*
+  - id: 332451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc1:*:*:*:*:*:*
+  - id: 428208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc2:*:*:*:*:*:*
+  - id: 428847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc3:*:*:*:*:*:*
+  - id: 430773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc4:*:*:*:*:*:*
+  - id: 431683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc5:*:*:*:*:*:*
+  - id: 435895
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc6:*:*:*:*:*:*
+  - id: 435896
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc7:*:*:*:*:*:*
+  - id: 448074
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.36:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.36:rc8:*:*:*:*:*:*
+  - id: 550830
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-0205
+    reference_id: CVE-2014-0205
+  - id: 184962
+    url: https://access.redhat.com/errata/RHSA-2014:1167
+    reference_id: RHSA-2014:1167
+  - id: 184963
+    url: https://access.redhat.com/errata/RHSA-2014:1365
+    reference_id: RHSA-2014:1365
+  - id: 184961
+    url: https://access.redhat.com/errata/RHSA-2014:1763
+    reference_id: RHSA-2014:1763
+weaknesses: []

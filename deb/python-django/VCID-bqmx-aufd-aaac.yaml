@@ -1,0 +1,93 @@
+affected_purls:
+- pkg:deb/debian/python-django@1:1.11.29-1~deb10u1
+- pkg:pypi/django@2.2
+- pkg:pypi/django@2.2.1
+- pkg:pypi/django@2.2.10
+- pkg:pypi/django@2.2.11
+- pkg:pypi/django@2.2.12
+- pkg:pypi/django@2.2.13
+- pkg:pypi/django@2.2.14
+- pkg:pypi/django@2.2.15
+- pkg:pypi/django@2.2.16
+- pkg:pypi/django@2.2.17
+- pkg:pypi/django@2.2.18
+- pkg:pypi/django@2.2.19
+- pkg:pypi/django@2.2.2
+- pkg:pypi/django@2.2.20
+- pkg:pypi/django@2.2.21
+- pkg:pypi/django@2.2.3
+- pkg:pypi/django@2.2.4
+- pkg:pypi/django@2.2.5
+- pkg:pypi/django@2.2.6
+- pkg:pypi/django@2.2.7
+- pkg:pypi/django@2.2.8
+- pkg:pypi/django@2.2.9
+- pkg:pypi/django@3.1
+- pkg:pypi/django@3.1.1
+- pkg:pypi/django@3.1.2
+- pkg:pypi/django@3.1.3
+- pkg:pypi/django@3.1.4
+- pkg:pypi/django@3.1.5
+- pkg:pypi/django@3.1.6
+- pkg:pypi/django@3.1.7
+- pkg:pypi/django@3.1.8
+- pkg:pypi/django@3.1.9
+- pkg:pypi/django@3.2
+- pkg:pypi/django@3.2.1
+aliases:
+- CVE-2021-32052
+- GHSA-qm57-vhq3-3fwf
+fixed_purl:
+- pkg:deb/debian/python-django@2:2.2.24-1~bpo10%2B1
+- pkg:pypi/django@2.2.22
+- pkg:pypi/django@3.0a1
+- pkg:pypi/django@3.1.10
+- pkg:pypi/django@3.2.2
+- pkg:pypi/django@3.2a1
+references:
+- id: 160757
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1944801
+- id: 160621
+  reference_id: ''
+  url: https://docs.djangoproject.com/en/3.2/releases/security/
+- id: 160756
+  reference_id: ''
+  url: https://github.com/django/django/commit/e1e81aa1c4427411e3c68facdd761229ffea6f6f
+- id: 160622
+  reference_id: ''
+  url: https://groups.google.com/forum/#!forum/django-announce
+- id: 159542
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZVKYPHR3TKR2ESWXBPOJEKRO2OSJRZUE/
+- id: 160760
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20210611-0002/
+- id: 160758
+  reference_id: ''
+  url: https://www.djangoproject.com/weblog/2021/may/06/security-releases/
+- id: 160759
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2021/05/06/1
+- id: 129788
+  reference_id: '988136'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988136
+- id: 160755
+  reference_id: CVE-2021-32052
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-32052
+- id: 160761
+  reference_id: GHSA-qm57-vhq3-3fwf
+  url: https://github.com/advisories/GHSA-qm57-vhq3-3fwf
+severities:
+- id: 23607
+  reference_id: 160761
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: In Django 2.2 before 2.2.22, 3.1 before 3.1.10, and 3.2 before 3.2.2 (with
+  Python 3.9.5+), URLValidator does not prohibit newlines and tabs (unless the URLField
+  form field is used). If an application uses values with newlines in an HTTP response,
+  header injection can occur. Django itself is unaffected because HttpResponse prohibits
+  newlines in HTTP headers.
+vulnerability_id: VCID-bqmx-aufd-aaac
+weaknesses: []

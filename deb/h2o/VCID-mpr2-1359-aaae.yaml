@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2021-43848
+fixed_purl:
+- pkg:deb/debian/h2o@0?distro=sid
+- pkg:deb/debian/h2o@2.2.5%2Bdfsg2-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/h2o@2.2.5%2Bdfsg2-6?distro=sid
+- pkg:deb/debian/h2o@2.2.5%2Bdfsg2-7?distro=sid
+references: []
+severities: []
+summary: h2o is an open source http server. In code prior to the `8c0eca3` commit
+  h2o may attempt to access uninitialized memory. When receiving QUIC frames in certain
+  order, HTTP/3 server-side implementation of h2o can be misguided to treat uninitialized
+  memory as HTTP/3 frames that have been received. When h2o is used as a reverse proxy,
+  an attacker can abuse this vulnerability to send internal state of h2o to backend
+  servers controlled by the attacker or third party. Also, if there is an HTTP endpoint
+  that reflects the traffic sent from the client, an attacker can use that reflector
+  to obtain internal state of h2o. This internal state includes traffic of other connections
+  in unencrypted form and TLS session tickets. This vulnerability exists in h2o server
+  with HTTP/3 support, between commit 93af138 and d1f0f65. None of the released versions
+  of h2o are affected by this vulnerability. There are no known workarounds. Users
+  of unreleased versions of h2o using HTTP/3 are advised to upgrade immediately.
+vulnerability_id: VCID-mpr2-1359-aaae
+weaknesses: []

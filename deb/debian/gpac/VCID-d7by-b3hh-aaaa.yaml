@@ -1,0 +1,34 @@
+vulnerability_id: VCID-d7by-b3hh-aaaa
+aliases:
+  - CVE-2021-30015
+summary: There is a Null Pointer Dereference in function filter_core/filter_pck.c:gf_filter_pck_new_alloc_internal
+  in GPAC 1.0.1. The pid comes from function av1dmx_parse_flush_sample, the ctx.opid maybe NULL.
+  The result is a crash in gf_filter_pck_new_alloc_internal.
+severities:
+  - id: 533317
+    reference_id: 880072
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 533315
+    reference_id: 880072
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 880070
+    url: https://github.com/gpac/gpac/commit/13dad7d5ef74ca2e6fe4010f5b03eb12e9bbe0ec
+    reference_id:
+  - id: 880071
+    url: https://github.com/gpac/gpac/issues/1719
+    reference_id:
+  - id: 40031
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=987323
+    reference_id: 987323
+  - id: 171527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gpac:gpac:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gpac:gpac:1.0.1:*:*:*:*:*:*:*
+  - id: 880072
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-30015
+    reference_id: CVE-2021-30015
+weaknesses: []

@@ -1,0 +1,149 @@
+vulnerability_id: VCID-7kj7-9hux-aaaf
+aliases:
+  - CVE-2021-32804
+  - GHSA-3jfq-g458-7qm9
+summary: |
+  Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+  The npm package "tar" (aka node-tar) before versions 6.1.1, 5.0.6, 4.4.14, and 3.3.2 has a arbitrary File Creation/Overwrite vulnerability due to insufficient absolute path sanitization. node-tar aims to prevent extraction of absolute file paths by turning absolute paths into relative paths when the `preservePaths` flag is not set to `true`. This is achieved by stripping the absolute path root from any absolute file paths contained in a tar file. For example `/home/user/.bashrc` would turn into `home/user/.bashrc`. This logic was insufficient when file paths contained repeated path roots such as `////home/user/.bashrc`. `node-tar` would only strip a single path root from such paths. When given an absolute file path with repeating path roots, the resulting path (e.g. `///home/user/.bashrc`) would still resolve to an absolute path, thus allowing arbitrary file creation and overwrite. This issue was addressed in releases 3.2.2, 4.4.14, 5.0.6 and 6.1.1. Users may work around this vulnerability without upgrading by creating a custom `onentry` method which sanitizes the `entry.path` or a `filter` method which removes entries with absolute paths. See referenced GitHub Advisory for details. Be aware of CVE-2021-32803 which fixes a similar bug in later versions of tar.
+severities:
+  - id: 603281
+    reference_id: 926406
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
+  - id: 701265
+    reference_id: 387
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 603280
+    reference_id: 926405
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 541029
+    reference_id: 36265
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:P
+  - id: 541027
+    reference_id: 36265
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
+  - id: 706754
+    reference_id: 36266
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 603111
+    reference_id: 926282
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 603110
+    reference_id: 926281
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 603113
+    reference_id: 926284
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 603109
+    reference_id: 926280
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 603112
+    reference_id: 926283
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 603114
+    reference_id: 926285
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 602350
+    reference_id: 925725
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 602732
+    reference_id: 926010
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 926406
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-32804.json
+    reference_id:
+  - id: 21833
+    url: https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+    reference_id:
+  - id: 36263
+    url: https://github.com/npm/node-tar/commit/1f036ca23f64a547bdd6c79c1a44bc62e8115da4
+    reference_id:
+  - id: 885078
+    url: https://github.com/npm/node-tar/security/advisories/GHSA-3jfq-g458-7qm9
+    reference_id:
+  - id: 36264
+    url: https://www.npmjs.com/advisories/1770
+    reference_id:
+  - id: 36251
+    url: https://www.npmjs.com/package/tar
+    reference_id:
+  - id: 387
+    url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_id:
+  - id: 926405
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1990409
+    reference_id: '1990409'
+  - id: 78940
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=992111
+    reference_id: 992111
+  - id: 784227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:graalvm:20.3.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:oracle:graalvm:20.3.3:*:*:*:enterprise:*:*:*
+  - id: 867566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:graalvm:21.2.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:oracle:graalvm:21.2.0:*:*:*:enterprise:*:*:*
+  - id: 789601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:siemens:sinec_infrastructure_network_services:*:*:*:*:*:*:*:*
+  - id: 885077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:tar_project:tar:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:tar_project:tar:*:*:*:*:*:node.js:*:*
+  - id: 36265
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32804
+    reference_id: CVE-2021-32804
+  - id: 36266
+    url: https://github.com/advisories/GHSA-3jfq-g458-7qm9
+    reference_id: GHSA-3jfq-g458-7qm9
+  - id: 926282
+    url: https://access.redhat.com/errata/RHSA-2021:3280
+    reference_id: RHSA-2021:3280
+  - id: 926281
+    url: https://access.redhat.com/errata/RHSA-2021:3281
+    reference_id: RHSA-2021:3281
+  - id: 926284
+    url: https://access.redhat.com/errata/RHSA-2021:3623
+    reference_id: RHSA-2021:3623
+  - id: 926280
+    url: https://access.redhat.com/errata/RHSA-2021:3638
+    reference_id: RHSA-2021:3638
+  - id: 926283
+    url: https://access.redhat.com/errata/RHSA-2021:3639
+    reference_id: RHSA-2021:3639
+  - id: 926285
+    url: https://access.redhat.com/errata/RHSA-2021:3666
+    reference_id: RHSA-2021:3666
+  - id: 925725
+    url: https://access.redhat.com/errata/RHSA-2021:4618
+    reference_id: RHSA-2021:4618
+  - id: 926010
+    url: https://access.redhat.com/errata/RHSA-2021:5086
+    reference_id: RHSA-2021:5086
+weaknesses: []

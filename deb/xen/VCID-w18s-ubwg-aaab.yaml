@@ -1,0 +1,26 @@
+affected_purls: []
+aliases:
+- CVE-2019-19580
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: An issue was discovered in Xen through 4.12.x allowing x86 PV guest OS users
+  to gain host OS privileges by leveraging race conditions in pagetable promotion
+  and demotion operations, because of an incomplete fix for CVE-2019-18421. XSA-299
+  addressed several critical issues in restartable PV type change operations. Despite
+  extensive testing and auditing, some corner cases were missed. A malicious PV guest
+  administrator may be able to escalate their privilege to that of the host. All security-supported
+  versions of Xen are vulnerable. Only x86 systems are affected. Arm systems are not
+  affected. Only x86 PV guests can leverage the vulnerability. x86 HVM and PVH guests
+  cannot leverage the vulnerability. Note that these attacks require very precise
+  timing, which may be difficult to exploit in practice.
+vulnerability_id: VCID-w18s-ubwg-aaab
+weaknesses: []

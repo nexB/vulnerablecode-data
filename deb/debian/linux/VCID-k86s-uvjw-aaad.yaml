@@ -1,0 +1,119 @@
+vulnerability_id: VCID-k86s-uvjw-aaad
+aliases:
+  - CVE-2021-26931
+summary: An issue was discovered in the Linux kernel 2.6.39 through 5.10.16, as used in Xen.
+  Block, net, and SCSI backends consider certain errors a plain bug, deliberately causing a
+  kernel crash. For errors potentially being at least under the influence of guests (such as
+  out of memory conditions), it isn't correct to assume a plain bug. Memory allocations potentially
+  causing such crashes occur only when Linux is running in PV mode, though. This affects drivers/block/xen-blkback/blkback.c
+  and drivers/xen/xen-scsiback.c.
+severities:
+  - id: 701356
+    reference_id: 1460789
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 701357
+    reference_id: 1460790
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660541
+    reference_id: 1428090
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700234
+    reference_id: 1459793
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700341
+    reference_id: 1459893
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697715
+    reference_id: 888388
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701358
+    reference_id: 1460791
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 701359
+    reference_id: 1460792
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 525202
+    reference_id: 874847
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:P
+  - id: 525200
+    reference_id: 874847
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1460789
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-26931.html
+    reference_id:
+  - id: 1460790
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-26931
+    reference_id:
+  - id: 789828
+    url: https://lists.debian.org/debian-lts-announce/2021/03/msg00010.html
+    reference_id:
+  - id: 836733
+    url: https://lists.debian.org/debian-lts-announce/2021/03/msg00035.html
+    reference_id:
+  - id: 874842
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2XQR52ICKRK3GC4HDWLMWF2U55YGAR63/
+    reference_id:
+  - id: 874843
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GWQWPWYZRXVFJI5M3VCM72X27IB7CKOB/
+    reference_id:
+  - id: 874844
+    url: https://security.netapp.com/advisory/ntap-20210326-0001/
+    reference_id:
+  - id: 1428090
+    url: https://ubuntu.com/security/notices/USN-4904-1
+    reference_id:
+  - id: 1459793
+    url: https://ubuntu.com/security/notices/USN-4909-1
+    reference_id:
+  - id: 1459893
+    url: https://ubuntu.com/security/notices/USN-4946-1
+    reference_id:
+  - id: 888388
+    url: https://ubuntu.com/security/notices/USN-4949-1
+    reference_id:
+  - id: 1460791
+    url: https://www.openwall.com/lists/oss-security/2021/02/16/4
+    reference_id:
+  - id: 1460792
+    url: https://xenbits.xen.org/xsa/advisory-362.html
+    reference_id:
+  - id: 874846
+    url: http://xenbits.xen.org/xsa/advisory-362.html
+    reference_id:
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 874847
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-26931
+    reference_id: CVE-2021-26931
+weaknesses: []

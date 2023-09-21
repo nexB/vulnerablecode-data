@@ -1,0 +1,77 @@
+vulnerability_id: VCID-hxx6-gqeb-aaac
+aliases:
+  - CVE-2021-39191
+summary: mod_auth_openidc is an authentication/authorization module for the Apache 2.x HTTP
+  server that functions as an OpenID Connect Relying Party, authenticating users against an
+  OpenID Connect Provider. In versions prior to 2.4.9.4, the 3rd-party init SSO functionality
+  of mod_auth_openidc was reported to be vulnerable to an open redirect attack by supplying
+  a crafted URL in the `target_link_uri` parameter. A patch in version 2.4.9.4 made it so that
+  the `OIDCRedirectURLsAllowed` setting must be applied to the `target_link_uri` parameter.
+  There are no known workarounds aside from upgrading to a patched version.
+severities:
+  - id: 602695
+    reference_id: 925983
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 602693
+    reference_id: 925981
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 556356
+    reference_id: 895251
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 556354
+    reference_id: 895251
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 602694
+    reference_id: 925982
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 925983
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-39191.json
+    reference_id:
+  - id: 895245
+    url: https://github.com/zmartzone/mod_auth_openidc/commit/03e6bfb446f4e3f27c003d30d6a433e5dd8e2b3d
+    reference_id:
+  - id: 895246
+    url: https://github.com/zmartzone/mod_auth_openidc/issues/672
+    reference_id:
+  - id: 895247
+    url: https://github.com/zmartzone/mod_auth_openidc/releases/tag/v2.4.9.4
+    reference_id:
+  - id: 895248
+    url: https://github.com/zmartzone/mod_auth_openidc/security/advisories/GHSA-2pgf-8h6h-gqg2
+    reference_id:
+  - id: 895249
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/32RGPW5LZDLDTB7MKZIGAHPSLFOUNWR5/
+    reference_id:
+  - id: 895250
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RHXO4O4G2UQS7X6OQJCVZKHZAQ7SAIFB/
+    reference_id:
+  - id: 925981
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2001646
+    reference_id: 2001646
+  - id: 42851
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=993648
+    reference_id: 993648
+  - id: 704602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zmartzone:mod_auth_openidc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zmartzone:mod_auth_openidc:*:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 895251
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-39191
+    reference_id: CVE-2021-39191
+  - id: 925982
+    url: https://access.redhat.com/errata/RHSA-2022:1823
+    reference_id: RHSA-2022:1823
+weaknesses: []

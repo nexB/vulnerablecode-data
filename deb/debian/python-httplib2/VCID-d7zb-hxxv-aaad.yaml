@@ -1,0 +1,132 @@
+vulnerability_id: VCID-d7zb-hxxv-aaad
+aliases:
+  - CVE-2020-11078
+  - GHSA-gg84-qgv9-w4pq
+  - PYSEC-2020-46
+summary: In httplib2 before version 0.18.0, an attacker controlling unescaped part of uri for
+  `httplib2.Http.request()` could change request headers and body, send additional hidden requests
+  to same server. This vulnerability impacts software that uses httplib2 with uri constructed
+  by string concatenation, as opposed to proper urllib building with escaping. This has been
+  fixed in 0.18.0.
+severities:
+  - id: 612067
+    reference_id: 932846
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N
+  - id: 612063
+    reference_id: 932842
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 431931
+    reference_id: 21877
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 431929
+    reference_id: 21877
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N
+  - id: 4618
+    reference_id: 26049
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 4617
+    reference_id: 26048
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 612066
+    reference_id: 932845
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 612065
+    reference_id: 932844
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 612064
+    reference_id: 932843
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 607843
+    reference_id: 929763
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 932846
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-11078.json
+    reference_id:
+  - id: 7190
+    url: https://github.com/httplib2/httplib2/commit/a1457cc31f3206cf691d11d2bf34e98865873e9e
+    reference_id:
+  - id: 7194
+    url: https://lists.apache.org/thread.html/r23711190c2e98152cb6f216b95090d5eeb978543bb7e0bad22ce47fc@%3Cissues.beam.apache.org%3E
+    reference_id:
+  - id: 7199
+    url: https://lists.apache.org/thread.html/r4d35dac106fab979f0db75a07fc4e320ad848b722103e79667ff99e1@%3Cissues.beam.apache.org%3E
+    reference_id:
+  - id: 7198
+    url: https://lists.apache.org/thread.html/r69a462e690b5f2c3d418a288a2c98ae764d58587bd0b5d6ab141f25f@%3Cissues.beam.apache.org%3E
+    reference_id:
+  - id: 7200
+    url: https://lists.apache.org/thread.html/r7f364000066748299b331b615ba51c62f55ab5b201ddce9a22d98202@%3Cissues.beam.apache.org%3E
+    reference_id:
+  - id: 7197
+    url: https://lists.apache.org/thread.html/rad8872fc99f670958c2774e2bf84ee32a3a0562a0c787465cf3dfa23@%3Cissues.beam.apache.org%3E
+    reference_id:
+  - id: 7192
+    url: https://lists.apache.org/thread.html/rc9eff9572946142b657c900fe63ea4bbd3535911e8d4ce4d08fe4b89@%3Ccommits.allura.apache.org%3E
+    reference_id:
+  - id: 7193
+    url: https://lists.debian.org/debian-lts-announce/2020/06/msg00000.html
+    reference_id:
+  - id: 7195
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IXCX2AWROGWGY5GXR7VN3BKF34A2FO6J/
+    reference_id:
+  - id: 7196
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PZJ3D6JSM7CFZESZZKGUW2VX55BOSOXI/
+    reference_id:
+  - id: 932842
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1845937
+    reference_id: 1845937
+  - id: 522674
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:httplib2_project:httplib2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:httplib2_project:httplib2:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 21877
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-11078
+    reference_id: CVE-2020-11078
+  - id: 26049
+    url: https://github.com/advisories/GHSA-gg84-qgv9-w4pq
+    reference_id: GHSA-gg84-qgv9-w4pq
+  - id: 26048
+    url: https://github.com/httplib2/httplib2/security/advisories/GHSA-gg84-qgv9-w4pq
+    reference_id: GHSA-gg84-qgv9-w4pq
+  - id: 932845
+    url: https://access.redhat.com/errata/RHSA-2020:4605
+    reference_id: RHSA-2020:4605
+  - id: 932844
+    url: https://access.redhat.com/errata/RHSA-2020:5003
+    reference_id: RHSA-2020:5003
+  - id: 932843
+    url: https://access.redhat.com/errata/RHSA-2020:5004
+    reference_id: RHSA-2020:5004
+  - id: 929763
+    url: https://access.redhat.com/errata/RHSA-2021:2116
+    reference_id: RHSA-2021:2116
+weaknesses: []

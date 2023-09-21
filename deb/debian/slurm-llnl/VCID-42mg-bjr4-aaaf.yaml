@@ -1,0 +1,112 @@
+vulnerability_id: VCID-42mg-bjr4-aaaf
+aliases:
+  - CVE-2016-10030
+summary: The _prolog_error function in slurmd/req.c in Slurm before 15.08.13, 16.x before 16.05.7,
+  and 17.x before 17.02.0-pre4 has a vulnerability in how the slurmd daemon informs users of
+  a Prolog failure on a compute node. That vulnerability could allow a user to assume control
+  of an arbitrary file on the system. Any exploitation of this is dependent on the user being
+  able to cause or anticipate the failure (non-zero return code) of a Prolog script that their
+  job would run on. This issue affects all Slurm versions from 0.6.0 (September 2005) to present.
+  Workarounds to prevent exploitation of this are to either disable your Prolog script, or modify
+  it such that it always returns 0 ("success") and adjust it to set the node as down using scontrol
+  instead of relying on the slurmd to handle that automatically. If you do not have a Prolog
+  set you are unaffected by this issue.
+severities:
+  - id: 666129
+    reference_id: 1432639
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666130
+    reference_id: 1432640
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666131
+    reference_id: 626762
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666132
+    reference_id: 626763
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 212623
+    reference_id: 626764
+    scoring_system: cvssv2
+    value: '7.6'
+    scoring_elements: AV:N/AC:H/Au:N/C:C/I:C/A:C
+  - id: 212621
+    reference_id: 626764
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1432639
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10030.html
+    reference_id:
+  - id: 1432640
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10030
+    reference_id:
+  - id: 626762
+    url: https://github.com/SchedMD/slurm/commit/92362a92fffe60187df61f99ab11c249d44120ee
+    reference_id:
+  - id: 626763
+    url: https://www.schedmd.com/news.php?id=178
+    reference_id:
+  - id: 626761
+    url: http://www.securityfocus.com/bid/95299
+    reference_id:
+  - id: 124602
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=850491
+    reference_id: 850491
+  - id: 626765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:*:*:*:*:*:*:*:*
+  - id: 626766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.0:*:*:*:*:*:*:*
+  - id: 626767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.0:pre1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.0:pre1:*:*:*:*:*:*
+  - id: 626768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.0:pre2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.0:pre2:*:*:*:*:*:*
+  - id: 626769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.0:rc1:*:*:*:*:*:*
+  - id: 626770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.0:rc2:*:*:*:*:*:*
+  - id: 626771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.1:*:*:*:*:*:*:*
+  - id: 626772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.2:*:*:*:*:*:*:*
+  - id: 626773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.3:*:*:*:*:*:*:*
+  - id: 626774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.4:*:*:*:*:*:*:*
+  - id: 626775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.5:*:*:*:*:*:*:*
+  - id: 626776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:16.05.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:16.05.6:*:*:*:*:*:*:*
+  - id: 626777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:17.02.0:pre1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:17.02.0:pre1:*:*:*:*:*:*
+  - id: 626778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:17.02.0:pre2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:17.02.0:pre2:*:*:*:*:*:*
+  - id: 626779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:schedmd:slurm:17.02.0:pre3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:schedmd:slurm:17.02.0:pre3:*:*:*:*:*:*
+  - id: 626764
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10030
+    reference_id: CVE-2016-10030
+weaknesses: []

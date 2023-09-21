@@ -1,0 +1,89 @@
+vulnerability_id: VCID-24qr-5jje-aaak
+aliases:
+  - CVE-2021-21781
+summary: 'An information disclosure vulnerability exists in the ARM SIGPAGE functionality of
+  Linux Kernel v5.4.66 and v5.4.54. The latest version (5.11-rc4) seems to still be vulnerable.
+  A userland application can read the contents of the sigpage, which can leak kernel memory
+  contents. An attacker can read a process’s memory at a specific offset to trigger this vulnerability.
+  This was fixed in kernel releases: 4.14.222 4.19.177 5.4.99 5.10.17 5.11'
+severities:
+  - id: 700812
+    reference_id: 1460298
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 603952
+    reference_id: 926914
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 700813
+    reference_id: 1460299
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700814
+    reference_id: 1460300
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700815
+    reference_id: 865033
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 603951
+    reference_id: 926913
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 509818
+    reference_id: 865034
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 509816
+    reference_id: 865034
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 53304
+    reference_id: 178337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1460298
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-21781.html
+    reference_id:
+  - id: 926914
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-21781.json
+    reference_id:
+  - id: 1460299
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21781
+    reference_id:
+  - id: 1460300
+    url: https://git.kernel.org/linus/9c698bff66ab4914bb3d71da7dc6112519bde23e
+    reference_id:
+  - id: 865033
+    url: https://talosintelligence.com/vulnerability_reports/TALOS-2021-1243
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 926913
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1981950
+    reference_id: '1981950'
+  - id: 865035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.4.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.4.54:*:*:*:*:*:*:*
+  - id: 839178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.4.66:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.4.66:*:*:*:*:*:*:*
+  - id: 865034
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-21781
+    reference_id: CVE-2021-21781
+  - id: 178337
+    url: https://access.redhat.com/errata/RHSA-2022:1988
+    reference_id: RHSA-2022:1988
+weaknesses: []

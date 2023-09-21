@@ -1,0 +1,54 @@
+affected_purls:
+- pkg:pypi/opencv-contrib-python@3.2.0.7
+- pkg:pypi/opencv-python@3.2.0.7
+- pkg:pypi/opencv-python@3.2.0.8
+- pkg:pypi/opencv-python@3.3.0.9
+aliases:
+- CVE-2017-12603
+- GHSA-6v6p-p97v-g2p7
+fixed_purl:
+- pkg:deb/debian/opencv@3.2.0%2Bdfsg-6?distro=sid
+- pkg:deb/debian/opencv@4.5.1%2Bdfsg-5?distro=sid
+- pkg:deb/debian/opencv@4.6.0%2Bdfsg-12?distro=sid
+- pkg:pypi/opencv-contrib-python@3.3.0.10
+- pkg:pypi/opencv-python@3.3.0.10
+references:
+- id: 140780
+  reference_id: ''
+  url: https://github.com/opencv/opencv/issues/9309
+- id: 139477
+  reference_id: ''
+  url: https://github.com/opencv/opencv/pull/9376
+- id: 140783
+  reference_id: ''
+  url: https://github.com/xiaoqx/pocs/blob/master/opencv.md
+- id: 139476
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2018/07/msg00030.html
+- id: 139478
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2021/10/msg00028.html
+- id: 140784
+  reference_id: ''
+  url: https://security.gentoo.org/glsa/201712-02
+- id: 126840
+  reference_id: '872044'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=872044
+- id: 140797
+  reference_id: CVE-2017-12603
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-12603
+- id: 140798
+  reference_id: GHSA-6v6p-p97v-g2p7
+  url: https://github.com/advisories/GHSA-6v6p-p97v-g2p7
+severities:
+- id: 19489
+  reference_id: 140798
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: OpenCV (Open Source Computer Vision Library) through 3.3 has an invalid write
+  in the cv::RLByteStream::getBytes function in modules/imgcodecs/src/bitstrm.cpp
+  when reading an image file by using cv::imread, as demonstrated by the 2-opencv-heapoverflow-fseek
+  test case.
+vulnerability_id: VCID-n5yr-mref-aaan
+weaknesses: []

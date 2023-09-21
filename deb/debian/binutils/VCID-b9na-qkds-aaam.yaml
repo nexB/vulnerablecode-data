@@ -1,0 +1,72 @@
+vulnerability_id: VCID-b9na-qkds-aaam
+aliases:
+  - CVE-2017-7302
+summary: The Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils
+  2.28, has a swap_std_reloc_out function in bfd/aoutx.h that is vulnerable to an invalid read
+  (of size 4) because of missing checks for relocs that could not be recognised. This vulnerability
+  causes Binutils utilities like strip to crash.
+severities:
+  - id: 680204
+    reference_id: 1443830
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 68180
+    reference_id: '197665'
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 680205
+    reference_id: 1443831
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 667765
+    reference_id: 1433952
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 68179
+    reference_id: '197664'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 293492
+    reference_id: 708709
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 293490
+    reference_id: 708709
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1443830
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7302.html
+    reference_id:
+  - id: '197665'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7302.json
+    reference_id:
+  - id: 1443831
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7302
+    reference_id:
+  - id: 708708
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=20921
+    reference_id:
+  - id: 1433952
+    url: https://ubuntu.com/security/notices/USN-4336-2
+    reference_id:
+  - id: 708707
+    url: http://www.securityfocus.com/bid/97216
+    reference_id:
+  - id: '197664'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1440830
+    reference_id: 1440830
+  - id: 707719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:binutils:2.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:binutils:2.28:*:*:*:*:*:*:*
+  - id: 708709
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7302
+    reference_id: CVE-2017-7302
+weaknesses: []

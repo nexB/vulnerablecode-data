@@ -1,0 +1,144 @@
+vulnerability_id: VCID-y1fa-uj4d-aaaq
+aliases:
+  - CVE-2021-3489
+summary: 'The eBPF RINGBUF bpf_ringbuf_reserve() function in the Linux kernel did not check
+  that the allocated size was smaller than the ringbuf size, allowing an attacker to perform
+  out-of-bounds writes within the kernel and therefore, arbitrary code execution. This issue
+  was fixed via commit 4b81ccebaeee ("bpf, ringbuf: Deny reserve of buffers larger than ringbuf")
+  (v5.13-rc4) and backported to the stable kernels in v5.12.4, v5.11.21, and v5.10.37. It was
+  introduced via 457f44363a88 ("bpf: Implement BPF ring buffer and verifier support for it")
+  (v5.8-rc1).'
+severities:
+  - id: 702485
+    reference_id: 1461722
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605413
+    reference_id: 927978
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702486
+    reference_id: 1461723
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702487
+    reference_id: 888386
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697715
+    reference_id: 888388
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702488
+    reference_id: 888389
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702489
+    reference_id: 888390
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605412
+    reference_id: 927977
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 545816
+    reference_id: 888392
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 545814
+    reference_id: 888392
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1461722
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3489.html
+    reference_id:
+  - id: 927978
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3489.json
+    reference_id:
+  - id: 1461723
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3489
+    reference_id:
+  - id: 888386
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=4b81ccebaeee885ab1aa1438133f2991e3a2b6ea
+    reference_id:
+  - id: 888387
+    url: https://security.netapp.com/advisory/ntap-20210716-0004/
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 888388
+    url: https://ubuntu.com/security/notices/USN-4949-1
+    reference_id:
+  - id: 888389
+    url: https://ubuntu.com/security/notices/USN-4950-1
+    reference_id:
+  - id: 888390
+    url: https://www.openwall.com/lists/oss-security/2021/05/11/10
+    reference_id:
+  - id: 888391
+    url: https://www.zerodayinitiative.com/advisories/ZDI-21-590/
+    reference_id:
+  - id: 927977
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1959559
+    reference_id: '1959559'
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 822399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+  - id: 637847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 888393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:-:*:*:*:*:*:*
+  - id: 888394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+  - id: 888395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+  - id: 888396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+  - id: 888392
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3489
+    reference_id: CVE-2021-3489
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

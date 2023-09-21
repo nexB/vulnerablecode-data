@@ -1,0 +1,107 @@
+affected_purls:
+- pkg:deb/debian/node-fetch@1.7.3-1
+- pkg:npm/node-fetch@0.1.0
+- pkg:npm/node-fetch@1.0.0
+- pkg:npm/node-fetch@1.0.1
+- pkg:npm/node-fetch@1.0.2
+- pkg:npm/node-fetch@1.0.3
+- pkg:npm/node-fetch@1.0.4
+- pkg:npm/node-fetch@1.0.5
+- pkg:npm/node-fetch@1.0.6
+- pkg:npm/node-fetch@1.1.0
+- pkg:npm/node-fetch@1.1.1
+- pkg:npm/node-fetch@1.1.2
+- pkg:npm/node-fetch@1.2.0
+- pkg:npm/node-fetch@1.2.1
+- pkg:npm/node-fetch@1.3.0
+- pkg:npm/node-fetch@1.3.1
+- pkg:npm/node-fetch@1.3.2
+- pkg:npm/node-fetch@1.3.3
+- pkg:npm/node-fetch@1.4.0
+- pkg:npm/node-fetch@1.4.1
+- pkg:npm/node-fetch@1.5.0
+- pkg:npm/node-fetch@1.5.1
+- pkg:npm/node-fetch@1.5.2
+- pkg:npm/node-fetch@1.5.3
+- pkg:npm/node-fetch@1.6.0
+- pkg:npm/node-fetch@1.6.1
+- pkg:npm/node-fetch@1.6.2
+- pkg:npm/node-fetch@1.6.3
+- pkg:npm/node-fetch@1.7.0
+- pkg:npm/node-fetch@1.7.1
+- pkg:npm/node-fetch@1.7.2
+- pkg:npm/node-fetch@1.7.3
+- pkg:npm/node-fetch@2.0.0
+- pkg:npm/node-fetch@2.0.0-alpha.1
+- pkg:npm/node-fetch@2.0.0-alpha.3
+- pkg:npm/node-fetch@2.0.0-alpha.4
+- pkg:npm/node-fetch@2.0.0-alpha.5
+- pkg:npm/node-fetch@2.0.0-alpha.6
+- pkg:npm/node-fetch@2.0.0-alpha.7
+- pkg:npm/node-fetch@2.0.0-alpha.8
+- pkg:npm/node-fetch@2.0.0-alpha.9
+- pkg:npm/node-fetch@2.1.0
+- pkg:npm/node-fetch@2.1.1
+- pkg:npm/node-fetch@2.1.2
+- pkg:npm/node-fetch@2.2.0
+- pkg:npm/node-fetch@2.2.1
+- pkg:npm/node-fetch@2.3.0
+- pkg:npm/node-fetch@2.4.0
+- pkg:npm/node-fetch@2.4.1
+- pkg:npm/node-fetch@2.5.0
+- pkg:npm/node-fetch@2.6.0
+- pkg:npm/node-fetch@3.0.0-beta.1
+- pkg:npm/node-fetch@3.0.0-beta.2
+- pkg:npm/node-fetch@3.0.0-beta.3
+- pkg:npm/node-fetch@3.0.0-beta.4
+- pkg:npm/node-fetch@3.0.0-beta.5
+- pkg:npm/node-fetch@3.0.0-beta.6
+- pkg:npm/node-fetch@3.0.0-beta.7
+- pkg:npm/node-fetch@3.0.0-beta.8
+aliases:
+- CVE-2020-15168
+- GHSA-w7rc-rwvf-8q5r
+fixed_purl:
+- pkg:deb/debian/node-fetch@2.6.1-5%2Bdeb11u1
+- pkg:npm/node-fetch@2.6.1
+- pkg:npm/node-fetch@3.0.0-beta.9
+references:
+- id: 151555
+  reference_id: ''
+  url: https://github.com/node-fetch/node-fetch/commit/2358a6c2563d1730a0cdaccc197c611949f6a334
+- id: 151556
+  reference_id: ''
+  url: https://github.com/node-fetch/node-fetch/commit/eaff0094c4dfdd5b78711a8c4f1b61e33d282072
+- id: 129195
+  reference_id: '970173'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970173
+- id: 151554
+  reference_id: CVE-2020-15168
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-15168
+- id: 151557
+  reference_id: GHSA-w7rc-rwvf-8q5r
+  url: https://github.com/advisories/GHSA-w7rc-rwvf-8q5r
+- id: 151553
+  reference_id: GHSA-w7rc-rwvf-8q5r
+  url: https://github.com/node-fetch/node-fetch/security/advisories/GHSA-w7rc-rwvf-8q5r
+severities:
+- id: 21518
+  reference_id: 151557
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+- id: 21517
+  reference_id: 151553
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+summary: 'node-fetch before versions 2.6.1 and 3.0.0-beta.9 did not honor the size
+  option after following a redirect, which means that when a content size was over
+  the limit, a FetchError would never get thrown and the process would end without
+  failure. For most people, this fix will have a little or no impact. However, if
+  you are relying on node-fetch to gate files above a size, the impact could be significant,
+  for example: If you don''t double-check the size of the data after fetch() has completed,
+  your JS thread could get tied up doing work on a large file (DoS) and/or cost you
+  money in computing.'
+vulnerability_id: VCID-bjes-rta2-aaaq
+weaknesses: []

@@ -1,0 +1,107 @@
+vulnerability_id: VCID-3vhb-4bgk-aaaa
+aliases:
+  - CVE-2010-0211
+summary: The slap_modrdn2mods function in modrdn.c in OpenLDAP 2.4.22 does not check the return
+  value of a call to the smr_normalize function, which allows remote attackers to cause a denial
+  of service (segmentation fault) and possibly execute arbitrary code via a modrdn call with
+  an RDN string containing invalid UTF-8 sequences, which triggers a free of an invalid, uninitialized
+  pointer in the slap_mods_free function, as demonstrated using the Codenomicon LDAPv3 test
+  suite.
+severities:
+  - id: 69837
+    reference_id: '199693'
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 129944
+    reference_id: 410164
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 69839
+    reference_id: '199695'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 69838
+    reference_id: '199694'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 44897
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    reference_id:
+  - id: 154698
+    url: http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+    reference_id:
+  - id: 3916
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-08/msg00001.html
+    reference_id:
+  - id: '199696'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-0211.json
+    reference_id:
+  - id: 410153
+    url: http://secunia.com/advisories/40639
+    reference_id:
+  - id: 399720
+    url: http://secunia.com/advisories/40677
+    reference_id:
+  - id: 410154
+    url: http://secunia.com/advisories/40687
+    reference_id:
+  - id: 410155
+    url: http://secunia.com/advisories/42787
+    reference_id:
+  - id: 399721
+    url: http://security.gentoo.org/glsa/glsa-201406-36.xml
+    reference_id:
+  - id: 154703
+    url: http://support.apple.com/kb/HT4435
+    reference_id:
+  - id: 410156
+    url: http://www.openldap.org/its/index.cgi/Software%20Bugs?id=6570
+    reference_id:
+  - id: 410157
+    url: http://www.redhat.com/support/errata/RHSA-2010-0542.html
+    reference_id:
+  - id: 399723
+    url: http://www.redhat.com/support/errata/RHSA-2010-0543.html
+    reference_id:
+  - id: 410158
+    url: http://www.securityfocus.com/archive/1/515545/100/0/threaded
+    reference_id:
+  - id: 410159
+    url: http://www.securityfocus.com/bid/41770
+    reference_id:
+  - id: 410160
+    url: http://www.securitytracker.com/id?1024221
+    reference_id:
+  - id: 410161
+    url: http://www.vmware.com/security/advisories/VMSA-2011-0001.html
+    reference_id:
+  - id: 410162
+    url: http://www.vupen.com/english/advisories/2010/1849
+    reference_id:
+  - id: 399725
+    url: http://www.vupen.com/english/advisories/2010/1858
+    reference_id:
+  - id: 410163
+    url: http://www.vupen.com/english/advisories/2011/0025
+    reference_id:
+  - id: '199693'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=605448
+    reference_id: 605448
+  - id: 410165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+  - id: 410164
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-0211
+    reference_id: CVE-2010-0211
+  - id: '199695'
+    url: https://access.redhat.com/errata/RHSA-2010:0542
+    reference_id: RHSA-2010:0542
+  - id: '199694'
+    url: https://access.redhat.com/errata/RHSA-2010:0543
+    reference_id: RHSA-2010:0543
+weaknesses: []

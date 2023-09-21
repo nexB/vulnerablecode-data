@@ -1,0 +1,80 @@
+affected_purls:
+- pkg:deb/debian/python-eventlet@0.20.0-6
+- pkg:pypi/eventlet@0.10.0
+- pkg:pypi/eventlet@0.11.0
+- pkg:pypi/eventlet@0.12.1
+- pkg:pypi/eventlet@0.13.0
+- pkg:pypi/eventlet@0.14.0
+- pkg:pypi/eventlet@0.15.2
+- pkg:pypi/eventlet@0.16.1
+- pkg:pypi/eventlet@0.17.4
+- pkg:pypi/eventlet@0.18.2
+- pkg:pypi/eventlet@0.18.3
+- pkg:pypi/eventlet@0.18.4
+- pkg:pypi/eventlet@0.19.0
+- pkg:pypi/eventlet@0.20.0
+- pkg:pypi/eventlet@0.20.1
+- pkg:pypi/eventlet@0.21.0
+- pkg:pypi/eventlet@0.22.0
+- pkg:pypi/eventlet@0.22.1
+- pkg:pypi/eventlet@0.23.0
+- pkg:pypi/eventlet@0.24.0
+- pkg:pypi/eventlet@0.24.1
+- pkg:pypi/eventlet@0.25.0
+- pkg:pypi/eventlet@0.25.1
+- pkg:pypi/eventlet@0.25.2
+- pkg:pypi/eventlet@0.26.0
+- pkg:pypi/eventlet@0.26.1
+- pkg:pypi/eventlet@0.27.0
+- pkg:pypi/eventlet@0.28.0
+- pkg:pypi/eventlet@0.28.1
+- pkg:pypi/eventlet@0.29.0
+- pkg:pypi/eventlet@0.29.1
+- pkg:pypi/eventlet@0.30.0
+- pkg:pypi/eventlet@0.30.1
+- pkg:pypi/eventlet@0.30.2
+- pkg:pypi/eventlet@0.30.3
+aliases:
+- CVE-2021-21419
+- GHSA-9p9m-jm8w-94p2
+fixed_purl:
+- pkg:deb/debian/python-eventlet@0.26.1-7%2Bdeb11u1
+- pkg:pypi/eventlet@0.31.0
+references:
+- id: 157376
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2WJFSBPLCNSZNHYQC4QDRDFRTEZRMD2L/
+- id: 157377
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R5JZP4LZOSP7CUAM3GIRW6PIAWKH5VGB/
+- id: 129627
+  reference_id: '988342'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988342
+- id: 157375
+  reference_id: CVE-2021-21419
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-21419
+- id: 157378
+  reference_id: GHSA-9p9m-jm8w-94p2
+  url: https://github.com/advisories/GHSA-9p9m-jm8w-94p2
+- id: 157374
+  reference_id: GHSA-9p9m-jm8w-94p2
+  url: https://github.com/eventlet/eventlet/security/advisories/GHSA-9p9m-jm8w-94p2
+severities:
+- id: 22803
+  reference_id: 157378
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 22802
+  reference_id: 157374
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Eventlet is a concurrent networking library for Python. A websocket peer
+  may exhaust memory on Eventlet side by sending very large websocket frames. Malicious
+  peer may exhaust memory on Eventlet side by sending highly compressed data frame.
+  A patch in version 0.31.0 restricts websocket frame to reasonable limits. As a workaround,
+  restricting memory usage via OS limits would help against overall machine exhaustion,
+  but there is no workaround to protect Eventlet process.
+vulnerability_id: VCID-vujm-82rp-aaag
+weaknesses: []

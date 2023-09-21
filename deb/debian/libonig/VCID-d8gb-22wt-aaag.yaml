@@ -1,0 +1,59 @@
+vulnerability_id: VCID-d8gb-22wt-aaag
+aliases:
+  - CVE-2017-9225
+summary: An issue was discovered in Oniguruma 6.2.0, as used in Oniguruma-mod in Ruby through
+  2.4.1 and mbstring in PHP through 7.1.5. A stack out-of-bounds write in onigenc_unicode_get_case_fold_codes_by_str()
+  occurs during regular expression compilation. Code point 0xFFFFFFFF is not properly handled
+  in unicode_unfold_key(). A malformed regular expression could result in 4 bytes being written
+  off the end of a stack buffer of expand_case_fold_string() during the call to onigenc_unicode_get_case_fold_codes_by_str(),
+  a typical stack buffer overflow.
+severities:
+  - id: 622880
+    reference_id: 940617
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 622879
+    reference_id: 940616
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 300354
+    reference_id: 714822
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 300352
+    reference_id: 714822
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 940617
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9225.json
+    reference_id:
+  - id: 714820
+    url: https://github.com/kkos/oniguruma/commit/166a6c3999bf06b4de0ab4ce6b088a468cc4029f
+    reference_id:
+  - id: 714821
+    url: https://github.com/kkos/oniguruma/issues/56
+    reference_id:
+  - id: 940616
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1466733
+    reference_id: 1466733
+  - id: 43199
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863313
+    reference_id: 863313
+  - id: 714817
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oniguruma_project:oniguruma:6.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oniguruma_project:oniguruma:6.2.0:*:*:*:*:*:*:*
+  - id: 714818
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:*:*:*:*:*:oniguruma-mod:*:*
+    reference_id: cpe:2.3:a:php:php:*:*:*:*:*:oniguruma-mod:*:*
+  - id: 714819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ruby-lang:ruby:*:*:*:*:*:oniguruma-mod:*:*
+    reference_id: cpe:2.3:a:ruby-lang:ruby:*:*:*:*:*:oniguruma-mod:*:*
+  - id: 714822
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9225
+    reference_id: CVE-2017-9225
+weaknesses: []

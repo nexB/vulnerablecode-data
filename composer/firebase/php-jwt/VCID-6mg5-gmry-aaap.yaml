@@ -1,0 +1,12 @@
+vulnerability_id: VCID-6mg5-gmry-aaap
+aliases:
+  - GMS-2015-8
+summary: |
+  Forgeable Public/Private Tokens
+  Since `algorithm` isn't enforced in `jwt.decode()`, a malicious user could choose what algorithm is sent sent to the server. If the server is expecting RSA but is sent HMAC-SHA with RSA's public key, the server will think the public key is actually an HMAC private key. This could be used to forge any data an attacker wants.
+severities: []
+references:
+  - id: 2021
+    url: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+    reference_id:
+weaknesses: []

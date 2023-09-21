@@ -1,0 +1,83 @@
+affected_purls:
+- pkg:npm/marked@0.0.1
+- pkg:npm/marked@0.0.2
+- pkg:npm/marked@0.0.3
+- pkg:npm/marked@0.0.4
+- pkg:npm/marked@0.0.5
+- pkg:npm/marked@0.0.6
+- pkg:npm/marked@0.0.7
+- pkg:npm/marked@0.0.8
+- pkg:npm/marked@0.0.9
+- pkg:npm/marked@0.1.0
+- pkg:npm/marked@0.1.1
+- pkg:npm/marked@0.1.2
+- pkg:npm/marked@0.1.3
+- pkg:npm/marked@0.1.4
+- pkg:npm/marked@0.1.5
+- pkg:npm/marked@0.1.6
+- pkg:npm/marked@0.1.7
+- pkg:npm/marked@0.1.8
+- pkg:npm/marked@0.1.9
+- pkg:npm/marked@0.2.0
+- pkg:npm/marked@0.2.1
+- pkg:npm/marked@0.2.10
+- pkg:npm/marked@0.2.2
+- pkg:npm/marked@0.2.2-1
+- pkg:npm/marked@0.2.3
+- pkg:npm/marked@0.2.4
+- pkg:npm/marked@0.2.4-1
+- pkg:npm/marked@0.2.5
+- pkg:npm/marked@0.2.6
+- pkg:npm/marked@0.2.7
+- pkg:npm/marked@0.2.8
+- pkg:npm/marked@0.2.9
+- pkg:npm/marked@0.3.0
+- pkg:npm/marked@0.3.1
+- pkg:npm/marked@0.3.2
+- pkg:npm/marked@0.3.3
+- pkg:npm/marked@0.3.4
+- pkg:npm/marked@0.3.5
+- pkg:nuget/marked@0.3.2
+- pkg:nuget/marked@0.3.3
+aliases:
+- CVE-2016-10531
+- GHSA-vfvf-mqq8-rwqc
+fixed_purl:
+- pkg:deb/debian/node-marked@0.3.6%2Bdfsg-1?distro=sid
+- pkg:deb/debian/node-marked@0.5.1%2Bdfsg-1?distro=sid
+- pkg:deb/debian/node-marked@0.8.0%2Bds%2Brepack-2?distro=sid
+- pkg:deb/debian/node-marked@4.2.3%2Bds%2B~4.0.7-2?distro=sid
+- pkg:npm/marked@0.3.6
+references:
+- id: 138812
+  reference_id: ''
+  url: https://github.com/chjj/marked/pull/592
+- id: 138813
+  reference_id: ''
+  url: https://github.com/chjj/marked/pull/592/commits/2cff85979be8e7a026a9aca35542c470cf5da523
+- id: 177567
+  reference_id: ''
+  url: https://nodesecurity.io/advisories/101
+- id: 138815
+  reference_id: ''
+  url: https://www.npmjs.com/advisories/101
+- id: 138811
+  reference_id: CVE-2016-10531
+  url: https://nvd.nist.gov/vuln/detail/CVE-2016-10531
+- id: 138814
+  reference_id: GHSA-vfvf-mqq8-rwqc
+  url: https://github.com/advisories/GHSA-vfvf-mqq8-rwqc
+severities:
+- id: 19088
+  reference_id: 138814
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: 'marked is an application that is meant to parse and compile markdown. Due
+  to the way that marked 0.3.5 and earlier parses input, specifically HTML entities,
+  it''s possible to bypass marked''s content injection protection (`sanitize: true`)
+  to inject a `javascript:` URL. This flaw exists because `&#xNNanything;` gets parsed
+  to what it could and leaves the rest behind, resulting in just `anything;` being
+  left.'
+vulnerability_id: VCID-g19e-ncuq-aaaj
+weaknesses: []

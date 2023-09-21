@@ -1,0 +1,231 @@
+vulnerability_id: VCID-q4bv-fa1u-aaaq
+aliases:
+  - CVE-2020-14040
+summary: The x/text package before 0.3.3 for Go has a vulnerability in encoding/unicode that
+  could lead to the UTF-16 decoder entering an infinite loop, causing the program to crash or
+  run out of memory. An attacker could provide a single byte to a UTF16 decoder instantiated
+  with UseBOM or ExpectBOM to trigger an infinite loop if the String function on the Decoder
+  is called, or the Decoder is passed to golang.org/x/text/transform.String.
+severities:
+  - id: 611522
+    reference_id: 932443
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 611515
+    reference_id: 932436
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 440959
+    reference_id: 819755
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 440957
+    reference_id: 819755
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 50125
+    reference_id: 174632
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611516
+    reference_id: 932437
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610452
+    reference_id: 931674
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 57646
+    reference_id: 183736
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611518
+    reference_id: 932439
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610454
+    reference_id: 931677
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 65556
+    reference_id: '194443'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50394
+    reference_id: 174953
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611519
+    reference_id: 932440
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611521
+    reference_id: 932442
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611520
+    reference_id: 932441
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609596
+    reference_id: 931045
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611517
+    reference_id: 932438
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609939
+    reference_id: 931298
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610458
+    reference_id: 931683
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 75597
+    reference_id: 206525
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 607812
+    reference_id: 929736
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 55094
+    reference_id: 180247
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 54822
+    reference_id: 179941
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 48114
+    reference_id: 172647
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 604610
+    reference_id: 927386
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48860
+    reference_id: 173188
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 932443
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14040.json
+    reference_id:
+  - id: 819753
+    url: https://groups.google.com/forum/#!topic/golang-announce/bXVeAmGOqz0
+    reference_id:
+  - id: 819754
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TACQFZDPA7AUR6TRZBCX2RGRFSDYLI7O/
+    reference_id:
+  - id: 932436
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1853652
+    reference_id: 1853652
+  - id: 41503
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964271
+    reference_id: 964271
+  - id: 819756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:text:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:text:*:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 819755
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14040
+    reference_id: CVE-2020-14040
+  - id: 174632
+    url: https://access.redhat.com/errata/RHSA-2020:3369
+    reference_id: RHSA-2020:3369
+  - id: 932437
+    url: https://access.redhat.com/errata/RHSA-2020:3578
+    reference_id: RHSA-2020:3578
+  - id: 931674
+    url: https://access.redhat.com/errata/RHSA-2020:3665
+    reference_id: RHSA-2020:3665
+  - id: 183736
+    url: https://access.redhat.com/errata/RHSA-2020:3727
+    reference_id: RHSA-2020:3727
+  - id: 932439
+    url: https://access.redhat.com/errata/RHSA-2020:3783
+    reference_id: RHSA-2020:3783
+  - id: 931677
+    url: https://access.redhat.com/errata/RHSA-2020:4214
+    reference_id: RHSA-2020:4214
+  - id: '194443'
+    url: https://access.redhat.com/errata/RHSA-2020:4297
+    reference_id: RHSA-2020:4297
+  - id: 174953
+    url: https://access.redhat.com/errata/RHSA-2020:4298
+    reference_id: RHSA-2020:4298
+  - id: 932440
+    url: https://access.redhat.com/errata/RHSA-2020:4694
+    reference_id: RHSA-2020:4694
+  - id: 932442
+    url: https://access.redhat.com/errata/RHSA-2020:5054
+    reference_id: RHSA-2020:5054
+  - id: 932441
+    url: https://access.redhat.com/errata/RHSA-2020:5055
+    reference_id: RHSA-2020:5055
+  - id: 931045
+    url: https://access.redhat.com/errata/RHSA-2020:5056
+    reference_id: RHSA-2020:5056
+  - id: 932438
+    url: https://access.redhat.com/errata/RHSA-2020:5149
+    reference_id: RHSA-2020:5149
+  - id: 931298
+    url: https://access.redhat.com/errata/RHSA-2020:5605
+    reference_id: RHSA-2020:5605
+  - id: 931683
+    url: https://access.redhat.com/errata/RHSA-2020:5606
+    reference_id: RHSA-2020:5606
+  - id: 206525
+    url: https://access.redhat.com/errata/RHSA-2020:5633
+    reference_id: RHSA-2020:5633
+  - id: 929736
+    url: https://access.redhat.com/errata/RHSA-2020:5635
+    reference_id: RHSA-2020:5635
+  - id: 180247
+    url: https://access.redhat.com/errata/RHSA-2021:0420
+    reference_id: RHSA-2021:0420
+  - id: 179941
+    url: https://access.redhat.com/errata/RHSA-2021:0799
+    reference_id: RHSA-2021:0799
+  - id: 172647
+    url: https://access.redhat.com/errata/RHSA-2021:1129
+    reference_id: RHSA-2021:1129
+  - id: 927386
+    url: https://access.redhat.com/errata/RHSA-2021:1168
+    reference_id: RHSA-2021:1168
+  - id: 173188
+    url: https://access.redhat.com/errata/RHSA-2021:3140
+    reference_id: RHSA-2021:3140
+weaknesses: []

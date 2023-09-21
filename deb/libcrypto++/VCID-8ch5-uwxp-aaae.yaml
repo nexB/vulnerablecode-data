@@ -1,0 +1,19 @@
+affected_purls:
+- pkg:deb/debian/libcrypto%2B%2B@5.6.4-8
+aliases:
+- CVE-2019-14318
+fixed_purl:
+- pkg:deb/debian/libcrypto%2B%2B@8.4.0-1
+references:
+- id: 128621
+  reference_id: '934326'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=934326
+severities: []
+summary: Crypto++ 8.3.0 and earlier contains a timing side channel in ECDSA signature
+  generation. This allows a local or remote attacker, able to measure the duration
+  of hundreds to thousands of signing operations, to compute the private key used.
+  The issue occurs because scalar multiplication in ecp.cpp (prime field curves, small
+  leakage) and algebra.cpp (binary field curves, large leakage) is not constant time
+  and leaks the bit length of the scalar among other information.
+vulnerability_id: VCID-8ch5-uwxp-aaae
+weaknesses: []

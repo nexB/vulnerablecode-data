@@ -1,0 +1,124 @@
+vulnerability_id: VCID-pk1k-q17c-aaaa
+aliases:
+  - CVE-2019-3842
+summary: In systemd before v242-rc4, it was discovered that pam_systemd does not properly sanitize
+  the environment before using the XDG_SEAT variable. It is possible for an attacker, in some
+  particular configurations, to set a XDG_SEAT environment variable which allows for commands
+  to be checked against polkit policies using the "allow_active" element rather than "allow_any".
+severities:
+  - id: 693783
+    reference_id: 1454380
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64837
+    reference_id: '193563'
+    scoring_system: cvssv3
+    value: '4.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 693784
+    reference_id: 1454381
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693785
+    reference_id: 1454382
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64834
+    reference_id: '193560'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 406266
+    reference_id: 796176
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 406264
+    reference_id: 796176
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 64835
+    reference_id: '193561'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 64836
+    reference_id: '193562'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 757189
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00062.html
+    reference_id:
+  - id: 796172
+    url: http://packetstormsecurity.com/files/152610/systemd-Seat-Verification-Active-Session-Spoofing.html
+    reference_id:
+  - id: 1454380
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-3842.html
+    reference_id:
+  - id: '193563'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-3842.json
+    reference_id:
+  - id: 796173
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3842
+    reference_id:
+  - id: 1454381
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3842
+    reference_id:
+  - id: 29651
+    url: https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 29652
+    url: https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 692897
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00022.html
+    reference_id:
+  - id: 796174
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STR36RJE4ZZIORMDXRERVBHMPRNRTHAC/
+    reference_id:
+  - id: 1454382
+    url: https://ubuntu.com/security/notices/USN-3938-1
+    reference_id:
+  - id: 796175
+    url: https://www.exploit-db.com/exploits/46743/
+    reference_id:
+  - id: '193560'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1668521
+    reference_id: 1668521
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 796177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:242:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:242:rc1:*:*:*:*:*:*
+  - id: 796178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:242:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:242:rc2:*:*:*:*:*:*
+  - id: 796179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:242:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:242:rc3:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 796176
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-3842
+    reference_id: CVE-2019-3842
+  - id: '193561'
+    url: https://access.redhat.com/errata/RHSA-2021:1611
+    reference_id: RHSA-2021:1611
+  - id: '193562'
+    url: https://access.redhat.com/errata/RHSA-2021:3900
+    reference_id: RHSA-2021:3900
+weaknesses: []

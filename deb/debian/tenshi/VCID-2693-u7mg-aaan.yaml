@@ -1,0 +1,56 @@
+vulnerability_id: VCID-2693-u7mg-aaan
+aliases:
+  - CVE-2017-11746
+summary: Tenshi 0.15 creates a tenshi.pid file after dropping privileges to a non-root account,
+  which might allow local users to kill arbitrary processes by leveraging access to this non-root
+  account for tenshi.pid modification before a root script executes a "kill `cat /pathname/tenshi.pid`"
+  command.
+severities:
+  - id: 674066
+    reference_id: 1439089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674067
+    reference_id: 1439090
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674068
+    reference_id: 674704
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 256247
+    reference_id: 674706
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 256245
+    reference_id: 674706
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1439089
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11746.html
+    reference_id:
+  - id: 1439090
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11746
+    reference_id:
+  - id: 674704
+    url: https://github.com/inversepath/tenshi/issues/6
+    reference_id:
+  - id: 674705
+    url: https://security.gentoo.org/glsa/201804-18
+    reference_id:
+  - id: 135961
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=871321
+    reference_id: 871321
+  - id: 674707
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:inversepath:tenshi:0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:inversepath:tenshi:0.15:*:*:*:*:*:*:*
+  - id: 674706
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11746
+    reference_id: CVE-2017-11746
+weaknesses: []

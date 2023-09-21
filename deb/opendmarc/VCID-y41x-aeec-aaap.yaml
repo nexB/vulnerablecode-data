@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2020-12460
+fixed_purl:
+- pkg:deb/debian/opendmarc@1.3.2-6%2Bdeb10u2?distro=sid
+- pkg:deb/debian/opendmarc@1.4.0~beta1%2Bdfsg-3?distro=sid
+- pkg:deb/debian/opendmarc@1.4.0~beta1%2Bdfsg-6%2Bdeb11u1?distro=sid
+- pkg:deb/debian/opendmarc@1.4.2-2?distro=sid
+references:
+- id: 129103
+  reference_id: '966464'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=966464
+severities: []
+summary: OpenDMARC through 1.3.2 and 1.4.x through 1.4.0-Beta1 has improper null termination
+  in the function opendmarc_xml_parse that can result in a one-byte heap overflow
+  in opendmarc_xml when parsing a specially crafted DMARC aggregate report. This can
+  cause remote memory corruption when a '\0' byte overwrites the heap metadata of
+  the next chunk and its PREV_INUSE flag.
+vulnerability_id: VCID-y41x-aeec-aaap
+weaknesses: []

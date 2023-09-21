@@ -1,0 +1,109 @@
+vulnerability_id: VCID-dzta-wgww-aaas
+aliases:
+  - CVE-2022-24761
+  - GHSA-4f7p-27jc-3c36
+  - PYSEC-2022-169
+summary: 'Waitress is a Web Server Gateway Interface server for Python 2 and 3. When using Waitress
+  versions 2.1.0 and prior behind a proxy that does not properly validate the incoming HTTP
+  request matches the RFC7230 standard, Waitress and the frontend proxy may disagree on where
+  one request starts and where it ends. This would allow requests to be smuggled via the front-end
+  proxy to waitress and later behavior. There are two classes of vulnerability that may lead
+  to request smuggling that are addressed by this advisory: The use of Python''s `int()` to
+  parse strings into integers, leading to `+10` to be parsed as `10`, or `0x01` to be parsed
+  as `1`, where as the standard specifies that the string should contain only digits or hex
+  digits; and Waitress does not support chunk extensions, however it was discarding them without
+  validating that they did not contain illegal characters. This vulnerability has been patched
+  in Waitress 2.1.1. A workaround is available. When deploying a proxy in front of waitress,
+  turning on any and all functionality to make sure that the request matches the RFC7230 standard.
+  Certain proxy servers may not have this functionality though and users are encouraged to upgrade
+  to the latest version of waitress instead.'
+severities:
+  - id: 144090
+    reference_id: 459342
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 144086
+    reference_id: 459338
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 589975
+    reference_id: 21040
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 589973
+    reference_id: 21040
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 3422
+    reference_id: 21042
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3421
+    reference_id: 21039
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 144089
+    reference_id: 459341
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 144087
+    reference_id: 459339
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 144088
+    reference_id: 459340
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 459342
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-24761.json
+    reference_id:
+  - id: 8853
+    url: https://github.com/Pylons/waitress/commit/9e0b8c801e4d505c2ffc91b891af4ba48af715e0
+    reference_id:
+  - id: 8855
+    url: https://github.com/Pylons/waitress/releases/tag/v2.1.1
+    reference_id:
+  - id: 20687
+    url: https://lists.debian.org/debian-lts-announce/2022/05/msg00011.html
+    reference_id:
+  - id: 21041
+    url: https://www.debian.org/security/2022/dsa-5138
+    reference_id:
+  - id: 147007
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1008013
+    reference_id: 1008013
+  - id: 459338
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2065086
+    reference_id: 2065086
+  - id: 784250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:agendaless:waitress:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:agendaless:waitress:*:*:*:*:*:*:*:*
+  - id: 21040
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24761
+    reference_id: CVE-2022-24761
+  - id: 21042
+    url: https://github.com/advisories/GHSA-4f7p-27jc-3c36
+    reference_id: GHSA-4f7p-27jc-3c36
+  - id: 21039
+    url: https://github.com/Pylons/waitress/security/advisories/GHSA-4f7p-27jc-3c36
+    reference_id: GHSA-4f7p-27jc-3c36
+  - id: 459341
+    url: https://access.redhat.com/errata/RHSA-2022:1253
+    reference_id: RHSA-2022:1253
+  - id: 459339
+    url: https://access.redhat.com/errata/RHSA-2022:1254
+    reference_id: RHSA-2022:1254
+  - id: 459340
+    url: https://access.redhat.com/errata/RHSA-2022:1264
+    reference_id: RHSA-2022:1264
+weaknesses: []

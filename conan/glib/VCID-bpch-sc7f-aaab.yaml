@@ -1,0 +1,39 @@
+affected_purls:
+- pkg:conan/glib@2.65.0
+- pkg:conan/glib@2.65.1
+- pkg:conan/glib@2.65.2
+- pkg:conan/glib@2.65.3
+- pkg:conan/glib@2.66.0
+- pkg:conan/glib@2.66.1
+- pkg:conan/glib@2.66.2
+- pkg:conan/glib@2.67.0
+- pkg:conan/glib@2.67.1
+- pkg:conan/glib@2.67.2
+- pkg:conan/glib@2.67.3
+aliases:
+- CVE-2021-27218
+fixed_purl:
+- pkg:conan/glib@2.67.4
+- pkg:deb/debian/glib2.0@2.58.3-2%2Bdeb10u3?distro=sid
+- pkg:deb/debian/glib2.0@2.66.7-1?distro=sid
+- pkg:deb/debian/glib2.0@2.66.8-1?distro=sid
+- pkg:deb/debian/glib2.0@2.74.6-2?distro=sid
+references:
+- id: 183404
+  reference_id: ''
+  url: https://gitlab.gnome.org/GNOME/glib/-/merge_requests/1942
+- id: 183405
+  reference_id: ''
+  url: https://gitlab.gnome.org/GNOME/glib/-/merge_requests/1944
+- id: 129699
+  reference_id: '982779'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982779
+- id: 183403
+  reference_id: CVE-2021-27218
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-27218
+severities: []
+summary: An issue was discovered in GNOME GLib before 2.66.7 and 2.67.x before 2.67.4.
+  If g_byte_array_new_take() was called with a buffer of 4GB or more on a 64-bit platform,
+  the length would be truncated modulo 2**32, causing unintended length truncation.
+vulnerability_id: VCID-bpch-sc7f-aaab
+weaknesses: []

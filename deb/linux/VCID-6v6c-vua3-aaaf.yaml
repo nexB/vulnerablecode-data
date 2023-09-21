@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2020-10690
+fixed_purl:
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@4.19.98-1?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@5.4.8-1?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: There is a use-after-free in kernel versions before 5.5 due to a race condition
+  between the release of ptp_clock and cdev while resource deallocation. When a (high
+  privileged) process allocates a ptp device file (like /dev/ptpX) and voluntarily
+  goes to sleep. During this time if the underlying device is removed, it can cause
+  an exploitable condition as the process wakes up to terminate and clean all attached
+  files. The system crashes due to the cdev structure being invalid (as already freed)
+  which is pointed to by the inode.
+vulnerability_id: VCID-6v6c-vua3-aaaf
+weaknesses: []

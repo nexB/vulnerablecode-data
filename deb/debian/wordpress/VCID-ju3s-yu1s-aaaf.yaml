@@ -1,0 +1,79 @@
+vulnerability_id: VCID-ju3s-yu1s-aaaf
+aliases:
+  - CVE-2017-8295
+summary: 'WordPress through 4.7.4 relies on the Host HTTP header for a password-reset e-mail
+  message, which makes it easier for remote attackers to reset arbitrary passwords by making
+  a crafted wp-login.php?action=lostpassword request and then arranging for this message to
+  bounce or be resent, leading to transmission of the reset key to a mailbox on an attacker-controlled
+  SMTP server. This is related to problematic use of the SERVER_NAME variable in wp-includes/pluggable.php
+  in conjunction with the PHP mail function. Exploitation is not achievable in all cases because
+  it requires at least one of the following: (1) the attacker can prevent the victim from receiving
+  any e-mail messages for an extended period of time (such as 5 days), (2) the victim''s e-mail
+  system sends an autoresponse containing the original message, or (3) the victim manually composes
+  a reply containing the original message.'
+severities:
+  - id: 681036
+    reference_id: 1444475
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681037
+    reference_id: 1444476
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681038
+    reference_id: 712247
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681039
+    reference_id: 712249
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 297087
+    reference_id: 712250
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 297085
+    reference_id: 712250
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 1444475
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-8295.html
+    reference_id:
+  - id: 1444476
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8295
+    reference_id:
+  - id: 712247
+    url: https://exploitbox.io/vuln/WordPress-Exploit-4-7-Unauth-Password-Reset-0day-CVE-2017-8295.html
+    reference_id:
+  - id: 712248
+    url: https://wpvulndb.com/vulnerabilities/8807
+    reference_id:
+  - id: 712249
+    url: https://www.exploit-db.com/exploits/41963/
+    reference_id:
+  - id: 712244
+    url: http://www.debian.org/security/2017/dsa-3870
+    reference_id:
+  - id: 712245
+    url: http://www.securityfocus.com/bid/98295
+    reference_id:
+  - id: 712246
+    url: http://www.securitytracker.com/id/1038403
+    reference_id:
+  - id: 147177
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=862053
+    reference_id: 862053
+  - id: 90100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+  - id: 712250
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8295
+    reference_id: CVE-2017-8295
+weaknesses: []

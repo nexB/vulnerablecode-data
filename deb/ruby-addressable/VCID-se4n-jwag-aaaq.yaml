@@ -1,0 +1,76 @@
+affected_purls:
+- pkg:deb/debian/ruby-addressable@2.5.2-1
+- pkg:gem/addressable@2.3.2
+- pkg:gem/addressable@2.3.3
+- pkg:gem/addressable@2.3.4
+- pkg:gem/addressable@2.3.5
+- pkg:gem/addressable@2.3.6
+- pkg:gem/addressable@2.3.7
+- pkg:gem/addressable@2.3.8
+- pkg:gem/addressable@2.4.0
+- pkg:gem/addressable@2.5.0
+- pkg:gem/addressable@2.5.1
+- pkg:gem/addressable@2.5.2
+- pkg:gem/addressable@2.6.0
+- pkg:gem/addressable@2.7.0
+aliases:
+- CVE-2021-32740
+- GHSA-jxhc-q857-3j6g
+fixed_purl:
+- pkg:deb/debian/ruby-addressable@2.7.0-1~bpo10%2B1
+- pkg:gem/addressable@2.8.0
+references:
+- id: 161044
+  reference_id: ''
+  url: https://github.com/sporkmonger/addressable/commit/0d8a3127e35886ce9284810a7f2438bff6b43cbc
+- id: 161045
+  reference_id: ''
+  url: https://github.com/sporkmonger/addressable/commit/89c76130ce255c601f642a018cb5fb5a80e679a7
+- id: 161049
+  reference_id: ''
+  url: https://github.com/sporkmonger/addressable/commit/92685096b1f7235ed8986c03ce30a24972eed848#diff-fb36d3dc67e6565ffde17e666a98697f48e76dac38fabf1bb9e97cdf3b583d76
+- id: 161047
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SDFQM2NHNAZ3NNUQZEJTYECYZYXV4UDS/
+- id: 161048
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WYPVOOQU7UB277UUERJMCNQLRCXRCIQ5/
+- id: 129808
+  reference_id: '990791'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990791
+- id: 161046
+  reference_id: CVE-2021-32740
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-32740
+- id: 161051
+  reference_id: CVE-2021-32740.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/addressable/CVE-2021-32740.yml
+- id: 161050
+  reference_id: GHSA-jxhc-q857-3j6g
+  url: https://github.com/advisories/GHSA-jxhc-q857-3j6g
+- id: 161043
+  reference_id: GHSA-jxhc-q857-3j6g
+  url: https://github.com/sporkmonger/addressable/security/advisories/GHSA-jxhc-q857-3j6g
+severities:
+- id: 23707
+  reference_id: 161050
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 23706
+  reference_id: 161043
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Addressable is an alternative implementation to the URI implementation that
+  is part of Ruby's standard library. An uncontrolled resource consumption vulnerability
+  exists after version 2.3.0 through version 2.7.0. Within the URI template implementation
+  in Addressable, a maliciously crafted template may result in uncontrolled resource
+  consumption, leading to denial of service when matched against a URI. In typical
+  usage, templates would not normally be read from untrusted user input, but nonetheless,
+  no previous security advisory for Addressable has cautioned against doing this.
+  Users of the parsing capabilities in Addressable but not the URI template capabilities
+  are unaffected. The vulnerability is patched in version 2.8.0. As a workaround,
+  only create Template objects from trusted sources that have been validated not to
+  produce catastrophic backtracking.
+vulnerability_id: VCID-se4n-jwag-aaaq
+weaknesses: []

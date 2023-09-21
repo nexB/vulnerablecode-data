@@ -1,0 +1,134 @@
+vulnerability_id: VCID-qyfw-ca38-aaad
+aliases:
+  - CVE-2016-7796
+summary: The manager_dispatch_notify_fd function in systemd allows local users to cause a denial
+  of service (system hang) via a zero-length message received over a notify socket, which causes
+  an error to be returned and the notification handler to be disabled.
+severities:
+  - id: 671347
+    reference_id: 1436886
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 626849
+    reference_id: 943340
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+  - id: 671348
+    reference_id: 1436887
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671340
+    reference_id: 1436879
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 239125
+    reference_id: 657645
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 239123
+    reference_id: 657645
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 626848
+    reference_id: 943339
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 657638
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00015.html
+    reference_id:
+  - id: 657639
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00016.html
+    reference_id:
+  - id: 1436886
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7796.html
+    reference_id:
+  - id: 657640
+    url: http://rhn.redhat.com/errata/RHSA-2017-0003.html
+    reference_id:
+  - id: 943340
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-7796.json
+    reference_id:
+  - id: 1436887
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7796
+    reference_id:
+  - id: 657643
+    url: https://github.com/systemd/systemd/issues/4234#issuecomment-250441246
+    reference_id:
+  - id: 657644
+    url: https://rhn.redhat.com/errata/RHBA-2015-2092.html
+    reference_id:
+  - id: 657636
+    url: https://www.agwa.name/blog/post/how_to_crash_systemd_in_one_tweet
+    reference_id:
+  - id: 1436879
+    url: http://www.openwall.com/lists/oss-security/2016/09/30
+    reference_id:
+  - id: 657631
+    url: http://www.openwall.com/lists/oss-security/2016/09/30/1
+    reference_id:
+  - id: 657641
+    url: http://www.securityfocus.com/bid/93250
+    reference_id:
+  - id: 657633
+    url: http://www.securitytracker.com/id/1037320
+    reference_id:
+  - id: 133187
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839607
+    reference_id: 839607
+  - id: 657646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:209:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:209:*:*:*:*:*:*:*
+  - id: 657647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:213:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:213:*:*:*:*:*:*:*
+  - id: 657648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:214:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:214:*:*:*:*:*:*:*
+  - id: 657649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:229:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:229:*:*:*:*:*:*:*
+  - id: 643591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:novell:suse_linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:novell:suse_linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+  - id: 657650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:novell:suse_linux_enterprise_server:12.0:*:*:*:ltss:*:*:*
+    reference_id: cpe:2.3:o:novell:suse_linux_enterprise_server:12.0:*:*:*:ltss:*:*:*
+  - id: 611726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:novell:suse_linux_enterprise_server:12.0:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:novell:suse_linux_enterprise_server:12.0:sp1:*:*:*:*:*:*
+  - id: 657651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:novell:suse_linux_enterprise_server_for_sap:12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:novell:suse_linux_enterprise_server_for_sap:12.0:*:*:*:*:*:*:*
+  - id: 611727
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:novell:suse_linux_enterprise_software_development_kit:12.0:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:novell:suse_linux_enterprise_software_development_kit:12.0:sp1:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 657645
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-7796
+    reference_id: CVE-2016-7796
+  - id: 943338
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1381911
+    reference_id: RHBA-2015:2092
+  - id: 943339
+    url: https://access.redhat.com/errata/RHSA-2017:0003
+    reference_id: RHSA-2017:0003
+weaknesses: []

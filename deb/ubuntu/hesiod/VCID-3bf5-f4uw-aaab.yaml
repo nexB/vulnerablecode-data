@@ -1,0 +1,68 @@
+vulnerability_id: VCID-3bf5-f4uw-aaab
+aliases:
+  - CVE-2016-10151
+summary: The hesiod_init function in lib/hesiod.c in Hesiod 3.2.1 compares EUID with UID to
+  determine whether to use configurations from environment variables, which allows local users
+  to gain privileges via the (1) HESIOD_CONFIG or (2) HES_DOMAIN environment variable and leveraging
+  certain SUID/SGUID binary.
+severities:
+  - id: 666337
+    reference_id: 1432796
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 49860
+    reference_id: 174301
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 666338
+    reference_id: 1432797
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 213107
+    reference_id: 627457
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 213105
+    reference_id: 627457
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1432796
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10151.html
+    reference_id:
+  - id: 174301
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-10151.json
+    reference_id:
+  - id: 627454
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1332508
+    reference_id:
+  - id: 1432797
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10151
+    reference_id:
+  - id: 627455
+    url: https://github.com/achernya/hesiod/pull/9
+    reference_id:
+  - id: 627456
+    url: https://security.gentoo.org/glsa/201805-01
+    reference_id:
+  - id: 627452
+    url: http://www.openwall.com/lists/oss-security/2017/01/21/1
+    reference_id:
+  - id: 627453
+    url: http://www.securityfocus.com/bid/90952
+    reference_id:
+  - id: 41705
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=852094
+    reference_id: 852094
+  - id: 627458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hesiod_project:hesiod:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hesiod_project:hesiod:3.2.1:*:*:*:*:*:*:*
+  - id: 627457
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10151
+    reference_id: CVE-2016-10151
+weaknesses: []

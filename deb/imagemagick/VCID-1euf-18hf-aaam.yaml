@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2020-25676
+fixed_purl:
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.24%2Bdfsg-1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.6?distro=sid
+references: []
+severities: []
+summary: In CatromWeights(), MeshInterpolate(), InterpolatePixelChannel(), InterpolatePixelChannels(),
+  and InterpolatePixelInfo(), which are all functions in /MagickCore/pixel.c, there
+  were multiple unconstrained pixel offset calculations which were being used with
+  the floor() function. These calculations produced undefined behavior in the form
+  of out-of-range and integer overflows, as identified by UndefinedBehaviorSanitizer.
+  These instances of undefined behavior could be triggered by an attacker who is able
+  to supply a crafted input file to be processed by ImageMagick. These issues could
+  impact application availability or potentially cause other problems related to undefined
+  behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.
+vulnerability_id: VCID-1euf-18hf-aaam
+weaknesses: []

@@ -1,0 +1,54 @@
+vulnerability_id: VCID-14m8-r11v-aaam
+aliases:
+  - CVE-2020-17437
+summary: An issue was discovered in uIP 1.0, as used in Contiki 3.0 and other products. When
+  the Urgent flag is set in a TCP packet, and the stack is configured to ignore the urgent data,
+  the stack attempts to use the value of the Urgent pointer bytes to separate the Urgent data
+  from the normal data, by calculating the offset at which the normal data should be present
+  in the global buffer. However, the length of this offset is not checked; therefore, for large
+  values of the Urgent pointer bytes, the data pointer can point to memory that is way beyond
+  the data buffer in uip_process in uip.c.
+severities:
+  - id: 604477
+    reference_id: 927289
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H
+  - id: 604476
+    reference_id: 927288
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 450930
+    reference_id: 827198
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 450928
+    reference_id: 827198
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H
+references:
+  - id: 927289
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-17437.json
+    reference_id:
+  - id: 819584
+    url: https://cert-portal.siemens.com/productcert/pdf/ssa-541018.pdf
+    reference_id:
+  - id: 819564
+    url: https://us-cert.cisa.gov/ics/advisories/icsa-20-343-01
+    reference_id:
+  - id: 819565
+    url: https://www.kb.cert.org/vuls/id/815128
+    reference_id:
+  - id: 927288
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1899855
+    reference_id: 1899855
+  - id: 692238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:open-iscsi_project:open-iscsi:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:open-iscsi_project:open-iscsi:*:*:*:*:*:*:*:*
+  - id: 827198
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-17437
+    reference_id: CVE-2020-17437
+weaknesses: []

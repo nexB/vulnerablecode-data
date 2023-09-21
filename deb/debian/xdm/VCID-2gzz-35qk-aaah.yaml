@@ -1,0 +1,50 @@
+vulnerability_id: VCID-2gzz-35qk-aaah
+aliases:
+  - CVE-2013-2179
+summary: X.Org xdm 1.1.10, 1.1.11, and possibly other versions, when performing authentication
+  using certain implementations of the crypt API function that can return NULL, allows remote
+  attackers to cause a denial of service (NULL pointer dereference and crash) by attempting
+  to log into an account whose password field contains invalid characters, as demonstrated using
+  the crypt function from glibc 2.17 and later with (1) the "!" character in the salt portion
+  of a password field or (2) a password that has been encrypted using DES or MD5 in FIPS-140
+  mode.
+severities:
+  - id: 56492
+    reference_id: 182178
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 165005
+    reference_id: 523919
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+references:
+  - id: 523915
+    url: http://cgit.freedesktop.org/xorg/app/xdm/commit/?id=8d1eb5c74413e4c9a21f689fc106949b121c0117
+    reference_id:
+  - id: 523916
+    url: http://lists.opensuse.org/opensuse-updates/2013-07/msg00002.html
+    reference_id:
+  - id: 182179
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-2179.json
+    reference_id:
+  - id: 523918
+    url: https://bugs.mageia.org/show_bug.cgi?id=10682
+    reference_id:
+  - id: 523917
+    url: http://www.openwall.com/lists/oss-security/2013/06/13/8
+    reference_id:
+  - id: 182178
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=973695
+    reference_id: 973695
+  - id: 523920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:x_display_manager:1.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:x_display_manager:1.1.10:*:*:*:*:*:*:*
+  - id: 523921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:x_display_manager:1.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:x_display_manager:1.1.11:*:*:*:*:*:*:*
+  - id: 523919
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-2179
+    reference_id: CVE-2013-2179
+weaknesses: []

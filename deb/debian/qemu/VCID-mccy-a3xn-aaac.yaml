@@ -1,0 +1,261 @@
+vulnerability_id: VCID-mccy-a3xn-aaac
+aliases:
+  - CVE-2016-5126
+summary: Heap-based buffer overflow in the iscsi_aio_ioctl function in block/iscsi.c in QEMU
+  allows local guest OS users to cause a denial of service (QEMU process crash) or possibly
+  execute arbitrary code via a crafted iSCSI asynchronous I/O ioctl call.
+severities:
+  - id: 669540
+    reference_id: 1435356
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 49526
+    reference_id: 173890
+    scoring_system: cvssv3
+    value: '5.4'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:L
+  - id: 669542
+    reference_id: 1435357
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 669543
+    reference_id: 647640
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 669076
+    reference_id: 1434961
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 669541
+    reference_id: 647635
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 230653
+    reference_id: 647641
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 230651
+    reference_id: 647641
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 47847
+    reference_id: 172442
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47848
+    reference_id: 172443
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47851
+    reference_id: 172446
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47853
+    reference_id: 172448
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47854
+    reference_id: 172449
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47850
+    reference_id: 172445
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 47852
+    reference_id: 172447
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 647627
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=a6b3167fa0e825aebb5a7cd8b437b6d41584a196
+    reference_id:
+  - id: 1435356
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5126.html
+    reference_id:
+  - id: 647628
+    url: http://rhn.redhat.com/errata/RHSA-2016-1606.html
+    reference_id:
+  - id: 647629
+    url: http://rhn.redhat.com/errata/RHSA-2016-1607.html
+    reference_id:
+  - id: 647630
+    url: http://rhn.redhat.com/errata/RHSA-2016-1653.html
+    reference_id:
+  - id: 647631
+    url: http://rhn.redhat.com/errata/RHSA-2016-1654.html
+    reference_id:
+  - id: 647632
+    url: http://rhn.redhat.com/errata/RHSA-2016-1655.html
+    reference_id:
+  - id: 647633
+    url: http://rhn.redhat.com/errata/RHSA-2016-1756.html
+    reference_id:
+  - id: 647634
+    url: http://rhn.redhat.com/errata/RHSA-2016-1763.html
+    reference_id:
+  - id: 173890
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-5126.json
+    reference_id:
+  - id: 647638
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1340924
+    reference_id:
+  - id: 1435357
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5126
+    reference_id:
+  - id: 647639
+    url: https://lists.debian.org/debian-lts-announce/2019/09/msg00021.html
+    reference_id:
+  - id: 647640
+    url: https://lists.gnu.org/archive/html/qemu-block/2016-05/msg00779.html
+    reference_id:
+  - id: 639973
+    url: https://security.gentoo.org/glsa/201609-01
+    reference_id:
+  - id: 1434961
+    url: https://ubuntu.com/security/notices/USN-3047-1
+    reference_id:
+  - id: 647635
+    url: http://www.openwall.com/lists/oss-security/2016/05/30/6
+    reference_id:
+  - id: 647636
+    url: http://www.openwall.com/lists/oss-security/2016/05/30/7
+    reference_id:
+  - id: 16925
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html
+    reference_id:
+  - id: 647637
+    url: http://www.securityfocus.com/bid/90948
+    reference_id:
+  - id: 645225
+    url: http://www.ubuntu.com/usn/USN-3047-1
+    reference_id:
+  - id: 645226
+    url: http://www.ubuntu.com/usn/USN-3047-2
+    reference_id:
+  - id: 111926
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826151
+    reference_id: 826151
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 158176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+  - id: 158177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+  - id: 162143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+  - id: 640062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 548663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:linux:7:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:linux:7:-:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 596789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.2:*:*:*:*:*:*:*
+  - id: 540941
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.3:*:*:*:*:*:*:*
+  - id: 540942
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+  - id: 540943
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+  - id: 540944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+  - id: 540945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 540946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+  - id: 162135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+  - id: 162136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 540947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 647641
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-5126
+    reference_id: CVE-2016-5126
+  - id: 172442
+    url: https://access.redhat.com/errata/RHSA-2016:1606
+    reference_id: RHSA-2016:1606
+  - id: 172443
+    url: https://access.redhat.com/errata/RHSA-2016:1607
+    reference_id: RHSA-2016:1607
+  - id: 172446
+    url: https://access.redhat.com/errata/RHSA-2016:1653
+    reference_id: RHSA-2016:1653
+  - id: 172448
+    url: https://access.redhat.com/errata/RHSA-2016:1654
+    reference_id: RHSA-2016:1654
+  - id: 172449
+    url: https://access.redhat.com/errata/RHSA-2016:1655
+    reference_id: RHSA-2016:1655
+  - id: 172445
+    url: https://access.redhat.com/errata/RHSA-2016:1756
+    reference_id: RHSA-2016:1756
+  - id: 172447
+    url: https://access.redhat.com/errata/RHSA-2016:1763
+    reference_id: RHSA-2016:1763
+weaknesses: []

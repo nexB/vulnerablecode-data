@@ -1,0 +1,42 @@
+vulnerability_id: VCID-aq15-mdb5-aaan
+aliases:
+  - CVE-2018-19148
+summary: Caddy through 0.11.0 sends incorrect certificates for certain invalid requests, making
+  it easier for attackers to enumerate hostnames. Specifically, when unable to match a Host
+  header with a vhost in its configuration, it serves the X.509 certificate for a randomly selected
+  vhost in its configuration. Repeated requests (with a nonexistent hostname in the Host header)
+  permit full enumeration of all certificates on the server. This generally permits an attacker
+  to easily and accurately discover the existence of and relationships among hostnames that
+  weren't meant to be public, though this information could likely have been discovered via
+  other methods with additional effort.
+severities:
+  - id: 337681
+    reference_id: 745400
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 337679
+    reference_id: 745400
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 745396
+    url: https://github.com/mholt/caddy/issues/1303
+    reference_id:
+  - id: 745397
+    url: https://github.com/mholt/caddy/issues/2334
+    reference_id:
+  - id: 745398
+    url: https://github.com/mholt/caddy/pull/2015
+    reference_id:
+  - id: 745399
+    url: https://securitytrails.com/blog/caddy-web-server-ssl-bug
+    reference_id:
+  - id: 168157
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:caddyserver:caddy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:caddyserver:caddy:*:*:*:*:*:*:*:*
+  - id: 745400
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-19148
+    reference_id: CVE-2018-19148
+weaknesses: []

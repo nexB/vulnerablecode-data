@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2018-16890
+fixed_purl:
+- pkg:deb/debian/curl@7.64.0-1?distro=sid
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u7?distro=sid
+- pkg:deb/debian/curl@7.88.1-10?distro=sid
+references: []
+severities: []
+summary: libcurl versions from 7.36.0 to before 7.64.0 is vulnerable to a heap buffer
+  out-of-bounds read. The function handling incoming NTLM type-2 messages (`lib/vauth/ntlm.c:ntlm_decode_type2_target`)
+  does not validate incoming data correctly and is subject to an integer overflow
+  vulnerability. Using that overflow, a malicious or broken NTLM server could trick
+  libcurl to accept a bad length + offset combination that would lead to a buffer
+  read out-of-bounds.
+vulnerability_id: VCID-c965-p3vf-aaab
+weaknesses: []

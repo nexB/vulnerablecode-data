@@ -1,0 +1,63 @@
+vulnerability_id: VCID-z42z-d7z3-aaap
+aliases:
+  - CVE-2020-14312
+summary: A flaw was found in the default configuration of dnsmasq, as shipped with Fedora versions
+  prior to 31 and in all versions Red Hat Enterprise Linux, where it listens on any interface
+  and accepts queries from addresses outside of its local subnet. In particular, the option
+  `local-service` is not enabled. Running dnsmasq in this manner may inadvertently make it an
+  open resolver accessible from any address on the internet. This flaw allows an attacker to
+  conduct a Distributed Denial of Service (DDoS) against other systems.
+severities:
+  - id: 696376
+    reference_id: 1456501
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 611269
+    reference_id: 932264
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:N/A:L
+  - id: 696377
+    reference_id: 1456502
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 611268
+    reference_id: 932263
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 441783
+    reference_id: 820640
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 441781
+    reference_id: 820640
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1456501
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-14312.html
+    reference_id:
+  - id: 932264
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14312.json
+    reference_id:
+  - id: 1456502
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14312
+    reference_id:
+  - id: 932263
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1851342
+    reference_id: 1851342
+  - id: 40532
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=732610
+    reference_id: 732610
+  - id: 440271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:*:*:*:*:*:*:*:*
+  - id: 820640
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14312
+    reference_id: CVE-2020-14312
+weaknesses: []

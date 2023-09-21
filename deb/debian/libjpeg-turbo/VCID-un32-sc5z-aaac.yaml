@@ -1,0 +1,48 @@
+vulnerability_id: VCID-un32-sc5z-aaac
+aliases:
+  - CVE-2021-46822
+summary: The PPM reader in libjpeg-turbo through 2.0.90 mishandles use of tjLoadImage for loading
+  a 16-bit binary PPM file into a grayscale buffer and loading a 16-bit binary PGM file into
+  an RGB buffer. This is related to a heap-based buffer overflow in the get_word_rgb_row function
+  in rdppm.c.
+severities:
+  - id: 628825
+    reference_id: 944774
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 628824
+    reference_id: 944773
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 632333
+    reference_id: 944686
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 632331
+    reference_id: 944686
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 944774
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-46822.json
+    reference_id:
+  - id: 944684
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/221567
+    reference_id:
+  - id: 944685
+    url: https://github.com/libjpeg-turbo/libjpeg-turbo/commit/f35fd27ec641c42d6b115bfa595e483ec58188d2
+    reference_id:
+  - id: 944773
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2100044
+    reference_id: 2100044
+  - id: 589320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libjpeg-turbo:libjpeg-turbo:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libjpeg-turbo:libjpeg-turbo:*:*:*:*:*:*:*:*
+  - id: 944686
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-46822
+    reference_id: CVE-2021-46822
+weaknesses: []

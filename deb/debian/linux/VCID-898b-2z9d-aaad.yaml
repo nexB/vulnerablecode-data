@@ -1,0 +1,79 @@
+vulnerability_id: VCID-898b-2z9d-aaad
+aliases:
+  - CVE-2022-1048
+summary: A use-after-free flaw was found in the Linux kernel’s sound subsystem in the way a
+  user triggers concurrent calls of PCM hw_params. The hw_free ioctls or similar race condition
+  happens inside ALSA PCM for other ioctls. This flaw allows a local user to crash or potentially
+  escalate their privileges on the system.
+severities:
+  - id: 136371
+    reference_id: 432477
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 578194
+    reference_id: 909973
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 578192
+    reference_id: 909973
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 432477
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-1048.json
+    reference_id:
+  - id: 909971
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2066706
+    reference_id:
+  - id: 909972
+    url: https://lore.kernel.org/lkml/20220322170720.3529-5-tiwai@suse.de/T/#m1d3b791b815556012c6be92f1c4a7086b854f7f3
+    reference_id:
+  - id: 948201
+    url: https://security.netapp.com/advisory/ntap-20220629-0001/
+    reference_id:
+  - id: 900290
+    url: https://www.debian.org/security/2022/dsa-5127
+    reference_id:
+  - id: 948102
+    url: https://www.debian.org/security/2022/dsa-5173
+    reference_id:
+  - id: 169237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 892011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc1:*:*:*:*:*:*
+  - id: 892012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc2:*:*:*:*:*:*
+  - id: 892013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc3:*:*:*:*:*:*
+  - id: 892014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc4:*:*:*:*:*:*
+  - id: 892015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc5:*:*:*:*:*:*
+  - id: 892016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc6:*:*:*:*:*:*
+  - id: 909631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc7:*:*:*:*:*:*
+  - id: 909974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.17:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.17:rc8:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 909973
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-1048
+    reference_id: CVE-2022-1048
+weaknesses: []

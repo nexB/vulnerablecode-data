@@ -1,0 +1,29 @@
+vulnerability_id: VCID-gert-cnbu-aaak
+aliases:
+  - CVE-2019-14871
+summary: The REENT_CHECK macro (see newlib/libc/include/sys/reent.h) as used by REENT_CHECK_TM,
+  REENT_CHECK_MISC, REENT_CHECK_MP and other newlib macros in versions prior to 3.3.0, does
+  not check for memory allocation problems when the DEBUG flag is unset (as is the case in production
+  firmware builds).
+severities:
+  - id: 383241
+    reference_id: 779449
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 383239
+    reference_id: 779449
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 779420
+    url: https://census-labs.com/news/2020/01/31/multiple-null-pointer-dereference-vulnerabilities-in-newlib/
+    reference_id:
+  - id: 779422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:newlib_project:newlib:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:newlib_project:newlib:*:*:*:*:*:*:*:*
+  - id: 779449
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14871
+    reference_id: CVE-2019-14871
+weaknesses: []

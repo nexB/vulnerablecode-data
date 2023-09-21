@@ -1,0 +1,119 @@
+vulnerability_id: VCID-9xje-8wsd-aaam
+aliases:
+  - CVE-2020-10685
+  - GHSA-77g3-3j5w-64w4
+  - PYSEC-2020-1
+summary: A flaw was found in Ansible Engine affecting Ansible Engine versions 2.7.x before 2.7.17
+  and 2.8.x before 2.8.11 and 2.9.x before 2.9.7 as well as Ansible Tower before and including
+  versions 3.4.5 and 3.5.5 and 3.6.3 when using modules which decrypts vault files such as assemble,
+  script, unarchive, win_copy, aws_s3 or copy modules. The temporary directory is created in
+  /tmp leaves the s ts unencrypted. On Operating Systems which /tmp is not a tmpfs but part
+  of the root partition, the directory is only cleared on boot and the decryp emains when the
+  host is switched off. The system will be vulnerable when the system is not running. So decrypted
+  data must be cleared as soon as possible and the data which normally is encrypted ble.
+severities:
+  - id: 53364
+    reference_id: 178401
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N
+  - id: 430344
+    reference_id: 22268
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 430342
+    reference_id: 22268
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 4401
+    reference_id: 25006
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 52939
+    reference_id: 177904
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 52940
+    reference_id: 177905
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53190
+    reference_id: 178205
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53191
+    reference_id: 178208
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 178401
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10685.json
+    reference_id:
+  - id: 6562
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10685
+    reference_id:
+  - id: 6563
+    url: https://github.com/ansible/ansible/pull/68433
+    reference_id:
+  - id: 6564
+    url: https://security.gentoo.org/glsa/202006-11
+    reference_id:
+  - id: 20464
+    url: https://www.debian.org/security/2021/dsa-4950
+    reference_id:
+  - id: 659828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+  - id: 655192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+  - id: 725053
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage:2.0:*:*:*:*:*:*:*
+  - id: 724180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage:3.0:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 769906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:15:*:*:*:*:*:*:*
+  - id: 779562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:storage:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:storage:3.0:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 22268
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10685
+    reference_id: CVE-2020-10685
+  - id: 25006
+    url: https://github.com/advisories/GHSA-77g3-3j5w-64w4
+    reference_id: GHSA-77g3-3j5w-64w4
+  - id: 178400
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1814627
+    reference_id: RHBA-2020:1539
+  - id: 177904
+    url: https://access.redhat.com/errata/RHSA-2020:1541
+    reference_id: RHSA-2020:1541
+  - id: 177905
+    url: https://access.redhat.com/errata/RHSA-2020:1542
+    reference_id: RHSA-2020:1542
+  - id: 178205
+    url: https://access.redhat.com/errata/RHSA-2020:1543
+    reference_id: RHSA-2020:1543
+  - id: 178208
+    url: https://access.redhat.com/errata/RHSA-2020:1544
+    reference_id: RHSA-2020:1544
+weaknesses: []

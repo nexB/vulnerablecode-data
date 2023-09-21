@@ -1,0 +1,66 @@
+vulnerability_id: VCID-7exr-hbp5-aaam
+aliases:
+  - CVE-2018-16947
+summary: An issue was discovered in OpenAFS before 1.6.23 and 1.8.x before 1.8.2. The backup
+  tape controller (butc) process accepts incoming RPCs but does not require (or allow for) authentication
+  of those RPCs. Handling those RPCs results in operations being performed with administrator
+  credentials, including dumping/restoring volume contents and manipulating the backup database.
+  For example, an unauthenticated attacker can replace any volume's content with arbitrary data.
+severities:
+  - id: 685227
+    reference_id: 740211
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685228
+    reference_id: 1447648
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685229
+    reference_id: 1447649
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 331184
+    reference_id: 740214
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 331182
+    reference_id: 740214
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 740211
+    url: http://openafs.org/pages/security/OPENAFS-SA-2018-001.txt
+    reference_id:
+  - id: 1447648
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-16947.html
+    reference_id:
+  - id: 1447649
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16947
+    reference_id:
+  - id: 740212
+    url: https://lists.debian.org/debian-lts-announce/2018/09/msg00024.html
+    reference_id:
+  - id: 740213
+    url: https://www.debian.org/security/2018/dsa-4302
+    reference_id:
+  - id: 82870
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908616
+    reference_id: 908616
+  - id: 166017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 740214
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16947
+    reference_id: CVE-2018-16947
+weaknesses: []

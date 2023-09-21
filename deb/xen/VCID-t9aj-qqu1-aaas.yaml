@@ -1,0 +1,29 @@
+affected_purls: []
+aliases:
+- CVE-2019-18424
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: An issue was discovered in Xen through 4.12.x allowing attackers to gain
+  host OS privileges via DMA in a situation where an untrusted domain has access to
+  a physical device. This occurs because passed through PCI devices may corrupt host
+  memory after deassignment. When a PCI device is assigned to an untrusted domain,
+  it is possible for that domain to program the device to DMA to an arbitrary address.
+  The IOMMU is used to protect the host from malicious DMA by making sure that the
+  device addresses can only target memory assigned to the guest. However, when the
+  guest domain is torn down, or the device is deassigned, the device is assigned back
+  to dom0, thus allowing any in-flight DMA to potentially target critical host data.
+  An untrusted domain with access to a physical device can DMA into host memory, leading
+  to privilege escalation. Only systems where guests are given direct access to physical
+  devices capable of DMA (PCI pass-through) are vulnerable. Systems which do not use
+  PCI pass-through are not vulnerable.
+vulnerability_id: VCID-t9aj-qqu1-aaas
+weaknesses: []

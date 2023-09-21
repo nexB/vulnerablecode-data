@@ -1,0 +1,93 @@
+vulnerability_id: VCID-kufz-ddrc-aaak
+aliases:
+  - CVE-2017-18202
+summary: The __oom_reap_task_mm function in mm/oom_kill.c in the Linux kernel before 4.14.4
+  mishandles gather operations, which allows attackers to cause a denial of service (TLB entry
+  leak or use-after-free) or possibly have unspecified other impact by triggering a copy_to_user
+  call within a certain time window.
+severities:
+  - id: 677412
+    reference_id: 693170
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677413
+    reference_id: 1441490
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618119
+    reference_id: 937271
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H
+  - id: 677414
+    reference_id: 1441491
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677415
+    reference_id: 693173
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677416
+    reference_id: 693174
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618117
+    reference_id: 937269
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 276460
+    reference_id: 693175
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 276458
+    reference_id: 693175
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 618118
+    reference_id: 937270
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 693170
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=687cb0884a714ff484d038e9190edc874edcf146
+    reference_id:
+  - id: 1441490
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-18202.html
+    reference_id:
+  - id: 937271
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18202.json
+    reference_id:
+  - id: 1441491
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18202
+    reference_id:
+  - id: 693173
+    url: https://github.com/torvalds/linux/commit/687cb0884a714ff484d038e9190edc874edcf146
+    reference_id:
+  - id: 693174
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.4
+    reference_id:
+  - id: 693171
+    url: http://www.securityfocus.com/bid/103161
+    reference_id:
+  - id: 937269
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1549621
+    reference_id: 1549621
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 693175
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18202
+    reference_id: CVE-2017-18202
+  - id: 937270
+    url: https://access.redhat.com/errata/RHSA-2018:2772
+    reference_id: RHSA-2018:2772
+weaknesses: []

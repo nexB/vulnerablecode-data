@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2018-12714
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in the Linux kernel through 4.17.2. The filter parsing
+  in kernel/trace/trace_events_filter.c could be called with no filter, which is an
+  N=0 case when it expected at least one line to have been read, thus making the N-1
+  index invalid. This allows attackers to cause a denial of service (slab out-of-bounds
+  write) or possibly have unspecified other impact via crafted perf_event_open and
+  mmap system calls.
+vulnerability_id: VCID-4weu-e426-aaam
+weaknesses: []

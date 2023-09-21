@@ -1,0 +1,73 @@
+affected_purls:
+- pkg:deb/debian/ettercap@1:0.7.1-1sarge1
+- pkg:deb/debian/ettercap@1:0.7.3-1.2
+- pkg:deb/debian/ettercap@1:0.7.3-2.1%2Bsqueeze1
+- pkg:deb/debian/ettercap@1:0.7.3-2.1%2Bsqueeze2
+- pkg:deb/ubuntu/ettercap@1:0.6.b-2
+- pkg:deb/ubuntu/ettercap@1:0.7.1-1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.1ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.1ubuntu2
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.1ubuntu3
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.2ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.2ubuntu2
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.2ubuntu3
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.2ubuntu4
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1.4ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-1ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-2.1ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.3-2.1ubuntu2
+- pkg:deb/ubuntu/ettercap@1:0.7.3-2ubuntu1
+- pkg:deb/ubuntu/ettercap@1:0.7.4.1-1
+- pkg:deb/ubuntu/ettercap@1:0.7.4.2-1
+- pkg:deb/ubuntu/ettercap@1:0.7.5.1-1
+- pkg:deb/ubuntu/ettercap@1:0.7.5.1-2
+- pkg:deb/ubuntu/ettercap@1:0.7.5.1-3
+- pkg:deb/ubuntu/ettercap@1:0.7.5.2-1
+- pkg:deb/ubuntu/ettercap@1:0.7.5.2-2
+- pkg:deb/ubuntu/ettercap@1:0.7.5-3
+- pkg:deb/ubuntu/ettercap@1:0.7.5.3-1
+- pkg:deb/ubuntu/ettercap@1:0.7.5-4
+- pkg:deb/ubuntu/ettercap@1:0.7.5-5
+- pkg:deb/ubuntu/ettercap@1:0.7.6-1
+- pkg:deb/ubuntu/ettercap@1:0.7.6-1~ubuntu12.10.1
+- pkg:deb/ubuntu/ettercap@1:0.8.0-11
+- pkg:deb/ubuntu/ettercap@1:0.8.0-11ubuntu0.1
+- pkg:deb/ubuntu/ettercap@1:0.8.0-6
+aliases:
+- CVE-2010-3843
+fixed_purl:
+- pkg:deb/debian/ettercap@1:0.7.4-1?distro=sid
+- pkg:deb/debian/ettercap@1:0.8.1-3
+- pkg:deb/debian/ettercap@1:0.8.2-10?distro=sid
+- pkg:deb/debian/ettercap@1:0.8.3.1-11?distro=sid
+- pkg:deb/debian/ettercap@1:0.8.3.1-3?distro=sid
+- pkg:deb/ubuntu/ettercap@1:0.8.0-11ubuntu0.3
+references:
+- id: 178414
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2010/CVE-2010-3843.html
+- id: 178415
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3843
+- id: 124304
+  reference_id: '600130'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=600130
+severities:
+- id: 28489
+  reference_id: 178414
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+- id: 28490
+  reference_id: 178415
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+summary: The GTK version of ettercap uses a global settings file at /tmp/.ettercap_gtk
+  and does not verify ownership of this file. When parsing this file for settings
+  in gtkui_conf_read() (src/interfacesgtk/ec_gtk_conf.c), an unchecked sscanf() call
+  allows a maliciously placed settings file to overflow a statically-sized buffer
+  on the stack.
+vulnerability_id: VCID-j4y1-ffat-aaaf
+weaknesses: []

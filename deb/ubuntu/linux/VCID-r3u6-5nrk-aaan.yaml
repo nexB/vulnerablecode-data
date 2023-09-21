@@ -1,0 +1,84 @@
+vulnerability_id: VCID-r3u6-5nrk-aaan
+aliases:
+  - CVE-2018-12633
+summary: An issue was discovered in the Linux kernel through 4.17.2. vbg_misc_device_ioctl()
+  in drivers/virt/vboxguest/vboxguest_linux.c reads the same user data twice with copy_from_user.
+  The header part of the user data is double-fetched, and a malicious user thread can tamper
+  with the critical variables (hdr.size_in and hdr.size_out) in the header between the two fetches
+  because of a race condition, leading to severe kernel errors, such as buffer over-accesses.
+  This bug can cause a local denial of service and information leakage.
+severities:
+  - id: 683951
+    reference_id: 730101
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683952
+    reference_id: 1446658
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616794
+    reference_id: 936320
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H
+  - id: 683953
+    reference_id: 730102
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683954
+    reference_id: 1446659
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683955
+    reference_id: 730103
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616793
+    reference_id: 936319
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 317747
+    reference_id: 730104
+    scoring_system: cvssv2
+    value: '6.3'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:N/A:C
+  - id: 317745
+    reference_id: 730104
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 730101
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=bd23a7269834dc7c1f93e83535d16ebc44b75eba
+    reference_id:
+  - id: 1446658
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12633.html
+    reference_id:
+  - id: 936320
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12633.json
+    reference_id:
+  - id: 730102
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=200131
+    reference_id:
+  - id: 1446659
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12633
+    reference_id:
+  - id: 730103
+    url: https://github.com/torvalds/linux/commit/bd23a7269834dc7c1f93e83535d16ebc44b75eba
+    reference_id:
+  - id: 936319
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1594170
+    reference_id: 1594170
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 730104
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12633
+    reference_id: CVE-2018-12633
+weaknesses: []

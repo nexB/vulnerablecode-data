@@ -1,0 +1,128 @@
+vulnerability_id: VCID-u9h9-w6gm-aaaa
+aliases:
+  - CVE-2020-10725
+summary: A flaw was found in DPDK version 19.11 and above that allows a malicious guest to cause
+  a segmentation fault of the vhost-user backend application running on the host, which could
+  result in a loss of connectivity for the other guests running on that host. This is caused
+  by a missing validity check of the descriptor address in the function `virtio_dev_rx_batch_packed()`.
+severities:
+  - id: 695378
+    reference_id: 1455734
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 48258
+    reference_id: 172754
+    scoring_system: cvssv3
+    value: '7.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 695379
+    reference_id: 1455735
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695373
+    reference_id: 1455729
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700199
+    reference_id: 277
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 48256
+    reference_id: 172752
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 430503
+    reference_id: 812226
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 430501
+    reference_id: 812226
+    scoring_system: cvssv3
+    value: '7.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 48245
+    reference_id: 172744
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48247
+    reference_id: 172746
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48257
+    reference_id: 172753
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 812211
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00045.html
+    reference_id:
+  - id: 1455734
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10725.html
+    reference_id:
+  - id: 172754
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10725.json
+    reference_id:
+  - id: 812224
+    url: https://bugs.dpdk.org/show_bug.cgi?id=270
+    reference_id:
+  - id: 812225
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10725
+    reference_id:
+  - id: 1455735
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10725
+    reference_id:
+  - id: 812214
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HRHKFVV4MRWNNJOYQOVP64L4UVWYPEO4/
+    reference_id:
+  - id: 1455729
+    url: https://ubuntu.com/security/notices/USN-4362-1
+    reference_id:
+  - id: 812216
+    url: https://www.openwall.com/lists/oss-security/2020/05/18/2
+    reference_id:
+  - id: 277
+    url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_id:
+  - id: 172752
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1828894
+    reference_id: 1828894
+  - id: 40411
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960936
+    reference_id: 960936
+  - id: 724179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dpdk:data_plane_development_kit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dpdk:data_plane_development_kit:*:*:*:*:*:*:*:*
+  - id: 726403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_communications_broker:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_communications_broker:3.1.0:*:*:*:*:*:*:*
+  - id: 807364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_communications_broker:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_communications_broker:3.2.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 812226
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10725
+    reference_id: CVE-2020-10725
+  - id: 172744
+    url: https://access.redhat.com/errata/RHSA-2020:2295
+    reference_id: RHSA-2020:2295
+  - id: 172746
+    url: https://access.redhat.com/errata/RHSA-2020:4806
+    reference_id: RHSA-2020:4806
+  - id: 172753
+    url: https://access.redhat.com/errata/RHSA-2021:1239
+    reference_id: RHSA-2021:1239
+weaknesses: []

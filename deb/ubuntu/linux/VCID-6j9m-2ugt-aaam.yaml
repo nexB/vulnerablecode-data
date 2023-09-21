@@ -1,0 +1,162 @@
+vulnerability_id: VCID-6j9m-2ugt-aaam
+aliases:
+  - CVE-2016-6197
+summary: fs/overlayfs/dir.c in the OverlayFS filesystem implementation in the Linux kernel before
+  4.6 does not properly verify the upper dentry before proceeding with unlink and rename system-call
+  processing, which allows local users to cause a denial of service (system crash) via a rename
+  system call that specifies a self-hardlink.
+severities:
+  - id: 670371
+    reference_id: 1436074
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 670372
+    reference_id: 1436075
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 48587
+    reference_id: 172980
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 670373
+    reference_id: 1436076
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 670374
+    reference_id: 1436077
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666801
+    reference_id: 1433133
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666802
+    reference_id: 1433134
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666803
+    reference_id: 1433135
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666804
+    reference_id: 1433136
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 234202
+    reference_id: 651809
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 234200
+    reference_id: 651809
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 48585
+    reference_id: 172978
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48586
+    reference_id: 172979
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 651803
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=11f3710417d026ea2f4fcf362d866342c5274185
+    reference_id:
+  - id: 1436074
+    url: http://openwall.com/lists/oss-security/2016/07/11/7
+    reference_id:
+  - id: 1436075
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-6197.html
+    reference_id:
+  - id: 641185
+    url: http://rhn.redhat.com/errata/RHSA-2016-1847.html
+    reference_id:
+  - id: 641186
+    url: http://rhn.redhat.com/errata/RHSA-2016-1875.html
+    reference_id:
+  - id: 172980
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-6197.json
+    reference_id:
+  - id: 651807
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1355650
+    reference_id:
+  - id: 1436076
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6197
+    reference_id:
+  - id: 1436077
+    url: https://github.com/linux-test-project/ltp/blob/master/testcases/kernel/syscalls/rename/rename13.c
+    reference_id:
+  - id: 651808
+    url: https://github.com/torvalds/linux/commit/11f3710417d026ea2f4fcf362d866342c5274185
+    reference_id:
+  - id: 1433133
+    url: https://ubuntu.com/security/notices/USN-3070-1
+    reference_id:
+  - id: 1433134
+    url: https://ubuntu.com/security/notices/USN-3070-2
+    reference_id:
+  - id: 1433135
+    url: https://ubuntu.com/security/notices/USN-3070-3
+    reference_id:
+  - id: 1433136
+    url: https://ubuntu.com/security/notices/USN-3070-4
+    reference_id:
+  - id: 651804
+    url: http://www.openwall.com/lists/oss-security/2016/07/11/8
+    reference_id:
+  - id: 16925
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html
+    reference_id:
+  - id: 159099
+    url: http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
+    reference_id:
+  - id: 651805
+    url: http://www.securityfocus.com/bid/91709
+    reference_id:
+  - id: 651806
+    url: http://www.securitytracker.com/id/1036273
+    reference_id:
+  - id: 630398
+    url: http://www.ubuntu.com/usn/USN-3070-1
+    reference_id:
+  - id: 630399
+    url: http://www.ubuntu.com/usn/USN-3070-2
+    reference_id:
+  - id: 630400
+    url: http://www.ubuntu.com/usn/USN-3070-3
+    reference_id:
+  - id: 630401
+    url: http://www.ubuntu.com/usn/USN-3070-4
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 111849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*
+  - id: 637803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:vm_server:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:vm_server:3.4:*:*:*:*:*:*:*
+  - id: 651809
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-6197
+    reference_id: CVE-2016-6197
+  - id: 172978
+    url: https://access.redhat.com/errata/RHSA-2016:1847
+    reference_id: RHSA-2016:1847
+  - id: 172979
+    url: https://access.redhat.com/errata/RHSA-2016:1875
+    reference_id: RHSA-2016:1875
+weaknesses: []

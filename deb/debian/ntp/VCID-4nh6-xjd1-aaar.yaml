@@ -1,0 +1,308 @@
+vulnerability_id: VCID-4nh6-xjd1-aaar
+aliases:
+  - CVE-2015-5300
+summary: The panic_gate check in NTP before 4.2.8p5 is only re-enabled after the first change
+  to the system clock that was greater than 128 milliseconds by default, which allows remote
+  attackers to set NTP to an arbitrary time when started with the -g option, or to alter the
+  time by up to 900 seconds otherwise by responding to an unspecified number of requests from
+  trusted sources, and leveraging a resulting denial of service (abort and restart).
+severities:
+  - id: 662759
+    reference_id: 1429941
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662761
+    reference_id: 1429943
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662565
+    reference_id: 1429773
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662760
+    reference_id: 1429942
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 668480
+    reference_id: 158996
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52834
+    reference_id: 177775
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 38077
+    reference_id: 159017
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 38075
+    reference_id: 159017
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 52833
+    reference_id: 177773
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 158984
+    url: http://aix.software.ibm.com/aix/efixes/security/ntp_advisory5.asc
+    reference_id:
+  - id: 158985
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-November/170684.html
+    reference_id:
+  - id: 157830
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-November/170926.html
+    reference_id:
+  - id: 158986
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177507.html
+    reference_id:
+  - id: 158987
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-04/msg00059.html
+    reference_id:
+  - id: 158988
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-04/msg00060.html
+    reference_id:
+  - id: 158989
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00020.html
+    reference_id:
+  - id: 158990
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00038.html
+    reference_id:
+  - id: 157832
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00048.html
+    reference_id:
+  - id: 157833
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-07/msg00026.html
+    reference_id:
+  - id: 157834
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00042.html
+    reference_id:
+  - id: 158991
+    url: http://lists.opensuse.org/opensuse-updates/2016-05/msg00114.html
+    reference_id:
+  - id: 1429941
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-5300.html
+    reference_id:
+  - id: 158992
+    url: http://rhn.redhat.com/errata/RHSA-2015-1930.html
+    reference_id:
+  - id: 177776
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-5300.json
+    reference_id:
+  - id: 158999
+    url: https://bto.bluecoat.com/security-advisory/sa113
+    reference_id:
+  - id: 1429943
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5300
+    reference_id:
+  - id: 158993
+    url: http://seclists.org/bugtraq/2016/Feb/164
+    reference_id:
+  - id: 159001
+    url: https://ics-cert.us-cert.gov/advisories/ICSA-15-356-01
+    reference_id:
+  - id: 159002
+    url: https://security.netapp.com/advisory/ntap-20171004-0001/
+    reference_id:
+  - id: 159003
+    url: https://support.citrix.com/article/CTX220112
+    reference_id:
+  - id: 1429773
+    url: https://ubuntu.com/security/notices/USN-2783-1
+    reference_id:
+  - id: 158994
+    url: http://support.ntp.org/bin/view/Main/NtpBug2956
+    reference_id:
+  - id: 158995
+    url: http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p5_Securit
+    reference_id:
+  - id: 159004
+    url: https://www-01.ibm.com/support/docview.wss?uid=isg3T1023885
+    reference_id:
+  - id: 159005
+    url: https://www-01.ibm.com/support/docview.wss?uid=isg3T1024073
+    reference_id:
+  - id: 159006
+    url: https://www-01.ibm.com/support/docview.wss?uid=nas8N1021264
+    reference_id:
+  - id: 159007
+    url: https://www-01.ibm.com/support/docview.wss?uid=ssg1S1005821
+    reference_id:
+  - id: 159008
+    url: https://www-01.ibm.com/support/docview.wss?uid=swg21979393
+    reference_id:
+  - id: 159009
+    url: https://www-01.ibm.com/support/docview.wss?uid=swg21980676
+    reference_id:
+  - id: 159010
+    url: https://www-01.ibm.com/support/docview.wss?uid=swg21983501
+    reference_id:
+  - id: 159011
+    url: https://www-01.ibm.com/support/docview.wss?uid=swg21983506
+    reference_id:
+  - id: 159012
+    url: https://www.cs.bu.edu/~goldbe/NTPattack.html
+    reference_id:
+  - id: 159013
+    url: https://www.freebsd.org/security/advisories/FreeBSD-SA-16:02.ntp.asc
+    reference_id:
+  - id: 159014
+    url: https://www.ibm.com/support/home/docdisplay?lndocid=migr-5099428
+    reference_id:
+  - id: 159015
+    url: https://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html
+    reference_id:
+  - id: 159016
+    url: https://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    reference_id:
+  - id: 1429942
+    url: http://www.cs.bu.edu/~goldbe/NTPattack.html
+    reference_id:
+  - id: 157837
+    url: http://www.debian.org/security/2015/dsa-3388
+    reference_id:
+  - id: 158996
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html
+    reference_id:
+  - id: 158997
+    url: http://www.securityfocus.com/bid/77312
+    reference_id:
+  - id: 158998
+    url: http://www.securitytracker.com/id/1034670
+    reference_id:
+  - id: 157840
+    url: http://www.ubuntu.com/usn/USN-2783-1
+    reference_id:
+  - id: 177775
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1271076
+    reference_id: 1271076
+  - id: 159018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ntp:ntp:*:p4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ntp:ntp:*:p4:*:*:*:*:*:*
+  - id: 157850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp2:*:*:*:*:*:*
+  - id: 157851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp3:*:*:*:*:*:*
+  - id: 158268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11:sp4:*:*:*:*:*:*
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 79271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+  - id: 157853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+  - id: 158132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*
+  - id: 157778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:6.0:*:*:*:*:*:*:*
+  - id: 157856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+  - id: 158534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.1:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 158535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:6.7.z:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:6.7.z:*:*:*:*:*:*:*
+  - id: 158536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.1:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 158275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:*:*:*:*:*:*:*
+  - id: 159019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+  - id: 157859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:10:sp4:*:*:ltss:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:10:sp4:*:*:ltss:*:*:*
+  - id: 157860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp2:*:*:ltss:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp2:*:*:ltss:*:*:*
+  - id: 157861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp3:*:*:ltss:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp3:*:*:ltss:*:*:*
+  - id: 158277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+  - id: 159020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp1:*:*:*:*:*:*
+  - id: 158281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:*:*:*:*:*:*:*
+  - id: 159021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:sp1:*:*:*:*:*:*
+  - id: 157862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:manager:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:manager:2.1:*:*:*:*:*:*:*
+  - id: 157863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:manager_proxy:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:manager_proxy:2.1:*:*:*:*:*:*:*
+  - id: 157864
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:openstack_cloud:5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:openstack_cloud:5:*:*:*:*:*:*:*
+  - id: 159022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_server:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_server:12:*:*:*:*:*:*:*
+  - id: 159017
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5300
+    reference_id: CVE-2015-5300
+  - id: 177773
+    url: https://access.redhat.com/errata/RHSA-2015:1930
+    reference_id: RHSA-2015:1930
+weaknesses: []

@@ -1,0 +1,143 @@
+vulnerability_id: VCID-zaa8-pa6j-aaaa
+aliases:
+  - CVE-2019-19234
+summary: '** DISPUTED ** In Sudo through 1.8.29, the fact that a user has been blocked (e.g.,
+  by using the ! character in the shadow file instead of a password hash) is not considered,
+  allowing an attacker (who has access to a Runas ALL sudoer account) to impersonate any blocked
+  user. NOTE: The software maintainer believes that this CVE is not valid. Disabling local password
+  authentication for a user is not the same as disabling all access to that user--the user may
+  still be able to login via other means (ssh key, kerberos, etc). Both the Linux shadow(5)
+  and passwd(1) manuals are clear on this. Indeed it is a valid use case to have local accounts
+  that are _only_ accessible via sudo and that cannot be logged into with a password. Sudo 1.8.30
+  added an optional setting to check the _shell_ of the target user (not the encrypted password!)
+  against the contents of /etc/shells but that is not the same thing as preventing access to
+  users with an invalid password hash.'
+severities:
+  - id: 692529
+    reference_id: 1453393
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 61053
+    reference_id: 188528
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 692530
+    reference_id: 1453394
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692527
+    reference_id: 789566
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692528
+    reference_id: 789567
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 61052
+    reference_id: 188527
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 395710
+    reference_id: 789581
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 395708
+    reference_id: 789581
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 61020
+    reference_id: 188482
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1453393
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19234.html
+    reference_id:
+  - id: 188528
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19234.json
+    reference_id:
+  - id: 789571
+    url: https://access.redhat.com/security/cve/cve-2019-19234
+    reference_id:
+  - id: 1453394
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19234
+    reference_id:
+  - id: 788160
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I6TKF36KOQUVJNBHSVJFA7BU3CCEYD2F/
+    reference_id:
+  - id: 788161
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IY6DZ7WMDKU4ZDML6MJLDAPG42B5WVUC/
+    reference_id:
+  - id: 789572
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs58104
+    reference_id:
+  - id: 789573
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs58473
+    reference_id:
+  - id: 789574
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs58772
+    reference_id:
+  - id: 789556
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs58812
+    reference_id:
+  - id: 789557
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs58979
+    reference_id:
+  - id: 789575
+    url: https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs60748
+    reference_id:
+  - id: 789559
+    url: https://security.netapp.com/advisory/ntap-20200103-0004/
+    reference_id:
+  - id: 789576
+    url: https://support2.windriver.com/index.php?page=cve&on=view&id=CVE-2019-19234
+    reference_id:
+  - id: 789577
+    url: https://support2.windriver.com/index.php?page=defects&on=view&id=LIN1018-5505
+    reference_id:
+  - id: 789578
+    url: https://support2.windriver.com/index.php?page=defects&on=view&id=LIN1019-3816
+    reference_id:
+  - id: 789564
+    url: https://www.bsi.bund.de/SharedDocs/Warnmeldungen/DE/CB/2019/12/warnmeldung_cb-k20-0001.html
+    reference_id:
+  - id: 789565
+    url: https://www.oracle.com/security-alerts/bulletinapr2020.html
+    reference_id:
+  - id: 789566
+    url: https://www.sudo.ws/devel.html#1.8.30b2
+    reference_id:
+  - id: 789567
+    url: https://www.sudo.ws/stable.html
+    reference_id:
+  - id: 789579
+    url: https://www.suse.com/security/cve/CVE-2019-19234/
+    reference_id:
+  - id: 789580
+    url: https://www.tenable.com/plugins/nessus/132985
+    reference_id:
+  - id: 188527
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1786708
+    reference_id: 1786708
+  - id: 130612
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947225
+    reference_id: 947225
+  - id: 789570
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sudo:sudo:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sudo:sudo:*:*:*:*:*:*:*:*
+  - id: 789581
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19234
+    reference_id: CVE-2019-19234
+  - id: 188482
+    url: https://access.redhat.com/errata/RHSA-2020:1804
+    reference_id: RHSA-2020:1804
+weaknesses: []

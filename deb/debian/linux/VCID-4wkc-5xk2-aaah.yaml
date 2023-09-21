@@ -1,0 +1,81 @@
+vulnerability_id: VCID-4wkc-5xk2-aaah
+aliases:
+  - CVE-2019-9857
+summary: In the Linux kernel through 5.0.2, the function inotify_update_existing_watch() in
+  fs/notify/inotify/inotify_user.c neglects to call fsnotify_put_mark() with IN_MASK_CREATE
+  after fsnotify_find_mark(), which will cause a memory leak (aka refcount leak). Finally, this
+  will cause a denial of service.
+severities:
+  - id: 695266
+    reference_id: 1455650
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61182
+    reference_id: 188688
+    scoring_system: cvssv3
+    value: '5.7'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 695267
+    reference_id: 1455651
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695268
+    reference_id: 808430
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61181
+    reference_id: 188687
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 423719
+    reference_id: 808431
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 423717
+    reference_id: 808431
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1455650
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-9857.html
+    reference_id:
+  - id: 188688
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-9857.json
+    reference_id:
+  - id: 1455651
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9857
+    reference_id:
+  - id: 808427
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/jack/linux-fs.git/commit/?h=fsnotify&id=62c9d2674b31d4c8a674bee86b7edc6da2803aea
+    reference_id:
+  - id: 808428
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NXLZ2V2ES37A3J7DMK4MZYIWV2LEZFLM/
+    reference_id:
+  - id: 808429
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PPH3B7FJOMWD5JWUPZKB6T44KNT4PX2L/
+    reference_id:
+  - id: 808430
+    url: https://patchwork.kernel.org/patch/10836283/
+    reference_id:
+  - id: 747343
+    url: https://security.netapp.com/advisory/ntap-20190404-0002/
+    reference_id:
+  - id: 808426
+    url: http://www.securityfocus.com/bid/107527
+    reference_id:
+  - id: 188687
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1694758
+    reference_id: 1694758
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 808431
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-9857
+    reference_id: CVE-2019-9857
+weaknesses: []

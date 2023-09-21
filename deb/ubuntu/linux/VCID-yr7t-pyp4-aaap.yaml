@@ -1,0 +1,111 @@
+vulnerability_id: VCID-yr7t-pyp4-aaap
+aliases:
+  - CVE-2020-27786
+summary: A flaw was found in the Linux kernel’s implementation of MIDI, where an attacker with
+  a local account and the permissions to issue ioctl commands to midi devices could trigger
+  a use-after-free issue. A write to this specific memory while freed and before use causes
+  the flow of execution to change and possibly allow for memory corruption or privilege escalation.
+  The highest threat from this vulnerability is to confidentiality, integrity, as well as system
+  availability.
+severities:
+  - id: 698322
+    reference_id: 1458201
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 608211
+    reference_id: 930034
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 698323
+    reference_id: 1458202
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698324
+    reference_id: 1458203
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 608210
+    reference_id: 930033
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 467482
+    reference_id: 837816
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 467480
+    reference_id: 837816
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 50466
+    reference_id: 175038
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 50469
+    reference_id: 175041
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1458201
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27786.html
+    reference_id:
+  - id: 930034
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27786.json
+    reference_id:
+  - id: 1458202
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27786
+    reference_id:
+  - id: 837814
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c1f6e3c818dd734c30f6a7eeebf232ba2cf3181d
+    reference_id:
+  - id: 837815
+    url: https://security.netapp.com/advisory/ntap-20210122-0002/
+    reference_id:
+  - id: 1458203
+    url: https://www.openwall.com/lists/oss-security/2020/12/01/1
+    reference_id:
+  - id: 837812
+    url: http://www.openwall.com/lists/oss-security/2020/12/03/1
+    reference_id:
+  - id: 930033
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1900933
+    reference_id: '1900933'
+  - id: 834008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+  - id: 834009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+  - id: 820709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+  - id: 837817
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.7:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.7:rc6:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 458549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+  - id: 837816
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27786
+    reference_id: CVE-2020-27786
+  - id: 175038
+    url: https://access.redhat.com/errata/RHSA-2021:1578
+    reference_id: RHSA-2021:1578
+  - id: 175041
+    url: https://access.redhat.com/errata/RHSA-2021:1739
+    reference_id: RHSA-2021:1739
+weaknesses: []

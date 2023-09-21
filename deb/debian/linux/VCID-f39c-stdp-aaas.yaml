@@ -1,0 +1,182 @@
+vulnerability_id: VCID-f39c-stdp-aaas
+aliases:
+  - CVE-2018-7755
+summary: An issue was discovered in the fd_locked_ioctl function in drivers/block/floppy.c in
+  the Linux kernel through 4.15.7. The floppy driver will copy a kernel pointer to user memory
+  in response to the FDGETPRM ioctl. An attacker can send the FDGETPRM ioctl and use the obtained
+  kernel pointer to discover the location of kernel code and data and bypass kernel security
+  protections such as KASLR.
+severities:
+  - id: 688856
+    reference_id: 1450641
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617905
+    reference_id: 937119
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
+  - id: 688857
+    reference_id: 1450642
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 688858
+    reference_id: 758786
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683070
+    reference_id: 1445959
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683071
+    reference_id: 1445960
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674962
+    reference_id: 1439849
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674963
+    reference_id: 1439850
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683237
+    reference_id: 1446091
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683238
+    reference_id: 1446092
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674190
+    reference_id: 1439183
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674191
+    reference_id: 1439184
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617904
+    reference_id: 937118
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 356825
+    reference_id: 758787
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 356823
+    reference_id: 758787
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1450641
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-7755.html
+    reference_id:
+  - id: 724908
+    url: https://access.redhat.com/errata/RHSA-2019:2029
+    reference_id:
+  - id: 724909
+    url: https://access.redhat.com/errata/RHSA-2019:2043
+    reference_id:
+  - id: 937119
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-7755.json
+    reference_id:
+  - id: 1450642
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7755
+    reference_id:
+  - id: 725216
+    url: https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html
+    reference_id:
+  - id: 758786
+    url: https://lkml.org/lkml/2018/3/7/1116
+    reference_id:
+  - id: 1445959
+    url: https://ubuntu.com/security/notices/USN-3695-1
+    reference_id:
+  - id: 1445960
+    url: https://ubuntu.com/security/notices/USN-3695-2
+    reference_id:
+  - id: 1439849
+    url: https://ubuntu.com/security/notices/USN-3696-1
+    reference_id:
+  - id: 1439850
+    url: https://ubuntu.com/security/notices/USN-3696-2
+    reference_id:
+  - id: 1446091
+    url: https://ubuntu.com/security/notices/USN-3697-1
+    reference_id:
+  - id: 1446092
+    url: https://ubuntu.com/security/notices/USN-3697-2
+    reference_id:
+  - id: 1439183
+    url: https://ubuntu.com/security/notices/USN-3698-1
+    reference_id:
+  - id: 1439184
+    url: https://ubuntu.com/security/notices/USN-3698-2
+    reference_id:
+  - id: 725502
+    url: https://usn.ubuntu.com/3695-1/
+    reference_id:
+  - id: 725503
+    url: https://usn.ubuntu.com/3695-2/
+    reference_id:
+  - id: 680252
+    url: https://usn.ubuntu.com/3696-1/
+    reference_id:
+  - id: 680253
+    url: https://usn.ubuntu.com/3696-2/
+    reference_id:
+  - id: 726569
+    url: https://usn.ubuntu.com/3697-1/
+    reference_id:
+  - id: 726570
+    url: https://usn.ubuntu.com/3697-2/
+    reference_id:
+  - id: 675847
+    url: https://usn.ubuntu.com/3698-1/
+    reference_id:
+  - id: 675848
+    url: https://usn.ubuntu.com/3698-2/
+    reference_id:
+  - id: 725220
+    url: https://www.debian.org/security/2018/dsa-4308
+    reference_id:
+  - id: 937118
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1553216
+    reference_id: 1553216
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 169418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 758787
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-7755
+    reference_id: CVE-2018-7755
+weaknesses: []

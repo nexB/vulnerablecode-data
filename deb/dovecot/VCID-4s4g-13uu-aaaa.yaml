@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2017-2669
+fixed_purl:
+- pkg:deb/debian/dovecot@1:2.2.27-3?distro=sid
+- pkg:deb/debian/dovecot@1:2.3.13%2Bdfsg1-2%2Bdeb11u1?distro=sid
+- pkg:deb/debian/dovecot@1:2.3.19.1%2Bdfsg1-2.1?distro=sid
+- pkg:deb/debian/dovecot@1:2.3.4.1-5%2Bdeb10u6?distro=sid
+references:
+- id: 127217
+  reference_id: '860049'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860049
+severities: []
+summary: Dovecot before version 2.2.29 is vulnerable to a denial of service. When
+  'dict' passdb and userdb were used for user authentication, the username sent by
+  the IMAP/POP3 client was sent through var_expand() to perform %variable expansion.
+  Sending specially crafted %variable fields could result in excessive memory usage
+  causing the process to crash (and restart), or excessive CPU usage causing all authentications
+  to hang.
+vulnerability_id: VCID-4s4g-13uu-aaaa
+weaknesses: []

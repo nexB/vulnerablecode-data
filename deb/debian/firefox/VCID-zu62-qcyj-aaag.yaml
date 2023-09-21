@@ -1,0 +1,155 @@
+vulnerability_id: VCID-zu62-qcyj-aaag
+aliases:
+  - CVE-2018-12387
+summary: A vulnerability where the JavaScript JIT compiler inlines Array.prototype.push with
+  multiple arguments that results in the stack pointer being off by 8 bytes after a bailout.
+  This leaks a memory address to the calling function which can be used as part of an exploit
+  inside the sandboxed content process. This vulnerability affects Firefox ESR < 60.2.2 and
+  Firefox < 62.0.3.
+severities:
+  - id: 683792
+    reference_id: 1446525
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 54655
+    reference_id: 179792
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 683793
+    reference_id: 1446526
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683784
+    reference_id: 1446517
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683790
+    reference_id: 1446523
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683794
+    reference_id: 1446527
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 54654
+    reference_id: 179791
+    scoring_system: rhbs
+    value: urgent
+    scoring_elements:
+  - id: 316919
+    reference_id: 729352
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 316917
+    reference_id: 729352
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 1446525
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12387.html
+    reference_id:
+  - id: 729345
+    url: https://access.redhat.com/errata/RHSA-2018:2881
+    reference_id:
+  - id: 729346
+    url: https://access.redhat.com/errata/RHSA-2018:2884
+    reference_id:
+  - id: 179792
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12387.json
+    reference_id:
+  - id: 729351
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1493903
+    reference_id:
+  - id: 1446526
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12387
+    reference_id:
+  - id: 688514
+    url: https://security.gentoo.org/glsa/201810-01
+    reference_id:
+  - id: 1446517
+    url: https://ubuntu.com/security/notices/USN-3778-1
+    reference_id:
+  - id: 729339
+    url: https://usn.ubuntu.com/3778-1/
+    reference_id:
+  - id: 1446523
+    url: https://usn.ubuntu.com/usn/usn-3778-1
+    reference_id:
+  - id: 729348
+    url: https://www.debian.org/security/2018/dsa-4310
+    reference_id:
+  - id: 1446527
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2018-24/#CVE-2018-12387
+    reference_id:
+  - id: 729349
+    url: https://www.mozilla.org/security/advisories/mfsa2018-24/
+    reference_id:
+  - id: 729343
+    url: http://www.securityfocus.com/bid/105460
+    reference_id:
+  - id: 729344
+    url: http://www.securitytracker.com/id/1041770
+    reference_id:
+  - id: 179791
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1635452
+    reference_id: 1635452
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 464004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:*:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 729352
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12387
+    reference_id: CVE-2018-12387
+weaknesses: []

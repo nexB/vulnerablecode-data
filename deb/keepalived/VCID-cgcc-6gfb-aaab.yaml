@@ -1,0 +1,89 @@
+affected_purls:
+- pkg:deb/debian/keepalived@1.1.11-3
+- pkg:deb/debian/keepalived@1:1.1.20-1%2Bsqueeze1
+- pkg:deb/debian/keepalived@1.1.12-1
+- pkg:deb/debian/keepalived@1.1.15-1
+- pkg:deb/ubuntu/keepalived@1.1.11-3
+- pkg:deb/ubuntu/keepalived@1.1.11-3build1
+- pkg:deb/ubuntu/keepalived@1:1.1.20-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.1.20-1ubuntu2
+- pkg:deb/ubuntu/keepalived@1.1.12-1
+- pkg:deb/ubuntu/keepalived@1.1.12-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1.1.12-1ubuntu2
+- pkg:deb/ubuntu/keepalived@1.1.13-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1.1.15-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1.1.15-1ubuntu2
+- pkg:deb/ubuntu/keepalived@1.1.17-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1.1.17-1ubuntu1.1
+- pkg:deb/ubuntu/keepalived@1.1.17-2ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.2.13-1
+- pkg:deb/ubuntu/keepalived@1:1.2.13-1~ubuntu14.04.1
+- pkg:deb/ubuntu/keepalived@1:1.2.19-1
+- pkg:deb/ubuntu/keepalived@1:1.2.19-1ubuntu0.1
+- pkg:deb/ubuntu/keepalived@1:1.2.19-1ubuntu0.2
+- pkg:deb/ubuntu/keepalived@1:1.2.20-1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-2ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.2.23-1
+- pkg:deb/ubuntu/keepalived@1:1.2.23-1ubuntu0.1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu1.1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu1.2
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu2
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu2.12.10.1
+- pkg:deb/ubuntu/keepalived@1:1.2.2-3ubuntu2.13.04.1
+- pkg:deb/ubuntu/keepalived@1:1.2.24-1
+- pkg:deb/ubuntu/keepalived@1:1.2.24-1ubuntu0.16.04.1
+- pkg:deb/ubuntu/keepalived@1:1.2.24-1ubuntu0.16.04.2
+- pkg:deb/ubuntu/keepalived@1:1.2.24-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.3.2-1
+- pkg:deb/ubuntu/keepalived@1:1.3.2-1build1
+- pkg:deb/ubuntu/keepalived@1:1.3.9-1
+- pkg:deb/ubuntu/keepalived@1:1.3.9-1build1
+- pkg:deb/ubuntu/keepalived@1.1.7-2
+- pkg:deb/ubuntu/keepalived@1.1.7-3
+aliases:
+- CVE-2011-1784
+fixed_purl:
+- pkg:deb/debian/keepalived@1:1.2.2-2?distro=sid
+- pkg:deb/debian/keepalived@1:1.2.2-3
+- pkg:deb/debian/keepalived@1:2.0.10-1?distro=sid
+- pkg:deb/debian/keepalived@1:2.1.5-0.2%2Bdeb11u1?distro=sid
+- pkg:deb/debian/keepalived@1:2.2.7-1?distro=sid
+- pkg:deb/ubuntu/keepalived@1:1.2.7-1ubuntu1
+- pkg:deb/ubuntu/keepalived@1:1.3.9-1ubuntu0.18.04.1
+references:
+- id: 179546
+  reference_id: ''
+  url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=626281
+- id: 179547
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-1784.html
+- id: 179548
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1784
+- id: 124429
+  reference_id: '626281'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=626281
+severities:
+- id: 29329
+  reference_id: 179546
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+- id: 29330
+  reference_id: 179547
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+- id: 29331
+  reference_id: 179548
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+summary: The pidfile_write function in core/pidfile.c in keepalived 1.2.2 and earlier
+  uses 0666 permissions for the (1) keepalived.pid, (2) checkers.pid, and (3) vrrp.pid
+  files in /var/run/, which allows local users to kill arbitrary processes by writing
+  a PID to one of these files.
+vulnerability_id: VCID-cgcc-6gfb-aaab
+weaknesses: []

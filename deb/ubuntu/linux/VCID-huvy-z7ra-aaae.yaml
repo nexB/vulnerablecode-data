@@ -1,0 +1,139 @@
+vulnerability_id: VCID-huvy-z7ra-aaae
+aliases:
+  - CVE-2017-17975
+summary: Use-after-free in the usbtv_probe function in drivers/media/usb/usbtv/usbtv-core.c
+  in the Linux kernel through 4.14.10 allows attackers to cause a denial of service (system
+  crash) or possibly have unspecified other impact by triggering failure of audio registration,
+  because a kfree of the usbtv data structure occurs during a usbtv_video_free call, but the
+  usbtv_video_fail label's code attempts to both access and free this data structure.
+severities:
+  - id: 677267
+    reference_id: 692584
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677268
+    reference_id: 1441406
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617511
+    reference_id: 936837
+    scoring_system: cvssv3
+    value: '3.5'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+  - id: 677269
+    reference_id: 1441407
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676932
+    reference_id: 1441170
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676933
+    reference_id: 1441171
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677270
+    reference_id: 1441408
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677271
+    reference_id: 1441409
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677272
+    reference_id: 1441410
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676934
+    reference_id: 1441172
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617510
+    reference_id: 936836
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 275688
+    reference_id: 692590
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 275686
+    reference_id: 692590
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 692584
+    url: http://linuxtesting.org/pipermail/ldv-project/2017-November/001008.html
+    reference_id:
+  - id: 1441406
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17975.html
+    reference_id:
+  - id: 936837
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17975.json
+    reference_id:
+  - id: 1441407
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17975
+    reference_id:
+  - id: 1441170
+    url: https://ubuntu.com/security/notices/USN-3653-1
+    reference_id:
+  - id: 1441171
+    url: https://ubuntu.com/security/notices/USN-3653-2
+    reference_id:
+  - id: 1441408
+    url: https://ubuntu.com/security/notices/USN-3654-1
+    reference_id:
+  - id: 1441409
+    url: https://ubuntu.com/security/notices/USN-3654-2
+    reference_id:
+  - id: 1441410
+    url: https://ubuntu.com/security/notices/USN-3656-1
+    reference_id:
+  - id: 1441172
+    url: https://ubuntu.com/security/notices/USN-3657-1
+    reference_id:
+  - id: 690978
+    url: https://usn.ubuntu.com/3653-1/
+    reference_id:
+  - id: 690979
+    url: https://usn.ubuntu.com/3653-2/
+    reference_id:
+  - id: 692586
+    url: https://usn.ubuntu.com/3654-1/
+    reference_id:
+  - id: 692587
+    url: https://usn.ubuntu.com/3654-2/
+    reference_id:
+  - id: 692588
+    url: https://usn.ubuntu.com/3656-1/
+    reference_id:
+  - id: 690980
+    url: https://usn.ubuntu.com/3657-1/
+    reference_id:
+  - id: 692589
+    url: https://www.debian.org/security/2018/dsa-4188
+    reference_id:
+  - id: 692585
+    url: http://www.securityfocus.com/bid/102330
+    reference_id:
+  - id: 936836
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1531142
+    reference_id: 1531142
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 692590
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17975
+    reference_id: CVE-2017-17975
+weaknesses: []

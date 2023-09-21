@@ -1,0 +1,31 @@
+vulnerability_id: VCID-5pcc-9mkr-aaan
+aliases:
+  - CVE-2021-41687
+summary: DCMTK through 3.6.6 does not handle memory free properly. The program malloc a heap
+  memory for parsing data, but does not free it when error in parsing. Sending specific requests
+  to the dcmqrdb program incur the memory leak. An attacker can use it to launch a DoS attack.
+severities:
+  - id: 632223
+    reference_id: 948096
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 632221
+    reference_id: 948096
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 948094
+    url: https://github.com/DCMTK/dcmtk
+    reference_id:
+  - id: 948095
+    url: https://github.com/DCMTK/dcmtk/commit/a9697dfeb672b0b9412c00c7d36d801e27ec85cb
+    reference_id:
+  - id: 545868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:offis:dcmtk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:offis:dcmtk:*:*:*:*:*:*:*:*
+  - id: 948096
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-41687
+    reference_id: CVE-2021-41687
+weaknesses: []

@@ -1,0 +1,275 @@
+vulnerability_id: VCID-cu6d-74g3-aaam
+aliases:
+  - CVE-2015-1805
+summary: The (1) pipe_read and (2) pipe_write implementations in fs/pipe.c in the Linux kernel
+  before 3.16 do not properly consider the side effects of failed __copy_to_user_inatomic and
+  __copy_from_user_inatomic calls, which allows local users to cause a denial of service (system
+  crash) or possibly gain privileges via a crafted application, aka an "I/O vector array overrun."
+severities:
+  - id: 660733
+    reference_id: 1428235
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660734
+    reference_id: 1428236
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660735
+    reference_id: 1428237
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660736
+    reference_id: 1428238
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660737
+    reference_id: 1428239
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660738
+    reference_id: 1428240
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: '196291'
+    reference_id: 600856
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 55335
+    reference_id: 180554
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55327
+    reference_id: 180546
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55326
+    reference_id: 180545
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55334
+    reference_id: 180553
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55331
+    reference_id: 180550
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55330
+    reference_id: 180549
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55329
+    reference_id: 180548
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55328
+    reference_id: 180547
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55333
+    reference_id: 180552
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55332
+    reference_id: 180551
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 600841
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=637b58c2887e5e57850865839cc75f59184b23d1
+    reference_id:
+  - id: 600842
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f0d1bec9d58d4c038d0ac958c9af82be6eb18045
+    reference_id:
+  - id: 159589
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00023.html
+    reference_id:
+  - id: 159590
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00049.html
+    reference_id:
+  - id: 159592
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00004.html
+    reference_id:
+  - id: 159593
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00007.html
+    reference_id:
+  - id: 159594
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00008.html
+    reference_id:
+  - id: 159595
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00009.html
+    reference_id:
+  - id: 159596
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00010.html
+    reference_id:
+  - id: 159597
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00011.html
+    reference_id:
+  - id: 159598
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00018.html
+    reference_id:
+  - id: 159599
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00021.html
+    reference_id:
+  - id: 1428235
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-1805.html
+    reference_id:
+  - id: 600843
+    url: http://rhn.redhat.com/errata/RHSA-2015-1042.html
+    reference_id:
+  - id: 590894
+    url: http://rhn.redhat.com/errata/RHSA-2015-1081.html
+    reference_id:
+  - id: 599407
+    url: http://rhn.redhat.com/errata/RHSA-2015-1082.html
+    reference_id:
+  - id: 600844
+    url: http://rhn.redhat.com/errata/RHSA-2015-1120.html
+    reference_id:
+  - id: 590895
+    url: http://rhn.redhat.com/errata/RHSA-2015-1137.html
+    reference_id:
+  - id: 590896
+    url: http://rhn.redhat.com/errata/RHSA-2015-1138.html
+    reference_id:
+  - id: 600845
+    url: http://rhn.redhat.com/errata/RHSA-2015-1190.html
+    reference_id:
+  - id: 600846
+    url: http://rhn.redhat.com/errata/RHSA-2015-1199.html
+    reference_id:
+  - id: 600847
+    url: http://rhn.redhat.com/errata/RHSA-2015-1211.html
+    reference_id:
+  - id: 180555
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-1805.json
+    reference_id:
+  - id: 600853
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1202855
+    reference_id:
+  - id: 1428236
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1805
+    reference_id:
+  - id: 600854
+    url: https://github.com/torvalds/linux/commit/637b58c2887e5e57850865839cc75f59184b23d1
+    reference_id:
+  - id: 600855
+    url: https://github.com/torvalds/linux/commit/f0d1bec9d58d4c038d0ac958c9af82be6eb18045
+    reference_id:
+  - id: 578277
+    url: http://source.android.com/security/bulletin/2016-04-02.html
+    reference_id:
+  - id: 595572
+    url: http://source.android.com/security/bulletin/2016-05-01.html
+    reference_id:
+  - id: 1428237
+    url: https://ubuntu.com/security/notices/USN-2678-1
+    reference_id:
+  - id: 1428238
+    url: https://ubuntu.com/security/notices/USN-2679-1
+    reference_id:
+  - id: 1428239
+    url: https://ubuntu.com/security/notices/USN-2680-1
+    reference_id:
+  - id: 1428240
+    url: https://ubuntu.com/security/notices/USN-2681-1
+    reference_id:
+  - id: 600848
+    url: http://www.debian.org/security/2015/dsa-3290
+    reference_id:
+  - id: 600849
+    url: http://www.openwall.com/lists/oss-security/2015/06/06/2
+    reference_id:
+  - id: 27563
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    reference_id:
+  - id: 600850
+    url: http://www.securityfocus.com/bid/74951
+    reference_id:
+  - id: 600851
+    url: http://www.securitytracker.com/id/1032454
+    reference_id:
+  - id: 600852
+    url: http://www.ubuntu.com/usn/USN-2679-1
+    reference_id:
+  - id: 159612
+    url: http://www.ubuntu.com/usn/USN-2680-1
+    reference_id:
+  - id: 159613
+    url: http://www.ubuntu.com/usn/USN-2681-1
+    reference_id:
+  - id: 534259
+    url: http://www.ubuntu.com/usn/USN-2967-1
+    reference_id:
+  - id: 534260
+    url: http://www.ubuntu.com/usn/USN-2967-2
+    reference_id:
+  - id: 584802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*
+  - id: 166107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*
+  - id: 166062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*
+  - id: 159161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.1.1:*:*:*:*:*:*:*
+  - id: 159163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 600856
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-1805
+    reference_id: CVE-2015-1805
+  - id: 180554
+    url: https://access.redhat.com/errata/RHSA-2015:1042
+    reference_id: RHSA-2015:1042
+  - id: 180546
+    url: https://access.redhat.com/errata/RHSA-2015:1081
+    reference_id: RHSA-2015:1081
+  - id: 180545
+    url: https://access.redhat.com/errata/RHSA-2015:1082
+    reference_id: RHSA-2015:1082
+  - id: 180553
+    url: https://access.redhat.com/errata/RHSA-2015:1120
+    reference_id: RHSA-2015:1120
+  - id: 180550
+    url: https://access.redhat.com/errata/RHSA-2015:1137
+    reference_id: RHSA-2015:1137
+  - id: 180549
+    url: https://access.redhat.com/errata/RHSA-2015:1138
+    reference_id: RHSA-2015:1138
+  - id: 180548
+    url: https://access.redhat.com/errata/RHSA-2015:1139
+    reference_id: RHSA-2015:1139
+  - id: 180547
+    url: https://access.redhat.com/errata/RHSA-2015:1190
+    reference_id: RHSA-2015:1190
+  - id: 180552
+    url: https://access.redhat.com/errata/RHSA-2015:1199
+    reference_id: RHSA-2015:1199
+  - id: 180551
+    url: https://access.redhat.com/errata/RHSA-2015:1211
+    reference_id: RHSA-2015:1211
+weaknesses: []

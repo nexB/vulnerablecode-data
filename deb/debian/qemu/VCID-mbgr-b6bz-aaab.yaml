@@ -1,0 +1,114 @@
+vulnerability_id: VCID-mbgr-b6bz-aaab
+aliases:
+  - CVE-2017-11434
+summary: The dhcp_decode function in slirp/bootp.c in QEMU (aka Quick Emulator) allows local
+  guest OS users to cause a denial of service (out-of-bounds read and QEMU process crash) via
+  a crafted DHCP options string.
+severities:
+  - id: 673842
+    reference_id: 1438908
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622060
+    reference_id: 940050
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 673843
+    reference_id: 1438909
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673844
+    reference_id: 673162
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673467
+    reference_id: 1438625
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673466
+    reference_id: 1438624
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 622059
+    reference_id: 940049
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 255191
+    reference_id: 673163
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 255189
+    reference_id: 673163
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1438908
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11434.html
+    reference_id:
+  - id: 940050
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-11434.json
+    reference_id:
+  - id: 1438909
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11434
+    reference_id:
+  - id: 619344
+    url: https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html
+    reference_id:
+  - id: 673162
+    url: https://lists.gnu.org/archive/html/qemu-devel/2017-07/msg05001.html
+    reference_id:
+  - id: 1438625
+    url: https://ubuntu.com/security/notices/USN-3414-1
+    reference_id:
+  - id: 1438624
+    url: https://usn.ubuntu.com/usn/usn-3414-1
+    reference_id:
+  - id: 671140
+    url: http://www.debian.org/security/2017/dsa-3925
+    reference_id:
+  - id: 673159
+    url: http://www.openwall.com/lists/oss-security/2017/07/19/2
+    reference_id:
+  - id: 673160
+    url: http://www.securityfocus.com/bid/99923
+    reference_id:
+  - id: 940049
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1472611
+    reference_id: 1472611
+  - id: 111995
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=869171
+    reference_id: 869171
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 673164
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.10.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.10.0:rc0:*:*:*:*:*:*
+  - id: 673165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.10.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.10.0:rc1:*:*:*:*:*:*
+  - id: 673166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.10.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.10.0:rc2:*:*:*:*:*:*
+  - id: 673167
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.10.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.10.0:rc3:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 673163
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11434
+    reference_id: CVE-2017-11434
+weaknesses: []

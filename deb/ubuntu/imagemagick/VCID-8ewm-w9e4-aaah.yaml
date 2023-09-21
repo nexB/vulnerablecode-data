@@ -1,0 +1,102 @@
+vulnerability_id: VCID-8ewm-w9e4-aaah
+aliases:
+  - CVE-2017-9098
+summary: ImageMagick before 7.0.5-2 and GraphicsMagick before 1.3.24 use uninitialized memory
+  in the RLE decoder, allowing an attacker to leak sensitive information from process memory
+  space, as demonstrated by remote attacks against ImageMagick code in a long-running server
+  process that converts image data on behalf of multiple users. This is caused by a missing
+  initialization step in the ReadRLEImage function in coders/rle.c.
+severities:
+  - id: 681437
+    reference_id: 1444765
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622914
+    reference_id: 940640
+    scoring_system: cvssv3
+    value: '5.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 681438
+    reference_id: 1444766
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681439
+    reference_id: 714572
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680498
+    reference_id: 1444064
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622913
+    reference_id: 940639
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 299870
+    reference_id: 714573
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 299868
+    reference_id: 714573
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 714569
+    url: http://hg.code.sf.net/p/graphicsmagick/code/diff/0a5b75e019b6/coders/rle.c
+    reference_id:
+  - id: 1444765
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-9098.html
+    reference_id:
+  - id: 940640
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9098.json
+    reference_id:
+  - id: 1444766
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9098
+    reference_id:
+  - id: 714571
+    url: https://github.com/ImageMagick/ImageMagick/commit/1c358ffe0049f768dd49a8a889c1cbf99ac9849b
+    reference_id:
+  - id: 648219
+    url: https://lists.debian.org/debian-lts-announce/2018/08/msg00002.html
+    reference_id:
+  - id: 714572
+    url: https://scarybeastsecurity.blogspot.com/2017/05/bleed-continues-18-byte-file-14k-bounty.html
+    reference_id:
+  - id: 1444064
+    url: https://ubuntu.com/security/notices/USN-3302-1
+    reference_id:
+  - id: 709952
+    url: http://www.debian.org/security/2017/dsa-3863
+    reference_id:
+  - id: 714570
+    url: http://www.securityfocus.com/bid/98593
+    reference_id:
+  - id: 940639
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1453124
+    reference_id: 1453124
+  - id: 41587
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=862967
+    reference_id: 862967
+  - id: 258301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:graphicsmagick:graphicsmagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:graphicsmagick:graphicsmagick:*:*:*:*:*:*:*:*
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 714573
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9098
+    reference_id: CVE-2017-9098
+weaknesses: []

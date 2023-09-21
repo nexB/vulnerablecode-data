@@ -1,0 +1,110 @@
+vulnerability_id: VCID-kdqy-2p9m-aaap
+aliases:
+  - CVE-2017-17864
+summary: kernel/bpf/verifier.c in the Linux kernel through 4.14.8 mishandles states_equal comparisons
+  between the pointer data type and the UNKNOWN_VALUE data type, which allows local users to
+  obtain potentially sensitive address information, aka a "pointer leak."
+severities:
+  - id: 677217
+    reference_id: 1441369
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619236
+    reference_id: 938054
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H
+  - id: 677218
+    reference_id: 1441370
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676791
+    reference_id: 1441081
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 676792
+    reference_id: 1441082
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 676793
+    reference_id: 1441083
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 677214
+    reference_id: 1441367
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619235
+    reference_id: 938053
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 275284
+    reference_id: 692330
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 275282
+    reference_id: 692330
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 1441369
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17864.html
+    reference_id:
+  - id: 938054
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17864.json
+    reference_id:
+  - id: 692328
+    url: https://anonscm.debian.org/cgit/kernel/linux.git/commit/?h=stretch-security&id=ad775f6ff7eebb93eedc2f592bc974260e7757b0
+    reference_id:
+  - id: 692329
+    url: https://anonscm.debian.org/cgit/kernel/linux.git/tree/debian/patches/bugfix/all/bpf-verifier-fix-states_equal-comparison-of-pointer-and-unknown.patch?h=stretch-security
+    reference_id:
+  - id: 1441370
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17864
+    reference_id:
+  - id: 1441081
+    url: https://ubuntu.com/security/notices/USN-3523-1
+    reference_id:
+  - id: 1441082
+    url: https://ubuntu.com/security/notices/USN-3523-2
+    reference_id:
+  - id: 1441083
+    url: https://ubuntu.com/security/notices/USN-3523-3
+    reference_id:
+  - id: 689872
+    url: https://usn.ubuntu.com/usn/usn-3523-2/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 1441367
+    url: http://www.openwall.com/lists/oss-security/2017/12/24/1
+    reference_id:
+  - id: 692326
+    url: http://www.securityfocus.com/bid/102320
+    reference_id:
+  - id: 692327
+    url: http://www.securitytracker.com/id/1040059
+    reference_id:
+  - id: 938053
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1529120
+    reference_id: 1529120
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 692330
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17864
+    reference_id: CVE-2017-17864
+weaknesses: []

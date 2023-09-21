@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2018-12520
+fixed_purl:
+- pkg:deb/debian/ntopng@3.8%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/ntopng@3.8%2Bdfsg1-2.1?distro=sid
+- pkg:deb/debian/ntopng@5.2.1%2Bdfsg1-1?distro=sid
+references:
+- id: 127897
+  reference_id: '903154'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=903154
+severities: []
+summary: An issue was discovered in ntopng 3.4 before 3.4.180617. The PRNG involved
+  in the generation of session IDs is not seeded at program startup. This results
+  in deterministic session IDs being allocated for active user sessions. An attacker
+  with foreknowledge of the operating system and standard library in use by the host
+  running the service and the username of the user whose session they're targeting
+  can abuse the deterministic random number generation in order to hijack the user's
+  session, thus escalating their access.
+vulnerability_id: VCID-4cv4-hzqd-aaac
+weaknesses: []

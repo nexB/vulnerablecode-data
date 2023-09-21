@@ -1,0 +1,92 @@
+vulnerability_id: VCID-y2uj-kaj8-aaab
+aliases:
+  - CVE-2021-29482
+summary: xz is a compression and decompression library focusing on the xz format completely
+  written in Go. The function readUvarint used to read the xz container format may not terminate
+  a loop provide malicous input. The problem has been fixed in release v0.5.8. As a workaround
+  users can limit the size of the compressed file input to a reasonable size for their use case.
+  The standard library had recently the same issue and got the CVE-2020-16845 allocated.
+severities:
+  - id: 610179
+    reference_id: 931479
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 610178
+    reference_id: 931478
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 531653
+    reference_id: 879074
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 531651
+    reference_id: 879074
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 75598
+    reference_id: 206526
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 604166
+    reference_id: 927064
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 534454
+    reference_id: 880768
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 159097
+    reference_id: 506886
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 63491
+    reference_id: '191758'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 931479
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-29482.json
+    reference_id:
+  - id: 879072
+    url: https://github.com/ulikunitz/xz/commit/69c6093c7b2397b923acf82cb378f55ab2652b9b
+    reference_id:
+  - id: 879073
+    url: https://github.com/ulikunitz/xz/security/advisories/GHSA-25xm-hr59-7c27
+    reference_id:
+  - id: 931478
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1954368
+    reference_id: '1954368'
+  - id: 41498
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988243
+    reference_id: 988243
+  - id: 879075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xz_project:xz:*:*:*:*:*:go:*:*
+    reference_id: cpe:2.3:a:xz_project:xz:*:*:*:*:*:go:*:*
+  - id: 879074
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29482
+    reference_id: CVE-2021-29482
+  - id: 206526
+    url: https://access.redhat.com/errata/RHSA-2021:2920
+    reference_id: RHSA-2021:2920
+  - id: 927064
+    url: https://access.redhat.com/errata/RHSA-2021:3016
+    reference_id: RHSA-2021:3016
+  - id: 880768
+    url: https://access.redhat.com/errata/RHSA-2022:0687
+    reference_id: RHSA-2022:0687
+  - id: 506886
+    url: https://access.redhat.com/errata/RHSA-2022:1276
+    reference_id: RHSA-2022:1276
+  - id: '191758'
+    url: https://access.redhat.com/errata/RHSA-2022:2183
+    reference_id: RHSA-2022:2183
+weaknesses: []

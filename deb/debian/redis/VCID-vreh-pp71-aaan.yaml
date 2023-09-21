@@ -1,0 +1,84 @@
+vulnerability_id: VCID-vreh-pp71-aaan
+aliases:
+  - CVE-2016-10517
+summary: 'networking.c in Redis before 3.2.7 allows "Cross Protocol Scripting" because it lacks
+  a check for POST and Host: strings, which are not valid in the Redis protocol (but commonly
+  occur when an attack triggers an HTTP request to the Redis TCP port).'
+severities:
+  - id: 666662
+    reference_id: 1433042
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 47701
+    reference_id: 172337
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
+  - id: 666663
+    reference_id: 1433043
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666664
+    reference_id: 628578
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666665
+    reference_id: 628579
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666666
+    reference_id: 628580
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 47700
+    reference_id: 172336
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 214591
+    reference_id: 628581
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 214589
+    reference_id: 628581
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N
+references:
+  - id: 1433042
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10517.html
+    reference_id:
+  - id: 172337
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-10517.json
+    reference_id:
+  - id: 1433043
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10517
+    reference_id:
+  - id: 628578
+    url: https://github.com/antirez/redis/commit/874804da0c014a7d704b3d285aa500098a931f50
+    reference_id:
+  - id: 628579
+    url: https://raw.githubusercontent.com/antirez/redis/3.2/00-RELEASENOTES
+    reference_id:
+  - id: 628580
+    url: https://www.reddit.com/r/redis/comments/5r8wxn/redis_327_is_out_important_security_fixes_inside/
+    reference_id:
+  - id: 628577
+    url: http://www.securityfocus.com/bid/101572
+    reference_id:
+  - id: 172336
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1515245
+    reference_id: 1515245
+  - id: 512254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redislabs:redis:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redislabs:redis:*:*:*:*:*:*:*:*
+  - id: 628581
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10517
+    reference_id: CVE-2016-10517
+weaknesses: []

@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-14284
+fixed_purl:
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@4.19.37-5%2Bdeb10u2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@5.2.6-1?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: 'In the Linux kernel before 5.2.3, drivers/block/floppy.c allows a denial
+  of service by setup_format_params division-by-zero. Two consecutive ioctls can trigger
+  the bug: the first one should set the drive geometry with .sect and .rate values
+  that make F_SECT_PER_TRACK be zero. Next, the floppy format operation should be
+  called. It can be triggered by an unprivileged local user even when a floppy disk
+  has not been inserted. NOTE: QEMU creates the floppy device by default.'
+vulnerability_id: VCID-n9pr-jhs3-aaar
+weaknesses: []

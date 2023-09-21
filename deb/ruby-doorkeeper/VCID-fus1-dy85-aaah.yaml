@@ -1,0 +1,69 @@
+affected_purls:
+- pkg:gem/doorkeeper@5.0.0
+- pkg:gem/doorkeeper@5.0.1
+- pkg:gem/doorkeeper@5.0.2
+- pkg:gem/doorkeeper@5.1.0
+- pkg:gem/doorkeeper@5.2.0
+- pkg:gem/doorkeeper@5.2.1
+- pkg:gem/doorkeeper@5.2.2
+- pkg:gem/doorkeeper@5.2.3
+- pkg:gem/doorkeeper@5.2.4
+- pkg:gem/doorkeeper@5.3.0
+- pkg:gem/doorkeeper@5.3.1
+aliases:
+- CVE-2020-10187
+- GHSA-j7vx-8mqj-cqp9
+fixed_purl:
+- pkg:deb/debian/ruby-doorkeeper@0?distro=sid
+- pkg:deb/debian/ruby-doorkeeper@4.4.2-1?distro=sid
+- pkg:deb/debian/ruby-doorkeeper@5.0.3-1?distro=sid
+- pkg:deb/debian/ruby-doorkeeper@5.3.0-2?distro=sid
+- pkg:deb/debian/ruby-doorkeeper@5.5.0-2?distro=sid
+- pkg:gem/doorkeeper@5.0.3
+- pkg:gem/doorkeeper@5.1.1
+- pkg:gem/doorkeeper@5.2.5
+- pkg:gem/doorkeeper@5.3.2
+references:
+- id: 149937
+  reference_id: ''
+  url: https://github.com/doorkeeper-gem/doorkeeper/commit/25d038022c2fcad45af5b73f9d003cf38ff491f6
+- id: 149938
+  reference_id: ''
+  url: https://github.com/doorkeeper-gem/doorkeeper/releases
+- id: 149936
+  reference_id: ''
+  url: https://github.com/rubysec/ruby-advisory-db/pull/446
+- id: 129039
+  reference_id: '959903'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=959903
+- id: 149935
+  reference_id: CVE-2020-10187
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-10187
+- id: 149939
+  reference_id: CVE-2020-10187.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/doorkeeper/CVE-2020-10187.yml
+- id: 149940
+  reference_id: GHSA-j7vx-8mqj-cqp9
+  url: https://github.com/advisories/GHSA-j7vx-8mqj-cqp9
+- id: 149934
+  reference_id: GHSA-j7vx-8mqj-cqp9
+  url: https://github.com/doorkeeper-gem/doorkeeper/security/advisories/GHSA-j7vx-8mqj-cqp9
+severities:
+- id: 21194
+  reference_id: 149940
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 21193
+  reference_id: 149934
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Doorkeeper version 5.0.0 and later contains an information disclosure vulnerability
+  that allows an attacker to retrieve the client secret only intended for the OAuth
+  application owner. After authorizing the application and allowing access, the attacker
+  simply needs to request the list of their authorized applications in a JSON format
+  (usually GET /oauth/authorized_applications.json). An application is vulnerable
+  if the authorized applications controller is enabled.
+vulnerability_id: VCID-fus1-dy85-aaah
+weaknesses: []

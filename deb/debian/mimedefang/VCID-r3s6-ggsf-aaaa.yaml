@@ -1,0 +1,61 @@
+vulnerability_id: VCID-r3s6-ggsf-aaaa
+aliases:
+  - CVE-2017-14102
+summary: MIMEDefang 2.80 and earlier creates a PID file after dropping privileges to a non-root
+  account, which might allow local users to kill arbitrary processes by leveraging access to
+  this non-root account for PID file modification before a root script executes a "kill `cat
+  /pathname`" command, as demonstrated by the init-script.in and mimedefang-init.in scripts.
+severities:
+  - id: 675212
+    reference_id: 681359
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675213
+    reference_id: 681360
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675214
+    reference_id: 1440032
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675215
+    reference_id: 1440033
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 263292
+    reference_id: 681361
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 263290
+    reference_id: 681361
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 681359
+    url: http://lists.roaringpenguin.com/pipermail/mimedefang/2017-August/038077.html
+    reference_id:
+  - id: 681360
+    url: http://lists.roaringpenguin.com/pipermail/mimedefang/2017-August/038085.html
+    reference_id:
+  - id: 1440032
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-14102.html
+    reference_id:
+  - id: 1440033
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14102
+    reference_id:
+  - id: 69209
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=877363
+    reference_id: 877363
+  - id: 681362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mimedefang:mimedefang:2.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mimedefang:mimedefang:2.80:*:*:*:*:*:*:*
+  - id: 681361
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14102
+    reference_id: CVE-2017-14102
+weaknesses: []

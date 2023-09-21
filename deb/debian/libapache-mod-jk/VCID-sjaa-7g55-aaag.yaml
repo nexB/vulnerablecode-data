@@ -1,0 +1,109 @@
+vulnerability_id: VCID-sjaa-7g55-aaag
+aliases:
+  - CVE-2018-11759
+summary: The Apache Web Server (httpd) specific code that normalised the requested path before
+  matching it to the URI-worker map in Apache Tomcat JK (mod_jk) Connector 1.2.0 to 1.2.44 did
+  not handle some edge cases correctly. If only a sub-set of the URLs supported by Tomcat were
+  exposed via httpd, then it was possible for a specially constructed request to expose application
+  functionality through the reverse proxy that was not intended for clients accessing the application
+  via the reverse proxy. It was also possible in some configurations for a specially constructed
+  request to bypass the access controls configured in httpd. While there is some overlap between
+  this issue and CVE-2018-1323, they are not identical.
+severities:
+  - id: 613872
+    reference_id: 934196
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 697817
+    reference_id: 2757
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 613869
+    reference_id: 934193
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 314840
+    reference_id: 727814
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 314838
+    reference_id: 727814
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 613871
+    reference_id: 934195
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 613870
+    reference_id: 934194
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 934196
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-11759.json
+    reference_id:
+  - id: 269635
+    url: https://lists.apache.org/thread.html/277d42b48b6e9aef50949c0dcc79ce21693091d73da246b3c1981925@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 269636
+    url: https://lists.apache.org/thread.html/5b7a23e245c93235c503900da854a143596d901bf1a1f67e851a5de4@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 727811
+    url: https://lists.apache.org/thread.html/6d564bb0ab73d6b3efdd1d6b1c075d1a2c84ecd84a4159d6122529ad@%3Cannounce.tomcat.apache.org%3E
+    reference_id:
+  - id: 269637
+    url: https://lists.apache.org/thread.html/8d2a579bbd977c225c70cb23b0ec54865fb0dab5da3eff1e060c9935@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 269638
+    url: https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 269639
+    url: https://lists.apache.org/thread.html/r5c616dfc49156e4b06ffab842800c80f4425924d0f20c452c127a53c@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 269640
+    url: https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 727812
+    url: https://lists.debian.org/debian-lts-announce/2018/12/msg00007.html
+    reference_id:
+  - id: 727813
+    url: https://www.debian.org/security/2018/dsa-4357
+    reference_id:
+  - id: 2757
+    url: https://www.oracle.com/security-alerts/cpujan2020.html
+    reference_id:
+  - id: 727810
+    url: http://www.securityfocus.com/bid/105888
+    reference_id:
+  - id: 934193
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1645589
+    reference_id: 1645589
+  - id: 654397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat_jk_connector:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat_jk_connector:*:*:*:*:*:*:*:*
+  - id: 663143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:jboss_core_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:jboss_core_services:-:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 727814
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-11759
+    reference_id: CVE-2018-11759
+  - id: 934195
+    url: https://access.redhat.com/errata/RHSA-2019:0366
+    reference_id: RHSA-2019:0366
+  - id: 934194
+    url: https://access.redhat.com/errata/RHSA-2019:0367
+    reference_id: RHSA-2019:0367
+weaknesses: []

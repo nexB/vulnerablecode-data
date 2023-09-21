@@ -1,0 +1,223 @@
+vulnerability_id: VCID-dxgx-btz5-aaaa
+aliases:
+  - CVE-2019-15538
+summary: An issue was discovered in xfs_setattr_nonsize in fs/xfs/xfs_iops.c in the Linux kernel
+  through 5.2.9. XFS partially wedges when a chgrp fails on account of being out of disk quota.
+  xfs_setattr_nonsize is failing to unlock the ILOCK after the xfs_qm_vop_chown_reserve call
+  fails. This is primarily a local DoS attack vector, but it might result as well in remote
+  DoS if the XFS filesystem is exported for instance via NFS.
+severities:
+  - id: 703190
+    reference_id: 1464881
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 75546
+    reference_id: 206472
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 703191
+    reference_id: 1464882
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703194
+    reference_id: 780984
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703192
+    reference_id: 780983
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703193
+    reference_id: 1464883
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703195
+    reference_id: 780985
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703196
+    reference_id: 780986
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686650
+    reference_id: 1448714
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689254
+    reference_id: 1450920
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686648
+    reference_id: 1448712
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689252
+    reference_id: 1450919
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 75545
+    reference_id: 206471
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 385511
+    reference_id: 780988
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 385509
+    reference_id: 780988
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 49210
+    reference_id: 173507
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 693924
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00064.html
+    reference_id:
+  - id: 693925
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00066.html
+    reference_id:
+  - id: 1464881
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-15538.html
+    reference_id:
+  - id: 206472
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-15538.json
+    reference_id:
+  - id: 1464882
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15538
+    reference_id:
+  - id: 780984
+    url: https://github.com/torvalds/linux/commit/1fb254aa983bf190cfd685d40c64a480a9bafaee
+    reference_id:
+  - id: 780983
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=1fb254aa983bf190cfd685d40c64a480a9bafaee
+    reference_id:
+  - id: 1464883
+    url: https://git.kernel.org/linus/1fb254aa983bf190cfd685d40c64a480a9bafaee
+    reference_id:
+  - id: 763091
+    url: https://lists.debian.org/debian-lts-announce/2019/09/msg00014.html
+    reference_id:
+  - id: 763092
+    url: https://lists.debian.org/debian-lts-announce/2019/09/msg00015.html
+    reference_id:
+  - id: 779116
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O3RUDQJXRJQVGHCGR4YZWTQ3ECBI7TXH/
+    reference_id:
+  - id: 779117
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T4JZ6AEUKFWBHQAROGMQARJ274PQP2QP/
+    reference_id:
+  - id: 780985
+    url: https://lore.kernel.org/linux-xfs/20190823035528.GH1037422@magnolia/
+    reference_id:
+  - id: 780986
+    url: https://lore.kernel.org/linux-xfs/20190823192433.GA8736@eldamar.local
+    reference_id:
+  - id: 727336
+    url: https://security.netapp.com/advisory/ntap-20191004-0001/
+    reference_id:
+  - id: 780987
+    url: https://support.f5.com/csp/article/K32592426?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 1448714
+    url: https://ubuntu.com/security/notices/USN-4144-1
+    reference_id:
+  - id: 1450920
+    url: https://ubuntu.com/security/notices/USN-4147-1
+    reference_id:
+  - id: 750144
+    url: https://usn.ubuntu.com/4144-1/
+    reference_id:
+  - id: 763094
+    url: https://usn.ubuntu.com/4147-1/
+    reference_id:
+  - id: 1448712
+    url: https://usn.ubuntu.com/usn/usn-4144-1
+    reference_id:
+  - id: 1450919
+    url: https://usn.ubuntu.com/usn/usn-4147-1
+    reference_id:
+  - id: 206471
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1746777
+    reference_id: 1746777
+  - id: 727343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 641049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 780989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:-:*:*:*:*:*:*
+  - id: 780990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc1:*:*:*:*:*:*
+  - id: 780991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc2:*:*:*:*:*:*
+  - id: 780992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc3:*:*:*:*:*:*
+  - id: 780993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc4:*:*:*:*:*:*
+  - id: 780994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc5:*:*:*:*:*:*
+  - id: 780995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:rc6:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 780988
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-15538
+    reference_id: CVE-2019-15538
+  - id: 173507
+    url: https://access.redhat.com/errata/RHSA-2020:2104
+    reference_id: RHSA-2020:2104
+weaknesses: []

@@ -1,0 +1,91 @@
+vulnerability_id: VCID-4r1w-n2th-aaak
+aliases:
+  - CVE-2017-1000370
+summary: The offset2lib patch as used in the Linux Kernel contains a vulnerability that allows
+  a PIE binary to be execve()'ed with 1GB of arguments or environmental strings then the stack
+  occupies the address 0x80000000 and the PIE binary is mapped above 0x40000000 nullifying the
+  protection of the offset2lib patch. This affects Linux Kernel version 4.11.5 and earlier.
+  This is a different issue than CVE-2017-1000371. This issue appears to be limited to i386
+  based systems.
+severities:
+  - id: 673158
+    reference_id: 1438345
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673159
+    reference_id: 1438346
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 75506
+    reference_id: 206435
+    scoring_system: cvssv3
+    value: '2.9'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 673160
+    reference_id: 1438347
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673166
+    reference_id: 668710
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 75505
+    reference_id: 206434
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 249948
+    reference_id: 668787
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 249946
+    reference_id: 668787
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1438345
+    url: http://cybersecurity.upv.es/attacks/offset2lib/offset2lib.html
+    reference_id:
+  - id: 1438346
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000370.html
+    reference_id:
+  - id: 206435
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000370.json
+    reference_id:
+  - id: 668785
+    url: https://access.redhat.com/security/cve/CVE-2017-1000370
+    reference_id:
+  - id: 1438347
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000370
+    reference_id:
+  - id: 668786
+    url: https://www.exploit-db.com/exploits/42273/
+    reference_id:
+  - id: 668725
+    url: https://www.exploit-db.com/exploits/42274/
+    reference_id:
+  - id: 668710
+    url: https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt
+    reference_id:
+  - id: 668142
+    url: http://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 668784
+    url: http://www.securityfocus.com/bid/99149
+    reference_id:
+  - id: 206434
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1462153
+    reference_id: 1462153
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 668787
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000370
+    reference_id: CVE-2017-1000370
+weaknesses: []

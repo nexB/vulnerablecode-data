@@ -1,0 +1,113 @@
+vulnerability_id: VCID-tb83-ecmn-aaag
+aliases:
+  - CVE-2020-29573
+summary: 'sysdeps/i386/ldbl2mpn.c in the GNU C Library (aka glibc or libc6) before 2.23 on x86
+  targets has a stack-based buffer overflow if the input to any of the printf family of functions
+  is an 80-bit long double with a non-canonical bit pattern, as seen when passing a \x00\x04\x00\x00\x00\x00\x00\x00\x00\x04
+  value to sprintf. NOTE: the issue does not affect glibc by default in 2016 or later (i.e.,
+  2.23 or later) because of commits made in 2015 for inlining of C99 math functions through
+  use of GCC built-ins. In other words, the reference to 2.23 is intentional despite the mention
+  of "Fixed for glibc 2.33" in the 26649 reference.'
+severities:
+  - id: 698660
+    reference_id: 1458481
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 609636
+    reference_id: 931078
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 698661
+    reference_id: 1458482
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 698662
+    reference_id: 840591
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 609634
+    reference_id: 931076
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 471533
+    reference_id: 840592
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 471531
+    reference_id: 840592
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 55375
+    reference_id: 180610
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609635
+    reference_id: 931077
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 55376
+    reference_id: 180611
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 55378
+    reference_id: 180613
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1458481
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-29573.html
+    reference_id:
+  - id: 931078
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-29573.json
+    reference_id:
+  - id: 1458482
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-29573
+    reference_id:
+  - id: 627851
+    url: https://security.gentoo.org/glsa/202101-20
+    reference_id:
+  - id: 840562
+    url: https://security.netapp.com/advisory/ntap-20210122-0004/
+    reference_id:
+  - id: 840590
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=26649
+    reference_id:
+  - id: 840591
+    url: https://sourceware.org/pipermail/libc-alpha/2020-September/117779.html
+    reference_id:
+  - id: 931076
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1905213
+    reference_id: '1905213'
+  - id: 803439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:x86:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:x86:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 840592
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-29573
+    reference_id: CVE-2020-29573
+  - id: 180610
+    url: https://access.redhat.com/errata/RHSA-2021:0348
+    reference_id: RHSA-2021:0348
+  - id: 931077
+    url: https://access.redhat.com/errata/RHSA-2021:2813
+    reference_id: RHSA-2021:2813
+  - id: 180611
+    url: https://access.redhat.com/errata/RHSA-2021:2998
+    reference_id: RHSA-2021:2998
+  - id: 180613
+    url: https://access.redhat.com/errata/RHSA-2021:3315
+    reference_id: RHSA-2021:3315
+weaknesses: []

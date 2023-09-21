@@ -1,0 +1,33 @@
+vulnerability_id: VCID-me6s-8uaq-aaak
+aliases:
+  - CVE-2019-20007
+summary: An issue was discovered in ezXML 0.8.2 through 0.8.6. The function ezxml_str2utf8,
+  while parsing a crafted XML file, performs zero-length reallocation in ezxml.c, leading to
+  returning a NULL pointer (in some compilers). After this, the function ezxml_parse_str does
+  not check whether the s variable is not NULL in ezxml.c, leading to a NULL pointer dereference
+  and crash (segmentation fault).
+severities:
+  - id: 398294
+    reference_id: 791675
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 398292
+    reference_id: 791675
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 791674
+    url: https://sourceforge.net/p/ezxml/bugs/13/
+    reference_id:
+  - id: 63547
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989360
+    reference_id: 989360
+  - id: 791671
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ezxml_project:ezxml:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ezxml_project:ezxml:*:*:*:*:*:*:*:*
+  - id: 791675
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-20007
+    reference_id: CVE-2019-20007
+weaknesses: []

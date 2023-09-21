@@ -1,0 +1,105 @@
+vulnerability_id: VCID-8hbz-85b6-aaar
+aliases:
+  - CVE-2021-28688
+summary: The fix for XSA-365 includes initialization of pointers such that subsequent cleanup
+  code wouldn't use uninitialized or stale values. This initialization went too far and may
+  under certain conditions also overwrite pointers which are in need of cleaning up. The lack
+  of cleanup would result in leaking persistent grants. The leak in turn would prevent fully
+  cleaning up after a respective guest has died, leaving around zombie domains. All Linux versions
+  having the fix for XSA-365 applied are vulnerable. XSA-365 was classified to affect versions
+  back to at least 3.11.
+severities:
+  - id: 701502
+    reference_id: 1460900
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 701503
+    reference_id: 1460901
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 701504
+    reference_id: 1460902
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 700341
+    reference_id: 1459893
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697768
+    reference_id: 1457698
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701430
+    reference_id: 1460846
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701505
+    reference_id: 1460903
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 529930
+    reference_id: 877935
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 529928
+    reference_id: 877935
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+references:
+  - id: 1460900
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-28688.html
+    reference_id:
+  - id: 1460901
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28688
+    reference_id:
+  - id: 1460902
+    url: https://git.kernel.org/linus/a846738f8c3788d846ed1f587270d2f2e3d32432
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 171248
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html
+    reference_id:
+  - id: 1459893
+    url: https://ubuntu.com/security/notices/USN-4946-1
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 1457698
+    url: https://ubuntu.com/security/notices/USN-4982-1
+    reference_id:
+  - id: 1460846
+    url: https://ubuntu.com/security/notices/USN-4984-1
+    reference_id:
+  - id: 1460903
+    url: https://xenbits.xen.org/xsa/advisory-371.html
+    reference_id:
+  - id: 877934
+    url: https://xenbits.xenproject.org/xsa/advisory-371.txt
+    reference_id:
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 877935
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-28688
+    reference_id: CVE-2021-28688
+weaknesses: []

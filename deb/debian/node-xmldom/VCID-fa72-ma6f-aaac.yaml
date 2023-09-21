@@ -1,0 +1,56 @@
+vulnerability_id: VCID-fa72-ma6f-aaac
+aliases:
+  - CVE-2022-39353
+  - GHSA-crh6-fp67-6883
+  - GMS-2022-6112
+  - GMS-2022-6132
+summary: 'xmldom is a pure JavaScript W3C standard-based (XML DOM Level 2 Core) `DOMParser`
+  and `XMLSerializer` module. xmldom parses XML that is not well-formed because it contains
+  multiple top level elements, and adds all root nodes to the `childNodes` collection of the
+  `Document`, without reporting any error or throwing. This breaks the assumption that there
+  is only a single root node in the tree, which led to issuance of CVE-2022-39299 as it is a
+  potential issue for dependents. Update to @xmldom/xmldom@~0.7.7, @xmldom/xmldom@~0.8.4 (dist-tag
+  latest) or @xmldom/xmldom@>=0.9.0-beta.4 (dist-tag next). As a workaround, please one of the
+  following approaches depending on your use case: instead of searching for elements in the
+  whole DOM, only search in the `documentElement`or reject a document with a document that has
+  more then 1 `childNode`.'
+severities:
+  - id: 707254
+    reference_id: 1463632
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+  - id: 707253
+    reference_id: 1463555
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 1463554
+    url: https://github.com/jindw/xmldom/issues/150
+    reference_id:
+  - id: 1463629
+    url: https://github.com/xmldom/xmldom/releases/tag/0.7.7
+    reference_id:
+  - id: 1463630
+    url: https://github.com/xmldom/xmldom/releases/tag/0.8.4
+    reference_id:
+  - id: 1463631
+    url: https://github.com/xmldom/xmldom/releases/tag/0.9.0-beta.4
+    reference_id:
+  - id: 1468122
+    url: https://lists.debian.org/debian-lts-announce/2023/01/msg00000.html
+    reference_id:
+  - id: 1462511
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1024736
+    reference_id: 1024736
+  - id: 1463553
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-39353
+    reference_id: CVE-2022-39353
+  - id: 1463632
+    url: https://github.com/advisories/GHSA-crh6-fp67-6883
+    reference_id: GHSA-crh6-fp67-6883
+  - id: 1463555
+    url: https://github.com/xmldom/xmldom/security/advisories/GHSA-crh6-fp67-6883
+    reference_id: GHSA-crh6-fp67-6883
+weaknesses: []

@@ -1,0 +1,668 @@
+vulnerability_id: VCID-xjh5-6crv-aaak
+aliases:
+  - CVE-2019-0053
+summary: 'Insufficient validation of environment variables in the telnet client supplied in
+  Junos OS can lead to stack-based buffer overflows, which can be exploited to bypass veriexec
+  restrictions on Junos OS. A stack-based overflow is present in the handling of environment
+  variables when connecting via the telnet client to remote telnet servers. This issue only
+  affects the telnet client — accessible from the CLI or shell — in Junos OS. Inbound telnet
+  services are not affected by this issue. This issue affects: Juniper Networks Junos OS: 12.3
+  versions prior to 12.3R12-S13; 12.3X48 versions prior to 12.3X48-D80; 14.1X53 versions prior
+  to 14.1X53-D130, 14.1X53-D49; 15.1 versions prior to 15.1F6-S12, 15.1R7-S4; 15.1X49 versions
+  prior to 15.1X49-D170; 15.1X53 versions prior to 15.1X53-D237, 15.1X53-D496, 15.1X53-D591,
+  15.1X53-D69; 16.1 versions prior to 16.1R3-S11, 16.1R7-S4; 16.2 versions prior to 16.2R2-S9;
+  17.1 versions prior to 17.1R3; 17.2 versions prior to 17.2R1-S8, 17.2R2-S7, 17.2R3-S1; 17.3
+  versions prior to 17.3R3-S4; 17.4 versions prior to 17.4R1-S6, 17.4R2-S3, 17.4R3; 18.1 versions
+  prior to 18.1R2-S4, 18.1R3-S3; 18.2 versions prior to 18.2R1-S5, 18.2R2-S2, 18.2R3; 18.2X75
+  versions prior to 18.2X75-D40; 18.3 versions prior to 18.3R1-S3, 18.3R2; 18.4 versions prior
+  to 18.4R1-S2, 18.4R2.'
+severities:
+  - id: 689245
+    reference_id: 1450912
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689246
+    reference_id: 1450913
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689247
+    reference_id: 1450914
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689248
+    reference_id: 1450915
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689249
+    reference_id: 1450916
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 362632
+    reference_id: 762912
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 362630
+    reference_id: 762912
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 762907
+    url: http://packetstormsecurity.com/files/153746/FreeBSD-Security-Advisory-FreeBSD-SA-19-12.telnet.html
+    reference_id:
+  - id: 1450912
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-0053.html
+    reference_id:
+  - id: 1450913
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0053
+    reference_id:
+  - id: 762908
+    url: https://kb.juniper.net/JSA10947
+    reference_id:
+  - id: 1450914
+    url: https://raw.githubusercontent.com/hackerhouse-opensource/exploits/master/inetutils-telnet.txt
+    reference_id:
+  - id: 762909
+    url: https://seclists.org/bugtraq/2019/Jul/45
+    reference_id:
+  - id: 762910
+    url: https://security.FreeBSD.org/advisories/FreeBSD-SA-19:12.telnet.asc
+    reference_id:
+  - id: 762911
+    url: https://www.exploit-db.com/exploits/45982
+    reference_id:
+  - id: 1450915
+    url: https://www.freebsd.org/security/advisories/FreeBSD-SA-19:12.telnet.asc
+    reference_id:
+  - id: 1450916
+    url: https://www.openwall.com/lists/oss-security/2018/12/14/8
+    reference_id:
+  - id: 42182
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=945861
+    reference_id: 945861
+  - id: 580056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:-:*:*:*:*:*:*
+  - id: 159562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r1:*:*:*:*:*:*
+  - id: 630910
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r11:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r11:*:*:*:*:*:*
+  - id: 695573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r12:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r12:*:*:*:*:*:*
+  - id: 762913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3r12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3r12:*:*:*:*:*:*:*
+  - id: 695620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r13:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r13:*:*:*:*:*:*
+  - id: 159563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r2:*:*:*:*:*:*
+  - id: 159564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r3:*:*:*:*:*:*
+  - id: 159565
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r4:*:*:*:*:*:*
+  - id: 159566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r5:*:*:*:*:*:*
+  - id: 159567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r6:*:*:*:*:*:*
+  - id: 159568
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r7:*:*:*:*:*:*
+  - id: 159569
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r8:*:*:*:*:*:*
+  - id: 159574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3:r9:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3:r9:*:*:*:*:*:*
+  - id: 159523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d10:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d10:*:*:*:*:*:*
+  - id: 630823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d15:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d15:*:*:*:*:*:*
+  - id: 630855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d25:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d25:*:*:*:*:*:*
+  - id: 646822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d30:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d30:*:*:*:*:*:*
+  - id: 695562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d35:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d35:*:*:*:*:*:*
+  - id: 695613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d40:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d40:*:*:*:*:*:*
+  - id: 695614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d45:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d45:*:*:*:*:*:*
+  - id: 695708
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d50:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d50:*:*:*:*:*:*
+  - id: 695709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d55:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d55:*:*:*:*:*:*
+  - id: 717504
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d60:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d60:*:*:*:*:*:*
+  - id: 717521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d65:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d65:*:*:*:*:*:*
+  - id: 717575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d70:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d70:*:*:*:*:*:*
+  - id: 717731
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:12.3x48:d75:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:12.3x48:d75:*:*:*:*:*:*
+  - id: 580063
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:-:*:*:*:*:*:*
+  - id: 630827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d10:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d10:*:*:*:*:*:*
+  - id: 630835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d15:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d15:*:*:*:*:*:*
+  - id: 630828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d16:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d16:*:*:*:*:*:*
+  - id: 630836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d25:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d25:*:*:*:*:*:*
+  - id: 630837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d26:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d26:*:*:*:*:*:*
+  - id: 630856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d27:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d27:*:*:*:*:*:*
+  - id: 630913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d30:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d30:*:*:*:*:*:*
+  - id: 630914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d35:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d35:*:*:*:*:*:*
+  - id: 646807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d40:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d40:*:*:*:*:*:*
+  - id: 695711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d45:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d45:*:*:*:*:*:*
+  - id: 717662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:14.1x53:d48:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:14.1x53:d48:*:*:*:*:*:*
+  - id: 580065
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:-:*:*:*:*:*:*
+  - id: 630951
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:a1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:a1:*:*:*:*:*:*
+  - id: 646809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f1:*:*:*:*:*:*
+  - id: 630839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f2:*:*:*:*:*:*
+  - id: 630838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f2-s1:*:*:*:*:*:*
+  - id: 630868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f2-s2:*:*:*:*:*:*
+  - id: 630869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f2-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f2-s3:*:*:*:*:*:*
+  - id: 630870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f2-s4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f2-s4:*:*:*:*:*:*
+  - id: 630871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f3:*:*:*:*:*:*
+  - id: 630872
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f4:*:*:*:*:*:*
+  - id: 630941
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f5:*:*:*:*:*:*
+  - id: 646810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f6:*:*:*:*:*:*
+  - id: 717597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:f6-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:f6-s3:*:*:*:*:*:*
+  - id: 615228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r1:*:*:*:*:*:*
+  - id: 630840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r2:*:*:*:*:*:*
+  - id: 630916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r3:*:*:*:*:*:*
+  - id: 669975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r4:*:*:*:*:*:*
+  - id: 717547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r4-s9:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r4-s9:*:*:*:*:*:*
+  - id: 669977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r5:*:*:*:*:*:*
+  - id: 695608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r6:*:*:*:*:*:*
+  - id: 717548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r6-s6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r6-s6:*:*:*:*:*:*
+  - id: 717640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r7-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r7-s1:*:*:*:*:*:*
+  - id: 761407
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r7-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r7-s2:*:*:*:*:*:*
+  - id: 761408
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1:r7-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1:r7-s3:*:*:*:*:*:*
+  - id: 695567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:-:*:*:*:*:*:*
+  - id: 615254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d10:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d10:*:*:*:*:*:*
+  - id: 717505
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d100:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d100:*:*:*:*:*:*
+  - id: 695724
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d110:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d110:*:*:*:*:*:*
+  - id: 717506
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d120:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d120:*:*:*:*:*:*
+  - id: 717522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d130:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d130:*:*:*:*:*:*
+  - id: 717576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d140:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d140:*:*:*:*:*:*
+  - id: 630934
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d150:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d150:*:*:*:*:*:*
+  - id: 762888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d160:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d160:*:*:*:*:*:*
+  - id: 630841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d20:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d20:*:*:*:*:*:*
+  - id: 630935
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d30:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d30:*:*:*:*:*:*
+  - id: 630873
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d35:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d35:*:*:*:*:*:*
+  - id: 646823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d40:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d40:*:*:*:*:*:*
+  - id: 646824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d45:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d45:*:*:*:*:*:*
+  - id: 646825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d50:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d50:*:*:*:*:*:*
+  - id: 646826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d55:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d55:*:*:*:*:*:*
+  - id: 669980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d60:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d60:*:*:*:*:*:*
+  - id: 669981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d65:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d65:*:*:*:*:*:*
+  - id: 669982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d70:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d70:*:*:*:*:*:*
+  - id: 669983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d75:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d75:*:*:*:*:*:*
+  - id: 669984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d80:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d80:*:*:*:*:*:*
+  - id: 669985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x49:d90:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x49:d90:*:*:*:*:*:*
+  - id: 695568
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:-:*:*:*:*:*:*
+  - id: 630918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d20:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d20:*:*:*:*:*:*
+  - id: 630919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d21:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d21:*:*:*:*:*:*
+  - id: 646827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d210:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d210:*:*:*:*:*:*
+  - id: 695716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d230:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d230:*:*:*:*:*:*
+  - id: 717403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d231:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d231:*:*:*:*:*:*
+  - id: 717679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d232:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d232:*:*:*:*:*:*
+  - id: 717680
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d233:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d233:*:*:*:*:*:*
+  - id: 762890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d234:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d234:*:*:*:*:*:*
+  - id: 762891
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d235:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d235:*:*:*:*:*:*
+  - id: 762892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d236:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d236:*:*:*:*:*:*
+  - id: 646811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d25:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d25:*:*:*:*:*:*
+  - id: 630920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d30:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d30:*:*:*:*:*:*
+  - id: 630921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d32:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d32:*:*:*:*:*:*
+  - id: 630922
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d33:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d33:*:*:*:*:*:*
+  - id: 630923
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d34:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d34:*:*:*:*:*:*
+  - id: 670801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d40:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d40:*:*:*:*:*:*
+  - id: 670802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d45:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d45:*:*:*:*:*:*
+  - id: 762810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d495:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d495:*:*:*:*:*:*
+  - id: 646814
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d52:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d52:*:*:*:*:*:*
+  - id: 646815
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d55:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d55:*:*:*:*:*:*
+  - id: 761410
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d56:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d56:*:*:*:*:*:*
+  - id: 717681
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d59:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d59:*:*:*:*:*:*
+  - id: 762747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d590:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d590:*:*:*:*:*:*
+  - id: 646828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d60:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d60:*:*:*:*:*:*
+  - id: 646829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d61:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d61:*:*:*:*:*:*
+  - id: 646830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d62:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d62:*:*:*:*:*:*
+  - id: 646831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d63:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d63:*:*:*:*:*:*
+  - id: 646832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d64:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d64:*:*:*:*:*:*
+  - id: 646833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d65:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d65:*:*:*:*:*:*
+  - id: 717682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d66:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d66:*:*:*:*:*:*
+  - id: 717683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d67:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d67:*:*:*:*:*:*
+  - id: 762748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d68:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d68:*:*:*:*:*:*
+  - id: 669988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:15.1x53:d70:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:15.1x53:d70:*:*:*:*:*:*
+  - id: 761411
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:-:*:*:*:*:*:*
+  - id: 669989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r1:*:*:*:*:*:*
+  - id: 669990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r2:*:*:*:*:*:*
+  - id: 669991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r3:*:*:*:*:*:*
+  - id: 761412
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r3-s10:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r3-s10:*:*:*:*:*:*
+  - id: 762696
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r3-s11:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r3-s11:*:*:*:*:*:*
+  - id: 695609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r4:*:*:*:*:*:*
+  - id: 669993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r5:*:*:*:*:*:*
+  - id: 717355
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r6:*:*:*:*:*:*
+  - id: 717551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.1:r7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.1:r7:*:*:*:*:*:*
+  - id: 761414
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:-:*:*:*:*:*:*
+  - id: 669995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r1:*:*:*:*:*:*
+  - id: 669996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2:*:*:*:*:*:*
+  - id: 717648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s1:*:*:*:*:*:*
+  - id: 717649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s2:*:*:*:*:*:*
+  - id: 717552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s5:*:*:*:*:*:*
+  - id: 717650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s6:*:*:*:*:*:*
+  - id: 761415
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s7:*:*:*:*:*:*
+  - id: 761416
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:16.2:r2-s8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:16.2:r2-s8:*:*:*:*:*:*
+  - id: 761418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:-:*:*:*:*:*:*
+  - id: 669998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r1:*:*:*:*:*:*
+  - id: 761420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s1:*:*:*:*:*:*
+  - id: 761419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s10:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s10:*:*:*:*:*:*
+  - id: 761421
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s2:*:*:*:*:*:*
+  - id: 761422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s3:*:*:*:*:*:*
+  - id: 761423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s4:*:*:*:*:*:*
+  - id: 761424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s5:*:*:*:*:*:*
+  - id: 761425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s6:*:*:*:*:*:*
+  - id: 717553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.1:r2-s7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.1:r2-s7:*:*:*:*:*:*
+  - id: 761426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:-:*:*:*:*:*:*
+  - id: 670001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r1:*:*:*:*:*:*
+  - id: 761427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r1-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r1-s2:*:*:*:*:*:*
+  - id: 761428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r1-s4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r1-s4:*:*:*:*:*:*
+  - id: 761429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r1-s7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r1-s7:*:*:*:*:*:*
+  - id: 670002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r2:*:*:*:*:*:*
+  - id: 761431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.2:r2-s6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.2:r2-s6:*:*:*:*:*:*
+  - id: 761435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*
+  - id: 717557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r1:*:*:*:*:*:*
+  - id: 717558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*
+  - id: 761436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*
+  - id: 717577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r2-s2:*:*:*:*:*:*
+  - id: 761437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r3-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r3-s1:*:*:*:*:*:*
+  - id: 761438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r3-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r3-s2:*:*:*:*:*:*
+  - id: 761439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.3:r3-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.3:r3-s3:*:*:*:*:*:*
+  - id: 761441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:-:*:*:*:*:*:*
+  - id: 717560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r1:*:*:*:*:*:*
+  - id: 761442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r1-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r1-s1:*:*:*:*:*:*
+  - id: 761443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r1-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r1-s2:*:*:*:*:*:*
+  - id: 761444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r1-s4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r1-s4:*:*:*:*:*:*
+  - id: 717561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r2:*:*:*:*:*:*
+  - id: 761447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r2-s1:*:*:*:*:*:*
+  - id: 762749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:17.4:r2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:17.4:r2-s2:*:*:*:*:*:*
+  - id: 761450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*
+  - id: 717580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*
+  - id: 761454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*
+  - id: 761451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*
+  - id: 761452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*
+  - id: 761458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r3:*:*:*:*:*:*
+  - id: 761455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.1:r3-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.1:r3-s2:*:*:*:*:*:*
+  - id: 761459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2:-:*:*:*:*:*:*
+  - id: 762712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2:r1:*:*:*:*:*:*
+  - id: 762710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2:r1-s3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2:r1-s3:*:*:*:*:*:*
+  - id: 762711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2:r1-s4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2:r1-s4:*:*:*:*:*:*
+  - id: 761461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2:r2-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2:r2-s1:*:*:*:*:*:*
+  - id: 762777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2x75:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2x75:-:*:*:*:*:*:*
+  - id: 762778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.2x75:d20:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.2x75:d20:*:*:*:*:*:*
+  - id: 761465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.3:-:*:*:*:*:*:*
+  - id: 761469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.3:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.3:r1:*:*:*:*:*:*
+  - id: 761466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.3:r1-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.3:r1-s1:*:*:*:*:*:*
+  - id: 761467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.3:r1-s2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.3:r1-s2:*:*:*:*:*:*
+  - id: 761471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.4:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.4:-:*:*:*:*:*:*
+  - id: 761473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.4:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.4:r1:*:*:*:*:*:*
+  - id: 762914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:juniper:junos:18.4:r1-s1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:juniper:junos:18.4:r1-s1:*:*:*:*:*:*
+  - id: 762912
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-0053
+    reference_id: CVE-2019-0053
+weaknesses: []

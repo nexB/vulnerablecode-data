@@ -1,0 +1,126 @@
+vulnerability_id: VCID-t1zk-8nsm-aaae
+aliases:
+  - CVE-2018-10897
+summary: A directory traversal issue was found in reposync, a part of yum-utils, where reposync
+  fails to sanitize paths in remote repository configuration files. If an attacker controls
+  a repository, they may be able to copy files outside of the destination directory on the targeted
+  system via path traversal. If reposync is running with heightened privileges on a targeted
+  system, this flaw could potentially result in system compromise via the overwriting of critical
+  system files. Version 1.1.31 and older are believed to be affected.
+severities:
+  - id: 682950
+    reference_id: 1445869
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615297
+    reference_id: 935239
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 682951
+    reference_id: 1445870
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615293
+    reference_id: 935235
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 311661
+    reference_id: 725172
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 311659
+    reference_id: 725172
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 615294
+    reference_id: 935236
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 615296
+    reference_id: 935238
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 615295
+    reference_id: 935237
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1445869
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10897.html
+    reference_id:
+  - id: 935239
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10897.json
+    reference_id:
+  - id: 725168
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10897
+    reference_id:
+  - id: 1445870
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10897
+    reference_id:
+  - id: 725169
+    url: https://github.com/rpm-software-management/yum-utils/commit/6a8de061f8fdc885e74ebe8c94625bf53643b71c
+    reference_id:
+  - id: 725170
+    url: https://github.com/rpm-software-management/yum-utils/commit/7554c0133eb830a71dc01846037cc047d0acbc2c
+    reference_id:
+  - id: 725171
+    url: https://github.com/rpm-software-management/yum-utils/pull/43
+    reference_id:
+  - id: 10334
+    url: https://help.ecostruxureit.com/display/public/UADCE725/Security+fixes+in+StruxureWare+Data+Center+Expert+v7.6.0
+    reference_id:
+  - id: 725164
+    url: http://www.securitytracker.com/id/1041594
+    reference_id:
+  - id: 935235
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1600221
+    reference_id: 1600221
+  - id: 147355
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=921131
+    reference_id: 921131
+  - id: 676013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+  - id: 725173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rpm:yum-utils:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rpm:yum-utils:*:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 725172
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10897
+    reference_id: CVE-2018-10897
+  - id: 935236
+    url: https://access.redhat.com/errata/RHSA-2018:2284
+    reference_id: RHSA-2018:2284
+  - id: 935238
+    url: https://access.redhat.com/errata/RHSA-2018:2285
+    reference_id: RHSA-2018:2285
+  - id: 935237
+    url: https://access.redhat.com/errata/RHSA-2018:2626
+    reference_id: RHSA-2018:2626
+weaknesses: []

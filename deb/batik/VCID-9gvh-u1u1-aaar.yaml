@@ -1,0 +1,87 @@
+affected_purls:
+- pkg:maven/org.apache.xmlgraphics/batik@1.9.1
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.6.1
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.7
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.8
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.9
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.9.1
+aliases:
+- CVE-2018-8013
+- GHSA-25gw-4pcc-45cf
+fixed_purl:
+- pkg:deb/debian/batik@1.10-1?distro=sid
+- pkg:deb/debian/batik@1.10-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/batik@1.12-4%2Bdeb11u1?distro=sid
+- pkg:deb/debian/batik@1.16%2Bdfsg-1?distro=sid
+- pkg:maven/org.apache.xmlgraphics/batik@1.10
+- pkg:maven/org.apache.xmlgraphics/batik-dom@1.10
+references:
+- id: 145655
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/r9e90b4d1cf6ea87a79bb506541140dfbf4801f4463a7cee08126ee44@%3Ccommits.xmlgraphics.apache.org%3E
+- id: 145656
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/rc0a31867796043fbe59113fb654fe8b13309fe04f8935acb8d0fab19@%3Ccommits.xmlgraphics.apache.org%3E
+- id: 145657
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2018/05/msg00016.html
+- id: 145658
+  reference_id: ''
+  url: https://mail-archives.apache.org/mod_mbox/xmlgraphics-batik-dev/201805.mbox/%3c000701d3f28f$d01860a0$704921e0$@gmail.com%3e
+- id: 145659
+  reference_id: ''
+  url: https://usn.ubuntu.com/3661-1/
+- id: 145660
+  reference_id: ''
+  url: https://www.debian.org/security/2018/dsa-4215
+- id: 138341
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2020.html
+- id: 135896
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2020.html
+- id: 133145
+  reference_id: ''
+  url: https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+- id: 136255
+  reference_id: ''
+  url: https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+- id: 133146
+  reference_id: ''
+  url: https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+- id: 142692
+  reference_id: ''
+  url: https://xmlgraphics.apache.org/security.html
+- id: 134224
+  reference_id: ''
+  url: http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+- id: 136007
+  reference_id: ''
+  url: http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+- id: 145661
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/104252
+- id: 145662
+  reference_id: ''
+  url: http://www.securitytracker.com/id/1040995
+- id: 128347
+  reference_id: '899374'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=899374
+- id: 145654
+  reference_id: CVE-2018-8013
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-8013
+- id: 145663
+  reference_id: GHSA-25gw-4pcc-45cf
+  url: https://github.com/advisories/GHSA-25gw-4pcc-45cf
+severities:
+- id: 20445
+  reference_id: 145663
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: CRITICAL
+summary: In Apache Batik 1.x before 1.10, when deserializing subclass of `AbstractDocument`,
+  the class takes a string from the inputStream as the class name which then use it
+  to call the no-arg constructor of the class. Fix was to check the class type before
+  calling newInstance in deserialization.
+vulnerability_id: VCID-9gvh-u1u1-aaar
+weaknesses: []

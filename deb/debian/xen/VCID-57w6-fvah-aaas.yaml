@@ -1,0 +1,207 @@
+vulnerability_id: VCID-57w6-fvah-aaas
+aliases:
+  - CVE-2015-8340
+summary: The memory_exchange function in common/memory.c in Xen 3.2.x through 4.6.x does not
+  properly release locks, which might allow guest OS administrators to cause a denial of service
+  (deadlock or host crash) via unspecified vectors, related to XENMEM_exchange error handling.
+severities:
+  - id: 664375
+    reference_id: 1431267
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52241
+    reference_id: 177028
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 664376
+    reference_id: 1431268
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 664373
+    reference_id: 618075
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52238
+    reference_id: 177026
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 205251
+    reference_id: 618078
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:C
+references:
+  - id: 1431267
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8340.html
+    reference_id:
+  - id: 177028
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-8340.json
+    reference_id:
+  - id: 1431268
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8340
+    reference_id:
+  - id: 497542
+    url: https://security.gentoo.org/glsa/201604-03
+    reference_id:
+  - id: 618071
+    url: http://support.citrix.com/article/CTX203451
+    reference_id:
+  - id: 618072
+    url: http://www.debian.org/security/2016/dsa-3519
+    reference_id:
+  - id: 618073
+    url: http://www.securityfocus.com/bid/79038
+    reference_id:
+  - id: 618074
+    url: http://www.securitytracker.com/id/1034391
+    reference_id:
+  - id: 618075
+    url: http://xenbits.xen.org/xsa/advisory-159.html
+    reference_id:
+  - id: 177026
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1284919
+    reference_id: 1284919
+  - id: 51395
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=823620
+    reference_id: 823620
+  - id: 451428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*
+  - id: 451429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*
+  - id: 451430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*
+  - id: 451431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*
+  - id: 451432
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*
+  - id: 451433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*
+  - id: 451434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*
+  - id: 451435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*
+  - id: 451436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*
+  - id: 451437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*
+  - id: 451438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*
+  - id: 451439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*
+  - id: 451440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*
+  - id: 477887
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.0.1:*:*:*:*:*:*:*
+  - id: 477888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.0.2:*:*:*:*:*:*:*
+  - id: 477889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.0.3:*:*:*:*:*:*:*
+  - id: 477890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.0.4:*:*:*:*:*:*:*
+  - id: 477891
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.0:*:*:*:*:*:*:*
+  - id: 477892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.1:*:*:*:*:*:*:*
+  - id: 492395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.2:*:*:*:*:*:*:*
+  - id: 492396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.3:*:*:*:*:*:*:*
+  - id: 507543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.4:*:*:*:*:*:*:*
+  - id: 518335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.5:*:*:*:*:*:*:*
+  - id: 618077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.6:*:*:*:*:*:*:*
+  - id: 534687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.1.6.1:*:*:*:*:*:*:*
+  - id: 492397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.0:*:*:*:*:*:*:*
+  - id: 507544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.1:*:*:*:*:*:*:*
+  - id: 518336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.2:*:*:*:*:*:*:*
+  - id: 518476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.3:*:*:*:*:*:*:*
+  - id: 594884
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.4:*:*:*:*:*:*:*
+  - id: 594885
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.5:*:*:*:*:*:*:*
+  - id: 159116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.3.0:*:*:*:*:*:*:*
+  - id: 159117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.3.1:*:*:*:*:*:*:*
+  - id: 159118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.3.2:*:*:*:*:*:*:*
+  - id: 159119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.3.3:*:*:*:*:*:*:*
+  - id: 159120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.3.4:*:*:*:*:*:*:*
+  - id: 159121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*
+  - id: 159122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*
+  - id: 159123
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.4.2:*:*:*:*:*:*:*
+  - id: 159124
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.4.3:*:*:*:*:*:*:*
+  - id: 159126
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.5.0:*:*:*:*:*:*:*
+  - id: 159127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.5.1:*:*:*:*:*:*:*
+  - id: 159128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.5.2:*:*:*:*:*:*:*
+  - id: 159131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.6.0:*:*:*:*:*:*:*
+  - id: 618078
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-8340
+    reference_id: CVE-2015-8340
+weaknesses: []

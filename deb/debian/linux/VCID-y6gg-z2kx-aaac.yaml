@@ -1,0 +1,69 @@
+vulnerability_id: VCID-y6gg-z2kx-aaac
+aliases:
+  - CVE-2021-38300
+summary: arch/mips/net/bpf_jit.c in the Linux kernel before 5.4.10 can generate undesirable
+  machine code when transforming unprivileged cBPF programs, allowing execution of arbitrary
+  code within the kernel context. This occurs because conditional branches can exceed the 128
+  KB limit of the MIPS architecture.
+severities:
+  - id: 602564
+    reference_id: 925885
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+  - id: 602563
+    reference_id: 925884
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 553777
+    reference_id: 893521
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 553775
+    reference_id: 893521
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 925885
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-38300.json
+    reference_id:
+  - id: 893518
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.14.10
+    reference_id:
+  - id: 893519
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=37cb28ec7d3a36a5bace7063a3dba633ab110f8b
+    reference_id:
+  - id: 840302
+    url: https://lists.debian.org/debian-lts-announce/2022/03/msg00012.html
+    reference_id:
+  - id: 893520
+    url: https://security.netapp.com/advisory/ntap-20211008-0003/
+    reference_id:
+  - id: 840304
+    url: https://www.debian.org/security/2022/dsa-5096
+    reference_id:
+  - id: 893517
+    url: http://www.openwall.com/lists/oss-security/2021/09/15/5
+    reference_id:
+  - id: 925884
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2002750
+    reference_id: 2002750
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 893521
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-38300
+    reference_id: CVE-2021-38300
+weaknesses: []

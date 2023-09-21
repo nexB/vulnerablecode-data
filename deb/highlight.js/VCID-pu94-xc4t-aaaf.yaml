@@ -1,0 +1,126 @@
+affected_purls:
+- pkg:npm/highlight.js@1.0.0
+- pkg:npm/highlight.js@10.0.0
+- pkg:npm/highlight.js@10.0.1
+- pkg:npm/highlight.js@10.0.2
+- pkg:npm/highlight.js@10.0.3
+- pkg:npm/highlight.js@1.0.1
+- pkg:npm/highlight.js@10.1.0
+- pkg:npm/highlight.js@10.1.1
+- pkg:npm/highlight.js@1.0.2
+- pkg:npm/highlight.js@1.0.3
+- pkg:npm/highlight.js@1.0.4
+- pkg:npm/highlight.js@1.1.0
+- pkg:npm/highlight.js@1.1.1
+- pkg:npm/highlight.js@1.2.0
+- pkg:npm/highlight.js@7.0.1
+- pkg:npm/highlight.js@7.1.0
+- pkg:npm/highlight.js@7.2.0
+- pkg:npm/highlight.js@7.3.0
+- pkg:npm/highlight.js@7.4.0
+- pkg:npm/highlight.js@7.5.0
+- pkg:npm/highlight.js@8.0.0
+- pkg:npm/highlight.js@8.1.0
+- pkg:npm/highlight.js@8.2.0
+- pkg:npm/highlight.js@8.3.0
+- pkg:npm/highlight.js@8.4.0
+- pkg:npm/highlight.js@8.5.0
+- pkg:npm/highlight.js@8.6.0
+- pkg:npm/highlight.js@8.7.0
+- pkg:npm/highlight.js@8.8.0
+- pkg:npm/highlight.js@8.9.0
+- pkg:npm/highlight.js@8.9.1
+- pkg:npm/highlight.js@9.0.0
+- pkg:npm/highlight.js@9.1.0
+- pkg:npm/highlight.js@9.10.0
+- pkg:npm/highlight.js@9.11.0
+- pkg:npm/highlight.js@9.12.0
+- pkg:npm/highlight.js@9.13.0
+- pkg:npm/highlight.js@9.13.1
+- pkg:npm/highlight.js@9.14.1
+- pkg:npm/highlight.js@9.14.2
+- pkg:npm/highlight.js@9.15.1
+- pkg:npm/highlight.js@9.15.10
+- pkg:npm/highlight.js@9.15.2
+- pkg:npm/highlight.js@9.15.5
+- pkg:npm/highlight.js@9.15.6
+- pkg:npm/highlight.js@9.15.7
+- pkg:npm/highlight.js@9.15.8
+- pkg:npm/highlight.js@9.15.9
+- pkg:npm/highlight.js@9.16.1
+- pkg:npm/highlight.js@9.16.2
+- pkg:npm/highlight.js@9.17.0
+- pkg:npm/highlight.js@9.17.1
+- pkg:npm/highlight.js@9.18.0
+- pkg:npm/highlight.js@9.18.1
+- pkg:npm/highlight.js@9.2.0
+- pkg:npm/highlight.js@9.3.0
+- pkg:npm/highlight.js@9.4.0
+- pkg:npm/highlight.js@9.5.0
+- pkg:npm/highlight.js@9.6.0
+- pkg:npm/highlight.js@9.7.0
+- pkg:npm/highlight.js@9.8.0
+- pkg:npm/highlight.js@9.9.0
+aliases:
+- CVE-2020-26237
+- GHSA-vfrc-7r7c-w9mx
+fixed_purl:
+- pkg:deb/debian/highlight.js@9.12.0%2Bdfsg1-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/highlight.js@9.18.1%2Bdfsg1-3?distro=sid
+- pkg:deb/debian/highlight.js@9.18.5%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/highlight.js@9.18.5%2Bdfsg1-2?distro=sid
+- pkg:npm/highlight.js@10.1.2
+- pkg:npm/highlight.js@9.18.2
+references:
+- id: 153085
+  reference_id: ''
+  url: https://github.com/highlightjs/highlight.js/commit/7241013ae011a585983e176ddc0489a7a52f6bb0
+- id: 153084
+  reference_id: ''
+  url: https://github.com/highlightjs/highlight.js/pull/2636
+- id: 153087
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/12/msg00041.html
+- id: 131104
+  reference_id: ''
+  url: https://www.npmjs.com/package/highlight.js
+- id: 138518
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2022.html
+- id: 129331
+  reference_id: '976446'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=976446
+- id: 153086
+  reference_id: CVE-2020-26237
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-26237
+- id: 153088
+  reference_id: GHSA-vfrc-7r7c-w9mx
+  url: https://github.com/advisories/GHSA-vfrc-7r7c-w9mx
+- id: 153083
+  reference_id: GHSA-vfrc-7r7c-w9mx
+  url: https://github.com/highlightjs/highlight.js/security/advisories/GHSA-vfrc-7r7c-w9mx
+severities:
+- id: 21877
+  reference_id: 153088
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 21876
+  reference_id: 153083
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Highlight.js is a syntax highlighter written in JavaScript. Highlight.js
+  versions before 9.18.2 and 10.1.2 are vulnerable to Prototype Pollution. A malicious
+  HTML code block can be crafted that will result in prototype pollution of the base
+  object's prototype during highlighting. If you allow users to insert custom HTML
+  code blocks into your page/app via parsing Markdown code blocks (or similar) and
+  do not filter the language names the user can provide you may be vulnerable. The
+  pollution should just be harmless data but this can cause problems for applications
+  not expecting these properties to exist and can result in strange behavior or application
+  crashes, i.e. a potential DOS vector. If your website or application does not render
+  user provided data it should be unaffected. Versions 9.18.2 and 10.1.2 and newer
+  include fixes for this vulnerability. If you are using version 7 or 8 you are encouraged
+  to upgrade to a newer release.
+vulnerability_id: VCID-pu94-xc4t-aaaf
+weaknesses: []

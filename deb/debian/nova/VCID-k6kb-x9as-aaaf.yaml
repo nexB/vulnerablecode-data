@@ -1,0 +1,101 @@
+vulnerability_id: VCID-k6kb-x9as-aaaf
+aliases:
+  - CVE-2020-17376
+  - PYSEC-2020-243
+summary: An issue was discovered in Guest.migrate in virt/libvirt/guest.py in OpenStack Nova
+  before 19.3.1, 20.x before 20.3.1, and 21.0.0. By performing a soft reboot of an instance
+  that has previously undergone live migration, a user may gain access to destination host devices
+  that share the same paths as host devices previously referenced by the virtual machine on
+  the source host. This can include block devices that map to different Cinder volumes at the
+  destination than at the source. Only deployments allowing host-based connections (for instance,
+  root and ephemeral devices) are affected.
+severities:
+  - id: 609999
+    reference_id: 931341
+    scoring_system: cvssv3
+    value: '8.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L
+  - id: 609993
+    reference_id: 931335
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 450666
+    reference_id: 827051
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+  - id: 450664
+    reference_id: 827051
+    scoring_system: cvssv3
+    value: '8.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L
+  - id: 609997
+    reference_id: 931339
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609996
+    reference_id: 931338
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609995
+    reference_id: 931337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609994
+    reference_id: 931336
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609998
+    reference_id: 931340
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 931341
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-17376.json
+    reference_id:
+  - id: 6965
+    url: https://launchpad.net/bugs/1890501
+    reference_id:
+  - id: 6966
+    url: https://security.openstack.org/ossa/OSSA-2020-006.html
+    reference_id:
+  - id: 6967
+    url: http://www.openwall.com/lists/oss-security/2020/08/25/4
+    reference_id:
+  - id: 931335
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1869426
+    reference_id: 1869426
+  - id: 79401
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969052
+    reference_id: 969052
+  - id: 464522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*
+  - id: 827052
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:nova:21.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:nova:21.0.0:*:*:*:*:*:*:*
+  - id: 827051
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-17376
+    reference_id: CVE-2020-17376
+  - id: 931339
+    url: https://access.redhat.com/errata/RHSA-2020:3702
+    reference_id: RHSA-2020:3702
+  - id: 931338
+    url: https://access.redhat.com/errata/RHSA-2020:3704
+    reference_id: RHSA-2020:3704
+  - id: 931337
+    url: https://access.redhat.com/errata/RHSA-2020:3706
+    reference_id: RHSA-2020:3706
+  - id: 931336
+    url: https://access.redhat.com/errata/RHSA-2020:3708
+    reference_id: RHSA-2020:3708
+  - id: 931340
+    url: https://access.redhat.com/errata/RHSA-2020:3711
+    reference_id: RHSA-2020:3711
+weaknesses: []

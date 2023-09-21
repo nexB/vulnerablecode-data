@@ -1,0 +1,60 @@
+vulnerability_id: VCID-qzfe-x6g9-aaae
+aliases:
+  - CVE-2019-6976
+summary: libvips before 8.7.4 generates output images from uninitialized memory locations when
+  processing corrupted input image data because iofuncs/memory.c does not zero out allocated
+  memory. This can result in leaking raw process memory contents through the output image.
+severities:
+  - id: 694407
+    reference_id: 1454915
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694408
+    reference_id: 1454916
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694409
+    reference_id: 802826
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694410
+    reference_id: 802827
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 414499
+    reference_id: 802828
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 414497
+    reference_id: 802828
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 1454915
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-6976.html
+    reference_id:
+  - id: 802825
+    url: https://blog.silentsignal.eu/2019/04/18/drop-by-drop-bleeding-through-libvips/
+    reference_id:
+  - id: 1454916
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6976
+    reference_id:
+  - id: 802826
+    url: https://github.com/libvips/libvips/commit/00622428bda8d7521db8d74260b519fa41d69d0a
+    reference_id:
+  - id: 802827
+    url: https://github.com/libvips/libvips/releases/tag/v8.7.4
+    reference_id:
+  - id: 759206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libvips_project:libvips:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libvips_project:libvips:*:*:*:*:*:*:*:*
+  - id: 802828
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-6976
+    reference_id: CVE-2019-6976
+weaknesses: []

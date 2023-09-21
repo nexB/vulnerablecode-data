@@ -1,0 +1,46 @@
+affected_purls:
+- pkg:pypi/ansible@2.9.0
+- pkg:pypi/ansible@2.9.1
+- pkg:pypi/ansible@2.9.2
+- pkg:pypi/ansible@2.9.3
+- pkg:pypi/ansible@2.9.4
+- pkg:pypi/ansible@2.9.5
+- pkg:pypi/ansible@2.9.6
+aliases:
+- CVE-2020-10691
+- GHSA-3c67-gc48-983w
+fixed_purl:
+- pkg:deb/debian/ansible@0?distro=sid
+- pkg:deb/debian/ansible@2.10.7%2Bmerged%2Bbase%2B2.10.8%2Bdfsg-1?distro=sid
+- pkg:deb/debian/ansible@2.7.7%2Bdfsg-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/ansible@2.9.7%2Bdfsg-1?distro=sid
+- pkg:deb/debian/ansible@7.3.0%2Bdfsg-1?distro=sid
+- pkg:pypi/ansible@2.9.7
+references:
+- id: 150077
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10691
+- id: 150078
+  reference_id: ''
+  url: https://github.com/ansible/ansible/commit/b2551bb6943eec078066aa3a923e0bb3ed85abe8
+- id: 150076
+  reference_id: ''
+  url: https://github.com/ansible/ansible/pull/68596
+- id: 150075
+  reference_id: CVE-2020-10691
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-10691
+- id: 150079
+  reference_id: GHSA-3c67-gc48-983w
+  url: https://github.com/advisories/GHSA-3c67-gc48-983w
+severities:
+- id: 21216
+  reference_id: 150079
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: An archive traversal flaw was found in all ansible-engine versions 2.9.x
+  prior to 2.9.7, when running ansible-galaxy collection install. When extracting
+  a collection .tar.gz file, the directory is created without sanitizing the filename.
+  An attacker could take advantage to overwrite any file within the system.
+vulnerability_id: VCID-r6d8-hc4k-aaas
+weaknesses: []

@@ -1,0 +1,157 @@
+vulnerability_id: VCID-g1vc-61qf-aaan
+aliases:
+  - CVE-2017-17558
+summary: The usb_destroy_configuration function in drivers/usb/core/config.c in the USB core
+  subsystem in the Linux kernel through 4.14.5 does not consider the maximum number of configurations
+  and interfaces before attempting to release resources, which allows local users to cause a
+  denial of service (out-of-bounds write access) or possibly have unspecified other impact via
+  a crafted USB device.
+severities:
+  - id: 677023
+    reference_id: 1441230
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619402
+    reference_id: 938169
+    scoring_system: cvssv3
+    value: '6.4'
+    scoring_elements: CVSS:3.0/AV:P/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 677025
+    reference_id: 1441232
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677026
+    reference_id: 1441233
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 677024
+    reference_id: 1441231
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619401
+    reference_id: 938168
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 274124
+    reference_id: 691266
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 274122
+    reference_id: 691266
+    scoring_system: cvssv3
+    value: '6.6'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 674208
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00007.html
+    reference_id:
+  - id: 691263
+    url: http://openwall.com/lists/oss-security/2017/12/12/7
+    reference_id:
+  - id: 1441230
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17558.html
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 658044
+    url: https://access.redhat.com/errata/RHSA-2019:1170
+    reference_id:
+  - id: 658045
+    url: https://access.redhat.com/errata/RHSA-2019:1190
+    reference_id:
+  - id: 938169
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17558.json
+    reference_id:
+  - id: 1441232
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17558
+    reference_id:
+  - id: 691264
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00004.html
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 668886
+    url: https://www.debian.org/security/2018/dsa-4082
+    reference_id:
+  - id: 2747
+    url: https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html
+    reference_id:
+  - id: 691265
+    url: https://www.spinics.net/lists/linux-usb/msg163644.html
+    reference_id:
+  - id: 1441233
+    url: https://www.spinics.net/lists/linux-usb/msg163693.html
+    reference_id:
+  - id: 1441231
+    url: http://www.openwall.com/lists/oss-security/2017/12/12/7
+    reference_id:
+  - id: 938168
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1525474
+    reference_id: 1525474
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 648259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+  - id: 158277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+  - id: 691266
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17558
+    reference_id: CVE-2017-17558
+weaknesses: []

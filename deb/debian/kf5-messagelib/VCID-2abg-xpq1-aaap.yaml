@@ -1,0 +1,40 @@
+vulnerability_id: VCID-2abg-xpq1-aaap
+aliases:
+  - CVE-2019-10732
+summary: In KDE KMail 5.2.3, an attacker in possession of S/MIME or PGP encrypted emails can
+  wrap them as sub-parts within a crafted multipart email. The encrypted part(s) can further
+  be hidden using HTML/CSS or ASCII newline characters. This modified multipart email can be
+  re-sent by the attacker to the intended receiver. If the receiver replies to this (benign
+  looking) email, they unknowingly leak the plaintext of the encrypted message part(s) back
+  to the attacker.
+severities:
+  - id: 369494
+    reference_id: 768207
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 369492
+    reference_id: 768207
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+references:
+  - id: 768205
+    url: https://bugs.kde.org/show_bug.cgi?id=404698
+    reference_id:
+  - id: 768206
+    url: https://lists.debian.org/debian-lts-announce/2019/06/msg00012.html
+    reference_id:
+  - id: 42395
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=926996
+    reference_id: 926996
+  - id: 768208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kmail:5.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kmail:5.2.3:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 768207
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10732
+    reference_id: CVE-2019-10732
+weaknesses: []

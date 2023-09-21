@@ -1,0 +1,17 @@
+affected_purls:
+- pkg:deb/debian/golang-go.crypto@1:0.0~git20181203.505ab14-1
+aliases:
+- CVE-2019-11840
+fixed_purl:
+- pkg:deb/debian/golang-go.crypto@1:0.0~git20190701.4def268-1
+references: []
+severities: []
+summary: An issue was discovered in supplementary Go cryptography libraries, aka golang-googlecode-go-crypto,
+  before 2019-03-20. A flaw was found in the amd64 implementation of golang.org/x/crypto/salsa20
+  and golang.org/x/crypto/salsa20/salsa. If more than 256 GiB of keystream is generated,
+  or if the counter otherwise grows greater than 32 bits, the amd64 implementation
+  will first generate incorrect output, and then cycle back to previously generated
+  keystream. Repeated keystream bytes can lead to loss of confidentiality in encryption
+  applications, or to predictability in CSPRNG applications.
+vulnerability_id: VCID-cvcd-491e-aaah
+weaknesses: []

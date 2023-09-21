@@ -1,0 +1,60 @@
+vulnerability_id: VCID-yxzp-2uem-aaak
+aliases:
+  - CVE-2022-29238
+  - GHSA-v7vq-3x77-87vg
+  - PYSEC-2022-212
+summary: Jupyter Notebook is a web-based notebook environment for interactive computing. Prior
+  to version 6.4.12, authenticated requests to the notebook server with `ContentsManager.allow_hidden
+  = False` only prevented listing the contents of hidden directories, not accessing individual
+  hidden files or files in hidden directories (i.e. hidden files were 'hidden' but not 'inaccessible').
+  This could lead to notebook configurations allowing authenticated access to files that may
+  reasonably be expected to be disallowed. Because fully authenticated requests are required,
+  this is of relatively low impact. But if a server's root directory contains sensitive files
+  whose only protection from the server is being hidden (e.g. `~/.ssh` while serving $HOME),
+  then any authenticated requests could access files if their names are guessable. Such contexts
+  also necessarily have full access to the server and therefore execution permissions, which
+  also generally grants access to all the same files. So this does not generally result in any
+  privilege escalation or increase in information access, only an additional, unintended means
+  by which the files could be accessed. Version 6.4.12 contains a patch for this issue. There
+  are currently no known workarounds.
+severities:
+  - id: 634197
+    reference_id: 922939
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 634195
+    reference_id: 922939
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 627798
+    reference_id: 944000
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 627797
+    reference_id: 943999
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 947081
+    url: https://github.com/pypa/advisory-database/tree/main/vulns/notebook/PYSEC-2022-212.yaml
+    reference_id:
+  - id: 945186
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1013272
+    reference_id: 1013272
+  - id: 745829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jupyter:notebook:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jupyter:notebook:*:*:*:*:*:*:*:*
+  - id: 922939
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-29238
+    reference_id: CVE-2022-29238
+  - id: 944000
+    url: https://github.com/advisories/GHSA-v7vq-3x77-87vg
+    reference_id: GHSA-v7vq-3x77-87vg
+  - id: 943999
+    url: https://github.com/jupyter/notebook/security/advisories/GHSA-v7vq-3x77-87vg
+    reference_id: GHSA-v7vq-3x77-87vg
+weaknesses: []

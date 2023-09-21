@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-15118
+fixed_purl:
+- pkg:deb/debian/qemu@1:2.11%2Bdfsg-1?distro=sid
+- pkg:deb/debian/qemu@1:3.1%2Bdfsg-8%2Bdeb10u8?distro=sid
+- pkg:deb/debian/qemu@1:5.2%2Bdfsg-11%2Bdeb11u2?distro=sid
+- pkg:deb/debian/qemu@1:7.2%2Bdfsg-7?distro=sid
+references:
+- id: 127028
+  reference_id: '883406'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=883406
+severities: []
+summary: A stack-based buffer overflow vulnerability was found in NBD server implementation
+  in qemu before 2.11 allowing a client to request an export name of size up to 4096
+  bytes, which in fact should be limited to 256 bytes, causing an out-of-bounds stack
+  write in the qemu process. If NBD server requires TLS, the attacker cannot trigger
+  the buffer overflow without first successfully negotiating TLS.
+vulnerability_id: VCID-y6mx-y8p6-aaar
+weaknesses: []

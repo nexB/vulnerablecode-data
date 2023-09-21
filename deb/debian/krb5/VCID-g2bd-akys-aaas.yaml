@@ -1,0 +1,166 @@
+vulnerability_id: VCID-g2bd-akys-aaas
+aliases:
+  - CVE-2002-2443
+summary: schpw.c in the kpasswd service in kadmind in MIT Kerberos 5 (aka krb5) before 1.11.3
+  does not properly validate UDP packets before sending responses, which allows remote attackers
+  to cause a denial of service (CPU and bandwidth consumption) via a forged packet that triggers
+  a communication loop, as demonstrated by krb_pingpong.nasl, a related issue to CVE-1999-0103.
+severities:
+  - id: 647928
+    reference_id: 1418081
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 647929
+    reference_id: 1418082
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 647930
+    reference_id: 1418083
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 79986
+    reference_id: 212700
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 18682
+    reference_id: 79268
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 79987
+    reference_id: 212701
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 79256
+    url: http://krbdev.mit.edu/rt/Ticket/Display.html?id=7637
+    reference_id:
+  - id: 79257
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2013-May/105879.html
+    reference_id:
+  - id: 79258
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2013-May/105978.html
+    reference_id:
+  - id: 79259
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2013-May/106698.html
+    reference_id:
+  - id: 79260
+    url: http://lists.opensuse.org/opensuse-updates/2013-07/msg00004.html
+    reference_id:
+  - id: 79261
+    url: http://lists.opensuse.org/opensuse-updates/2013-07/msg00007.html
+    reference_id:
+  - id: 1418081
+    url: http://people.canonical.com/~ubuntu-security/cve/2002/CVE-2002-2443.html
+    reference_id:
+  - id: 79262
+    url: http://rhn.redhat.com/errata/RHSA-2013-0942.html
+    reference_id:
+  - id: 212702
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2002-2443.json
+    reference_id:
+  - id: 1418082
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2443
+    reference_id:
+  - id: 79267
+    url: https://github.com/krb5/krb5/commit/cf1a0c411b2668c57c41e9c4efd15ba17b6b322c
+    reference_id:
+  - id: 1418083
+    url: https://ubuntu.com/security/notices/USN-2810-1
+    reference_id:
+  - id: 79263
+    url: http://www.debian.org/security/2013/dsa-2701
+    reference_id:
+  - id: 79264
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2013:166
+    reference_id:
+  - id: 79265
+    url: http://www.ubuntu.com/usn/USN-2810-1
+    reference_id:
+  - id: 42695
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=708267
+    reference_id: 708267
+  - id: 212700
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=962531
+    reference_id: 962531
+  - id: 51353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*
+  - id: 79269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 79273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 79276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:17:*:*:*:*:*:*:*
+  - id: 79277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:18:*:*:*:*:*:*:*
+  - id: 79278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+  - id: 79279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:11.4:*:*:*:*:*:*:*
+  - id: 79280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:12.2:*:*:*:*:*:*:*
+  - id: 79281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*
+  - id: 79282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:5.0:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 79284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:5.9:*:*:*:*:*:*:*
+  - id: 79285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:6.4:*:*:*:*:*:*:*
+  - id: 79286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:5.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 79288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.4:*:*:*:*:*:*:*
+  - id: 79289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:5.0:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 79268
+    url: https://nvd.nist.gov/vuln/detail/CVE-2002-2443
+    reference_id: CVE-2002-2443
+  - id: 212701
+    url: https://access.redhat.com/errata/RHSA-2013:0942
+    reference_id: RHSA-2013:0942
+weaknesses: []

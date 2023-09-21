@@ -1,0 +1,28 @@
+affected_purls:
+- pkg:deb/debian/alsaplayer@0.99.26-2.1
+- pkg:deb/debian/alsaplayer@0.99.59-5
+- pkg:deb/debian/alsaplayer@0.99.76-0.3sarge1
+aliases:
+- CVE-2006-4089
+fixed_purl:
+- pkg:deb/debian/alsaplayer@0.99.76-9
+- pkg:deb/debian/alsaplayer@0.99.76-9?distro=sid
+- pkg:deb/debian/alsaplayer@0.99.81-2?distro=sid
+references:
+- id: 185164
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4089
+- id: 123313
+  reference_id: '382842'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=382842
+severities: []
+summary: Multiple buffer overflows in Andy Lo-A-Foe AlsaPlayer 0.99.76 and earlier
+  allow remote attackers to cause a denial of service (application crash), or have
+  other unknown impact, via (1) a long Location field sent by a web server, which
+  triggers an overflow in the reconnect function in reader/http/http.c; (2) a long
+  URL sent by a web server when AlsaPlayer is seeking a media file for the playlist,
+  which triggers overflows in new_list_item and CbUpdated in interface/gtk/PlaylistWindow.cpp;
+  and (3) a long response sent by a CDDB server, which triggers an overflow in cddb_lookup
+  in input/ccda/cdda_engine.c.
+vulnerability_id: VCID-yvy9-exzj-aaap
+weaknesses: []

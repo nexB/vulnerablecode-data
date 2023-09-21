@@ -1,0 +1,69 @@
+vulnerability_id: VCID-h8kt-vwsa-aaas
+aliases:
+  - CVE-2020-15168
+  - GHSA-w7rc-rwvf-8q5r
+summary: |
+  Allocation of Resources Without Limits or Throttling
+  node-fetch did not honor the size option after following a redirect, which means that when a content size was over the limit, a FetchError would never get thrown and the process would end without failure. For most people, this fix will have a little or no impact. However, if you are relying on node-fetch to gate files above a size, the impact could be significant, for example: If you don't double-check the size of the data after `fetch()` has completed, your JS thread could get tied up doing work on a large file (DoS) and/or cost you money in computing.
+severities:
+  - id: 609786
+    reference_id: 931187
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 445133
+    reference_id: 32766
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 445131
+    reference_id: 32766
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 706146
+    reference_id: 1467674
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 931187
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-15168.json
+    reference_id:
+  - id: 822710
+    url: https://github.com/node-fetch/node-fetch/security/advisories/GHSA-w7rc-rwvf-8q5r
+    reference_id:
+  - id: 822711
+    url: https://www.npmjs.com/package/node-fetch
+    reference_id:
+  - id: 78331
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970173
+    reference_id: 970173
+  - id: 822713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta1:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta1:*:*:*:node.js:*:*
+  - id: 822714
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta5:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta5:*:*:*:node.js:*:*
+  - id: 822715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta6:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta6:*:*:*:node.js:*:*
+  - id: 822716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta7:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta7:*:*:*:node.js:*:*
+  - id: 822717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta8:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:3.0.0:beta8:*:*:*:node.js:*:*
+  - id: 822712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-fetch_project:node-fetch:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:node-fetch_project:node-fetch:*:*:*:*:*:node.js:*:*
+  - id: 32766
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-15168
+    reference_id: CVE-2020-15168
+  - id: 1467674
+    url: https://github.com/advisories/GHSA-w7rc-rwvf-8q5r
+    reference_id: GHSA-w7rc-rwvf-8q5r
+  - id: 931186
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1882329
+    reference_id: RHEA-2021:0729
+weaknesses: []

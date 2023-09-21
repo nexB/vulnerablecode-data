@@ -1,0 +1,54 @@
+vulnerability_id: VCID-t75b-3h6z-aaak
+aliases:
+  - CVE-2017-14230
+summary: In the mboxlist_do_find function in imap/mboxlist.c in Cyrus IMAP before 3.0.4, an
+  off-by-one error in prefix calculation for the LIST command caused use of uninitialized memory,
+  which might allow remote attackers to obtain sensitive information or cause a denial of service
+  (daemon crash) via a 'LIST "" "Other Users"' command.
+severities:
+  - id: 621114
+    reference_id: 939401
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H
+  - id: 621113
+    reference_id: 939400
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 263672
+    reference_id: 681768
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 263670
+    reference_id: 681768
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 939401
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-14230.json
+    reference_id:
+  - id: 681764
+    url: https://github.com/cyrusimap/cyrus-imapd/commit/6bd33275368edfa71ae117de895488584678ac79
+    reference_id:
+  - id: 681765
+    url: https://github.com/cyrusimap/cyrus-imapd/issues/2132
+    reference_id:
+  - id: 681766
+    url: https://lists.andrew.cmu.edu/pipermail/cyrus-announce/2017-September/000145.html
+    reference_id:
+  - id: 681767
+    url: https://www.cyrusimap.org/imap/download/release-notes/3.0/x/3.0.4.html
+    reference_id:
+  - id: 939400
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1491236
+    reference_id: 1491236
+  - id: 681769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cyrus:imap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cyrus:imap:*:*:*:*:*:*:*:*
+  - id: 681768
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14230
+    reference_id: CVE-2017-14230
+weaknesses: []

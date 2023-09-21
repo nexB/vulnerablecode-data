@@ -1,0 +1,105 @@
+vulnerability_id: VCID-x7at-zn4x-aaap
+aliases:
+  - CVE-2017-7539
+summary: An assertion-failure flaw was found in Qemu before 2.10.1, in the Network Block Device
+  (NBD) server's initial connection negotiation, where the I/O coroutine was undefined. This
+  could crash the qemu-nbd server if a client sent unexpected data during connection negotiation.
+  A remote user or process could use this flaw to crash the qemu-nbd server resulting in denial
+  of service.
+severities:
+  - id: 622765
+    reference_id: 940533
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 622763
+    reference_id: 940531
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 294295
+    reference_id: 709693
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 294293
+    reference_id: 709693
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 622764
+    reference_id: 940532
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 670854
+    url: https://access.redhat.com/errata/RHSA-2017:3466
+    reference_id:
+  - id: 670855
+    url: https://access.redhat.com/errata/RHSA-2017:3470
+    reference_id:
+  - id: 670856
+    url: https://access.redhat.com/errata/RHSA-2017:3471
+    reference_id:
+  - id: 670857
+    url: https://access.redhat.com/errata/RHSA-2017:3472
+    reference_id:
+  - id: 670858
+    url: https://access.redhat.com/errata/RHSA-2017:3473
+    reference_id:
+  - id: 670859
+    url: https://access.redhat.com/errata/RHSA-2017:3474
+    reference_id:
+  - id: 940533
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7539.json
+    reference_id:
+  - id: 709690
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7539
+    reference_id:
+  - id: 709691
+    url: https://git.qemu.org/?p=qemu.git;a=commitdiff;h=2b0bbc4f8809c972bad134bc1a2570dbb01dea0b
+    reference_id:
+  - id: 709692
+    url: https://git.qemu.org/?p=qemu.git;a=commitdiff;h=ff82911cd3f69f028f2537825c9720ff78bc3f19
+    reference_id:
+  - id: 709687
+    url: http://www.openwall.com/lists/oss-security/2017/07/21/4
+    reference_id:
+  - id: 709688
+    url: http://www.securityfocus.com/bid/99944
+    reference_id:
+  - id: 940531
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1473622
+    reference_id: 1473622
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 643869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*
+  - id: 158176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+  - id: 158177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+  - id: 162143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+  - id: 640062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+  - id: 676013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+  - id: 709693
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7539
+    reference_id: CVE-2017-7539
+  - id: 940532
+    url: https://access.redhat.com/errata/RHSA-2017:2628
+    reference_id: RHSA-2017:2628
+weaknesses: []

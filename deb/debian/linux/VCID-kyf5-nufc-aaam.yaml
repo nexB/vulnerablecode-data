@@ -1,0 +1,116 @@
+vulnerability_id: VCID-kyf5-nufc-aaam
+aliases:
+  - CVE-2021-3491
+summary: 'The io_uring subsystem in the Linux kernel allowed the MAX_RW_COUNT limit to be bypassed
+  in the PROVIDE_BUFFERS operation, which led to negative values being usedin mem_rw when reading
+  /proc/<PID>/mem. This could be used to create a heap overflow leading to arbitrary code execution
+  in the kernel. It was addressed via commit d1f82808877b ("io_uring: truncate lengths larger
+  than MAX_RW_COUNT on provide buffers") (v5.13-rc1) and backported to the stable kernels in
+  v5.12.4, v5.11.21, and v5.10.37. It was introduced in ddf0322db79c ("io_uring: add IORING_OP_PROVIDE_BUFFERS")
+  (v5.7-rc1).'
+severities:
+  - id: 702494
+    reference_id: 1461726
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605416
+    reference_id: 927980
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 702495
+    reference_id: 1461727
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702496
+    reference_id: 888447
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697715
+    reference_id: 888388
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702488
+    reference_id: 888389
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702497
+    reference_id: 888448
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605415
+    reference_id: 927979
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 545908
+    reference_id: 888450
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 545906
+    reference_id: 888450
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 1461726
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3491.html
+    reference_id:
+  - id: 927980
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3491.json
+    reference_id:
+  - id: 1461727
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3491
+    reference_id:
+  - id: 888447
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d1f82808877bb10d3deee7cf3374a4eb3fb582db
+    reference_id:
+  - id: 888387
+    url: https://security.netapp.com/advisory/ntap-20210716-0004/
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 888388
+    url: https://ubuntu.com/security/notices/USN-4949-1
+    reference_id:
+  - id: 888389
+    url: https://ubuntu.com/security/notices/USN-4950-1
+    reference_id:
+  - id: 888448
+    url: https://www.openwall.com/lists/oss-security/2021/05/11/13
+    reference_id:
+  - id: 888449
+    url: https://www.zerodayinitiative.com/advisories/ZDI-21-589/
+    reference_id:
+  - id: 927979
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1959565
+    reference_id: '1959565'
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 822399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+  - id: 637847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 888450
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3491
+    reference_id: CVE-2021-3491
+weaknesses: []

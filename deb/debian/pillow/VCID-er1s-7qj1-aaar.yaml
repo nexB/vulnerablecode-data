@@ -1,0 +1,143 @@
+vulnerability_id: VCID-er1s-7qj1-aaar
+aliases:
+  - CVE-2020-10378
+  - GHSA-3xv8-3j54-hgrp
+summary: |
+  Out-of-bounds Read
+  In `libImaging/PcxDecode.c` in Pillow, an out-of-bounds read can occur when reading PCX files where `state->shuffle` is instructed to read beyond `state->buffer`.
+severities:
+  - id: 703826
+    reference_id: 1465369
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611356
+    reference_id: 932327
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 703827
+    reference_id: 1465370
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703819
+    reference_id: 7095
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695512
+    reference_id: 7097
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703820
+    reference_id: 21771
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695514
+    reference_id: 7094
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695515
+    reference_id: 1455843
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695516
+    reference_id: 1455844
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611355
+    reference_id: 932326
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 429122
+    reference_id: 21663
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 429120
+    reference_id: 21663
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+  - id: 3769
+    reference_id: 21772
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 55094
+    reference_id: 180247
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1465369
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10378.html
+    reference_id:
+  - id: 932327
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10378.json
+    reference_id:
+  - id: 1465370
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10378
+    reference_id:
+  - id: 21770
+    url: https://github.com/pypa/advisory-db/blob/7872b0a91b4d980f749e6d75a81f8cc1af32829f/vulns/pillow/PYSEC-2020-77.yaml
+    reference_id:
+  - id: 7299
+    url: https://github.com/python-pillow/Pillow/commit/6a83e4324738bb0452fbe8074a995b1c73f08de7#diff-9478f2787e3ae9668a15123b165c23ac
+    reference_id:
+  - id: 7095
+    url: https://github.com/python-pillow/Pillow/commits/master/src/libImaging
+    reference_id:
+  - id: 7097
+    url: https://github.com/python-pillow/Pillow/pull/4538
+    reference_id:
+  - id: 7099
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEBCPE4F2VHTIT6EZA2YZQZLPVDEBJGD/
+    reference_id:
+  - id: 7098
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HOKHNWV2VS5GESY7IBD237E7C6T3I427/
+    reference_id:
+  - id: 21771
+    url: https://pillow.readthedocs.io/en/stable/releasenotes/6.2.3.html
+    reference_id:
+  - id: 7094
+    url: https://pillow.readthedocs.io/en/stable/releasenotes/7.1.0.html
+    reference_id:
+  - id: 1455843
+    url: https://ubuntu.com/security/notices/USN-4430-1
+    reference_id:
+  - id: 1455844
+    url: https://ubuntu.com/security/notices/USN-4430-2
+    reference_id:
+  - id: 7100
+    url: https://usn.ubuntu.com/4430-1/
+    reference_id:
+  - id: 7101
+    url: https://usn.ubuntu.com/4430-2/
+    reference_id:
+  - id: 932326
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1852832
+    reference_id: 1852832
+  - id: 558744
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:pillow:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:pillow:*:*:*:*:*:*:*:*
+  - id: 810880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:pillow:7.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:pillow:7.0.0:*:*:*:*:*:*:*
+  - id: 21663
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10378
+    reference_id: CVE-2020-10378
+  - id: 21772
+    url: https://github.com/advisories/GHSA-3xv8-3j54-hgrp
+    reference_id: GHSA-3xv8-3j54-hgrp
+  - id: 180247
+    url: https://access.redhat.com/errata/RHSA-2021:0420
+    reference_id: RHSA-2021:0420
+weaknesses: []

@@ -1,0 +1,22 @@
+affected_purls:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1
+aliases:
+- CVE-2021-28699
+fixed_purl:
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1
+references: []
+severities: []
+summary: inadequate grant-v2 status frames array bounds check The v2 grant table interface
+  separates grant attributes from grant status. That is, when operating in this mode,
+  a guest has two tables. As a result, guests also need to be able to retrieve the
+  addresses that the new status tracking table can be accessed through. For 32-bit
+  guests on x86, translation of requests has to occur because the interface structure
+  layouts commonly differ between 32- and 64-bit. The translation of the request to
+  obtain the frame numbers of the grant status table involves translating the resulting
+  array of frame numbers. Since the space used to carry out the translation is limited,
+  the translation layer tells the core function the capacity of the array within translation
+  space. Unfortunately the core function then only enforces array bounds to be below
+  8 times the specified value, and would write past the available space if enough
+  frame numbers needed storing.
+vulnerability_id: VCID-upk6-wh4z-aaag
+weaknesses: []

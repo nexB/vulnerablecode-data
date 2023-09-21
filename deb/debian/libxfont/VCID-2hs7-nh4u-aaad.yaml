@@ -1,0 +1,310 @@
+vulnerability_id: VCID-2hs7-nh4u-aaad
+aliases:
+  - CVE-2011-2895
+summary: The LZW decompressor in (1) the BufCompressedFill function in fontfile/decompress.c
+  in X.Org libXfont before 1.4.4 and (2) compress/compress.c in 4.3BSD, as used in zopen.c in
+  OpenBSD before 3.8, FreeBSD, NetBSD 4.0.x and 5.0.x before 5.0.3 and 5.1.x before 5.1.1, FreeType
+  2.1.9, and other products, does not properly handle code words that are absent from the decompression
+  table when encountered, which allows context-dependent attackers to trigger an infinite loop
+  or a heap-based buffer overflow, and possibly execute arbitrary code, via a crafted compressed
+  stream, a related issue to CVE-2006-1168 and CVE-2011-2896.
+severities:
+  - id: 663477
+    reference_id: 167591
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663478
+    reference_id: 167592
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663483
+    reference_id: 167595
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663485
+    reference_id: 167596
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 145164
+    reference_id: 462946
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 66966
+    reference_id: '196149'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 66967
+    reference_id: '196150'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 66968
+    reference_id: '196151'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 66969
+    reference_id: '196152'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 462921
+    url: http://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=d11ee5886e9d9ec610051a206b135a4cdc1e09a0
+    reference_id:
+  - id: 462922
+    url: http://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2011-007.txt.asc
+    reference_id:
+  - id: 356464
+    url: http://lists.apple.com/archives/security-announce/2012/Feb/msg00000.html
+    reference_id:
+  - id: 445082
+    url: http://lists.apple.com/archives/security-announce/2012/May/msg00001.html
+    reference_id:
+  - id: 167591
+    url: http://lists.apple.com/archives/security-announce/2015/Dec/msg00000.html
+    reference_id:
+  - id: 167592
+    url: http://lists.apple.com/archives/security-announce/2015/Dec/msg00001.html
+    reference_id:
+  - id: 167556
+    url: http://lists.apple.com/archives/security-announce/2015/Dec/msg00002.html
+    reference_id:
+  - id: 167238
+    url: http://lists.apple.com/archives/security-announce/2015/Dec/msg00005.html
+    reference_id:
+  - id: 462923
+    url: http://lists.freedesktop.org/archives/xorg-announce/2011-August/001721.html
+    reference_id:
+  - id: 462924
+    url: http://lists.freedesktop.org/archives/xorg-announce/2011-August/001722.html
+    reference_id:
+  - id: 462925
+    url: http://lists.opensuse.org/opensuse-security-announce/2011-09/msg00019.html
+    reference_id:
+  - id: 462926
+    url: http://lists.opensuse.org/opensuse-security-announce/2011-12/msg00004.html
+    reference_id:
+  - id: '196153'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-2895.json
+    reference_id:
+  - id: 462943
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=725760
+    reference_id:
+  - id: 462944
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=727624
+    reference_id:
+  - id: 462927
+    url: http://secunia.com/advisories/45544
+    reference_id:
+  - id: 462928
+    url: http://secunia.com/advisories/45568
+    reference_id:
+  - id: 462929
+    url: http://secunia.com/advisories/45599
+    reference_id:
+  - id: 462930
+    url: http://secunia.com/advisories/45986
+    reference_id:
+  - id: 462931
+    url: http://secunia.com/advisories/46127
+    reference_id:
+  - id: 420690
+    url: http://secunia.com/advisories/48951
+    reference_id:
+  - id: 462932
+    url: http://securitytracker.com/id?1025920
+    reference_id:
+  - id: 462945
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/69141
+    reference_id:
+  - id: 167595
+    url: https://support.apple.com/HT205635
+    reference_id:
+  - id: 167252
+    url: https://support.apple.com/HT205637
+    reference_id:
+  - id: 167596
+    url: https://support.apple.com/HT205640
+    reference_id:
+  - id: 167558
+    url: https://support.apple.com/HT205641
+    reference_id:
+  - id: 356470
+    url: http://support.apple.com/kb/HT5130
+    reference_id:
+  - id: 445083
+    url: http://support.apple.com/kb/HT5281
+    reference_id:
+  - id: 462933
+    url: http://www.debian.org/security/2011/dsa-2293
+    reference_id:
+  - id: 462934
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2011:153
+    reference_id:
+  - id: 462935
+    url: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/compress/zopen.c#rev1.17
+    reference_id:
+  - id: 462936
+    url: http://www.openwall.com/lists/oss-security/2011/08/10/10
+    reference_id:
+  - id: 462937
+    url: http://www.redhat.com/support/errata/RHSA-2011-1154.html
+    reference_id:
+  - id: 462938
+    url: http://www.redhat.com/support/errata/RHSA-2011-1155.html
+    reference_id:
+  - id: 462939
+    url: http://www.redhat.com/support/errata/RHSA-2011-1161.html
+    reference_id:
+  - id: 462940
+    url: http://www.redhat.com/support/errata/RHSA-2011-1834.html
+    reference_id:
+  - id: 462941
+    url: http://www.securityfocus.com/bid/49124
+    reference_id:
+  - id: 462942
+    url: http://www.ubuntu.com/usn/USN-1191-1
+    reference_id:
+  - id: 229868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:freetype:freetype:2.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:freetype:freetype:2.1.9:*:*:*:*:*:*:*
+  - id: 462947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:*:*:*:*:*:*:*:*
+  - id: 462948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.0:*:*:*:*:*:*:*
+  - id: 462949
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.1:*:*:*:*:*:*:*
+  - id: 462950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.2:*:*:*:*:*:*:*
+  - id: 462951
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.3:*:*:*:*:*:*:*
+  - id: 462952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.4:*:*:*:*:*:*:*
+  - id: 462953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.5:*:*:*:*:*:*:*
+  - id: 462954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.6:*:*:*:*:*:*:*
+  - id: 462955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.7:*:*:*:*:*:*:*
+  - id: 462956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.8:*:*:*:*:*:*:*
+  - id: 462957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.2.9:*:*:*:*:*:*:*
+  - id: 462958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.3.0:*:*:*:*:*:*:*
+  - id: 310658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.3.1:*:*:*:*:*:*:*
+  - id: 462959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.3.2:*:*:*:*:*:*:*
+  - id: 462960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.3.3:*:*:*:*:*:*:*
+  - id: 462961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.3.4:*:*:*:*:*:*:*
+  - id: 462962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.4.0:*:*:*:*:*:*:*
+  - id: 462963
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.4.1:*:*:*:*:*:*:*
+  - id: 462964
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:x:libxfont:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:x:libxfont:1.4.2:*:*:*:*:*:*:*
+  - id: 47594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:*:*:*:*:*:*:*:*
+  - id: 48081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:netbsd:netbsd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:netbsd:netbsd:*:*:*:*:*:*:*:*
+  - id: 14879
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:*:*:*:*:*:*:*:*
+  - id: 44369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.0:*:*:*:*:*:*:*
+  - id: 43692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.1:*:*:*:*:*:*:*
+  - id: 43577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.2:*:*:*:*:*:*:*
+  - id: 43285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.3:*:*:*:*:*:*:*
+  - id: 15255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.4:*:*:*:*:*:*:*
+  - id: 45117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.5:*:*:*:*:*:*:*
+  - id: 49279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.6:*:*:*:*:*:*:*
+  - id: 51004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.7:*:*:*:*:*:*:*
+  - id: 55246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.8:*:*:*:*:*:*:*
+  - id: 60596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:2.9:*:*:*:*:*:*:*
+  - id: 62782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.0:*:*:*:*:*:*:*
+  - id: 66694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.1:*:*:*:*:*:*:*
+  - id: 71922
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.2:*:*:*:*:*:*:*
+  - id: 82749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.3:*:*:*:*:*:*:*
+  - id: 84658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.4:*:*:*:*:*:*:*
+  - id: 93467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.5:*:*:*:*:*:*:*
+  - id: 107319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:3.6:*:*:*:*:*:*:*
+  - id: 462946
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-2895
+    reference_id: CVE-2011-2895
+  - id: '196149'
+    url: https://access.redhat.com/errata/RHSA-2011:1154
+    reference_id: RHSA-2011:1154
+  - id: '196150'
+    url: https://access.redhat.com/errata/RHSA-2011:1155
+    reference_id: RHSA-2011:1155
+  - id: '196151'
+    url: https://access.redhat.com/errata/RHSA-2011:1161
+    reference_id: RHSA-2011:1161
+  - id: '196152'
+    url: https://access.redhat.com/errata/RHSA-2011:1834
+    reference_id: RHSA-2011:1834
+weaknesses: []

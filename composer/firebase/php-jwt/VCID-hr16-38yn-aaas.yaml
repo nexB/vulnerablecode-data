@@ -1,0 +1,43 @@
+vulnerability_id: VCID-hr16-38yn-aaas
+aliases:
+  - CVE-2021-46743
+  - GHSA-8xf4-w7qw-pjjw
+summary: |
+  Access of Resource Using Incompatible Type ('Type Confusion')
+  In Firebase PHP-JWT before 6.0.0, an algorithm-confusion issue (e.g., RS256 / HS256) exists via the kid (aka Key ID) header, when multiple types of keys are loaded in a key ring. This allows an attacker to forge tokens that validate under the incorrect key. NOTE: this provides a straightforward way to use the PHP-JWT library unsafely, but might not be considered a vulnerability in the library itself.
+severities:
+  - id: 574796
+    reference_id: 24357
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 574794
+    reference_id: 24357
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+  - id: 707906
+    reference_id: 1471255
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 24358
+    url: https://github.com/firebase/php-jwt/issues/351
+    reference_id:
+  - id: 1471254
+    url: https://github.com/firebase/php-jwt/releases/tag/v6.0.0
+    reference_id:
+  - id: 907990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:firebase_php-jwt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:firebase_php-jwt:*:*:*:*:*:*:*:*
+  - id: 24357
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-46743
+    reference_id: CVE-2021-46743
+  - id: 1471581
+    url: https://github.com/FriendsOfPHP/security-advisories/blob/master/firebase/php-jwt/CVE-2021-46743.yaml
+    reference_id: CVE-2021-46743.YAML
+  - id: 1471255
+    url: https://github.com/advisories/GHSA-8xf4-w7qw-pjjw
+    reference_id: GHSA-8xf4-w7qw-pjjw
+weaknesses: []

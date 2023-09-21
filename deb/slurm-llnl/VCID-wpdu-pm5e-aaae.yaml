@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2016-10030
+fixed_purl:
+- pkg:deb/debian/slurm-llnl@16.05.8-1?distro=buster
+- pkg:deb/debian/slurm-llnl@18.08.5.2-1%2Bdeb10u2?distro=buster
+references:
+- id: 126091
+  reference_id: '850491'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=850491
+severities: []
+summary: The _prolog_error function in slurmd/req.c in Slurm before 15.08.13, 16.x
+  before 16.05.7, and 17.x before 17.02.0-pre4 has a vulnerability in how the slurmd
+  daemon informs users of a Prolog failure on a compute node. That vulnerability could
+  allow a user to assume control of an arbitrary file on the system. Any exploitation
+  of this is dependent on the user being able to cause or anticipate the failure (non-zero
+  return code) of a Prolog script that their job would run on. This issue affects
+  all Slurm versions from 0.6.0 (September 2005) to present. Workarounds to prevent
+  exploitation of this are to either disable your Prolog script, or modify it such
+  that it always returns 0 ("success") and adjust it to set the node as down using
+  scontrol instead of relying on the slurmd to handle that automatically. If you do
+  not have a Prolog set you are unaffected by this issue.
+vulnerability_id: VCID-wpdu-pm5e-aaae
+weaknesses: []

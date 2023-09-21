@@ -1,0 +1,53 @@
+vulnerability_id: VCID-cdzv-sy9r-aaam
+aliases:
+  - CVE-2019-11690
+summary: gen_rand_uuid in lib/uuid.c in Das U-Boot v2014.04 through v2019.04 lacks an srand
+  call, which allows attackers to determine UUID values in scenarios where CONFIG_RANDOM_UUID
+  is enabled, and Das U-Boot is relied upon for UUID values of a GUID Partition Table of a boot
+  device.
+severities:
+  - id: 690174
+    reference_id: 1451592
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 690175
+    reference_id: 1451593
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 690176
+    reference_id: 771542
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 372877
+    reference_id: 771543
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 372875
+    reference_id: 771543
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1451592
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-11690.html
+    reference_id:
+  - id: 1451593
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11690
+    reference_id:
+  - id: 771542
+    url: https://patchwork.ozlabs.org/patch/1092945
+    reference_id:
+  - id: 146805
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=928557
+    reference_id: 928557
+  - id: 698153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:denx:u-boot:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:denx:u-boot:*:*:*:*:*:*:*:*
+  - id: 771543
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11690
+    reference_id: CVE-2019-11690
+weaknesses: []

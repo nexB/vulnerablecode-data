@@ -1,0 +1,92 @@
+vulnerability_id: VCID-6uuu-swg6-aaaa
+aliases:
+  - CVE-2017-15118
+summary: A stack-based buffer overflow vulnerability was found in NBD server implementation
+  in qemu before 2.11 allowing a client to request an export name of size up to 4096 bytes,
+  which in fact should be limited to 256 bytes, causing an out-of-bounds stack write in the
+  qemu process. If NBD server requires TLS, the attacker cannot trigger the buffer overflow
+  without first successfully negotiating TLS.
+severities:
+  - id: 619621
+    reference_id: 938322
+    scoring_system: cvssv3
+    value: '8.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
+  - id: 619620
+    reference_id: 938321
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 266824
+    reference_id: 684945
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 266822
+    reference_id: 684945
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 619218
+    reference_id: 938041
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 619219
+    reference_id: 938042
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 938322
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15118.json
+    reference_id:
+  - id: 684942
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15118
+    reference_id:
+  - id: 684943
+    url: https://lists.gnu.org/archive/html/qemu-devel/2017-11/msg05045.html
+    reference_id:
+  - id: 672658
+    url: https://usn.ubuntu.com/3575-1/
+    reference_id:
+  - id: 684944
+    url: https://www.exploit-db.com/exploits/43194/
+    reference_id:
+  - id: 684940
+    url: http://www.openwall.com/lists/oss-security/2017/11/28/8
+    reference_id:
+  - id: 684941
+    url: http://www.securityfocus.com/bid/101975
+    reference_id:
+  - id: 938321
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1516922
+    reference_id: 1516922
+  - id: 112001
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=883406
+    reference_id: 883406
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 169418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 684945
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15118
+    reference_id: CVE-2017-15118
+  - id: 938041
+    url: https://access.redhat.com/errata/RHSA-2018:1104
+    reference_id: RHSA-2018:1104
+  - id: 938042
+    url: https://access.redhat.com/errata/RHSA-2018:1113
+    reference_id: RHSA-2018:1113
+weaknesses: []

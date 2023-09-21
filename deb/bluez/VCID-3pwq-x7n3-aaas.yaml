@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2019-8922
+fixed_purl:
+- pkg:deb/debian/bluez@5.50-1.2~deb10u2?distro=sid
+- pkg:deb/debian/bluez@5.50-1.2~deb10u3?distro=sid
+- pkg:deb/debian/bluez@5.54-1?distro=sid
+- pkg:deb/debian/bluez@5.55-3.1?distro=sid
+- pkg:deb/debian/bluez@5.66-1?distro=sid
+references: []
+severities: []
+summary: A heap-based buffer overflow was discovered in bluetoothd in BlueZ through
+  5.48. There isn't any check on whether there is enough space in the destination
+  buffer. The function simply appends all data passed to it. The values of all attributes
+  that are requested are appended to the output buffer. There are no size checks whatsoever,
+  resulting in a simple heap overflow if one can craft a request where the response
+  is large enough to overflow the preallocated buffer. This issue exists in service_attr_req
+  gets called by process_request (in sdpd-request.c), which also allocates the response
+  buffer.
+vulnerability_id: VCID-3pwq-x7n3-aaas
+weaknesses: []

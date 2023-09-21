@@ -1,0 +1,54 @@
+affected_purls:
+- pkg:pypi/django@2.1
+- pkg:pypi/django@2.1.1
+aliases:
+- CVE-2018-16984
+- GHSA-6mx3-3vqg-hpp2
+fixed_purl:
+- pkg:deb/debian/python-django@0?distro=sid
+- pkg:deb/debian/python-django@1:1.11.29-1~deb10u1?distro=sid
+- pkg:deb/debian/python-django@2:2.2.28-1~deb11u1?distro=sid
+- pkg:deb/debian/python-django@3:3.2.19-1?distro=sid
+- pkg:pypi/django@2.1.2
+references:
+- id: 181893
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16984
+- id: 181267
+  reference_id: ''
+  url: https://cwe.mitre.org/data/definitions/200.html
+- id: 181894
+  reference_id: ''
+  url: https://github.com/django/django/commit/f5335bc745d4f86d355b69549712885fd1634574
+- id: 181895
+  reference_id: ''
+  url: https://github.com/django/django/pull/10449
+- id: 144720
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20190502-0009/
+- id: 144721
+  reference_id: ''
+  url: https://www.djangoproject.com/weblog/2018/oct/01/security-release/
+- id: 144722
+  reference_id: ''
+  url: http://www.securitytracker.com/id/1041749
+- id: 144718
+  reference_id: CVE-2018-16984
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-16984
+- id: 144719
+  reference_id: GHSA-6mx3-3vqg-hpp2
+  url: https://github.com/advisories/GHSA-6mx3-3vqg-hpp2
+severities:
+- id: 20246
+  reference_id: 144719
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: An issue was discovered in Django 2.1 before 2.1.2, in which unprivileged
+  users can read the password hashes of arbitrary accounts. The read-only password
+  widget used by the Django Admin to display an obfuscated password hash was bypassed
+  if a user has only the "view" permission (new in Django 2.1), resulting in display
+  of the entire password hash to those users. This may result in a vulnerability for
+  sites with legacy user accounts using insecure hashes.
+vulnerability_id: VCID-tcb5-1nud-aaak
+weaknesses: []

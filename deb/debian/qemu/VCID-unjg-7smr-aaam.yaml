@@ -1,0 +1,72 @@
+vulnerability_id: VCID-unjg-7smr-aaam
+aliases:
+  - CVE-2021-4145
+summary: A NULL pointer dereference issue was found in the block mirror layer of QEMU in versions
+  prior to 6.2.0. The `self` pointer is dereferenced in mirror_wait_on_conflicts() without ensuring
+  that it's not NULL. A malicious unprivileged user within the guest could use this flaw to
+  crash the QEMU process on the host when writing data reaches the threshold of mirroring node.
+severities:
+  - id: 491560
+    reference_id: 854509
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 562955
+    reference_id: 899446
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 562953
+    reference_id: 899446
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 271995
+    reference_id: 689253
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 854509
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4145.json
+    reference_id:
+  - id: 899443
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2034602
+    reference_id:
+  - id: 899444
+    url: https://gitlab.com/qemu-project/qemu/-/commit/66fed30c9cd11854fc878a4eceb507e915d7c9cd
+    reference_id:
+  - id: 1340335
+    url: https://security.gentoo.org/glsa/202208-27
+    reference_id:
+  - id: 899445
+    url: https://security.netapp.com/advisory/ntap-20220311-0004/
+    reference_id:
+  - id: 891046
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:-:*:*:*:*:*:*
+  - id: 899447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:rc0:*:*:*:*:*:*
+  - id: 891047
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:rc1:*:*:*:*:*:*
+  - id: 899448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:rc2:*:*:*:*:*:*
+  - id: 899449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:rc3:*:*:*:*:*:*
+  - id: 899450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:6.1.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:6.1.0:rc4:*:*:*:*:*:*
+  - id: 803120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+  - id: 899446
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4145
+    reference_id: CVE-2021-4145
+  - id: 689253
+    url: https://access.redhat.com/errata/RHSA-2022:1759
+    reference_id: RHSA-2022:1759
+weaknesses: []

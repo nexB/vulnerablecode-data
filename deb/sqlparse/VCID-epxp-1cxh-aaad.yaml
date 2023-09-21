@@ -1,0 +1,53 @@
+affected_purls:
+- pkg:deb/debian/sqlparse@0.4.1-1
+- pkg:pypi/sqlparse@0.4.0
+- pkg:pypi/sqlparse@0.4.1
+aliases:
+- CVE-2021-32839
+- GHSA-p5w8-wqhj-9hhf
+fixed_purl:
+- pkg:deb/debian/sqlparse@0.4.2-1
+- pkg:pypi/sqlparse@0.4.2
+references:
+- id: 161217
+  reference_id: ''
+  url: https://github.com/andialbrecht/sqlparse/commit/8238a9e450ed1524e40cb3a8b0b3c00606903aeb
+- id: 161220
+  reference_id: ''
+  url: https://github.com/pypa/advisory-database/tree/main/vulns/sqlparse/PYSEC-2021-333.yaml
+- id: 161219
+  reference_id: ''
+  url: https://securitylab.github.com/advisories/GHSL-2021-107-andialbrecht-sqlparse/
+- id: 129827
+  reference_id: '994841'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=994841
+- id: 161218
+  reference_id: CVE-2021-32839
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-32839
+- id: 161221
+  reference_id: GHSA-p5w8-wqhj-9hhf
+  url: https://github.com/advisories/GHSA-p5w8-wqhj-9hhf
+- id: 161216
+  reference_id: GHSA-p5w8-wqhj-9hhf
+  url: https://github.com/andialbrecht/sqlparse/security/advisories/GHSA-p5w8-wqhj-9hhf
+severities:
+- id: 23761
+  reference_id: 161221
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 23760
+  reference_id: 161216
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: sqlparse is a non-validating SQL parser module for Python. In sqlparse versions
+  0.4.0 and 0.4.1 there is a regular Expression Denial of Service in sqlparse vulnerability.
+  The regular expression may cause exponential backtracking on strings containing
+  many repetitions of '\r\n' in SQL comments. Only the formatting feature that removes
+  comments from SQL statements is affected by this regular expression. As a workaround
+  don't use the sqlformat.format function with keyword strip_comments=True or the
+  --strip-comments command line flag when using the sqlformat command line tool. The
+  issues has been fixed in sqlparse 0.4.2.
+vulnerability_id: VCID-epxp-1cxh-aaad
+weaknesses: []

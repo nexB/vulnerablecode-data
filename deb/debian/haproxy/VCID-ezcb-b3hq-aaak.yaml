@@ -1,0 +1,139 @@
+vulnerability_id: VCID-ezcb-b3hq-aaak
+aliases:
+  - CVE-2019-18277
+summary: A flaw was found in HAProxy before 2.0.6. In legacy mode, messages featuring a transfer-encoding
+  header missing the "chunked" value were not being correctly rejected. The impact was limited
+  but if combined with the "http-reuse always" setting, it could be used to help construct an
+  HTTP request smuggling attack against a vulnerable component employing a lenient parser that
+  would ignore the content-length header as soon as it saw a transfer-encoding one (even if
+  not entirely valid according to the specification).
+severities:
+  - id: 692131
+    reference_id: 1453120
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 74018
+    reference_id: 204854
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L
+  - id: 692132
+    reference_id: 1453121
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692133
+    reference_id: 787476
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692136
+    reference_id: 1453123
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692134
+    reference_id: 1453122
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692135
+    reference_id: 787478
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 74017
+    reference_id: 204853
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 393084
+    reference_id: 787479
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 393082
+    reference_id: 787479
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 52550
+    reference_id: 177425
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 64895
+    reference_id: '193636'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 52552
+    reference_id: 177427
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 64894
+    reference_id: '193635'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 787473
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00016.html
+    reference_id:
+  - id: 787474
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00019.html
+    reference_id:
+  - id: 1453120
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-18277.html
+    reference_id:
+  - id: 204854
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-18277.json
+    reference_id:
+  - id: 1453121
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18277
+    reference_id:
+  - id: 787475
+    url: https://git.haproxy.org/?p=haproxy-2.0.git;a=commit;h=196a7df44d8129d1adc795da020b722614d6a581
+    reference_id:
+  - id: 747696
+    url: https://lists.debian.org/debian-lts-announce/2022/05/msg00045.html
+    reference_id:
+  - id: 787476
+    url: https://nathandavison.com/blog/haproxy-http-request-smuggling
+    reference_id:
+  - id: 1453123
+    url: https://ubuntu.com/security/notices/USN-4174-1
+    reference_id:
+  - id: 787477
+    url: https://usn.ubuntu.com/4174-1/
+    reference_id:
+  - id: 1453122
+    url: https://usn.ubuntu.com/usn/usn-4174-1
+    reference_id:
+  - id: 787478
+    url: https://www.mail-archive.com/haproxy@formilux.org/msg34926.html
+    reference_id:
+  - id: 204853
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1759697
+    reference_id: 1759697
+  - id: 494651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
+  - id: 787479
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18277
+    reference_id: CVE-2019-18277
+  - id: 177425
+    url: https://access.redhat.com/errata/RHSA-2020:1287
+    reference_id: RHSA-2020:1287
+  - id: '193636'
+    url: https://access.redhat.com/errata/RHSA-2020:1725
+    reference_id: RHSA-2020:1725
+  - id: 177427
+    url: https://access.redhat.com/errata/RHSA-2020:1936
+    reference_id: RHSA-2020:1936
+  - id: '193635'
+    url: https://access.redhat.com/errata/RHSA-2020:2265
+    reference_id: RHSA-2020:2265
+weaknesses: []

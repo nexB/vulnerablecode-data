@@ -1,0 +1,64 @@
+vulnerability_id: VCID-6g71-691e-aaaq
+aliases:
+  - CVE-2021-3750
+summary: A DMA reentrancy issue was found in the USB EHCI controller emulation of QEMU. EHCI
+  does not verify if the Buffer Pointer overlaps with its MMIO region when it transfers the
+  USB packets. Crafted content may be written to the controller's registers and trigger undesirable
+  actions (such as reset) while the device is still transferring packets. This can ultimately
+  lead to a use-after-free issue. A malicious guest could use this flaw to crash the QEMU process
+  on the host, resulting in a denial of service condition, or potentially execute arbitrary
+  code within the context of the QEMU process on the host. This flaw affects QEMU versions before
+  7.0.0.
+severities:
+  - id: 609991
+    reference_id: 931334
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 609990
+    reference_id: 931333
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 551719
+    reference_id: 892134
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 551717
+    reference_id: 892134
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 931334
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3750.json
+    reference_id:
+  - id: 892132
+    url: https://gitlab.com/qemu-project/qemu/-/issues/541
+    reference_id:
+  - id: 892133
+    url: https://gitlab.com/qemu-project/qemu/-/issues/556
+    reference_id:
+  - id: 1340335
+    url: https://security.gentoo.org/glsa/202208-27
+    reference_id:
+  - id: 947887
+    url: https://security.netapp.com/advisory/ntap-20220624-0003/
+    reference_id:
+  - id: 931333
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1999073
+    reference_id: '1999073'
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 803120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+  - id: 772353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+  - id: 892134
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3750
+    reference_id: CVE-2021-3750
+weaknesses: []

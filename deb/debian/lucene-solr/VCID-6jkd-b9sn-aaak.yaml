@@ -1,0 +1,89 @@
+vulnerability_id: VCID-6jkd-b9sn-aaak
+aliases:
+  - CVE-2017-9803
+  - GHSA-f553-j2gv-g5r9
+summary: |
+  Privilege escalation
+  Solr's Kerberos plugin can be configured to use delegation tokens, which allows an application to reuse the authentication of an end-user or another application. There are two issues with this functionality (when using `SecurityAwareZkACLProvider` type of ACL provider e.g. `SaslZkACLProvider`). Firstly, access to the security configuration can be leaked to users other than the solr super user. Secondly, malicious users can exploit this leaked configuration for privilege escalation to further expose/modify private data and/or disrupt operations in the Solr cluster.
+severities:
+  - id: 620688
+    reference_id: 939069
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 620687
+    reference_id: 939068
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 302450
+    reference_id: 716878
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 302448
+    reference_id: 716878
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 648171
+    reference_id: 1418674
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 716876
+    url: http://mail-archives.us.apache.org/mod_mbox/www-announce/201709.mbox/%3CCAOOKt53AOScg04zUh0%2BR_fcXD0C9s5mQ-OzdgYdnHz49u1KmXw@mail.gmail.com%3E
+    reference_id:
+  - id: 939069
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9803.json
+    reference_id:
+  - id: 29928
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9803
+    reference_id:
+  - id: 29929
+    url: https://issues.apache.org/jira/browse/SOLR-11184
+    reference_id:
+  - id: 1418673
+    url: https://lists.apache.org/thread/f4rbt657n9x4kb74k1txhcojof5dzol5
+    reference_id:
+  - id: 716877
+    url: http://www.securityfocus.com/bid/100870
+    reference_id:
+  - id: 939068
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1493507
+    reference_id: 1493507
+  - id: 697918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.2.0:*:*:*:*:*:*:*
+  - id: 697919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.2.1:*:*:*:*:*:*:*
+  - id: 697920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.3.0:*:*:*:*:*:*:*
+  - id: 697921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.0:*:*:*:*:*:*:*
+  - id: 710141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.1:*:*:*:*:*:*:*
+  - id: 710142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.4.2:*:*:*:*:*:*:*
+  - id: 710143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.5.0:*:*:*:*:*:*:*
+  - id: 710144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.5.1:*:*:*:*:*:*:*
+  - id: 716879
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:6.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:6.6.0:*:*:*:*:*:*:*
+  - id: 716878
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9803
+    reference_id: CVE-2017-9803
+  - id: 1418674
+    url: https://github.com/advisories/GHSA-f553-j2gv-g5r9
+    reference_id: GHSA-f553-j2gv-g5r9
+weaknesses: []

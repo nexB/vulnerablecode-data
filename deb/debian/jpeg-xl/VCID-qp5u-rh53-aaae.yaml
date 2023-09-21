@@ -1,0 +1,35 @@
+vulnerability_id: VCID-qp5u-rh53-aaae
+aliases:
+  - CVE-2021-22564
+summary: For certain valid JPEG XL images with a size slightly larger than an integer number
+  of groups (256x256 pixels) when processing the groups out of order the decoder can perform
+  an out of bounds copy of image pixels from an image buffer in the heap to another. This copy
+  can occur when processing the right or bottom edges of the image, but only when groups are
+  processed in certain order. Groups can be processed out of order in multi-threaded decoding
+  environments with heavy thread load but also with images that contain the groups in an arbitrary
+  order in the file. It is recommended to upgrade past 0.6.0 or patch with https://github.com/libjxl/libjxl/pull/775
+severities:
+  - id: 512803
+    reference_id: 866822
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 512801
+    reference_id: 866822
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 866820
+    url: https://github.com/libjxl/libjxl/issues/708
+    reference_id:
+  - id: 866821
+    url: https://github.com/libjxl/libjxl/pull/775
+    reference_id:
+  - id: 866819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libjxl_project:libjxl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libjxl_project:libjxl:*:*:*:*:*:*:*:*
+  - id: 866822
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-22564
+    reference_id: CVE-2021-22564
+weaknesses: []

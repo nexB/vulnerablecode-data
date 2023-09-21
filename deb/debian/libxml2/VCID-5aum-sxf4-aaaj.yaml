@@ -1,0 +1,783 @@
+vulnerability_id: VCID-5aum-sxf4-aaaj
+aliases:
+  - CVE-2012-5134
+summary: |
+  Improper Restriction of Operations within the Bounds of a Memory Buffer
+  Heap-based buffer underflow in the xmlParseAttValueComplex function in parser.c in libxml2, as used in Google Chrome and other products, allows remote attackers to cause a denial of service or possibly execute arbitrary code via crafted entities in an XML document.
+severities:
+  - id: 158430
+    reference_id: 38613
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 63717
+    reference_id: '192061'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 63716
+    reference_id: '192060'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 505101
+    url: http://git.gnome.org/browse/libxml2/commit/?id=6a36fbe3b3e001a8a840b5c1fdd81cefc9947f0d
+    reference_id:
+  - id: 505072
+    url: http://googlechromereleases.blogspot.com/2012/11/stable-channel-update.html
+    reference_id:
+  - id: 464218
+    url: http://lists.apple.com/archives/security-announce/2013/Oct/msg00009.html
+    reference_id:
+  - id: 459565
+    url: http://lists.apple.com/archives/security-announce/2013/Sep/msg00006.html
+    reference_id:
+  - id: 505073
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-12/msg00004.html
+    reference_id:
+  - id: 505102
+    url: http://lists.opensuse.org/opensuse-security-announce/2013-01/msg00023.html
+    reference_id:
+  - id: 464219
+    url: http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00002.html
+    reference_id:
+  - id: 505103
+    url: http://rhn.redhat.com/errata/RHSA-2012-1512.html
+    reference_id:
+  - id: 435379
+    url: http://rhn.redhat.com/errata/RHSA-2013-0217.html
+    reference_id:
+  - id: '192062'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-5134.json
+    reference_id:
+  - id: 505107
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=880466
+    reference_id:
+  - id: 505108
+    url: https://code.google.com/p/chromium/issues/detail?id=158249
+    reference_id:
+  - id: 505104
+    url: http://secunia.com/advisories/51448
+    reference_id:
+  - id: 459568
+    url: http://secunia.com/advisories/54886
+    reference_id:
+  - id: 464222
+    url: http://secunia.com/advisories/55568
+    reference_id:
+  - id: 505109
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/80294
+    reference_id:
+  - id: 459570
+    url: http://support.apple.com/kb/HT5934
+    reference_id:
+  - id: 464223
+    url: http://support.apple.com/kb/HT6001
+    reference_id:
+  - id: 505105
+    url: http://www.debian.org/security/2012/dsa-2580
+    reference_id:
+  - id: 464226
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2013:056
+    reference_id:
+  - id: 505075
+    url: http://www.securityfocus.com/bid/56684
+    reference_id:
+  - id: 505076
+    url: http://www.securitytracker.com/id?1027815
+    reference_id:
+  - id: 505106
+    url: http://www.ubuntu.com/usn/USN-1656-1
+    reference_id:
+  - id: 47457
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=694521
+    reference_id: 694521
+  - id: 146802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+  - id: 504956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.0:*:*:*:*:*:*:*
+  - id: 504967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.1:*:*:*:*:*:*:*
+  - id: 504957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.10:*:*:*:*:*:*:*
+  - id: 504958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.11:*:*:*:*:*:*:*
+  - id: 504959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.12:*:*:*:*:*:*:*
+  - id: 504960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.13:*:*:*:*:*:*:*
+  - id: 504961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.14:*:*:*:*:*:*:*
+  - id: 504962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.15:*:*:*:*:*:*:*
+  - id: 504963
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.16:*:*:*:*:*:*:*
+  - id: 504964
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.17:*:*:*:*:*:*:*
+  - id: 504965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.18:*:*:*:*:*:*:*
+  - id: 504966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.19:*:*:*:*:*:*:*
+  - id: 504974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.2:*:*:*:*:*:*:*
+  - id: 504968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.20:*:*:*:*:*:*:*
+  - id: 504969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.21:*:*:*:*:*:*:*
+  - id: 504970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.22:*:*:*:*:*:*:*
+  - id: 504971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.23:*:*:*:*:*:*:*
+  - id: 504972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.24:*:*:*:*:*:*:*
+  - id: 504973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.26:*:*:*:*:*:*:*
+  - id: 504984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.3:*:*:*:*:*:*:*
+  - id: 504975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.30:*:*:*:*:*:*:*
+  - id: 504976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.31:*:*:*:*:*:*:*
+  - id: 504977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.32:*:*:*:*:*:*:*
+  - id: 504978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.33:*:*:*:*:*:*:*
+  - id: 504979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.35:*:*:*:*:*:*:*
+  - id: 504980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.36:*:*:*:*:*:*:*
+  - id: 504981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.37:*:*:*:*:*:*:*
+  - id: 504982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.38:*:*:*:*:*:*:*
+  - id: 504983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.39:*:*:*:*:*:*:*
+  - id: 504991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.4:*:*:*:*:*:*:*
+  - id: 504985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.40:*:*:*:*:*:*:*
+  - id: 504986
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.41:*:*:*:*:*:*:*
+  - id: 504987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.44:*:*:*:*:*:*:*
+  - id: 504988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.45:*:*:*:*:*:*:*
+  - id: 504989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.46:*:*:*:*:*:*:*
+  - id: 504990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.49:*:*:*:*:*:*:*
+  - id: 505002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.5:*:*:*:*:*:*:*
+  - id: 504992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.50:*:*:*:*:*:*:*
+  - id: 504993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.51:*:*:*:*:*:*:*
+  - id: 504994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.52:*:*:*:*:*:*:*
+  - id: 504995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.53:*:*:*:*:*:*:*
+  - id: 504996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.54:*:*:*:*:*:*:*
+  - id: 504997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.55:*:*:*:*:*:*:*
+  - id: 504998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.56:*:*:*:*:*:*:*
+  - id: 504999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.57:*:*:*:*:*:*:*
+  - id: 505000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.58:*:*:*:*:*:*:*
+  - id: 505005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.6:*:*:*:*:*:*:*
+  - id: 505003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.60:*:*:*:*:*:*:*
+  - id: 505004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.61:*:*:*:*:*:*:*
+  - id: 505081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.62:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.62:*:*:*:*:*:*:*
+  - id: 505082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.64:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.64:*:*:*:*:*:*:*
+  - id: 505006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.7:*:*:*:*:*:*:*
+  - id: 505007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.8:*:*:*:*:*:*:*
+  - id: 505083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.83:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.83:*:*:*:*:*:*:*
+  - id: 505084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.84:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.84:*:*:*:*:*:*:*
+  - id: 505085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.85:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.85:*:*:*:*:*:*:*
+  - id: 505086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.86:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.86:*:*:*:*:*:*:*
+  - id: 505087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.87:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.87:*:*:*:*:*:*:*
+  - id: 505088
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:23.0.1271.88:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:23.0.1271.88:*:*:*:*:*:*:*
+  - id: 159176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:*:*:*:*:*:*:*:*
+  - id: 89905
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.7.0:*:*:*:*:*:*:*
+  - id: 89906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.7.1:*:*:*:*:*:*:*
+  - id: 89907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.7.2:*:*:*:*:*:*:*
+  - id: 89908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.7.3:*:*:*:*:*:*:*
+  - id: 89909
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.7.4:*:*:*:*:*:*:*
+  - id: 89910
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.0:*:*:*:*:*:*:*
+  - id: 89915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.1:*:*:*:*:*:*:*
+  - id: 89911
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.10:*:*:*:*:*:*:*
+  - id: 89912
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.13:*:*:*:*:*:*:*
+  - id: 89913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.14:*:*:*:*:*:*:*
+  - id: 89914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.16:*:*:*:*:*:*:*
+  - id: 89916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.2:*:*:*:*:*:*:*
+  - id: 89917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.3:*:*:*:*:*:*:*
+  - id: 89918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.4:*:*:*:*:*:*:*
+  - id: 89919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.5:*:*:*:*:*:*:*
+  - id: 89920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.6:*:*:*:*:*:*:*
+  - id: 89921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.7:*:*:*:*:*:*:*
+  - id: 89922
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:1.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:1.8.9:*:*:*:*:*:*:*
+  - id: 89923
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.0.0:*:*:*:*:*:*:*
+  - id: 89924
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.1.0:*:*:*:*:*:*:*
+  - id: 89925
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.1.1:*:*:*:*:*:*:*
+  - id: 89926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.0:*:*:*:*:*:*:*
+  - id: 89927
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.0:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.0:beta:*:*:*:*:*:*
+  - id: 89930
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.1:*:*:*:*:*:*:*
+  - id: 89928
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.10:*:*:*:*:*:*:*
+  - id: 89929
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.11:*:*:*:*:*:*:*
+  - id: 89931
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.2:*:*:*:*:*:*:*
+  - id: 89932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.3:*:*:*:*:*:*:*
+  - id: 89933
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.4:*:*:*:*:*:*:*
+  - id: 89934
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.5:*:*:*:*:*:*:*
+  - id: 89935
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.6:*:*:*:*:*:*:*
+  - id: 89936
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.7:*:*:*:*:*:*:*
+  - id: 89937
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.8:*:*:*:*:*:*:*
+  - id: 89938
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.2.9:*:*:*:*:*:*:*
+  - id: 89939
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.0:*:*:*:*:*:*:*
+  - id: 89945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.1:*:*:*:*:*:*:*
+  - id: 89940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.10:*:*:*:*:*:*:*
+  - id: 89941
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.11:*:*:*:*:*:*:*
+  - id: 89942
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.12:*:*:*:*:*:*:*
+  - id: 89943
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.13:*:*:*:*:*:*:*
+  - id: 89944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.14:*:*:*:*:*:*:*
+  - id: 89946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.2:*:*:*:*:*:*:*
+  - id: 89947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.3:*:*:*:*:*:*:*
+  - id: 89948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.4:*:*:*:*:*:*:*
+  - id: 89949
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.5:*:*:*:*:*:*:*
+  - id: 89950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.6:*:*:*:*:*:*:*
+  - id: 89951
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.7:*:*:*:*:*:*:*
+  - id: 89952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.8:*:*:*:*:*:*:*
+  - id: 89953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.3.9:*:*:*:*:*:*:*
+  - id: 89964
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.1:*:*:*:*:*:*:*
+  - id: 89954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.10:*:*:*:*:*:*:*
+  - id: 89955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.11:*:*:*:*:*:*:*
+  - id: 89956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.12:*:*:*:*:*:*:*
+  - id: 89957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.13:*:*:*:*:*:*:*
+  - id: 89958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.14:*:*:*:*:*:*:*
+  - id: 89959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.15:*:*:*:*:*:*:*
+  - id: 89960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.16:*:*:*:*:*:*:*
+  - id: 89961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.17:*:*:*:*:*:*:*
+  - id: 89962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.18:*:*:*:*:*:*:*
+  - id: 89963
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.19:*:*:*:*:*:*:*
+  - id: 89975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.2:*:*:*:*:*:*:*
+  - id: 89965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.20:*:*:*:*:*:*:*
+  - id: 89966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.21:*:*:*:*:*:*:*
+  - id: 89967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.22:*:*:*:*:*:*:*
+  - id: 89968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.23:*:*:*:*:*:*:*
+  - id: 89969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.24:*:*:*:*:*:*:*
+  - id: 89970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.25:*:*:*:*:*:*:*
+  - id: 89971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.26:*:*:*:*:*:*:*
+  - id: 89972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.27:*:*:*:*:*:*:*
+  - id: 89973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.28:*:*:*:*:*:*:*
+  - id: 89974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.29:*:*:*:*:*:*:*
+  - id: 89977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.3:*:*:*:*:*:*:*
+  - id: 89976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.30:*:*:*:*:*:*:*
+  - id: 89978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.4:*:*:*:*:*:*:*
+  - id: 89979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.5:*:*:*:*:*:*:*
+  - id: 89980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.6:*:*:*:*:*:*:*
+  - id: 89981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.7:*:*:*:*:*:*:*
+  - id: 89982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.8:*:*:*:*:*:*:*
+  - id: 89983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.4.9:*:*:*:*:*:*:*
+  - id: 89984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.0:*:*:*:*:*:*:*
+  - id: 90966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.10:*:*:*:*:*:*:*
+  - id: 90967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.11:*:*:*:*:*:*:*
+  - id: 90968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.4:*:*:*:*:*:*:*
+  - id: 481987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.7:*:*:*:*:*:*:*
+  - id: 481988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.5.8:*:*:*:*:*:*:*
+  - id: 90969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.0:*:*:*:*:*:*:*
+  - id: 90970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.1:*:*:*:*:*:*:*
+  - id: 98132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.11:*:*:*:*:*:*:*
+  - id: 98133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.12:*:*:*:*:*:*:*
+  - id: 98134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.13:*:*:*:*:*:*:*
+  - id: 98135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.14:*:*:*:*:*:*:*
+  - id: 154011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.16:*:*:*:*:*:*:*
+  - id: 457509
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.17:*:*:*:*:*:*:*
+  - id: 457510
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.18:*:*:*:*:*:*:*
+  - id: 90971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.2:*:*:*:*:*:*:*
+  - id: 457511
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.20:*:*:*:*:*:*:*
+  - id: 457512
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.22:*:*:*:*:*:*:*
+  - id: 154012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.26:*:*:*:*:*:*:*
+  - id: 154013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.27:*:*:*:*:*:*:*
+  - id: 90972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.3:*:*:*:*:*:*:*
+  - id: 457513
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.30:*:*:*:*:*:*:*
+  - id: 154014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.32:*:*:*:*:*:*:*
+  - id: 90973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.4:*:*:*:*:*:*:*
+  - id: 90974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.5:*:*:*:*:*:*:*
+  - id: 98136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.6:*:*:*:*:*:*:*
+  - id: 98137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.7:*:*:*:*:*:*:*
+  - id: 98138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.8:*:*:*:*:*:*:*
+  - id: 98139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.6.9:*:*:*:*:*:*:*
+  - id: 358412
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.0:*:*:*:*:*:*:*
+  - id: 358413
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.1:*:*:*:*:*:*:*
+  - id: 457514
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.2:*:*:*:*:*:*:*
+  - id: 457515
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.3:*:*:*:*:*:*:*
+  - id: 457516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.4:*:*:*:*:*:*:*
+  - id: 457517
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.5:*:*:*:*:*:*:*
+  - id: 457518
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.6:*:*:*:*:*:*:*
+  - id: 457519
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.7.7:*:*:*:*:*:*:*
+  - id: 505110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.9.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.9.0:rc1:*:*:*:*:*:*
+  - id: 151502
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*
+  - id: 151503
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.0.0:*:*:*:*:*:*:*
+  - id: 151504
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.0.1:*:*:*:*:*:*:*
+  - id: 151505
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.0.2:*:*:*:*:*:*:*
+  - id: 151507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.0:*:*:*:*:*:*:*
+  - id: 151508
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.1:*:*:*:*:*:*:*
+  - id: 151509
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.2:*:*:*:*:*:*:*
+  - id: 151510
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.3:*:*:*:*:*:*:*
+  - id: 151511
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.4:*:*:*:*:*:*:*
+  - id: 151512
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:1.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:1.1.5:*:*:*:*:*:*:*
+  - id: 151517
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.0:*:*:*:*:*:*:*
+  - id: 151514
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.0.0:*:*:*:*:*:*:*
+  - id: 151515
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.0.1:*:*:*:*:*:*:*
+  - id: 151516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.0.2:*:*:*:*:*:*:*
+  - id: 151518
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.1:*:*:*:*:*:*:*
+  - id: 157441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.1.1:*:*:*:*:*:*:*
+  - id: 157445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.2:*:*:*:*:*:*:*
+  - id: 157443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:2.2.1:*:*:*:*:*:*:*
+  - id: 151540
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.0:*:*:*:*:*:*:*
+  - id: 151539
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.0.1:*:*:*:*:*:*:*
+  - id: 415891
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.1:*:*:*:*:*:*:*
+  - id: 409254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.1.2:*:*:*:*:*:*:*
+  - id: 415890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.1.3:*:*:*:*:*:*:*
+  - id: 420712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.2:*:*:*:*:*:*:*
+  - id: 420710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.2.1:*:*:*:*:*:*:*
+  - id: 433706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:3.2.2:*:*:*:*:*:*:*
+  - id: 420718
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.0:*:*:*:*:*:*:*
+  - id: 420715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.0.1:*:*:*:*:*:*:*
+  - id: 433707
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.0.2:*:*:*:*:*:*:*
+  - id: 431342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.1:*:*:*:*:*:*:*
+  - id: 445054
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.2.1:*:*:*:*:*:*:*
+  - id: 445055
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.2.5:*:*:*:*:*:*:*
+  - id: 445069
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.2.8:*:*:*:*:*:*:*
+  - id: 444983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.3.0:*:*:*:*:*:*:*
+  - id: 444984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.3.1:*:*:*:*:*:*:*
+  - id: 445056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.3.2:*:*:*:*:*:*:*
+  - id: 445057
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.3.3:*:*:*:*:*:*:*
+  - id: 459577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:4.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:4.3.5:*:*:*:*:*:*:*
+  - id: 459579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:5.0:*:*:*:*:*:*:*
+  - id: 459578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:5.0.1:*:*:*:*:*:*:*
+  - id: 459581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:5.1:*:*:*:*:*:*:*
+  - id: 459580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:5.1.1:*:*:*:*:*:*:*
+  - id: 459584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.0:*:*:*:*:*:*:*
+  - id: 459582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.0.1:*:*:*:*:*:*:*
+  - id: 459583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.0.2:*:*:*:*:*:*:*
+  - id: 459587
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.1:*:*:*:*:*:*:*
+  - id: 459585
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.1.2:*:*:*:*:*:*:*
+  - id: 459586
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:iphone_os:6.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:iphone_os:6.1.3:*:*:*:*:*:*:*
+  - id: 38613
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-5134
+    reference_id: CVE-2012-5134
+  - id: '192061'
+    url: https://access.redhat.com/errata/RHSA-2012:1512
+    reference_id: RHSA-2012:1512
+  - id: '192060'
+    url: https://access.redhat.com/errata/RHSA-2013:0217
+    reference_id: RHSA-2013:0217
+weaknesses: []

@@ -1,0 +1,68 @@
+affected_purls:
+- pkg:npm/object-path@0.0.1
+- pkg:npm/object-path@0.1.0
+- pkg:npm/object-path@0.10.0
+- pkg:npm/object-path@0.11.0
+- pkg:npm/object-path@0.11.1
+- pkg:npm/object-path@0.11.2
+- pkg:npm/object-path@0.11.3
+- pkg:npm/object-path@0.11.4
+- pkg:npm/object-path@0.1.2
+- pkg:npm/object-path@0.1.3
+- pkg:npm/object-path@0.2.0
+- pkg:npm/object-path@0.2.1
+- pkg:npm/object-path@0.3.0
+- pkg:npm/object-path@0.4.0
+- pkg:npm/object-path@0.5.0
+- pkg:npm/object-path@0.5.1
+- pkg:npm/object-path@0.6.0
+- pkg:npm/object-path@0.7.0
+- pkg:npm/object-path@0.8.0
+- pkg:npm/object-path@0.8.1
+- pkg:npm/object-path@0.9.0
+- pkg:npm/object-path@0.9.1
+- pkg:npm/object-path@0.9.2
+aliases:
+- CVE-2020-15256
+- GHSA-cwx2-736x-mf6w
+fixed_purl:
+- pkg:deb/debian/node-object-path@0.11.4-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/node-object-path@0.11.5-3?distro=sid
+- pkg:deb/debian/node-object-path@0.11.5-3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/node-object-path@0.11.8%2B~0.11.1-2?distro=sid
+- pkg:npm/object-path@0.11.5
+references:
+- id: 151810
+  reference_id: ''
+  url: https://github.com/mariocasciaro/object-path/commit/2be3354c6c46215c7635eb1b76d80f1319403c68
+- id: 151811
+  reference_id: CVE-2020-15256
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-15256
+- id: 151812
+  reference_id: GHSA-cwx2-736x-mf6w
+  url: https://github.com/advisories/GHSA-cwx2-736x-mf6w
+- id: 151809
+  reference_id: GHSA-cwx2-736x-mf6w
+  url: https://github.com/mariocasciaro/object-path/security/advisories/GHSA-cwx2-736x-mf6w
+severities:
+- id: 21616
+  reference_id: 151812
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 21615
+  reference_id: 151809
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: 'A prototype pollution vulnerability has been found in `object-path` <= 0.11.4
+  affecting the `set()` method. The vulnerability is limited to the `includeInheritedProps`
+  mode (if version >= 0.11.0 is used), which has to be explicitly enabled by creating
+  a new instance of `object-path` and setting the option `includeInheritedProps: true`,
+  or by using the default `withInheritedProps` instance. The default operating mode
+  is not affected by the vulnerability if version >= 0.11.0 is used. Any usage of
+  `set()` in versions < 0.11.0 is vulnerable. The issue is fixed in object-path version
+  0.11.5 As a workaround, don''t use the `includeInheritedProps: true` options or
+  the `withInheritedProps` instance if using a version >= 0.11.0.'
+vulnerability_id: VCID-hjnh-wp9t-aaar
+weaknesses: []

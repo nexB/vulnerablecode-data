@@ -1,0 +1,92 @@
+vulnerability_id: VCID-av6f-h7c6-aaaq
+aliases:
+  - CVE-2017-9526
+summary: In Libgcrypt before 1.7.7, an attacker who learns the EdDSA session key (from side-channel
+  observation during the signing process) can easily recover the long-term secret key. 1.7.7
+  makes a cipher/ecc-eddsa.c change to store this session key in secure memory, to ensure that
+  constant-time point operations are used in the MPI library.
+severities:
+  - id: 681811
+    reference_id: 1445031
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 618194
+    reference_id: 937325
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 681812
+    reference_id: 1445032
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 680405
+    reference_id: 1443994
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686822
+    reference_id: 2751
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618193
+    reference_id: 937324
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 301409
+    reference_id: 716012
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 301407
+    reference_id: 716012
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1445031
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-9526.html
+    reference_id:
+  - id: 937325
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9526.json
+    reference_id:
+  - id: 716009
+    url: https://bugzilla.suse.com/show_bug.cgi?id=1042326
+    reference_id:
+  - id: 1445032
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9526
+    reference_id:
+  - id: 716010
+    url: https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=5a22de904a0a366ae79f03ff1e13a1232a89e26b
+    reference_id:
+  - id: 716011
+    url: https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=f9494b3f258e01b6af8bd3941ce436bcc00afc56
+    reference_id:
+  - id: 1443994
+    url: https://ubuntu.com/security/notices/USN-3347-1
+    reference_id:
+  - id: 2745
+    url: https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+    reference_id:
+  - id: 716007
+    url: http://www.debian.org/security/2017/dsa-3880
+    reference_id:
+  - id: 2751
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    reference_id:
+  - id: 716008
+    url: http://www.securityfocus.com/bid/99046
+    reference_id:
+  - id: 937324
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1459887
+    reference_id: 1459887
+  - id: 533822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnupg:libgcrypt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnupg:libgcrypt:*:*:*:*:*:*:*:*
+  - id: 716012
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9526
+    reference_id: CVE-2017-9526
+weaknesses: []

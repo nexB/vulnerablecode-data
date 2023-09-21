@@ -1,0 +1,536 @@
+vulnerability_id: VCID-cqmj-ajpw-aaae
+aliases:
+  - CVE-2016-2570
+summary: The Edge Side Includes (ESI) parser in Squid 3.x before 3.5.15 and 4.x before 4.0.7
+  does not check buffer limits during XML parsing, which allows remote HTTP servers to cause
+  a denial of service (assertion failure and daemon exit) via a crafted XML document, related
+  to esi/CustomParser.cc and esi/CustomParser.h.
+severities:
+  - id: 668098
+    reference_id: 1434176
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668099
+    reference_id: 1434177
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668097
+    reference_id: 1434175
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668095
+    reference_id: 639535
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 51099
+    reference_id: 175753
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 222197
+    reference_id: 639542
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 222195
+    reference_id: 639542
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 50429
+    reference_id: 174993
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 159863
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00010.html
+    reference_id:
+  - id: 159864
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00040.html
+    reference_id:
+  - id: 159865
+    url: http://lists.opensuse.org/opensuse-updates/2016-08/msg00069.html
+    reference_id:
+  - id: 1434176
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-2570.html
+    reference_id:
+  - id: 639532
+    url: http://rhn.redhat.com/errata/RHSA-2016-2600.html
+    reference_id:
+  - id: 175755
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-2570.json
+    reference_id:
+  - id: 1434177
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2570
+    reference_id:
+  - id: 579135
+    url: https://security.gentoo.org/glsa/201607-01
+    reference_id:
+  - id: 1434175
+    url: https://ubuntu.com/security/notices/USN-3557-1
+    reference_id:
+  - id: 639538
+    url: https://usn.ubuntu.com/3557-1/
+    reference_id:
+  - id: 639533
+    url: http://www.openwall.com/lists/oss-security/2016/02/26/2
+    reference_id:
+  - id: 639534
+    url: http://www.securitytracker.com/id/1035101
+    reference_id:
+  - id: 639535
+    url: http://www.squid-cache.org/Advisories/SQUID-2016_2.txt
+    reference_id:
+  - id: 639540
+    url: http://www.squid-cache.org/Versions/v3/3.5/changesets/squid-3.5-13993.patch
+    reference_id:
+  - id: 639541
+    url: http://www.squid-cache.org/Versions/v4/changesets/squid-4-14549.patch
+    reference_id:
+  - id: 175753
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1312257
+    reference_id: 1312257
+  - id: 127781
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=816011
+    reference_id: 816011
+  - id: 410872
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:*:*:*:*:*:*:*
+  - id: 507637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre1:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre1:*:*:*:*:*
+  - id: 507638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre2:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre2:*:*:*:*:*
+  - id: 507639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre3:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre3:*:*:*:*:*
+  - id: 507640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre4:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre4:*:*:*:*:*
+  - id: 507641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre5:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre5:*:*:*:*:*
+  - id: 507642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre6:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre6:*:*:*:*:*
+  - id: 507643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:-:pre7:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:-:pre7:*:*:*:*:*
+  - id: 155807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0:rc4:*:*:*:*:*:*
+  - id: 410860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable1:*:*:*:*:*:*:*
+  - id: 428926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable10:*:*:*:*:*:*:*
+  - id: 410851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable11:*:*:*:*:*:*:*
+  - id: 428927
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable11:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable11:rc1:*:*:*:*:*:*
+  - id: 410852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable12:*:*:*:*:*:*:*
+  - id: 410853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable13:*:*:*:*:*:*:*
+  - id: 410854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable14:*:*:*:*:*:*:*
+  - id: 410855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable15:*:*:*:*:*:*:*
+  - id: 410856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable16:*:*:*:*:*:*:*
+  - id: 428928
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable16:rc1:*:*:*:*:*:*
+  - id: 410857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable17:*:*:*:*:*:*:*
+  - id: 410858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable18:*:*:*:*:*:*:*
+  - id: 410859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable19:*:*:*:*:*:*:*
+  - id: 410864
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable2:*:*:*:*:*:*:*
+  - id: 410861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable20:*:*:*:*:*:*:*
+  - id: 410862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable21:*:*:*:*:*:*:*
+  - id: 410863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable22:*:*:*:*:*:*:*
+  - id: 412772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable23:*:*:*:*:*:*:*
+  - id: 428929
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable24:*:*:*:*:*:*:*
+  - id: 428930
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable25:*:*:*:*:*:*:*
+  - id: 410865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable3:*:*:*:*:*:*:*
+  - id: 410866
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable4:*:*:*:*:*:*:*
+  - id: 410867
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable5:*:*:*:*:*:*:*
+  - id: 410868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable6:*:*:*:*:*:*:*
+  - id: 410869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable7:*:*:*:*:*:*:*
+  - id: 410870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable8:*:*:*:*:*:*:*
+  - id: 410871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.0.stable9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.0.stable9:*:*:*:*:*:*:*
+  - id: 155812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1:*:*:*:*:*:*:*
+  - id: 155808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.1:*:*:*:*:*:*:*
+  - id: 410873
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.10:*:*:*:*:*:*:*
+  - id: 410874
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.11:*:*:*:*:*:*:*
+  - id: 410875
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.12:*:*:*:*:*:*:*
+  - id: 410876
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.13:*:*:*:*:*:*:*
+  - id: 410877
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.14:*:*:*:*:*:*:*
+  - id: 410878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.15:*:*:*:*:*:*:*
+  - id: 428931
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.16:*:*:*:*:*:*:*
+  - id: 428932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.17:*:*:*:*:*:*:*
+  - id: 428933
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.18:*:*:*:*:*:*:*
+  - id: 155809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.2:*:*:*:*:*:*:*
+  - id: 155810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.3:*:*:*:*:*:*:*
+  - id: 155811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.4:*:*:*:*:*:*:*
+  - id: 410879
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.5:*:*:*:*:*:*:*
+  - id: 410880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.6:*:*:*:*:*:*:*
+  - id: 410881
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.7:*:*:*:*:*:*:*
+  - id: 410882
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.8:*:*:*:*:*:*:*
+  - id: 410883
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.0.9:*:*:*:*:*:*:*
+  - id: 428934
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.1:*:*:*:*:*:*:*
+  - id: 465021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.10:*:*:*:*:*:*:*
+  - id: 465022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.11:*:*:*:*:*:*:*
+  - id: 465023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.12:*:*:*:*:*:*:*
+  - id: 465024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.13:*:*:*:*:*:*:*
+  - id: 465025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.14:*:*:*:*:*:*:*
+  - id: 507644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.15:*:*:*:*:*:*:*
+  - id: 428935
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.2:*:*:*:*:*:*:*
+  - id: 428936
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.3:*:*:*:*:*:*:*
+  - id: 428937
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.4:*:*:*:*:*:*:*
+  - id: 428939
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.5:*:*:*:*:*:*:*
+  - id: 428938
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.5.1:*:*:*:*:*:*:*
+  - id: 428173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.6:*:*:*:*:*:*:*
+  - id: 428940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.7:*:*:*:*:*:*:*
+  - id: 465026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.8:*:*:*:*:*:*:*
+  - id: 465027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.1.9:*:*:*:*:*:*:*
+  - id: 465029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.1:*:*:*:*:*:*:*
+  - id: 465028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.10:*:*:*:*:*:*:*
+  - id: 507651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.11:*:*:*:*:*:*:*
+  - id: 507652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.12:*:*:*:*:*:*:*
+  - id: 507653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.13:*:*:*:*:*:*:*
+  - id: 507654
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.14:*:*:*:*:*:*:*
+  - id: 507655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.15:*:*:*:*:*:*:*
+  - id: 507656
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.16:*:*:*:*:*:*:*
+  - id: 507657
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.17:*:*:*:*:*:*:*
+  - id: 507658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.18:*:*:*:*:*:*:*
+  - id: 507659
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.19:*:*:*:*:*:*:*
+  - id: 465030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.2:*:*:*:*:*:*:*
+  - id: 465031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.3:*:*:*:*:*:*:*
+  - id: 465032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.4:*:*:*:*:*:*:*
+  - id: 465033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.5:*:*:*:*:*:*:*
+  - id: 465034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.6:*:*:*:*:*:*:*
+  - id: 465035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.7:*:*:*:*:*:*:*
+  - id: 465036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.8:*:*:*:*:*:*:*
+  - id: 465037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.0.9:*:*:*:*:*:*:*
+  - id: 507660
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.1:*:*:*:*:*:*:*
+  - id: 532899
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.10:*:*:*:*:*:*:*
+  - id: 532900
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.11:*:*:*:*:*:*:*
+  - id: 532901
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.12:*:*:*:*:*:*:*
+  - id: 607832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.13:*:*:*:*:*:*:*
+  - id: 507661
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.2:*:*:*:*:*:*:*
+  - id: 507662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.3:*:*:*:*:*:*:*
+  - id: 512320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.4:*:*:*:*:*:*:*
+  - id: 520741
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.5:*:*:*:*:*:*:*
+  - id: 520742
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.6:*:*:*:*:*:*:*
+  - id: 520743
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.7:*:*:*:*:*:*:*
+  - id: 520744
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.8:*:*:*:*:*:*:*
+  - id: 532902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.2.9:*:*:*:*:*:*:*
+  - id: 520747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.0:*:*:*:*:*:*:*
+  - id: 520745
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.0.2:*:*:*:*:*:*:*
+  - id: 520746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.0.3:*:*:*:*:*:*:*
+  - id: 520748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.1:*:*:*:*:*:*:*
+  - id: 550096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.10:*:*:*:*:*:*:*
+  - id: 550097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.11:*:*:*:*:*:*:*
+  - id: 579184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.12:*:*:*:*:*:*:*
+  - id: 607833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.13:*:*:*:*:*:*:*
+  - id: 520749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.2:*:*:*:*:*:*:*
+  - id: 532840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.3:*:*:*:*:*:*:*
+  - id: 532841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.4:*:*:*:*:*:*:*
+  - id: 532842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.5:*:*:*:*:*:*:*
+  - id: 532843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.6:*:*:*:*:*:*:*
+  - id: 532903
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.7:*:*:*:*:*:*:*
+  - id: 550098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.8:*:*:*:*:*:*:*
+  - id: 550099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.3.9:*:*:*:*:*:*:*
+  - id: 550100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.0.1:*:*:*:*:*:*:*
+  - id: 550101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.0.2:*:*:*:*:*:*:*
+  - id: 550102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.0.3:*:*:*:*:*:*:*
+  - id: 550103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.1:*:*:*:*:*:*:*
+  - id: 592516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.10:*:*:*:*:*:*:*
+  - id: 592517
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.11:*:*:*:*:*:*:*
+  - id: 592518
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.12:*:*:*:*:*:*:*
+  - id: 592519
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.13:*:*:*:*:*:*:*
+  - id: 550104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.2:*:*:*:*:*:*:*
+  - id: 550105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.3:*:*:*:*:*:*:*
+  - id: 567832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.4:*:*:*:*:*:*:*
+  - id: 592520
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.8:*:*:*:*:*:*:*
+  - id: 592521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.4.9:*:*:*:*:*:*:*
+  - id: 592522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.5.0.1:*:*:*:*:*:*:*
+  - id: 592523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.5.0.2:*:*:*:*:*:*:*
+  - id: 592524
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.5.0.3:*:*:*:*:*:*:*
+  - id: 592525
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.5.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.5.0.4:*:*:*:*:*:*:*
+  - id: 592526
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:3.5.1:*:*:*:*:*:*:*
+  - id: 626547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.1:*:*:*:*:*:*:*
+  - id: 626548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*
+  - id: 626549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*
+  - id: 626550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*
+  - id: 626551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*
+  - id: 626552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*
+  - id: 639542
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-2570
+    reference_id: CVE-2016-2570
+  - id: 174993
+    url: https://access.redhat.com/errata/RHSA-2016:2600
+    reference_id: RHSA-2016:2600
+weaknesses: []

@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2017-9798
+fixed_purl:
+- pkg:deb/debian/apache2@2.4.27-6?distro=sid
+- pkg:deb/debian/apache2@2.4.38-3%2Bdeb10u8?distro=sid
+- pkg:deb/debian/apache2@2.4.56-1~deb11u2?distro=sid
+- pkg:deb/debian/apache2@2.4.57-2?distro=sid
+references:
+- id: 127665
+  reference_id: '876109'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=876109
+severities: []
+summary: Apache httpd allows remote attackers to read secret data from process memory
+  if the Limit directive can be set in a user's .htaccess file, or if httpd.conf has
+  certain misconfigurations, aka Optionsbleed. This affects the Apache HTTP Server
+  through 2.2.34 and 2.4.x through 2.4.27. The attacker sends an unauthenticated OPTIONS
+  HTTP request when attempting to read secret data. This is a use-after-free issue
+  and thus secret data is not always sent, and the specific data depends on many factors
+  including configuration. Exploitation with .htaccess can be blocked with a patch
+  to the ap_limit_section function in server/core.c.
+vulnerability_id: VCID-gp8k-jb85-aaan
+weaknesses: []

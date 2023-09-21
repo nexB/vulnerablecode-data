@@ -1,0 +1,12 @@
+vulnerability_id: VCID-uq6r-t9hm-aaaj
+aliases:
+  - SS-2016-011
+summary: |
+  ChangePasswordForm doesn't check Member::canLogIn()
+  After performing a password reset, `ChangePasswordForm::doChangePassword()` logs in the user without checking `Member::canLogIn()`. This presents an issue for sites that are using the extension point in that method to deny access to users (for example members that have not been “approved”, or members that have had their access revoked temporarily). It looks like `Member::canLogIn()` was originally designed to only be used for checking whether the user is locked out (due to too many incorrect login attempts) but has been opened up to other uses.
+severities: []
+references:
+  - id: 25789
+    url: https://www.silverstripe.org/download/security-releases/ss-2016-011/
+    reference_id:
+weaknesses: []

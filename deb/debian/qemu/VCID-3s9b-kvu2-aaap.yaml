@@ -1,0 +1,160 @@
+vulnerability_id: VCID-3s9b-kvu2-aaap
+aliases:
+  - CVE-2009-3616
+summary: Multiple use-after-free vulnerabilities in vnc.c in the VNC server in QEMU 0.10.6 and
+  earlier might allow guest OS users to execute arbitrary code on the host OS by establishing
+  a connection from a VNC client and then (1) disconnecting during data transfer, (2) sending
+  a message using incorrect integer data types, or (3) using the Fuzzy Screen Mode protocol,
+  related to double free vulnerabilities.
+severities:
+  - id: 126696
+    reference_id: 398682
+    scoring_system: cvssv2
+    value: '8.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:C/I:C/A:C
+references:
+  - id: 398672
+    url: http://git.savannah.gnu.org/cgit/qemu.git/commit/?id=198a0039c5
+    reference_id:
+  - id: 398673
+    url: http://git.savannah.gnu.org/cgit/qemu.git/commit/?id=753b405331
+    reference_id:
+  - id: 398674
+    url: http://marc.info/?l=qemu-devel&m=124324043812915
+    reference_id:
+  - id: 398675
+    url: http://rhn.redhat.com/errata/RHEA-2009-1272.html
+    reference_id:
+  - id: 398679
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=501131
+    reference_id:
+  - id: 398680
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=505641
+    reference_id:
+  - id: 398681
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=508567
+    reference_id:
+  - id: 398676
+    url: http://www.openwall.com/lists/oss-security/2009/10/16/5
+    reference_id:
+  - id: 398677
+    url: http://www.openwall.com/lists/oss-security/2009/10/16/8
+    reference_id:
+  - id: 398678
+    url: http://www.securityfocus.com/bid/36716
+    reference_id:
+  - id: 110780
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=553589
+    reference_id: 553589
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 329770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.0:*:*:*:*:*:*:*
+  - id: 398683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.0:*:*:*:*:*:*:*
+  - id: 398684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.1:*:*:*:*:*:*:*
+  - id: 398685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.2:*:*:*:*:*:*:*
+  - id: 398686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.3:*:*:*:*:*:*:*
+  - id: 398687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.4:*:*:*:*:*:*:*
+  - id: 398688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.10.5:*:*:*:*:*:*:*
+  - id: 329771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.1:*:*:*:*:*:*:*
+  - id: 329772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.2:*:*:*:*:*:*:*
+  - id: 329773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.3:*:*:*:*:*:*:*
+  - id: 329774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.4:*:*:*:*:*:*:*
+  - id: 329775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.5:*:*:*:*:*:*:*
+  - id: 329776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.1.6:*:*:*:*:*:*:*
+  - id: 329777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.2.0:*:*:*:*:*:*:*
+  - id: 329778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.3.0:*:*:*:*:*:*:*
+  - id: 329779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.4.0:*:*:*:*:*:*:*
+  - id: 329780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.4.1:*:*:*:*:*:*:*
+  - id: 329781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.4.2:*:*:*:*:*:*:*
+  - id: 329782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.4.3:*:*:*:*:*:*:*
+  - id: 329783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.0:*:*:*:*:*:*:*
+  - id: 329784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.1:*:*:*:*:*:*:*
+  - id: 329785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.2:*:*:*:*:*:*:*
+  - id: 329786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.3:*:*:*:*:*:*:*
+  - id: 329787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.4:*:*:*:*:*:*:*
+  - id: 329788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.5.5:*:*:*:*:*:*:*
+  - id: 329789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.6.0:*:*:*:*:*:*:*
+  - id: 329790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.6.1:*:*:*:*:*:*:*
+  - id: 329791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.7.0:*:*:*:*:*:*:*
+  - id: 329792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.7.1:*:*:*:*:*:*:*
+  - id: 329793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.7.2:*:*:*:*:*:*:*
+  - id: 329794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.8.0:*:*:*:*:*:*:*
+  - id: 329795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.8.1:*:*:*:*:*:*:*
+  - id: 280460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.8.2:*:*:*:*:*:*:*
+  - id: 318597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.9.0:*:*:*:*:*:*:*
+  - id: 329796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:0.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:0.9.1:*:*:*:*:*:*:*
+  - id: 398682
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-3616
+    reference_id: CVE-2009-3616
+weaknesses: []

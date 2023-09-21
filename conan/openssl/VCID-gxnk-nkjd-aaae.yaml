@@ -1,0 +1,32 @@
+affected_purls:
+- pkg:conan/openssl@1.0.2s
+- pkg:conan/openssl@1.0.2t
+- pkg:conan/openssl@1.0.2u
+aliases:
+- CVE-2020-1968
+fixed_purl:
+- pkg:conan/openssl@1.1.0k
+- pkg:deb/debian/openssl@1.1.0c-1?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb10u3?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u4?distro=sid
+- pkg:deb/debian/openssl@3.0.8-1?distro=sid
+- pkg:deb/debian/openssl@3.0.9-1?distro=sid
+references:
+- id: 182899
+  reference_id: ''
+  url: https://www.openssl.org/news/secadv/20200909.txt
+- id: 182898
+  reference_id: CVE-2020-1968
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-1968
+severities: []
+summary: The Raccoon attack exploits a flaw in the TLS specification which can lead
+  to an attacker being able to compute the pre-master secret in connections which
+  have used a Diffie-Hellman (DH) based ciphersuite. In such a case this would result
+  in the attacker being able to eavesdrop on all encrypted communications sent over
+  that TLS connection. The attack can only be exploited if an implementation re-uses
+  a DH secret across multiple TLS connections. Note that this issue only impacts DH
+  ciphersuites and not ECDH ciphersuites. This issue affects OpenSSL 1.0.2 which is
+  out of support and no longer receiving public updates. OpenSSL 1.1.1 is not vulnerable
+  to this issue. Fixed in OpenSSL 1.0.2w (Affected 1.0.2-1.0.2v).
+vulnerability_id: VCID-gxnk-nkjd-aaae
+weaknesses: []

@@ -1,0 +1,17 @@
+affected_purls:
+- pkg:deb/debian/samba@2:4.9.5%2Bdfsg-5%2Bdeb10u3
+aliases:
+- CVE-2019-14907
+fixed_purl:
+- pkg:deb/debian/samba@2:4.13.13%2Bdfsg-1~deb11u5
+references: []
+severities: []
+summary: All samba versions 4.9.x before 4.9.18, 4.10.x before 4.10.12 and 4.11.x
+  before 4.11.5 have an issue where if it is set with "log level = 3" (or above) then
+  the string obtained from the client, after a failed character conversion, is printed.
+  Such strings can be provided during the NTLMSSP authentication exchange. In the
+  Samba AD DC in particular, this may cause a long-lived process(such as the RPC server)
+  to terminate. (In the file server case, the most likely target, smbd, operates as
+  process-per-client and so a crash there is harmless).
+vulnerability_id: VCID-xnjx-56vc-aaaj
+weaknesses: []

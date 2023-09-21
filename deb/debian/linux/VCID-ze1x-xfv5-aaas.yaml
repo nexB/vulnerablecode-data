@@ -1,0 +1,66 @@
+vulnerability_id: VCID-ze1x-xfv5-aaas
+aliases:
+  - CVE-2020-35499
+summary: A NULL pointer dereference flaw in Linux kernel versions prior to 5.11 may be seen
+  if sco_sock_getsockopt function in net/bluetooth/sco.c do not have a sanity check for a socket
+  connection, when using BT_SNDMTU/BT_RCVMTU for SCO sockets. This could allow a local attacker
+  with a special user privilege to crash the system (DOS) or leak kernel internal information.
+severities:
+  - id: 698742
+    reference_id: 1458552
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605526
+    reference_id: 928055
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 698743
+    reference_id: 1458553
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698744
+    reference_id: 1458554
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605525
+    reference_id: 928054
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 474225
+    reference_id: 842430
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 474223
+    reference_id: 842430
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1458552
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-35499.html
+    reference_id:
+  - id: 928055
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-35499.json
+    reference_id:
+  - id: 1458553
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35499
+    reference_id:
+  - id: 1458554
+    url: https://git.kernel.org/linus/f6b8c6b5543983e9de29dc14716bfa4eb3f157c4
+    reference_id:
+  - id: 928054
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1910048
+    reference_id: '1910048'
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 842430
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-35499
+    reference_id: CVE-2020-35499
+weaknesses: []

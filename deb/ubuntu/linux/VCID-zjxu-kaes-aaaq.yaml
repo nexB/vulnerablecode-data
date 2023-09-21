@@ -1,0 +1,143 @@
+vulnerability_id: VCID-zjxu-kaes-aaaq
+aliases:
+  - CVE-2017-17862
+summary: kernel/bpf/verifier.c in the Linux kernel through 4.14.8 ignores unreachable code,
+  even though it would still be processed by JIT compilers. This behavior, also considered an
+  improper branch-pruning logic issue, could possibly be used by local users for denial of service.
+severities:
+  - id: 677213
+    reference_id: 1441366
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619242
+    reference_id: 938058
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 677215
+    reference_id: 1441368
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676791
+    reference_id: 1441081
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 676792
+    reference_id: 1441082
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 676793
+    reference_id: 1441083
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677216
+    reference_id: 692314
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677214
+    reference_id: 1441367
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619241
+    reference_id: 938057
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 275272
+    reference_id: 692315
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 275270
+    reference_id: 692315
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 692309
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c131187db2d3fa2f8bf32fdf4e9a4ef805168467
+    reference_id:
+  - id: 1441366
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17862.html
+    reference_id:
+  - id: 938058
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17862.json
+    reference_id:
+  - id: 692312
+    url: https://anonscm.debian.org/cgit/kernel/linux.git/tree/debian/patches/bugfix/all/bpf-fix-branch-pruning-logic.patch?h=stretch-security
+    reference_id:
+  - id: 1441368
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17862
+    reference_id:
+  - id: 692313
+    url: https://github.com/torvalds/linux/commit/c131187db2d3fa2f8bf32fdf4e9a4ef805168467
+    reference_id:
+  - id: 1441081
+    url: https://ubuntu.com/security/notices/USN-3523-1
+    reference_id:
+  - id: 1441082
+    url: https://ubuntu.com/security/notices/USN-3523-2
+    reference_id:
+  - id: 1441083
+    url: https://ubuntu.com/security/notices/USN-3523-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 689872
+    url: https://usn.ubuntu.com/usn/usn-3523-2/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 692314
+    url: https://www.spinics.net/lists/stable/msg206984.html
+    reference_id:
+  - id: 1441367
+    url: http://www.openwall.com/lists/oss-security/2017/12/24/1
+    reference_id:
+  - id: 692310
+    url: http://www.securityfocus.com/bid/102325
+    reference_id:
+  - id: 692311
+    url: http://www.securitytracker.com/id/1040057
+    reference_id:
+  - id: 938057
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1529124
+    reference_id: 1529124
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 692315
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17862
+    reference_id: CVE-2017-17862
+weaknesses: []

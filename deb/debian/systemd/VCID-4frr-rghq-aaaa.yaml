@@ -1,0 +1,129 @@
+vulnerability_id: VCID-4frr-rghq-aaaa
+aliases:
+  - CVE-2020-1712
+summary: A heap use-after-free vulnerability was found in systemd before version v245-rc1, where
+  asynchronous Polkit queries are performed while handling dbus messages. A local unprivileged
+  attacker can abuse this flaw to crash systemd services or potentially execute code and elevate
+  their privileges, by sending specially crafted dbus messages.
+severities:
+  - id: 697422
+    reference_id: 1457428
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 56049
+    reference_id: 181560
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 697423
+    reference_id: 1457429
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685220
+    reference_id: 1447642
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693047
+    reference_id: 1453738
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 56046
+    reference_id: 181557
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 450350
+    reference_id: 826860
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 450348
+    reference_id: 826860
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 56048
+    reference_id: 181559
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 56047
+    reference_id: 181558
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1457428
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-1712.html
+    reference_id:
+  - id: 181560
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-1712.json
+    reference_id:
+  - id: 826854
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1712
+    reference_id:
+  - id: 1457429
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1712
+    reference_id:
+  - id: 826855
+    url: https://github.com/systemd/systemd/commit/1068447e6954dc6ce52f099ed174c442cb89ed54
+    reference_id:
+  - id: 826856
+    url: https://github.com/systemd/systemd/commit/637486261528e8aa3da9f26a4487dc254f4b7abb
+    reference_id:
+  - id: 826857
+    url: https://github.com/systemd/systemd/commit/bc130b6858327b382b07b3985cf48e2aa9016b2d
+    reference_id:
+  - id: 826858
+    url: https://github.com/systemd/systemd/commit/ea0d0ede03c6f18dbc5036c5e9cccf97e415ccc2
+    reference_id:
+  - id: 947591
+    url: https://lists.debian.org/debian-lts-announce/2022/06/msg00025.html
+    reference_id:
+  - id: 1447642
+    url: https://ubuntu.com/security/notices/USN-4269-1
+    reference_id:
+  - id: 1453738
+    url: https://usn.ubuntu.com/usn/usn-4269-1
+    reference_id:
+  - id: 826859
+    url: https://www.openwall.com/lists/oss-security/2020/02/05/1
+    reference_id:
+  - id: 181557
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1794578
+    reference_id: 1794578
+  - id: 133399
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=950732
+    reference_id: 950732
+  - id: 812328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage:4.0:*:*:*:*:*:*:*
+  - id: 826861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:discovery:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:discovery:-:*:*:*:*:*:*:*
+  - id: 826862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:migration_toolkit:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:migration_toolkit:1.0:*:*:*:*:*:*:*
+  - id: 766534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.0:*:*:*:*:*:*:*
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 826860
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-1712
+    reference_id: CVE-2020-1712
+  - id: 181559
+    url: https://access.redhat.com/errata/RHSA-2020:0564
+    reference_id: RHSA-2020:0564
+  - id: 181558
+    url: https://access.redhat.com/errata/RHSA-2020:0575
+    reference_id: RHSA-2020:0575
+weaknesses: []

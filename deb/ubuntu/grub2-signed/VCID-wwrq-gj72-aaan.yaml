@@ -1,0 +1,223 @@
+vulnerability_id: VCID-wwrq-gj72-aaan
+aliases:
+  - CVE-2020-14310
+summary: There is an issue on grub2 before version 2.06 at function read_section_as_string().
+  It expects a font name to be at max UINT32_MAX - 1 length in bytes but it doesn't verify it
+  before proceed with buffer allocation to read the value from the font value. An attacker may
+  leverage that by crafting a malicious font file which has a name with UINT32_MAX, leading
+  to read_section_as_string() to an arithmetic overflow, zero-sized allocation and further heap-based
+  buffer overflow.
+severities:
+  - id: 696372
+    reference_id: 1456497
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 610585
+    reference_id: 931776
+    scoring_system: cvssv3
+    value: '5.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:H
+  - id: 696373
+    reference_id: 1456498
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 695360
+    reference_id: 824128
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695361
+    reference_id: 1455721
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695362
+    reference_id: 824130
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695363
+    reference_id: 824132
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695364
+    reference_id: 824133
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 610584
+    reference_id: 931775
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 441775
+    reference_id: 820636
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:P
+  - id: 441773
+    reference_id: 820636
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H
+  - id: 610570
+    reference_id: 931765
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610572
+    reference_id: 931767
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610564
+    reference_id: 931759
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610571
+    reference_id: 931766
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610569
+    reference_id: 931764
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610568
+    reference_id: 931763
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610566
+    reference_id: 931761
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610567
+    reference_id: 931762
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610565
+    reference_id: 931760
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 812164
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00016.html
+    reference_id:
+  - id: 812165
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00017.html
+    reference_id:
+  - id: 1456497
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-14310.html
+    reference_id:
+  - id: 931776
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14310.json
+    reference_id:
+  - id: 820635
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-14310
+    reference_id:
+  - id: 1456498
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14310
+    reference_id:
+  - id: 824128
+    url: https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html
+    reference_id:
+  - id: 812170
+    url: https://security.gentoo.org/glsa/202104-05
+    reference_id:
+  - id: 1455721
+    url: https://ubuntu.com/security/notices/USN-4432-1
+    reference_id:
+  - id: 812173
+    url: https://usn.ubuntu.com/4432-1/
+    reference_id:
+  - id: 824130
+    url: https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/GRUB2SecureBootBypass
+    reference_id:
+  - id: 824132
+    url: https://www.eclypsium.com/2020/07/29/theres-a-hole-in-the-boot/
+    reference_id:
+  - id: 824133
+    url: https://www.openwall.com/lists/oss-security/2020/07/29/3
+    reference_id:
+  - id: 931775
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1852030
+    reference_id: 1852030
+  - id: 812177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:grub2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:grub2:*:*:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 168171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 723721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:8.1:*:*:*:*:*:*:*
+  - id: 637849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:8.2:*:*:*:*:*:*:*
+  - id: 637859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:8.2:*:*:*:*:*:*:*
+  - id: 723722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:8.2:*:*:*:*:*:*:*
+  - id: 820636
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14310
+    reference_id: CVE-2020-14310
+  - id: 931765
+    url: https://access.redhat.com/errata/RHSA-2020:3216
+    reference_id: RHSA-2020:3216
+  - id: 931767
+    url: https://access.redhat.com/errata/RHSA-2020:3217
+    reference_id: RHSA-2020:3217
+  - id: 931759
+    url: https://access.redhat.com/errata/RHSA-2020:3223
+    reference_id: RHSA-2020:3223
+  - id: 931766
+    url: https://access.redhat.com/errata/RHSA-2020:3227
+    reference_id: RHSA-2020:3227
+  - id: 931764
+    url: https://access.redhat.com/errata/RHSA-2020:3271
+    reference_id: RHSA-2020:3271
+  - id: 931763
+    url: https://access.redhat.com/errata/RHSA-2020:3273
+    reference_id: RHSA-2020:3273
+  - id: 931761
+    url: https://access.redhat.com/errata/RHSA-2020:3274
+    reference_id: RHSA-2020:3274
+  - id: 931762
+    url: https://access.redhat.com/errata/RHSA-2020:3275
+    reference_id: RHSA-2020:3275
+  - id: 931760
+    url: https://access.redhat.com/errata/RHSA-2020:3276
+    reference_id: RHSA-2020:3276
+weaknesses: []

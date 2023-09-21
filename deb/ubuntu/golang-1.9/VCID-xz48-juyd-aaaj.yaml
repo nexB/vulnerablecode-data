@@ -1,0 +1,118 @@
+vulnerability_id: VCID-xz48-juyd-aaaj
+aliases:
+  - CVE-2017-15042
+summary: 'An unintended cleartext issue exists in Go before 1.8.4 and 1.9.x before 1.9.1. RFC
+  4954 requires that, during SMTP, the PLAIN auth scheme must only be used on network connections
+  secured with TLS. The original implementation of smtp.PlainAuth in Go 1.0 enforced this requirement,
+  and it was documented to do so. In 2013, upstream issue #5184, this was changed so that the
+  server may decide whether PLAIN is acceptable. The result is that if you set up a man-in-the-middle
+  SMTP server that doesn''t advertise STARTTLS and does advertise that PLAIN auth is OK, the
+  smtp.PlainAuth implementation sends the username and password.'
+severities:
+  - id: 675758
+    reference_id: 1440420
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 620331
+    reference_id: 938815
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N
+  - id: 675759
+    reference_id: 1440421
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675760
+    reference_id: 684726
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675761
+    reference_id: 684727
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675762
+    reference_id: 684728
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675757
+    reference_id: 684718
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 620329
+    reference_id: 938813
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 266612
+    reference_id: 684729
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 266610
+    reference_id: 684729
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 620330
+    reference_id: 938814
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 618538
+    reference_id: 937571
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1440420
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15042.html
+    reference_id:
+  - id: 938815
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15042.json
+    reference_id:
+  - id: 1440421
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15042
+    reference_id:
+  - id: 684726
+    url: https://github.com/golang/go/issues/22134
+    reference_id:
+  - id: 684727
+    url: https://golang.org/cl/68023
+    reference_id:
+  - id: 684728
+    url: https://golang.org/cl/68210
+    reference_id:
+  - id: 684718
+    url: https://groups.google.com/d/msg/golang-dev/RinSE3EiJBI/kYL7zb07AgAJ
+    reference_id:
+  - id: 684721
+    url: https://security.gentoo.org/glsa/201710-23
+    reference_id:
+  - id: 684725
+    url: http://www.securityfocus.com/bid/101197
+    reference_id:
+  - id: 938813
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1498867
+    reference_id: 1498867
+  - id: 162127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+  - id: 684730
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:1.9:*:*:*:*:*:*:*
+  - id: 684729
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15042
+    reference_id: CVE-2017-15042
+  - id: 938814
+    url: https://access.redhat.com/errata/RHSA-2017:3463
+    reference_id: RHSA-2017:3463
+  - id: 937571
+    url: https://access.redhat.com/errata/RHSA-2018:0878
+    reference_id: RHSA-2018:0878
+weaknesses: []

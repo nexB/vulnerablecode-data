@@ -1,0 +1,58 @@
+vulnerability_id: VCID-qfex-rxkn-aaab
+aliases:
+  - CVE-2018-12714
+summary: An issue was discovered in the Linux kernel through 4.17.2. The filter parsing in kernel/trace/trace_events_filter.c
+  could be called with no filter, which is an N=0 case when it expected at least one line to
+  have been read, thus making the N-1 index invalid. This allows attackers to cause a denial
+  of service (slab out-of-bounds write) or possibly have unspecified other impact via crafted
+  perf_event_open and mmap system calls.
+severities:
+  - id: 615586
+    reference_id: 935444
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+  - id: 615585
+    reference_id: 935443
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 318025
+    reference_id: 730287
+    scoring_system: cvssv2
+    value: '10.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:C/I:C/A:C
+  - id: 318023
+    reference_id: 730287
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 730282
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=81f9c4e4177d31ced6f52a89bb70e93bfb77ca03
+    reference_id:
+  - id: 935444
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12714.json
+    reference_id:
+  - id: 730284
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=200019
+    reference_id:
+  - id: 730285
+    url: https://github.com/lcytxw/bug_repro/tree/master/bug_200019
+    reference_id:
+  - id: 730286
+    url: https://github.com/torvalds/linux/commit/81f9c4e4177d31ced6f52a89bb70e93bfb77ca03
+    reference_id:
+  - id: 730283
+    url: http://www.securityfocus.com/bid/104544
+    reference_id:
+  - id: 935443
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1595835
+    reference_id: 1595835
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 730287
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12714
+    reference_id: CVE-2018-12714
+weaknesses: []

@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2018-7166
+fixed_purl:
+- pkg:deb/debian/nodejs@0?distro=sid
+- pkg:deb/debian/nodejs@10.24.0~dfsg-1~deb10u1?distro=sid
+- pkg:deb/debian/nodejs@12.22.12~dfsg-1~deb11u3?distro=sid
+- pkg:deb/debian/nodejs@18.13.0%2Bdfsg1-1?distro=sid
+references: []
+severities: []
+summary: In all versions of Node.js 10 prior to 10.9.0, an argument processing flaw
+  can cause `Buffer.alloc()` to return uninitialized memory. This method is intended
+  to be safe and only return initialized, or cleared, memory. The third argument specifying
+  `encoding` can be passed as a number, this is misinterpreted by `Buffer's` internal
+  "fill" method as the `start` to a fill operation. This flaw may be abused where
+  `Buffer.alloc()` arguments are derived from user input to return uncleared memory
+  blocks that may contain sensitive information.
+vulnerability_id: VCID-wzng-eukb-aaad
+weaknesses: []

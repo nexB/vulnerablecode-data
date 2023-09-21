@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2018-14644
+fixed_purl:
+- pkg:deb/debian/pdns-recursor@4.1.11-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/pdns-recursor@4.1.7-1?distro=sid
+- pkg:deb/debian/pdns-recursor@4.4.2-3?distro=sid
+- pkg:deb/debian/pdns-recursor@4.8.4-1?distro=sid
+references:
+- id: 127794
+  reference_id: '913162'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913162
+severities: []
+summary: An issue has been found in PowerDNS Recursor from 4.0.0 up to and including
+  4.1.4. A remote attacker sending a DNS query for a meta-type like OPT can lead to
+  a zone being wrongly cached as failing DNSSEC validation. It only arises if the
+  parent zone is signed, and all the authoritative servers for that parent zone answer
+  with FORMERR to a query for at least one of the meta-types. As a result, subsequent
+  queries from clients requesting DNSSEC validation will be answered with a ServFail.
+vulnerability_id: VCID-zv7g-j93u-aaaj
+weaknesses: []

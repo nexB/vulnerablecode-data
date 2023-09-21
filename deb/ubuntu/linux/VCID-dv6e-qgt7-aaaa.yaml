@@ -1,0 +1,81 @@
+vulnerability_id: VCID-dv6e-qgt7-aaaa
+aliases:
+  - CVE-2010-5332
+summary: In the Linux kernel before 2.6.37, an out of bounds array access happened in drivers/net/mlx4/port.c.
+  When searching for a free entry in either mlx4_register_vlan() or mlx4_register_mac(), and
+  there is no free entry, the loop terminates without updating the local variable free thus
+  causing out of array bounds access.
+severities:
+  - id: 648562
+    reference_id: 1419034
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77270
+    reference_id: 208198
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:H
+  - id: 648563
+    reference_id: 1419035
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 648564
+    reference_id: 1419036
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77269
+    reference_id: 208197
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 139769
+    reference_id: 443707
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 139767
+    reference_id: 443707
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:H
+references:
+  - id: 1419034
+    url: http://people.canonical.com/~ubuntu-security/cve/2010/CVE-2010-5332.html
+    reference_id:
+  - id: 208198
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-5332.json
+    reference_id:
+  - id: 1419035
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-5332
+    reference_id:
+  - id: 443703
+    url: https://github.com/torvalds/linux/commit/0926f91083f34d047abc74f1ca4fa6a9c161f7db
+    reference_id:
+  - id: 443702
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0926f91083f34d047abc74f1ca4fa6a9c161f7db
+    reference_id:
+  - id: 1419036
+    url: https://git.kernel.org/linus/0926f91083f34d047abc74f1ca4fa6a9c161f7db
+    reference_id:
+  - id: 443704
+    url: https://mirrors.edge.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.37
+    reference_id:
+  - id: 443705
+    url: https://support.f5.com/csp/article/K04146019
+    reference_id:
+  - id: 443706
+    url: https://support.f5.com/csp/article/K04146019?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 208197
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1743604
+    reference_id: 1743604
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 443707
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-5332
+    reference_id: CVE-2010-5332
+weaknesses: []

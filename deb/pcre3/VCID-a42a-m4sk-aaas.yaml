@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2015-8381
+fixed_purl:
+- pkg:deb/debian/pcre3@2:8.38-1?distro=sid
+- pkg:deb/debian/pcre3@2:8.39-12?distro=sid
+- pkg:deb/debian/pcre3@2:8.39-13?distro=sid
+- pkg:deb/debian/pcre3@2:8.39-15?distro=sid
+references:
+- id: 125992
+  reference_id: '795539'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=795539
+severities: []
+summary: The compile_regex function in pcre_compile.c in PCRE before 8.38 and pcre2_compile.c
+  in PCRE2 before 10.2x mishandles the /(?J:(?|(:(?|(?'R')(\k'R')|((?'R')))H'Rk'Rf)|s(?'R'))))/
+  and /(?J:(?|(:(?|(?'R')(\z(?|(?'R')(\k'R')|((?'R')))k'R')|((?'R')))H'Ak'Rf)|s(?'R')))/
+  patterns, and related patterns with certain group references, which allows remote
+  attackers to cause a denial of service (heap-based buffer overflow) or possibly
+  have unspecified other impact via a crafted regular expression, as demonstrated
+  by a JavaScript RegExp object encountered by Konqueror.
+vulnerability_id: VCID-a42a-m4sk-aaas
+weaknesses: []

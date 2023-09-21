@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2020-10701
+fixed_purl:
+- pkg:deb/debian/libvirt@0?distro=sid
+- pkg:deb/debian/libvirt@5.0.0-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libvirt@6.0.0-7?distro=sid
+- pkg:deb/debian/libvirt@7.0.0-3%2Bdeb11u2?distro=sid
+- pkg:deb/debian/libvirt@9.0.0-4?distro=sid
+references:
+- id: 129052
+  reference_id: '955841'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=955841
+severities: []
+summary: A missing authorization flaw was found in the libvirt API responsible for
+  changing the QEMU agent response timeout. This flaw allows read-only connections
+  to adjust the time that libvirt waits for the QEMU guest agent to respond to agent
+  commands. Depending on the timeout value that is set, this flaw can make guest agent
+  commands fail because the agent cannot respond in time. Unprivileged users with
+  a read-only connection could abuse this flaw to set the response timeout for all
+  guest agent messages to zero, potentially leading to a denial of service. This flaw
+  affects libvirt versions before 6.2.0.
+vulnerability_id: VCID-ahsc-v364-aaar
+weaknesses: []

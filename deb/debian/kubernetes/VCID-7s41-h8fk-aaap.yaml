@@ -1,0 +1,61 @@
+vulnerability_id: VCID-7s41-h8fk-aaap
+aliases:
+  - CVE-2020-8562
+summary: As mitigations to a report from 2019 and CVE-2020-8555, Kubernetes attempts to prevent
+  proxied connections from accessing link-local or localhost networks when making user-driven
+  connections to Services, Pods, Nodes, or StorageClass service providers. As part of this mitigation
+  Kubernetes does a DNS name resolution check and validates that response IPs are not in the
+  link-local (169.254.0.0/16) or localhost (127.0.0.0/8) range. Kubernetes then performs a second
+  DNS resolution without validation for the actual connection. If a non-standard DNS server
+  returns different non-cached responses, a user may be able to bypass the proxy IP restriction
+  and access private networks on the control plane.
+severities:
+  - id: 605596
+    reference_id: 928105
+    scoring_system: cvssv3
+    value: '2.2'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N
+  - id: 605595
+    reference_id: 928104
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 491936
+    reference_id: 854925
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:N/A:N
+  - id: 491934
+    reference_id: 854925
+    scoring_system: cvssv3
+    value: '3.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 928105
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8562.json
+    reference_id:
+  - id: 854922
+    url: https://github.com/kubernetes/kubernetes/issues/101493
+    reference_id:
+  - id: 854923
+    url: https://groups.google.com/g/kubernetes-security-announce/c/-MFX60_wdOY
+    reference_id:
+  - id: 854924
+    url: https://security.netapp.com/advisory/ntap-20220225-0002/
+    reference_id:
+  - id: 928104
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1954914
+    reference_id: '1954914'
+  - id: 42769
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990793
+    reference_id: 990793
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 854926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.21.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.21.0:*:*:*:*:*:*:*
+  - id: 854925
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8562
+    reference_id: CVE-2020-8562
+weaknesses: []

@@ -1,0 +1,151 @@
+vulnerability_id: VCID-snxv-kdyk-aaap
+aliases:
+  - CVE-2013-6397
+  - GHSA-j8qw-mwmv-28cg
+summary: |
+  Directory traversal when loading XSL stylesheets and Velocity templates
+  Directory traversal vulnerability in SolrResourceLoader in this package allows remote attackers to read arbitrary files via a `..` (dot dot) or full pathname in the tr parameter to solr/select/, when the response writer (wt parameter) is set to XSLT. NOTE: this can be leveraged using a separate XXE (XML eXternal Entity) vulnerability to allow access to files across restricted network boundaries.
+severities:
+  - id: 653472
+    reference_id: 1422843
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653474
+    reference_id: 1422845
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653475
+    reference_id: 543951
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653473
+    reference_id: 1422844
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60861
+    reference_id: 188238
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 172173
+    reference_id: 543952
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 630112
+    reference_id: 946071
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 58109
+    reference_id: 184313
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58108
+    reference_id: 184312
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 543945
+    url: http://lucene.apache.org/solr/4_6_0/changes/Changes.html
+    reference_id:
+  - id: 1422843
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-6397.html
+    reference_id:
+  - id: 511115
+    url: http://rhn.redhat.com/errata/RHSA-2013-1844.html
+    reference_id:
+  - id: 511116
+    url: http://rhn.redhat.com/errata/RHSA-2014-0029.html
+    reference_id:
+  - id: 188239
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-6397.json
+    reference_id:
+  - id: 1422845
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6397
+    reference_id:
+  - id: 543946
+    url: http://secunia.com/advisories/55730
+    reference_id:
+  - id: 543947
+    url: http://secunia.com/advisories/59372
+    reference_id:
+  - id: 543951
+    url: https://issues.apache.org/jira/browse/SOLR-4882
+    reference_id:
+  - id: 1471088
+    url: https://web.archive.org/web/20170307173358/http://www.securityfocus.com/bid/63935
+    reference_id:
+  - id: 543948
+    url: http://www.agarri.fr/kom/archives/2013/11/27/compromising_an_unreachable_solr_server_with_cve-2013-6397/index.html
+    reference_id:
+  - id: 1422844
+    url: http://www.openwall.com/lists/oss-security/2013/11/26
+    reference_id:
+  - id: 543949
+    url: http://www.openwall.com/lists/oss-security/2013/11/27/1
+    reference_id:
+  - id: 543950
+    url: http://www.securityfocus.com/bid/63935
+    reference_id:
+  - id: 188238
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1035062
+    reference_id: 1035062
+  - id: 62653
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=731113
+    reference_id: 731113
+  - id: 511120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:*:*:*:*:*:*:*:*
+  - id: 543953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.0.0:*:*:*:*:*:*:*
+  - id: 511121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.0.0:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.0.0:alpha:*:*:*:*:*:*
+  - id: 511122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.0.0:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.0.0:beta:*:*:*:*:*:*
+  - id: 543954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.1.0:*:*:*:*:*:*:*
+  - id: 543955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.2.0:*:*:*:*:*:*:*
+  - id: 543956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.2.1:*:*:*:*:*:*:*
+  - id: 543957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.3.0:*:*:*:*:*:*:*
+  - id: 543958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.3.1:*:*:*:*:*:*:*
+  - id: 543959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.4.0:*:*:*:*:*:*:*
+  - id: 543960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:solr:4.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:solr:4.5.0:*:*:*:*:*:*:*
+  - id: 29903
+    url: https://bugzilla.redhat.com/CVE-2013-6397
+    reference_id: CVE-2013-6397
+  - id: 543952
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-6397
+    reference_id: CVE-2013-6397
+  - id: 946071
+    url: https://github.com/advisories/GHSA-j8qw-mwmv-28cg
+    reference_id: GHSA-j8qw-mwmv-28cg
+  - id: 184313
+    url: https://access.redhat.com/errata/RHSA-2013:1844
+    reference_id: RHSA-2013:1844
+  - id: 184312
+    url: https://access.redhat.com/errata/RHSA-2014:0029
+    reference_id: RHSA-2014:0029
+weaknesses: []

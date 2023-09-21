@@ -1,0 +1,115 @@
+vulnerability_id: VCID-a8mw-s4pr-aaab
+aliases:
+  - CVE-2018-5382
+  - GHSA-8477-3v39-ggpm
+summary: The default BKS keystore use an HMAC that is only 16 bits long, which can allow an
+  attacker to compromise the integrity of a BKS keystore. Bouncy Castle release 1.47 changes
+  the BKS format to a format which uses a 160 bit HMAC instead. This applies to any BKS keystore
+  generated prior to BC 1.47. For situations where people need to create the files for legacy
+  reasons a specific keystore type "BKS-V1" was introduced in 1.49. It should be noted that
+  the use of "BKS-V1" is discouraged by the library authors and should only be used where it
+  is otherwise safe to do so, as in where the use of a 16 bit checksum for the file integrity
+  check is not going to cause a security issue in itself.
+severities:
+  - id: 687772
+    reference_id: 1449803
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 65389
+    reference_id: '194253'
+    scoring_system: cvssv3
+    value: '5.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 687773
+    reference_id: 1449804
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687774
+    reference_id: 1449805
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687775
+    reference_id: 753688
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696630
+    reference_id: 278
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 65388
+    reference_id: '194252'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 350238
+    reference_id: 753689
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:N
+  - id: 350236
+    reference_id: 753689
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+  - id: 630413
+    reference_id: 946551
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 49936
+    reference_id: 174399
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1449803
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-5382.html
+    reference_id:
+  - id: '194253'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-5382.json
+    reference_id:
+  - id: 1449804
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5382
+    reference_id:
+  - id: 1449805
+    url: https://insights.sei.cmu.edu/cert/2018/03/the-curious-case-of-the-bouncy-castle-bks-passwords.html
+    reference_id:
+  - id: 10839
+    url: https://www.bouncycastle.org/releasenotes.html
+    reference_id:
+  - id: 753688
+    url: https://www.kb.cert.org/vuls/id/306792
+    reference_id:
+  - id: 278
+    url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_id:
+  - id: 753687
+    url: http://www.securityfocus.com/bid/103453
+    reference_id:
+  - id: '194252'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1563749
+    reference_id: 1563749
+  - id: 626613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*
+  - id: 670917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:satellite:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:satellite:6.4:*:*:*:*:*:*:*
+  - id: 684851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:satellite_capsule:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:satellite_capsule:6.4:*:*:*:*:*:*:*
+  - id: 753689
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-5382
+    reference_id: CVE-2018-5382
+  - id: 946551
+    url: https://github.com/advisories/GHSA-8477-3v39-ggpm
+    reference_id: GHSA-8477-3v39-ggpm
+  - id: 174399
+    url: https://access.redhat.com/errata/RHSA-2018:2927
+    reference_id: RHSA-2018:2927
+weaknesses: []

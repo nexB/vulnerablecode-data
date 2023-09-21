@@ -1,0 +1,153 @@
+vulnerability_id: VCID-b36w-x6zt-aaaq
+aliases:
+  - CVE-2021-41864
+summary: prealloc_elems_and_freelist in kernel/bpf/stackmap.c in the Linux kernel before 5.14.12
+  allows unprivileged users to trigger an eBPF multiplication integer overflow with a resultant
+  out-of-bounds write.
+severities:
+  - id: 702740
+    reference_id: 1461911
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 602406
+    reference_id: 925766
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702741
+    reference_id: 1461912
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702743
+    reference_id: 900196
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702742
+    reference_id: 900195
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702744
+    reference_id: 1461913
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702745
+    reference_id: 1461914
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 602405
+    reference_id: 925765
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 563836
+    reference_id: 900198
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 563834
+    reference_id: 900198
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 53305
+    reference_id: 178338
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53304
+    reference_id: 178337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1461911
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-41864.html
+    reference_id:
+  - id: 925766
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-41864.json
+    reference_id:
+  - id: 900194
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.14.12
+    reference_id:
+  - id: 1461912
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41864
+    reference_id:
+  - id: 900196
+    url: https://github.com/torvalds/linux/commit/30e29a9a2bc6a4888335a6ede968b75cd329657a
+    reference_id:
+  - id: 900195
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=30e29a9a2bc6a4888335a6ede968b75cd329657a
+    reference_id:
+  - id: 825347
+    url: https://lists.debian.org/debian-lts-announce/2021/12/msg00012.html
+    reference_id:
+  - id: 840302
+    url: https://lists.debian.org/debian-lts-announce/2022/03/msg00012.html
+    reference_id:
+  - id: 892034
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7BLLVKYAIETEORUPTFO3TR3C33ZPFXQM/
+    reference_id:
+  - id: 892035
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LAT3RERO6QBKSPJBNNRWY3D4NCGTFOS7/
+    reference_id:
+  - id: 892036
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SYKURLXBB2555ASWMPDNMBUPD6AG2JKQ/
+    reference_id:
+  - id: 900197
+    url: https://security.netapp.com/advisory/ntap-20211029-0004/
+    reference_id:
+  - id: 1461913
+    url: https://ubuntu.com/security/notices/USN-5139-1
+    reference_id:
+  - id: 1461914
+    url: https://ubuntu.com/security/notices/USN-5140-1
+    reference_id:
+  - id: 840304
+    url: https://www.debian.org/security/2022/dsa-5096
+    reference_id:
+  - id: 925765
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2010463
+    reference_id: 2010463
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 900198
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-41864
+    reference_id: CVE-2021-41864
+  - id: 178338
+    url: https://access.redhat.com/errata/RHSA-2022:1975
+    reference_id: RHSA-2022:1975
+  - id: 178337
+    url: https://access.redhat.com/errata/RHSA-2022:1988
+    reference_id: RHSA-2022:1988
+weaknesses: []

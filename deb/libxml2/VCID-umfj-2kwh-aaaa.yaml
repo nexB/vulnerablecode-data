@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2017-9047
+fixed_purl:
+- pkg:deb/debian/libxml2@2.9.10%2Bdfsg-6.7%2Bdeb11u4?distro=sid
+- pkg:deb/debian/libxml2@2.9.14%2Bdfsg-1.2?distro=sid
+- pkg:deb/debian/libxml2@2.9.4%2Bdfsg1-3.1?distro=sid
+- pkg:deb/debian/libxml2@2.9.4%2Bdfsg1-7%2Bdeb10u4?distro=sid
+references:
+- id: 127558
+  reference_id: '863022'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863022
+severities: []
+summary: A buffer overflow was discovered in libxml2 20904-GITv2.9.4-16-g0741801.
+  The function xmlSnprintfElementContent in valid.c is supposed to recursively dump
+  the element content definition into a char buffer 'buf' of size 'size'. The variable
+  len is assigned strlen(buf). If the content->type is XML_ELEMENT_CONTENT_ELEMENT,
+  then (i) the content->prefix is appended to buf (if it actually fits) whereupon
+  (ii) content->name is written to the buffer. However, the check for whether the
+  content->name actually fits also uses 'len' rather than the updated buffer length
+  strlen(buf). This allows us to write about "size" many bytes beyond the allocated
+  memory. This vulnerability causes programs that use libxml2, such as PHP, to crash.
+vulnerability_id: VCID-umfj-2kwh-aaaa
+weaknesses: []

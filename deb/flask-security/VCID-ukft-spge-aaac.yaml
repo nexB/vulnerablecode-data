@@ -1,0 +1,70 @@
+affected_purls:
+- pkg:pypi/flask-security-too@3.3.0
+- pkg:pypi/flask-security-too@3.3.1
+- pkg:pypi/flask-security-too@3.3.2
+- pkg:pypi/flask-security-too@3.3.3
+- pkg:pypi/flask-security-too@3.4.0
+- pkg:pypi/flask-security-too@3.4.1
+- pkg:pypi/flask-security-too@3.4.2
+- pkg:pypi/flask-security-too@3.4.3
+- pkg:pypi/flask-security-too@3.4.4
+aliases:
+- CVE-2021-21241
+- GHSA-hh7m-rx4f-4vpv
+fixed_purl:
+- pkg:deb/debian/flask-security@0?distro=sid
+- pkg:deb/debian/flask-security@1.7.5-2?distro=sid
+- pkg:deb/debian/flask-security@4.0.0-1?distro=sid
+- pkg:deb/debian/flask-security@4.0.0-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/flask-security@5.1.2-1?distro=sid
+- pkg:pypi/flask-security-too@3.4.5
+references:
+- id: 156785
+  reference_id: ''
+  url: https://github.com/Flask-Middleware/flask-security/commit/61d313150b5f620d0b800896c4f2199005e84b1f
+- id: 156786
+  reference_id: ''
+  url: https://github.com/Flask-Middleware/flask-security/commit/6d50ee9169acf813257c37b75babe9c28e83542a
+- id: 156784
+  reference_id: ''
+  url: https://github.com/Flask-Middleware/flask-security/pull/422
+- id: 156787
+  reference_id: ''
+  url: https://github.com/Flask-Middleware/flask-security/releases/tag/3.4.5
+- id: 131791
+  reference_id: ''
+  url: https://pypi.org/project/Flask-Security-Too
+- id: 129609
+  reference_id: '980189'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=980189
+- id: 156788
+  reference_id: CVE-2021-21241
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-21241
+- id: 156789
+  reference_id: GHSA-hh7m-rx4f-4vpv
+  url: https://github.com/advisories/GHSA-hh7m-rx4f-4vpv
+- id: 156783
+  reference_id: GHSA-hh7m-rx4f-4vpv
+  url: https://github.com/Flask-Middleware/flask-security/security/advisories/GHSA-hh7m-rx4f-4vpv
+severities:
+- id: 22639
+  reference_id: 156789
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 22638
+  reference_id: 156783
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: The Python "Flask-Security-Too" package is used for adding security features
+  to your Flask application. It is an is a independently maintained version of Flask-Security
+  based on the 3.0.0 version of Flask-Security. In Flask-Security-Too from version
+  3.3.0 and before version 3.4.5, the /login and /change endpoints can return the
+  authenticated user's authentication token in response to a GET request. Since GET
+  requests aren't protected with a CSRF token, this could lead to a malicious 3rd
+  party site acquiring the authentication token. Version 3.4.5 and version 4.0.0 are
+  patched. As a workaround, if you aren't using authentication tokens - you can set
+  the SECURITY_TOKEN_MAX_AGE to "0" (seconds) which should make the token unusable.
+vulnerability_id: VCID-ukft-spge-aaac
+weaknesses: []

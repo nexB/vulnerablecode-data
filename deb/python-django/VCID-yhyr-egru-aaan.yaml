@@ -1,0 +1,59 @@
+affected_purls:
+- pkg:pypi/django@1.10
+- pkg:pypi/django@1.10.1
+- pkg:pypi/django@1.10.2
+- pkg:pypi/django@1.10.3
+- pkg:pypi/django@1.10.4
+- pkg:pypi/django@1.10.5
+- pkg:pypi/django@1.10.6
+- pkg:pypi/django@1.10.7
+- pkg:pypi/django@1.11
+- pkg:pypi/django@1.11.1
+- pkg:pypi/django@1.11.2
+- pkg:pypi/django@1.11.3
+- pkg:pypi/django@1.11.4
+aliases:
+- CVE-2017-12794
+- GHSA-9r8w-6x8c-6jr9
+fixed_purl:
+- pkg:deb/debian/python-django@1:1.11.29-1~deb10u1?distro=sid
+- pkg:deb/debian/python-django@1:1.11.5-1?distro=sid
+- pkg:deb/debian/python-django@2:2.2.28-1~deb11u1?distro=sid
+- pkg:deb/debian/python-django@3:3.2.19-1?distro=sid
+- pkg:pypi/django@1.10.8
+- pkg:pypi/django@1.11.5
+references:
+- id: 140943
+  reference_id: ''
+  url: https://usn.ubuntu.com/3559-1/
+- id: 140944
+  reference_id: ''
+  url: https://www.djangoproject.com/weblog/2017/sep/05/security-releases/
+- id: 140945
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/100643
+- id: 140946
+  reference_id: ''
+  url: http://www.securitytracker.com/id/1039264
+- id: 126871
+  reference_id: '874415'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=874415
+- id: 140941
+  reference_id: CVE-2017-12794
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-12794
+- id: 140942
+  reference_id: GHSA-9r8w-6x8c-6jr9
+  url: https://github.com/advisories/GHSA-9r8w-6x8c-6jr9
+severities:
+- id: 19512
+  reference_id: 140942
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: In Django 1.10.x before 1.10.8 and 1.11.x before 1.11.5, HTML autoescaping
+  was disabled in a portion of the template for the technical 500 debug page. Given
+  the right circumstances, this allowed a cross-site scripting attack. This vulnerability
+  shouldn't affect most production sites since you shouldn't run with "DEBUG = True"
+  (which makes this page accessible) in your production settings.
+vulnerability_id: VCID-yhyr-egru-aaan
+weaknesses: []

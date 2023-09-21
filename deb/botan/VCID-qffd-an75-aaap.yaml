@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2018-9127
+fixed_purl:
+- pkg:deb/debian/botan@2.17.3%2Bdfsg-2?distro=sid
+- pkg:deb/debian/botan@2.19.3%2Bdfsg-1?distro=sid
+- pkg:deb/debian/botan@2.4.0-5?distro=sid
+- pkg:deb/debian/botan@2.9.0-2?distro=sid
+references:
+- id: 128368
+  reference_id: '894648'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=894648
+severities: []
+summary: Botan 2.2.0 - 2.4.0 (fixed in 2.5.0) improperly handled wildcard certificates
+  and could accept certain certificates as valid for hostnames when, under RFC 6125
+  rules, they should not match. This only affects certificates issued to the same
+  domain as the host, so to impersonate a host one must already have a wildcard certificate
+  matching other hosts in the same domain. For example, b*.example.com would match
+  some hostnames that do not begin with a 'b' character.
+vulnerability_id: VCID-qffd-an75-aaap
+weaknesses: []

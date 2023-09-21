@@ -1,0 +1,115 @@
+vulnerability_id: VCID-4a2f-5ek2-aaab
+aliases:
+  - CVE-2022-0185
+summary: A heap-based buffer overflow flaw was found in the way the legacy_parse_param function
+  in the Filesystem Context functionality of the Linux kernel verified the supplied parameters
+  length. An unprivileged (in case of unprivileged user namespaces enabled, otherwise needs
+  namespaced CAP_SYS_ADMIN privilege) local user able to open a filesystem that does not support
+  the Filesystem Context API (and thus fallbacks to legacy handling) could use this flaw to
+  escalate their privileges on the system.
+severities:
+  - id: 303039
+    reference_id: 717240
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 303032
+    reference_id: 717233
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 575230
+    reference_id: 908253
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 575228
+    reference_id: 908253
+    scoring_system: cvssv3
+    value: '8.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 303035
+    reference_id: 717236
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 303038
+    reference_id: 717239
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 303036
+    reference_id: 717237
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 303033
+    reference_id: 717234
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 303037
+    reference_id: 717238
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 303034
+    reference_id: 717235
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 272029
+    reference_id: 689280
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 717240
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-0185.json
+    reference_id:
+  - id: 908249
+    url: https://github.com/Crusaders-of-Rust/CVE-2022-0185
+    reference_id:
+  - id: 908248
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=722d94847de2
+    reference_id:
+  - id: 908250
+    url: https://security.netapp.com/advisory/ntap-20220225-0003/
+    reference_id:
+  - id: 908251
+    url: https://www.openwall.com/lists/oss-security/2022/01/18/7
+    reference_id:
+  - id: 908252
+    url: https://www.willsroot.io/2022/01/cve-2022-0185.html
+    reference_id:
+  - id: 717233
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2040358
+    reference_id: 2040358
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 908253
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-0185
+    reference_id: CVE-2022-0185
+  - id: 717236
+    url: https://access.redhat.com/errata/RHSA-2022:0176
+    reference_id: RHSA-2022:0176
+  - id: 717239
+    url: https://access.redhat.com/errata/RHSA-2022:0186
+    reference_id: RHSA-2022:0186
+  - id: 717237
+    url: https://access.redhat.com/errata/RHSA-2022:0187
+    reference_id: RHSA-2022:0187
+  - id: 717234
+    url: https://access.redhat.com/errata/RHSA-2022:0188
+    reference_id: RHSA-2022:0188
+  - id: 717238
+    url: https://access.redhat.com/errata/RHSA-2022:0231
+    reference_id: RHSA-2022:0231
+  - id: 717235
+    url: https://access.redhat.com/errata/RHSA-2022:0232
+    reference_id: RHSA-2022:0232
+  - id: 689280
+    url: https://access.redhat.com/errata/RHSA-2022:0540
+    reference_id: RHSA-2022:0540
+weaknesses: []

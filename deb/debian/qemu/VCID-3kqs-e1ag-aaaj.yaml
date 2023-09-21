@@ -1,0 +1,101 @@
+vulnerability_id: VCID-3kqs-e1ag-aaaj
+aliases:
+  - CVE-2016-7908
+summary: The mcf_fec_do_tx function in hw/net/mcf_fec.c in QEMU (aka Quick Emulator) does not
+  properly limit the buffer descriptor count when transmitting packets, which allows local guest
+  OS administrators to cause a denial of service (infinite loop and QEMU process crash) via
+  vectors involving a buffer descriptor with a length of 0 and crafted values in bd.flags.
+severities:
+  - id: 671394
+    reference_id: 1436928
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 627096
+    reference_id: 943510
+    scoring_system: cvssv3
+    value: '3.0'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:L
+  - id: 671395
+    reference_id: 1436929
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671396
+    reference_id: 658016
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 670019
+    reference_id: 1435771
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 627095
+    reference_id: 943509
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 239501
+    reference_id: 658017
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 239499
+    reference_id: 658017
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 658012
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=070c4b92b8cd5390889716677a0b92444d6e087a
+    reference_id:
+  - id: 655542
+    url: http://lists.opensuse.org/opensuse-updates/2016-12/msg00140.html
+    reference_id:
+  - id: 1436928
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7908.html
+    reference_id:
+  - id: 943510
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-7908.json
+    reference_id:
+  - id: 1436929
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7908
+    reference_id:
+  - id: 638999
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00038.html
+    reference_id:
+  - id: 658016
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-09/msg05557.html
+    reference_id:
+  - id: 655548
+    url: https://security.gentoo.org/glsa/201611-11
+    reference_id:
+  - id: 1435771
+    url: https://ubuntu.com/security/notices/USN-3125-1
+    reference_id:
+  - id: 658013
+    url: http://www.openwall.com/lists/oss-security/2016/10/03/2
+    reference_id:
+  - id: 658014
+    url: http://www.openwall.com/lists/oss-security/2016/10/03/5
+    reference_id:
+  - id: 658015
+    url: http://www.securityfocus.com/bid/93273
+    reference_id:
+  - id: 943509
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1327465
+    reference_id: 1327465
+  - id: 111953
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839835
+    reference_id: 839835
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 658017
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-7908
+    reference_id: CVE-2016-7908
+weaknesses: []

@@ -1,0 +1,93 @@
+vulnerability_id: VCID-mfv2-1z2k-aaas
+aliases:
+  - CVE-2019-11365
+summary: An issue was discovered in atftpd in atftp 0.7.1. A remote attacker may send a crafted
+  packet triggering a stack-based buffer overflow due to an insecurely implemented strncpy call.
+  The vulnerability is triggered by sending an error packet of 3 bytes or fewer. There are multiple
+  instances of this vulnerable strncpy pattern within the code base, specifically within tftpd_file.c,
+  tftp_file.c, tftpd_mtftp.c, and tftp_mtftp.c.
+severities:
+  - id: 689999
+    reference_id: 1451471
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690000
+    reference_id: 1451472
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690001
+    reference_id: 770223
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690002
+    reference_id: 770226
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690003
+    reference_id: 1451473
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690004
+    reference_id: 1451474
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 371711
+    reference_id: 770229
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 371709
+    reference_id: 770229
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1451471
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-11365.html
+    reference_id:
+  - id: 1451472
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11365
+    reference_id:
+  - id: 770222
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00012.html
+    reference_id:
+  - id: 770223
+    url: https://pulsesecurity.co.nz/advisories/atftpd-multiple-vulnerabilities
+    reference_id:
+  - id: 770224
+    url: https://seclists.org/bugtraq/2019/May/16
+    reference_id:
+  - id: 770225
+    url: https://security.gentoo.org/glsa/202003-14
+    reference_id:
+  - id: 770226
+    url: https://sourceforge.net/p/atftp/code/ci/abed7d245d8e8bdfeab24f9f7f55a52c3140f96b/
+    reference_id:
+  - id: 1451473
+    url: https://ubuntu.com/security/notices/USN-4540-1
+    reference_id:
+  - id: 1451474
+    url: https://ubuntu.com/security/notices/USN-4643-1
+    reference_id:
+  - id: 770227
+    url: https://usn.ubuntu.com/4540-1/
+    reference_id:
+  - id: 770228
+    url: https://www.debian.org/security/2019/dsa-4438
+    reference_id:
+  - id: 39643
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=927553
+    reference_id: 927553
+  - id: 770230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:atftp_project:atftp:0.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:atftp_project:atftp:0.7.1:*:*:*:*:*:*:*
+  - id: 770229
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11365
+    reference_id: CVE-2019-11365
+weaknesses: []

@@ -1,0 +1,18 @@
+affected_purls:
+- pkg:deb/debian/etcd@3.2.26%2Bdfsg-3
+aliases:
+- CVE-2020-15106
+fixed_purl:
+- pkg:deb/debian/etcd@3.2.26%2Bdfsg-6
+references:
+- id: 129189
+  reference_id: '968740'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968740
+severities: []
+summary: In etcd before versions 3.3.23 and 3.4.10, a large slice causes panic in
+  decodeRecord method. The size of a record is stored in the length field of a WAL
+  file and no additional validation is done on this data. Therefore, it is possible
+  to forge an extremely large frame size that can unintentionally panic at the expense
+  of any RAFT participant trying to decode the WAL.
+vulnerability_id: VCID-ds6v-77zs-aaag
+weaknesses: []

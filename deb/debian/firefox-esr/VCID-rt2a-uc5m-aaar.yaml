@@ -1,0 +1,61 @@
+vulnerability_id: VCID-rt2a-uc5m-aaar
+aliases:
+  - CVE-2019-11736
+summary: 'The Mozilla Maintenance Service does not guard against files being hardlinked to another
+  file in the updates directory, allowing for the replacement of local files, including the
+  Maintenance Service executable, which is run with privileged access. Additionally, there was
+  a race condition during checks for junctions and symbolic links by the Maintenance Service,
+  allowing for potential local file and directory manipulation to be undetected in some circumstances.
+  This allows for potential privilege escalation by a user with unprivileged local access. <br>*Note:
+  These attacks requires local system access and only affects Windows. Other operating systems
+  are not affected.*. This vulnerability affects Firefox < 69 and Firefox ESR < 68.1.'
+severities:
+  - id: 74656
+    reference_id: 205572
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 74655
+    reference_id: 205571
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 373065
+    reference_id: 771668
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 373063
+    reference_id: 771668
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 771608
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00011.html
+    reference_id:
+  - id: 771609
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00017.html
+    reference_id:
+  - id: 205572
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11736.json
+    reference_id:
+  - id: 771666
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1551913
+    reference_id:
+  - id: 771667
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1552206
+    reference_id:
+  - id: 771661
+    url: https://www.mozilla.org/security/advisories/mfsa2019-25/
+    reference_id:
+  - id: 771664
+    url: https://www.mozilla.org/security/advisories/mfsa2019-26/
+    reference_id:
+  - id: 205571
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1748662
+    reference_id: 1748662
+  - id: 771668
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11736
+    reference_id: CVE-2019-11736
+weaknesses: []

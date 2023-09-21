@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2017-17975
+fixed_purl:
+- pkg:deb/debian/linux@4.15.17-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: Use-after-free in the usbtv_probe function in drivers/media/usb/usbtv/usbtv-core.c
+  in the Linux kernel through 4.14.10 allows attackers to cause a denial of service
+  (system crash) or possibly have unspecified other impact by triggering failure of
+  audio registration, because a kfree of the usbtv data structure occurs during a
+  usbtv_video_free call, but the usbtv_video_fail label's code attempts to both access
+  and free this data structure.
+vulnerability_id: VCID-vujh-k861-aaan
+weaknesses: []

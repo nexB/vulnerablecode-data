@@ -1,0 +1,442 @@
+vulnerability_id: VCID-52ea-drta-aaaa
+aliases:
+  - CVE-2016-2108
+  - VC-OPENSSL-20160503-CVE-2016-2108
+summary: This issue affected versions of OpenSSL prior to April 2015. The bug causing the vulnerability
+  was fixed on April 18th 2015, and released as part of the June 11th 2015 security releases.
+  The security impact of the bug was not known at the time. In previous versions of OpenSSL,
+  ASN.1 encoding the value zero represented as a negative integer can cause a buffer underflow
+  with an out-of-bounds write in i2c_ASN1_INTEGER. The ASN.1 parser does not normally create
+  "negative zeroes" when parsing ASN.1 input, and therefore, an attacker cannot trigger this
+  bug. However, a second, independent bug revealed that the ASN.1 parser (specifically, d2i_ASN1_TYPE)
+  can misinterpret a large universal tag as a negative zero value. Large universal tags are
+  not present in any common ASN.1 structures (such as X509) but are accepted as part of ANY
+  structures. Therefore, if an application deserializes untrusted ASN.1 structures containing
+  an ANY field, and later reserializes them, an attacker may be able to trigger an out-of-bounds
+  write. This has been shown to cause memory corruption that is potentially exploitable with
+  some malloc implementations. Applications that parse and re-encode X509 certificates are known
+  to be vulnerable. Applications that verify RSA signatures on X509 certificates may also be
+  vulnerable; however, only certificates with valid signatures trigger ASN.1 re-encoding and
+  hence the bug. Specifically, since OpenSSL's default TLS X509 chain verification code verifies
+  the certificate chain from root to leaf, TLS handshakes could only be targeted with valid
+  certificates issued by trusted Certification Authorities.
+severities:
+  - id: 659216
+    reference_id: 592979
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 667559
+    reference_id: 1433793
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 49838
+    reference_id: 174278
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 667560
+    reference_id: 1433794
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 659222
+    reference_id: 592991
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 667554
+    reference_id: 1433788
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620
+    reference_id: 3652
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 668480
+    reference_id: 158996
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 678340
+    reference_id: 11089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665112
+    reference_id: 4696
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 49832
+    reference_id: 174272
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 220701
+    reference_id: 637764
+    scoring_system: cvssv2
+    value: '10.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:C/I:C/A:C
+  - id: 220699
+    reference_id: 637764
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 49834
+    reference_id: 174274
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49837
+    reference_id: 174277
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49833
+    reference_id: 174273
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49835
+    reference_id: 174275
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49550
+    reference_id: 173911
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 600770
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10759
+    reference_id:
+  - id: 592979
+    url: http://lists.apple.com/archives/security-announce/2016/Jul/msg00000.html
+    reference_id:
+  - id: 637706
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-May/183457.html
+    reference_id:
+  - id: 637707
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-May/183607.html
+    reference_id:
+  - id: 637708
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-May/184605.html
+    reference_id:
+  - id: 637709
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00001.html
+    reference_id:
+  - id: 637710
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00008.html
+    reference_id:
+  - id: 637711
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00010.html
+    reference_id:
+  - id: 637712
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00011.html
+    reference_id:
+  - id: 637713
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00013.html
+    reference_id:
+  - id: 637714
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00014.html
+    reference_id:
+  - id: 606299
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00015.html
+    reference_id:
+  - id: 637715
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00016.html
+    reference_id:
+  - id: 606300
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00017.html
+    reference_id:
+  - id: 624762
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00018.html
+    reference_id:
+  - id: 637716
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00019.html
+    reference_id:
+  - id: 624763
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00029.html
+    reference_id:
+  - id: 624764
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00030.html
+    reference_id:
+  - id: 624765
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00036.html
+    reference_id:
+  - id: 624766
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-05/msg00055.html
+    reference_id:
+  - id: 637717
+    url: http://packetstormsecurity.com/files/136912/Slackware-Security-Advisory-openssl-Updates.html
+    reference_id:
+  - id: 1433793
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-2108.html
+    reference_id:
+  - id: 625559
+    url: http://rhn.redhat.com/errata/RHSA-2016-0722.html
+    reference_id:
+  - id: 625560
+    url: http://rhn.redhat.com/errata/RHSA-2016-0996.html
+    reference_id:
+  - id: 606224
+    url: http://rhn.redhat.com/errata/RHSA-2016-2056.html
+    reference_id:
+  - id: 625561
+    url: http://rhn.redhat.com/errata/RHSA-2016-2073.html
+    reference_id:
+  - id: 482338
+    url: http://rhn.redhat.com/errata/RHSA-2016-2957.html
+    reference_id:
+  - id: 637757
+    url: https://access.redhat.com/errata/RHSA-2016:1137
+    reference_id:
+  - id: 637758
+    url: https://access.redhat.com/errata/RHSA-2017:0193
+    reference_id:
+  - id: 637759
+    url: https://access.redhat.com/errata/RHSA-2017:0194
+    reference_id:
+  - id: 174278
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-2108.json
+    reference_id:
+  - id: 637726
+    url: https://bto.bluecoat.com/security-advisory/sa123
+    reference_id:
+  - id: 1433794
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2108
+    reference_id:
+  - id: 637760
+    url: https://git.openssl.org/?p=openssl.git;a=commit;h=3661bb4e7934668bd99ca777ea8b30eedfafa871
+    reference_id:
+  - id: 637761
+    url: https://git.openssl.org/?p=openssl.git;a=commit;h=f5da52e308a6aeea6d5f3df98c4da295d7e9cc27
+    reference_id:
+  - id: 625576
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03726en_us
+    reference_id:
+  - id: 637728
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03756en_us
+    reference_id:
+  - id: 637729
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03765en_us
+    reference_id:
+  - id: 637762
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05149345
+    reference_id:
+  - id: 637749
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05164862
+    reference_id:
+  - id: 625581
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05386804
+    reference_id:
+  - id: 637741
+    url: https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40202
+    reference_id:
+  - id: 37838
+    url: http://source.android.com/security/bulletin/2016-07-01.html
+    reference_id:
+  - id: 637763
+    url: https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00067&languageid=en-fr
+    reference_id:
+  - id: 637731
+    url: https://security.gentoo.org/glsa/201612-16
+    reference_id:
+  - id: 637732
+    url: https://security.netapp.com/advisory/ntap-20160504-0001/
+    reference_id:
+  - id: 592991
+    url: https://support.apple.com/HT206903
+    reference_id:
+  - id: 1433788
+    url: https://ubuntu.com/security/notices/USN-2959-1
+    reference_id:
+  - id: 637743
+    url: http://support.citrix.com/article/CTX212736
+    reference_id:
+  - id: 3652
+    url: https://www.openssl.org/news/secadv/20160503.txt
+    reference_id:
+  - id: 34641
+    url: https://www.tenable.com/security/tns-2016-18
+    reference_id:
+  - id: 637720
+    url: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl
+    reference_id:
+  - id: 637721
+    url: http://www.debian.org/security/2016/dsa-3566
+    reference_id:
+  - id: 158996
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html
+    reference_id:
+  - id: 11089
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html
+    reference_id:
+  - id: 4696
+    url: http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    reference_id:
+  - id: 4981
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
+    reference_id:
+  - id: 637756
+    url: http://www.securityfocus.com/bid/89752
+    reference_id:
+  - id: 27477
+    url: http://www.securityfocus.com/bid/91787
+    reference_id:
+  - id: 637723
+    url: http://www.securitytracker.com/id/1035721
+    reference_id:
+  - id: 637724
+    url: http://www.slackware.com/security/viewer.php?l=slackware-security&y=2016&m=slackware-security.542103
+    reference_id:
+  - id: 637725
+    url: http://www.ubuntu.com/usn/USN-2959-1
+    reference_id:
+  - id: 174272
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1331402
+    reference_id: 1331402
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 594091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+  - id: 600723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2a:*:*:*:*:*:*:*
+  - id: 600765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2b:*:*:*:*:*:*:*
+  - id: 594092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:beta1:*:*:*:*:*:*
+  - id: 594093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:beta2:*:*:*:*:*:*
+  - id: 594094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:beta3:*:*:*:*:*:*
+  - id: 468770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.0:*:*:*:*:*:*:*
+  - id: 468768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.0.1:*:*:*:*:*:*:*
+  - id: 468769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.0.2:*:*:*:*:*:*:*
+  - id: 500393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.0.3:*:*:*:*:*:*:*
+  - id: 500394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.0.4:*:*:*:*:*:*:*
+  - id: 500395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.1:*:*:*:*:*:*:*
+  - id: 537019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.1.2:*:*:*:*:*:*:*
+  - id: 500396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.2:*:*:*:*:*:*:*
+  - id: 543340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.2.1:*:*:*:*:*:*:*
+  - id: 543341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.2.2:*:*:*:*:*:*:*
+  - id: 543342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.3:*:*:*:*:*:*:*
+  - id: 584799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.3.1:*:*:*:*:*:*:*
+  - id: 160850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.4:*:*:*:*:*:*:*
+  - id: 584800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.4.1:*:*:*:*:*:*:*
+  - id: 584801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*
+  - id: 584802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*
+  - id: 159160
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*
+  - id: 166107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*
+  - id: 166062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*
+  - id: 166099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*
+  - id: 159163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*
+  - id: 159162
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:6.0:*:*:*:*:*:*:*
+  - id: 157856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+  - id: 158199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.2:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 158201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.2:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 637764
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-2108
+    reference_id: CVE-2016-2108
+  - id: 174274
+    url: https://access.redhat.com/errata/RHSA-2016:0722
+    reference_id: RHSA-2016:0722
+  - id: 174277
+    url: https://access.redhat.com/errata/RHSA-2016:0996
+    reference_id: RHSA-2016:0996
+  - id: 174273
+    url: https://access.redhat.com/errata/RHSA-2016:2056
+    reference_id: RHSA-2016:2056
+  - id: 174275
+    url: https://access.redhat.com/errata/RHSA-2016:2073
+    reference_id: RHSA-2016:2073
+  - id: 173911
+    url: https://access.redhat.com/errata/RHSA-2016:2957
+    reference_id: RHSA-2016:2957
+weaknesses: []

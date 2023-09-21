@@ -1,0 +1,48 @@
+vulnerability_id: VCID-zsgm-8x72-aaap
+aliases:
+  - CVE-2017-7304
+summary: The Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils
+  2.28, is vulnerable to an invalid read (of size 8) because of missing a check (in the copy_special_section_fields
+  function) for an invalid sh_link field before attempting to follow it. This vulnerability
+  causes Binutils utilities like strip to crash.
+severities:
+  - id: 625465
+    reference_id: 942393
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 625464
+    reference_id: 942392
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 293504
+    reference_id: 708717
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 293502
+    reference_id: 708717
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 942393
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7304.json
+    reference_id:
+  - id: 708716
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=20931
+    reference_id:
+  - id: 708715
+    url: http://www.securityfocus.com/bid/97215
+    reference_id:
+  - id: 942392
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1440833
+    reference_id: 1440833
+  - id: 707719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:binutils:2.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:binutils:2.28:*:*:*:*:*:*:*
+  - id: 708717
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7304
+    reference_id: CVE-2017-7304
+weaknesses: []

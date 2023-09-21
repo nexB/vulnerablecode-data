@@ -1,0 +1,66 @@
+vulnerability_id: VCID-xbqr-sa91-aaap
+aliases:
+  - CVE-2017-3224
+summary: Open Shortest Path First (OSPF) protocol implementations may improperly determine Link
+  State Advertisement (LSA) recency for LSAs with MaxSequenceNumber. According to RFC 2328 section
+  13.1, for two instances of the same LSA, recency is determined by first comparing sequence
+  numbers, then checksums, and finally MaxAge. In a case where the sequence numbers are the
+  same, the LSA with the larger checksum is considered more recent, and will not be flushed
+  from the Link State Database (LSDB). Since the RFC does not explicitly state that the values
+  of links carried by a LSA must be the same when prematurely aging a self-originating LSA with
+  MaxSequenceNumber, it is possible in vulnerable OSPF implementations for an attacker to craft
+  a LSA with MaxSequenceNumber and invalid links that will result in a larger checksum and thus
+  a 'newer' LSA that will not be flushed from the LSDB. Propagation of the crafted LSA can result
+  in the erasure or alteration of the routing tables of routers within the routing domain, creating
+  a denial of service condition or the re-routing of traffic on the network. CVE-2017-3224 has
+  been reserved for Quagga and downstream implementations (SUSE, openSUSE, and Red Hat packages).
+severities:
+  - id: 73116
+    reference_id: 203680
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 73115
+    reference_id: 203679
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 283274
+    reference_id: 698147
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:A/AC:M/Au:N/C:N/I:P/A:P
+  - id: 283272
+    reference_id: 698147
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:H
+references:
+  - id: 203680
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-3224.json
+    reference_id:
+  - id: 698146
+    url: https://www.kb.cert.org/vuls/id/793496
+    reference_id:
+  - id: 203679
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1472873
+    reference_id: 1472873
+  - id: 41108
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=871617
+    reference_id: 871617
+  - id: 644001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:quagga:quagga:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:quagga:quagga:-:*:*:*:*:*:*:*
+  - id: 698148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:package_manager:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:package_manager:-:*:*:*:*:*:*:*
+  - id: 446567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:opensuse:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:opensuse:-:*:*:*:*:*:*:*
+  - id: 698149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux:-:*:*:*:*:*:*:*
+  - id: 698147
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-3224
+    reference_id: CVE-2017-3224
+weaknesses: []

@@ -1,0 +1,74 @@
+vulnerability_id: VCID-1ns6-ptbh-aaam
+aliases:
+  - CVE-2018-12520
+summary: An issue was discovered in ntopng 3.4 before 3.4.180617. The PRNG involved in the generation
+  of session IDs is not seeded at program startup. This results in deterministic session IDs
+  being allocated for active user sessions. An attacker with foreknowledge of the operating
+  system and standard library in use by the host running the service and the username of the
+  user whose session they're targeting can abuse the deterministic random number generation
+  in order to hijack the user's session, thus escalating their access.
+severities:
+  - id: 683891
+    reference_id: 1446613
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 683893
+    reference_id: 1446614
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 683892
+    reference_id: 729721
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 683894
+    reference_id: 729722
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 683895
+    reference_id: 729723
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 317351
+    reference_id: 729725
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 317349
+    reference_id: 729725
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1446613
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12520.html
+    reference_id:
+  - id: 1446614
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12520
+    reference_id:
+  - id: 729721
+    url: http://seclists.org/fulldisclosure/2018/Jul/14
+    reference_id:
+  - id: 729722
+    url: https://gist.github.com/Psychotropos/3e8c047cada9b1fb716e6a014a428b7f
+    reference_id:
+  - id: 729723
+    url: https://github.com/ntop/ntopng/commit/30610bda60cbfc058f90a1c0a17d0e8f4516221a
+    reference_id:
+  - id: 729724
+    url: https://www.exploit-db.com/exploits/44973/
+    reference_id:
+  - id: 79594
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=903154
+    reference_id: 903154
+  - id: 576299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ntop:ntopng:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ntop:ntopng:*:*:*:*:*:*:*:*
+  - id: 729725
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12520
+    reference_id: CVE-2018-12520
+weaknesses: []

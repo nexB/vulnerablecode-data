@@ -1,0 +1,142 @@
+vulnerability_id: VCID-m1y7-wddu-aaac
+aliases:
+  - CVE-2019-20382
+summary: QEMU 4.1.0 has a memory leak in zrle_compress_data in ui/vnc-enc-zrle.c during a VNC
+  disconnect operation because libz is misused, resulting in a situation where memory allocated
+  in deflateInit2 is not freed in deflateEnd.
+severities:
+  - id: 693042
+    reference_id: 1453733
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 73970
+    reference_id: 204802
+    scoring_system: cvssv3
+    value: '3.5'
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 693043
+    reference_id: 1453734
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691809
+    reference_id: 1452909
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691808
+    reference_id: 1452908
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693044
+    reference_id: 1453735
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 73965
+    reference_id: 204797
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 399150
+    reference_id: 792234
+    scoring_system: cvssv2
+    value: '2.7'
+    scoring_elements: AV:A/AC:L/Au:S/C:N/I:N/A:P
+  - id: 399148
+    reference_id: 792234
+    scoring_system: cvssv3
+    value: '3.5'
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 57598
+    reference_id: 183678
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 73966
+    reference_id: 204798
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 73968
+    reference_id: 204800
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 73969
+    reference_id: 204801
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 73967
+    reference_id: 204799
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 779869
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00007.html
+    reference_id:
+  - id: 1453733
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-20382.html
+    reference_id:
+  - id: 204802
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-20382.json
+    reference_id:
+  - id: 1453734
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20382
+    reference_id:
+  - id: 792233
+    url: https://git.qemu.org/?p=qemu.git;a=commit;h=6bf21f3d83e95bcc4ba35a7a07cc6655e8b010b0
+    reference_id:
+  - id: 715879
+    url: https://lists.debian.org/debian-lts-announce/2020/07/msg00020.html
+    reference_id:
+  - id: 1452909
+    url: https://ubuntu.com/security/notices/USN-4372-1
+    reference_id:
+  - id: 779871
+    url: https://usn.ubuntu.com/4372-1/
+    reference_id:
+  - id: 1452908
+    url: https://usn.ubuntu.com/usn/usn-4372-1
+    reference_id:
+  - id: 772359
+    url: https://www.debian.org/security/2020/dsa-4665
+    reference_id:
+  - id: 1453735
+    url: https://www.openwall.com/lists/oss-security/2020/03/05/1
+    reference_id:
+  - id: 792232
+    url: http://www.openwall.com/lists/oss-security/2020/03/05/1
+    reference_id:
+  - id: 204797
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1810390
+    reference_id: 1810390
+  - id: 782146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:4.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:4.1.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 792234
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-20382
+    reference_id: CVE-2019-20382
+  - id: 183678
+    url: https://access.redhat.com/errata/RHSA-2020:2774
+    reference_id: RHSA-2020:2774
+  - id: 204798
+    url: https://access.redhat.com/errata/RHSA-2020:3267
+    reference_id: RHSA-2020:3267
+  - id: 204800
+    url: https://access.redhat.com/errata/RHSA-2020:3906
+    reference_id: RHSA-2020:3906
+  - id: 204801
+    url: https://access.redhat.com/errata/RHSA-2020:3907
+    reference_id: RHSA-2020:3907
+  - id: 204799
+    url: https://access.redhat.com/errata/RHSA-2020:4167
+    reference_id: RHSA-2020:4167
+weaknesses: []

@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2019-18422
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: An issue was discovered in Xen through 4.12.x allowing ARM guest OS users
+  to cause a denial of service or gain privileges by leveraging the erroneous enabling
+  of interrupts. Interrupts are unconditionally unmasked in exception handlers. When
+  an exception occurs on an ARM system which is handled without changing processor
+  level, some interrupts are unconditionally enabled during exception entry. So exceptions
+  which occur when interrupts are masked will effectively unmask the interrupts. A
+  malicious guest might contrive to arrange for critical Xen code to run with interrupts
+  erroneously enabled. This could lead to data corruption, denial of service, or possibly
+  even privilege escalation. However a precise attack technique has not been identified.
+vulnerability_id: VCID-bwwq-t4jk-aaam
+weaknesses: []

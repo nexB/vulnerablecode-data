@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-18282
+fixed_purl:
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@4.19.87-1?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@5.3.15-1?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: The flow_dissector feature in the Linux kernel 4.3 through 5.x before 5.3.10
+  has a device tracking vulnerability, aka CID-55667441c84f. This occurs because the
+  auto flowlabel of a UDP IPv6 packet relies on a 32-bit hashrnd value as a secret,
+  and because jhash (instead of siphash) is used. The hashrnd value remains the same
+  starting from boot time, and can be inferred by an attacker. This affects net/core/flow_dissector.c
+  and related code.
+vulnerability_id: VCID-kbnn-88ub-aaag
+weaknesses: []

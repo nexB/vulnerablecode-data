@@ -1,0 +1,112 @@
+vulnerability_id: VCID-8sne-jncn-aaaf
+aliases:
+  - CVE-2020-10703
+summary: A NULL pointer dereference was found in the libvirt API responsible introduced in upstream
+  version 3.10.0, and fixed in libvirt 6.0.0, for fetching a storage pool based on its target
+  path. In more detail, this flaw affects storage pools created without a target path such as
+  network-based pools like gluster and RBD. Unprivileged users with a read-only connection could
+  abuse this flaw to crash the libvirt daemon, resulting in a potential denial of service.
+severities:
+  - id: 703865
+    reference_id: 1465402
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 59081
+    reference_id: 185575
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 703866
+    reference_id: 1465403
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 696029
+    reference_id: 1456252
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696028
+    reference_id: 1456251
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 59079
+    reference_id: 185573
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 430415
+    reference_id: 812137
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 430413
+    reference_id: 812137
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 59080
+    reference_id: 185574
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 51795
+    reference_id: 176503
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1465402
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10703.html
+    reference_id:
+  - id: 185575
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10703.json
+    reference_id:
+  - id: 812131
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1790725
+    reference_id:
+  - id: 812132
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10703
+    reference_id:
+  - id: 1465403
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10703
+    reference_id:
+  - id: 812133
+    url: https://libvirt.org/git/?p=libvirt.git;a=commit;h=5d5c732d748d644ec14626bce448e84bdc4bd93e
+    reference_id:
+  - id: 812134
+    url: https://libvirt.org/git/?p=libvirt.git;a=commit;h=7aa0e8c0cb8a6293d0c6f7e3d29c13b96dec2129
+    reference_id:
+  - id: 812135
+    url: https://libvirt.org/git/?p=libvirt.git;a=commit;h=dfff16a7c261f8d28e3abe60a47165f845fa952f
+    reference_id:
+  - id: 792504
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/D5GE6ISYUL3CIWO3FQRUGMKTKP2NYED2/
+    reference_id:
+  - id: 812136
+    url: https://security.netapp.com/advisory/ntap-20200608-0005/
+    reference_id:
+  - id: 1456252
+    url: https://ubuntu.com/security/notices/USN-4371-1
+    reference_id:
+  - id: 1456251
+    url: https://usn.ubuntu.com/usn/usn-4371-1
+    reference_id:
+  - id: 185573
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1816650
+    reference_id: 1816650
+  - id: 453779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+  - id: 812137
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10703
+    reference_id: CVE-2020-10703
+  - id: 185574
+    url: https://access.redhat.com/errata/RHSA-2020:4000
+    reference_id: RHSA-2020:4000
+  - id: 176503
+    url: https://access.redhat.com/errata/RHSA-2020:4676
+    reference_id: RHSA-2020:4676
+weaknesses: []

@@ -1,0 +1,271 @@
+vulnerability_id: VCID-9v8e-jame-aaaf
+aliases:
+  - CVE-2019-10160
+summary: A security regression of CVE-2019-9636 was discovered in python since commit d537ab0ff9767ef024f26246899728f0116b1ec3
+  affecting versions 2.7, 3.5, 3.6, 3.7 and from v3.8.0a4 through v3.8.0b1, which still allows
+  an attacker to exploit CVE-2019-9636 by abusing the user and password parts of a URL. When
+  an application parses user-supplied URLs to store cookies, authentication credentials, or
+  other kind of information, it is possible for an attacker to provide specially crafted URLs
+  to make the application locate host-related information (e.g. cookies, authentication data)
+  and send them to a different host than where it should, unlike if the URLs had been correctly
+  parsed. The result of an attack may vary based on the application.
+severities:
+  - id: 689525
+    reference_id: 1451133
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612194
+    reference_id: 932942
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 689526
+    reference_id: 1451134
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689527
+    reference_id: 766333
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686357
+    reference_id: 1448529
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686358
+    reference_id: 1448530
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686355
+    reference_id: 1448527
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686356
+    reference_id: 1448528
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612191
+    reference_id: 932939
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 367064
+    reference_id: 766335
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 367062
+    reference_id: 766335
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 612192
+    reference_id: 932940
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 612193
+    reference_id: 932941
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 766315
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00042.html
+    reference_id:
+  - id: 466163
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html
+    reference_id:
+  - id: 1451133
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-10160.html
+    reference_id:
+  - id: 766317
+    url: https://access.redhat.com/errata/RHSA-2019:1700
+    reference_id:
+  - id: 932942
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-10160.json
+    reference_id:
+  - id: 766318
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10160
+    reference_id:
+  - id: 1451134
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10160
+    reference_id:
+  - id: 766319
+    url: https://github.com/python/cpython/commit/250b62acc59921d399f0db47db3b462cd6037e09
+    reference_id:
+  - id: 766320
+    url: https://github.com/python/cpython/commit/8d0ef0b5edeae52960c7ed05ae8a12388324f87e
+    reference_id:
+  - id: 766321
+    url: https://github.com/python/cpython/commit/f61599b050c621386a3fc6bc480359e2d3bb93de
+    reference_id:
+  - id: 766322
+    url: https://github.com/python/cpython/commit/fd1771dbdd28709716bd531580c40ae5ed814468
+    reference_id:
+  - id: 496
+    url: https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 734883
+    url: https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html
+    reference_id:
+  - id: 748389
+    url: https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html
+    reference_id:
+  - id: 749946
+    url: https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html
+    reference_id:
+  - id: 766323
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2ORNTF62QPLMJXIQ7KTZQ2776LMIXEKL/
+    reference_id:
+  - id: 766324
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/44TS66GJMO5H3RLMVZEBGEFTB6O2LJJU/
+    reference_id:
+  - id: 766325
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X3HW5JRZ7GCPSR7UHJOLD7AWLTQCDVR/
+    reference_id:
+  - id: 766326
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E2HP37NUVLQSBW3J735A2DQDOZ4ZGBLY/
+    reference_id:
+  - id: 766327
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ER6LONC2B2WYIO56GBQUDU6QTWZDPUNQ/
+    reference_id:
+  - id: 766328
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HQEQLXLOCR3SNM3AA5RRYJFQ5AZBYJ4L/
+    reference_id:
+  - id: 766329
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JCPGLTTOBB3QEARDX4JOYURP6ELNNA2V/
+    reference_id:
+  - id: 766330
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KRYFIMISZ47NTAU3XWZUOFB7CYL62KES/
+    reference_id:
+  - id: 766331
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M34WOYCDKTDE5KLUACE2YIEH7D37KHRX/
+    reference_id:
+  - id: 766332
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NF3DRDGMVIRYNZMSLJIHNW47HOUQYXVG/
+    reference_id:
+  - id: 766333
+    url: https://python-security.readthedocs.io/vuln/urlsplit-nfkc-normalization2.html
+    reference_id:
+  - id: 766334
+    url: https://security.netapp.com/advisory/ntap-20190617-0003/
+    reference_id:
+  - id: 1448529
+    url: https://ubuntu.com/security/notices/USN-4127-1
+    reference_id:
+  - id: 1448530
+    url: https://ubuntu.com/security/notices/USN-4127-2
+    reference_id:
+  - id: 748394
+    url: https://usn.ubuntu.com/4127-1/
+    reference_id:
+  - id: 748395
+    url: https://usn.ubuntu.com/4127-2/
+    reference_id:
+  - id: 1448527
+    url: https://usn.ubuntu.com/usn/usn-4127-1
+    reference_id:
+  - id: 1448528
+    url: https://usn.ubuntu.com/usn/usn-4127-2
+    reference_id:
+  - id: 932939
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1718388
+    reference_id: 1718388
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 947546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:converged_systems_advisor_agent:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:converged_systems_advisor_agent:-:*:*:*:*:*:*:*
+  - id: 432170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+  - id: 572699
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.5.0:*:*:*:*:*:*:*
+  - id: 638242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.6.0:*:*:*:*:*:*:*
+  - id: 766336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.7:*:*:*:*:*:*:*
+  - id: 947547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.8.0:alpha4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.8.0:alpha4:*:*:*:*:*:*
+  - id: 947548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.8.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.8.0:beta1:*:*:*:*:*:*
+  - id: 79269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 641049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 540944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 766335
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10160
+    reference_id: CVE-2019-10160
+  - id: 932940
+    url: https://access.redhat.com/errata/RHSA-2019:1587
+    reference_id: RHSA-2019:1587
+  - id: 932941
+    url: https://access.redhat.com/errata/RHSA-2019:2437
+    reference_id: RHSA-2019:2437
+weaknesses: []

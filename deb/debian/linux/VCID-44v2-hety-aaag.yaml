@@ -1,0 +1,100 @@
+vulnerability_id: VCID-44v2-hety-aaag
+aliases:
+  - CVE-2017-1000371
+summary: The offset2lib patch as used by the Linux Kernel contains a vulnerability, if RLIMIT_STACK
+  is set to RLIM_INFINITY and 1 Gigabyte of memory is allocated (the maximum under the 1/4 restriction)
+  then the stack will be grown down to 0x80000000, and as the PIE binary is mapped above 0x80000000
+  the minimum distance between the end of the PIE binary's read-write segment and the start
+  of the stack becomes small enough that the stack guard page can be jumped over by an attacker.
+  This affects Linux Kernel version 4.11.5. This is a different issue than CVE-2017-1000370
+  and CVE-2017-1000365. This issue appears to be limited to i386 based systems.
+severities:
+  - id: 673158
+    reference_id: 1438345
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673161
+    reference_id: 1438348
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 75509
+    reference_id: 206437
+    scoring_system: cvssv3
+    value: '2.9'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 673162
+    reference_id: 1438349
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673166
+    reference_id: 668710
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 75508
+    reference_id: 206436
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 249956
+    reference_id: 668793
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 249954
+    reference_id: 668793
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 68787
+    reference_id: '198393'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1438345
+    url: http://cybersecurity.upv.es/attacks/offset2lib/offset2lib.html
+    reference_id:
+  - id: 1438348
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000371.html
+    reference_id:
+  - id: 206437
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000371.json
+    reference_id:
+  - id: 668792
+    url: https://access.redhat.com/security/cve/CVE-2017-1000371
+    reference_id:
+  - id: 1438349
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000371
+    reference_id:
+  - id: 668786
+    url: https://www.exploit-db.com/exploits/42273/
+    reference_id:
+  - id: 668727
+    url: https://www.exploit-db.com/exploits/42276/
+    reference_id:
+  - id: 668710
+    url: https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt
+    reference_id:
+  - id: 668142
+    url: http://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 668791
+    url: http://www.securityfocus.com/bid/99131
+    reference_id:
+  - id: 206436
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1462158
+    reference_id: 1462158
+  - id: 668794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11.5:*:*:*:*:*:*:*
+  - id: 668793
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000371
+    reference_id: CVE-2017-1000371
+  - id: '198393'
+    url: https://access.redhat.com/errata/RHSA-2020:1524
+    reference_id: RHSA-2020:1524
+weaknesses: []

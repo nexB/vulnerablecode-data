@@ -1,0 +1,83 @@
+vulnerability_id: VCID-duwt-xt4y-aaaj
+aliases:
+  - CVE-2021-35942
+summary: The wordexp function in the GNU C Library (aka glibc) through 2.33 may crash or read
+  arbitrary memory in parse_param (in posix/wordexp.c) when called with an untrusted, crafted
+  pattern, potentially resulting in a denial of service or disclosure of information. This occurs
+  because atoi was used but strtoul should have been used to ensure correct calculations.
+severities:
+  - id: 603933
+    reference_id: 926897
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+  - id: 603931
+    reference_id: 926895
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 547484
+    reference_id: 889615
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 547482
+    reference_id: 889615
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+  - id: 603932
+    reference_id: 926896
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 926897
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-35942.json
+    reference_id:
+  - id: 1340793
+    url: https://security.gentoo.org/glsa/202208-24
+    reference_id:
+  - id: 889611
+    url: https://security.netapp.com/advisory/ntap-20210827-0005/
+    reference_id:
+  - id: 889612
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=28011
+    reference_id:
+  - id: 889613
+    url: https://sourceware.org/git/?p=glibc.git;a=commit;h=5adda61f62b77384718b4c0d8336ade8f2b4b35c
+    reference_id:
+  - id: 889614
+    url: https://sourceware.org/glibc/wiki/Security%20Exceptions
+    reference_id:
+  - id: 926895
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1977975
+    reference_id: '1977975'
+  - id: 41380
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990542
+    reference_id: 990542
+  - id: 44112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  - id: 766417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+  - id: 170302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:e-series_santricity_os_controller:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:e-series_santricity_os_controller:*:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 169117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 889615
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-35942
+    reference_id: CVE-2021-35942
+  - id: 926896
+    url: https://access.redhat.com/errata/RHSA-2021:4358
+    reference_id: RHSA-2021:4358
+weaknesses: []

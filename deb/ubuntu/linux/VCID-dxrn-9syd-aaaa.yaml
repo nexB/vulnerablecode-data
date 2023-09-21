@@ -1,0 +1,133 @@
+vulnerability_id: VCID-dxrn-9syd-aaaa
+aliases:
+  - CVE-2018-1000200
+summary: The Linux Kernel versions 4.14, 4.15, and 4.16 has a null pointer dereference which
+  can result in an out of memory (OOM) killing of large mlocked processes. The issue arises
+  from an oom killed process's final thread calling exit_mmap(), which calls munlock_vma_pages_all()
+  for mlocked vmas.This can happen synchronously with the oom reaper's unmap_page_range() since
+  the vma's VM_LOCKED bit is cleared before munlocking (to determine if any other vmas share
+  the memory and are mlocked).
+severities:
+  - id: 682367
+    reference_id: 1445433
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682368
+    reference_id: 1445434
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 616166
+    reference_id: 935855
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 682369
+    reference_id: 1445435
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682370
+    reference_id: 1445436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682371
+    reference_id: 1445437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682372
+    reference_id: 1445438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616165
+    reference_id: 935854
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 307686
+    reference_id: 721709
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 307684
+    reference_id: 721709
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1445433
+    url: http://openwall.com/lists/oss-security/2018/04/24/3
+    reference_id:
+  - id: 1445434
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1000200.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 935855
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1000200.json
+    reference_id:
+  - id: 721702
+    url: https://access.redhat.com/security/cve/cve-2018-1000200
+    reference_id:
+  - id: 1445435
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000200
+    reference_id:
+  - id: 721700
+    url: http://seclists.org/oss-sec/2018/q2/67
+    reference_id:
+  - id: 721703
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=27ae357fa82be5ab73b2ef8d39dcb8ca2563483a
+    reference_id:
+  - id: 721704
+    url: https://marc.info/?l=linux-kernel&m=152400522806945
+    reference_id:
+  - id: 721705
+    url: https://marc.info/?l=linux-kernel&m=152460926619256
+    reference_id:
+  - id: 1445436
+    url: https://ubuntu.com/security/notices/USN-3752-1
+    reference_id:
+  - id: 1445437
+    url: https://ubuntu.com/security/notices/USN-3752-2
+    reference_id:
+  - id: 1445438
+    url: https://ubuntu.com/security/notices/USN-3752-3
+    reference_id:
+  - id: 721706
+    url: https://usn.ubuntu.com/3752-1/
+    reference_id:
+  - id: 721707
+    url: https://usn.ubuntu.com/3752-2/
+    reference_id:
+  - id: 721708
+    url: https://usn.ubuntu.com/3752-3/
+    reference_id:
+  - id: 721701
+    url: http://www.securityfocus.com/bid/104397
+    reference_id:
+  - id: 935854
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1568744
+    reference_id: 1568744
+  - id: 721710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.14:*:*:*:*:*:*:*
+  - id: 721711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:*:*:*:*:*:*:*
+  - id: 721712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.16:*:*:*:*:*:*:*
+  - id: 721709
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000200
+    reference_id: CVE-2018-1000200
+weaknesses: []

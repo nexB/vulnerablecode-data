@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2018-17974
+fixed_purl:
+- pkg:deb/debian/tcpreplay@4.3.1-1?distro=sid
+- pkg:deb/debian/tcpreplay@4.3.3-2?distro=sid
+- pkg:deb/debian/tcpreplay@4.4.3-1?distro=sid
+references:
+- id: 128076
+  reference_id: '910598'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=910598
+severities: []
+summary: An issue was discovered in Tcpreplay 4.3.0 beta1. A heap-based buffer over-read
+  was triggered in the function dlt_en10mb_encode() of the file plugins/dlt_en10mb/en10mb.c,
+  due to inappropriate values in the function memmove(). The length (pktlen + ctx
+  -> l2len) can be larger than source value (packet + ctx->l2len) because the function
+  fails to ensure the length of a packet is valid. This leads to Denial of Service.
+vulnerability_id: VCID-qvmq-3suz-aaak
+weaknesses: []

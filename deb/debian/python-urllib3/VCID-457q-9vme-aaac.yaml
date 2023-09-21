@@ -1,0 +1,69 @@
+vulnerability_id: VCID-457q-9vme-aaac
+aliases:
+  - CVE-2020-7212
+  - GHSA-hmv2-79q8-fv6g
+  - PYSEC-2020-149
+summary: The _encode_invalid_chars function in util/url.py in the urllib3 library 1.25.2 through
+  1.25.7 for Python allows a denial of service (CPU consumption) because of an inefficient algorithm.
+  The percent_encodings array contains all matches of percent encodings. It is not deduplicated.
+  For a URL of length N, the size of percent_encodings may be up to O(N). The next step (normalize
+  existing percent-encoded bytes) also takes up to O(N) for each step, so the total time is
+  O(N^2). If percent_encodings were deduplicated, the time to compute _encode_invalid_chars
+  would be O(kN), where k is at most 484 ((10+6*2)^2).
+severities:
+  - id: 53849
+    reference_id: 178969
+    scoring_system: cvssv3
+    value: '0.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+  - id: 686194
+    reference_id: 5590
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 53848
+    reference_id: 178968
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 487830
+    reference_id: 23229
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 487828
+    reference_id: 23229
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 4331
+    reference_id: 24927
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 178969
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-7212.json
+    reference_id:
+  - id: 5590
+    url: https://github.com/urllib3/urllib3/blob/master/CHANGES.rst
+    reference_id:
+  - id: 6727
+    url: https://github.com/urllib3/urllib3/commit/a74c9cfbaed9f811e7563cfc3dce894928e0221a
+    reference_id:
+  - id: 6726
+    url: https://pypi.org/project/urllib3/1.25.8/
+    reference_id:
+  - id: 178968
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1812095
+    reference_id: 1812095
+  - id: 747593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:urllib3:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:urllib3:*:*:*:*:*:*:*:*
+  - id: 23229
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-7212
+    reference_id: CVE-2020-7212
+  - id: 24927
+    url: https://github.com/advisories/GHSA-hmv2-79q8-fv6g
+    reference_id: GHSA-hmv2-79q8-fv6g
+weaknesses: []

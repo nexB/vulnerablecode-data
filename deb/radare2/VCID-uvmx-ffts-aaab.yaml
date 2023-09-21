@@ -1,0 +1,14 @@
+affected_purls: []
+aliases:
+- CVE-2020-27795
+fixed_purl:
+- pkg:deb/debian/radare2@5.0.0%2Bdfsg-1?distro=sid
+- pkg:deb/debian/radare2@5.5.0%2Bdfsg-1?distro=sid
+references: []
+severities: []
+summary: A segmentation fault was discovered in radare2 with adf command. In libr/core/cmd_anal.c,
+  when command "adf" has no or wrong argument, anal_fcn_data (core, input + 1) -->
+  RAnalFunction *fcn = r_anal_get_fcn_in (core->anal, core->offset, -1); returns null
+  pointer for fcn causing segmentation fault later in ensure_fcn_range (fcn).
+vulnerability_id: VCID-uvmx-ffts-aaab
+weaknesses: []

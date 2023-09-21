@@ -1,0 +1,181 @@
+vulnerability_id: VCID-2sd4-4txv-aaar
+aliases:
+  - CVE-2018-16882
+summary: A use-after-free issue was found in the way the Linux kernel's KVM hypervisor processed
+  posted interrupts when nested(=1) virtualization is enabled. In nested_get_vmcs12_pages(),
+  in case of an error while processing posted interrupt address, it unmaps the 'pi_desc_page'
+  without resetting 'pi_desc' descriptor address, which is later used in pi_test_and_clear_on().
+  A guest user/process could use this flaw to crash the host kernel resulting in DoS or potentially
+  gain privileged access to a system. Kernel versions before 4.14.91 and before 4.19.13 are
+  vulnerable.
+severities:
+  - id: 685201
+    reference_id: 1447625
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 67642
+    reference_id: '197026'
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 685202
+    reference_id: 1447626
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685203
+    reference_id: 740122
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682904
+    reference_id: 1445831
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 682905
+    reference_id: 1445832
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 682906
+    reference_id: 1445833
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 682907
+    reference_id: 1445834
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 684521
+    reference_id: 1447067
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684522
+    reference_id: 1447068
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684523
+    reference_id: 1447069
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685204
+    reference_id: 1447627
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 67641
+    reference_id: '197025'
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 331132
+    reference_id: 740124
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 331130
+    reference_id: 740124
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 1447625
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-16882.html
+    reference_id:
+  - id: '197026'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16882.json
+    reference_id:
+  - id: 740119
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16882
+    reference_id:
+  - id: 1447626
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16882
+    reference_id:
+  - id: 740120
+    url: https://lwn.net/Articles/775720/
+    reference_id:
+  - id: 740121
+    url: https://lwn.net/Articles/775721/
+    reference_id:
+  - id: 740122
+    url: https://marc.info/?l=kvm&m=154514994222809&w=2
+    reference_id:
+  - id: 740123
+    url: https://support.f5.com/csp/article/K80557033
+    reference_id:
+  - id: 1445831
+    url: https://ubuntu.com/security/notices/USN-3871-1
+    reference_id:
+  - id: 1445832
+    url: https://ubuntu.com/security/notices/USN-3871-3
+    reference_id:
+  - id: 1445833
+    url: https://ubuntu.com/security/notices/USN-3871-4
+    reference_id:
+  - id: 1445834
+    url: https://ubuntu.com/security/notices/USN-3871-5
+    reference_id:
+  - id: 1447067
+    url: https://ubuntu.com/security/notices/USN-3872-1
+    reference_id:
+  - id: 1447068
+    url: https://ubuntu.com/security/notices/USN-3878-1
+    reference_id:
+  - id: 1447069
+    url: https://ubuntu.com/security/notices/USN-3878-2
+    reference_id:
+  - id: 725062
+    url: https://usn.ubuntu.com/3871-1/
+    reference_id:
+  - id: 725063
+    url: https://usn.ubuntu.com/3871-3/
+    reference_id:
+  - id: 725064
+    url: https://usn.ubuntu.com/3871-4/
+    reference_id:
+  - id: 725065
+    url: https://usn.ubuntu.com/3871-5/
+    reference_id:
+  - id: 734777
+    url: https://usn.ubuntu.com/3872-1/
+    reference_id:
+  - id: 734778
+    url: https://usn.ubuntu.com/3878-1/
+    reference_id:
+  - id: 734779
+    url: https://usn.ubuntu.com/3878-2/
+    reference_id:
+  - id: 1447627
+    url: https://www.openwall.com/lists/oss-security/2018/12/18/6
+    reference_id:
+  - id: 740118
+    url: http://www.securityfocus.com/bid/106254
+    reference_id:
+  - id: '197025'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1660604
+    reference_id: 1660604
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 740124
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16882
+    reference_id: CVE-2018-16882
+weaknesses: []

@@ -1,0 +1,15 @@
+vulnerability_id: VCID-6z47-a3ba-aaad
+aliases:
+  - GMS-2016-65
+summary: |
+  Arbitrary password resets via NULL reset codes
+  There's a flaw in the DB schema where `reset_password_code` is NULL by default. If an attacker is able to provide a NULL reset code to the package, there are no guards against arbitrary anonymous password resets. In many cases, submitting a url-encoded null byte value (`%00`) will match what's in the database, passing the check and allowing the attacker to set the password to what they wish.
+severities: []
+references:
+  - id: 25211
+    url: http://haxx.ml/post/149975211631/how-i-hacked-your-cfp-and-probably-some-other
+    reference_id:
+  - id: 25212
+    url: https://github.com/cartalyst/sentry/pull/545
+    reference_id:
+weaknesses: []

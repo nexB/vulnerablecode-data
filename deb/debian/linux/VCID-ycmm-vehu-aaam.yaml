@@ -1,0 +1,28 @@
+vulnerability_id: VCID-ycmm-vehu-aaam
+aliases:
+  - CVE-2022-39188
+summary: An issue was discovered in include/asm-generic/tlb.h in the Linux kernel before 5.19.
+  Because of a race condition (unmap_mapping_range versus munmap), a device driver can free
+  a page while it still has stale TLB entries. This only occurs in situations with VM_PFNMAP
+  VMAs.
+severities: []
+references:
+  - id: 1415179
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=2329
+    reference_id:
+  - id: 1415180
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.19
+    reference_id:
+  - id: 1415182
+    url: https://github.com/torvalds/linux/commit/b67fbebd4cf980aecbcc750e1462128bffe8ae15
+    reference_id:
+  - id: 1415181
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b67fbebd4cf980aecbcc750e1462128bffe8ae15
+    reference_id:
+  - id: 1415183
+    url: https://lore.kernel.org/stable/CAG48ez3SEqOPcPCYGHVZv4iqEApujD5VtM3Re-tCKLDEFdEdbg@mail.gmail.com/
+    reference_id:
+  - id: 1415184
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-39188
+    reference_id: CVE-2022-39188
+weaknesses: []

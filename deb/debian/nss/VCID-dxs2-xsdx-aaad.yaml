@@ -1,0 +1,164 @@
+vulnerability_id: VCID-dxs2-xsdx-aaad
+aliases:
+  - CVE-2017-7805
+summary: During TLS 1.2 exchanges, handshake hashes are generated which point to a message buffer.
+  This saved data is used for later messages but in some cases, the handshake transcript can
+  exceed the space available in the current buffer, causing the allocation of a new buffer.
+  This leaves a pointer pointing to the old, freed buffer, resulting in a use-after-free when
+  handshake hashes are then calculated afterwards. This can result in a potentially exploitable
+  crash. This vulnerability affects Firefox < 56, Firefox ESR < 52.4, and Thunderbird < 52.4.
+severities:
+  - id: 680742
+    reference_id: 1444253
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620438
+    reference_id: 938889
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 680743
+    reference_id: 1444254
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680744
+    reference_id: 1444255
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680723
+    reference_id: 1444234
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680724
+    reference_id: 1444235
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680725
+    reference_id: 1444236
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680745
+    reference_id: 1444256
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686947
+    reference_id: 2752
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620436
+    reference_id: 938887
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 295266
+    reference_id: 710553
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 295264
+    reference_id: 710553
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 620437
+    reference_id: 938888
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1444253
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7805.html
+    reference_id:
+  - id: 938889
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7805.json
+    reference_id:
+  - id: 710551
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1377618
+    reference_id:
+  - id: 1444254
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7805
+    reference_id:
+  - id: 710515
+    url: https://lists.debian.org/debian-lts-announce/2017/11/msg00000.html
+    reference_id:
+  - id: 710404
+    url: https://security.gentoo.org/glsa/201803-14
+    reference_id:
+  - id: 1444255
+    url: https://ubuntu.com/security/notices/USN-3431-1
+    reference_id:
+  - id: 1444234
+    url: https://ubuntu.com/security/notices/USN-3435-1
+    reference_id:
+  - id: 1444235
+    url: https://ubuntu.com/security/notices/USN-3436-1
+    reference_id:
+  - id: 710516
+    url: https://www.debian.org/security/2017/dsa-3987
+    reference_id:
+  - id: 710552
+    url: https://www.debian.org/security/2017/dsa-3998
+    reference_id:
+  - id: 710517
+    url: https://www.debian.org/security/2017/dsa-4014
+    reference_id:
+  - id: 1444236
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2017-21/
+    reference_id:
+  - id: 1444256
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2017-22/
+    reference_id:
+  - id: 710518
+    url: https://www.mozilla.org/security/advisories/mfsa2017-21/
+    reference_id:
+  - id: 710519
+    url: https://www.mozilla.org/security/advisories/mfsa2017-22/
+    reference_id:
+  - id: 710520
+    url: https://www.mozilla.org/security/advisories/mfsa2017-23/
+    reference_id:
+  - id: 2752
+    url: http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    reference_id:
+  - id: 710549
+    url: http://www.securityfocus.com/bid/101059
+    reference_id:
+  - id: 710511
+    url: http://www.securitytracker.com/id/1039465
+    reference_id:
+  - id: 938887
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1471171
+    reference_id: 1471171
+  - id: 710554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:56.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:56.0:*:*:*:*:*:*:*
+  - id: 710555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:52.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:52.4.0:*:*:*:*:*:*:*
+  - id: 710556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:thunderbird:52.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:thunderbird:52.4.0:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 710553
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7805
+    reference_id: CVE-2017-7805
+  - id: 938888
+    url: https://access.redhat.com/errata/RHSA-2017:2832
+    reference_id: RHSA-2017:2832
+weaknesses: []

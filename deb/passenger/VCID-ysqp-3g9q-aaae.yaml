@@ -1,0 +1,28 @@
+affected_purls:
+- pkg:gem/passenger@5.3.0
+- pkg:gem/passenger@5.3.1
+aliases:
+- CVE-2018-12027
+fixed_purl:
+- pkg:deb/debian/passenger@0?distro=sid
+- pkg:deb/debian/passenger@5.0.30-1.1?distro=sid
+- pkg:deb/debian/passenger@5.0.30-1.2%2Bdeb11u1?distro=sid
+- pkg:deb/debian/passenger@6.0.17%2Bds-1?distro=sid
+- pkg:gem/passenger@5.3.2
+references:
+- id: 181738
+  reference_id: ''
+  url: https://blog.phusion.nl/passenger-5-3-2
+- id: 181739
+  reference_id: CVE-2018-12027
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-12027
+severities: []
+summary: 'An Insecure Permissions vulnerability in SpawningKit in Phusion Passenger
+  5.3.x before 5.3.2 causes information disclosure in the following situation: given
+  a Passenger-spawned application process that reports that it listens on a certain
+  Unix domain socket, if any of the parent directories of said socket are writable
+  by a normal user that is not the application''s user, then that non-application
+  user can swap that directory with something else, resulting in traffic being redirected
+  to a non-application user''s process through an alternative Unix domain socket.'
+vulnerability_id: VCID-ysqp-3g9q-aaae
+weaknesses: []

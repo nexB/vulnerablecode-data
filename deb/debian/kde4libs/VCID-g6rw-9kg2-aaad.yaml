@@ -1,0 +1,208 @@
+vulnerability_id: VCID-g6rw-9kg2-aaad
+aliases:
+  - CVE-2014-5033
+summary: KDE kdelibs before 4.14 and kauth before 5.1 does not properly use D-Bus for communication
+  with a polkit authority, which allows local users to bypass intended access restrictions by
+  leveraging a PolkitUnixProcess PolkitSubject race condition via a (1) setuid process or (2)
+  pkexec process, related to CVE-2013-4288 and "PID reuse race conditions."
+severities:
+  - id: 657232
+    reference_id: 1425514
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657233
+    reference_id: 1425515
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657234
+    reference_id: 1425516
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60068
+    reference_id: 186985
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 183426
+    reference_id: 574450
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 60069
+    reference_id: 186986
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 574440
+    url: http://lists.opensuse.org/opensuse-updates/2014-08/msg00012.html
+    reference_id:
+  - id: 1425514
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-5033.html
+    reference_id:
+  - id: 574441
+    url: http://quickgit.kde.org/?p=kauth.git&a=commit&h=341b7d84b6d9c03cf56905cb277b47e11c81482a
+    reference_id:
+  - id: 574442
+    url: http://quickgit.kde.org/?p=kdelibs.git&a=commitdiff&h=e4e7b53b71e2659adaf52691d4accc3594203b23
+    reference_id:
+  - id: 574443
+    url: http://rhn.redhat.com/errata/RHSA-2014-1359.html
+    reference_id:
+  - id: 186987
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-5033.json
+    reference_id:
+  - id: 1425515
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5033
+    reference_id:
+  - id: 574444
+    url: http://secunia.com/advisories/60385
+    reference_id:
+  - id: 574445
+    url: http://secunia.com/advisories/60633
+    reference_id:
+  - id: 574446
+    url: http://secunia.com/advisories/60654
+    reference_id:
+  - id: 1425516
+    url: https://ubuntu.com/security/notices/USN-2304-1
+    reference_id:
+  - id: 574447
+    url: http://www.debian.org/security/2014/dsa-3004
+    reference_id:
+  - id: 574448
+    url: http://www.kde.org/info/security/advisory-20140730-1.txt
+    reference_id:
+  - id: 574449
+    url: http://www.ubuntu.com/usn/USN-2304-1
+    reference_id:
+  - id: 186985
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1094890
+    reference_id: 1094890
+  - id: 42405
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=755814
+    reference_id: 755814
+  - id: 574451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:kde4libs:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:kde4libs:-:*:*:*:*:*:*:*
+  - id: 574452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kauth:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kauth:*:*:*:*:*:*:*:*
+  - id: 522959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:*:*:*:*:*:*:*:*
+  - id: 522960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.0:*:*:*:*:*:*:*
+  - id: 522961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.1:*:*:*:*:*:*:*
+  - id: 522962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.2:*:*:*:*:*:*:*
+  - id: 574453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.3:*:*:*:*:*:*:*
+  - id: 574454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.95:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.95:*:*:*:*:*:*:*
+  - id: 566764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.10.97:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.10.97:*:*:*:*:*:*:*
+  - id: 566765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.0:*:*:*:*:*:*:*
+  - id: 566766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.1:*:*:*:*:*:*:*
+  - id: 566767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.2:*:*:*:*:*:*:*
+  - id: 566768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.3:*:*:*:*:*:*:*
+  - id: 566769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.4:*:*:*:*:*:*:*
+  - id: 566770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.5:*:*:*:*:*:*:*
+  - id: 566771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.80:*:*:*:*:*:*:*
+  - id: 566772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.90:*:*:*:*:*:*:*
+  - id: 566773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.95:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.95:*:*:*:*:*:*:*
+  - id: 566774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.11.97:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.11.97:*:*:*:*:*:*:*
+  - id: 566775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.0:*:*:*:*:*:*:*
+  - id: 566776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.1:*:*:*:*:*:*:*
+  - id: 566777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.2:*:*:*:*:*:*:*
+  - id: 566778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.3:*:*:*:*:*:*:*
+  - id: 566779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.4:*:*:*:*:*:*:*
+  - id: 566780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.5:*:*:*:*:*:*:*
+  - id: 566781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.80:*:*:*:*:*:*:*
+  - id: 566782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.90:*:*:*:*:*:*:*
+  - id: 566783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.95:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.95:*:*:*:*:*:*:*
+  - id: 566784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.12.97:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.12.97:*:*:*:*:*:*:*
+  - id: 566785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.0:*:*:*:*:*:*:*
+  - id: 566786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.1:*:*:*:*:*:*:*
+  - id: 574455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.2:*:*:*:*:*:*:*
+  - id: 574456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.3:*:*:*:*:*:*:*
+  - id: 574457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.80:*:*:*:*:*:*:*
+  - id: 574458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.90:*:*:*:*:*:*:*
+  - id: 574459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kdelibs:4.13.95:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kdelibs:4.13.95:*:*:*:*:*:*:*
+  - id: 322396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:-:lts:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:-:lts:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 574450
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-5033
+    reference_id: CVE-2014-5033
+  - id: 186986
+    url: https://access.redhat.com/errata/RHSA-2014:1359
+    reference_id: RHSA-2014:1359
+weaknesses: []

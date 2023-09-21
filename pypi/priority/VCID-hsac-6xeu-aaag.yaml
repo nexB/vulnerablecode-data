@@ -1,0 +1,26 @@
+affected_purls:
+- pkg:pypi/priority@1.0.0
+- pkg:pypi/priority@1.1.0
+- pkg:pypi/priority@1.1.1
+aliases:
+- CVE-2016-6580
+fixed_purl:
+- pkg:pypi/priority@1.2.0
+references:
+- id: 177705
+  reference_id: ''
+  url: https://github.com/python-hyper/priority/pull/23
+- id: 177704
+  reference_id: ''
+  url: http://www.imperva.com/docs/Imperva_HII_HTTP2.pdf
+severities: []
+summary: 'DoS via Unlimited Stream Insertion
+
+  An HTTP/2 implementation built using the priority library could be targeted by a
+  malicious peer by having that peer assign priority information for every possible
+  HTTP/2 stream ID. The priority tree would happily continue to store the priority
+  information for each stream, and would therefore allocate unbounded amounts of memory.
+  Attempting to actually *use* a tree like this would also cause extremely high CPU
+  usage to maintain the tree.'
+vulnerability_id: VCID-hsac-6xeu-aaag
+weaknesses: []

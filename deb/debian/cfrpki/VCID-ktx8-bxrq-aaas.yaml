@@ -1,0 +1,41 @@
+vulnerability_id: VCID-ktx8-bxrq-aaas
+aliases:
+  - CVE-2021-43174
+summary: NLnet Labs Routinator versions 0.9.0 up to and including 0.10.1, support the gzip transfer
+  encoding when querying RRDP repositories. This encoding can be used by an RRDP repository
+  to cause an out-of-memory crash in these versions of Routinator. RRDP uses XML which allows
+  arbitrary amounts of white space in the encoded data. The gzip scheme compresses such white
+  space extremely well, leading to very small compressed files that become huge when being decompressed
+  for further processing, big enough that Routinator runs out of memory when parsing input data
+  waiting for the next XML element.
+severities:
+  - id: 566479
+    reference_id: 902173
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 566477
+    reference_id: 902173
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 892310
+    url: https://www.debian.org/security/2022/dsa-5041
+    reference_id:
+  - id: 902170
+    url: https://www.nlnetlabs.nl/downloads/routinator/CVE-2021-43172_CVE-2021-43173_CVE-2021-43174.txt
+    reference_id:
+  - id: 40043
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=929024
+    reference_id: 929024
+  - id: 827035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nlnetlabs:routinator:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nlnetlabs:routinator:*:*:*:*:*:*:*:*
+  - id: 169237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+  - id: 902173
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-43174
+    reference_id: CVE-2021-43174
+weaknesses: []

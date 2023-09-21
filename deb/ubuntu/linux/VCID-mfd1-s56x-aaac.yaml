@@ -1,0 +1,216 @@
+vulnerability_id: VCID-mfd1-s56x-aaac
+aliases:
+  - CVE-2020-8428
+summary: fs/namei.c in the Linux kernel before 5.5 has a may_create_in_sticky use-after-free,
+  which allows local users to cause a denial of service (OOPS) or possibly obtain sensitive
+  information from kernel memory, aka CID-d0cb50185ae9. One attack vector may be an open system
+  call for a UNIX domain socket, if the socket is being moved to a new parent directory and
+  its old parent directory is being removed.
+severities:
+  - id: 699809
+    reference_id: 1459452
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57444
+    reference_id: 183481
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 699810
+    reference_id: 1459453
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699811
+    reference_id: 1459454
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699817
+    reference_id: 1459458
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692386
+    reference_id: 1453294
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699818
+    reference_id: 1459459
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699819
+    reference_id: 1459460
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692387
+    reference_id: 1453295
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651733
+    reference_id: 1421642
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699812
+    reference_id: 855614
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692384
+    reference_id: 1453292
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699813
+    reference_id: 1459455
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699814
+    reference_id: 1459456
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692385
+    reference_id: 1453293
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699815
+    reference_id: 854502
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699816
+    reference_id: 1459457
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57443
+    reference_id: 183480
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 491553
+    reference_id: 854503
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:P
+  - id: 491551
+    reference_id: 854503
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 779514
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00021.html
+    reference_id:
+  - id: 520427
+    url: http://packetstormsecurity.com/files/157233/Kernel-Live-Patch-Security-Notice-LSN-0065-1.html
+    reference_id:
+  - id: 1459452
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8428.html
+    reference_id:
+  - id: 183481
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8428.json
+    reference_id:
+  - id: 1459453
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8428
+    reference_id:
+  - id: 854498
+    url: https://github.com/torvalds/linux/commit/d0cb50185ae942b03c4327be322055d622dc79f6
+    reference_id:
+  - id: 854497
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d0cb50185ae942b03c4327be322055d622dc79f6
+    reference_id:
+  - id: 789835
+    url: https://lists.debian.org/debian-lts-announce/2020/06/msg00012.html
+    reference_id:
+  - id: 792350
+    url: https://security.netapp.com/advisory/ntap-20200313-0003/
+    reference_id:
+  - id: 1459454
+    url: https://syzkaller.appspot.com/bug?extid=190005201ced78a74ad6
+    reference_id:
+  - id: 1459458
+    url: https://ubuntu.com/security/notices/USN-4318-1
+    reference_id:
+  - id: 1453294
+    url: https://ubuntu.com/security/notices/USN-4319-1
+    reference_id:
+  - id: 1459459
+    url: https://ubuntu.com/security/notices/USN-4320-1
+    reference_id:
+  - id: 1459460
+    url: https://ubuntu.com/security/notices/USN-4324-1
+    reference_id:
+  - id: 1453295
+    url: https://ubuntu.com/security/notices/USN-4325-1
+    reference_id:
+  - id: 854499
+    url: https://usn.ubuntu.com/4318-1/
+    reference_id:
+  - id: 789167
+    url: https://usn.ubuntu.com/4319-1/
+    reference_id:
+  - id: 854500
+    url: https://usn.ubuntu.com/4320-1/
+    reference_id:
+  - id: 854501
+    url: https://usn.ubuntu.com/4324-1/
+    reference_id:
+  - id: 789168
+    url: https://usn.ubuntu.com/4325-1/
+    reference_id:
+  - id: 1421642
+    url: https://usn.ubuntu.com/lsn/0065-1/
+    reference_id:
+  - id: 855614
+    url: https://usn.ubuntu.com/usn/usn-4318-1
+    reference_id:
+  - id: 1453292
+    url: https://usn.ubuntu.com/usn/usn-4319-1
+    reference_id:
+  - id: 1459455
+    url: https://usn.ubuntu.com/usn/usn-4320-1
+    reference_id:
+  - id: 1459456
+    url: https://usn.ubuntu.com/usn/usn-4324-1
+    reference_id:
+  - id: 1453293
+    url: https://usn.ubuntu.com/usn/usn-4325-1
+    reference_id:
+  - id: 812786
+    url: https://www.debian.org/security/2020/dsa-4667
+    reference_id:
+  - id: 789837
+    url: https://www.debian.org/security/2020/dsa-4698
+    reference_id:
+  - id: 854502
+    url: https://www.openwall.com/lists/oss-security/2020/01/28/2
+    reference_id:
+  - id: 1459457
+    url: https://www.openwall.com/lists/oss-security/2020/02/02/1
+    reference_id:
+  - id: 854495
+    url: http://www.openwall.com/lists/oss-security/2020/01/28/4
+    reference_id:
+  - id: 854496
+    url: http://www.openwall.com/lists/oss-security/2020/02/02/1
+    reference_id:
+  - id: 183480
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1796939
+    reference_id: 1796939
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 854503
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8428
+    reference_id: CVE-2020-8428
+weaknesses: []

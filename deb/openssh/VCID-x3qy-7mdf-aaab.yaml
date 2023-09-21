@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2019-6111
+fixed_purl:
+- pkg:deb/debian/openssh@1:7.9p1-10%2Bdeb10u2?distro=sid
+- pkg:deb/debian/openssh@1:7.9p1-9?distro=sid
+- pkg:deb/debian/openssh@1:8.4p1-5%2Bdeb11u1?distro=sid
+- pkg:deb/debian/openssh@1:9.2p1-2?distro=sid
+references:
+- id: 128925
+  reference_id: '923486'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923486
+severities: []
+summary: An issue was discovered in OpenSSH 7.9. Due to the scp implementation being
+  derived from 1983 rcp, the server chooses which files/directories are sent to the
+  client. However, the scp client only performs cursory validation of the object name
+  returned (only directory traversal attacks are prevented). A malicious scp server
+  (or Man-in-The-Middle attacker) can overwrite arbitrary files in the scp client
+  target directory. If recursive operation (-r) is performed, the server can manipulate
+  subdirectories as well (for example, to overwrite the .ssh/authorized_keys file).
+vulnerability_id: VCID-x3qy-7mdf-aaab
+weaknesses: []

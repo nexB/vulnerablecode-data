@@ -1,0 +1,16 @@
+affected_purls:
+- pkg:deb/debian/adns@1.5.0~rc1-1.1
+aliases:
+- CVE-2017-9108
+fixed_purl:
+- pkg:deb/debian/adns@1.6.0-2
+references: []
+severities: []
+summary: An issue was discovered in adns before 1.5.2. adnshost mishandles a missing
+  final newline on a stdin read. It is wrong to increment used as well as setting
+  r, since used is incremented according to r, later. Rather one should be doing what
+  read() would have done. Without this fix, adnshost may read and process one byte
+  beyond the buffer, perhaps crashing or perhaps somehow leaking the value of that
+  byte.
+vulnerability_id: VCID-uhhe-a4xp-aaar
+weaknesses: []

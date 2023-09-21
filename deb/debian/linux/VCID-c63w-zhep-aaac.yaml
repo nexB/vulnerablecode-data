@@ -1,0 +1,187 @@
+vulnerability_id: VCID-c63w-zhep-aaac
+aliases:
+  - CVE-2015-2830
+summary: arch/x86/kernel/entry_64.S in the Linux kernel before 3.19.2 does not prevent the TS_COMPAT
+  flag from reaching a user-mode task, which might allow local users to bypass the seccomp or
+  audit protection mechanism via a crafted application that uses the (1) fork or (2) close system
+  call, as demonstrated by an attack against seccomp before 3.16.
+severities:
+  - id: 661275
+    reference_id: 1428660
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 661277
+    reference_id: 1428661
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660832
+    reference_id: 1428310
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660833
+    reference_id: 1428311
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659047
+    reference_id: 1426962
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659048
+    reference_id: 1426963
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660834
+    reference_id: 1428312
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660835
+    reference_id: 1428313
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 661276
+    reference_id: 604996
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 652243
+    reference_id: 158190
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: '198350'
+    reference_id: 605000
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:P/A:N
+  - id: 55331
+    reference_id: 180550
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55330
+    reference_id: 180549
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55329
+    reference_id: 180548
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55628
+    reference_id: 180957
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 604995
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=956421fbb74c3a6261903f3836c0740187cf038b
+    reference_id:
+  - id: 159592
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00004.html
+    reference_id:
+  - id: 159598
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00018.html
+    reference_id:
+  - id: 159599
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00021.html
+    reference_id:
+  - id: 1428660
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-2830.html
+    reference_id:
+  - id: 590895
+    url: http://rhn.redhat.com/errata/RHSA-2015-1137.html
+    reference_id:
+  - id: 590896
+    url: http://rhn.redhat.com/errata/RHSA-2015-1138.html
+    reference_id:
+  - id: 476377
+    url: http://rhn.redhat.com/errata/RHSA-2015-1221.html
+    reference_id:
+  - id: 181402
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-2830.json
+    reference_id:
+  - id: 604998
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1208598
+    reference_id:
+  - id: 1428661
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2830
+    reference_id:
+  - id: 604999
+    url: https://github.com/torvalds/linux/commit/956421fbb74c3a6261903f3836c0740187cf038b
+    reference_id:
+  - id: 1428310
+    url: https://ubuntu.com/security/notices/USN-2589-1
+    reference_id:
+  - id: 1428311
+    url: https://ubuntu.com/security/notices/USN-2590-1
+    reference_id:
+  - id: 1426962
+    url: https://ubuntu.com/security/notices/USN-2613-1
+    reference_id:
+  - id: 1426963
+    url: https://ubuntu.com/security/notices/USN-2614-1
+    reference_id:
+  - id: 1428312
+    url: https://ubuntu.com/security/notices/USN-2631-1
+    reference_id:
+  - id: 1428313
+    url: https://ubuntu.com/security/notices/USN-2632-1
+    reference_id:
+  - id: 586251
+    url: http://www.debian.org/security/2015/dsa-3237
+    reference_id:
+  - id: 604059
+    url: http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.19.2
+    reference_id:
+  - id: 604996
+    url: http://www.openwall.com/lists/oss-security/2015/04/02/1
+    reference_id:
+  - id: 158190
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html
+    reference_id:
+  - id: 604997
+    url: http://www.securitytracker.com/id/1032413
+    reference_id:
+  - id: 602460
+    url: http://www.ubuntu.com/usn/USN-2631-1
+    reference_id:
+  - id: 602461
+    url: http://www.ubuntu.com/usn/USN-2632-1
+    reference_id:
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 605000
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-2830
+    reference_id: CVE-2015-2830
+  - id: 180550
+    url: https://access.redhat.com/errata/RHSA-2015:1137
+    reference_id: RHSA-2015:1137
+  - id: 180549
+    url: https://access.redhat.com/errata/RHSA-2015:1138
+    reference_id: RHSA-2015:1138
+  - id: 180548
+    url: https://access.redhat.com/errata/RHSA-2015:1139
+    reference_id: RHSA-2015:1139
+  - id: 180957
+    url: https://access.redhat.com/errata/RHSA-2015:1221
+    reference_id: RHSA-2015:1221
+weaknesses: []

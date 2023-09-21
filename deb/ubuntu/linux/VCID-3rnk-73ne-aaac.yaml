@@ -1,0 +1,256 @@
+vulnerability_id: VCID-3rnk-73ne-aaac
+aliases:
+  - CVE-2017-17805
+summary: The Salsa20 encryption algorithm in the Linux kernel before 4.14.8 does not correctly
+  handle zero-length inputs, allowing a local attacker able to use the AF_ALG-based skcipher
+  interface (CONFIG_CRYPTO_USER_API_SKCIPHER) to cause a denial of service (uninitialized-memory
+  free and kernel crash) or have unspecified other impact by executing a crafted sequence of
+  system calls that use the blkcipher_walk API. Both the generic implementation (crypto/salsa20_generic.c)
+  and x86 implementation (arch/x86/crypto/salsa20_glue.c) of Salsa20 were vulnerable.
+severities:
+  - id: 677121
+    reference_id: 692130
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677122
+    reference_id: 1441296
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619609
+    reference_id: 938314
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 677123
+    reference_id: 1441297
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677124
+    reference_id: 692137
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672917
+    reference_id: 1438146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672918
+    reference_id: 1438147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672919
+    reference_id: 1438148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673644
+    reference_id: 1438765
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673645
+    reference_id: 1438766
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672922
+    reference_id: 1438151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677125
+    reference_id: 692138
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619608
+    reference_id: 938313
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 275044
+    reference_id: 692139
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 275042
+    reference_id: 692139
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 692130
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ecaaab5649781c5a0effdaf298a925063020500e
+    reference_id:
+  - id: 692131
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00006.html
+    reference_id:
+  - id: 674208
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00007.html
+    reference_id:
+  - id: 692132
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00008.html
+    reference_id:
+  - id: 692133
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00014.html
+    reference_id:
+  - id: 692134
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00016.html
+    reference_id:
+  - id: 1441296
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17805.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 692136
+    url: https://access.redhat.com/errata/RHSA-2019:2473
+    reference_id:
+  - id: 938314
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17805.json
+    reference_id:
+  - id: 1441297
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17805
+    reference_id:
+  - id: 692137
+    url: https://github.com/torvalds/linux/commit/ecaaab5649781c5a0effdaf298a925063020500e
+    reference_id:
+  - id: 691264
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00004.html
+    reference_id:
+  - id: 1438146
+    url: https://ubuntu.com/security/notices/USN-3617-1
+    reference_id:
+  - id: 1438147
+    url: https://ubuntu.com/security/notices/USN-3617-2
+    reference_id:
+  - id: 1438148
+    url: https://ubuntu.com/security/notices/USN-3617-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1438765
+    url: https://ubuntu.com/security/notices/USN-3620-1
+    reference_id:
+  - id: 1438766
+    url: https://ubuntu.com/security/notices/USN-3620-2
+    reference_id:
+  - id: 1438151
+    url: https://ubuntu.com/security/notices/USN-3632-1
+    reference_id:
+  - id: 666768
+    url: https://usn.ubuntu.com/3617-1/
+    reference_id:
+  - id: 666769
+    url: https://usn.ubuntu.com/3617-2/
+    reference_id:
+  - id: 666770
+    url: https://usn.ubuntu.com/3617-3/
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 671937
+    url: https://usn.ubuntu.com/3620-1/
+    reference_id:
+  - id: 671938
+    url: https://usn.ubuntu.com/3620-2/
+    reference_id:
+  - id: 666773
+    url: https://usn.ubuntu.com/3632-1/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 668886
+    url: https://www.debian.org/security/2018/dsa-4082
+    reference_id:
+  - id: 692138
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8
+    reference_id:
+  - id: 692135
+    url: http://www.securityfocus.com/bid/102291
+    reference_id:
+  - id: 938313
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1528312
+    reference_id: 1528312
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 157932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+  - id: 692140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse_project:leap:42.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse_project:leap:42.3:*:*:*:*:*:*:*
+  - id: 662473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp2:*:*:*:*:*:*
+  - id: 678982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp3:*:*:*:*:*:*
+  - id: 648259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+  - id: 158277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+  - id: 611420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp2:*:*:*:*:*:*
+  - id: 688129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp3:*:*:*:*:*:*
+  - id: 668737
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server_for_raspberry_pi:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server_for_raspberry_pi:12:sp2:*:*:*:*:*:*
+  - id: 692139
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17805
+    reference_id: CVE-2017-17805
+weaknesses: []

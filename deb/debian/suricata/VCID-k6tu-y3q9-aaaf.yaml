@@ -1,0 +1,34 @@
+vulnerability_id: VCID-k6tu-y3q9-aaaf
+aliases:
+  - CVE-2019-10050
+summary: A buffer over-read issue was discovered in Suricata 4.1.x before 4.1.4. If the input
+  of the decode-mpls.c function DecodeMPLS is composed only of a packet of source address and
+  destination address plus the correct type field and the right number for shim, an attacker
+  can manipulate the control flow, such that the condition to leave the loop is true. After
+  leaving the loop, the network packet has a length of 2 bytes. There is no validation of this
+  length. Later on, the code tries to read at an empty position, leading to a crash.
+severities:
+  - id: 366068
+    reference_id: 765470
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 366066
+    reference_id: 765470
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 765468
+    url: https://lists.openinfosecfoundation.org/pipermail/oisf-announce/
+    reference_id:
+  - id: 765469
+    url: https://suricata-ids.org/2019/04/30/suricata-4-1-4-released/
+    reference_id:
+  - id: 765471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oisf:suricata:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oisf:suricata:*:*:*:*:*:*:*:*
+  - id: 765470
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10050
+    reference_id: CVE-2019-10050
+weaknesses: []

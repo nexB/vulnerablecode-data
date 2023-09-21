@@ -1,0 +1,86 @@
+affected_purls:
+- pkg:maven/org.apache.qpid/proton-j@0.10
+- pkg:maven/org.apache.qpid/proton-j@0.11.0
+- pkg:maven/org.apache.qpid/proton-j@0.11.1
+- pkg:maven/org.apache.qpid/proton-j@0.12.0
+- pkg:maven/org.apache.qpid/proton-j@0.12.1
+- pkg:maven/org.apache.qpid/proton-j@0.12.2
+- pkg:maven/org.apache.qpid/proton-j@0.13.0
+- pkg:maven/org.apache.qpid/proton-j@0.13.1
+- pkg:maven/org.apache.qpid/proton-j@0.14.0
+- pkg:maven/org.apache.qpid/proton-j@0.15.0
+- pkg:maven/org.apache.qpid/proton-j@0.16.0
+- pkg:maven/org.apache.qpid/proton-j@0.17.0
+- pkg:maven/org.apache.qpid/proton-j@0.18.0
+- pkg:maven/org.apache.qpid/proton-j@0.19.0
+- pkg:maven/org.apache.qpid/proton-j@0.20.0
+- pkg:maven/org.apache.qpid/proton-j@0.21.0
+- pkg:maven/org.apache.qpid/proton-j@0.22.0
+- pkg:maven/org.apache.qpid/proton-j@0.23.0
+- pkg:maven/org.apache.qpid/proton-j@0.24.0
+- pkg:maven/org.apache.qpid/proton-j@0.25.0
+- pkg:maven/org.apache.qpid/proton-j@0.26.0
+- pkg:maven/org.apache.qpid/proton-j@0.27.0
+- pkg:maven/org.apache.qpid/proton-j@0.27.1
+- pkg:maven/org.apache.qpid/proton-j@0.27.2
+- pkg:maven/org.apache.qpid/proton-j@0.27.3
+- pkg:maven/org.apache.qpid/proton-j@0.28.0
+- pkg:maven/org.apache.qpid/proton-j@0.28.1
+- pkg:maven/org.apache.qpid/proton-j@0.29.0
+- pkg:maven/org.apache.qpid/proton-j@0.4
+- pkg:maven/org.apache.qpid/proton-j@0.5
+- pkg:maven/org.apache.qpid/proton-j@0.6
+- pkg:maven/org.apache.qpid/proton-j@0.7
+- pkg:maven/org.apache.qpid/proton-j@0.8
+- pkg:maven/org.apache.qpid/proton-j@0.9
+- pkg:maven/org.apache.qpid/proton-j@0.9.1
+aliases:
+- CVE-2018-17187
+- GHSA-xvch-r4wf-h8w9
+fixed_purl:
+- pkg:deb/debian/qpid-proton@0.22.0-1?distro=sid
+- pkg:deb/debian/qpid-proton@0.22.0-3?distro=sid
+- pkg:deb/debian/qpid-proton@0.22.0-5.1?distro=sid
+- pkg:deb/debian/qpid-proton@0.37.0-2?distro=sid
+- pkg:maven/org.apache.qpid/proton-j@0.30.0
+references:
+- id: 144753
+  reference_id: ''
+  url: https://issues.apache.org/jira/browse/PROTON-1962
+- id: 144754
+  reference_id: ''
+  url: https://mail-archives.apache.org/mod_mbox/qpid-users/201811.mbox/%3CCAFitrpQSV73Vz7rJYfLJK7gvEymZSCR5ooWUeU8j4jzRydk-eg%40mail.gmail.com%3E
+- id: 144756
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/105935
+- id: 144751
+  reference_id: CVE-2018-17187
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-17187
+- id: 144755
+  reference_id: CVE-2018-17187.HTML
+  url: https://qpid.apache.org/cves/CVE-2018-17187.html
+- id: 144752
+  reference_id: GHSA-xvch-r4wf-h8w9
+  url: https://github.com/advisories/GHSA-xvch-r4wf-h8w9
+severities:
+- id: 20253
+  reference_id: 144752
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: The Apache Qpid Proton-J transport includes an optional wrapper layer to
+  perform TLS, enabled by use of the 'transport.ssl(...)' methods. Unless a verification
+  mode was explicitly configured, client and server modes previously defaulted as
+  documented to not verifying a peer certificate, with options to configure this explicitly
+  or select a certificate verification mode with or without hostname verification
+  being performed. The latter hostname verifying mode was not implemented in Apache
+  Qpid Proton-J versions 0.3 to 0.29.0, with attempts to use it resulting in an exception.
+  This left only the option to verify the certificate is trusted, leaving such a client
+  vulnerable to Man In The Middle (MITM) attack. Uses of the Proton-J protocol engine
+  which do not utilise the optional transport TLS wrapper are not impacted, e.g. usage
+  within Qpid JMS. Uses of Proton-J utilising the optional transport TLS wrapper layer
+  that wish to enable hostname verification must be upgraded to version 0.30.0 or
+  later and utilise the VerifyMode#VERIFY_PEER_NAME configuration, which is now the
+  default for client mode usage unless configured otherwise.
+vulnerability_id: VCID-ahrz-pwu3-aaag
+weaknesses: []

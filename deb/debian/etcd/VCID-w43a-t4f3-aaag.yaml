@@ -1,0 +1,143 @@
+vulnerability_id: VCID-w43a-t4f3-aaag
+aliases:
+  - CVE-2018-16886
+summary: etcd versions 3.2.x before 3.2.26 and 3.3.x before 3.3.11 are vulnerable to an improper
+  authentication issue when role-based access control (RBAC) is used and client-cert-auth is
+  enabled. If an etcd client server TLS certificate contains a Common Name (CN) which matches
+  a valid RBAC username, a remote attacker may authenticate as that user with any valid (trusted)
+  client certificate in a REST API request to the gRPC-gateway.
+severities:
+  - id: 685210
+    reference_id: 1447633
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 69427
+    reference_id: '199153'
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N
+  - id: 685211
+    reference_id: 740145
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685212
+    reference_id: 1447634
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685213
+    reference_id: 1447635
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685214
+    reference_id: 1447636
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685215
+    reference_id: 1447637
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685216
+    reference_id: 1447638
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685217
+    reference_id: 1447639
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 69425
+    reference_id: '199151'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 331144
+    reference_id: 740148
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 331142
+    reference_id: 740148
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1447633
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-16886.html
+    reference_id:
+  - id: 740143
+    url: https://access.redhat.com/errata/RHSA-2019:0237
+    reference_id:
+  - id: 740144
+    url: https://access.redhat.com/errata/RHSA-2019:1352
+    reference_id:
+  - id: '199153'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16886.json
+    reference_id:
+  - id: 740145
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16886
+    reference_id:
+  - id: 1447634
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16886
+    reference_id:
+  - id: 740146
+    url: https://github.com/etcd-io/etcd/blob/1eee465a43720d713bb69f7b7f5e120135fdb1ac/CHANGELOG-3.2.md#security-authentication
+    reference_id:
+  - id: 740147
+    url: https://github.com/etcd-io/etcd/blob/1eee465a43720d713bb69f7b7f5e120135fdb1ac/CHANGELOG-3.3.md#security-authentication
+    reference_id:
+  - id: 1447635
+    url: https://github.com/etcd-io/etcd/commit/83c051b701d33261eef91a719e4421c81b000ba4
+    reference_id:
+  - id: 1447636
+    url: https://github.com/etcd-io/etcd/commit/99704e2a97e8710da942bdc737417fc9c9a2c03f
+    reference_id:
+  - id: 1447637
+    url: https://github.com/etcd-io/etcd/commit/a9a9466fb8ba11ad7bb6a44d7446fbd072d59887
+    reference_id:
+  - id: 1447638
+    url: https://github.com/etcd-io/etcd/commit/bf9d0d8291dc71ecbfb2690612954e1a298154b2
+    reference_id:
+  - id: 1447639
+    url: https://github.com/etcd-io/etcd/pull/10366
+    reference_id:
+  - id: 725627
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JX7QTIT465BQGRGNCE74RATRQLKT2QE4/
+    reference_id:
+  - id: 725628
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UPGYHMSKDPW5GAMI7BEP3XQRVRLLBJKS/
+    reference_id:
+  - id: 740142
+    url: http://www.securityfocus.com/bid/106540
+    reference_id:
+  - id: '199151'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1651034
+    reference_id: 1651034
+  - id: 40770
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923008
+    reference_id: 923008
+  - id: 740149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 740148
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16886
+    reference_id: CVE-2018-16886
+weaknesses: []

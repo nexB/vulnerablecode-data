@@ -1,0 +1,59 @@
+affected_purls:
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.0.0
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.1.0
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.1.1
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.1.2
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.1.3
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.1.4
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.0
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.1
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.2
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.3
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.4
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1207
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1208
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1209
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1210
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1211
+- pkg:maven/org.postgresql/pgjdbc-aggregate@9.4.1212
+aliases:
+- CVE-2018-10936
+- GHSA-568q-9fw5-28wf
+fixed_purl:
+- pkg:deb/debian/libpgjava@42.2.15-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/libpgjava@42.2.5-1?distro=sid
+- pkg:deb/debian/libpgjava@42.2.5-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libpgjava@42.5.4-1?distro=sid
+- pkg:maven/org.postgresql/pgjdbc-aggregate@42.2.5
+references:
+- id: 143729
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10936
+- id: 136234
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/9317fd092b257a0815434b116a8af8daea6e920b6673f4fd5583d5fe@%3Ccommits.druid.apache.org%3E
+- id: 143731
+  reference_id: ''
+  url: https://www.postgresql.org/about/news/1883/
+- id: 143732
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/105220
+- id: 143728
+  reference_id: CVE-2018-10936
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-10936
+- id: 143730
+  reference_id: GHSA-568q-9fw5-28wf
+  url: https://github.com/advisories/GHSA-568q-9fw5-28wf
+severities:
+- id: 20052
+  reference_id: 143730
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: A weakness was found in postgresql-jdbc before version 42.2.5. It was possible
+  to provide an SSL Factory and not check the host name if a host name verifier was
+  not provided to the driver. This could lead to a condition where a man-in-the-middle
+  attacker could masquerade as a trusted server by providing a certificate for the
+  wrong host, as long as it was signed by a trusted CA.
+vulnerability_id: VCID-c979-5hwu-aaah
+weaknesses: []

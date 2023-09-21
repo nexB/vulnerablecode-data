@@ -1,0 +1,73 @@
+affected_purls:
+- pkg:composer/symfony/security@4.4.0
+- pkg:composer/symfony/security@4.4.1
+- pkg:composer/symfony/security@4.4.2
+- pkg:composer/symfony/security@4.4.3
+- pkg:composer/symfony/security@4.4.4
+- pkg:composer/symfony/security@4.4.5
+- pkg:composer/symfony/security@4.4.6
+- pkg:composer/symfony/security-http@4.4.0
+- pkg:composer/symfony/security-http@4.4.1
+- pkg:composer/symfony/security-http@4.4.2
+- pkg:composer/symfony/security-http@4.4.3
+- pkg:composer/symfony/security-http@4.4.4
+- pkg:composer/symfony/security-http@4.4.5
+- pkg:composer/symfony/security-http@4.4.6
+- pkg:composer/symfony/security-http@5.0.0
+- pkg:composer/symfony/security-http@5.0.1
+- pkg:composer/symfony/security-http@5.0.2
+- pkg:composer/symfony/security-http@5.0.3
+- pkg:composer/symfony/security-http@5.0.4
+- pkg:composer/symfony/security-http@5.0.5
+- pkg:composer/symfony/security-http@5.0.6
+aliases:
+- CVE-2020-5275
+- GHSA-g4m9-5hpf-hx72
+fixed_purl:
+- pkg:composer/symfony/security@4.4.7
+- pkg:composer/symfony/security-http@4.4.7
+- pkg:composer/symfony/security-http@5.0.7
+- pkg:deb/debian/symfony@0?distro=sid
+- pkg:deb/debian/symfony@3.4.22%2Bdfsg-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/symfony@4.4.19%2Bdfsg-2%2Bdeb11u3?distro=sid
+- pkg:deb/debian/symfony@4.4.8-1?distro=sid
+- pkg:deb/debian/symfony@5.4.23%2Bdfsg-1?distro=sid
+references:
+- id: 154902
+  reference_id: ''
+  url: https://github.com/symfony/symfony/commit/c935e4a3fba6cc2ab463a6ca382858068d63cebf
+- id: 154838
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/C36JLPHUPKDFAX6D5WYFC4ALO2K7RDUQ/
+- id: 129467
+  reference_id: '961415'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=961415
+- id: 154903
+  reference_id: CVE-2020-5275
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-5275
+- id: 154904
+  reference_id: GHSA-g4m9-5hpf-hx72
+  url: https://github.com/advisories/GHSA-g4m9-5hpf-hx72
+- id: 154901
+  reference_id: GHSA-g4m9-5hpf-hx72
+  url: https://github.com/symfony/symfony/security/advisories/GHSA-g4m9-5hpf-hx72
+severities:
+- id: 22270
+  reference_id: 154904
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 22269
+  reference_id: 154901
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: In symfony/security-http before versions 4.4.7 and 5.0.7, when a `Firewall`
+  checks access control rule, it iterate overs each rule's attributes and stops as
+  soon as the accessDecisionManager decides to grant access on the attribute, preventing
+  the check of next attributes that should have been take into account in an unanimous
+  strategy. The accessDecisionManager is now called with all attributes at once, allowing
+  the unanimous strategy being applied on each attribute. This issue is patched in
+  versions 4.4.7 and 5.0.7.
+vulnerability_id: VCID-j6za-37b5-aaam
+weaknesses: []

@@ -1,0 +1,170 @@
+vulnerability_id: VCID-pr4k-y2az-aaag
+aliases:
+  - CVE-2019-19082
+summary: Memory leaks in *create_resource_pool() functions under drivers/gpu/drm/amd/display/dc
+  in the Linux kernel through 5.3.11 allow attackers to cause a denial of service (memory consumption).
+  This affects the dce120_create_resource_pool() function in drivers/gpu/drm/amd/display/dc/dce120/dce120_resource.c,
+  the dce110_create_resource_pool() function in drivers/gpu/drm/amd/display/dc/dce110/dce110_resource.c,
+  the dce100_create_resource_pool() function in drivers/gpu/drm/amd/display/dc/dce100/dce100_resource.c,
+  the dcn10_create_resource_pool() function in drivers/gpu/drm/amd/display/dc/dcn10/dcn10_resource.c,
+  and the dce112_create_resource_pool() function in drivers/gpu/drm/amd/display/dc/dce112/dce112_resource.c,
+  aka CID-104c307147ad.
+severities:
+  - id: 692507
+    reference_id: 1453377
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 73371
+    reference_id: 204018
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 692508
+    reference_id: 1453378
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692509
+    reference_id: 789268
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691824
+    reference_id: 1452920
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691581
+    reference_id: 1452720
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691585
+    reference_id: 1452724
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691586
+    reference_id: 1452725
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691823
+    reference_id: 1452919
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691569
+    reference_id: 1452708
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691573
+    reference_id: 1452712
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691574
+    reference_id: 1452713
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 73370
+    reference_id: 204017
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 395312
+    reference_id: 789269
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:C
+  - id: 395310
+    reference_id: 789269
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 779500
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00029.html
+    reference_id:
+  - id: 1453377
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19082.html
+    reference_id:
+  - id: 204018
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19082.json
+    reference_id:
+  - id: 1453378
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19082
+    reference_id:
+  - id: 789268
+    url: https://github.com/torvalds/linux/commit/104c307147ad379617472dd91a5bcb368d72bd6d
+    reference_id:
+  - id: 788265
+    url: https://security.netapp.com/advisory/ntap-20191205-0001/
+    reference_id:
+  - id: 1452920
+    url: https://ubuntu.com/security/notices/USN-4258-1
+    reference_id:
+  - id: 1452720
+    url: https://ubuntu.com/security/notices/USN-4284-1
+    reference_id:
+  - id: 1452724
+    url: https://ubuntu.com/security/notices/USN-4287-1
+    reference_id:
+  - id: 1452725
+    url: https://ubuntu.com/security/notices/USN-4287-2
+    reference_id:
+  - id: 780072
+    url: https://usn.ubuntu.com/4258-1/
+    reference_id:
+  - id: 780073
+    url: https://usn.ubuntu.com/4284-1/
+    reference_id:
+  - id: 780074
+    url: https://usn.ubuntu.com/4287-1/
+    reference_id:
+  - id: 780075
+    url: https://usn.ubuntu.com/4287-2/
+    reference_id:
+  - id: 1452919
+    url: https://usn.ubuntu.com/usn/usn-4258-1
+    reference_id:
+  - id: 1452708
+    url: https://usn.ubuntu.com/usn/usn-4284-1
+    reference_id:
+  - id: 1452712
+    url: https://usn.ubuntu.com/usn/usn-4287-1
+    reference_id:
+  - id: 1452713
+    url: https://usn.ubuntu.com/usn/usn-4287-2
+    reference_id:
+  - id: 204017
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1776832
+    reference_id: 1776832
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 789269
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19082
+    reference_id: CVE-2019-19082
+weaknesses: []

@@ -1,0 +1,174 @@
+vulnerability_id: VCID-hxk4-qtsj-aaaa
+aliases:
+  - CVE-2018-7191
+summary: In the tun subsystem in the Linux kernel before 4.13.14, dev_get_valid_name is not
+  called before register_netdevice. This allows local users to cause a denial of service (NULL
+  pointer dereference and panic) via an ioctl(TUNSETIFF) call with a dev name containing a /
+  character. This is similar to CVE-2013-4343.
+severities:
+  - id: 688570
+    reference_id: 1450473
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618950
+    reference_id: 937851
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 688571
+    reference_id: 757652
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688572
+    reference_id: 757653
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688573
+    reference_id: 757654
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688574
+    reference_id: 1450474
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688579
+    reference_id: 757657
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688580
+    reference_id: 757658
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688575
+    reference_id: 757655
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688576
+    reference_id: 757656
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688577
+    reference_id: 1450475
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688578
+    reference_id: 1450476
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618949
+    reference_id: 937850
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 355289
+    reference_id: 757659
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 355287
+    reference_id: 757659
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 50033
+    reference_id: 174506
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50032
+    reference_id: 174505
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 49212
+    reference_id: 173509
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48948
+    reference_id: 173258
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 534531
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00071.html
+    reference_id:
+  - id: 534532
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00039.html
+    reference_id:
+  - id: 534533
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00048.html
+    reference_id:
+  - id: 1450473
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-7191.html
+    reference_id:
+  - id: 937851
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-7191.json
+    reference_id:
+  - id: 757652
+    url: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1743792
+    reference_id:
+  - id: 757653
+    url: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1748846
+    reference_id:
+  - id: 757654
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.14
+    reference_id:
+  - id: 1450474
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7191
+    reference_id:
+  - id: 757657
+    url: https://github.com/torvalds/linux/commit/0ad646c81b2182f7fa67ec0c8c825e0ee165696d
+    reference_id:
+  - id: 757658
+    url: https://github.com/torvalds/linux/commit/5c25f65fd1e42685f7ccd80e0621829c105785d9
+    reference_id:
+  - id: 757655
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0ad646c81b2182f7fa67ec0c8c825e0ee165696d
+    reference_id:
+  - id: 757656
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=5c25f65fd1e42685f7ccd80e0621829c105785d9
+    reference_id:
+  - id: 1450475
+    url: https://git.kernel.org/linus/0ad646c81b2182f7fa67ec0c8c825e0ee165696d
+    reference_id:
+  - id: 1450476
+    url: https://git.kernel.org/linus/5c25f65fd1e42685f7ccd80e0621829c105785d9
+    reference_id:
+  - id: 757651
+    url: http://www.securityfocus.com/bid/108380
+    reference_id:
+  - id: 937850
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1716328
+    reference_id: 1716328
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 757659
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-7191
+    reference_id: CVE-2018-7191
+  - id: 174506
+    url: https://access.redhat.com/errata/RHSA-2020:1016
+    reference_id: RHSA-2020:1016
+  - id: 174505
+    url: https://access.redhat.com/errata/RHSA-2020:1070
+    reference_id: RHSA-2020:1070
+  - id: 173509
+    url: https://access.redhat.com/errata/RHSA-2020:2522
+    reference_id: RHSA-2020:2522
+  - id: 173258
+    url: https://access.redhat.com/errata/RHSA-2020:2851
+    reference_id: RHSA-2020:2851
+weaknesses: []

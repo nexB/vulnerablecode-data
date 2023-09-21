@@ -1,0 +1,46 @@
+affected_purls:
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-cdt@9.4.3
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-groovy@2.9.2
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-groovy@3.0.0
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-wtp@3.9.5
+aliases:
+- CVE-2019-10753
+- GHSA-gvxv-5fp2-358q
+fixed_purl:
+- pkg:deb/debian/eclipse-wtp@0?distro=sid
+- pkg:deb/debian/eclipse-wtp@3.18-5?distro=sid
+- pkg:deb/debian/eclipse-wtp@3.18-6?distro=sid
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-cdt@9.4.4
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-groovy@3.0.1
+- pkg:maven/com.diffplug.spotless/spotless-eclipse-wtp@3.9.6
+references:
+- id: 146886
+  reference_id: ''
+  url: https://github.com/diffplug/spotless/issues/360
+- id: 146885
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-JAVA-COMDIFFPLUGSPOTLESS-460377
+- id: 146884
+  reference_id: CVE-2019-10753
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-10753
+- id: 146887
+  reference_id: GHSA-gvxv-5fp2-358q
+  url: https://github.com/advisories/GHSA-gvxv-5fp2-358q
+severities:
+- id: 20654
+  reference_id: 146887
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: In all versions prior to version 3.9.6 for eclipse-wtp, all versions prior
+  to version 9.4.4 for eclipse-cdt, and all versions prior to version 3.0.1 for eclipse-groovy,
+  Spotless was resolving dependencies over an insecure channel (http). If the build
+  occurred over an insecure connection, a malicious user could have perform a Man-in-the-Middle
+  attack during the build and alter the build artifacts that were produced. In case
+  that any of these artifacts were compromised, any developers using these could be
+  altered. **Note:** In order to validate that this artifact was not compromised,
+  the maintainer would need to confirm that none of the artifacts published to the
+  registry were not altered with. Until this happens, we can not guarantee that this
+  artifact was not compromised even though the probability that this happened is low.
+vulnerability_id: VCID-8ca8-vyh1-aaap
+weaknesses: []

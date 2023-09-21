@@ -1,0 +1,470 @@
+vulnerability_id: VCID-qc43-mse4-aaad
+aliases:
+  - CVE-2005-3191
+summary: Multiple heap-based buffer overflows in the (1) DCTStream::readProgressiveSOF and (2)
+  DCTStream::readBaselineSOF functions in the DCT stream parsing code (Stream.cc) in xpdf 3.01
+  and earlier, as used in products such as (a) Poppler, (b) teTeX, (c) KDE kpdf, (d) pdftohtml,
+  (e) KOffice KWord, (f) CUPS, and (g) libextractor allow user-assisted attackers to cause a
+  denial of service (heap corruption) and possibly execute arbitrary code via a crafted PDF
+  file with an out-of-range number of components (numComps), which is used as an array index.
+severities:
+  - id: 78386
+    reference_id: 209988
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 32665
+    reference_id: 133993
+    scoring_system: cvssv2
+    value: '5.1'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:P/A:P
+  - id: 78355
+    reference_id: 209936
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 78388
+    reference_id: 209990
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 78358
+    reference_id: 209939
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 78387
+    reference_id: 209989
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 78354
+    reference_id: 209935
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 133891
+    url: ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2006.15/SCOSA-2006.15.txt
+    reference_id:
+  - id: 133892
+    url: ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2006.20/SCOSA-2006.20.txt
+    reference_id:
+  - id: 133893
+    url: ftp://ftp.sco.com/pub/updates/UnixWare/SCOSA-2006.21/SCOSA-2006.21.txt
+    reference_id:
+  - id: 126317
+    url: ftp://patches.sgi.com/support/free/security/advisories/20051201-01-U
+    reference_id:
+  - id: 93795
+    url: ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U
+    reference_id:
+  - id: 133894
+    url: ftp://patches.sgi.com/support/free/security/advisories/20060201-01-U
+    reference_id:
+  - id: 133895
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=342289
+    reference_id:
+  - id: 133896
+    url: http://lists.suse.com/archive/suse-security-announce/2006-Jan/0001.html
+    reference_id:
+  - id: 133897
+    url: http://rhn.redhat.com/errata/RHSA-2005-868.html
+    reference_id:
+  - id: 209991
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-3191.json
+    reference_id:
+  - id: 1464269
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3191
+    reference_id:
+  - id: 133898
+    url: http://secunia.com/advisories/17897
+    reference_id:
+  - id: 133899
+    url: http://secunia.com/advisories/17908
+    reference_id:
+  - id: 133900
+    url: http://secunia.com/advisories/17912
+    reference_id:
+  - id: 133901
+    url: http://secunia.com/advisories/17916
+    reference_id:
+  - id: 133902
+    url: http://secunia.com/advisories/17920
+    reference_id:
+  - id: 133903
+    url: http://secunia.com/advisories/17921
+    reference_id:
+  - id: 133904
+    url: http://secunia.com/advisories/17926
+    reference_id:
+  - id: 133905
+    url: http://secunia.com/advisories/17929
+    reference_id:
+  - id: 133906
+    url: http://secunia.com/advisories/17940
+    reference_id:
+  - id: 133907
+    url: http://secunia.com/advisories/17955
+    reference_id:
+  - id: 133908
+    url: http://secunia.com/advisories/17976
+    reference_id:
+  - id: 133909
+    url: http://secunia.com/advisories/18009
+    reference_id:
+  - id: 133910
+    url: http://secunia.com/advisories/18055
+    reference_id:
+  - id: 133911
+    url: http://secunia.com/advisories/18061
+    reference_id:
+  - id: 133912
+    url: http://secunia.com/advisories/18147
+    reference_id:
+  - id: 133913
+    url: http://secunia.com/advisories/18189
+    reference_id:
+  - id: 133914
+    url: http://secunia.com/advisories/18191
+    reference_id:
+  - id: 133915
+    url: http://secunia.com/advisories/18192
+    reference_id:
+  - id: 133916
+    url: http://secunia.com/advisories/18303
+    reference_id:
+  - id: 133917
+    url: http://secunia.com/advisories/18313
+    reference_id:
+  - id: 133918
+    url: http://secunia.com/advisories/18336
+    reference_id:
+  - id: 133919
+    url: http://secunia.com/advisories/18349
+    reference_id:
+  - id: 133920
+    url: http://secunia.com/advisories/18380
+    reference_id:
+  - id: 133921
+    url: http://secunia.com/advisories/18385
+    reference_id:
+  - id: 133922
+    url: http://secunia.com/advisories/18387
+    reference_id:
+  - id: 133923
+    url: http://secunia.com/advisories/18389
+    reference_id:
+  - id: 125651
+    url: http://secunia.com/advisories/18398
+    reference_id:
+  - id: 125652
+    url: http://secunia.com/advisories/18407
+    reference_id:
+  - id: 133924
+    url: http://secunia.com/advisories/18416
+    reference_id:
+  - id: 133925
+    url: http://secunia.com/advisories/18428
+    reference_id:
+  - id: 133926
+    url: http://secunia.com/advisories/18436
+    reference_id:
+  - id: 133927
+    url: http://secunia.com/advisories/18448
+    reference_id:
+  - id: 133928
+    url: http://secunia.com/advisories/18503
+    reference_id:
+  - id: 93798
+    url: http://secunia.com/advisories/18517
+    reference_id:
+  - id: 133929
+    url: http://secunia.com/advisories/18534
+    reference_id:
+  - id: 131919
+    url: http://secunia.com/advisories/18549
+    reference_id:
+  - id: 126332
+    url: http://secunia.com/advisories/18554
+    reference_id:
+  - id: 133930
+    url: http://secunia.com/advisories/18582
+    reference_id:
+  - id: 133931
+    url: http://secunia.com/advisories/18674
+    reference_id:
+  - id: 133932
+    url: http://secunia.com/advisories/18675
+    reference_id:
+  - id: 133933
+    url: http://secunia.com/advisories/18679
+    reference_id:
+  - id: 133934
+    url: http://secunia.com/advisories/18908
+    reference_id:
+  - id: 133935
+    url: http://secunia.com/advisories/18913
+    reference_id:
+  - id: 133936
+    url: http://secunia.com/advisories/19230
+    reference_id:
+  - id: 133937
+    url: http://secunia.com/advisories/19377
+    reference_id:
+  - id: 133938
+    url: http://secunia.com/advisories/19797
+    reference_id:
+  - id: 133939
+    url: http://secunia.com/advisories/19798
+    reference_id:
+  - id: 125654
+    url: http://secunia.com/advisories/25729
+    reference_id:
+  - id: 133940
+    url: http://secunia.com/advisories/26413
+    reference_id:
+  - id: 133941
+    url: http://securityreason.com/securityalert/233
+    reference_id:
+  - id: 133942
+    url: http://securityreason.com/securityalert/234
+    reference_id:
+  - id: 133943
+    url: http://securitytracker.com/id?1015309
+    reference_id:
+  - id: 133944
+    url: http://securitytracker.com/id?1015324
+    reference_id:
+  - id: 133989
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/23443
+    reference_id:
+  - id: 133990
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/23444
+    reference_id:
+  - id: 133991
+    url: https://issues.rpath.com/browse/RPL-1609
+    reference_id:
+  - id: 133945
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.472683
+    reference_id:
+  - id: 133946
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.474747
+    reference_id:
+  - id: 133992
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9760
+    reference_id:
+  - id: 125655
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102972-1
+    reference_id:
+  - id: 133947
+    url: http://www.debian.org/security/2005/dsa-931
+    reference_id:
+  - id: 133948
+    url: http://www.debian.org/security/2005/dsa-932
+    reference_id:
+  - id: 133949
+    url: http://www.debian.org/security/2005/dsa-937
+    reference_id:
+  - id: 133950
+    url: http://www.debian.org/security/2005/dsa-938
+    reference_id:
+  - id: 133951
+    url: http://www.debian.org/security/2005/dsa-940
+    reference_id:
+  - id: 125658
+    url: http://www.debian.org/security/2006/dsa-936
+    reference_id:
+  - id: 133952
+    url: http://www.debian.org/security/2006/dsa-950
+    reference_id:
+  - id: 133953
+    url: http://www.debian.org/security/2006/dsa-961
+    reference_id:
+  - id: 133954
+    url: http://www.debian.org/security/2006/dsa-962
+    reference_id:
+  - id: 133955
+    url: http://www.gentoo.org/security/en/glsa/glsa-200512-08.xml
+    reference_id:
+  - id: 133956
+    url: http://www.gentoo.org/security/en/glsa/glsa-200601-02.xml
+    reference_id:
+  - id: 133957
+    url: http://www.idefense.com/application/poi/display?id=342&type=vulnerabilities
+    reference_id:
+  - id: 133958
+    url: http://www.idefense.com/application/poi/display?id=343&type=vulnerabilities
+    reference_id:
+  - id: 133959
+    url: http://www.kde.org/info/security/advisory-20051207-1.txt
+    reference_id:
+  - id: 133960
+    url: http://www.kde.org/info/security/advisory-20051207-2.txt
+    reference_id:
+  - id: 133961
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:003
+    reference_id:
+  - id: 133962
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:004
+    reference_id:
+  - id: 133963
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:005
+    reference_id:
+  - id: 133964
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:006
+    reference_id:
+  - id: 133965
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:008
+    reference_id:
+  - id: 133966
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:010
+    reference_id:
+  - id: 133967
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:011
+    reference_id:
+  - id: 133968
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:012
+    reference_id:
+  - id: 133969
+    url: http://www.novell.com/linux/security/advisories/2005_29_sr.html
+    reference_id:
+  - id: 131923
+    url: http://www.novell.com/linux/security/advisories/2006_02_sr.html
+    reference_id:
+  - id: 133970
+    url: http://www.redhat.com/archives/fedora-announce-list/2005-December/msg00015.html
+    reference_id:
+  - id: 133971
+    url: http://www.redhat.com/archives/fedora-announce-list/2005-December/msg00016.html
+    reference_id:
+  - id: 133972
+    url: http://www.redhat.com/archives/fedora-announce-list/2005-December/msg00036.html
+    reference_id:
+  - id: 133973
+    url: http://www.redhat.com/archives/fedora-announce-list/2005-December/msg00037.html
+    reference_id:
+  - id: 133974
+    url: http://www.redhat.com/support/errata/RHSA-2005-840.html
+    reference_id:
+  - id: 133975
+    url: http://www.redhat.com/support/errata/RHSA-2005-867.html
+    reference_id:
+  - id: 133976
+    url: http://www.redhat.com/support/errata/RHSA-2005-878.html
+    reference_id:
+  - id: 133977
+    url: http://www.redhat.com/support/errata/RHSA-2006-0160.html
+    reference_id:
+  - id: 133978
+    url: http://www.securityfocus.com/archive/1/418883/100/0/threaded
+    reference_id:
+  - id: 125664
+    url: http://www.securityfocus.com/archive/1/427053/100/0/threaded
+    reference_id:
+  - id: 125665
+    url: http://www.securityfocus.com/archive/1/427990/100/0/threaded
+    reference_id:
+  - id: 133979
+    url: http://www.securityfocus.com/bid/15726
+    reference_id:
+  - id: 133980
+    url: http://www.securityfocus.com/bid/15727
+    reference_id:
+  - id: 133981
+    url: http://www.trustix.org/errata/2005/0072/
+    reference_id:
+  - id: 133982
+    url: http://www.ubuntulinux.org/usn/usn-227-1
+    reference_id:
+  - id: 133983
+    url: http://www.vupen.com/english/advisories/2005/2786
+    reference_id:
+  - id: 133984
+    url: http://www.vupen.com/english/advisories/2005/2787
+    reference_id:
+  - id: 133985
+    url: http://www.vupen.com/english/advisories/2005/2788
+    reference_id:
+  - id: 133986
+    url: http://www.vupen.com/english/advisories/2005/2789
+    reference_id:
+  - id: 133987
+    url: http://www.vupen.com/english/advisories/2005/2790
+    reference_id:
+  - id: 133988
+    url: http://www.vupen.com/english/advisories/2005/2856
+    reference_id:
+  - id: 125667
+    url: http://www.vupen.com/english/advisories/2007/2280
+    reference_id:
+  - id: 209988
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617796
+    reference_id: 1617796
+  - id: 40371
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=342281
+    reference_id: 342281
+  - id: 52313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:0.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:0.90:*:*:*:*:*:*:*
+  - id: 73092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:0.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:0.91:*:*:*:*:*:*:*
+  - id: 97271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:0.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:0.92:*:*:*:*:*:*:*
+  - id: 97272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:0.93:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:0.93:*:*:*:*:*:*:*
+  - id: 73093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:1.0:*:*:*:*:*:*:*
+  - id: 73094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:1.0a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:1.0a:*:*:*:*:*:*:*
+  - id: 73095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:1.1:*:*:*:*:*:*:*
+  - id: 73096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:2.0:*:*:*:*:*:*:*
+  - id: 73097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:2.1:*:*:*:*:*:*:*
+  - id: 112623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:2.2:*:*:*:*:*:*:*
+  - id: 97273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:2.3:*:*:*:*:*:*:*
+  - id: 97274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:3.0:*:*:*:*:*:*:*
+  - id: 133994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:3.0.1:*:*:*:*:*:*:*
+  - id: 125672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:3.0_pl2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:3.0_pl2:*:*:*:*:*:*:*
+  - id: 125673
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xpdf:xpdf:3.0_pl3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xpdf:xpdf:3.0_pl3:*:*:*:*:*:*:*
+  - id: 133993
+    url: https://nvd.nist.gov/vuln/detail/CVE-2005-3191
+    reference_id: CVE-2005-3191
+  - id: 209936
+    url: https://access.redhat.com/errata/RHSA-2005:840
+    reference_id: RHSA-2005:840
+  - id: 209990
+    url: https://access.redhat.com/errata/RHSA-2005:867
+    reference_id: RHSA-2005:867
+  - id: 209939
+    url: https://access.redhat.com/errata/RHSA-2005:868
+    reference_id: RHSA-2005:868
+  - id: 209989
+    url: https://access.redhat.com/errata/RHSA-2005:878
+    reference_id: RHSA-2005:878
+  - id: 209935
+    url: https://access.redhat.com/errata/RHSA-2006:0160
+    reference_id: RHSA-2006:0160
+weaknesses: []

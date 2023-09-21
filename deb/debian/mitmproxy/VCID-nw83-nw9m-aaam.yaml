@@ -1,0 +1,59 @@
+vulnerability_id: VCID-nw83-nw9m-aaam
+aliases:
+  - CVE-2022-24766
+  - GHSA-gcx2-gvj7-pxv3
+  - PYSEC-2022-170
+summary: mitmproxy is an interactive, SSL/TLS-capable intercepting proxy. In mitmproxy 7.0.4
+  and below, a malicious client or server is able to perform HTTP request smuggling attacks
+  through mitmproxy. This means that a malicious client/server could smuggle a request/response
+  through mitmproxy as part of another request/response's HTTP message body. While mitmproxy
+  would only see one request, the target server would see multiple requests. A smuggled request
+  is still captured as part of another request's body, but it does not appear in the request
+  list and does not go through the usual mitmproxy event hooks, where users may have implemented
+  custom access control checks or input sanitization. Unless mitmproxy is used to protect an
+  HTTP/1 service, no action is required. The vulnerability has been fixed in mitmproxy 8.0.0
+  and above. There are currently no known workarounds.
+severities:
+  - id: 589999
+    reference_id: 20940
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 589997
+    reference_id: 20940
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 3384
+    reference_id: 20941
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+  - id: 3383
+    reference_id: 20939
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 8868
+    url: https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b
+    reference_id:
+  - id: 8866
+    url: https://mitmproxy.org/posts/releases/mitmproxy8/
+    reference_id:
+  - id: 70126
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1008948
+    reference_id: 1008948
+  - id: 895322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitmproxy:mitmproxy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitmproxy:mitmproxy:*:*:*:*:*:*:*:*
+  - id: 20940
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24766
+    reference_id: CVE-2022-24766
+  - id: 20941
+    url: https://github.com/advisories/GHSA-gcx2-gvj7-pxv3
+    reference_id: GHSA-gcx2-gvj7-pxv3
+  - id: 20939
+    url: https://github.com/mitmproxy/mitmproxy/security/advisories/GHSA-gcx2-gvj7-pxv3
+    reference_id: GHSA-gcx2-gvj7-pxv3
+weaknesses: []

@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2020-29385
+fixed_purl:
+- pkg:deb/debian/gdk-pixbuf@0?distro=sid
+- pkg:deb/debian/gdk-pixbuf@2.38.1%2Bdfsg-1?distro=sid
+- pkg:deb/debian/gdk-pixbuf@2.42.10%2Bdfsg-1?distro=sid
+- pkg:deb/debian/gdk-pixbuf@2.42.2%2Bdfsg-1?distro=sid
+- pkg:deb/debian/gdk-pixbuf@2.42.2%2Bdfsg-1%2Bdeb11u1?distro=sid
+references:
+- id: 129401
+  reference_id: '977166'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=977166
+severities: []
+summary: GNOME gdk-pixbuf (aka GdkPixbuf) before 2.42.2 allows a denial of service
+  (infinite loop) in lzw.c in the function write_indexes. if c->self_code equals 10,
+  self->code_table[10].extends will assign the value 11 to c. The next execution in
+  the loop will assign self->code_table[11].extends to c, which will give the value
+  of 10. This will make the loop run infinitely. This bug can, for example, be triggered
+  by calling this function with a GIF image with LZW compression that is crafted in
+  a special way.
+vulnerability_id: VCID-ugj8-2t1b-aaak
+weaknesses: []

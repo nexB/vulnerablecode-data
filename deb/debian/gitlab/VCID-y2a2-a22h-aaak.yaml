@@ -1,0 +1,550 @@
+vulnerability_id: VCID-y2a2-a22h-aaak
+aliases:
+  - CVE-2017-11437
+summary: GitLab Enterprise Edition (EE) before 8.17.7, 9.0.11, 9.1.8, 9.2.8, and 9.3.8 allows
+  an authenticated user with the ability to create a project to use the mirroring feature to
+  potentially read repositories belonging to other users.
+severities:
+  - id: 255207
+    reference_id: 673189
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 255205
+    reference_id: 673189
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 673188
+    url: https://about.gitlab.com/2017/07/19/gitlab-9-dot-3-dot-8-released/
+    reference_id:
+  - id: 673190
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.0:*:*:*:enterprise:*:*:*
+  - id: 673191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.10:*:*:*:enterprise:*:*:*
+  - id: 673192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.11:*:*:*:enterprise:*:*:*
+  - id: 673193
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.12:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.12:*:*:*:enterprise:*:*:*
+  - id: 673194
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.13:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.13:*:*:*:enterprise:*:*:*
+  - id: 673195
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.1:*:*:*:enterprise:*:*:*
+  - id: 673196
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.2:*:*:*:enterprise:*:*:*
+  - id: 673197
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.3:*:*:*:enterprise:*:*:*
+  - id: 673198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.4:*:*:*:enterprise:*:*:*
+  - id: 673199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.5:*:*:*:enterprise:*:*:*
+  - id: 673200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.6:*:*:*:enterprise:*:*:*
+  - id: 673201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.7:*:*:*:enterprise:*:*:*
+  - id: 673202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.8:*:*:*:enterprise:*:*:*
+  - id: 673203
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.10.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.10.9:*:*:*:enterprise:*:*:*
+  - id: 673204
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.0:*:*:*:enterprise:*:*:*
+  - id: 673205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.10:*:*:*:enterprise:*:*:*
+  - id: 673206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.11:*:*:*:enterprise:*:*:*
+  - id: 673207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.1:*:*:*:enterprise:*:*:*
+  - id: 673208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.2:*:*:*:enterprise:*:*:*
+  - id: 673209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.3:*:*:*:enterprise:*:*:*
+  - id: 673210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.4:*:*:*:enterprise:*:*:*
+  - id: 673211
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.5:*:*:*:enterprise:*:*:*
+  - id: 673212
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.6:*:*:*:enterprise:*:*:*
+  - id: 673213
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.7:*:*:*:enterprise:*:*:*
+  - id: 673214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.8:*:*:*:enterprise:*:*:*
+  - id: 673215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.11.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.11.9:*:*:*:enterprise:*:*:*
+  - id: 673216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.0:*:*:*:enterprise:*:*:*
+  - id: 673217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.10:*:*:*:enterprise:*:*:*
+  - id: 673218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.11:*:*:*:enterprise:*:*:*
+  - id: 673219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.12:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.12:*:*:*:enterprise:*:*:*
+  - id: 673220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.1:*:*:*:enterprise:*:*:*
+  - id: 673221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.2:*:*:*:enterprise:*:*:*
+  - id: 673222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.3:*:*:*:enterprise:*:*:*
+  - id: 673223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.4:*:*:*:enterprise:*:*:*
+  - id: 673224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.5:*:*:*:enterprise:*:*:*
+  - id: 673225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.6:*:*:*:enterprise:*:*:*
+  - id: 673226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.7:*:*:*:enterprise:*:*:*
+  - id: 673227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.8:*:*:*:enterprise:*:*:*
+  - id: 673228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.12.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.12.9:*:*:*:enterprise:*:*:*
+  - id: 662767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.0:*:*:*:enterprise:*:*:*
+  - id: 673229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.10:*:*:*:enterprise:*:*:*
+  - id: 673230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.11:*:*:*:enterprise:*:*:*
+  - id: 662768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.1:*:*:*:enterprise:*:*:*
+  - id: 662769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.2:*:*:*:enterprise:*:*:*
+  - id: 662771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.3:*:*:*:enterprise:*:*:*
+  - id: 662773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.4:*:*:*:enterprise:*:*:*
+  - id: 662775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.5:*:*:*:enterprise:*:*:*
+  - id: 662777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.6:*:*:*:enterprise:*:*:*
+  - id: 662779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.7:*:*:*:enterprise:*:*:*
+  - id: 673231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.8:*:*:*:enterprise:*:*:*
+  - id: 673232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.13.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.13.9:*:*:*:enterprise:*:*:*
+  - id: 662781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.0:*:*:*:enterprise:*:*:*
+  - id: 673233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.10:*:*:*:enterprise:*:*:*
+  - id: 662783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.1:*:*:*:enterprise:*:*:*
+  - id: 662785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.2:*:*:*:enterprise:*:*:*
+  - id: 673234
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.3:*:*:*:enterprise:*:*:*
+  - id: 673235
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.4:*:*:*:enterprise:*:*:*
+  - id: 673236
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.5:*:*:*:enterprise:*:*:*
+  - id: 673237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.6:*:*:*:enterprise:*:*:*
+  - id: 673238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.8:*:*:*:enterprise:*:*:*
+  - id: 673239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.14.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.14.9:*:*:*:enterprise:*:*:*
+  - id: 673240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.0:*:*:*:enterprise:*:*:*
+  - id: 673241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.1:*:*:*:enterprise:*:*:*
+  - id: 673242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.2:*:*:*:enterprise:*:*:*
+  - id: 673243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.3:*:*:*:enterprise:*:*:*
+  - id: 673244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.4:*:*:*:enterprise:*:*:*
+  - id: 673245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.6:*:*:*:enterprise:*:*:*
+  - id: 673246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.7:*:*:*:enterprise:*:*:*
+  - id: 673247
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.15.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.15.8:*:*:*:enterprise:*:*:*
+  - id: 673248
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.0:*:*:*:enterprise:*:*:*
+  - id: 673249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.1:*:*:*:enterprise:*:*:*
+  - id: 673250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.2:*:*:*:enterprise:*:*:*
+  - id: 673251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.3:*:*:*:enterprise:*:*:*
+  - id: 673252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.4:*:*:*:enterprise:*:*:*
+  - id: 673253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.5:*:*:*:enterprise:*:*:*
+  - id: 673254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.6:*:*:*:enterprise:*:*:*
+  - id: 673255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.7:*:*:*:enterprise:*:*:*
+  - id: 673256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.8:*:*:*:enterprise:*:*:*
+  - id: 673257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.16.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.16.9:*:*:*:enterprise:*:*:*
+  - id: 673258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.0:*:*:*:enterprise:*:*:*
+  - id: 673259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.1:*:*:*:enterprise:*:*:*
+  - id: 673260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.2:*:*:*:enterprise:*:*:*
+  - id: 673261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.3:*:*:*:enterprise:*:*:*
+  - id: 673262
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.4:*:*:*:enterprise:*:*:*
+  - id: 673263
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.5:*:*:*:enterprise:*:*:*
+  - id: 673264
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.17.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.17.6:*:*:*:enterprise:*:*:*
+  - id: 673265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.0:*:*:*:enterprise:*:*:*
+  - id: 673266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.10:*:*:*:enterprise:*:*:*
+  - id: 673267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.11:*:*:*:enterprise:*:*:*
+  - id: 673268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.12:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.12:*:*:*:enterprise:*:*:*
+  - id: 673269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.13:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.13:*:*:*:enterprise:*:*:*
+  - id: 673270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.1:*:*:*:enterprise:*:*:*
+  - id: 673271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.2:*:*:*:enterprise:*:*:*
+  - id: 673272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.3:*:*:*:enterprise:*:*:*
+  - id: 673273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.4:*:*:*:enterprise:*:*:*
+  - id: 673274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.5:*:*:*:enterprise:*:*:*
+  - id: 673275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.6:*:*:*:enterprise:*:*:*
+  - id: 673276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.7:*:*:*:enterprise:*:*:*
+  - id: 673277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.8:*:*:*:enterprise:*:*:*
+  - id: 673278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.5.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.5.9:*:*:*:enterprise:*:*:*
+  - id: 673279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.0:*:*:*:enterprise:*:*:*
+  - id: 673280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.1:*:*:*:enterprise:*:*:*
+  - id: 673281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.2:*:*:*:enterprise:*:*:*
+  - id: 673282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.3:*:*:*:enterprise:*:*:*
+  - id: 673283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.4:*:*:*:enterprise:*:*:*
+  - id: 673284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.5:*:*:*:enterprise:*:*:*
+  - id: 673285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.6:*:*:*:enterprise:*:*:*
+  - id: 673286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.7:*:*:*:enterprise:*:*:*
+  - id: 673287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.8:*:*:*:enterprise:*:*:*
+  - id: 673288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.6.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.6.9:*:*:*:enterprise:*:*:*
+  - id: 673289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.0:*:*:*:enterprise:*:*:*
+  - id: 673290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.1:*:*:*:enterprise:*:*:*
+  - id: 673291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.2:*:*:*:enterprise:*:*:*
+  - id: 673292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.3:*:*:*:enterprise:*:*:*
+  - id: 673293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.4:*:*:*:enterprise:*:*:*
+  - id: 673294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.5:*:*:*:enterprise:*:*:*
+  - id: 673295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.6:*:*:*:enterprise:*:*:*
+  - id: 673296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.7:*:*:*:enterprise:*:*:*
+  - id: 673297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.8:*:*:*:enterprise:*:*:*
+  - id: 673298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.7.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.7.9:*:*:*:enterprise:*:*:*
+  - id: 673299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.0:*:*:*:enterprise:*:*:*
+  - id: 673300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.1:*:*:*:enterprise:*:*:*
+  - id: 673301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.2:*:*:*:enterprise:*:*:*
+  - id: 673302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.3:*:*:*:enterprise:*:*:*
+  - id: 673303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.4:*:*:*:enterprise:*:*:*
+  - id: 673304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.5:*:*:*:enterprise:*:*:*
+  - id: 673305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.6:*:*:*:enterprise:*:*:*
+  - id: 673306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.7:*:*:*:enterprise:*:*:*
+  - id: 673307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.8:*:*:*:enterprise:*:*:*
+  - id: 673308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.8.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.8.9:*:*:*:enterprise:*:*:*
+  - id: 673309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.0:*:*:*:enterprise:*:*:*
+  - id: 673310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.10:*:*:*:enterprise:*:*:*
+  - id: 673311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.11:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.11:*:*:*:enterprise:*:*:*
+  - id: 673312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.1:*:*:*:enterprise:*:*:*
+  - id: 673313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.2:*:*:*:enterprise:*:*:*
+  - id: 673314
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.3:*:*:*:enterprise:*:*:*
+  - id: 673315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.4:*:*:*:enterprise:*:*:*
+  - id: 673316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.5:*:*:*:enterprise:*:*:*
+  - id: 673317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.6:*:*:*:enterprise:*:*:*
+  - id: 673318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:8.9.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:8.9.7:*:*:*:enterprise:*:*:*
+  - id: 673319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.0:*:*:*:enterprise:*:*:*
+  - id: 673320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.10:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.10:*:*:*:enterprise:*:*:*
+  - id: 673321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.1:*:*:*:enterprise:*:*:*
+  - id: 673322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.2:*:*:*:enterprise:*:*:*
+  - id: 673323
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.3:*:*:*:enterprise:*:*:*
+  - id: 673324
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.4:*:*:*:enterprise:*:*:*
+  - id: 673325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.5:*:*:*:enterprise:*:*:*
+  - id: 673326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.6:*:*:*:enterprise:*:*:*
+  - id: 673327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.7:*:*:*:enterprise:*:*:*
+  - id: 673328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.8:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.8:*:*:*:enterprise:*:*:*
+  - id: 673329
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.0.9:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.0.9:*:*:*:enterprise:*:*:*
+  - id: 673330
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.0:*:*:*:enterprise:*:*:*
+  - id: 673331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.1:*:*:*:enterprise:*:*:*
+  - id: 673332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.2:*:*:*:enterprise:*:*:*
+  - id: 673333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.3:*:*:*:enterprise:*:*:*
+  - id: 673334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.4:*:*:*:enterprise:*:*:*
+  - id: 673335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.5:*:*:*:enterprise:*:*:*
+  - id: 673336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.6:*:*:*:enterprise:*:*:*
+  - id: 673337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.1.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.1.7:*:*:*:enterprise:*:*:*
+  - id: 673338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.0:*:*:*:enterprise:*:*:*
+  - id: 673339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.1:*:*:*:enterprise:*:*:*
+  - id: 673340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.2:*:*:*:enterprise:*:*:*
+  - id: 673341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.3:*:*:*:enterprise:*:*:*
+  - id: 673342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.4:*:*:*:enterprise:*:*:*
+  - id: 673343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.5:*:*:*:enterprise:*:*:*
+  - id: 673344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.6:*:*:*:enterprise:*:*:*
+  - id: 673345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.2.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.2.7:*:*:*:enterprise:*:*:*
+  - id: 673346
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.0:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.0:*:*:*:enterprise:*:*:*
+  - id: 673347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.1:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.1:*:*:*:enterprise:*:*:*
+  - id: 673348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.2:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.2:*:*:*:enterprise:*:*:*
+  - id: 673349
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.3:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.3:*:*:*:enterprise:*:*:*
+  - id: 673350
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.4:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.4:*:*:*:enterprise:*:*:*
+  - id: 673351
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.5:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.5:*:*:*:enterprise:*:*:*
+  - id: 673352
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.6:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.6:*:*:*:enterprise:*:*:*
+  - id: 673353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gitlab:gitlab:9.3.7:*:*:*:enterprise:*:*:*
+    reference_id: cpe:2.3:a:gitlab:gitlab:9.3.7:*:*:*:enterprise:*:*:*
+  - id: 673189
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11437
+    reference_id: CVE-2017-11437
+weaknesses: []

@@ -1,0 +1,19 @@
+affected_purls:
+- pkg:deb/debian/ceph@12.2.11%2Bdfsg1-2.1
+aliases:
+- CVE-2021-20288
+fixed_purl:
+- pkg:deb/debian/ceph@14.2.21-1~bpo10%2B1
+references:
+- id: 129591
+  reference_id: '986974'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986974
+severities: []
+summary: An authentication flaw was found in ceph in versions before 14.2.20. When
+  the monitor handles CEPHX_GET_AUTH_SESSION_KEY requests, it doesn't sanitize other_keys,
+  allowing key reuse. An attacker who can request a global_id can exploit the ability
+  of any user to request a global_id previously associated with another user, as ceph
+  does not force the reuse of old keys to generate new ones. The highest threat from
+  this vulnerability is to data confidentiality and integrity as well as system availability.
+vulnerability_id: VCID-wcmn-6vh9-aaam
+weaknesses: []

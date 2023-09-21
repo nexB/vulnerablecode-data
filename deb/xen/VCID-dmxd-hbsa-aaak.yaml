@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2020-11743
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B24-gddaaccbbab-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.13.x, allowing guest OS users to
+  cause a denial of service because of a bad error path in GNTTABOP_map_grant. Grant
+  table operations are expected to return 0 for success, and a negative number for
+  errors. Some misplaced brackets cause one error path to return 1 instead of a negative
+  value. The grant table code in Linux treats this condition as success, and proceeds
+  with incorrectly initialised state. A buggy or malicious guest can construct its
+  grant table in such a way that, when a backend domain tries to map a grant, it hits
+  the incorrect error path. This will crash a Linux based dom0 or backend domain.
+vulnerability_id: VCID-dmxd-hbsa-aaak
+weaknesses: []

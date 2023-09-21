@@ -1,0 +1,127 @@
+affected_purls:
+- pkg:pypi/pillow@1.0
+- pkg:pypi/pillow@1.1
+- pkg:pypi/pillow@1.2
+- pkg:pypi/pillow@1.3
+- pkg:pypi/pillow@1.4
+- pkg:pypi/pillow@1.5
+- pkg:pypi/pillow@1.6
+- pkg:pypi/pillow@1.7.0
+- pkg:pypi/pillow@1.7.1
+- pkg:pypi/pillow@1.7.2
+- pkg:pypi/pillow@1.7.3
+- pkg:pypi/pillow@1.7.4
+- pkg:pypi/pillow@1.7.5
+- pkg:pypi/pillow@1.7.6
+- pkg:pypi/pillow@1.7.7
+- pkg:pypi/pillow@1.7.8
+- pkg:pypi/pillow@2.0.0
+- pkg:pypi/pillow@2.1.0
+- pkg:pypi/pillow@2.2.0
+- pkg:pypi/pillow@2.2.1
+- pkg:pypi/pillow@2.2.2
+- pkg:pypi/pillow@2.3.0
+- pkg:pypi/pillow@2.3.1
+- pkg:pypi/pillow@2.3.2
+- pkg:pypi/pillow@2.4.0
+- pkg:pypi/pillow@2.5.0
+- pkg:pypi/pillow@2.5.1
+- pkg:pypi/pillow@2.5.2
+- pkg:pypi/pillow@2.5.3
+- pkg:pypi/pillow@2.6.0
+- pkg:pypi/pillow@2.6.1
+- pkg:pypi/pillow@2.6.2
+- pkg:pypi/pillow@2.7.0
+- pkg:pypi/pillow@2.8.0
+- pkg:pypi/pillow@2.8.1
+- pkg:pypi/pillow@2.8.2
+- pkg:pypi/pillow@2.9.0
+- pkg:pypi/pillow@3.0.0
+- pkg:pypi/pillow@3.1.0
+- pkg:pypi/pillow@3.1.0.rc1
+- pkg:pypi/pillow@3.1.0rc1
+- pkg:pypi/pillow@3.1.1
+- pkg:pypi/pillow@3.1.2
+- pkg:pypi/pillow@3.2.0
+- pkg:pypi/pillow@3.3.0
+- pkg:pypi/pillow@3.3.1
+- pkg:pypi/pillow@3.3.2
+- pkg:pypi/pillow@3.3.3
+- pkg:pypi/pillow@3.4.0
+- pkg:pypi/pillow@3.4.1
+- pkg:pypi/pillow@3.4.2
+- pkg:pypi/pillow@4.0.0
+- pkg:pypi/pillow@4.1.0
+- pkg:pypi/pillow@4.1.1
+- pkg:pypi/pillow@4.2.0
+- pkg:pypi/pillow@4.2.1
+- pkg:pypi/pillow@4.3.0
+- pkg:pypi/pillow@5.0.0
+- pkg:pypi/pillow@5.1.0
+- pkg:pypi/pillow@5.2.0
+- pkg:pypi/pillow@5.3.0
+- pkg:pypi/pillow@5.4.0
+- pkg:pypi/pillow@5.4.0.dev0
+- pkg:pypi/pillow@5.4.1
+- pkg:pypi/pillow@6.0.0
+- pkg:pypi/pillow@6.1.0
+- pkg:pypi/pillow@6.2.0
+- pkg:pypi/pillow@6.2.1
+- pkg:pypi/pillow@6.2.2
+- pkg:pypi/pillow@7.0.0
+- pkg:pypi/pillow@7.1.0
+- pkg:pypi/pillow@7.1.1
+- pkg:pypi/pillow@7.1.2
+- pkg:pypi/pillow@7.2.0
+- pkg:pypi/pillow@8.0.0
+- pkg:pypi/pillow@8.0.1
+- pkg:pypi/pillow@8.1.0
+- pkg:pypi/pillow@8.1.1
+- pkg:pypi/pillow@8.1.2
+aliases:
+- CVE-2021-28677
+- GHSA-q5hq-fp76-qmrc
+fixed_purl:
+- pkg:deb/debian/pillow@5.4.1-2%2Bdeb10u3?distro=sid
+- pkg:deb/debian/pillow@8.1.2%2Bdfsg-0.2?distro=sid
+- pkg:deb/debian/pillow@8.1.2%2Bdfsg-0.3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/pillow@9.4.0-1.1?distro=sid
+- pkg:pypi/pillow@8.2.0
+references:
+- id: 159556
+  reference_id: ''
+  url: https://github.com/python-pillow/Pillow/pull/5377
+- id: 154340
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html
+- id: 158641
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQHA5HAIBOYI3R6HDWCLAGFTIQP767FL/
+- id: 159560
+  reference_id: ''
+  url: https://pillow.readthedocs.io/en/stable/releasenotes/8.2.0.html#cve-2021-28677-fix-eps-dos-on-open
+- id: 158642
+  reference_id: ''
+  url: https://security.gentoo.org/glsa/202107-33
+- id: 129682
+  reference_id: '989062'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989062
+- id: 159559
+  reference_id: CVE-2021-28677
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-28677
+- id: 159561
+  reference_id: GHSA-q5hq-fp76-qmrc
+  url: https://github.com/advisories/GHSA-q5hq-fp76-qmrc
+severities:
+- id: 23218
+  reference_id: 159561
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: An issue was discovered in Pillow before 8.2.0. For EPS data, the readline
+  implementation used in EPSImageFile has to deal with any combination of \r and \n
+  as line endings. It used an accidentally quadratic method of accumulating lines
+  while looking for a line ending. A malicious EPS file could use this to perform
+  a DoS of Pillow in the open phase, before an image was accepted for opening.
+vulnerability_id: VCID-y3xy-ex2w-aaar
+weaknesses: []

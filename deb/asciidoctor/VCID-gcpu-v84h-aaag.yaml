@@ -1,0 +1,63 @@
+affected_purls:
+- pkg:gem/asciidoctor@0.0.1
+- pkg:gem/asciidoctor@0.0.2
+- pkg:gem/asciidoctor@0.0.3
+- pkg:gem/asciidoctor@0.0.4
+- pkg:gem/asciidoctor@0.0.5
+- pkg:gem/asciidoctor@0.0.6
+- pkg:gem/asciidoctor@0.0.7
+- pkg:gem/asciidoctor@0.0.9
+- pkg:gem/asciidoctor@0.1.0
+- pkg:gem/asciidoctor@0.1.1
+- pkg:gem/asciidoctor@0.1.2
+- pkg:gem/asciidoctor@0.1.3
+- pkg:gem/asciidoctor@0.1.4
+- pkg:gem/asciidoctor@1.5.0
+- pkg:gem/asciidoctor@1.5.1
+- pkg:gem/asciidoctor@1.5.2
+- pkg:gem/asciidoctor@1.5.3
+- pkg:gem/asciidoctor@1.5.4
+- pkg:gem/asciidoctor@1.5.5
+- pkg:gem/asciidoctor@1.5.6
+- pkg:gem/asciidoctor@1.5.6.1
+- pkg:gem/asciidoctor@1.5.6.2
+- pkg:gem/asciidoctor@1.5.7
+- pkg:gem/asciidoctor@1.5.7.1
+aliases:
+- CVE-2018-18385
+- GHSA-qc9p-mjxm-j2wj
+fixed_purl:
+- pkg:deb/debian/asciidoctor@1.5.8-1?distro=sid
+- pkg:deb/debian/asciidoctor@2.0.12-2?distro=sid
+- pkg:deb/debian/asciidoctor@2.0.18-2?distro=sid
+- pkg:gem/asciidoctor@1.5.8
+references:
+- id: 144822
+  reference_id: ''
+  url: https://github.com/asciidoctor/asciidoctor/issues/2888
+- id: 128087
+  reference_id: '913892'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913892
+- id: 144821
+  reference_id: CVE-2018-18385
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-18385
+- id: 144823
+  reference_id: CVE-2018-18385.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/asciidoctor/CVE-2018-18385.yml
+- id: 144824
+  reference_id: GHSA-qc9p-mjxm-j2wj
+  url: https://github.com/advisories/GHSA-qc9p-mjxm-j2wj
+severities:
+- id: 20270
+  reference_id: 144824
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Asciidoctor in versions < 1.5.8 allows remote attackers to cause a denial
+  of service (infinite loop). The loop was caused by the fact that Parser.next_block
+  was not exhausting all the lines in the reader as the while loop expected it would.
+  This was happening because the regular expression that detects any list was not
+  agreeing with the regular expression that detects a specific list type. So the line
+  kept getting pushed back onto the reader, hence causing the loop.
+vulnerability_id: VCID-gcpu-v84h-aaag
+weaknesses: []

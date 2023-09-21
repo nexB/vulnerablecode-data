@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2021-23351
+fixed_purl:
+- pkg:deb/debian/golang-github-pires-go-proxyproto@0.4.2-1?distro=sid
+- pkg:deb/debian/golang-github-pires-go-proxyproto@0.4.2-3?distro=sid
+references:
+- id: 129664
+  reference_id: '985025'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=985025
+severities: []
+summary: The package github.com/pires/go-proxyproto before 0.5.0 are vulnerable to
+  Denial of Service (DoS) via the parseVersion1() function. The reader in this package
+  is a default bufio.Reader wrapping a net.Conn. It will read from the connection
+  until it finds a newline. Since no limits are implemented in the code, a deliberately
+  malformed V1 header could be used to exhaust memory in a server process using this
+  code - and create a DoS. This can be exploited by sending a stream starting with
+  PROXY and continuing to send data (which does not contain a newline) until the target
+  stops acknowledging. The risk here is small, because only trusted sources should
+  be allowed to send proxy protocol headers.
+vulnerability_id: VCID-qsmu-h434-aaaq
+weaknesses: []

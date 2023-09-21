@@ -1,0 +1,115 @@
+vulnerability_id: VCID-sxcc-tdd8-aaag
+aliases:
+  - CVE-2019-20919
+summary: An issue was discovered in the DBI module before 1.643 for Perl. The hv_fetch() documentation
+  requires checking for NULL and the code does that. But, shortly thereafter, it calls SvOK(profile),
+  causing a NULL pointer dereference.
+severities:
+  - id: 693185
+    reference_id: 1453829
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77035
+    reference_id: 207949
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 693186
+    reference_id: 1453830
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693187
+    reference_id: 793463
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693188
+    reference_id: 1453831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77034
+    reference_id: 207948
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 401370
+    reference_id: 793465
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:P
+  - id: 401368
+    reference_id: 793465
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 793458
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00012.html
+    reference_id:
+  - id: 793459
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00013.html
+    reference_id:
+  - id: 1453829
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-20919.html
+    reference_id:
+  - id: 207949
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-20919.json
+    reference_id:
+  - id: 1453830
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20919
+    reference_id:
+  - id: 793460
+    url: https://github.com/perl5-dbi/dbi/commit/eca7d7c8f43d96f6277e86d1000e842eb4cc67ff
+    reference_id:
+  - id: 793461
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00026.html
+    reference_id:
+  - id: 793462
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXLKODJ7B57GITDEZZXNSHPK4VBYXYHR/
+    reference_id:
+  - id: 793463
+    url: https://metacpan.org/pod/distribution/DBI/Changes#Changes-in-DBI-1.643-...
+    reference_id:
+  - id: 1453831
+    url: https://ubuntu.com/security/notices/USN-4534-1
+    reference_id:
+  - id: 793464
+    url: https://usn.ubuntu.com/4534-1/
+    reference_id:
+  - id: 207948
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1877405
+    reference_id: 1877405
+  - id: 549092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:perl:dbi:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:perl:dbi:*:*:*:*:*:*:*:*
+  - id: 79269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 168171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+  - id: 793465
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-20919
+    reference_id: CVE-2019-20919
+weaknesses: []

@@ -1,0 +1,125 @@
+vulnerability_id: VCID-f8vr-xju2-aaag
+aliases:
+  - CVE-2015-5380
+summary: The Utf8DecoderBase::WriteUtf16Slow function in unicode-decoder.cc in Google V8, as
+  used in Node.js before 0.12.6, io.js before 1.8.3 and 2.x before 2.3.3, and other products,
+  does not verify that there is memory available for a UTF-16 surrogate pair, which allows remote
+  attackers to cause a denial of service (memory corruption) or possibly have unspecified other
+  impact via a crafted byte sequence.
+severities:
+  - id: 662853
+    reference_id: 159782
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662854
+    reference_id: 1430025
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662856
+    reference_id: 159784
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662857
+    reference_id: 1430027
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662858
+    reference_id: 159785
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662859
+    reference_id: 159786
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662855
+    reference_id: 1430026
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 55051
+    reference_id: 180198
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 38323
+    reference_id: 159787
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+references:
+  - id: 159782
+    url: http://blog.nodejs.org/2015/07/03/node-v0-12-6-stable/
+    reference_id:
+  - id: 1430025
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-5380.html
+    reference_id:
+  - id: 180199
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-5380.json
+    reference_id:
+  - id: 159784
+    url: https://codereview.chromium.org/1226493003
+    reference_id:
+  - id: 1430027
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5380
+    reference_id:
+  - id: 159785
+    url: https://github.com/joyent/node/issues/25583
+    reference_id:
+  - id: 159786
+    url: https://medium.com/@iojs/important-security-upgrades-for-node-js-and-io-js-8ac14ece5852
+    reference_id:
+  - id: 1430026
+    url: http://www.openwall.com/lists/oss-security/2015/07/05/1
+    reference_id:
+  - id: 159783
+    url: http://www.securityfocus.com/bid/75556
+    reference_id:
+  - id: 180198
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1239332
+    reference_id: 1239332
+  - id: 159788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:v8:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:v8:-:*:*:*:*:*:*:*
+  - id: 159789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:*:*:*:*:*:*:*:*
+  - id: 159790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.0.0:*:*:*:*:*:*:*
+  - id: 159791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.0.1:*:*:*:*:*:*:*
+  - id: 159792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.0.2:*:*:*:*:*:*:*
+  - id: 159793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.1.0:*:*:*:*:*:*:*
+  - id: 159794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.2.0:*:*:*:*:*:*:*
+  - id: 159795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.2.1:*:*:*:*:*:*:*
+  - id: 159796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.3.0:*:*:*:*:*:*:*
+  - id: 159797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.3.1:*:*:*:*:*:*:*
+  - id: 159798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:iojs:io.js:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:iojs:io.js:2.3.2:*:*:*:*:*:*:*
+  - id: 159799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*
+  - id: 159787
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5380
+    reference_id: CVE-2015-5380
+weaknesses: []

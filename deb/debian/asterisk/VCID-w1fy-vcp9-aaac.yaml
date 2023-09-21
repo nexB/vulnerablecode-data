@@ -1,0 +1,50 @@
+vulnerability_id: VCID-w1fy-vcp9-aaac
+aliases:
+  - CVE-2020-28242
+summary: An issue was discovered in Asterisk Open Source 13.x before 13.37.1, 16.x before 16.14.1,
+  17.x before 17.8.1, and 18.x before 18.0.1 and Certified Asterisk before 16.8-cert5. If Asterisk
+  is challenged on an outbound INVITE and the nonce is changed in each response, Asterisk will
+  continually send INVITEs in a loop. This causes Asterisk to consume more and more memory since
+  the transaction will never terminate (even if the call is hung up), ultimately leading to
+  a restart or shutdown of Asterisk. Outbound authentication must be configured on the endpoint
+  for this to occur.
+severities:
+  - id: 468734
+    reference_id: 838609
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 468732
+    reference_id: 838609
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 838607
+    url: http://downloads.asterisk.org/pub/security/AST-2020-002.html
+    reference_id:
+  - id: 770034
+    url: https://lists.debian.org/debian-lts-announce/2022/04/msg00001.html
+    reference_id:
+  - id: 838608
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QUS54QTQCYKR36EIULYD544GXDA644HB/
+    reference_id:
+  - id: 39635
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974713
+    reference_id: 974713
+  - id: 838610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:certified_asterisk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:certified_asterisk:*:*:*:*:*:*:*:*
+  - id: 323442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 838609
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-28242
+    reference_id: CVE-2020-28242
+weaknesses: []

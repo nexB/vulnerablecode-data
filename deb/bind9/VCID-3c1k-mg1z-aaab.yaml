@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2020-8617
+fixed_purl:
+- pkg:deb/debian/bind9@1:9.11.5.P4%2Bdfsg-5.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/bind9@1:9.11.5.P4%2Bdfsg-5.1%2Bdeb10u7?distro=sid
+- pkg:deb/debian/bind9@1:9.16.3-1?distro=sid
+- pkg:deb/debian/bind9@1:9.16.37-1~deb11u1?distro=sid
+- pkg:deb/debian/bind9@1:9.18.12-1?distro=sid
+- pkg:deb/debian/bind9@1:9.18.13-1?distro=sid
+references:
+- id: 129538
+  reference_id: '961939'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=961939
+severities: []
+summary: Using a specially-crafted message, an attacker may potentially cause a BIND
+  server to reach an inconsistent state if the attacker knows (or successfully guesses)
+  the name of a TSIG key used by the server. Since BIND, by default, configures a
+  local session key even on servers whose configuration does not otherwise make use
+  of it, almost all current BIND servers are vulnerable. In releases of BIND dating
+  from March 2018 and after, an assertion check in tsig.c detects this inconsistent
+  state and deliberately exits. Prior to the introduction of the check the server
+  would continue operating in an inconsistent state, with potentially harmful results.
+vulnerability_id: VCID-3c1k-mg1z-aaab
+weaknesses: []

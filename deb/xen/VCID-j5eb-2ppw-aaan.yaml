@@ -1,0 +1,28 @@
+affected_purls: []
+aliases:
+- CVE-2019-19583
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: 'An issue was discovered in Xen through 4.12.x allowing x86 HVM/PVH guest
+  OS users to cause a denial of service (guest OS crash) because VMX VMEntry checks
+  mishandle a certain case. Please see XSA-260 for background on the MovSS shadow.
+  Please see XSA-156 for background on the need for #DB interception. The VMX VMEntry
+  checks do not like the exact combination of state which occurs when #DB in intercepted,
+  Single Stepping is active, and blocked by STI/MovSS is active, despite this being
+  a legitimate state to be in. The resulting VMEntry failure is fatal to the guest.
+  HVM/PVH guest userspace code may be able to crash the guest, resulting in a guest
+  Denial of Service. All versions of Xen are affected. Only systems supporting VMX
+  hardware virtual extensions (Intel, Cyrix, or Zhaoxin CPUs) are affected. Arm and
+  AMD systems are unaffected. Only HVM/PVH guests are affected. PV guests cannot leverage
+  the vulnerability.'
+vulnerability_id: VCID-j5eb-2ppw-aaan
+weaknesses: []

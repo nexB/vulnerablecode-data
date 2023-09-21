@@ -1,0 +1,73 @@
+affected_purls:
+- pkg:pypi/urllib3@1.26.0
+- pkg:pypi/urllib3@1.26.1
+- pkg:pypi/urllib3@1.26.2
+- pkg:pypi/urllib3@1.26.3
+aliases:
+- CVE-2021-28363
+- GHSA-5phf-pp7p-vc2r
+fixed_purl:
+- pkg:deb/debian/python-urllib3@0?distro=sid
+- pkg:deb/debian/python-urllib3@1.24.1-1?distro=sid
+- pkg:deb/debian/python-urllib3@1.26.12-1?distro=sid
+- pkg:deb/debian/python-urllib3@1.26.4-1?distro=sid
+- pkg:deb/debian/python-urllib3@1.26.5-1~exp1?distro=sid
+- pkg:pypi/urllib3@1.26.4
+references:
+- id: 159519
+  reference_id: ''
+  url: https://github.com/pypa/advisory-db/tree/main/vulns/urllib3/PYSEC-2021-59.yaml
+- id: 159516
+  reference_id: ''
+  url: https://github.com/urllib3/urllib3/blob/main/CHANGES.rst#1264-2021-03-15
+- id: 159512
+  reference_id: ''
+  url: https://github.com/urllib3/urllib3/commit/8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0
+- id: 159515
+  reference_id: ''
+  url: https://github.com/urllib3/urllib3/commits/main
+- id: 159513
+  reference_id: ''
+  url: https://github.com/urllib3/urllib3/releases/tag/1.26.4
+- id: 159517
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4S65ZQVZ2ODGB52IC7VJDBUK4M5INCXL/
+- id: 159514
+  reference_id: ''
+  url: https://pypi.org/project/urllib3/1.26.4/
+- id: 159518
+  reference_id: ''
+  url: https://security.gentoo.org/glsa/202107-36
+- id: 159520
+  reference_id: ''
+  url: https://security.gentoo.org/glsa/202305-02
+- id: 136182
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2021.html
+- id: 159511
+  reference_id: CVE-2021-28363
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-28363
+- id: 159521
+  reference_id: GHSA-5phf-pp7p-vc2r
+  url: https://github.com/advisories/GHSA-5phf-pp7p-vc2r
+- id: 159510
+  reference_id: GHSA-5phf-pp7p-vc2r
+  url: https://github.com/urllib3/urllib3/security/advisories/GHSA-5phf-pp7p-vc2r
+severities:
+- id: 23209
+  reference_id: 159521
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 23208
+  reference_id: 159510
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: The urllib3 library 1.26.x before 1.26.4 for Python omits SSL certificate
+  validation in some cases involving HTTPS to HTTPS proxies. The initial connection
+  to the HTTPS proxy (if an SSLContext isn't given via proxy_config) doesn't verify
+  the hostname of the certificate. This means certificates for different servers that
+  still validate properly with the default urllib3 SSLContext will be silently accepted.
+vulnerability_id: VCID-p3ht-gmw4-aaar
+weaknesses: []

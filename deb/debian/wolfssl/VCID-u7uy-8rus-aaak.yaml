@@ -1,0 +1,43 @@
+vulnerability_id: VCID-u7uy-8rus-aaak
+aliases:
+  - CVE-2018-12436
+summary: wolfcrypt/src/ecc.c in wolfSSL before 3.15.1.patch allows a memory-cache side-channel
+  attack on ECDSA signatures, aka the Return Of the Hidden Number Problem or ROHNP. To discover
+  an ECDSA key, the attacker needs access to either the local machine or a different virtual
+  machine on the same physical host.
+severities:
+  - id: 682102
+    reference_id: 719656
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 317107
+    reference_id: 729543
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 317105
+    reference_id: 729543
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 729541
+    url: https://github.com/wolfSSL/wolfssl/commit/9b9568d500f31f964af26ba8d01e542e1f27e5ca
+    reference_id:
+  - id: 719656
+    url: https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/
+    reference_id:
+  - id: 729542
+    url: https://www.wolfssl.com/wolfssh-and-rohnp/
+    reference_id:
+  - id: 147103
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901627
+    reference_id: 901627
+  - id: 167308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+  - id: 729543
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12436
+    reference_id: CVE-2018-12436
+weaknesses: []

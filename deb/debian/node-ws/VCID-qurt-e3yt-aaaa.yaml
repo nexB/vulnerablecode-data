@@ -1,0 +1,77 @@
+vulnerability_id: VCID-qurt-e3yt-aaaa
+aliases:
+  - CVE-2016-10518
+  - GHSA-2mhh-w6q8-5hxw
+summary: |
+  Improper Restriction of Operations within the Bounds of a Memory Buffer
+  A vulnerability was found in the ping functionality of the ws module before 1.0.0 which allowed clients to allocate memory by sending a ping frame. The ping functionality by default responds with a pong frame and the previously given payload of the ping frame. This is exactly what you expect, but internally ws always transforms all data that we need to send to a Buffer instance and that is where the vulnerability existed. ws didn't do any checks for the type of data it was sending. With buffers in node when you allocate it when a number instead of a string it will allocate the amount of bytes.
+severities:
+  - id: 666667
+    reference_id: 1433044
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666668
+    reference_id: 1433045
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666669
+    reference_id: 31367
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666670
+    reference_id: 31365
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666671
+    reference_id: 31370
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 214595
+    reference_id: 31366
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 214593
+    reference_id: 31366
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 705385
+    reference_id: 31368
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 1433044
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10518.html
+    reference_id:
+  - id: 1433045
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10518
+    reference_id:
+  - id: 31367
+    url: https://gist.github.com/c0nrad/e92005446c480707a74a
+    reference_id:
+  - id: 31365
+    url: https://github.com/websockets/ws/releases/tag/1.0.1
+    reference_id:
+  - id: 31370
+    url: https://nodesecurity.io/advisories/67
+    reference_id:
+  - id: 31369
+    url: https://www.npmjs.com/advisories/67
+    reference_id:
+  - id: 628582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ws_project:ws:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:ws_project:ws:*:*:*:*:*:node.js:*:*
+  - id: 31366
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10518
+    reference_id: CVE-2016-10518
+  - id: 31368
+    url: https://github.com/advisories/GHSA-2mhh-w6q8-5hxw
+    reference_id: GHSA-2mhh-w6q8-5hxw
+weaknesses: []

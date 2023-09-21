@@ -1,0 +1,64 @@
+affected_purls:
+- pkg:gem/websocket-extensions@0.1.0
+- pkg:gem/websocket-extensions@0.1.1
+- pkg:gem/websocket-extensions@0.1.2
+- pkg:gem/websocket-extensions@0.1.3
+- pkg:gem/websocket-extensions@0.1.4
+aliases:
+- CVE-2020-7663
+- GHSA-g6wq-qcwm-j5g2
+fixed_purl:
+- pkg:deb/debian/ruby-websocket-extensions@0.1.2-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/ruby-websocket-extensions@0.1.5-1?distro=sid
+- pkg:deb/debian/ruby-websocket-extensions@0.1.5-2?distro=sid
+- pkg:gem/websocket-extensions@0.1.5
+references:
+- id: 155455
+  reference_id: ''
+  url: https://blog.jcoglan.com/2020/06/02/redos-vulnerability-in-websocket-extensions
+- id: 155460
+  reference_id: ''
+  url: https://github.com/faye/websocket-extensions-ruby/commit/aa156a439da681361ed6f53f1a8131892418838b
+- id: 155462
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/08/msg00031.html
+- id: 155461
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-RUBY-WEBSOCKETEXTENSIONS-570830
+- id: 155463
+  reference_id: ''
+  url: https://usn.ubuntu.com/4502-1/
+- id: 129501
+  reference_id: '964274'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964274
+- id: 155459
+  reference_id: CVE-2020-7663
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-7663
+- id: 155464
+  reference_id: CVE-2020-7663.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/websocket-extensions/CVE-2020-7663.yml
+- id: 155465
+  reference_id: GHSA-g6wq-qcwm-j5g2
+  url: https://github.com/advisories/GHSA-g6wq-qcwm-j5g2
+- id: 155458
+  reference_id: GHSA-g6wq-qcwm-j5g2
+  url: https://github.com/faye/websocket-extensions-ruby/security/advisories/GHSA-g6wq-qcwm-j5g2
+severities:
+- id: 22399
+  reference_id: 155465
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 22398
+  reference_id: 155458
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: websocket-extensions ruby module prior to 0.1.5 allows Denial of Service
+  (DoS) via Regex Backtracking. The extension parser may take quadratic time when
+  parsing a header containing an unclosed string parameter value whose content is
+  a repeating two-byte sequence of a backslash and some other character. This could
+  be abused by an attacker to conduct Regex Denial Of Service (ReDoS) on a single-threaded
+  server by providing a malicious payload with the Sec-WebSocket-Extensions header.
+vulnerability_id: VCID-8rd7-4rk3-aaak
+weaknesses: []

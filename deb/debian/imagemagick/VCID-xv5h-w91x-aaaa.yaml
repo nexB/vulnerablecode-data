@@ -1,0 +1,63 @@
+vulnerability_id: VCID-xv5h-w91x-aaaa
+aliases:
+  - CVE-2020-27755
+summary: in SetImageExtent() of /MagickCore/image.c, an incorrect image depth size can cause
+  a memory leak because the code which checks for the proper image depth size does not reset
+  the size in the event there is an invalid size. The patch resets the depth to a proper size
+  before throwing an exception. The memory leak can be triggered by a crafted input file that
+  is processed by ImageMagick and could cause an impact to application reliability, such as
+  denial of service. This flaw affects ImageMagick versions prior to 7.0.9-0.
+severities:
+  - id: 698260
+    reference_id: 1458139
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 68915
+    reference_id: '198555'
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 698261
+    reference_id: 1458140
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675474
+    reference_id: 1440222
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 467354
+    reference_id: 837748
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 467352
+    reference_id: 837748
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+references:
+  - id: 1458139
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27755.html
+    reference_id:
+  - id: '198555'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27755.json
+    reference_id:
+  - id: 837747
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1894232
+    reference_id:
+  - id: 1458140
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27755
+    reference_id:
+  - id: 1440222
+    url: https://ubuntu.com/security/notices/USN-4988-1
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 837748
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27755
+    reference_id: CVE-2020-27755
+weaknesses: []

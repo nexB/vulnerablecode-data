@@ -1,0 +1,63 @@
+vulnerability_id: VCID-a4a7-7g9d-aaap
+aliases:
+  - CVE-2016-6595
+summary: '** DISPUTED ** The SwarmKit toolkit 1.12.0 for Docker allows remote authenticated
+  users to cause a denial of service (prevention of cluster joins) via a long sequence of join
+  and quit actions.  NOTE: the vendor disputes this issue, stating that this sequence is not
+  "removing the state that is left by old nodes. At some point the manager obviously stops being
+  able to accept new nodes, since it runs out of memory. Given that both for Docker swarm and
+  for Docker Swarmkit nodes are *required* to provide a secret token (it''s actually the only
+  mode of operation), this means that no adversary can simply join nodes and exhaust manager
+  resources. We can''t do anything about a manager running out of memory and not being able
+  to add new legitimate nodes to the system. This is merely a resource provisioning issue, and
+  definitely not a CVE worthy vulnerability."'
+severities:
+  - id: 47817
+    reference_id: 172420
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 47816
+    reference_id: 172419
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 235510
+    reference_id: 653681
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 235508
+    reference_id: 653681
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 172420
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-6595.json
+    reference_id:
+  - id: 653676
+    url: http://www.openwall.com/lists/oss-security/2016/08/04/1
+    reference_id:
+  - id: 653677
+    url: http://www.openwall.com/lists/oss-security/2016/09/02/1
+    reference_id:
+  - id: 653678
+    url: http://www.openwall.com/lists/oss-security/2016/09/02/8
+    reference_id:
+  - id: 653679
+    url: http://www.securityfocus.com/bid/92195
+    reference_id:
+  - id: 653680
+    url: http://www.securitytracker.com/id/1036548
+    reference_id:
+  - id: 172419
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1364008
+    reference_id: 1364008
+  - id: 653682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:docker:docker:1.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:docker:docker:1.12.0:*:*:*:*:*:*:*
+  - id: 653681
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-6595
+    reference_id: CVE-2016-6595
+weaknesses: []

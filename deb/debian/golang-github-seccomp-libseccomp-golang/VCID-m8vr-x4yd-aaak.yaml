@@ -1,0 +1,79 @@
+vulnerability_id: VCID-m8vr-x4yd-aaak
+aliases:
+  - CVE-2017-18367
+summary: libseccomp-golang 0.9.0 and earlier incorrectly generates BPFs that OR multiple arguments
+  rather than ANDing them. A process running under a restrictive seccomp filter that specified
+  multiple syscall arguments could bypass intended access restrictions by specifying a single
+  matching argument.
+severities:
+  - id: 612380
+    reference_id: 933077
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 612378
+    reference_id: 933075
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 277072
+    reference_id: 693636
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 277070
+    reference_id: 693636
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 612379
+    reference_id: 933076
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 52947
+    reference_id: 177911
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 693630
+    url: https://access.redhat.com/errata/RHSA-2019:4087
+    reference_id:
+  - id: 933077
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18367.json
+    reference_id:
+  - id: 693632
+    url: https://github.com/seccomp/libseccomp-golang/commit/06e7a29f36a34b8cf419aeb87b979ee508e58f9e
+    reference_id:
+  - id: 693633
+    url: https://github.com/seccomp/libseccomp-golang/issues/22
+    reference_id:
+  - id: 693634
+    url: https://lists.debian.org/debian-lts-announce/2020/08/msg00016.html
+    reference_id:
+  - id: 693635
+    url: https://usn.ubuntu.com/4574-1/
+    reference_id:
+  - id: 693629
+    url: http://www.openwall.com/lists/oss-security/2019/04/25/6
+    reference_id:
+  - id: 933075
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1706826
+    reference_id: 1706826
+  - id: 41493
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=927981
+    reference_id: 927981
+  - id: 693637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libseccomp-golang_project:libseccomp-golang:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libseccomp-golang_project:libseccomp-golang:*:*:*:*:*:*:*:*
+  - id: 693636
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18367
+    reference_id: CVE-2017-18367
+  - id: 933076
+    url: https://access.redhat.com/errata/RHSA-2019:4090
+    reference_id: RHSA-2019:4090
+  - id: 177911
+    url: https://access.redhat.com/errata/RHSA-2020:2479
+    reference_id: RHSA-2020:2479
+weaknesses: []

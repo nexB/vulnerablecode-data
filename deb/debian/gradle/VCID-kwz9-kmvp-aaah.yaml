@@ -1,0 +1,35 @@
+vulnerability_id: VCID-kwz9-kmvp-aaah
+aliases:
+  - CVE-2022-23630
+  - GHSA-9pf5-88jw-3qgr
+summary: |
+  Inclusion of Functionality from Untrusted Control Sphere
+  Gradle is a build tool with a focus on build automation and support for multi-language development. In some cases, Gradle may skip that verification and accept a dependency that would otherwise fail the build as an untrusted external artifact. This occurs when dependency verification is disabled on one or more configurations and those configurations have common dependencies with other configurations that have dependency verification enabled. If the configuration that has dependency verification disabled is resolved first, Gradle does not verify the common dependencies for the configuration that has dependency verification enabled. Gradle fixes that issue by validating artifacts at least once if they are present in a resolved configuration that has dependency verification active. For users who cannot update either do not use `ResolutionStrategy.disableDependencyVerification()` and do not use plugins that use that method to disable dependency verification for a single configuration or make sure resolution of configuration that disable that feature do not happen in builds that resolve configuration where the feature is enabled.
+severities:
+  - id: 587189
+    reference_id: 31150
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 587187
+    reference_id: 31150
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 31151
+    url: https://docs.gradle.org/7.4/release-notes.html
+    reference_id:
+  - id: 31152
+    url: https://github.com/gradle/gradle/commit/88ab9b652933bc3b2e3161b31ad8b8f4f0516351
+    reference_id:
+  - id: 915830
+    url: https://github.com/gradle/gradle/security/advisories/GHSA-9pf5-88jw-3qgr
+    reference_id:
+  - id: 769253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
+  - id: 31150
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-23630
+    reference_id: CVE-2022-23630
+weaknesses: []

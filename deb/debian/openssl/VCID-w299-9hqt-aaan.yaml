@@ -1,0 +1,181 @@
+vulnerability_id: VCID-w299-9hqt-aaan
+aliases:
+  - CVE-2015-3193
+  - VC-OPENSSL-20151203-CVE-2015-3193
+summary: There is a carry propagating bug in the x86_64 Montgomery squaring procedure. No EC
+  algorithms are affected. Analysis suggests that attacks against RSA and DSA as a result of
+  this defect would be very difficult to perform and are not believed likely. Attacks against
+  DH are considered just feasible (although very difficult) because most of the work necessary
+  to deduce information about a private key may be performed offline. The amount of resources
+  required for such an attack would be very significant and likely only accessible to a limited
+  number of attackers. An attacker would additionally need online access to an unpatched system
+  using the target private key in a scenario with persistent DH parameters and a private key
+  that is shared between multiple clients. For example this can occur by default in OpenSSL
+  DHE based SSL/TLS ciphersuites.
+severities:
+  - id: 652233
+    reference_id: 159588
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 661559
+    reference_id: 1428902
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 661560
+    reference_id: 1428903
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660726
+    reference_id: 1428229
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 624
+    reference_id: 3676
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 665670
+    reference_id: 471715
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 668480
+    reference_id: 158996
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673335
+    reference_id: 13679
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: '199052'
+    reference_id: 606264
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 643200
+    reference_id: 606264
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 600769
+    url: http://fortiguard.com/advisory/openssl-advisory-december-2015
+    reference_id:
+  - id: 600770
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10759
+    reference_id:
+  - id: 159588
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10761
+    reference_id:
+  - id: 600771
+    url: http://openssl.org/news/secadv/20151203.txt
+    reference_id:
+  - id: 1428902
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-3193.html
+    reference_id:
+  - id: 177204
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-3193.json
+    reference_id:
+  - id: 606260
+    url: https://blog.fuzzing-project.org/31-Fuzzing-Math-miscalculations-in-OpenSSLs-BN_mod_exp-CVE-2015-3193.html
+    reference_id:
+  - id: 606261
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1288317
+    reference_id:
+  - id: 1428903
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3193
+    reference_id:
+  - id: 606262
+    url: https://git.openssl.org/?p=openssl.git;a=commit;h=d73cc256c8e256c32ed959456101b73ba9842f72
+    reference_id:
+  - id: 600777
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05398322
+    reference_id:
+  - id: 160204
+    url: https://kb.isc.org/article/AA-01438
+    reference_id:
+  - id: 606263
+    url: https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40100
+    reference_id:
+  - id: 1428229
+    url: https://ubuntu.com/security/notices/USN-2830-1
+    reference_id:
+  - id: 3676
+    url: https://www.openssl.org/news/secadv/20151203.txt
+    reference_id:
+  - id: 600772
+    url: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151204-openssl
+    reference_id:
+  - id: 606257
+    url: http://www.fortiguard.com/advisory/openssl-advisory-december-2015
+    reference_id:
+  - id: 471715
+    url: http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html
+    reference_id:
+  - id: 158996
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html
+    reference_id:
+  - id: 13679
+    url: http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    reference_id:
+  - id: 606258
+    url: http://www.securityfocus.com/bid/78705
+    reference_id:
+  - id: 27477
+    url: http://www.securityfocus.com/bid/91787
+    reference_id:
+  - id: 600773
+    url: http://www.securitytracker.com/id/1034294
+    reference_id:
+  - id: 606259
+    url: http://www.slackware.com/security/viewer.php?l=slackware-security&y=2015&m=slackware-security.539966
+    reference_id:
+  - id: 600774
+    url: http://www.slackware.com/security/viewer.php?l=slackware-security&y=2015&m=slackware-security.754583
+    reference_id:
+  - id: 600775
+    url: http://www.ubuntu.com/usn/USN-2830-1
+    reference_id:
+  - id: 168245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:*:*:*:*:-:*:*:*
+  - id: 720251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*
+  - id: 594091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+  - id: 600723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2a:*:*:*:*:*:*:*
+  - id: 600765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2b:*:*:*:*:*:*:*
+  - id: 600766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2c:*:*:*:*:*:*:*
+  - id: 600779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2d:*:*:*:*:*:*:*
+  - id: 79269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 606264
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-3193
+    reference_id: CVE-2015-3193
+weaknesses: []

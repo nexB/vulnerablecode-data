@@ -1,0 +1,67 @@
+vulnerability_id: VCID-4vry-enjy-aaar
+aliases:
+  - CVE-2021-32677
+  - GHSA-8h2j-cgx8-6xv7
+  - PYSEC-2021-100
+summary: FastAPI is a web framework for building APIs with Python 3.6+ based on standard Python
+  type hints. FastAPI versions lower than 0.65.2 that used cookies for authentication in path
+  operations that received JSON payloads sent by browsers were vulnerable to a Cross-Site Request
+  Forgery (CSRF) attack. In versions lower than 0.65.2, FastAPI would try to read the request
+  payload as JSON even if the content-type header sent was not set to application/json or a
+  compatible JSON media type (e.g. application/geo+json). A request with a content type of text/plain
+  containing JSON data would be accepted and the JSON data would be extracted. Requests with
+  content type text/plain are exempt from CORS preflights, for being considered Simple requests.
+  The browser will execute them right away including cookies, and the text content could be
+  a JSON string that would be parsed and accepted by the FastAPI application. This is fixed
+  in FastAPI 0.65.2. The request data is now parsed as JSON only if the content-type header
+  is application/json or another JSON compatible media type like application/geo+json. It's
+  best to upgrade to the latest FastAPI, but if updating is not possible then a middleware or
+  a dependency that checks the content-type header and aborts the request if it is not application/json
+  or another JSON compatible content type can act as a mitigating workaround.
+severities:
+  - id: 540489
+    reference_id: 22564
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 540487
+    reference_id: 22564
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+  - id: 4061
+    reference_id: 23427
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 4060
+    reference_id: 23426
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 7400
+    url: https://github.com/tiangolo/fastapi/commit/fa7e3c996edf2d5482fff8f9d890ac2390dede4d
+    reference_id:
+  - id: 7402
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MATAWX25TYKNEKLDMKWNLYDB34UWTROA/
+    reference_id:
+  - id: 40869
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990582
+    reference_id: 990582
+  - id: 884629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fastapi_project:fastapi:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fastapi_project:fastapi:*:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 22564
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32677
+    reference_id: CVE-2021-32677
+  - id: 23427
+    url: https://github.com/advisories/GHSA-8h2j-cgx8-6xv7
+    reference_id: GHSA-8h2j-cgx8-6xv7
+  - id: 23426
+    url: https://github.com/tiangolo/fastapi/security/advisories/GHSA-8h2j-cgx8-6xv7
+    reference_id: GHSA-8h2j-cgx8-6xv7
+weaknesses: []

@@ -1,0 +1,105 @@
+vulnerability_id: VCID-nnwe-q43v-aaaq
+aliases:
+  - CVE-2020-10595
+summary: pam-krb5 before 4.9 has a buffer overflow that might cause remote code execution in
+  situations involving supplemental prompting by a Kerberos library. It may overflow a buffer
+  provided by the underlying Kerberos library by a single '\0' byte if an attacker responds
+  to a prompt with an answer of a carefully chosen length. The effect may range from heap corruption
+  to stack corruption depending on the structure of the underlying Kerberos library, with unknown
+  effects but possibly including code execution. This code path is not used for normal authentication,
+  but only when the Kerberos library does supplemental prompting, such as with PKINIT or when
+  using the non-standard no_prompt PAM configuration option.
+severities:
+  - id: 703846
+    reference_id: 1465385
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52802
+    reference_id: 177726
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 703847
+    reference_id: 1465386
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 703849
+    reference_id: 1465388
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 703848
+    reference_id: 1465387
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52801
+    reference_id: 177725
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 430008
+    reference_id: 811858
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 430006
+    reference_id: 811858
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1465385
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10595.html
+    reference_id:
+  - id: 177726
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10595.json
+    reference_id:
+  - id: 1465386
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10595
+    reference_id:
+  - id: 811853
+    url: https://github.com/rra/pam-krb5/commit/e7879e27a37119fad4faf133a9f70bdcdc75d760
+    reference_id:
+  - id: 811854
+    url: https://lists.debian.org/debian-lts-announce/2020/04/msg00000.html
+    reference_id:
+  - id: 1465388
+    url: https://ubuntu.com/security/notices/USN-4314-1
+    reference_id:
+  - id: 811855
+    url: https://usn.ubuntu.com/4314-1/
+    reference_id:
+  - id: 1465387
+    url: https://usn.ubuntu.com/usn/usn-4314-1
+    reference_id:
+  - id: 811856
+    url: https://www.debian.org/security/2020/dsa-4648
+    reference_id:
+  - id: 811857
+    url: https://www.eyrie.org/~eagle/software/pam-krb5/security/2020-03-30.html
+    reference_id:
+  - id: 811852
+    url: http://www.openwall.com/lists/oss-security/2020/03/31/1
+    reference_id:
+  - id: 177725
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1816536
+    reference_id: 1816536
+  - id: 811859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pam-krb5_project:pam-krb5:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pam-krb5_project:pam-krb5:*:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 811858
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10595
+    reference_id: CVE-2020-10595
+weaknesses: []

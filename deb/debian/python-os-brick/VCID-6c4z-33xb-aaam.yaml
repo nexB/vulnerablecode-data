@@ -1,0 +1,109 @@
+vulnerability_id: VCID-6c4z-33xb-aaam
+aliases:
+  - CVE-2020-10755
+  - PYSEC-2020-228
+summary: 'An insecure-credentials flaw was found in all openstack-cinder versions before openstack-cinder
+  14.1.0, all openstack-cinder 15.x.x versions before openstack-cinder 15.2.0 and all openstack-cinder
+  16.x.x versions before openstack-cinder 16.1.0. When using openstack-cinder with the Dell
+  EMC ScaleIO or VxFlex OS backend storage driver, credentials for the entire backend are exposed
+  in the ``connection_info`` element in all Block Storage v3 Attachments API calls containing
+  that element. This flaw enables an end-user to create a volume, make an API call to show the
+  attachment detail information, and retrieve a username and password that may be used to connect
+  to another user''s volume. Additionally, these credentials are valid for the ScaleIO or VxFlex
+  OS Management API, should an attacker discover the Management API endpoint. Source: OpenStack
+  project'
+severities:
+  - id: 695422
+    reference_id: 1455770
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611739
+    reference_id: 932602
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 695423
+    reference_id: 1455771
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695424
+    reference_id: 1455772
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695425
+    reference_id: 6922
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611736
+    reference_id: 932599
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 430627
+    reference_id: 812330
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 430625
+    reference_id: 812330
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 611737
+    reference_id: 932600
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 611738
+    reference_id: 932601
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1455770
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10755.html
+    reference_id:
+  - id: 932602
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10755.json
+    reference_id:
+  - id: 6921
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10755
+    reference_id:
+  - id: 1455771
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10755
+    reference_id:
+  - id: 1455772
+    url: https://ubuntu.com/security/notices/USN-4420-1
+    reference_id:
+  - id: 6923
+    url: https://usn.ubuntu.com/4420-1/
+    reference_id:
+  - id: 6922
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0086
+    reference_id:
+  - id: 932599
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1842748
+    reference_id: 1842748
+  - id: 812331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack-cinder:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack-cinder:*:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 812330
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10755
+    reference_id: CVE-2020-10755
+  - id: 932600
+    url: https://access.redhat.com/errata/RHSA-2020:4283
+    reference_id: RHSA-2020:4283
+  - id: 932601
+    url: https://access.redhat.com/errata/RHSA-2020:4391
+    reference_id: RHSA-2020:4391
+weaknesses: []

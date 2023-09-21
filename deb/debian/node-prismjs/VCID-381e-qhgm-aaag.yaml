@@ -1,0 +1,59 @@
+vulnerability_id: VCID-381e-qhgm-aaag
+aliases:
+  - CVE-2022-23647
+  - GHSA-3949-f494-cm99
+summary: |
+  Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+  Prism is a syntax highlighting library. Starting with version 1.14.0 and prior to version 1.27.0, Prism's command line plugin can be used by attackers to achieve a cross-site scripting attack. The command line plugin does not properly escape its output, leading to the input text being inserted into the DOM as HTML code. Server-side usage of Prism is not impacted. Websites that do not use the Command Line plugin are also not impacted. This bug has been fixed in v1.27.0. As a workaround, do not use the command line plugin on untrusted inputs, or sanitize all code blocks (remove all HTML code text) from all code blocks that use the command line plugin.
+severities:
+  - id: '192669'
+    reference_id: 593327
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: '192668'
+    reference_id: 593326
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 587265
+    reference_id: 32967
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 587263
+    reference_id: 32967
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 706989
+    reference_id: 32970
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 593327
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-23647.json
+    reference_id:
+  - id: 32969
+    url: https://github.com/PrismJS/prism/commit/e002e78c343154e1c0ddf9d6a0bb85689e1a5c7c
+    reference_id:
+  - id: 32968
+    url: https://github.com/PrismJS/prism/pull/3341
+    reference_id:
+  - id: 915890
+    url: https://github.com/PrismJS/prism/security/advisories/GHSA-3949-f494-cm99
+    reference_id:
+  - id: 593326
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2056643
+    reference_id: 2056643
+  - id: 868327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:prismjs:prism:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:prismjs:prism:*:*:*:*:*:node.js:*:*
+  - id: 32967
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-23647
+    reference_id: CVE-2022-23647
+  - id: 32970
+    url: https://github.com/advisories/GHSA-3949-f494-cm99
+    reference_id: GHSA-3949-f494-cm99
+weaknesses: []

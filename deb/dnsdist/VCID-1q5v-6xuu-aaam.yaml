@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2016-7069
+fixed_purl:
+- pkg:deb/debian/dnsdist@1.2.0-1?distro=sid
+- pkg:deb/debian/dnsdist@1.3.3-3?distro=sid
+- pkg:deb/debian/dnsdist@1.5.1-3?distro=sid
+- pkg:deb/debian/dnsdist@1.7.3-2?distro=sid
+references:
+- id: 126417
+  reference_id: '872854'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=872854
+severities: []
+summary: An issue has been found in dnsdist before 1.2.0 in the way EDNS0 OPT records
+  are handled when parsing responses from a backend. When dnsdist is configured to
+  add EDNS Client Subnet to a query, the response may contain an EDNS0 OPT record
+  that has to be removed before forwarding the response to the initial client. On
+  a 32-bit system, the pointer arithmetic used when parsing the received response
+  to remove that record might trigger an undefined behavior leading to a crash.
+vulnerability_id: VCID-1q5v-6xuu-aaam
+weaknesses: []

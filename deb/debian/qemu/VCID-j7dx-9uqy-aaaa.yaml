@@ -1,0 +1,143 @@
+vulnerability_id: VCID-j7dx-9uqy-aaaa
+aliases:
+  - CVE-2017-2633
+summary: An out-of-bounds memory access issue was found in Quick Emulator (QEMU) before 1.7.2
+  in the VNC display driver. This flaw could occur while refreshing the VNC display surface
+  area in the 'vnc_refresh_server_surface'. A user inside a guest could use this flaw to crash
+  the QEMU process.
+severities:
+  - id: 677887
+    reference_id: 1441836
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 625639
+    reference_id: 942510
+    scoring_system: cvssv3
+    value: '5.4'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:L
+  - id: 677888
+    reference_id: 1441837
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666124
+    reference_id: 1432635
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666349
+    reference_id: 1432807
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625638
+    reference_id: 942509
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 281131
+    reference_id: 696380
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 281129
+    reference_id: 696380
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 623890
+    reference_id: 941321
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 623889
+    reference_id: 941320
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 623894
+    reference_id: 941325
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1441836
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2633.html
+    reference_id:
+  - id: 643864
+    url: https://access.redhat.com/errata/RHSA-2017:1856
+    reference_id:
+  - id: 942510
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2633.json
+    reference_id:
+  - id: 696377
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2633
+    reference_id:
+  - id: 1441837
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2633
+    reference_id:
+  - id: 696378
+    url: https://git.qemu.org/?p=qemu.git;a=commitdiff;h=9f64916da20eea67121d544698676295bbb105a7
+    reference_id:
+  - id: 696379
+    url: https://git.qemu.org/?p=qemu.git;a=commitdiff;h=bea60dd7679364493a0d7f5b54316c767cf894ef
+    reference_id:
+  - id: 1432635
+    url: https://ubuntu.com/security/notices/USN-3261-1
+    reference_id:
+  - id: 1432807
+    url: https://usn.ubuntu.com/usn/usn-3261-1
+    reference_id:
+  - id: 696375
+    url: http://www.openwall.com/lists/oss-security/2017/02/23/1
+    reference_id:
+  - id: 696376
+    url: http://www.securityfocus.com/bid/96417
+    reference_id:
+  - id: 942509
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1425939
+    reference_id: 1425939
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 696380
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2633
+    reference_id: CVE-2017-2633
+  - id: 941321
+    url: https://access.redhat.com/errata/RHSA-2017:1205
+    reference_id: RHSA-2017:1205
+  - id: 941320
+    url: https://access.redhat.com/errata/RHSA-2017:1206
+    reference_id: RHSA-2017:1206
+  - id: 941325
+    url: https://access.redhat.com/errata/RHSA-2017:1441
+    reference_id: RHSA-2017:1441
+weaknesses: []

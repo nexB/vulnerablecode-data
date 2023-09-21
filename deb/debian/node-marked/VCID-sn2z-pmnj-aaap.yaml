@@ -1,0 +1,77 @@
+vulnerability_id: VCID-sn2z-pmnj-aaap
+aliases:
+  - CVE-2016-10531
+  - GHSA-vfvf-mqq8-rwqc
+summary: |
+  Cross-site Scripting
+  Due to the way that marked parses input, specifically HTML entities, it's possible to bypass marked's content injection protection (`sanitize: true`) to inject a `javascript:` URL. This flaw exists because `&#xNNanything;` gets parsed to what it could and leaves the rest behind, resulting in just `anything;` being left.
+severities:
+  - id: 666672
+    reference_id: 1433046
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666673
+    reference_id: 1433047
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666674
+    reference_id: 32858
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666675
+    reference_id: 32892
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666676
+    reference_id: 37758
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 214655
+    reference_id: 32857
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 214653
+    reference_id: 32857
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 705397
+    reference_id: 1466552
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 1433046
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10531.html
+    reference_id:
+  - id: 1433047
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10531
+    reference_id:
+  - id: 32858
+    url: https://github.com/chjj/marked/pull/592
+    reference_id:
+  - id: 32892
+    url: https://github.com/chjj/marked/pull/592/commits/2cff85979be8e7a026a9aca35542c470cf5da523
+    reference_id:
+  - id: 37758
+    url: https://nodesecurity.io/advisories/101
+    reference_id:
+  - id: 1466553
+    url: https://www.npmjs.com/advisories/101
+    reference_id:
+  - id: 568624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+  - id: 32857
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10531
+    reference_id: CVE-2016-10531
+  - id: 1466552
+    url: https://github.com/advisories/GHSA-vfvf-mqq8-rwqc
+    reference_id: GHSA-vfvf-mqq8-rwqc
+weaknesses: []

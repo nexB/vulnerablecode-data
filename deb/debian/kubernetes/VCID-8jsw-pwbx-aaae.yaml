@@ -1,0 +1,90 @@
+vulnerability_id: VCID-8jsw-pwbx-aaae
+aliases:
+  - CVE-2020-8554
+summary: Kubernetes API server in all versions allow an attacker who is able to create a ClusterIP
+  service and set the spec.externalIPs field, to intercept traffic to that IP address. Additionally,
+  an attacker who is able to patch the status (which is considered a privileged operation and
+  should not typically be granted to users) of a LoadBalancer service can set the status.loadBalancer.ingress.ip
+  to similar effect.
+severities:
+  - id: 608133
+    reference_id: 929973
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 608132
+    reference_id: 929972
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 491912
+    reference_id: 854895
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 491910
+    reference_id: 854895
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 55728
+    reference_id: 181100
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 929973
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8554.json
+    reference_id:
+  - id: 854893
+    url: https://github.com/kubernetes/kubernetes/issues/97076
+    reference_id:
+  - id: 854894
+    url: https://groups.google.com/g/kubernetes-security-announce/c/iZWsF9nbKE8
+    reference_id:
+  - id: 12870
+    url: https://lists.apache.org/thread.html/r0c76b3d0be348f788cd947054141de0229af00c540564711e828fd40@%3Ccommits.druid.apache.org%3E
+    reference_id:
+  - id: 12871
+    url: https://lists.apache.org/thread.html/r1975078e44d96f2a199aa90aa874b57a202eaf7f25f2fde6d1c44942@%3Ccommits.druid.apache.org%3E
+    reference_id:
+  - id: 12869
+    url: https://lists.apache.org/thread.html/rcafa485d63550657f068775801aeb706b7a07140a8ebbdef822b3bb3@%3Ccommits.druid.apache.org%3E
+    reference_id:
+  - id: 12872
+    url: https://lists.apache.org/thread.html/rdb223e1b82e3d7d8e4eaddce8dd1ab87252e3935cc41c859f49767b6@%3Ccommits.druid.apache.org%3E
+    reference_id:
+  - id: 389
+    url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_id:
+  - id: 388
+    url: https://www.oracle.com/security-alerts/cpujan2022.html
+    reference_id:
+  - id: 386
+    url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_id:
+  - id: 929972
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1891051
+    reference_id: 1891051
+  - id: 42769
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990793
+    reference_id: 990793
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 763313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_network_slice_selection_function:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_network_slice_selection_function:1.2.1:*:*:*:*:*:*:*
+  - id: 793434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_policy:1.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_policy:1.15.0:*:*:*:*:*:*:*
+  - id: 171276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_service_communication_proxy:1.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_service_communication_proxy:1.14.0:*:*:*:*:*:*:*
+  - id: 854895
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8554
+    reference_id: CVE-2020-8554
+  - id: 181100
+    url: https://access.redhat.com/errata/RHSA-2021:0079
+    reference_id: RHSA-2021:0079
+weaknesses: []

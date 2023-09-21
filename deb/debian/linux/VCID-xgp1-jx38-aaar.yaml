@@ -1,0 +1,132 @@
+vulnerability_id: VCID-xgp1-jx38-aaar
+aliases:
+  - CVE-2021-41073
+summary: loop_rw_iter in fs/io_uring.c in the Linux kernel 5.10 through 5.14.6 allows local
+  users to gain privileges by using IORING_OP_PROVIDE_BUFFERS to trigger a free of a kernel
+  buffer, as demonstrated by using /proc/<pid>/maps for exploitation.
+severities:
+  - id: 702723
+    reference_id: 1461900
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 80637
+    reference_id: 214452
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 702725
+    reference_id: 1461901
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702726
+    reference_id: 898507
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702363
+    reference_id: 1461614
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702364
+    reference_id: 1461615
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702439
+    reference_id: 1461678
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697960
+    reference_id: 1457864
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702724
+    reference_id: 898505
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 80636
+    reference_id: 214451
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 561676
+    reference_id: 898511
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 561674
+    reference_id: 898511
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1461900
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-41073.html
+    reference_id:
+  - id: 214452
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-41073.json
+    reference_id:
+  - id: 1461901
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41073
+    reference_id:
+  - id: 898507
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=16c8d2df7ec0eed31b7d3b61cb13206a7fb930cc
+    reference_id:
+  - id: 898508
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J7KSMIOQ4377CVTHMWNGNCWHMCRFRP2T/
+    reference_id:
+  - id: 898509
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PAP4TXEZ7J4EZQMQW5SIJMWXG7WZT3F7/
+    reference_id:
+  - id: 898510
+    url: https://security.netapp.com/advisory/ntap-20211014-0003/
+    reference_id:
+  - id: 1461614
+    url: https://ubuntu.com/security/notices/USN-5092-1
+    reference_id:
+  - id: 1461615
+    url: https://ubuntu.com/security/notices/USN-5092-2
+    reference_id:
+  - id: 1461678
+    url: https://ubuntu.com/security/notices/USN-5096-1
+    reference_id:
+  - id: 1457864
+    url: https://ubuntu.com/security/notices/USN-5106-1
+    reference_id:
+  - id: 825355
+    url: https://www.debian.org/security/2021/dsa-4978
+    reference_id:
+  - id: 898505
+    url: http://www.openwall.com/lists/oss-security/2021/09/18/2
+    reference_id:
+  - id: 898506
+    url: http://www.openwall.com/lists/oss-security/2022/06/04/4
+    reference_id:
+  - id: 214451
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2007567
+    reference_id: 2007567
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 898511
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-41073
+    reference_id: CVE-2021-41073
+weaknesses: []

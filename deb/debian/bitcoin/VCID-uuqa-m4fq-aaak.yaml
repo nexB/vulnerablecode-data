@@ -1,0 +1,41 @@
+vulnerability_id: VCID-uuqa-m4fq-aaak
+aliases:
+  - CVE-2019-15947
+summary: In Bitcoin Core 0.18.0, bitcoin-qt stores wallet.dat data unencrypted in memory. Upon
+  a crash, it may dump a core file. If a user were to mishandle a core file, an attacker can
+  reconstruct the user's wallet.dat file, including their private keys, via a grep "6231 0500"
+  command.
+severities:
+  - id: 387057
+    reference_id: 782339
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 387055
+    reference_id: 782339
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 782335
+    url: https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2019-15947
+    reference_id:
+  - id: 782336
+    url: https://gist.github.com/oxagast/50a121b2df32186e0c48411859d5861b
+    reference_id:
+  - id: 782337
+    url: https://github.com/bitcoin/bitcoin/issues/16824
+    reference_id:
+  - id: 782338
+    url: https://security.gentoo.org/glsa/202009-18
+    reference_id:
+  - id: 39796
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939608
+    reference_id: 939608
+  - id: 782340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:bitcoin:bitcoin_core:0.18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:bitcoin:bitcoin_core:0.18.0:*:*:*:*:*:*:*
+  - id: 782339
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-15947
+    reference_id: CVE-2019-15947
+weaknesses: []

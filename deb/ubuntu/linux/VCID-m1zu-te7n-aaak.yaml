@@ -1,0 +1,153 @@
+vulnerability_id: VCID-m1zu-te7n-aaak
+aliases:
+  - CVE-2019-15030
+summary: In the Linux kernel through 5.2.14 on the powerpc platform, a local user can read vector
+  registers of other users' processes via a Facility Unavailable exception. To exploit the venerability,
+  a local user starts a transaction (via the hardware transactional memory instruction tbegin)
+  and then accesses vector registers. At some point, the vector registers will be corrupted
+  with the values from a different local Linux process because of a missing arch/powerpc/kernel/process.c
+  check.
+severities:
+  - id: 691799
+    reference_id: 1452900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 74390
+    reference_id: 205248
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L
+  - id: 691800
+    reference_id: 1452901
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691801
+    reference_id: 1452902
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691675
+    reference_id: 1452799
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691676
+    reference_id: 1452800
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691672
+    reference_id: 1452797
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691673
+    reference_id: 1452798
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 74389
+    reference_id: 205247
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 383799
+    reference_id: 779858
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:P
+  - id: 383797
+    reference_id: 779858
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L
+  - id: 64259
+    reference_id: '192786'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 693924
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00064.html
+    reference_id:
+  - id: 693925
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00066.html
+    reference_id:
+  - id: 1452900
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-15030.html
+    reference_id:
+  - id: 740053
+    url: https://access.redhat.com/errata/RHSA-2020:0740
+    reference_id:
+  - id: 205248
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-15030.json
+    reference_id:
+  - id: 1452901
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15030
+    reference_id:
+  - id: 1452902
+    url: https://git.kernel.org/linus/8205d5d98ef7f155de211f5e2eb6ca03d95a5a60
+    reference_id:
+  - id: 779857
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8205d5d98ef7f155de211f5e2eb6ca03d95a5a60
+    reference_id:
+  - id: 727336
+    url: https://security.netapp.com/advisory/ntap-20191004-0001/
+    reference_id:
+  - id: 1452799
+    url: https://ubuntu.com/security/notices/USN-4135-1
+    reference_id:
+  - id: 1452800
+    url: https://ubuntu.com/security/notices/USN-4135-2
+    reference_id:
+  - id: 779288
+    url: https://usn.ubuntu.com/4135-1/
+    reference_id:
+  - id: 779289
+    url: https://usn.ubuntu.com/4135-2/
+    reference_id:
+  - id: 1452797
+    url: https://usn.ubuntu.com/usn/usn-4135-1
+    reference_id:
+  - id: 1452798
+    url: https://usn.ubuntu.com/usn/usn-4135-2
+    reference_id:
+  - id: 779856
+    url: http://www.openwall.com/lists/oss-security/2019/09/10/3
+    reference_id:
+  - id: 205247
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1759313
+    reference_id: 1759313
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 779858
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-15030
+    reference_id: CVE-2019-15030
+  - id: '192786'
+    url: https://access.redhat.com/errata/RHSA-2020:1372
+    reference_id: RHSA-2020:1372
+weaknesses: []

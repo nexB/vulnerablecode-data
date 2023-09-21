@@ -1,0 +1,45 @@
+vulnerability_id: VCID-e6fc-xbnu-aaap
+aliases:
+  - CVE-2022-24756
+summary: Bareos is open source software for backup, archiving, and recovery of data for operating
+  systems. When Bareos Director >= 18.2 but prior to 21.1.0, 20.0.6, and 19.2.12 is built and
+  configured for PAM authentication, a failed PAM authentication will leak a small amount of
+  memory. An attacker that is able to use the PAM Console (i.e. by knowing the shared secret
+  or via the WebUI) can flood the Director with failing login attempts which will eventually
+  lead to an out-of-memory condition in which the Director will not work anymore. Bareos Director
+  versions 21.1.0, 20.0.6 and 19.2.12 contain a Bugfix for this problem. Users who are unable
+  to upgrade may disable PAM authentication as a workaround.
+severities:
+  - id: 589955
+    reference_id: 917578
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 589953
+    reference_id: 917578
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 917570
+    url: https://github.com/bareos/bareos/pull/1115
+    reference_id:
+  - id: 917571
+    url: https://github.com/bareos/bareos/pull/1119
+    reference_id:
+  - id: 917572
+    url: https://github.com/bareos/bareos/pull/1121
+    reference_id:
+  - id: 917577
+    url: https://github.com/bareos/bareos/security/advisories/GHSA-jh55-4wgw-xc9j
+    reference_id:
+  - id: 917574
+    url: https://huntr.dev/bounties/480121f2-bc3c-427e-986e-5acffb1606c5/
+    reference_id:
+  - id: 683088
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:bareos:bareos:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:bareos:bareos:*:*:*:*:*:*:*:*
+  - id: 917578
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24756
+    reference_id: CVE-2022-24756
+weaknesses: []

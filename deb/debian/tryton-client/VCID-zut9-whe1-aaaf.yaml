@@ -1,0 +1,48 @@
+vulnerability_id: VCID-zut9-whe1-aaaf
+aliases:
+  - CVE-2018-19443
+  - GHSA-32w7-9whp-cjp9
+  - PYSEC-2018-77
+summary: The client in Tryton 5.x before 5.0.1 tries to make a connection to the bus in cleartext
+  instead of encrypted under certain circumstances in bus.py and jsonrpc.py. This connection
+  attempt fails, but it contains in the header the current session of the user. This session
+  could then be stolen by a man-in-the-middle.
+severities:
+  - id: 338532
+    reference_id: 23747
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 338530
+    reference_id: 23747
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 4789
+    reference_id: 26432
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1525
+    url: https://bugs.tryton.org/issue7792
+    reference_id:
+  - id: 23748
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-19443
+    reference_id:
+  - id: 23749
+    url: https://cwe.mitre.org/data/definitions/300.html
+    reference_id:
+  - id: 1524
+    url: https://discuss.tryton.org/t/security-release-for-issue7792/830
+    reference_id:
+  - id: 746009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:tryton:tryton:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:tryton:tryton:5.0.0:*:*:*:*:*:*:*
+  - id: 23747
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-19443
+    reference_id: CVE-2018-19443
+  - id: 26432
+    url: https://github.com/advisories/GHSA-32w7-9whp-cjp9
+    reference_id: GHSA-32w7-9whp-cjp9
+weaknesses: []

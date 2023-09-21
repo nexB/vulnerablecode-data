@@ -1,0 +1,65 @@
+vulnerability_id: VCID-cmvq-fa19-aaae
+aliases:
+  - CVE-2021-3559
+summary: A flaw was found in libvirt in the virConnectListAllNodeDevices API in versions before
+  7.0.0. It only affects hosts with a PCI device and driver that supports mediated devices (e.g.,
+  GRID driver). This flaw could be used by an unprivileged client with a read-only connection
+  to crash the libvirt daemon by executing the 'nodedev-list' virsh command. The highest threat
+  from this vulnerability is to system availability.
+severities:
+  - id: 703980
+    reference_id: 1465510
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 608226
+    reference_id: 930044
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 703981
+    reference_id: 1465511
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 608225
+    reference_id: 930043
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 547356
+    reference_id: 889561
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 547354
+    reference_id: 889561
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1465510
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3559.html
+    reference_id:
+  - id: 930044
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3559.json
+    reference_id:
+  - id: 1465511
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3559
+    reference_id:
+  - id: 889560
+    url: https://security.netapp.com/advisory/ntap-20210706-0006/
+    reference_id:
+  - id: 930043
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1962306
+    reference_id: '1962306'
+  - id: 169117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+  - id: 453779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+  - id: 889561
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3559
+    reference_id: CVE-2021-3559
+weaknesses: []

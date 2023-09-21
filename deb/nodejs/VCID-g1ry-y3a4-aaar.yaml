@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2018-7159
+fixed_purl:
+- pkg:deb/debian/nodejs@10.24.0~dfsg-1~deb10u1?distro=sid
+- pkg:deb/debian/nodejs@12.22.12~dfsg-1~deb11u3?distro=sid
+- pkg:deb/debian/nodejs@18.13.0%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/nodejs@8.11.1~dfsg-2?distro=sid
+references: []
+severities: []
+summary: 'The HTTP parser in all current versions of Node.js ignores spaces in the
+  `Content-Length` header, allowing input such as `Content-Length: 1 2` to be interpreted
+  as having a value of `12`. The HTTP specification does not allow for spaces in the
+  `Content-Length` value and the Node.js HTTP parser has been brought into line on
+  this particular difference. The security risk of this flaw to Node.js users is considered
+  to be VERY LOW as it is difficult, and may be impossible, to craft an attack that
+  makes use of this flaw in a way that could not already be achieved by supplying
+  an incorrect value for `Content-Length`. Vulnerabilities may exist in user-code
+  that make incorrect assumptions about the potential accuracy of this value compared
+  to the actual length of the data supplied. Node.js users crafting lower-level HTTP
+  utilities are advised to re-check the length of any input supplied after parsing
+  is complete.'
+vulnerability_id: VCID-g1ry-y3a4-aaar
+weaknesses: []

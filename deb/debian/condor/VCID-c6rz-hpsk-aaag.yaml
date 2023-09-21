@@ -1,0 +1,66 @@
+vulnerability_id: VCID-c6rz-hpsk-aaag
+aliases:
+  - CVE-2012-3490
+summary: The (1) my_popenv_impl and (2) my_spawnv functions in src/condor_utils/my_popen.cpp
+  and the (3) systemCommand function in condor_vm-gahp/vmgahp_common.cpp in Condor 7.6.x before
+  7.6.10 and 7.8.x before 7.8.4 does not properly check the return value of setuid calls, which
+  might cause a subprocess to be created with root privileges and allow remote attackers to
+  gain privileges via unspecified vectors.
+severities:
+  - id: 650711
+    reference_id: 497502
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650712
+    reference_id: 497503
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64294
+    reference_id: '192827'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 155821
+    reference_id: 497506
+    scoring_system: cvssv2
+    value: '9.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:C/I:C/A:C
+  - id: 155819
+    reference_id: 497506
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 497501
+    url: http://condor-git.cs.wisc.edu/?p=condor.git;a=commitdiff;h=94e84ce4
+    reference_id:
+  - id: 497502
+    url: http://research.cs.wisc.edu/condor/manual/v7.6/8_3Stable_Release.html
+    reference_id:
+  - id: 497503
+    url: http://research.cs.wisc.edu/condor/manual/v7.8/9_3Stable_Release.html
+    reference_id:
+  - id: '192828'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-3490.json
+    reference_id:
+  - id: 497505
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-3490
+    reference_id:
+  - id: 497504
+    url: http://www.openwall.com/lists/oss-security/2012/09/20/9
+    reference_id:
+  - id: 40273
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=688210
+    reference_id: 688210
+  - id: '192827'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=848212
+    reference_id: 848212
+  - id: 497507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wisc:htcondor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wisc:htcondor:*:*:*:*:*:*:*:*
+  - id: 497506
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-3490
+    reference_id: CVE-2012-3490
+weaknesses: []

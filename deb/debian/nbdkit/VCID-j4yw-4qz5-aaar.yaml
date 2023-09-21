@@ -1,0 +1,76 @@
+vulnerability_id: VCID-j4yw-4qz5-aaar
+aliases:
+  - CVE-2021-3716
+summary: A flaw was found in nbdkit due to to improperly caching plaintext state across the
+  STARTTLS encryption boundary. A MitM attacker could use this flaw to inject a plaintext NBD_OPT_STRUCTURED_REPLY
+  before proxying everything else a client sends to the server, potentially leading the client
+  to terminate the NBD session. The highest threat from this vulnerability is to system availability.
+severities:
+  - id: 603078
+    reference_id: 926259
+    scoring_system: cvssv3
+    value: '3.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:L
+  - id: 603076
+    reference_id: 926257
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 550963
+    reference_id: 891615
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:N/A:P
+  - id: 550961
+    reference_id: 891615
+    scoring_system: cvssv3
+    value: '3.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 603077
+    reference_id: 926258
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 271995
+    reference_id: 689253
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 926259
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3716.json
+    reference_id:
+  - id: 891611
+    url: https://gitlab.com/nbdkit/nbdkit/-/commit/09a13dafb7bb3a38ab52eb5501cba786365ba7fd
+    reference_id:
+  - id: 891612
+    url: https://gitlab.com/nbdkit/nbdkit/-/commit/6c5faac6a37077cf2366388a80862bb00616d0d8
+    reference_id:
+  - id: 891613
+    url: https://listman.redhat.com/archives/libguestfs/2021-August/msg00083.html
+    reference_id:
+  - id: 891614
+    url: https://www.openwall.com/lists/oss-security/2021/08/18/2
+    reference_id:
+  - id: 926257
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1994695
+    reference_id: '1994695'
+  - id: 779372
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nbdkit_project:nbdkit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nbdkit_project:nbdkit:*:*:*:*:*:*:*:*
+  - id: 803120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:-:*:*:*
+  - id: 772353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+  - id: 891615
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3716
+    reference_id: CVE-2021-3716
+  - id: 926258
+    url: https://access.redhat.com/errata/RHSA-2022:0397
+    reference_id: RHSA-2022:0397
+  - id: 689253
+    url: https://access.redhat.com/errata/RHSA-2022:1759
+    reference_id: RHSA-2022:1759
+weaknesses: []

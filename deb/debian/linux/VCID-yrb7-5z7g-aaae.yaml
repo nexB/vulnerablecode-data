@@ -1,0 +1,96 @@
+vulnerability_id: VCID-yrb7-5z7g-aaae
+aliases:
+  - CVE-2019-12615
+summary: An issue was discovered in get_vdev_port_node_info in arch/sparc/kernel/mdesc.c in
+  the Linux kernel through 5.1.6. There is an unchecked kstrdup_const of node_info->vdev_port.name,
+  which might allow an attacker to cause a denial of service (NULL pointer dereference and system
+  crash).
+severities:
+  - id: 612197
+    reference_id: 932944
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 612196
+    reference_id: 932943
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 375846
+    reference_id: 773773
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 375844
+    reference_id: 773773
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 932944
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-12615.json
+    reference_id:
+  - id: 773769
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/davem/sparc.git/commit/?id=80caf43549e7e41a695c6d1e11066286538b336f
+    reference_id:
+  - id: 766176
+    url: https://security.netapp.com/advisory/ntap-20190710-0002/
+    reference_id:
+  - id: 773770
+    url: https://support.f5.com/csp/article/K60924046
+    reference_id:
+  - id: 773771
+    url: https://support.f5.com/csp/article/K60924046?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 773772
+    url: https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg2014901.html
+    reference_id:
+  - id: 773768
+    url: http://www.securityfocus.com/bid/108549
+    reference_id:
+  - id: 932943
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1718179
+    reference_id: 1718179
+  - id: 722617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 114877
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.12:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.12:rc2:*:*:*:*:*:*
+  - id: 114878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.12:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.12:rc3:*:*:*:*:*:*
+  - id: 106573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.12:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.12:rc4:*:*:*:*:*:*
+  - id: 114879
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.12:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.12:rc5:*:*:*:*:*:*
+  - id: 114880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:2.6.12:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:2.6.12:rc6:*:*:*:*:*:*
+  - id: 773774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.2:rc1:*:*:*:*:*:*
+  - id: 773775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.2:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.2:rc2:*:*:*:*:*:*
+  - id: 773776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.2:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.2:rc3:*:*:*:*:*:*
+  - id: 773777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.2:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.2:rc4:*:*:*:*:*:*
+  - id: 773773
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-12615
+    reference_id: CVE-2019-12615
+weaknesses: []

@@ -1,0 +1,28 @@
+vulnerability_id: VCID-x7rm-d729-aaae
+aliases:
+  - CVE-2015-2309
+summary: |
+  Unsafe methods in the Request class
+  The `Symfony\Component\HttpFoundation\Request` class provides a mechanism that ensures it does not trust HTTP header values coming from a "non-trusted" client. Unfortunately, it assumes that the remote address is always a trusted client if at least one trusted proxy is involved in the request; this allows a man-in-the-middle attack between the latest trusted proxy and the web server. The following methods are impacted: `getPort()`, `isSecure()`, `getHost()` and `getClientIps()`.
+severities:
+  - id: 660951
+    reference_id: 1428406
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660952
+    reference_id: 1428407
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+references:
+  - id: 1428406
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-2309.html
+    reference_id:
+  - id: 1428407
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2309
+    reference_id:
+  - id: 24414
+    url: http://symfony.com/blog/cve-2015-2309-unsafe-methods-in-the-request-class
+    reference_id: CVE-2015-2309-UNSAFE-METHODS-IN-THE-REQUEST-CLASS
+weaknesses: []

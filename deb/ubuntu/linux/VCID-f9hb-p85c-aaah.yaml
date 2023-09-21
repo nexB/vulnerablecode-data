@@ -1,0 +1,179 @@
+vulnerability_id: VCID-f9hb-p85c-aaah
+aliases:
+  - CVE-2014-7975
+summary: The do_umount function in fs/namespace.c in the Linux kernel through 3.17 does not
+  require the CAP_SYS_ADMIN capability for do_remount_sb calls that change the root filesystem
+  to read-only, which allows local users to cause a denial of service (loss of writability)
+  by making certain unshare system calls, clearing the / MNT_LOCKED flag, and making an MNT_FORCE
+  umount system call.
+severities:
+  - id: 658057
+    reference_id: 1426158
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658059
+    reference_id: 1426159
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657049
+    reference_id: 1425379
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657050
+    reference_id: 1425380
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656503
+    reference_id: 1424951
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656504
+    reference_id: 1424952
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656646
+    reference_id: 1425071
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656647
+    reference_id: 1425072
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656648
+    reference_id: 1425073
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658058
+    reference_id: 585063
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 188778
+    reference_id: 585070
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 188776
+    reference_id: 585070
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 585060
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0ef3a56b1c466629cd0bf482b09c7b0e5a085bb5
+    reference_id:
+  - id: 1426158
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-7975.html
+    reference_id:
+  - id: 585053
+    url: https://access.redhat.com/errata/RHSA-2017:1842
+    reference_id:
+  - id: 585054
+    url: https://access.redhat.com/errata/RHSA-2017:2077
+    reference_id:
+  - id: 184668
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-7975.json
+    reference_id:
+  - id: 585068
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1151108
+    reference_id:
+  - id: 1426159
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7975
+    reference_id:
+  - id: 568392
+    url: http://secunia.com/advisories/60174
+    reference_id:
+  - id: 585061
+    url: http://secunia.com/advisories/61145
+    reference_id:
+  - id: 572578
+    url: http://secunia.com/advisories/62633
+    reference_id:
+  - id: 585062
+    url: http://secunia.com/advisories/62634
+    reference_id:
+  - id: 585069
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/96994
+    reference_id:
+  - id: 1425379
+    url: https://ubuntu.com/security/notices/USN-2415-1
+    reference_id:
+  - id: 1425380
+    url: https://ubuntu.com/security/notices/USN-2416-1
+    reference_id:
+  - id: 1424951
+    url: https://ubuntu.com/security/notices/USN-2417-1
+    reference_id:
+  - id: 1424952
+    url: https://ubuntu.com/security/notices/USN-2418-1
+    reference_id:
+  - id: 1425071
+    url: https://ubuntu.com/security/notices/USN-2419-1
+    reference_id:
+  - id: 1425072
+    url: https://ubuntu.com/security/notices/USN-2420-1
+    reference_id:
+  - id: 1425073
+    url: https://ubuntu.com/security/notices/USN-2421-1
+    reference_id:
+  - id: 585063
+    url: http://thread.gmane.org/gmane.linux.kernel.stable/109312
+    reference_id:
+  - id: 585064
+    url: http://www.openwall.com/lists/oss-security/2014/10/08/22
+    reference_id:
+  - id: 585065
+    url: http://www.securityfocus.com/bid/70314
+    reference_id:
+  - id: 585066
+    url: http://www.securitytracker.com/id/1031180
+    reference_id:
+  - id: 585067
+    url: http://www.ubuntu.com/usn/USN-2415-1
+    reference_id:
+  - id: 572583
+    url: http://www.ubuntu.com/usn/USN-2416-1
+    reference_id:
+  - id: 567840
+    url: http://www.ubuntu.com/usn/USN-2417-1
+    reference_id:
+  - id: 567841
+    url: http://www.ubuntu.com/usn/USN-2418-1
+    reference_id:
+  - id: 568397
+    url: http://www.ubuntu.com/usn/USN-2419-1
+    reference_id:
+  - id: 568398
+    url: http://www.ubuntu.com/usn/USN-2420-1
+    reference_id:
+  - id: 568399
+    url: http://www.ubuntu.com/usn/USN-2421-1
+    reference_id:
+  - id: 332449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 497711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 585070
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-7975
+    reference_id: CVE-2014-7975
+weaknesses: []

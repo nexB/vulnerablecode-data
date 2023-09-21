@@ -1,0 +1,34 @@
+vulnerability_id: VCID-4r88-y7um-aaar
+aliases:
+  - CVE-2022-1923
+summary: DOS / potential heap overwrite in mkv demuxing using bzip decompression. Integer overflow
+  in matroskademux element in bzip decompression function which causes a segfault, or could
+  cause a heap overwrite, depending on libc and OS. Depending on the libc used, and the underlying
+  OS capabilities, it could be just a segfault or a heap overwrite. If the libc uses mmap for
+  large chunks, and the OS supports mmap, then it is just a segfault (because the realloc before
+  the integer overflow will use mremap to reduce the size of the chunk, and it will start to
+  write to unmapped memory). However, if using a libc implementation that does not use mmap,
+  or if the OS does not support mmap while using libc, then this could result in a heap overwrite.
+severities:
+  - id: 639888
+    reference_id: 948384
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 948382
+    url: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/1225
+    reference_id:
+  - id: 1183320
+    url: https://lists.debian.org/debian-lts-announce/2022/08/msg00001.html
+    reference_id:
+  - id: 1183321
+    url: https://www.debian.org/security/2022/dsa-5204
+    reference_id:
+  - id: 627722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gstreamer_project:gstreamer:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gstreamer_project:gstreamer:*:*:*:*:*:*:*:*
+  - id: 948384
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-1923
+    reference_id: CVE-2022-1923
+weaknesses: []

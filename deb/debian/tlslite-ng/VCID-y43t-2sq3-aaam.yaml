@@ -1,0 +1,74 @@
+vulnerability_id: VCID-y43t-2sq3-aaam
+aliases:
+  - CVE-2018-1000159
+  - GHSA-cwh5-3cw7-4286
+  - PYSEC-2018-31
+summary: 'tlslite-ng version 0.7.3 and earlier, since commit d7b288316bca7bcdd082e6ccff5491e241305233
+  contains a CWE-354: Improper Validation of Integrity Check Value vulnerability in TLS implementation,
+  tlslite/utils/constanttime.py: ct_check_cbc_mac_and_pad(); line "end_pos = data_len - 1 -
+  mac.digest_size" that can result in an attacker manipulating the TLS ciphertext which will
+  not be detected by receiving tlslite-ng. This attack appears to be exploitable via man in
+  the middle on a network connection. This vulnerability appears to have been fixed after commit
+  3674815d1b0f7484454995e2737a352e0a6a93d8.'
+severities:
+  - id: 682341
+    reference_id: 1445411
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682342
+    reference_id: 1445412
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682343
+    reference_id: 5586
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682344
+    reference_id: 1445413
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 307542
+    reference_id: 22607
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 307540
+    reference_id: 22607
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 4836
+    reference_id: 26505
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1445411
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1000159.html
+    reference_id:
+  - id: 1445412
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000159
+    reference_id:
+  - id: 5586
+    url: https://github.com/tomato42/tlslite-ng/pull/234
+    reference_id:
+  - id: 1445413
+    url: https://github.com/tomato42/tlslite-ng/pull/235
+    reference_id:
+  - id: 143345
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=895728
+    reference_id: 895728
+  - id: 721632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:tlslite-ng_project:tlslite-ng:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:tlslite-ng_project:tlslite-ng:*:*:*:*:*:*:*:*
+  - id: 22607
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000159
+    reference_id: CVE-2018-1000159
+  - id: 26505
+    url: https://github.com/advisories/GHSA-cwh5-3cw7-4286
+    reference_id: GHSA-cwh5-3cw7-4286
+weaknesses: []

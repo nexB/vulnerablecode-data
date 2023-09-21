@@ -1,0 +1,69 @@
+vulnerability_id: VCID-dhbw-3z7r-aaad
+aliases:
+  - CVE-2021-23727
+  - GHSA-q4xr-rc97-m4xx
+  - PYSEC-2021-858
+  - SNYK-PYTHON-CELERY-2314953
+summary: This affects the package celery before 5.2.2. It by default trusts the messages and
+  metadata stored in backends (result stores). When reading task metadata from the backend,
+  the data is deserialized. Given that an attacker can gain access to, or somehow manipulate
+  the metadata within a celery backend, they could trigger a stored command injection vulnerability
+  and potentially gain further access to the system.
+severities:
+  - id: 416976
+    reference_id: 804431
+    scoring_system: cvssv3
+    value: '8.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 416975
+    reference_id: 804430
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 515843
+    reference_id: 21509
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 515841
+    reference_id: 21509
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 3651
+    reference_id: 21511
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 804431
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-23727.json
+    reference_id:
+  - id: 8524
+    url: https://github.com/celery/celery/blob/master/Changelog.rst%23522
+    reference_id:
+  - id: 21510
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SYXRGHWHD2WWMHBWCVD5ULVINPKNY3P5/
+    reference_id:
+  - id: 8525
+    url: https://snyk.io/vuln/SNYK-PYTHON-CELERY-2314953
+    reference_id:
+  - id: 804430
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2037531
+    reference_id: 2037531
+  - id: 868825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:celeryproject:celery:*:*:*:*:*:python:*:*
+    reference_id: cpe:2.3:a:celeryproject:celery:*:*:*:*:*:python:*:*
+  - id: 837853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fedoraproject:extra_packages_for_enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fedoraproject:extra_packages_for_enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 21509
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-23727
+    reference_id: CVE-2021-23727
+  - id: 21511
+    url: https://github.com/advisories/GHSA-q4xr-rc97-m4xx
+    reference_id: GHSA-q4xr-rc97-m4xx
+weaknesses: []

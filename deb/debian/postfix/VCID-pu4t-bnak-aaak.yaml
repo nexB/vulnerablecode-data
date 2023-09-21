@@ -1,0 +1,412 @@
+vulnerability_id: VCID-pu4t-bnak-aaak
+aliases:
+  - CVE-2011-1720
+summary: The SMTP server in Postfix before 2.5.13, 2.6.x before 2.6.10, 2.7.x before 2.7.4,
+  and 2.8.x before 2.8.3, when certain Cyrus SASL authentication methods are enabled, does not
+  create a new server handle after client authentication fails, which allows remote attackers
+  to cause a denial of service (heap memory corruption and daemon crash) or possibly execute
+  arbitrary code via an invalid AUTH command with one method followed by an AUTH command with
+  a different method.
+severities:
+  - id: 112083
+    reference_id: 340555
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 67498
+    reference_id: '196844'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 44897
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    reference_id:
+  - id: 340538
+    url: http://lists.opensuse.org/opensuse-security-announce/2011-05/msg00002.html
+    reference_id:
+  - id: '196845'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-1720.json
+    reference_id:
+  - id: 340553
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=699035
+    reference_id:
+  - id: 340539
+    url: http://secunia.com/advisories/44500
+    reference_id:
+  - id: 340540
+    url: http://security.gentoo.org/glsa/glsa-201206-33.xml
+    reference_id:
+  - id: 340541
+    url: http://securityreason.com/securityalert/8247
+    reference_id:
+  - id: 340554
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/67359
+    reference_id:
+  - id: 340542
+    url: http://www.debian.org/security/2011/dsa-2233
+    reference_id:
+  - id: 340543
+    url: http://www.kb.cert.org/vuls/id/727230
+    reference_id:
+  - id: 340544
+    url: http://www.mail-archive.com/postfix-announce@postfix.org/msg00007.html
+    reference_id:
+  - id: 340545
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2011:090
+    reference_id:
+  - id: 340546
+    url: http://www.osvdb.org/72259
+    reference_id:
+  - id: 340548
+    url: http://www.postfix.org/announcements/postfix-2.8.3.html
+    reference_id:
+  - id: 340547
+    url: http://www.postfix.org/CVE-2011-1720.html
+    reference_id:
+  - id: 340549
+    url: http://www.securityfocus.com/archive/1/517917/100/0/threaded
+    reference_id:
+  - id: 340550
+    url: http://www.securityfocus.com/bid/47778
+    reference_id:
+  - id: 340551
+    url: http://www.securitytracker.com/id?1025521
+    reference_id:
+  - id: 340552
+    url: http://www.ubuntu.com/usn/usn-1131-1
+    reference_id:
+  - id: 340556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.0:*:*:*:*:*:*:*
+  - id: 340567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.1:*:*:*:*:*:*:*
+  - id: 340557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.10:*:*:*:*:*:*:*
+  - id: 340558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.11:*:*:*:*:*:*:*
+  - id: 340559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.12:*:*:*:*:*:*:*
+  - id: 340560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.13:*:*:*:*:*:*:*
+  - id: 340561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.14:*:*:*:*:*:*:*
+  - id: 340562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.15:*:*:*:*:*:*:*
+  - id: 340563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.16:*:*:*:*:*:*:*
+  - id: 340564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.17:*:*:*:*:*:*:*
+  - id: 340565
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.18:*:*:*:*:*:*:*
+  - id: 340566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.19:*:*:*:*:*:*:*
+  - id: 340568
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.2:*:*:*:*:*:*:*
+  - id: 340569
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.3:*:*:*:*:*:*:*
+  - id: 340570
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.4:*:*:*:*:*:*:*
+  - id: 340571
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.5:*:*:*:*:*:*:*
+  - id: 340572
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.6:*:*:*:*:*:*:*
+  - id: 340573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.7:*:*:*:*:*:*:*
+  - id: 340574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.8:*:*:*:*:*:*:*
+  - id: 340575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.0.9:*:*:*:*:*:*:*
+  - id: 340576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.0:*:*:*:*:*:*:*
+  - id: 340577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.1:*:*:*:*:*:*:*
+  - id: 340578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.2:*:*:*:*:*:*:*
+  - id: 340579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.3:*:*:*:*:*:*:*
+  - id: 340580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.4:*:*:*:*:*:*:*
+  - id: 340581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.5:*:*:*:*:*:*:*
+  - id: 340582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.1.6:*:*:*:*:*:*:*
+  - id: 340583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.0:*:*:*:*:*:*:*
+  - id: 340587
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.1:*:*:*:*:*:*:*
+  - id: 340584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.10:*:*:*:*:*:*:*
+  - id: 340585
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.11:*:*:*:*:*:*:*
+  - id: 340586
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.12:*:*:*:*:*:*:*
+  - id: 340588
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.2:*:*:*:*:*:*:*
+  - id: 340589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.3:*:*:*:*:*:*:*
+  - id: 340590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.4:*:*:*:*:*:*:*
+  - id: 340591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.5:*:*:*:*:*:*:*
+  - id: 340592
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.6:*:*:*:*:*:*:*
+  - id: 340593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.7:*:*:*:*:*:*:*
+  - id: 340594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.8:*:*:*:*:*:*:*
+  - id: 340595
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.2.9:*:*:*:*:*:*:*
+  - id: 340616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3:*:*:*:*:*:*:*
+  - id: 340596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.0:*:*:*:*:*:*:*
+  - id: 340607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.1:*:*:*:*:*:*:*
+  - id: 340597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.10:*:*:*:*:*:*:*
+  - id: 340598
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.11:*:*:*:*:*:*:*
+  - id: 340599
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.12:*:*:*:*:*:*:*
+  - id: 340600
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.13:*:*:*:*:*:*:*
+  - id: 340601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.14:*:*:*:*:*:*:*
+  - id: 340602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.15:*:*:*:*:*:*:*
+  - id: 340603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.16:*:*:*:*:*:*:*
+  - id: 340604
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.17:*:*:*:*:*:*:*
+  - id: 340605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.18:*:*:*:*:*:*:*
+  - id: 340606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.19:*:*:*:*:*:*:*
+  - id: 340608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.2:*:*:*:*:*:*:*
+  - id: 340609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.3:*:*:*:*:*:*:*
+  - id: 340610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.4:*:*:*:*:*:*:*
+  - id: 340611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.5:*:*:*:*:*:*:*
+  - id: 340612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.6:*:*:*:*:*:*:*
+  - id: 340613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.7:*:*:*:*:*:*:*
+  - id: 340614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.8:*:*:*:*:*:*:*
+  - id: 340615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.3.9:*:*:*:*:*:*:*
+  - id: 340633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4:*:*:*:*:*:*:*
+  - id: 340617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.0:*:*:*:*:*:*:*
+  - id: 340624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.1:*:*:*:*:*:*:*
+  - id: 340618
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.10:*:*:*:*:*:*:*
+  - id: 340619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.11:*:*:*:*:*:*:*
+  - id: 340620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.12:*:*:*:*:*:*:*
+  - id: 340621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.13:*:*:*:*:*:*:*
+  - id: 340622
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.14:*:*:*:*:*:*:*
+  - id: 340623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.15:*:*:*:*:*:*:*
+  - id: 340625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.2:*:*:*:*:*:*:*
+  - id: 340626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.3:*:*:*:*:*:*:*
+  - id: 340627
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.4:*:*:*:*:*:*:*
+  - id: 340628
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.5:*:*:*:*:*:*:*
+  - id: 340629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.6:*:*:*:*:*:*:*
+  - id: 340630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.7:*:*:*:*:*:*:*
+  - id: 340631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.8:*:*:*:*:*:*:*
+  - id: 340632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.4.9:*:*:*:*:*:*:*
+  - id: 340634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.0:*:*:*:*:*:*:*
+  - id: 340638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.1:*:*:*:*:*:*:*
+  - id: 340635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.10:*:*:*:*:*:*:*
+  - id: 340636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.11:*:*:*:*:*:*:*
+  - id: 340637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.12:*:*:*:*:*:*:*
+  - id: 340639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.2:*:*:*:*:*:*:*
+  - id: 340640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.3:*:*:*:*:*:*:*
+  - id: 340641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.4:*:*:*:*:*:*:*
+  - id: 340642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.5:*:*:*:*:*:*:*
+  - id: 340643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.6:*:*:*:*:*:*:*
+  - id: 340644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.7:*:*:*:*:*:*:*
+  - id: 340645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.8:*:*:*:*:*:*:*
+  - id: 340646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.5.9:*:*:*:*:*:*:*
+  - id: 340657
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6:*:*:*:*:*:*:*
+  - id: 340647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.0:*:*:*:*:*:*:*
+  - id: 340648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.1:*:*:*:*:*:*:*
+  - id: 340649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.2:*:*:*:*:*:*:*
+  - id: 340650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.3:*:*:*:*:*:*:*
+  - id: 340651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.4:*:*:*:*:*:*:*
+  - id: 340652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.5:*:*:*:*:*:*:*
+  - id: 340653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.6:*:*:*:*:*:*:*
+  - id: 340654
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.7:*:*:*:*:*:*:*
+  - id: 340655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.8:*:*:*:*:*:*:*
+  - id: 340656
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.6.9:*:*:*:*:*:*:*
+  - id: 340658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.7.0:*:*:*:*:*:*:*
+  - id: 340659
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.7.1:*:*:*:*:*:*:*
+  - id: 340660
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.7.2:*:*:*:*:*:*:*
+  - id: 340661
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.7.3:*:*:*:*:*:*:*
+  - id: 340662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.8.0:*:*:*:*:*:*:*
+  - id: 340663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.8.1:*:*:*:*:*:*:*
+  - id: 340664
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postfix:postfix:2.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postfix:postfix:2.8.2:*:*:*:*:*:*:*
+  - id: 340555
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-1720
+    reference_id: CVE-2011-1720
+  - id: '196844'
+    url: https://access.redhat.com/errata/RHSA-2011:0843
+    reference_id: RHSA-2011:0843
+weaknesses: []

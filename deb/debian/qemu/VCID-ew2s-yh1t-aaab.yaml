@@ -1,0 +1,204 @@
+vulnerability_id: VCID-ew2s-yh1t-aaab
+aliases:
+  - CVE-2020-1711
+summary: An out-of-bounds heap buffer access flaw was found in the way the iSCSI Block driver
+  in QEMU versions 2.12.0 before 4.2.1 handled a response coming from an iSCSI server while
+  checking the status of a Logical Address Block (LBA) in an iscsi_co_block_status() routine.
+  A remote user could use this flaw to crash the QEMU process, resulting in a denial of service
+  or potential execution of arbitrary code with privileges of the QEMU process on the host.
+severities:
+  - id: 697417
+    reference_id: 1457424
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57685
+    reference_id: 183773
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L
+  - id: 697418
+    reference_id: 1457425
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697421
+    reference_id: 1457427
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697419
+    reference_id: 1457426
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697420
+    reference_id: 826850
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57675
+    reference_id: 183763
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 450342
+    reference_id: 826851
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 450340
+    reference_id: 826851
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L
+  - id: 57681
+    reference_id: 183769
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 54837
+    reference_id: 179956
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57678
+    reference_id: 183766
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57601
+    reference_id: 183681
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57604
+    reference_id: 183684
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57683
+    reference_id: 183771
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57679
+    reference_id: 183767
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57677
+    reference_id: 183765
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 779869
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00007.html
+    reference_id:
+  - id: 1457424
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-1711.html
+    reference_id:
+  - id: 826843
+    url: https://access.redhat.com/errata/RHSA-2020:0669
+    reference_id:
+  - id: 769425
+    url: https://access.redhat.com/errata/RHSA-2020:0730
+    reference_id:
+  - id: 826844
+    url: https://access.redhat.com/errata/RHSA-2020:0731
+    reference_id:
+  - id: 826845
+    url: https://access.redhat.com/errata/RHSA-2020:0773
+    reference_id:
+  - id: 183773
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-1711.json
+    reference_id:
+  - id: 826846
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1711
+    reference_id:
+  - id: 1457425
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1711
+    reference_id:
+  - id: 826847
+    url: https://lists.debian.org/debian-lts-announce/2020/03/msg00017.html
+    reference_id:
+  - id: 817663
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00013.html
+    reference_id:
+  - id: 826848
+    url: https://lists.gnu.org/archive/html/qemu-devel/2020-01/msg05535.html
+    reference_id:
+  - id: 813340
+    url: https://security.gentoo.org/glsa/202005-02
+    reference_id:
+  - id: 1457427
+    url: https://ubuntu.com/security/notices/USN-4283-1
+    reference_id:
+  - id: 826849
+    url: https://usn.ubuntu.com/4283-1/
+    reference_id:
+  - id: 1457426
+    url: https://usn.ubuntu.com/usn/usn-4283-1
+    reference_id:
+  - id: 826850
+    url: https://www.openwall.com/lists/oss-security/2020/01/23/3
+    reference_id:
+  - id: 183763
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1794290
+    reference_id: 1794290
+  - id: 112097
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=949731
+    reference_id: 949731
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 826851
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-1711
+    reference_id: CVE-2020-1711
+  - id: 183769
+    url: https://access.redhat.com/errata/RHSA-2020:1150
+    reference_id: RHSA-2020:1150
+  - id: 179956
+    url: https://access.redhat.com/errata/RHSA-2020:1216
+    reference_id: RHSA-2020:1216
+  - id: 183766
+    url: https://access.redhat.com/errata/RHSA-2020:1296
+    reference_id: RHSA-2020:1296
+  - id: 183681
+    url: https://access.redhat.com/errata/RHSA-2020:1300
+    reference_id: RHSA-2020:1300
+  - id: 183684
+    url: https://access.redhat.com/errata/RHSA-2020:1352
+    reference_id: RHSA-2020:1352
+  - id: 183771
+    url: https://access.redhat.com/errata/RHSA-2020:1358
+    reference_id: RHSA-2020:1358
+  - id: 183767
+    url: https://access.redhat.com/errata/RHSA-2020:1505
+    reference_id: RHSA-2020:1505
+  - id: 183765
+    url: https://access.redhat.com/errata/RHSA-2020:2472
+    reference_id: RHSA-2020:2472
+weaknesses: []

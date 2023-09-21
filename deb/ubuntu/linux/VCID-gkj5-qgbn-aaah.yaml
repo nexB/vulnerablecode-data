@@ -1,0 +1,97 @@
+vulnerability_id: VCID-gkj5-qgbn-aaah
+aliases:
+  - CVE-2014-8173
+summary: The pmd_none_or_trans_huge_or_clear_bad function in include/asm-generic/pgtable.h in
+  the Linux kernel before 3.13 on NUMA systems does not properly determine whether a Page Middle
+  Directory (PMD) entry is a transparent huge-table entry, which allows local users to cause
+  a denial of service (NULL pointer dereference and system crash) or possibly have unspecified
+  other impact via a crafted MADV_WILLNEED madvise system call that leverages the absence of
+  a page-table lock.
+severities:
+  - id: 658225
+    reference_id: 1426300
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658226
+    reference_id: 1426301
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60678
+    reference_id: 187943
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 658227
+    reference_id: 1426302
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658228
+    reference_id: 1426303
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 189136
+    reference_id: 586333
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 56232
+    reference_id: 181818
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 56233
+    reference_id: 181819
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1426300
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ee53664bda169f519ce3c6a22d378f0b946c8178
+    reference_id:
+  - id: 586330
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ee53664bda169f519ce3c6a22d378f0b946c8178
+    reference_id:
+  - id: 584411
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-04/msg00009.html
+    reference_id:
+  - id: 1426301
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-8173.html
+    reference_id:
+  - id: 568391
+    url: http://rhn.redhat.com/errata/RHSA-2015-0290.html
+    reference_id:
+  - id: 584414
+    url: http://rhn.redhat.com/errata/RHSA-2015-0694.html
+    reference_id:
+  - id: 187943
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-8173.json
+    reference_id:
+  - id: 586331
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1198457
+    reference_id:
+  - id: 1426302
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8173
+    reference_id:
+  - id: 586332
+    url: https://github.com/torvalds/linux/commit/ee53664bda169f519ce3c6a22d378f0b946c8178
+    reference_id:
+  - id: 1426303
+    url: https://rhn.redhat.com/errata/RHSA-2015-0290.html
+    reference_id:
+  - id: 586334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:numa_systems:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:numa_systems:*
+  - id: 586333
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-8173
+    reference_id: CVE-2014-8173
+  - id: 181818
+    url: https://access.redhat.com/errata/RHSA-2015:0290
+    reference_id: RHSA-2015:0290
+  - id: 181819
+    url: https://access.redhat.com/errata/RHSA-2015:0694
+    reference_id: RHSA-2015:0694
+weaknesses: []

@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2017-8244
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: In core_info_read and inst_info_read in all Android releases from CAF using
+  the Linux kernel, variable "dbg_buf", "dbg_buf->curr" and "dbg_buf->filled_size"
+  could be modified by different threads at the same time, but they are not protected
+  with mutex or locks. Buffer overflow is possible on race conditions. "buffer->curr"
+  itself could also be overwritten, which means that it may point to anywhere of kernel
+  memory (for write).
+vulnerability_id: VCID-zdge-jfm3-aaab
+weaknesses: []

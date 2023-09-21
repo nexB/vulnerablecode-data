@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2022-0358
+fixed_purl:
+- pkg:deb/debian/qemu@0?distro=sid
+- pkg:deb/debian/qemu@1:3.1%2Bdfsg-8%2Bdeb10u8?distro=sid
+- pkg:deb/debian/qemu@1:5.2%2Bdfsg-11%2Bdeb11u2?distro=sid
+- pkg:deb/debian/qemu@1:7.0%2Bdfsg-1?distro=sid
+- pkg:deb/debian/qemu@1:7.2%2Bdfsg-7?distro=sid
+references: []
+severities: []
+summary: A flaw was found in the QEMU virtio-fs shared file system daemon (virtiofsd)
+  implementation. This flaw is strictly related to CVE-2018-13405. A local guest user
+  can create files in the directories shared by virtio-fs with unintended group ownership
+  in a scenario where a directory is SGID to a certain group and is writable by a
+  user who is not a member of the group. This could allow a malicious unprivileged
+  user inside the guest to gain access to resources accessible to the root group,
+  potentially escalating their privileges within the guest. A malicious local user
+  in the host might also leverage this unexpected executable file created by the guest
+  to escalate their privileges on the host system.
+vulnerability_id: VCID-5ujm-3cc5-aaaf
+weaknesses: []

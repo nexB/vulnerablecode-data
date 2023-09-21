@@ -1,0 +1,347 @@
+vulnerability_id: VCID-hq4z-qnux-aaag
+aliases:
+  - CVE-2009-0689
+summary: Array index error in the (1) dtoa implementation in dtoa.c (aka pdtoa.c) and the (2)
+  gdtoa (aka new dtoa) implementation in gdtoa/misc.c in libc, as used in multiple operating
+  systems and products including in FreeBSD 6.4 and 7.2, NetBSD 5.0, OpenBSD 4.5, Mozilla Firefox
+  3.0.x before 3.0.15 and 3.5.x before 3.5.4, K-Meleon 1.5.3, SeaMonkey 1.1.8, and other products,
+  allows context-dependent attackers to cause a denial of service (application crash) and possibly
+  execute arbitrary code via a large precision value in the format argument to a printf function,
+  which triggers incorrect memory allocation and a heap-based buffer overflow during conversion
+  to a floating-point number.
+severities:
+  - id: 71126
+    reference_id: 201467
+    scoring_system: rhbs
+    value: urgent
+    scoring_elements:
+  - id: 123110
+    reference_id: 383974
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 71131
+    reference_id: 201472
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 71130
+    reference_id: 201471
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 71129
+    reference_id: 201470
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 70517
+    reference_id: 200665
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 70516
+    reference_id: 200664
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71127
+    reference_id: 201468
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 71128
+    reference_id: 201469
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+references:
+  - id: 383936
+    url: http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libc/gdtoa/gdtoaimp.h
+    reference_id:
+  - id: 151308
+    url: http://lists.apple.com/archives/security-announce/2010/Jun/msg00003.html
+    reference_id:
+  - id: 29844
+    url: http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+    reference_id:
+  - id: 153667
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-11/msg00004.html
+    reference_id:
+  - id: 1359
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-06/msg00001.html
+    reference_id:
+  - id: 270206
+    url: http://rhn.redhat.com/errata/RHSA-2014-0311.html
+    reference_id:
+  - id: 383937
+    url: http://rhn.redhat.com/errata/RHSA-2014-0312.html
+    reference_id:
+  - id: 201473
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-0689.json
+    reference_id:
+  - id: 383969
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=516396
+    reference_id:
+  - id: 383970
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=516862
+    reference_id:
+  - id: 383938
+    url: http://secunia.com/advisories/37431
+    reference_id:
+  - id: 383939
+    url: http://secunia.com/advisories/37682
+    reference_id:
+  - id: 383940
+    url: http://secunia.com/advisories/37683
+    reference_id:
+  - id: 383941
+    url: http://secunia.com/advisories/38066
+    reference_id:
+  - id: 154630
+    url: http://secunia.com/advisories/38977
+    reference_id:
+  - id: 154631
+    url: http://secunia.com/advisories/39001
+    reference_id:
+  - id: 383942
+    url: http://secunia.com/secunia_research/2009-35/
+    reference_id:
+  - id: 383943
+    url: http://securityreason.com/achievement_securityalert/63
+    reference_id:
+  - id: 383944
+    url: http://securityreason.com/achievement_securityalert/69
+    reference_id:
+  - id: 383945
+    url: http://securityreason.com/achievement_securityalert/71
+    reference_id:
+  - id: 383946
+    url: http://securityreason.com/achievement_securityalert/72
+    reference_id:
+  - id: 383947
+    url: http://securityreason.com/achievement_securityalert/73
+    reference_id:
+  - id: 383948
+    url: http://securityreason.com/achievement_securityalert/75
+    reference_id:
+  - id: 383949
+    url: http://securityreason.com/achievement_securityalert/76
+    reference_id:
+  - id: 383950
+    url: http://securityreason.com/achievement_securityalert/77
+    reference_id:
+  - id: 383951
+    url: http://securityreason.com/achievement_securityalert/78
+    reference_id:
+  - id: 383952
+    url: http://securityreason.com/achievement_securityalert/81
+    reference_id:
+  - id: 383953
+    url: http://securitytracker.com/id?1022478
+    reference_id:
+  - id: 383971
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00001.html
+    reference_id:
+  - id: 383972
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6528
+    reference_id:
+  - id: 383973
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9541
+    reference_id:
+  - id: 383954
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-272909-1
+    reference_id:
+  - id: 9065
+    url: http://support.apple.com/kb/HT4077
+    reference_id:
+  - id: 151311
+    url: http://support.apple.com/kb/HT4225
+    reference_id:
+  - id: 383955
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2009:294
+    reference_id:
+  - id: 155194
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2009:330
+    reference_id:
+  - id: 383956
+    url: http://www.mozilla.org/security/announce/2009/mfsa2009-59.html
+    reference_id:
+  - id: 383957
+    url: http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/gdtoa/misc.c
+    reference_id:
+  - id: 383958
+    url: http://www.opera.com/support/kb/view/942/
+    reference_id:
+  - id: 383959
+    url: http://www.redhat.com/support/errata/RHSA-2009-1601.html
+    reference_id:
+  - id: 154606
+    url: http://www.redhat.com/support/errata/RHSA-2010-0153.html
+    reference_id:
+  - id: 154607
+    url: http://www.redhat.com/support/errata/RHSA-2010-0154.html
+    reference_id:
+  - id: 383960
+    url: http://www.securityfocus.com/archive/1/507977/100/0/threaded
+    reference_id:
+  - id: 383961
+    url: http://www.securityfocus.com/archive/1/507979/100/0/threaded
+    reference_id:
+  - id: 383962
+    url: http://www.securityfocus.com/archive/1/508417/100/0/threaded
+    reference_id:
+  - id: 383963
+    url: http://www.securityfocus.com/archive/1/508423/100/0/threaded
+    reference_id:
+  - id: 383964
+    url: http://www.securityfocus.com/bid/35510
+    reference_id:
+  - id: 154633
+    url: http://www.ubuntu.com/usn/USN-915-1
+    reference_id:
+  - id: 383965
+    url: http://www.vupen.com/english/advisories/2009/3297
+    reference_id:
+  - id: 383966
+    url: http://www.vupen.com/english/advisories/2009/3299
+    reference_id:
+  - id: 383967
+    url: http://www.vupen.com/english/advisories/2009/3334
+    reference_id:
+  - id: 383968
+    url: http://www.vupen.com/english/advisories/2010/0094
+    reference_id:
+  - id: 154634
+    url: http://www.vupen.com/english/advisories/2010/0648
+    reference_id:
+  - id: 154611
+    url: http://www.vupen.com/english/advisories/2010/0650
+    reference_id:
+  - id: 201467
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=539784
+    reference_id: 539784
+  - id: 42393
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559265
+    reference_id: 559265
+  - id: 383975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:k-meleon_project:k-meleon:1.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:k-meleon_project:k-meleon:1.5.3:*:*:*:*:*:*:*
+  - id: 42536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.1:*:*:*:*:*:*:*
+  - id: 42528
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.10:*:*:*:*:*:*:*
+  - id: 42529
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.11:*:*:*:*:*:*:*
+  - id: 42530
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.12:*:*:*:*:*:*:*
+  - id: 42531
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.13:*:*:*:*:*:*:*
+  - id: 42532
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.14:*:*:*:*:*:*:*
+  - id: 42537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.2:*:*:*:*:*:*:*
+  - id: 42538
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.3:*:*:*:*:*:*:*
+  - id: 42539
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.4:*:*:*:*:*:*:*
+  - id: 42540
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.5:*:*:*:*:*:*:*
+  - id: 42541
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.6:*:*:*:*:*:*:*
+  - id: 42542
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.7:*:*:*:*:*:*:*
+  - id: 42543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.8:*:*:*:*:*:*:*
+  - id: 42544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.0.9:*:*:*:*:*:*:*
+  - id: 42561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.5:*:*:*:*:*:*:*
+  - id: 42552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.5.1:*:*:*:*:*:*:*
+  - id: 42553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.5.2:*:*:*:*:*:*:*
+  - id: 42554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:3.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:3.5.3:*:*:*:*:*:*:*
+  - id: 42615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:1.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:1.1.8:*:*:*:*:*:*:*
+  - id: 148275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:*:*:*:*:*:*:*
+  - id: 151552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:release:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:release:*:*:*:*:*:*
+  - id: 151553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:release_p2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:release_p2:*:*:*:*:*:*
+  - id: 151554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:release_p3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:release_p3:*:*:*:*:*:*
+  - id: 148276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:release_p4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:release_p4:*:*:*:*:*:*
+  - id: 151555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:release_p5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:release_p5:*:*:*:*:*:*
+  - id: 148277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:stable:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:stable:*:*:*:*:*:*
+  - id: 148285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.2:*:*:*:*:*:*:*
+  - id: 148286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.2:pre-release:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.2:pre-release:*:*:*:*:*:*
+  - id: 151558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.2:stable:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.2:stable:*:*:*:*:*:*
+  - id: 154847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:netbsd:netbsd:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:netbsd:netbsd:5.0:*:*:*:*:*:*:*
+  - id: 383859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openbsd:openbsd:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openbsd:openbsd:4.5:*:*:*:*:*:*:*
+  - id: 383974
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-0689
+    reference_id: CVE-2009-0689
+  - id: 201472
+    url: https://access.redhat.com/errata/RHSA-2009:1530
+    reference_id: RHSA-2009:1530
+  - id: 201471
+    url: https://access.redhat.com/errata/RHSA-2009:1531
+    reference_id: RHSA-2009:1531
+  - id: 201470
+    url: https://access.redhat.com/errata/RHSA-2009:1601
+    reference_id: RHSA-2009:1601
+  - id: 200665
+    url: https://access.redhat.com/errata/RHSA-2010:0153
+    reference_id: RHSA-2010:0153
+  - id: 200664
+    url: https://access.redhat.com/errata/RHSA-2010:0154
+    reference_id: RHSA-2010:0154
+  - id: 201468
+    url: https://access.redhat.com/errata/RHSA-2014:0311
+    reference_id: RHSA-2014:0311
+  - id: 201469
+    url: https://access.redhat.com/errata/RHSA-2014:0312
+    reference_id: RHSA-2014:0312
+weaknesses: []

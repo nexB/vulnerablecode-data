@@ -1,0 +1,47 @@
+vulnerability_id: VCID-32xx-z7t9-aaag
+aliases:
+  - CVE-2021-32739
+summary: Icinga is a monitoring system which checks the availability of network resources, notifies
+  users of outages, and generates performance data for reporting. From version 2.4.0 through
+  version 2.12.4, a vulnerability exists that may allow privilege escalation for authenticated
+  API users. With a read-ony user's credentials, an attacker can view most attributes of all
+  config objects including `ticket_salt` of `ApiListener`. This salt is enough to compute a
+  ticket for every possible common name (CN). A ticket, the master node's certificate, and a
+  self-signed certificate are enough to successfully request the desired certificate from Icinga.
+  That certificate may in turn be used to steal an endpoint or API user's identity. Versions
+  2.12.5 and 2.11.10 both contain a fix the vulnerability. As a workaround, one may either specify
+  queryable types explicitly or filter out ApiListener objects.
+severities:
+  - id: 540757
+    reference_id: 884853
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+  - id: 540755
+    reference_id: 884853
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 884850
+    url: https://github.com/Icinga/icinga2/security/advisories/GHSA-98wp-jc6q-x5q5
+    reference_id:
+  - id: 884851
+    url: https://icinga.com/blog/2021/07/02/releasing-icinga-2-12-5-2-11-10/
+    reference_id:
+  - id: 884852
+    url: https://lists.debian.org/debian-lts-announce/2021/11/msg00010.html
+    reference_id:
+  - id: 41811
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991494
+    reference_id: 991494
+  - id: 458449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:icinga:icinga:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:icinga:icinga:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 884853
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32739
+    reference_id: CVE-2021-32739
+weaknesses: []

@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2019-15753
+fixed_purl:
+- pkg:deb/debian/python-os-vif@0?distro=sid
+- pkg:deb/debian/python-os-vif@1.11.1-1?distro=sid
+- pkg:deb/debian/python-os-vif@1.15.2-1?distro=sid
+- pkg:deb/debian/python-os-vif@2.2.0-2?distro=sid
+- pkg:deb/debian/python-os-vif@3.0.0-2?distro=sid
+references:
+- id: 128693
+  reference_id: '939288'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939288
+severities: []
+summary: In OpenStack os-vif 1.15.x before 1.15.2, and 1.16.0, a hard-coded MAC aging
+  time of 0 disables MAC learning in linuxbridge, forcing obligatory Ethernet flooding
+  of non-local destinations, which both impedes network performance and allows users
+  to possibly view the content of packets for instances belonging to other tenants
+  sharing the same network. Only deployments using the linuxbridge backend are affected.
+  This occurs in PyRoute2.add() in internal/command/ip/linux/impl_pyroute2.py.
+vulnerability_id: VCID-wmty-yezw-aaaj
+weaknesses: []

@@ -1,0 +1,27 @@
+affected_purls:
+- pkg:conan/libarchive@3.4.0
+aliases:
+- CVE-2020-9308
+fixed_purl:
+- pkg:conan/libarchive@3.4.3
+- pkg:deb/debian/libarchive@0?distro=sid
+- pkg:deb/debian/libarchive@3.3.3-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libarchive@3.4.0-2?distro=sid
+- pkg:deb/debian/libarchive@3.4.3-2%2Bdeb11u1?distro=sid
+- pkg:deb/debian/libarchive@3.6.2-1?distro=sid
+references:
+- id: 183204
+  reference_id: ''
+  url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=20459
+- id: 129552
+  reference_id: '951759'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=951759
+- id: 183203
+  reference_id: CVE-2020-9308
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-9308
+severities: []
+summary: archive_read_support_format_rar5.c in libarchive before 3.4.2 attempts to
+  unpack a RAR5 file with an invalid or corrupted header (such as a header size of
+  zero), leading to a SIGSEGV or possibly unspecified other impact.
+vulnerability_id: VCID-rqvu-cyrw-aaan
+weaknesses: []

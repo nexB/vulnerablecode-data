@@ -1,0 +1,89 @@
+vulnerability_id: VCID-xfcu-veer-aaac
+aliases:
+  - CVE-2021-29657
+summary: arch/x86/kvm/svm/nested.c in the Linux kernel before 5.11.12 has a use-after-free in
+  which an AMD KVM guest can bypass access control on host OS MSRs when there are nested guests,
+  aka CID-a58d9166a756. This occurs because of a TOCTOU race condition associated with a VMCB12
+  double fetch in nested_svm_vmrun.
+severities:
+  - id: 701631
+    reference_id: 1460980
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606166
+    reference_id: 928527
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 701632
+    reference_id: 1460981
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701633
+    reference_id: 1460982
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 606165
+    reference_id: 928526
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 532353
+    reference_id: 879287
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 532351
+    reference_id: 879287
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 879282
+    url: http://packetstormsecurity.com/files/163324/KVM-nested_svm_vmrun-Double-Fetch.html
+    reference_id:
+  - id: 1460980
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-29657.html
+    reference_id:
+  - id: 928527
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-29657.json
+    reference_id:
+  - id: 879283
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=2177
+    reference_id:
+  - id: 879284
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.12
+    reference_id:
+  - id: 1460981
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29657
+    reference_id:
+  - id: 1460982
+    url: https://git.kernel.org/linus/a58d9166a756a0f4a6618e4f593232593d6df134
+    reference_id:
+  - id: 879285
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a58d9166a756a0f4a6618e4f593232593d6df134
+    reference_id:
+  - id: 879286
+    url: https://security.netapp.com/advisory/ntap-20210902-0008/
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 928526
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1995153
+    reference_id: '1995153'
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 879287
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29657
+    reference_id: CVE-2021-29657
+weaknesses: []

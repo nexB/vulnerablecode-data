@@ -1,0 +1,331 @@
+vulnerability_id: VCID-vm7d-hfcr-aaar
+aliases:
+  - CVE-2010-1321
+summary: The kg_accept_krb5 function in krb5/accept_sec_context.c in the GSS-API library in
+  MIT Kerberos 5 (aka krb5) through 1.7.1 and 1.8 before 1.8.2, as used in kadmind and other
+  applications, does not properly check for invalid GSS-API tokens, which allows remote authenticated
+  users to cause a denial of service (NULL pointer dereference and daemon crash) via an AP-REQ
+  message in which the authenticator's checksum field is missing.
+severities:
+  - id: 70227
+    reference_id: 200265
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 132008
+    reference_id: 417479
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:C
+  - id: 70228
+    reference_id: 200266
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 69205
+    reference_id: '198882'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69206
+    reference_id: '198883'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69204
+    reference_id: '198881'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69269
+    reference_id: '198951'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 69200
+    reference_id: '198877'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69270
+    reference_id: '198952'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 68140
+    reference_id: '197622'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 288660
+    url: http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02257427
+    reference_id:
+  - id: 417443
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041615.html
+    reference_id:
+  - id: 417444
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041645.html
+    reference_id:
+  - id: 417445
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041654.html
+    reference_id:
+  - id: 1359
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-06/msg00001.html
+    reference_id:
+  - id: 3916
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-08/msg00001.html
+    reference_id:
+  - id: 397915
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-10/msg00006.html
+    reference_id:
+  - id: 417446
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00002.html
+    reference_id:
+  - id: 417447
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00010.html
+    reference_id:
+  - id: 348795
+    url: http://marc.info/?l=bugtraq&m=134254866602253&w=2
+    reference_id:
+  - id: 417448
+    url: http://osvdb.org/64744
+    reference_id:
+  - id: 200267
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-1321.json
+    reference_id:
+  - id: 417449
+    url: http://secunia.com/advisories/39762
+    reference_id:
+  - id: 316014
+    url: http://secunia.com/advisories/39784
+    reference_id:
+  - id: 417450
+    url: http://secunia.com/advisories/39799
+    reference_id:
+  - id: 417451
+    url: http://secunia.com/advisories/39818
+    reference_id:
+  - id: 417452
+    url: http://secunia.com/advisories/39849
+    reference_id:
+  - id: 288673
+    url: http://secunia.com/advisories/40346
+    reference_id:
+  - id: 417453
+    url: http://secunia.com/advisories/40685
+    reference_id:
+  - id: 397956
+    url: http://secunia.com/advisories/41967
+    reference_id:
+  - id: 417454
+    url: http://secunia.com/advisories/42432
+    reference_id:
+  - id: 417455
+    url: http://secunia.com/advisories/42974
+    reference_id:
+  - id: 417456
+    url: http://secunia.com/advisories/43335
+    reference_id:
+  - id: 397963
+    url: http://secunia.com/advisories/44954
+    reference_id:
+  - id: 417476
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11604
+    reference_id:
+  - id: 417477
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7198
+    reference_id:
+  - id: 417478
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7450
+    reference_id:
+  - id: 397974
+    url: http://support.avaya.com/css/P8/documents/100114315
+    reference_id:
+  - id: 417457
+    url: http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-005.txt
+    reference_id:
+  - id: 417458
+    url: http://www.debian.org/security/2010/dsa-2052
+    reference_id:
+  - id: 417459
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:100
+    reference_id:
+  - id: 403379
+    url: http://www.oracle.com/technetwork/topics/security/cpujan2011-194091.html
+    reference_id:
+  - id: 417460
+    url: http://www.oracle.com/technetwork/topics/security/cpujuly2011-313328.html
+    reference_id:
+  - id: 348802
+    url: http://www.oracle.com/technetwork/topics/security/cpuoct2010-175626.html
+    reference_id:
+  - id: 398013
+    url: http://www.oracle.com/technetwork/topics/security/javacpuoct2010-176258.html
+    reference_id:
+  - id: 417461
+    url: http://www.redhat.com/support/errata/RHSA-2010-0423.html
+    reference_id:
+  - id: 398020
+    url: http://www.redhat.com/support/errata/RHSA-2010-0770.html
+    reference_id:
+  - id: 398022
+    url: http://www.redhat.com/support/errata/RHSA-2010-0807.html
+    reference_id:
+  - id: 417462
+    url: http://www.redhat.com/support/errata/RHSA-2010-0873.html
+    reference_id:
+  - id: 417463
+    url: http://www.redhat.com/support/errata/RHSA-2010-0935.html
+    reference_id:
+  - id: 398025
+    url: http://www.redhat.com/support/errata/RHSA-2010-0987.html
+    reference_id:
+  - id: 417464
+    url: http://www.redhat.com/support/errata/RHSA-2011-0152.html
+    reference_id:
+  - id: 398026
+    url: http://www.redhat.com/support/errata/RHSA-2011-0880.html
+    reference_id:
+  - id: 417465
+    url: http://www.securityfocus.com/archive/1/511331/100/0/threaded
+    reference_id:
+  - id: 156608
+    url: http://www.securityfocus.com/archive/1/516397/100/0/threaded
+    reference_id:
+  - id: 417466
+    url: http://www.securityfocus.com/bid/40235
+    reference_id:
+  - id: 316015
+    url: http://www.ubuntu.com/usn/USN-940-1
+    reference_id:
+  - id: 417467
+    url: http://www.ubuntu.com/usn/USN-940-2
+    reference_id:
+  - id: 394423
+    url: http://www.us-cert.gov/cas/techalerts/TA10-287A.html
+    reference_id:
+  - id: 417468
+    url: http://www.us-cert.gov/cas/techalerts/TA11-201A.html
+    reference_id:
+  - id: 156610
+    url: http://www.vmware.com/security/advisories/VMSA-2011-0003.html
+    reference_id:
+  - id: 417469
+    url: http://www.vupen.com/english/advisories/2010/1177
+    reference_id:
+  - id: 316016
+    url: http://www.vupen.com/english/advisories/2010/1192
+    reference_id:
+  - id: 417470
+    url: http://www.vupen.com/english/advisories/2010/1193
+    reference_id:
+  - id: 417471
+    url: http://www.vupen.com/english/advisories/2010/1196
+    reference_id:
+  - id: 417472
+    url: http://www.vupen.com/english/advisories/2010/1222
+    reference_id:
+  - id: 288695
+    url: http://www.vupen.com/english/advisories/2010/1574
+    reference_id:
+  - id: 417473
+    url: http://www.vupen.com/english/advisories/2010/1882
+    reference_id:
+  - id: 417474
+    url: http://www.vupen.com/english/advisories/2010/3112
+    reference_id:
+  - id: 417475
+    url: http://www.vupen.com/english/advisories/2011/0134
+    reference_id:
+  - id: 41696
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=582261
+    reference_id: 582261
+  - id: 200265
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=582466
+    reference_id: 582466
+  - id: 51353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*
+  - id: 417480
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:database_server:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:database_server:-:*:*:*:*:*:*:*
+  - id: 417481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:*:*:*:*
+  - id: 148532
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*
+  - id: 152409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:*:*:*:*
+  - id: 148535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*
+  - id: 155878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*
+  - id: 152410
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:5.0:*:*:*:*:*:*:*
+  - id: 79273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+  - id: 148537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:11:*:*:*:*:*:*:*
+  - id: 155949
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:12:*:*:*:*:*:*:*
+  - id: 398113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:13:*:*:*:*:*:*:*
+  - id: 154692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:11.0:*:*:*:*:*:*:*
+  - id: 154693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:11.1:*:*:*:*:*:*:*
+  - id: 155879
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:11.2:*:*:*:*:*:*:*
+  - id: 157556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:11.3:*:*:*:*:*:*:*
+  - id: 155880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:10:sp3:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:10:sp3:*:*:-:*:*:*
+  - id: 154697
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:-:*:*:*:*:*:*
+  - id: 270315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp1:*:*:*:*:*:*
+  - id: 417479
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-1321
+    reference_id: CVE-2010-1321
+  - id: 200266
+    url: https://access.redhat.com/errata/RHSA-2010:0423
+    reference_id: RHSA-2010:0423
+  - id: '198882'
+    url: https://access.redhat.com/errata/RHSA-2010:0770
+    reference_id: RHSA-2010:0770
+  - id: '198883'
+    url: https://access.redhat.com/errata/RHSA-2010:0807
+    reference_id: RHSA-2010:0807
+  - id: '198881'
+    url: https://access.redhat.com/errata/RHSA-2010:0873
+    reference_id: RHSA-2010:0873
+  - id: '198951'
+    url: https://access.redhat.com/errata/RHSA-2010:0935
+    reference_id: RHSA-2010:0935
+  - id: '198877'
+    url: https://access.redhat.com/errata/RHSA-2010:0987
+    reference_id: RHSA-2010:0987
+  - id: '198952'
+    url: https://access.redhat.com/errata/RHSA-2011:0152
+    reference_id: RHSA-2011:0152
+  - id: '197622'
+    url: https://access.redhat.com/errata/RHSA-2011:0880
+    reference_id: RHSA-2011:0880
+weaknesses: []

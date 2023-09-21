@@ -1,0 +1,57 @@
+affected_purls:
+- pkg:maven/org.apache.activemq/activemq-broker@5.15.12
+- pkg:maven/org.apache.activemq/activemq-parent@5.15.12
+aliases:
+- CVE-2020-11998
+- GHSA-wqfh-9m4g-7x6x
+fixed_purl:
+- pkg:deb/debian/activemq@0?distro=sid
+- pkg:deb/debian/activemq@5.15.8-2?distro=sid
+- pkg:deb/debian/activemq@5.16.1-1?distro=sid
+- pkg:deb/debian/activemq@5.17.2%2Bdfsg-2?distro=sid
+- pkg:maven/org.apache.activemq/activemq-broker@5.15.13
+- pkg:maven/org.apache.activemq/activemq-parent@5.15.13
+references:
+- id: 145628
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/r946488fb942fd35c6a6e0359f52504a558ed438574a8f14d36d7dcd7@%3Ccommits.activemq.apache.org%3E
+- id: 140757
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/rb2fd3bf2dce042e0ab3f3c94c4767c96bb2e7e6737624d63162df36d@%3Ccommits.activemq.apache.org%3E
+- id: 139978
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuApr2021.html
+- id: 134377
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujan2021.html
+- id: 134316
+  reference_id: ''
+  url: https://www.oracle.com//security-alerts/cpujul2021.html
+- id: 136182
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2021.html
+- id: 150643
+  reference_id: CVE-2020-11998
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-11998
+- id: 150644
+  reference_id: CVE-2020-11998-ANNOUNCEMENT.TXT
+  url: http://activemq.apache.org/security-advisories.data/CVE-2020-11998-announcement.txt
+- id: 150645
+  reference_id: GHSA-wqfh-9m4g-7x6x
+  url: https://github.com/advisories/GHSA-wqfh-9m4g-7x6x
+severities:
+- id: 21344
+  reference_id: 150645
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: CRITICAL
+summary: 'A regression has been introduced in the commit preventing JMX re-bind. By
+  passing an empty environment map to RMIConnectorServer, instead of the map that
+  contains the authentication credentials, it leaves ActiveMQ open to the following
+  attack: https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html
+  "A remote client could create a javax.management.loading.MLet MBean and use it to
+  create new MBeans from arbitrary URLs, at least if there is no security manager.
+  In other words, a rogue remote client could make your Java application execute arbitrary
+  code." Mitigation: Upgrade to Apache ActiveMQ 5.15.13'
+vulnerability_id: VCID-y28j-wme2-aaaa
+weaknesses: []

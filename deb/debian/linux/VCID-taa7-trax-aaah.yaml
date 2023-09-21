@@ -1,0 +1,70 @@
+vulnerability_id: VCID-taa7-trax-aaah
+aliases:
+  - CVE-2022-34918
+summary: An issue was discovered in the Linux kernel through 5.18.9. A type confusion bug in
+  nft_set_elem_init (leading to a buffer overflow) could be used by a local attacker to escalate
+  privileges, a different vulnerability than CVE-2022-32250. (The attacker can obtain root access,
+  but must start with an unprivileged user namespace to obtain CAP_NET_ADMIN access.) This can
+  be fixed in nft_setelem_parse_data in net/netfilter/nf_tables_api.c.
+severities:
+  - id: 638599
+    reference_id: 951803
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 638598
+    reference_id: 951802
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 638375
+    reference_id: 951436
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 638373
+    reference_id: 951436
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1414718
+    url: http://packetstormsecurity.com/files/168191/Kernel-Live-Patch-Security-Notice-LSN-0089-1.html
+    reference_id:
+  - id: 951803
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-34918.json
+    reference_id:
+  - id: 951433
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=7e6bc1f6cabcd30aba0b11219d8e01b952eacbb6
+    reference_id:
+  - id: 951434
+    url: https://lore.kernel.org/netfilter-devel/cd9428b6-7ffb-dd22-d949-d86f4869f452@randorisec.fr/T/#u
+    reference_id:
+  - id: 1414067
+    url: https://security.netapp.com/advisory/ntap-20220826-0004/
+    reference_id:
+  - id: 1180162
+    url: https://www.debian.org/security/2022/dsa-5191
+    reference_id:
+  - id: 951435
+    url: https://www.openwall.com/lists/oss-security/2022/07/02/3
+    reference_id:
+  - id: 1178743
+    url: https://www.randorisec.fr/crack-linux-firewall/
+    reference_id:
+  - id: 951432
+    url: http://www.openwall.com/lists/oss-security/2022/07/05/1
+    reference_id:
+  - id: 1182615
+    url: http://www.openwall.com/lists/oss-security/2022/08/06/5
+    reference_id:
+  - id: 951802
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2104423
+    reference_id: 2104423
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 951436
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-34918
+    reference_id: CVE-2022-34918
+weaknesses: []

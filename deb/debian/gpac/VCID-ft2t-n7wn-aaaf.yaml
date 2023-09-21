@@ -1,0 +1,34 @@
+vulnerability_id: VCID-ft2t-n7wn-aaaf
+aliases:
+  - CVE-2021-30022
+summary: There is a integer overflow in media_tools/av_parsers.c in the gf_avc_read_pps_bs_internal
+  in GPAC 1.0.1. pps_id may be a negative number, so it will not return. However, avc->pps only
+  has 255 unit, so there is an overflow, which results a crash.
+severities:
+  - id: 533333
+    reference_id: 880082
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 533331
+    reference_id: 880082
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 880067
+    url: https://github.com/gpac/gpac/commit/51cdb67ff7c5f1242ac58c5aa603ceaf1793b788
+    reference_id:
+  - id: 880081
+    url: https://github.com/gpac/gpac/issues/1720
+    reference_id:
+  - id: 40031
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=987323
+    reference_id: 987323
+  - id: 171527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gpac:gpac:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gpac:gpac:1.0.1:*:*:*:*:*:*:*
+  - id: 880082
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-30022
+    reference_id: CVE-2021-30022
+weaknesses: []

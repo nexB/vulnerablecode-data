@@ -1,0 +1,150 @@
+vulnerability_id: VCID-67qe-mhvv-aaaj
+aliases:
+  - CVE-2020-25669
+summary: A vulnerability was found in the Linux Kernel where the function sunkbd_reinit having
+  been scheduled by sunkbd_interrupt before sunkbd being freed. Though the dangling pointer
+  is set to NULL in sunkbd_disconnect, there is still an alias in sunkbd_reinit causing Use
+  After Free.
+severities:
+  - id: 697758
+    reference_id: 1457688
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 608695
+    reference_id: 930398
+    scoring_system: cvssv3
+    value: '4.1'
+    scoring_elements: CVSS:3.1/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 697759
+    reference_id: 1457689
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684067
+    reference_id: 1446747
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684068
+    reference_id: 1446748
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697760
+    reference_id: 1457690
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697761
+    reference_id: 1457691
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 697743
+    reference_id: 1457673
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 696426
+    reference_id: 1456543
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697762
+    reference_id: 1457692
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 608694
+    reference_id: 930397
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 462086
+    reference_id: 834127
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 462084
+    reference_id: 834127
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1457688
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-25669.html
+    reference_id:
+  - id: 930398
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25669.json
+    reference_id:
+  - id: 1457689
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25669
+    reference_id:
+  - id: 834123
+    url: https://github.com/torvalds/linux/commit/77e70d351db7de07a46ac49b87a6c3c7a60fca7e
+    reference_id:
+  - id: 789148
+    url: https://lists.debian.org/debian-lts-announce/2020/12/msg00015.html
+    reference_id:
+  - id: 809357
+    url: https://lists.debian.org/debian-lts-announce/2020/12/msg00027.html
+    reference_id:
+  - id: 834124
+    url: https://security.netapp.com/advisory/ntap-20210702-0006/
+    reference_id:
+  - id: 1446747
+    url: https://ubuntu.com/security/notices/USN-4708-1
+    reference_id:
+  - id: 1446748
+    url: https://ubuntu.com/security/notices/USN-4709-1
+    reference_id:
+  - id: 1457690
+    url: https://ubuntu.com/security/notices/USN-4749-1
+    reference_id:
+  - id: 1457691
+    url: https://ubuntu.com/security/notices/USN-4750-1
+    reference_id:
+  - id: 1457673
+    url: https://ubuntu.com/security/notices/USN-4751-1
+    reference_id:
+  - id: 1456543
+    url: https://ubuntu.com/security/notices/USN-4912-1
+    reference_id:
+  - id: 1457692
+    url: https://www.openwall.com/lists/oss-security/2020/11/05/2
+    reference_id:
+  - id: 834125
+    url: https://www.openwall.com/lists/oss-security/2020/11/05/2,
+    reference_id:
+  - id: 834126
+    url: https://www.openwall.com/lists/oss-security/2020/11/20/5,
+    reference_id:
+  - id: 834121
+    url: http://www.openwall.com/lists/oss-security/2020/11/05/2
+    reference_id:
+  - id: 834122
+    url: http://www.openwall.com/lists/oss-security/2020/11/20/5
+    reference_id:
+  - id: 930397
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1892176
+    reference_id: 1892176
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 172255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+  - id: 172254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 834128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.4:*:*:*:*:*:*:*
+  - id: 834127
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25669
+    reference_id: CVE-2020-25669
+weaknesses: []

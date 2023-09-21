@@ -1,0 +1,75 @@
+vulnerability_id: VCID-j8zt-bqp8-aaaf
+aliases:
+  - CVE-2018-14636
+  - PYSEC-2018-94
+summary: Live-migrated instances are briefly able to inspect traffic for other instances on
+  the same hypervisor. This brief window could be extended indefinitely if the instance's port
+  is set administratively down prior to live-migration and kept down after the migration is
+  complete. This is possible due to the Open vSwitch integration bridge being connected to the
+  instance during migration. When connected to the integration bridge, all traffic for instances
+  using the same Open vSwitch instance would potentially be visible to the migrated guest, as
+  the required Open vSwitch VLAN filters are only applied post-migration. Versions of openstack-neutron
+  before 13.0.0.0b2, 12.0.3, 11.0.5 are vulnerable.
+severities:
+  - id: 684545
+    reference_id: 1447088
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 616911
+    reference_id: 936404
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 684546
+    reference_id: 1447089
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 616910
+    reference_id: 936403
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 324219
+    reference_id: 22589
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:N/A:N
+  - id: 324217
+    reference_id: 22589
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1447088
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14636.html
+    reference_id:
+  - id: 936404
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14636.json
+    reference_id:
+  - id: 5931
+    url: https://bugs.launchpad.net/neutron/+bug/1734320
+    reference_id:
+  - id: 5930
+    url: https://bugs.launchpad.net/neutron/+bug/1767422
+    reference_id:
+  - id: 5929
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14636
+    reference_id:
+  - id: 1447089
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14636
+    reference_id:
+  - id: 936403
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1594977
+    reference_id: 1594977
+  - id: 544201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+  - id: 734845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:neutron:13.0.0:b1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:neutron:13.0.0:b1:*:*:*:*:*:*
+  - id: 22589
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14636
+    reference_id: CVE-2018-14636
+weaknesses: []

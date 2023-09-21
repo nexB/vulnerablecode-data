@@ -1,0 +1,163 @@
+vulnerability_id: VCID-9dxv-6zus-aaan
+aliases:
+  - CVE-2012-4929
+summary: The TLS protocol 1.2 and earlier, as used in Mozilla Firefox, Google Chrome, Qt, and
+  other products, can encrypt compressed data without properly obfuscating the length of the
+  unencrypted data, which allows man-in-the-middle attackers to obtain plaintext HTTP headers
+  by observing length differences during a series of guesses in which a string in an HTTP request
+  potentially matches an unknown string in an HTTP header, aka a "CRIME" attack.
+severities:
+  - id: 158120
+    reference_id: 504276
+    scoring_system: cvssv2
+    value: '2.6'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:N/A:N
+  - id: 63003
+    reference_id: '191104'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 63002
+    reference_id: '191103'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59976
+    reference_id: 186852
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 504248
+    url: http://arstechnica.com/security/2012/09/crime-hijacks-https-sessions/
+    reference_id:
+  - id: 504249
+    url: http://code.google.com/p/chromium/issues/detail?id=139744
+    reference_id:
+  - id: 504250
+    url: http://isecpartners.com/blog/2012/9/14/details-on-the-crime-attack.html
+    reference_id:
+  - id: 504252
+    url: http://jvndb.jvn.jp/en/contents/2016/JVNDB-2016-000129.html
+    reference_id:
+  - id: 504251
+    url: http://jvn.jp/en/jp/JVN65273415/index.html
+    reference_id:
+  - id: 30214
+    url: http://lists.apple.com/archives/security-announce/2013/Jun/msg00000.html
+    reference_id:
+  - id: 504253
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101366.html
+    reference_id:
+  - id: 504254
+    url: http://lists.opensuse.org/opensuse-updates/2012-10/msg00096.html
+    reference_id:
+  - id: 504255
+    url: http://lists.opensuse.org/opensuse-updates/2013-01/msg00034.html
+    reference_id:
+  - id: 504256
+    url: http://lists.opensuse.org/opensuse-updates/2013-01/msg00048.html
+    reference_id:
+  - id: 322406
+    url: http://marc.info/?l=bugtraq&m=136612293908376&w=2
+    reference_id:
+  - id: 504257
+    url: http://news.ycombinator.com/item?id=4510829
+    reference_id:
+  - id: 504258
+    url: http://rhn.redhat.com/errata/RHSA-2013-0587.html
+    reference_id:
+  - id: '192857'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-4929.json
+    reference_id:
+  - id: 504269
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=857051
+    reference_id:
+  - id: 504270
+    url: https://chromiumcodereview.appspot.com/10825183
+    reference_id:
+  - id: 504271
+    url: https://community.qualys.com/blogs/securitylabs/2012/09/14/crime-information-leakage-attack-against-ssltls
+    reference_id:
+  - id: 504259
+    url: http://security.stackexchange.com/questions/19911/crime-how-to-beat-the-beast-successor
+    reference_id:
+  - id: 504272
+    url: https://gist.github.com/3696912
+    reference_id:
+  - id: 504273
+    url: https://github.com/mpgn/CRIME-poc
+    reference_id:
+  - id: 504274
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18920
+    reference_id:
+  - id: 504275
+    url: https://threatpost.com/en_us/blogs/demo-crime-tls-attack-091212
+    reference_id:
+  - id: 30219
+    url: http://support.apple.com/kb/HT5784
+    reference_id:
+  - id: 504260
+    url: http://threatpost.com/en_us/blogs/crime-attack-uses-compression-ratio-tls-requests-side-channel-hijack-secure-sessions-091312
+    reference_id:
+  - id: 504261
+    url: http://threatpost.com/en_us/blogs/new-attack-uses-ssltls-information-leak-hijack-https-sessions-090512
+    reference_id:
+  - id: 502814
+    url: http://www.debian.org/security/2012/dsa-2579
+    reference_id:
+  - id: 504262
+    url: http://www.debian.org/security/2013/dsa-2627
+    reference_id:
+  - id: 397992
+    url: http://www.debian.org/security/2015/dsa-3253
+    reference_id:
+  - id: 504263
+    url: http://www.ekoparty.org/2012/thai-duong.php
+    reference_id:
+  - id: 504264
+    url: http://www.iacr.org/cryptodb/data/paper.php?pubkey=3091
+    reference_id:
+  - id: 504265
+    url: http://www.securityfocus.com/bid/55704
+    reference_id:
+  - id: 504266
+    url: http://www.theregister.co.uk/2012/09/14/crime_tls_attack/
+    reference_id:
+  - id: 492946
+    url: http://www.ubuntu.com/usn/USN-1627-1
+    reference_id:
+  - id: 504267
+    url: http://www.ubuntu.com/usn/USN-1628-1
+    reference_id:
+  - id: 504268
+    url: http://www.ubuntu.com/usn/USN-1898-1
+    reference_id:
+  - id: 39492
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=689936
+    reference_id: 689936
+  - id: 146802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 504276
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-4929
+    reference_id: CVE-2012-4929
+  - id: '191104'
+    url: https://access.redhat.com/errata/RHSA-2013:0587
+    reference_id: RHSA-2013:0587
+  - id: '191103'
+    url: https://access.redhat.com/errata/RHSA-2013:0636
+    reference_id: RHSA-2013:0636
+  - id: 186852
+    url: https://access.redhat.com/errata/RHSA-2014:0416
+    reference_id: RHSA-2014:0416
+weaknesses: []

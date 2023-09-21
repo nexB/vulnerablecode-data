@@ -1,0 +1,64 @@
+vulnerability_id: VCID-8gby-x4ap-aaac
+aliases:
+  - CVE-2019-7307
+summary: Apport before versions 2.14.1-0ubuntu3.29+esm1, 2.20.1-0ubuntu2.19, 2.20.9-0ubuntu7.7,
+  2.20.10-0ubuntu27.1, 2.20.11-0ubuntu5 contained a TOCTTOU vulnerability when reading the users
+  ~/.apport-ignore.xml file, which allows a local attacker to replace this file with a symlink
+  to any other file on the system and so cause Apport to include the contents of this other
+  file in the resulting crash report. The crash report could then be read by that user either
+  by causing it to be uploaded and reported to Launchpad, or by leveraging some other vulnerability
+  to read the resulting crash report, and so allow the user to read arbitrary files on the system.
+severities:
+  - id: 694466
+    reference_id: 1454962
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694467
+    reference_id: 1454963
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694468
+    reference_id: 1454964
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694469
+    reference_id: 1454965
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 415599
+    reference_id: 803423
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 415597
+    reference_id: 803423
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1454962
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-7307.html
+    reference_id:
+  - id: 803421
+    url: https://bugs.launchpad.net/ubuntu/%2Bsource/apport/%2Bbug/1830858
+    reference_id:
+  - id: 1454963
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-7307
+    reference_id:
+  - id: 803422
+    url: https://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-7307.html
+    reference_id:
+  - id: 1454964
+    url: https://ubuntu.com/security/notices/USN-4051-1
+    reference_id:
+  - id: 1454965
+    url: https://ubuntu.com/security/notices/USN-4051-2
+    reference_id:
+  - id: 803423
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-7307
+    reference_id: CVE-2019-7307
+weaknesses: []

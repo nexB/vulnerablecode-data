@@ -1,0 +1,58 @@
+vulnerability_id: VCID-kmvf-mb1u-aaaf
+aliases:
+  - CVE-2015-20001
+summary: In the standard library in Rust before 1.2.0, BinaryHeap is not panic-safe. The binary
+  heap is left in an inconsistent state when the comparison of generic elements inside sift_up
+  or sift_down_range panics. This bug leads to a drop of zeroed memory as an arbitrary type,
+  which can result in a memory safety violation.
+severities:
+  - id: 660802
+    reference_id: 1428287
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660803
+    reference_id: 1428288
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660804
+    reference_id: 601847
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660805
+    reference_id: 601848
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: '196748'
+    reference_id: 601849
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: '196746'
+    reference_id: 601849
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1428287
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-20001.html
+    reference_id:
+  - id: 1428288
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-20001
+    reference_id:
+  - id: 601847
+    url: https://github.com/rust-lang/rust/issues/25842
+    reference_id:
+  - id: 601848
+    url: https://github.com/rust-lang/rust/pull/25856
+    reference_id:
+  - id: 169110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+  - id: 601849
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-20001
+    reference_id: CVE-2015-20001
+weaknesses: []

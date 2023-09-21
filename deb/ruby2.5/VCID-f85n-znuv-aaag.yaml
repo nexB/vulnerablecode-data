@@ -1,0 +1,59 @@
+affected_purls:
+- pkg:gem/openssl@2.0.0
+- pkg:gem/openssl@2.0.0.beta.1
+- pkg:gem/openssl@2.0.0.beta.2
+- pkg:gem/openssl@2.0.1
+- pkg:gem/openssl@2.0.2
+- pkg:gem/openssl@2.0.3
+- pkg:gem/openssl@2.0.4
+- pkg:gem/openssl@2.0.5
+- pkg:gem/openssl@2.0.6
+- pkg:gem/openssl@2.0.7
+- pkg:gem/openssl@2.0.8
+- pkg:gem/openssl@2.0.9
+- pkg:gem/openssl@2.1.0
+- pkg:gem/openssl@2.1.0.beta1
+- pkg:gem/openssl@2.1.0.beta2
+- pkg:gem/openssl@2.1.1
+aliases:
+- CVE-2018-16395
+fixed_purl:
+- pkg:deb/debian/ruby2.5@2.5.3-1?distro=buster
+- pkg:deb/debian/ruby2.5@2.5.5-3%2Bdeb10u4?distro=buster
+- pkg:gem/openssl@2.1.2
+references:
+- id: 181848
+  reference_id: ''
+  url: https://www.ruby-lang.org/en/news/2018/10/17/openssl-x509-name-equality-check-does-not-work-correctly-cve-2018-16395/
+- id: 181849
+  reference_id: ''
+  url: https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-3-8-released/
+- id: 181850
+  reference_id: ''
+  url: https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-4-5-released/
+- id: 181851
+  reference_id: ''
+  url: https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-5-2-released/
+- id: 181852
+  reference_id: ''
+  url: https://www.ruby-lang.org/en/news/2018/11/06/ruby-2-6-0-preview3-released/
+- id: 181847
+  reference_id: ''
+  url: http://www.securitytracker.com/id/1042105
+- id: 128002
+  reference_id: '911918'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=911918
+- id: 181846
+  reference_id: CVE-2018-16395
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-16395
+severities: []
+summary: An issue was discovered in the OpenSSL library in Ruby before 2.3.8, 2.4.x
+  before 2.4.5, 2.5.x before 2.5.2, and 2.6.x before 2.6.0-preview3. When two OpenSSL::X509::Name
+  objects are compared using ==, depending on the ordering, non-equal objects may
+  return true. When the first argument is one character longer than the second, or
+  the second argument contains a character that is one less than a character in the
+  same position of the first argument, the result of == will be true. This could be
+  leveraged to create an illegitimate certificate that may be accepted as legitimate
+  and then used in signing or encryption operations.
+vulnerability_id: VCID-f85n-znuv-aaag
+weaknesses: []

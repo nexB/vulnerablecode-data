@@ -1,0 +1,64 @@
+vulnerability_id: VCID-1ve8-v76p-aaar
+aliases:
+  - CVE-2017-14686
+summary: Artifex MuPDF 1.11 allows attackers to execute arbitrary code or cause a denial of
+  service via a crafted .xps file, related to a "User Mode Write AV near NULL starting at wow64!Wow64NotifyDebugger+0x000000000000001d"
+  on Windows. This occurs because read_zip_dir_imp in fitz/unzip.c does not check whether size
+  fields in a ZIP entry are negative numbers.
+severities:
+  - id: 675547
+    reference_id: 683396
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675548
+    reference_id: 1440278
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675549
+    reference_id: 683397
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675550
+    reference_id: 1440279
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 265400
+    reference_id: 683399
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 265398
+    reference_id: 683399
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 683396
+    url: http://git.ghostscript.com/?p=mupdf.git;h=0f0fbc07d9be31f5e83ec5328d7311fdfd8328b1
+    reference_id:
+  - id: 1440278
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-14686.html
+    reference_id:
+  - id: 683397
+    url: https://bugs.ghostscript.com/show_bug.cgi?id=698540
+    reference_id:
+  - id: 1440279
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14686
+    reference_id:
+  - id: 683398
+    url: https://github.com/wlinzi/security_advisories/tree/master/CVE-2017-14686
+    reference_id:
+  - id: 683392
+    url: http://www.debian.org/security/2017/dsa-4006
+    reference_id:
+  - id: 72813
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=877379
+    reference_id: 877379
+  - id: 683399
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14686
+    reference_id: CVE-2017-14686
+weaknesses: []

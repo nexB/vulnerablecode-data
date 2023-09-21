@@ -1,0 +1,548 @@
+vulnerability_id: VCID-3mhx-f75s-aaan
+aliases:
+  - CVE-2011-2899
+summary: pysmb.py in system-config-printer 0.6.x and 0.7.x, as used in foomatic-gui and possibly
+  other products, allows remote SMB servers to execute arbitrary commands via shell metacharacters
+  in the (1) NetBIOS or (2) workgroup name, which are not properly handled when searching for
+  network printers.
+severities:
+  - id: 145146
+    reference_id: 462695
+    scoring_system: cvssv2
+    value: '5.1'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:P/A:P
+  - id: 67040
+    reference_id: '196244'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 462689
+    url: http://cvs.savannah.gnu.org/viewvc/foomatic-gui/foomatic/pysmb.py?root=foomatic-gui&r1=1.2&r2=1.3&view=patch
+    reference_id:
+  - id: '196245'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-2899.json
+    reference_id:
+  - id: 462693
+    url: https://bugs.launchpad.net/ubuntu/+source/foomatic-gui/+bug/811119
+    reference_id:
+  - id: 462694
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=728348
+    reference_id:
+  - id: 462690
+    url: http://secunia.com/advisories/45744
+    reference_id:
+  - id: 462691
+    url: http://www.redhat.com/support/errata/RHSA-2011-1196.html
+    reference_id:
+  - id: 462692
+    url: http://www.securitytracker.com/id?1025967
+    reference_id:
+  - id: 462696
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.0:*:*:*:*:*:*:*
+  - id: 462724
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.1:*:*:*:*:*:*:*
+  - id: 462707
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.10:*:*:*:*:*:*:*
+  - id: 462697
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.100:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.100:*:*:*:*:*:*:*
+  - id: 462698
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.101:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.101:*:*:*:*:*:*:*
+  - id: 462699
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.102:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.102:*:*:*:*:*:*:*
+  - id: 462700
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.103:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.103:*:*:*:*:*:*:*
+  - id: 462701
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.104:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.104:*:*:*:*:*:*:*
+  - id: 462702
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.105:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.105:*:*:*:*:*:*:*
+  - id: 462703
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.106:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.106:*:*:*:*:*:*:*
+  - id: 462704
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.107:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.107:*:*:*:*:*:*:*
+  - id: 462705
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.108:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.108:*:*:*:*:*:*:*
+  - id: 462706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.109:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.109:*:*:*:*:*:*:*
+  - id: 462715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.11:*:*:*:*:*:*:*
+  - id: 462708
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.110:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.110:*:*:*:*:*:*:*
+  - id: 462709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.111:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.111:*:*:*:*:*:*:*
+  - id: 462710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.112:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.112:*:*:*:*:*:*:*
+  - id: 462711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.113:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.113:*:*:*:*:*:*:*
+  - id: 462712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.114:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.114:*:*:*:*:*:*:*
+  - id: 462713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.115:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.115:*:*:*:*:*:*:*
+  - id: 462714
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.116:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.116:*:*:*:*:*:*:*
+  - id: 462716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.12:*:*:*:*:*:*:*
+  - id: 462717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.13:*:*:*:*:*:*:*
+  - id: 462718
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.14:*:*:*:*:*:*:*
+  - id: 462719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.15:*:*:*:*:*:*:*
+  - id: 462720
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.16:*:*:*:*:*:*:*
+  - id: 462721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.17:*:*:*:*:*:*:*
+  - id: 462722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.18:*:*:*:*:*:*:*
+  - id: 462723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.19:*:*:*:*:*:*:*
+  - id: 462735
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.2:*:*:*:*:*:*:*
+  - id: 462725
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.20:*:*:*:*:*:*:*
+  - id: 462726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.21:*:*:*:*:*:*:*
+  - id: 462727
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.22:*:*:*:*:*:*:*
+  - id: 462728
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.23:*:*:*:*:*:*:*
+  - id: 462729
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.24:*:*:*:*:*:*:*
+  - id: 462730
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.25:*:*:*:*:*:*:*
+  - id: 462731
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.26:*:*:*:*:*:*:*
+  - id: 462732
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.27:*:*:*:*:*:*:*
+  - id: 462733
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.28:*:*:*:*:*:*:*
+  - id: 462734
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.29:*:*:*:*:*:*:*
+  - id: 462746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.3:*:*:*:*:*:*:*
+  - id: 462736
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.30:*:*:*:*:*:*:*
+  - id: 462737
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.31:*:*:*:*:*:*:*
+  - id: 462738
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.32:*:*:*:*:*:*:*
+  - id: 462739
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.33:*:*:*:*:*:*:*
+  - id: 462740
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.34:*:*:*:*:*:*:*
+  - id: 462741
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.35:*:*:*:*:*:*:*
+  - id: 462742
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.36:*:*:*:*:*:*:*
+  - id: 462743
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.37:*:*:*:*:*:*:*
+  - id: 462744
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.38:*:*:*:*:*:*:*
+  - id: 462745
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.39:*:*:*:*:*:*:*
+  - id: 462757
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.4:*:*:*:*:*:*:*
+  - id: 462747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.40:*:*:*:*:*:*:*
+  - id: 462748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.41:*:*:*:*:*:*:*
+  - id: 462749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.42:*:*:*:*:*:*:*
+  - id: 462750
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.43:*:*:*:*:*:*:*
+  - id: 462751
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.44:*:*:*:*:*:*:*
+  - id: 462752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.45:*:*:*:*:*:*:*
+  - id: 462753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.46:*:*:*:*:*:*:*
+  - id: 462754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.47:*:*:*:*:*:*:*
+  - id: 462755
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.48:*:*:*:*:*:*:*
+  - id: 462756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.49:*:*:*:*:*:*:*
+  - id: 462768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.5:*:*:*:*:*:*:*
+  - id: 462758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.50:*:*:*:*:*:*:*
+  - id: 462759
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.51:*:*:*:*:*:*:*
+  - id: 462760
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.52:*:*:*:*:*:*:*
+  - id: 462761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.53:*:*:*:*:*:*:*
+  - id: 462762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.54:*:*:*:*:*:*:*
+  - id: 462763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.55:*:*:*:*:*:*:*
+  - id: 462764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.56:*:*:*:*:*:*:*
+  - id: 462765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.57:*:*:*:*:*:*:*
+  - id: 462766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.58:*:*:*:*:*:*:*
+  - id: 462767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.59:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.59:*:*:*:*:*:*:*
+  - id: 462779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.6:*:*:*:*:*:*:*
+  - id: 462769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.60:*:*:*:*:*:*:*
+  - id: 462770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.61:*:*:*:*:*:*:*
+  - id: 462771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.62:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.62:*:*:*:*:*:*:*
+  - id: 462772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.63:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.63:*:*:*:*:*:*:*
+  - id: 462773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.64:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.64:*:*:*:*:*:*:*
+  - id: 462774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.65:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.65:*:*:*:*:*:*:*
+  - id: 462775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.66:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.66:*:*:*:*:*:*:*
+  - id: 462776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.67:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.67:*:*:*:*:*:*:*
+  - id: 462777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.68:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.68:*:*:*:*:*:*:*
+  - id: 462778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.69:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.69:*:*:*:*:*:*:*
+  - id: 462790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.7:*:*:*:*:*:*:*
+  - id: 462780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.70:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.70:*:*:*:*:*:*:*
+  - id: 462781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.71:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.71:*:*:*:*:*:*:*
+  - id: 462782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.72:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.72:*:*:*:*:*:*:*
+  - id: 462783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.73:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.73:*:*:*:*:*:*:*
+  - id: 462784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.74:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.74:*:*:*:*:*:*:*
+  - id: 462785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.75:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.75:*:*:*:*:*:*:*
+  - id: 462786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.76:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.76:*:*:*:*:*:*:*
+  - id: 462787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.77:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.77:*:*:*:*:*:*:*
+  - id: 462788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.78:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.78:*:*:*:*:*:*:*
+  - id: 462789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.79:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.79:*:*:*:*:*:*:*
+  - id: 462801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.8:*:*:*:*:*:*:*
+  - id: 462791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.80:*:*:*:*:*:*:*
+  - id: 462792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.81:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.81:*:*:*:*:*:*:*
+  - id: 462793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.82:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.82:*:*:*:*:*:*:*
+  - id: 462794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.83:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.83:*:*:*:*:*:*:*
+  - id: 462795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.84:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.84:*:*:*:*:*:*:*
+  - id: 462796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.85:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.85:*:*:*:*:*:*:*
+  - id: 462797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.86:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.86:*:*:*:*:*:*:*
+  - id: 462798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.87:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.87:*:*:*:*:*:*:*
+  - id: 462799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.88:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.88:*:*:*:*:*:*:*
+  - id: 462800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.89:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.89:*:*:*:*:*:*:*
+  - id: 462812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.9:*:*:*:*:*:*:*
+  - id: 462802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.90:*:*:*:*:*:*:*
+  - id: 462803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.91:*:*:*:*:*:*:*
+  - id: 462804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.92:*:*:*:*:*:*:*
+  - id: 462805
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.93:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.93:*:*:*:*:*:*:*
+  - id: 462806
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.94:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.94:*:*:*:*:*:*:*
+  - id: 462807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.95:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.95:*:*:*:*:*:*:*
+  - id: 462808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.96:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.96:*:*:*:*:*:*:*
+  - id: 462809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.97:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.97:*:*:*:*:*:*:*
+  - id: 462810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.98:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.98:*:*:*:*:*:*:*
+  - id: 462811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.6.99:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.6.99:*:*:*:*:*:*:*
+  - id: 462813
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.32.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.32.10:*:*:*:*:*:*:*
+  - id: 462814
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.32.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.32.6:*:*:*:*:*:*:*
+  - id: 462815
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.32.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.32.7:*:*:*:*:*:*:*
+  - id: 462816
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.32.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.32.8:*:*:*:*:*:*:*
+  - id: 462817
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.32.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.32.9:*:*:*:*:*:*:*
+  - id: 462818
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.60:*:*:*:*:*:*:*
+  - id: 462819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.61:*:*:*:*:*:*:*
+  - id: 462820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.62:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.62:*:*:*:*:*:*:*
+  - id: 462825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.63:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.63:*:*:*:*:*:*:*
+  - id: 462821
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.63.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.63.1:*:*:*:*:*:*:*
+  - id: 462822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.63.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.63.2:*:*:*:*:*:*:*
+  - id: 462823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.63.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.63.3:*:*:*:*:*:*:*
+  - id: 462824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.63.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.63.4:*:*:*:*:*:*:*
+  - id: 462826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.64:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.64:*:*:*:*:*:*:*
+  - id: 462827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.65:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.65:*:*:*:*:*:*:*
+  - id: 462828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.66:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.66:*:*:*:*:*:*:*
+  - id: 462829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.67:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.67:*:*:*:*:*:*:*
+  - id: 462830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.68:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.68:*:*:*:*:*:*:*
+  - id: 462831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.69:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.69:*:*:*:*:*:*:*
+  - id: 462832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.70:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.70:*:*:*:*:*:*:*
+  - id: 462833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.71:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.71:*:*:*:*:*:*:*
+  - id: 462834
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.72:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.72:*:*:*:*:*:*:*
+  - id: 462835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.73:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.73:*:*:*:*:*:*:*
+  - id: 462849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74:*:*:*:*:*:*:*
+  - id: 462840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.1:*:*:*:*:*:*:*
+  - id: 462836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.10:*:*:*:*:*:*:*
+  - id: 462837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.11:*:*:*:*:*:*:*
+  - id: 462838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.12:*:*:*:*:*:*:*
+  - id: 462839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.13:*:*:*:*:*:*:*
+  - id: 462841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.2:*:*:*:*:*:*:*
+  - id: 462842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.3:*:*:*:*:*:*:*
+  - id: 462843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.4:*:*:*:*:*:*:*
+  - id: 462844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.5:*:*:*:*:*:*:*
+  - id: 462845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.6:*:*:*:*:*:*:*
+  - id: 462846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.7:*:*:*:*:*:*:*
+  - id: 462847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.8:*:*:*:*:*:*:*
+  - id: 462848
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.74.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.74.9:*:*:*:*:*:*:*
+  - id: 462850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.75:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.75:*:*:*:*:*:*:*
+  - id: 462851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.76:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.76:*:*:*:*:*:*:*
+  - id: 462852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.77:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.77:*:*:*:*:*:*:*
+  - id: 462853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.78:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.78:*:*:*:*:*:*:*
+  - id: 462854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.79:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.79:*:*:*:*:*:*:*
+  - id: 462855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.80:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.80:*:*:*:*:*:*:*
+  - id: 462856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.81:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.81:*:*:*:*:*:*:*
+  - id: 462862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82:*:*:*:*:*:*:*
+  - id: 462857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82.1:*:*:*:*:*:*:*
+  - id: 462858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82.2:*:*:*:*:*:*:*
+  - id: 462859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82.3:*:*:*:*:*:*:*
+  - id: 462860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82.4:*:*:*:*:*:*:*
+  - id: 462861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:system-config-printer:0.7.82.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:system-config-printer:0.7.82.5:*:*:*:*:*:*:*
+  - id: 462695
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-2899
+    reference_id: CVE-2011-2899
+  - id: '196244'
+    url: https://access.redhat.com/errata/RHSA-2011:1196
+    reference_id: RHSA-2011:1196
+weaknesses: []

@@ -1,0 +1,110 @@
+vulnerability_id: VCID-sxyq-umyp-aaar
+aliases:
+  - CVE-2020-1753
+  - GHSA-86hp-cj9j-33vv
+  - PYSEC-2020-210
+summary: A security flaw was found in Ansible Engine, all Ansible 2.7.x versions prior to 2.7.17,
+  all Ansible 2.8.x versions prior to 2.8.11 and all Ansible 2.9.x versions prior to 2.9.7,
+  when managing kubernetes using the k8s module. Sensitive parameters such as passwords and
+  tokens are passed to kubectl from the command line, not using an environment variable or an
+  input configuration file. This will disclose passwords and tokens from process list and no_log
+  directive from debug module would not have any effect making these secrets being disclosed
+  on stdout and log files.
+severities:
+  - id: 53744
+    reference_id: 178839
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N
+  - id: 451261
+    reference_id: 22260
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 451259
+    reference_id: 22260
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 4396
+    reference_id: 24997
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 52939
+    reference_id: 177904
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 52940
+    reference_id: 177905
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53743
+    reference_id: 178838
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 178839
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-1753.json
+    reference_id:
+  - id: 6850
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1753
+    reference_id:
+  - id: 6851
+    url: https://github.com/ansible-collections/kubernetes/pull/51
+    reference_id:
+  - id: 6643
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DKPA4KC3OJSUFASUYMG66HKJE7ADNGFW/
+    reference_id:
+  - id: 6645
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MRRYUU5ZBLPBXCYG6CFP35D64NP2UB2S/
+    reference_id:
+  - id: 6644
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WQVOQD4VAIXXTVQAJKTN7NUGTJFE2PCB/
+    reference_id:
+  - id: 6564
+    url: https://security.gentoo.org/glsa/202006-11
+    reference_id:
+  - id: 20464
+    url: https://www.debian.org/security/2021/dsa-4950
+    reference_id:
+  - id: 659828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+  - id: 655192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 22260
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-1753
+    reference_id: CVE-2020-1753
+  - id: 24997
+    url: https://github.com/advisories/GHSA-86hp-cj9j-33vv
+    reference_id: GHSA-86hp-cj9j-33vv
+  - id: 178837
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1811008
+    reference_id: RHBA-2020:1539
+  - id: 177904
+    url: https://access.redhat.com/errata/RHSA-2020:1541
+    reference_id: RHSA-2020:1541
+  - id: 177905
+    url: https://access.redhat.com/errata/RHSA-2020:1542
+    reference_id: RHSA-2020:1542
+  - id: 178838
+    url: https://access.redhat.com/errata/RHSA-2020:2142
+    reference_id: RHSA-2020:2142
+weaknesses: []

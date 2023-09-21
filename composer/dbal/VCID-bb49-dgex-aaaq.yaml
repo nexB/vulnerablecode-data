@@ -1,0 +1,52 @@
+affected_purls:
+- pkg:composer/doctrine/dbal@3.0.0
+- pkg:composer/doctrine/dbal@3.1.0
+- pkg:composer/doctrine/dbal@3.1.1
+- pkg:composer/doctrine/dbal@3.1.2
+- pkg:composer/doctrine/dbal@3.1.3
+aliases:
+- CVE-2021-43608
+- GHSA-r7cj-8hjg-x622
+fixed_purl:
+- pkg:composer/doctrine/dbal@3.1.4
+- pkg:deb/debian/php-doctrine-dbal@0?distro=sid
+- pkg:deb/debian/php-doctrine-dbal@2.12.1-2?distro=sid
+- pkg:deb/debian/php-doctrine-dbal@2.9.2-1?distro=sid
+- pkg:deb/debian/php-doctrine-dbal@3.6.1%2Bdfsg-1?distro=sid
+references:
+- id: 164473
+  reference_id: ''
+  url: https://github.com/doctrine/dbal/commit/9dcfa4cb6c03250b78a84737ba7ceb82f4b7ba4d
+- id: 164474
+  reference_id: ''
+  url: https://github.com/doctrine/dbal/releases
+- id: 164475
+  reference_id: ''
+  url: https://www.doctrine-project.org/2021/11/11/dbal3-vulnerability-fixed.html
+- id: 164472
+  reference_id: CVE-2021-43608
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-43608
+- id: 164476
+  reference_id: GHSA-r7cj-8hjg-x622
+  url: https://github.com/advisories/GHSA-r7cj-8hjg-x622
+- id: 164471
+  reference_id: GHSA-r7cj-8hjg-x622
+  url: https://github.com/doctrine/dbal/security/advisories/GHSA-r7cj-8hjg-x622
+severities:
+- id: 24679
+  reference_id: 164476
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: CRITICAL
+- id: 24678
+  reference_id: 164471
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: CRITICAL
+summary: Doctrine DBAL 3.x before 3.1.4 allows SQL Injection. The escaping of offset
+  and length inputs to the generation of a LIMIT clause was not probably cast to an
+  integer, allowing SQL injection to take place if application developers passed unescaped
+  user input to the DBAL QueryBuilder or any other API that ultimately uses the AbstractPlatform::modifyLimitQuery
+  API.
+vulnerability_id: VCID-bb49-dgex-aaaq
+weaknesses: []

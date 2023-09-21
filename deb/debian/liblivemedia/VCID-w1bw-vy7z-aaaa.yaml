@@ -1,0 +1,67 @@
+vulnerability_id: VCID-w1bw-vy7z-aaaa
+aliases:
+  - CVE-2019-6256
+summary: A Denial of Service issue was discovered in the LIVE555 Streaming Media libraries as
+  used in Live555 Media Server 0.93. It can cause an RTSPServer crash in handleHTTPCmd_TunnelingPOST,
+  when RTSP-over-HTTP tunneling is supported, via x-sessioncookie HTTP headers in a GET request
+  and a POST request within the same TCP session. This occurs because of a call to an incorrect
+  virtual function pointer in the readSocket function in GroupsockHelper.cpp.
+severities:
+  - id: 694314
+    reference_id: 1454850
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694315
+    reference_id: 1454851
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 412642
+    reference_id: 800905
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 412640
+    reference_id: 800905
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1454850
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-6256.html
+    reference_id:
+  - id: 1454851
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6256
+    reference_id:
+  - id: 800901
+    url: https://github.com/rgaufman/live555/issues/19
+    reference_id:
+  - id: 800902
+    url: https://lists.debian.org/debian-lts-announce/2019/02/msg00037.html
+    reference_id:
+  - id: 800903
+    url: https://seclists.org/bugtraq/2019/Mar/22
+    reference_id:
+  - id: 751732
+    url: https://security.gentoo.org/glsa/202005-06
+    reference_id:
+  - id: 800904
+    url: https://www.debian.org/security/2019/dsa-4408
+    reference_id:
+  - id: 43110
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=919529
+    reference_id: 919529
+  - id: 800906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:live555:live555_media_server:0.93:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:live555:live555_media_server:0.93:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 800905
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-6256
+    reference_id: CVE-2019-6256
+weaknesses: []

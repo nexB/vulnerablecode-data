@@ -1,0 +1,114 @@
+vulnerability_id: VCID-jnzs-p4ja-aaaa
+aliases:
+  - CVE-2018-10901
+summary: A flaw was found in Linux kernel's KVM virtualization subsystem. The VMX code does
+  not restore the GDT.LIMIT to the previous host value, but instead sets it to 64KB. With a
+  corrupted GDT limit a host's userspace code has an ability to place malicious entries in the
+  GDT, particularly to the per-cpu variables. An attacker can use this to escalate their privileges.
+severities:
+  - id: 682956
+    reference_id: 1445874
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 69727
+    reference_id: '199554'
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 682957
+    reference_id: 1445875
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 696536
+    reference_id: 406
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 69721
+    reference_id: '199548'
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 311685
+    reference_id: 725206
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 311683
+    reference_id: 725206
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1445874
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10901.html
+    reference_id:
+  - id: 666763
+    url: https://access.redhat.com/errata/RHSA-2018:2390
+    reference_id:
+  - id: 725200
+    url: https://access.redhat.com/errata/RHSA-2018:2391
+    reference_id:
+  - id: 725201
+    url: https://access.redhat.com/errata/RHSA-2018:2392
+    reference_id:
+  - id: 725202
+    url: https://access.redhat.com/errata/RHSA-2018:2393
+    reference_id:
+  - id: 725203
+    url: https://access.redhat.com/errata/RHSA-2018:2394
+    reference_id:
+  - id: '199554'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10901.json
+    reference_id:
+  - id: 725204
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10901
+    reference_id:
+  - id: 1445875
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10901
+    reference_id:
+  - id: 725205
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3444d7da1839b851eefedd372978d8a982316c36
+    reference_id:
+  - id: 10334
+    url: https://help.ecostruxureit.com/display/public/UADCE725/Security+fixes+in+StruxureWare+Data+Center+Expert+v7.6.0
+    reference_id:
+  - id: 406
+    url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_id:
+  - id: 2744
+    url: https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+    reference_id:
+  - id: 725199
+    url: http://www.securityfocus.com/bid/104905
+    reference_id:
+  - id: '199548'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1601849
+    reference_id: 1601849
+  - id: 343431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 79288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.4:*:*:*:*:*:*:*
+  - id: 159624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.5:*:*:*:*:*:*:*
+  - id: 572913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.6:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 725206
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10901
+    reference_id: CVE-2018-10901
+weaknesses: []

@@ -1,0 +1,122 @@
+affected_purls:
+- pkg:gem/rack@0.1.0
+- pkg:gem/rack@0.2.0
+- pkg:gem/rack@0.3.0
+- pkg:gem/rack@0.4.0
+- pkg:gem/rack@0.9.0
+- pkg:gem/rack@0.9.1
+- pkg:gem/rack@1.0.0
+- pkg:gem/rack@1.0.1
+- pkg:gem/rack@1.1.0
+- pkg:gem/rack@1.1.1
+- pkg:gem/rack@1.1.1.pre
+- pkg:gem/rack@1.1.2
+- pkg:gem/rack@1.1.3
+- pkg:gem/rack@1.1.4
+- pkg:gem/rack@1.1.5
+- pkg:gem/rack@1.1.6
+- pkg:gem/rack@1.2.0
+- pkg:gem/rack@1.2.1
+- pkg:gem/rack@1.2.2
+- pkg:gem/rack@1.2.3
+- pkg:gem/rack@1.2.4
+- pkg:gem/rack@1.2.5
+- pkg:gem/rack@1.2.6
+- pkg:gem/rack@1.2.7
+- pkg:gem/rack@1.2.8
+- pkg:gem/rack@1.3.0
+- pkg:gem/rack@1.3.0.beta
+- pkg:gem/rack@1.3.0.beta2
+- pkg:gem/rack@1.3.1
+- pkg:gem/rack@1.3.10
+- pkg:gem/rack@1.3.2
+- pkg:gem/rack@1.3.3
+- pkg:gem/rack@1.3.4
+- pkg:gem/rack@1.3.5
+- pkg:gem/rack@1.3.6
+- pkg:gem/rack@1.3.7
+- pkg:gem/rack@1.3.8
+- pkg:gem/rack@1.3.9
+- pkg:gem/rack@1.4.0
+- pkg:gem/rack@1.4.1
+- pkg:gem/rack@1.4.2
+- pkg:gem/rack@1.4.3
+- pkg:gem/rack@1.4.4
+- pkg:gem/rack@1.4.5
+- pkg:gem/rack@1.4.6
+- pkg:gem/rack@1.4.7
+- pkg:gem/rack@1.5.0
+- pkg:gem/rack@1.5.0.beta.1
+- pkg:gem/rack@1.5.0.beta.2
+- pkg:gem/rack@1.5.1
+- pkg:gem/rack@1.5.2
+- pkg:gem/rack@1.5.3
+- pkg:gem/rack@1.5.4
+- pkg:gem/rack@1.5.5
+- pkg:gem/rack@1.6.0
+- pkg:gem/rack@1.6.0.beta
+- pkg:gem/rack@1.6.0.beta2
+- pkg:gem/rack@1.6.1
+- pkg:gem/rack@1.6.10
+- pkg:gem/rack@1.6.2
+- pkg:gem/rack@1.6.3
+- pkg:gem/rack@1.6.4
+- pkg:gem/rack@1.6.5
+- pkg:gem/rack@1.6.6
+- pkg:gem/rack@1.6.7
+- pkg:gem/rack@1.6.8
+- pkg:gem/rack@1.6.9
+- pkg:gem/rack@2.0.1
+- pkg:gem/rack@2.0.2
+- pkg:gem/rack@2.0.3
+- pkg:gem/rack@2.0.4
+- pkg:gem/rack@2.0.5
+aliases:
+- CVE-2018-16471
+- GHSA-5r2p-j47h-mhpg
+fixed_purl:
+- pkg:deb/debian/ruby-rack@1.6.4-6?distro=sid
+- pkg:deb/debian/ruby-rack@2.0.6-3?distro=sid
+- pkg:deb/debian/ruby-rack@2.1.4-3?distro=sid
+- pkg:deb/debian/ruby-rack@2.2.6.4-1?distro=sid
+- pkg:gem/rack@1.6.11
+- pkg:gem/rack@2.0.6
+references:
+- id: 144607
+  reference_id: ''
+  url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00032.html
+- id: 144608
+  reference_id: ''
+  url: http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00016.html
+- id: 144604
+  reference_id: ''
+  url: https://groups.google.com/forum/#!topic/rubyonrails-security/GKsAFT924Ag
+- id: 144605
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2018/11/msg00022.html
+- id: 144606
+  reference_id: ''
+  url: https://usn.ubuntu.com/4089-1/
+- id: 128009
+  reference_id: '913005'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913005
+- id: 144603
+  reference_id: CVE-2018-16471
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-16471
+- id: 144609
+  reference_id: GHSA-5r2p-j47h-mhpg
+  url: https://github.com/advisories/GHSA-5r2p-j47h-mhpg
+severities:
+- id: 20221
+  reference_id: 144609
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: There is a possible XSS vulnerability in Rack before 2.0.6 and 1.6.11. Carefully
+  crafted requests can impact the data returned by the `scheme` method on `Rack::Request`.
+  Applications that expect the scheme to be limited to 'http' or 'https' and do not
+  escape the return value could be vulnerable to an XSS attack. Note that applications
+  using the normal escaping mechanisms provided by Rails may not impacted, but applications
+  that bypass the escaping mechanisms, or do not use them may be vulnerable.
+vulnerability_id: VCID-jend-zk8b-aaan
+weaknesses: []

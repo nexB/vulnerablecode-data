@@ -1,0 +1,54 @@
+affected_purls:
+- pkg:gem/rack-cors@0.1.0
+- pkg:gem/rack-cors@0.1.1
+- pkg:gem/rack-cors@0.2.0
+- pkg:gem/rack-cors@0.2.2
+- pkg:gem/rack-cors@0.2.4
+- pkg:gem/rack-cors@0.2.5
+- pkg:gem/rack-cors@0.2.6
+- pkg:gem/rack-cors@0.2.7
+- pkg:gem/rack-cors@0.2.8
+- pkg:gem/rack-cors@0.2.9
+- pkg:gem/rack-cors@0.3.0
+- pkg:gem/rack-cors@0.3.1
+- pkg:gem/rack-cors@0.4.0
+aliases:
+- CVE-2017-11173
+- GHSA-2j9c-9vmv-7m39
+fixed_purl:
+- pkg:deb/debian/ruby-rack-cors@0.4.1-1?distro=sid
+- pkg:deb/debian/ruby-rack-cors@1.0.2-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/ruby-rack-cors@1.1.1-1?distro=sid
+- pkg:gem/rack-cors@0.4.1
+references:
+- id: 140669
+  reference_id: ''
+  url: http://seclists.org/fulldisclosure/2017/Jul/22
+- id: 140667
+  reference_id: ''
+  url: https://github.com/cyu/rack-cors/commit/42ebe6caa8e85ffa9c8a171bda668ba1acc7a5e6
+- id: 140668
+  reference_id: ''
+  url: https://packetstormsecurity.com/files/143345/rack-cors-Missing-Anchor.html
+- id: 140670
+  reference_id: ''
+  url: http://www.debian.org/security/2017/dsa-3931
+- id: 140666
+  reference_id: CVE-2017-11173
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-11173
+- id: 140671
+  reference_id: GHSA-2j9c-9vmv-7m39
+  url: https://github.com/advisories/GHSA-2j9c-9vmv-7m39
+severities:
+- id: 19463
+  reference_id: 140671
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Missing anchor in generated regex for rack-cors before 0.4.1 allows a malicious
+  third-party site to perform CORS requests. If the configuration were intended to
+  allow only the trusted example.com domain name and not the malicious example.net
+  domain name, then example.com.example.net (as well as example.com-example.net) would
+  be inadvertently allowed.
+vulnerability_id: VCID-kqmt-fm39-aaac
+weaknesses: []

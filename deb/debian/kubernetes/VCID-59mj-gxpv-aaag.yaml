@@ -1,0 +1,87 @@
+vulnerability_id: VCID-59mj-gxpv-aaag
+aliases:
+  - CVE-2019-11250
+summary: The Kubernetes client-go library logs request headers at verbosity levels of 7 or higher.
+  This can disclose credentials to unauthorized users via logs or command output. Kubernetes
+  components (such as kube-apiserver) prior to v1.16.0, which make use of basic or bearer token
+  authentication, and run at high verbosity levels, are affected.
+severities:
+  - id: 76259
+    reference_id: 207202
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N
+  - id: 76256
+    reference_id: 207199
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 371387
+    reference_id: 769805
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:N/A:N
+  - id: 371385
+    reference_id: 769805
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 769803
+    url: https://access.redhat.com/errata/RHSA-2019:4052
+    reference_id:
+  - id: 693630
+    url: https://access.redhat.com/errata/RHSA-2019:4087
+    reference_id:
+  - id: 207202
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11250.json
+    reference_id:
+  - id: 769804
+    url: https://github.com/kubernetes/kubernetes/issues/81114
+    reference_id:
+  - id: 769719
+    url: https://security.netapp.com/advisory/ntap-20190919-0003/
+    reference_id:
+  - id: 769802
+    url: http://www.openwall.com/lists/oss-security/2020/10/16/2
+    reference_id:
+  - id: 207199
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1740434
+    reference_id: 1740434
+  - id: 42767
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=934801
+    reference_id: 934801
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 769806
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.3:-:*:*:*:*:*:*
+  - id: 769807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.4:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.4:beta0:*:*:*:*:*:*
+  - id: 769808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha1:*:*:*:*:*:*
+  - id: 769809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha2:*:*:*:*:*:*
+  - id: 769810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.16.0:alpha3:*:*:*:*:*:*
+  - id: 769811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.16.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.16.0:beta1:*:*:*:*:*:*
+  - id: 769812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.16.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.16.0:beta2:*:*:*:*:*:*
+  - id: 625785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+  - id: 728886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.1:*:*:*:*:*:*:*
+  - id: 769805
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11250
+    reference_id: CVE-2019-11250
+weaknesses: []

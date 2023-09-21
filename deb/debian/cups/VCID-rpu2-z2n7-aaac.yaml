@@ -1,0 +1,84 @@
+vulnerability_id: VCID-rpu2-z2n7-aaac
+aliases:
+  - CVE-2010-1748
+summary: The cgi_initialize_string function in cgi-bin/var.c in the web interface in CUPS before
+  1.4.4, as used on Apple Mac OS X 10.5.8, Mac OS X 10.6 before 10.6.4, and other platforms,
+  does not properly handle parameter values containing a % (percent) character without two subsequent
+  hex characters, which allows context-dependent attackers to obtain sensitive information from
+  cupsd process memory via a crafted request, as demonstrated by the (1) /admin?OP=redirect&URL=%
+  and (2) /admin?URL=/admin/&OP=% URIs.
+severities:
+  - id: 69987
+    reference_id: '199918'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 132803
+    reference_id: 420517
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 69962
+    reference_id: '199880'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 410746
+    url: http://cups.org/articles.php?L596
+    reference_id:
+  - id: 420515
+    url: http://cups.org/str.php?L3577
+    reference_id:
+  - id: 328683
+    url: http://lists.apple.com/archives/security-announce/2010//Jun/msg00001.html
+    reference_id:
+  - id: 323374
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-12/msg00000.html
+    reference_id:
+  - id: '199919'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-1748.json
+    reference_id:
+  - id: 328686
+    url: http://secunia.com/advisories/40220
+    reference_id:
+  - id: 323378
+    url: http://secunia.com/advisories/43521
+    reference_id:
+  - id: 323379
+    url: http://security.gentoo.org/glsa/glsa-201207-10.xml
+    reference_id:
+  - id: 420516
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9723
+    reference_id:
+  - id: 328688
+    url: http://support.apple.com/kb/HT4188
+    reference_id:
+  - id: 323382
+    url: http://www.debian.org/security/2011/dsa-2176
+    reference_id:
+  - id: 323383
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:232
+    reference_id:
+  - id: 323385
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:234
+    reference_id:
+  - id: 412218
+    url: http://www.securityfocus.com/bid/40871
+    reference_id:
+  - id: 328694
+    url: http://www.vupen.com/english/advisories/2010/1481
+    reference_id:
+  - id: 323394
+    url: http://www.vupen.com/english/advisories/2011/0535
+    reference_id:
+  - id: '199918'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=591983
+    reference_id: 591983
+  - id: 420517
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-1748
+    reference_id: CVE-2010-1748
+  - id: '199880'
+    url: https://access.redhat.com/errata/RHSA-2010:0490
+    reference_id: RHSA-2010:0490
+weaknesses: []

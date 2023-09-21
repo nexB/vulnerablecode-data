@@ -1,0 +1,57 @@
+vulnerability_id: VCID-9761-y885-aaaq
+aliases:
+  - CVE-2022-36033
+  - GHSA-gp7f-rwcx-9369
+summary: 'jsoup is a Java HTML parser, built for HTML editing, cleaning, scraping, and cross-site
+  scripting (XSS) safety. jsoup may incorrectly sanitize HTML including `javascript:` URL expressions,
+  which could allow XSS attacks when a reader subsequently clicks that link. If the non-default
+  `SafeList.preserveRelativeLinks` option is enabled, HTML including `javascript:` URLs that
+  have been crafted with control characters will not be sanitized. If the site that this HTML
+  is published on does not set a Content Security Policy, an XSS attack is then possible. This
+  issue is patched in jsoup 1.15.3. Users should upgrade to this version. Additionally, as the
+  unsanitized input may have been persisted, old content should be cleaned again using the updated
+  version. To remediate this issue without immediately upgrading: - disable `SafeList.preserveRelativeLinks`,
+  which will rewrite input URLs as absolute URLs - ensure an appropriate [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+  is defined. (This should be used regardless of upgrading, as a defence-in-depth best practice.)'
+severities:
+  - id: 646540
+    reference_id: 1414552
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 646411
+    reference_id: 1414856
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 646410
+    reference_id: 1414855
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1414549
+    url: https://github.com/jhy/jsoup/releases/tag/jsoup-1.15.3
+    reference_id:
+  - id: 1414551
+    url: https://jsoup.org/news/release-1.15.3
+    reference_id:
+  - id: 1418567
+    url: https://security.netapp.com/advisory/ntap-20221104-0006/
+    reference_id:
+  - id: 1415202
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1018931
+    reference_id: 1018931
+  - id: 166525
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jsoup:jsoup:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jsoup:jsoup:*:*:*:*:*:*:*:*
+  - id: 1414552
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-36033
+    reference_id: CVE-2022-36033
+  - id: 1414856
+    url: https://github.com/advisories/GHSA-gp7f-rwcx-9369
+    reference_id: GHSA-gp7f-rwcx-9369
+  - id: 1414855
+    url: https://github.com/jhy/jsoup/security/advisories/GHSA-gp7f-rwcx-9369
+    reference_id: GHSA-gp7f-rwcx-9369
+weaknesses: []

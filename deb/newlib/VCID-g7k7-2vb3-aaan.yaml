@@ -1,0 +1,19 @@
+affected_purls:
+- pkg:deb/debian/newlib@3.1.0.20181231-1
+aliases:
+- CVE-2019-14875
+fixed_purl:
+- pkg:deb/debian/newlib@3.3.0-1
+- pkg:deb/debian/picolibc@0?distro=sid
+- pkg:deb/debian/picolibc@1.5.1-2?distro=sid
+- pkg:deb/debian/picolibc@1.8-1?distro=sid
+- pkg:deb/debian/picolibc@1.8.1-1?distro=sid
+references: []
+severities: []
+summary: In the __multiply function of the newlib libc library, all versions prior
+  to 3.3.0 (see newlib/libc/stdlib/mprec.c), Balloc is used to allocate a big integer,
+  however no check is performed to verify if the allocation succeeded or not. The
+  access of _x[0] will trigger a null pointer dereference bug in case of a memory
+  allocation failure.
+vulnerability_id: VCID-g7k7-2vb3-aaan
+weaknesses: []

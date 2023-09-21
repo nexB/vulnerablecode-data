@@ -1,0 +1,217 @@
+vulnerability_id: VCID-m9tp-srwj-aaaf
+aliases:
+  - CVE-2021-23133
+summary: A race condition in Linux kernel SCTP sockets (net/sctp/socket.c) before 5.12-rc8 can
+  lead to kernel privilege escalation from the context of a network service or an unprivileged
+  process. If sctp_destroy_sock is called without sock_net(sk)->sctp.addr_wq_lock then an element
+  is removed from the auto_asconf_splist list without any proper locking. This can be exploited
+  by an attacker with network service privileges to escalate to root or from the context of
+  an unprivileged user directly if a BPF_CGROUP_INET_SOCK_CREATE is attached which denies creation
+  of some SCTP socket.
+severities:
+  - id: 700968
+    reference_id: 1460442
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605968
+    reference_id: 928385
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 700969
+    reference_id: 1460443
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700970
+    reference_id: 1460444
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700971
+    reference_id: 867958
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697598
+    reference_id: 1457568
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697599
+    reference_id: 1457569
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697600
+    reference_id: 1457570
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697601
+    reference_id: 1457571
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697602
+    reference_id: 1457572
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697603
+    reference_id: 1457573
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 700972
+    reference_id: 1460445
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 700973
+    reference_id: 867963
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605967
+    reference_id: 928384
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 514624
+    reference_id: 867964
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 514622
+    reference_id: 867964
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1460442
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-23133.html
+    reference_id:
+  - id: 928385
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-23133.json
+    reference_id:
+  - id: 1460443
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23133
+    reference_id:
+  - id: 1460444
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=b166a20b07382b8bc1dcee2a448715c9c2c81b5b
+    reference_id:
+  - id: 867958
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b166a20b07382b8bc1dcee2a448715c9c2c81b5b
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 171248
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html
+    reference_id:
+  - id: 867959
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CUX2CA63453G34C6KYVBLJXJXEARZI2X/
+    reference_id:
+  - id: 867960
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PAEQ3H6HKNO6KUCGRZVYSFSAGEUX23JL/
+    reference_id:
+  - id: 867961
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XZASHZVCOFJ4VU2I3BN5W5EPHWJQ7QWX/
+    reference_id:
+  - id: 867962
+    url: https://security.netapp.com/advisory/ntap-20210611-0008/
+    reference_id:
+  - id: 1457568
+    url: https://ubuntu.com/security/notices/USN-4997-1
+    reference_id:
+  - id: 1457569
+    url: https://ubuntu.com/security/notices/USN-4997-2
+    reference_id:
+  - id: 1457570
+    url: https://ubuntu.com/security/notices/USN-4999-1
+    reference_id:
+  - id: 1457571
+    url: https://ubuntu.com/security/notices/USN-5000-1
+    reference_id:
+  - id: 1457572
+    url: https://ubuntu.com/security/notices/USN-5000-2
+    reference_id:
+  - id: 1457573
+    url: https://ubuntu.com/security/notices/USN-5001-1
+    reference_id:
+  - id: 1460445
+    url: https://ubuntu.com/security/notices/USN-5003-1
+    reference_id:
+  - id: 867963
+    url: https://www.openwall.com/lists/oss-security/2021/04/18/2
+    reference_id:
+  - id: 867954
+    url: http://www.openwall.com/lists/oss-security/2021/05/10/1
+    reference_id:
+  - id: 867955
+    url: http://www.openwall.com/lists/oss-security/2021/05/10/2
+    reference_id:
+  - id: 867956
+    url: http://www.openwall.com/lists/oss-security/2021/05/10/3
+    reference_id:
+  - id: 867957
+    url: http://www.openwall.com/lists/oss-security/2021/05/10/4
+    reference_id:
+  - id: 928384
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1948772
+    reference_id: '1948772'
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 842461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:-:*:*:*:*:*:*
+  - id: 842462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc1:*:*:*:*:*:*
+  - id: 842463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc2:*:*:*:*:*:*
+  - id: 842464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc3:*:*:*:*:*:*
+  - id: 842465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc4:*:*:*:*:*:*
+  - id: 842499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc5:*:*:*:*:*:*
+  - id: 867965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc6:*:*:*:*:*:*
+  - id: 867966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.12:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.12:rc7:*:*:*:*:*:*
+  - id: 867964
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-23133
+    reference_id: CVE-2021-23133
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

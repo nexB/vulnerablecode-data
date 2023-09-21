@@ -1,0 +1,34 @@
+vulnerability_id: VCID-5fmv-wthj-aaag
+aliases:
+  - CVE-2020-10289
+summary: Use of unsafe yaml load. Allows instantiation of arbitrary objects. The flaw itself
+  is caused by an unsafe parsing of YAML values which happens whenever an action message is
+  processed to be sent, and allows for the creation of Python objects. Through this flaw in
+  the ROS core package of actionlib, an attacker with local or remote access can make the ROS
+  Master, execute arbitrary code in Python form. Consider yaml.safe_load() instead. Located
+  first in actionlib/tools/library.py:132. See links for more info on the bug.
+severities:
+  - id: 429038
+    reference_id: 811272
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+  - id: 429036
+    reference_id: 811272
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 811271
+    url: https://github.com/ros/actionlib/pull/171
+    reference_id:
+  - id: 117006
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968830
+    reference_id: 968830
+  - id: 811273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openrobotics:robot_operating_system:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openrobotics:robot_operating_system:-:*:*:*:*:*:*:*
+  - id: 811272
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10289
+    reference_id: CVE-2020-10289
+weaknesses: []

@@ -1,0 +1,950 @@
+vulnerability_id: VCID-v1fh-mtmc-aaab
+aliases:
+  - CVE-2017-8283
+summary: dpkg-source in dpkg 1.3.0 through 1.18.23 is able to use a non-GNU patch program and
+  does not offer a protection mechanism for blank-indented diff hunks, which allows remote attackers
+  to conduct directory traversal attacks via a crafted Debian source package, as demonstrated
+  by use of dpkg-source on NetBSD.
+severities:
+  - id: 681021
+    reference_id: 1444463
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 681023
+    reference_id: 1444464
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 681022
+    reference_id: 712074
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 297051
+    reference_id: 712076
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 297049
+    reference_id: 712076
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1444463
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-8283.html
+    reference_id:
+  - id: 1444464
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8283
+    reference_id:
+  - id: 712074
+    url: http://www.openwall.com/lists/oss-security/2017/04/20/2
+    reference_id:
+  - id: 712075
+    url: http://www.securityfocus.com/bid/98064
+    reference_id:
+  - id: 411258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10:*:*:*:*:*:*:*
+  - id: 411240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.1:*:*:*:*:*:*:*
+  - id: 411229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.10:*:*:*:*:*:*:*
+  - id: 411230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.11:*:*:*:*:*:*:*
+  - id: 411231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.12:*:*:*:*:*:*:*
+  - id: 411232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.13:*:*:*:*:*:*:*
+  - id: 411233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.14:*:*:*:*:*:*:*
+  - id: 411234
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.15:*:*:*:*:*:*:*
+  - id: 411235
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.16:*:*:*:*:*:*:*
+  - id: 411236
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.17:*:*:*:*:*:*:*
+  - id: 411238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.18:*:*:*:*:*:*:*
+  - id: 411237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.18.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.18.1:*:*:*:*:*:*:*
+  - id: 411239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.19:*:*:*:*:*:*:*
+  - id: 411250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.2:*:*:*:*:*:*:*
+  - id: 411241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.20:*:*:*:*:*:*:*
+  - id: 411242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.21:*:*:*:*:*:*:*
+  - id: 411243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.22:*:*:*:*:*:*:*
+  - id: 411244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.23:*:*:*:*:*:*:*
+  - id: 411245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.24:*:*:*:*:*:*:*
+  - id: 411246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.25:*:*:*:*:*:*:*
+  - id: 411247
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.26:*:*:*:*:*:*:*
+  - id: 411248
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.27:*:*:*:*:*:*:*
+  - id: 411249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.28:*:*:*:*:*:*:*
+  - id: 411251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.3:*:*:*:*:*:*:*
+  - id: 411252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.4:*:*:*:*:*:*:*
+  - id: 411253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.5:*:*:*:*:*:*:*
+  - id: 411254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.6:*:*:*:*:*:*:*
+  - id: 411255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.7:*:*:*:*:*:*:*
+  - id: 411256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.8:*:*:*:*:*:*:*
+  - id: 411257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.10.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.10.9:*:*:*:*:*:*:*
+  - id: 411259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.0:*:*:*:*:*:*:*
+  - id: 411271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.1:*:*:*:*:*:*:*
+  - id: 411260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.10:*:*:*:*:*:*:*
+  - id: 411262
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.11:*:*:*:*:*:*:*
+  - id: 411261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.11.1:*:*:*:*:*:*:*
+  - id: 411263
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.12:*:*:*:*:*:*:*
+  - id: 411264
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.13:*:*:*:*:*:*:*
+  - id: 411265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.14:*:*:*:*:*:*:*
+  - id: 411266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.15:*:*:*:*:*:*:*
+  - id: 411267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.16:*:*:*:*:*:*:*
+  - id: 411268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.17:*:*:*:*:*:*:*
+  - id: 411269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.18:*:*:*:*:*:*:*
+  - id: 411270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.19:*:*:*:*:*:*:*
+  - id: 411278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.2:*:*:*:*:*:*:*
+  - id: 411272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.20:*:*:*:*:*:*:*
+  - id: 411273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.21:*:*:*:*:*:*:*
+  - id: 411274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.22:*:*:*:*:*:*:*
+  - id: 411275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.23:*:*:*:*:*:*:*
+  - id: 411276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.24:*:*:*:*:*:*:*
+  - id: 411277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.25:*:*:*:*:*:*:*
+  - id: 411279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.3:*:*:*:*:*:*:*
+  - id: 411280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.4:*:*:*:*:*:*:*
+  - id: 411281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.5:*:*:*:*:*:*:*
+  - id: 411282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.6:*:*:*:*:*:*:*
+  - id: 411283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.7:*:*:*:*:*:*:*
+  - id: 411284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.8:*:*:*:*:*:*:*
+  - id: 411285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.13.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.13.9:*:*:*:*:*:*:*
+  - id: 411286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.0:*:*:*:*:*:*:*
+  - id: 411303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.1:*:*:*:*:*:*:*
+  - id: 411287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.10:*:*:*:*:*:*:*
+  - id: 411288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.11:*:*:*:*:*:*:*
+  - id: 411289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.12:*:*:*:*:*:*:*
+  - id: 411290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.13:*:*:*:*:*:*:*
+  - id: 411291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.14:*:*:*:*:*:*:*
+  - id: 411292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.15:*:*:*:*:*:*:*
+  - id: 411299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16:*:*:*:*:*:*:*
+  - id: 411293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.1:*:*:*:*:*:*:*
+  - id: 411294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.2:*:*:*:*:*:*:*
+  - id: 411295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.3:*:*:*:*:*:*:*
+  - id: 411296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.4:*:*:*:*:*:*:*
+  - id: 411297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.5:*:*:*:*:*:*:*
+  - id: 411298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.16.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.16.6:*:*:*:*:*:*:*
+  - id: 411300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.17:*:*:*:*:*:*:*
+  - id: 411301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.18:*:*:*:*:*:*:*
+  - id: 411302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.19:*:*:*:*:*:*:*
+  - id: 411312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.2:*:*:*:*:*:*:*
+  - id: 411304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.20:*:*:*:*:*:*:*
+  - id: 411305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.21:*:*:*:*:*:*:*
+  - id: 411306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.22:*:*:*:*:*:*:*
+  - id: 411307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.23:*:*:*:*:*:*:*
+  - id: 411308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.24:*:*:*:*:*:*:*
+  - id: 411309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.25:*:*:*:*:*:*:*
+  - id: 411313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.3:*:*:*:*:*:*:*
+  - id: 411314
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.4:*:*:*:*:*:*:*
+  - id: 411315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.5:*:*:*:*:*:*:*
+  - id: 411316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.6:*:*:*:*:*:*:*
+  - id: 411317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.7:*:*:*:*:*:*:*
+  - id: 411318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.8:*:*:*:*:*:*:*
+  - id: 411319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.14.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.14.9:*:*:*:*:*:*:*
+  - id: 420109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.0:*:*:*:*:*:*:*
+  - id: 420110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.1:*:*:*:*:*:*:*
+  - id: 420111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.2:*:*:*:*:*:*:*
+  - id: 420113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.3:*:*:*:*:*:*:*
+  - id: 420112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.3.1:*:*:*:*:*:*:*
+  - id: 420115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.4:*:*:*:*:*:*:*
+  - id: 420114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.4.1:*:*:*:*:*:*:*
+  - id: 420122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5:*:*:*:*:*:*:*
+  - id: 420116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.1:*:*:*:*:*:*:*
+  - id: 420117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.2:*:*:*:*:*:*:*
+  - id: 420118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.3:*:*:*:*:*:*:*
+  - id: 420119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.4:*:*:*:*:*:*:*
+  - id: 420120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.5:*:*:*:*:*:*:*
+  - id: 420121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.5.6:*:*:*:*:*:*:*
+  - id: 420124
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.6:*:*:*:*:*:*:*
+  - id: 420123
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.6.1:*:*:*:*:*:*:*
+  - id: 420127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.7:*:*:*:*:*:*:*
+  - id: 420125
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.7.1:*:*:*:*:*:*:*
+  - id: 420126
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.7.2:*:*:*:*:*:*:*
+  - id: 420136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8:*:*:*:*:*:*:*
+  - id: 420128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.1:*:*:*:*:*:*:*
+  - id: 564128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.10:*:*:*:*:*:*:*
+  - id: 420129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.2:*:*:*:*:*:*:*
+  - id: 420130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.3:*:*:*:*:*:*:*
+  - id: 420131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.4:*:*:*:*:*:*:*
+  - id: 420132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.5:*:*:*:*:*:*:*
+  - id: 420133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.6:*:*:*:*:*:*:*
+  - id: 420134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.7:*:*:*:*:*:*:*
+  - id: 420135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.8:*:*:*:*:*:*:*
+  - id: 552320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.15.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.15.8.9:*:*:*:*:*:*:*
+  - id: 552324
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.0:*:*:*:*:*:*:*
+  - id: 552321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.0.1:*:*:*:*:*:*:*
+  - id: 552322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.0.2:*:*:*:*:*:*:*
+  - id: 552323
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.0.3:*:*:*:*:*:*:*
+  - id: 552330
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.1:*:*:*:*:*:*:*
+  - id: 552327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.10:*:*:*:*:*:*:*
+  - id: 552325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.1.1:*:*:*:*:*:*:*
+  - id: 552326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.1.2:*:*:*:*:*:*:*
+  - id: 552331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.2:*:*:*:*:*:*:*
+  - id: 552332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.3:*:*:*:*:*:*:*
+  - id: 552336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.4:*:*:*:*:*:*:*
+  - id: 552333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.4.1:*:*:*:*:*:*:*
+  - id: 552334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.4.2:*:*:*:*:*:*:*
+  - id: 552335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.4.3:*:*:*:*:*:*:*
+  - id: 552337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.5:*:*:*:*:*:*:*
+  - id: 552338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.6:*:*:*:*:*:*:*
+  - id: 552339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.7:*:*:*:*:*:*:*
+  - id: 552340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.8:*:*:*:*:*:*:*
+  - id: 552341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.16.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.16.9:*:*:*:*:*:*:*
+  - id: 552342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.0:*:*:*:*:*:*:*
+  - id: 552343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.1:*:*:*:*:*:*:*
+  - id: 596952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.10:*:*:*:*:*:*:*
+  - id: 596953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.11:*:*:*:*:*:*:*
+  - id: 596954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.12:*:*:*:*:*:*:*
+  - id: 596955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.13:*:*:*:*:*:*:*
+  - id: 596956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.14:*:*:*:*:*:*:*
+  - id: 596957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.15:*:*:*:*:*:*:*
+  - id: 596958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.16:*:*:*:*:*:*:*
+  - id: 596959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.17:*:*:*:*:*:*:*
+  - id: 596960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.18:*:*:*:*:*:*:*
+  - id: 596961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.19:*:*:*:*:*:*:*
+  - id: 552344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.2:*:*:*:*:*:*:*
+  - id: 596962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.20:*:*:*:*:*:*:*
+  - id: 596963
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.21:*:*:*:*:*:*:*
+  - id: 596964
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.22:*:*:*:*:*:*:*
+  - id: 596965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.23:*:*:*:*:*:*:*
+  - id: 552345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.3:*:*:*:*:*:*:*
+  - id: 552346
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.4:*:*:*:*:*:*:*
+  - id: 552347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.5:*:*:*:*:*:*:*
+  - id: 552348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.6:*:*:*:*:*:*:*
+  - id: 552349
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.7:*:*:*:*:*:*:*
+  - id: 564133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.8:*:*:*:*:*:*:*
+  - id: 596967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.17.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.17.9:*:*:*:*:*:*:*
+  - id: 712077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.0:*:*:*:*:*:*:*
+  - id: 712088
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.1:*:*:*:*:*:*:*
+  - id: 712078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.10:*:*:*:*:*:*:*
+  - id: 712079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.11:*:*:*:*:*:*:*
+  - id: 712080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.12:*:*:*:*:*:*:*
+  - id: 712081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.13:*:*:*:*:*:*:*
+  - id: 712082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.14:*:*:*:*:*:*:*
+  - id: 712083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.15:*:*:*:*:*:*:*
+  - id: 712084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.16:*:*:*:*:*:*:*
+  - id: 712085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.17:*:*:*:*:*:*:*
+  - id: 712086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.18:*:*:*:*:*:*:*
+  - id: 712087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.19:*:*:*:*:*:*:*
+  - id: 712093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.2:*:*:*:*:*:*:*
+  - id: 712089
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.20:*:*:*:*:*:*:*
+  - id: 712090
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.21:*:*:*:*:*:*:*
+  - id: 712091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.22:*:*:*:*:*:*:*
+  - id: 712092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.23:*:*:*:*:*:*:*
+  - id: 712094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.3:*:*:*:*:*:*:*
+  - id: 712095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.4:*:*:*:*:*:*:*
+  - id: 712096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.5:*:*:*:*:*:*:*
+  - id: 712097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.6:*:*:*:*:*:*:*
+  - id: 712098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.7:*:*:*:*:*:*:*
+  - id: 712099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.8:*:*:*:*:*:*:*
+  - id: 712100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.18.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.18.9:*:*:*:*:*:*:*
+  - id: 712101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.0:*:*:*:*:*:*:*
+  - id: 712107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.1:*:*:*:*:*:*:*
+  - id: 712102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.10:*:*:*:*:*:*:*
+  - id: 712103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.11:*:*:*:*:*:*:*
+  - id: 712104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.12:*:*:*:*:*:*:*
+  - id: 712105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.13:*:*:*:*:*:*:*
+  - id: 712106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.14:*:*:*:*:*:*:*
+  - id: 712108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.2:*:*:*:*:*:*:*
+  - id: 712109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.3:*:*:*:*:*:*:*
+  - id: 712110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.4:*:*:*:*:*:*:*
+  - id: 712111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.5:*:*:*:*:*:*:*
+  - id: 712112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.6:*:*:*:*:*:*:*
+  - id: 712113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.7:*:*:*:*:*:*:*
+  - id: 712114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.8:*:*:*:*:*:*:*
+  - id: 712115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.3.9:*:*:*:*:*:*:*
+  - id: 712150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0:*:*:*:*:*:*:*
+  - id: 712126
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.1:*:*:*:*:*:*:*
+  - id: 712116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.10:*:*:*:*:*:*:*
+  - id: 712117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.11:*:*:*:*:*:*:*
+  - id: 712118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.12:*:*:*:*:*:*:*
+  - id: 712119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.13:*:*:*:*:*:*:*
+  - id: 712120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.14:*:*:*:*:*:*:*
+  - id: 712121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.15:*:*:*:*:*:*:*
+  - id: 712122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.16:*:*:*:*:*:*:*
+  - id: 712123
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.17:*:*:*:*:*:*:*
+  - id: 712124
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.18:*:*:*:*:*:*:*
+  - id: 712125
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.19:*:*:*:*:*:*:*
+  - id: 712140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.2:*:*:*:*:*:*:*
+  - id: 712127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.20:*:*:*:*:*:*:*
+  - id: 712128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.21:*:*:*:*:*:*:*
+  - id: 712129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.22:*:*:*:*:*:*:*
+  - id: 712132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.23:*:*:*:*:*:*:*
+  - id: 712130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.23.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.23.1:*:*:*:*:*:*:*
+  - id: 712131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.23.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.23.2:*:*:*:*:*:*:*
+  - id: 712133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.24:*:*:*:*:*:*:*
+  - id: 712134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.25:*:*:*:*:*:*:*
+  - id: 712136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.26:*:*:*:*:*:*:*
+  - id: 712135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.26.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.26.0.1:*:*:*:*:*:*:*
+  - id: 712137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.27:*:*:*:*:*:*:*
+  - id: 712138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.28:*:*:*:*:*:*:*
+  - id: 712139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.29:*:*:*:*:*:*:*
+  - id: 712143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.3:*:*:*:*:*:*:*
+  - id: 712141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.30:*:*:*:*:*:*:*
+  - id: 712142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.31:*:*:*:*:*:*:*
+  - id: 712144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.4:*:*:*:*:*:*:*
+  - id: 712145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.5:*:*:*:*:*:*:*
+  - id: 712146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.6:*:*:*:*:*:*:*
+  - id: 712147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.7:*:*:*:*:*:*:*
+  - id: 712148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.8:*:*:*:*:*:*:*
+  - id: 712149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.0.9:*:*:*:*:*:*:*
+  - id: 712170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1:*:*:*:*:*:*:*
+  - id: 712161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.1:*:*:*:*:*:*:*
+  - id: 712151
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.10:*:*:*:*:*:*:*
+  - id: 712152
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.11:*:*:*:*:*:*:*
+  - id: 712153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.12:*:*:*:*:*:*:*
+  - id: 712154
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.13:*:*:*:*:*:*:*
+  - id: 712155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.14:*:*:*:*:*:*:*
+  - id: 712156
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.15:*:*:*:*:*:*:*
+  - id: 712157
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.16:*:*:*:*:*:*:*
+  - id: 712158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.17:*:*:*:*:*:*:*
+  - id: 712159
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.18:*:*:*:*:*:*:*
+  - id: 712160
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.19:*:*:*:*:*:*:*
+  - id: 712162
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.2:*:*:*:*:*:*:*
+  - id: 712163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.3:*:*:*:*:*:*:*
+  - id: 712164
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.4:*:*:*:*:*:*:*
+  - id: 712165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.5:*:*:*:*:*:*:*
+  - id: 712166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.6:*:*:*:*:*:*:*
+  - id: 712167
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.7:*:*:*:*:*:*:*
+  - id: 712168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.8:*:*:*:*:*:*:*
+  - id: 712169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.4.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.4.1.9:*:*:*:*:*:*:*
+  - id: 712185
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6:*:*:*:*:*:*:*
+  - id: 712176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.1:*:*:*:*:*:*:*
+  - id: 712171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.10:*:*:*:*:*:*:*
+  - id: 712172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.11:*:*:*:*:*:*:*
+  - id: 712174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.12:*:*:*:*:*:*:*
+  - id: 712173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.12.99:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.12.99:*:*:*:*:*:*:*
+  - id: 712175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.13:*:*:*:*:*:*:*
+  - id: 712177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.2:*:*:*:*:*:*:*
+  - id: 712178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.3:*:*:*:*:*:*:*
+  - id: 712179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.4:*:*:*:*:*:*:*
+  - id: 712180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.5:*:*:*:*:*:*:*
+  - id: 712181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.6:*:*:*:*:*:*:*
+  - id: 712182
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.7:*:*:*:*:*:*:*
+  - id: 712183
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.8:*:*:*:*:*:*:*
+  - id: 712184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.6.9:*:*:*:*:*:*:*
+  - id: 712186
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.7.0:*:*:*:*:*:*:*
+  - id: 712187
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.7.1:*:*:*:*:*:*:*
+  - id: 712188
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.7.2:*:*:*:*:*:*:*
+  - id: 712189
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.0:*:*:*:*:*:*:*
+  - id: 712191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.1:*:*:*:*:*:*:*
+  - id: 712190
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.1.1:*:*:*:*:*:*:*
+  - id: 712192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.2:*:*:*:*:*:*:*
+  - id: 712194
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.3:*:*:*:*:*:*:*
+  - id: 712193
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.8.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.8.3.1:*:*:*:*:*:*:*
+  - id: 712195
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.0:*:*:*:*:*:*:*
+  - id: 552359
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.1:*:*:*:*:*:*:*
+  - id: 552350
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.10:*:*:*:*:*:*:*
+  - id: 552351
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.11:*:*:*:*:*:*:*
+  - id: 552352
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.12:*:*:*:*:*:*:*
+  - id: 552353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.13:*:*:*:*:*:*:*
+  - id: 552354
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.14:*:*:*:*:*:*:*
+  - id: 552355
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.15:*:*:*:*:*:*:*
+  - id: 552356
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.16:*:*:*:*:*:*:*
+  - id: 552357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.17:*:*:*:*:*:*:*
+  - id: 552358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.18:*:*:*:*:*:*:*
+  - id: 411320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.19:*:*:*:*:*:*:*
+  - id: 552360
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.2:*:*:*:*:*:*:*
+  - id: 411321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.20:*:*:*:*:*:*:*
+  - id: 111483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.21:*:*:*:*:*:*:*
+  - id: 552361
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.3:*:*:*:*:*:*:*
+  - id: 712196
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.4:*:*:*:*:*:*:*
+  - id: 552362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.7:*:*:*:*:*:*:*
+  - id: 552363
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.8:*:*:*:*:*:*:*
+  - id: 552364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:dpkg:1.9.9:*:*:*:*:*:*:*
+  - id: 712076
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8283
+    reference_id: CVE-2017-8283
+weaknesses: []

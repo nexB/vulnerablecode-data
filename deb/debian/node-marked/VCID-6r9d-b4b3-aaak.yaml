@@ -1,0 +1,62 @@
+vulnerability_id: VCID-6r9d-b4b3-aaak
+aliases:
+  - CVE-2022-21680
+  - GHSA-rrrm-qjm4-v8hf
+summary: |
+  Inefficient Regular Expression Complexity
+  The regular expression `block.def` may cause catastrophic backtracking against some strings and lead to a regular expression denial of service (ReDoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources.
+severities:
+  - id: 350007
+    reference_id: 753517
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 350006
+    reference_id: 753516
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 582789
+    reference_id: 32865
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 582787
+    reference_id: 32865
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 706952
+    reference_id: 1468595
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 753517
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-21680.json
+    reference_id:
+  - id: 32867
+    url: https://github.com/markedjs/marked/commit/c4a3ccd344b6929afa8a1d50ac54a721e57012c0
+    reference_id:
+  - id: 32868
+    url: https://github.com/markedjs/marked/releases/tag/v4.0.10
+    reference_id:
+  - id: 912903
+    url: https://github.com/markedjs/marked/security/advisories/GHSA-rrrm-qjm4-v8hf
+    reference_id:
+  - id: 1468594
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AIXDMC3CSHYW3YWVSQOXAWLUYQHAO5UX/
+    reference_id:
+  - id: 753516
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2082705
+    reference_id: 2082705
+  - id: 568624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+  - id: 32865
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-21680
+    reference_id: CVE-2022-21680
+  - id: 1468595
+    url: https://github.com/advisories/GHSA-rrrm-qjm4-v8hf
+    reference_id: GHSA-rrrm-qjm4-v8hf
+weaknesses: []

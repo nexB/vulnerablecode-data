@@ -1,0 +1,39 @@
+vulnerability_id: VCID-mv8s-crbb-aaar
+aliases:
+  - CVE-2018-1000224
+summary: Godot Engine version All versions prior to 2.1.5, all 3.0 versions prior to 3.0.6.
+  contains a Signed/unsigned comparison, wrong buffer size chackes, integer overflow, missing
+  padding initialization vulnerability in (De)Serialization functions (core/io/marshalls.cpp)
+  that can result in DoS (packet of death), possible leak of uninitialized memory. This attack
+  appear to be exploitable via A malformed packet is received over the network by a Godot application
+  that uses built-in serialization (e.g. game server, or game client). Could be triggered by
+  multiplayer opponent. This vulnerability appears to have been fixed in 2.1.5, 3.0.6, master
+  branch after commit feaf03421dda0213382b51aff07bd5a96b29487b.
+severities:
+  - id: 307766
+    reference_id: 721775
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 307764
+    reference_id: 721775
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 721772
+    url: https://github.com/godotengine/godot/issues/20558
+    reference_id:
+  - id: 721773
+    url: https://godotengine.org/article/maintenance-release-godot-2-1-5
+    reference_id:
+  - id: 721774
+    url: https://godotengine.org/article/maintenance-release-godot-3-0-6
+    reference_id:
+  - id: 721776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:godotengine:godot:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:godotengine:godot:*:*:*:*:*:*:*:*
+  - id: 721775
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000224
+    reference_id: CVE-2018-1000224
+weaknesses: []

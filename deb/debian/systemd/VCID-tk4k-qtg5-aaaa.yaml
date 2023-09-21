@@ -1,0 +1,73 @@
+vulnerability_id: VCID-tk4k-qtg5-aaaa
+aliases:
+  - CVE-2018-21029
+summary: '** DISPUTED ** systemd 239 through 245 accepts any certificate signed by a trusted
+  certificate authority for DNS Over TLS. Server Name Indication (SNI) is not sent, and there
+  is no hostname validation with the GnuTLS backend. NOTE: This has been disputed by the developer
+  as not a vulnerability since hostname validation does not have anything to do with this issue
+  (i.e. there is no hostname to be sent).'
+severities:
+  - id: 615583
+    reference_id: 935442
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+  - id: 615582
+    reference_id: 935441
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 343800
+    reference_id: 750332
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 343798
+    reference_id: 750332
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 935442
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-21029.json
+    reference_id:
+  - id: 750323
+    url: https://blog.cloudflare.com/dns-encryption-explained/
+    reference_id:
+  - id: 750324
+    url: https://github.com/systemd/systemd/blob/v239/man/resolved.conf.xml#L199-L207
+    reference_id:
+  - id: 750325
+    url: https://github.com/systemd/systemd/blob/v243/man/resolved.conf.xml#L196-L207
+    reference_id:
+  - id: 750326
+    url: https://github.com/systemd/systemd/blob/v243/src/resolve/resolved-dnstls-gnutls.c#L62-L63
+    reference_id:
+  - id: 750327
+    url: https://github.com/systemd/systemd/issues/9397
+    reference_id:
+  - id: 750328
+    url: https://github.com/systemd/systemd/pull/13870
+    reference_id:
+  - id: 750329
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4NLJVOJMB6ANDILRLDZK26YGLYBEPHKY/
+    reference_id:
+  - id: 750330
+    url: https://security.netapp.com/advisory/ntap-20191122-0002/
+    reference_id:
+  - id: 750331
+    url: https://tools.ietf.org/html/rfc7858#section-4.1
+    reference_id:
+  - id: 935441
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1771725
+    reference_id: 1771725
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 750332
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-21029
+    reference_id: CVE-2018-21029
+weaknesses: []

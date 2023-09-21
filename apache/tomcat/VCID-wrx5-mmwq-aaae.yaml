@@ -1,0 +1,109 @@
+affected_purls:
+- pkg:apache/tomcat@7.0.98
+- pkg:apache/tomcat@7.0.99
+- pkg:apache/tomcat@8.5.48
+- pkg:apache/tomcat@8.5.49
+- pkg:apache/tomcat@8.5.50
+- pkg:apache/tomcat@9.0.28
+- pkg:apache/tomcat@9.0.29
+- pkg:apache/tomcat@9.0.30
+- pkg:maven/org.apache.tomcat/tomcat@7.0.99
+- pkg:maven/org.apache.tomcat/tomcat@8.5.49
+- pkg:maven/org.apache.tomcat/tomcat@8.5.50
+- pkg:maven/org.apache.tomcat/tomcat@9.0.29
+- pkg:maven/org.apache.tomcat/tomcat@9.0.30
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@7.0.99
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.49
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.50
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.29
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.30
+aliases:
+- CVE-2019-17569
+- GHSA-767j-jfh2-jvrc
+fixed_purl:
+- pkg:apache/tomcat@7.0.100
+- pkg:apache/tomcat@8.5.51
+- pkg:apache/tomcat@9.0.31
+- pkg:deb/debian/tomcat9@9.0.31-1?distro=sid
+- pkg:deb/debian/tomcat9@9.0.31-1~deb10u1?distro=sid
+- pkg:deb/debian/tomcat9@9.0.31-1~deb10u6?distro=sid
+- pkg:deb/debian/tomcat9@9.0.43-2~deb11u6?distro=sid
+- pkg:deb/debian/tomcat9@9.0.70-1?distro=sid
+- pkg:deb/debian/tomcat9@9.0.70-2?distro=sid
+- pkg:maven/org.apache.tomcat/tomcat@7.0.100
+- pkg:maven/org.apache.tomcat/tomcat@8.5.51
+- pkg:maven/org.apache.tomcat/tomcat@9.0.31
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@7.0.100
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@8.5.51
+- pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.31
+references:
+- id: 148724
+  reference_id: ''
+  url: http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00025.html
+- id: 179251
+  reference_id: ''
+  url: https://github.com/apache/tomcat/commit/060ecc5eb839208687b7fcc9e35287ac8eb46998
+- id: 179249
+  reference_id: ''
+  url: https://github.com/apache/tomcat/commit/959f1dfd767bf3cb64776b44f7395d1d8d8f7ab3
+- id: 179250
+  reference_id: ''
+  url: https://github.com/apache/tomcat/commit/b191a0d9cf06f4e04257c221bfe41d2b108a9cc8
+- id: 148721
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/r7bc994c965a34876bd94d5ff15b4e1e30b6220a15eb9b47c81915b78@%3Ccommits.tomee.apache.org%3E
+- id: 148720
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/r88def002c5c78534674ca67472e035099fbe088813d50062094a1390%40%3Cannounce.tomcat.apache.org%3E
+- id: 148722
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/rc31cbabb46cdc58bbdd8519a8f64b6236b2635a3922bbeba0f0e3743@%3Ccommits.tomee.apache.org%3E
+- id: 148723
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/03/msg00006.html
+- id: 148725
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20200327-0005/
+- id: 148726
+  reference_id: ''
+  url: https://www.debian.org/security/2020/dsa-4673
+- id: 146391
+  reference_id: ''
+  url: https://www.debian.org/security/2020/dsa-4680
+- id: 134377
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujan2021.html
+- id: 138341
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2020.html
+- id: 135896
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2020.html
+- id: 179248
+  reference_id: CVE-2019-17569
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17569
+- id: 148719
+  reference_id: CVE-2019-17569
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-17569
+- id: 148727
+  reference_id: GHSA-767j-jfh2-jvrc
+  url: https://github.com/advisories/GHSA-767j-jfh2-jvrc
+severities:
+- id: 29201
+  reference_id: 179248
+  scoring_elements: ''
+  scoring_system: apache_tomcat
+  value: Low
+- id: 20989
+  reference_id: 148727
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: The refactoring present in Apache Tomcat 9.0.28 to 9.0.30, 8.5.48 to 8.5.50
+  and 7.0.98 to 7.0.99 introduced a regression. The result of the regression was that
+  invalid Transfer-Encoding headers were incorrectly processed leading to a possibility
+  of HTTP Request Smuggling if Tomcat was located behind a reverse proxy that incorrectly
+  handled the invalid Transfer-Encoding header in a particular manner. Such a reverse
+  proxy is considered unlikely.
+vulnerability_id: VCID-wrx5-mmwq-aaae
+weaknesses: []

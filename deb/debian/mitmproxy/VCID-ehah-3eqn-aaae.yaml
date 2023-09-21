@@ -1,0 +1,52 @@
+vulnerability_id: VCID-ehah-3eqn-aaae
+aliases:
+  - CVE-2021-39214
+  - GHSA-22gh-3r9q-xf38
+  - PYSEC-2021-328
+summary: mitmproxy is an interactive, SSL/TLS-capable intercepting proxy. In mitmproxy 7.0.2
+  and below, a malicious client or server is able to perform HTTP request smuggling attacks
+  through mitmproxy. This means that a malicious client/server could smuggle a request/response
+  through mitmproxy as part of another request/response's HTTP message body. While a smuggled
+  request is still captured as part of another request's body, it does not appear in the request
+  list and does not go through the usual mitmproxy event hooks, where users may have implemented
+  custom access control checks or input sanitization. Unless one uses mitmproxy to protect an
+  HTTP/1 service, no action is required. The vulnerability has been fixed in mitmproxy 7.0.3
+  and above.
+severities:
+  - id: 556460
+    reference_id: 22440
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 556458
+    reference_id: 22440
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 3880
+    reference_id: 22441
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3879
+    reference_id: 22439
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 70125
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=994570
+    reference_id: 994570
+  - id: 895322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitmproxy:mitmproxy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitmproxy:mitmproxy:*:*:*:*:*:*:*:*
+  - id: 22440
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-39214
+    reference_id: CVE-2021-39214
+  - id: 22441
+    url: https://github.com/advisories/GHSA-22gh-3r9q-xf38
+    reference_id: GHSA-22gh-3r9q-xf38
+  - id: 22439
+    url: https://github.com/mitmproxy/mitmproxy/security/advisories/GHSA-22gh-3r9q-xf38
+    reference_id: GHSA-22gh-3r9q-xf38
+weaknesses: []

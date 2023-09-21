@@ -1,0 +1,61 @@
+vulnerability_id: VCID-jxj5-dfd5-aaaf
+aliases:
+  - CVE-2019-18466
+summary: An issue was discovered in Podman in libpod before 1.6.0. It resolves a symlink in
+  the host context during a copy operation from the container to the host, because an undesired
+  glob operation occurs. An attacker could create a container image containing particular symlinks
+  that, when copied by a victim user to the host filesystem, may overwrite existing files with
+  others from the host.
+severities:
+  - id: 75642
+    reference_id: 206568
+    scoring_system: cvssv3
+    value: '2.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N
+  - id: 393766
+    reference_id: 787878
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:P
+  - id: 393764
+    reference_id: 787878
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+  - id: 58310
+    reference_id: 184574
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 787873
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00040.html
+    reference_id:
+  - id: 784342
+    url: https://access.redhat.com/errata/RHSA-2019:4269
+    reference_id:
+  - id: 206568
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-18466.json
+    reference_id:
+  - id: 787874
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1744588
+    reference_id:
+  - id: 787875
+    url: https://github.com/containers/libpod/commit/5c09c4d2947a759724f9d5aef6bac04317e03f7e
+    reference_id:
+  - id: 787876
+    url: https://github.com/containers/libpod/compare/v1.5.1...v1.6.0
+    reference_id:
+  - id: 787877
+    url: https://github.com/containers/libpod/issues/3829
+    reference_id:
+  - id: 724819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libpod_project:libpod:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libpod_project:libpod:*:*:*:*:*:*:*:*
+  - id: 787878
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18466
+    reference_id: CVE-2019-18466
+  - id: 184574
+    url: https://access.redhat.com/errata/RHSA-2020:1227
+    reference_id: RHSA-2020:1227
+weaknesses: []

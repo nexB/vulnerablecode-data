@@ -1,0 +1,80 @@
+vulnerability_id: VCID-rhn1-9qdr-aaar
+aliases:
+  - CVE-2017-2292
+summary: Versions of MCollective prior to 2.10.4 deserialized YAML from agents without calling
+  safe_load, allowing the potential for arbitrary code execution on the server. The fix for
+  this is to call YAML.safe_load on input. This has been tested in all Puppet-supplied MCollective
+  plugins, but there is a chance that third-party plugins could rely on this insecure behavior.
+severities:
+  - id: 677677
+    reference_id: 1441644
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622895
+    reference_id: 940627
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 677678
+    reference_id: 1441645
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677679
+    reference_id: 1441646
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677680
+    reference_id: 695496
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622894
+    reference_id: 940626
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 279855
+    reference_id: 695498
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 279853
+    reference_id: 695498
+    scoring_system: cvssv3
+    value: '9.0'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:L
+references:
+  - id: 1441644
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2292.html
+    reference_id:
+  - id: 940627
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2292.json
+    reference_id:
+  - id: 1441645
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2292
+    reference_id:
+  - id: 1441646
+    url: https://github.com/puppetlabs/marionette-collective/commit/e0e741889f5adeb8f75387037106b0d28a9099b0
+    reference_id:
+  - id: 695496
+    url: https://puppet.com/security/cve/cve-2017-2292
+    reference_id:
+  - id: 695497
+    url: https://security.gentoo.org/glsa/201709-01
+    reference_id:
+  - id: 940626
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1470086
+    reference_id: 1470086
+  - id: 66917
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=866711
+    reference_id: 866711
+  - id: 695499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:mcollective:*:*:*:*:*:puppet:*:*
+    reference_id: cpe:2.3:a:puppet:mcollective:*:*:*:*:*:puppet:*:*
+  - id: 695498
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2292
+    reference_id: CVE-2017-2292
+weaknesses: []

@@ -1,0 +1,40 @@
+vulnerability_id: VCID-aekt-n3jp-aaar
+aliases:
+  - CVE-2021-37617
+summary: The Nextcloud Desktop Client is a tool to synchronize files from Nextcloud Server with
+  a computer. The Nextcloud Desktop Client invokes its uninstaller script when being installed
+  to make sure there are no remnants of previous installations. In versions 3.0.3 through 3.2.4,
+  the Client searches the `Uninstall.exe` file in a folder that can be written by regular users.
+  This could lead to a case where a malicious user creates a malicious `Uninstall.exe`, which
+  would be executed with administrative privileges on the Nextcloud Desktop Client installation.
+  This issue is fixed in Nextcloud Desktop Client version 3.3.0. As a workaround, do not allow
+  untrusted users to create content in the `C:\` system folder and verify that there is no malicious
+  `C:\Uninstall.exe` file on the system.
+severities:
+  - id: 551987
+    reference_id: 892324
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 551985
+    reference_id: 892324
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 892321
+    url: https://github.com/nextcloud/desktop/pull/3497
+    reference_id:
+  - id: 892322
+    url: https://github.com/nextcloud/security-advisories/security/advisories/GHSA-6q2w-v879-q24v
+    reference_id:
+  - id: 892323
+    url: https://hackerone.com/reports/1240749
+    reference_id:
+  - id: 867360
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nextcloud:desktop:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nextcloud:desktop:*:*:*:*:*:*:*:*
+  - id: 892324
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-37617
+    reference_id: CVE-2021-37617
+weaknesses: []

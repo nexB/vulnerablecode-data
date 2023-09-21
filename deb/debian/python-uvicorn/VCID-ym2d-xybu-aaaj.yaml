@@ -1,0 +1,52 @@
+vulnerability_id: VCID-ym2d-xybu-aaaj
+aliases:
+  - CVE-2020-7694
+  - GHSA-33c7-2mpw-hg34
+  - PYSEC-2020-150
+  - SNYK-PYTHON-UVICORN-575560
+summary: 'This affects all versions of package uvicorn. The request logger provided by the package
+  is vulnerable to ASNI escape sequence injection. Whenever any HTTP request is received, the
+  default behaviour of uvicorn is to log its details to either the console or a log file. When
+  attackers request crafted URLs with percent-encoded escape sequences, the logging component
+  will log the URL after it''s been processed with urllib.parse.unquote, therefore converting
+  any percent-encoded characters into their single-character equivalent, which can have special
+  meaning in terminal emulators. By requesting URLs with crafted paths, attackers can: * Pollute
+  uvicorn''s access logs, therefore jeopardising the integrity of such files. * Use ANSI sequence
+  codes to attempt to interact with the terminal emulator that''s displaying the logs (either
+  in real time or from a file).'
+severities:
+  - id: 489393
+    reference_id: 23593
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 489391
+    reference_id: 23593
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 4590
+    reference_id: 25896
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 6731
+    url: https://github.com/encode/uvicorn
+    reference_id:
+  - id: 6730
+    url: https://snyk.io/vuln/SNYK-PYTHON-UVICORN-575560
+    reference_id:
+  - id: 108903
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969276
+    reference_id: 969276
+  - id: 852831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:encode:uvicorn:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:encode:uvicorn:-:*:*:*:*:*:*:*
+  - id: 23593
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-7694
+    reference_id: CVE-2020-7694
+  - id: 25896
+    url: https://github.com/advisories/GHSA-33c7-2mpw-hg34
+    reference_id: GHSA-33c7-2mpw-hg34
+weaknesses: []

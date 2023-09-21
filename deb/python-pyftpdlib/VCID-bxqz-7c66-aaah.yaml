@@ -1,0 +1,66 @@
+affected_purls:
+- pkg:pypi/pyftpdlib@0.2.0
+- pkg:pypi/pyftpdlib@0.3.0
+- pkg:pypi/pyftpdlib@0.4.0
+- pkg:pypi/pyftpdlib@0.5.0
+aliases:
+- CVE-2009-5010
+- GHSA-mpg6-rgp4-35rr
+fixed_purl:
+- pkg:deb/debian/python-pyftpdlib@0?distro=sid
+- pkg:deb/debian/python-pyftpdlib@1.5.4-1?distro=sid
+- pkg:deb/debian/python-pyftpdlib@1.5.4-2?distro=sid
+- pkg:deb/debian/python-pyftpdlib@1.5.7-3?distro=sid
+- pkg:pypi/pyftpdlib@0.5.1
+references:
+- id: 133718
+  reference_id: ''
+  url: http://bugs.python.org/issue6706
+- id: 133719
+  reference_id: ''
+  url: http://code.google.com/p/pyftpdlib/issues/detail?id=91
+- id: 133511
+  reference_id: ''
+  url: http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY
+- id: 133726
+  reference_id: ''
+  url: http://code.google.com/p/pyftpdlib/source/detail?r=439
+- id: 133727
+  reference_id: ''
+  url: http://code.google.com/p/pyftpdlib/source/diff?spec=svn439&r=439&format=side&path=/trunk/pyftpdlib/ftpserver.py
+- id: 133717
+  reference_id: ''
+  url: https://bugs.launchpad.net/zodb/+bug/135108
+- id: 133725
+  reference_id: ''
+  url: https://github.com/pypa/advisory-database/tree/main/vulns/pyftpdlib/PYSEC-2010-7.yaml
+- id: 133720
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2010/09/09/6
+- id: 133721
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2010/09/11/2
+- id: 133722
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2010/09/22/3
+- id: 133723
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2010/09/24/3
+- id: 133716
+  reference_id: CVE-2009-5010
+  url: https://nvd.nist.gov/vuln/detail/CVE-2009-5010
+- id: 133724
+  reference_id: GHSA-mpg6-rgp4-35rr
+  url: https://github.com/advisories/GHSA-mpg6-rgp4-35rr
+severities:
+- id: 18405
+  reference_id: 133724
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Race condition in the FTPHandler class in ftpserver.py in pyftpdlib before
+  0.5.1 allows remote attackers to cause a denial of service (daemon outage) by establishing
+  and then immediately closing a TCP connection, leading to the accept function having
+  an unexpected return value of None, a different vulnerability than CVE-2010-3494.
+vulnerability_id: VCID-bxqz-7c66-aaah
+weaknesses: []

@@ -1,0 +1,52 @@
+vulnerability_id: VCID-db3v-p2sm-aaah
+aliases:
+  - CVE-2017-14623
+summary: 'In the ldap.v2 (aka go-ldap) package through 2.5.0 for Go, an attacker may be able
+  to login with an empty password. This issue affects an application using this package if these
+  conditions are met: (1) it relies only on the return error of the Bind function call to determine
+  whether a user is authorized (i.e., a nil return value is interpreted as successful authorization)
+  and (2) it is used with an LDAP server allowing unauthenticated bind.'
+severities:
+  - id: 621174
+    reference_id: 939442
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 621173
+    reference_id: 939441
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 265236
+    reference_id: 683201
+    scoring_system: cvssv2
+    value: '5.1'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:P/A:P
+  - id: 265234
+    reference_id: 683201
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 939442
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-14623.json
+    reference_id:
+  - id: 683199
+    url: https://github.com/go-ldap/ldap/commit/95ede1266b237bf8e9aa5dce0b3250e51bfefe66
+    reference_id:
+  - id: 683200
+    url: https://github.com/go-ldap/ldap/pull/126
+    reference_id:
+  - id: 939441
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1493998
+    reference_id: 1493998
+  - id: 41480
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=876404
+    reference_id: 876404
+  - id: 683202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:go-ldap_project:ldap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:go-ldap_project:ldap:*:*:*:*:*:*:*:*
+  - id: 683201
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14623
+    reference_id: CVE-2017-14623
+weaknesses: []

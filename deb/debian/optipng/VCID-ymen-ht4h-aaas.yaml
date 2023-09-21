@@ -1,0 +1,143 @@
+vulnerability_id: VCID-ymen-ht4h-aaas
+aliases:
+  - CVE-2009-0749
+summary: Use-after-free vulnerability in the GIFReadNextExtension function in lib/pngxtern/gif/gifread.c
+  in OptiPNG 0.6.2 and earlier allows context-dependent attackers to cause a denial of service
+  (application crash) via a crafted GIF image that causes the realloc function to return a new
+  pointer, which triggers memory corruption when the old pointer is accessed.
+severities:
+  - id: 80574
+    reference_id: 214334
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 123224
+    reference_id: 384451
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+references:
+  - id: 322273
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00001.html
+    reference_id:
+  - id: 148574
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-07/msg00002.html
+    reference_id:
+  - id: 384441
+    url: http://optipng.sourceforge.net
+    reference_id:
+  - id: 214335
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-0749.json
+    reference_id:
+  - id: 384442
+    url: http://secunia.com/advisories/34035
+    reference_id:
+  - id: 384443
+    url: http://secunia.com/advisories/34201
+    reference_id:
+  - id: 322275
+    url: http://secunia.com/advisories/34259
+    reference_id:
+  - id: 148576
+    url: http://secunia.com/advisories/35685
+    reference_id:
+  - id: 384450
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/48879
+    reference_id:
+  - id: 384444
+    url: http://sourceforge.net/tracker/index.php?func=detail&aid=2582013&group_id=151404&atid=780913
+    reference_id:
+  - id: 384445
+    url: http://www.gentoo.org/security/en/glsa/glsa-200903-12.xml
+    reference_id:
+  - id: 384446
+    url: http://www.openwall.com/lists/oss-security/2009/02/24/2
+    reference_id:
+  - id: 384447
+    url: http://www.openwall.com/lists/oss-security/2009/02/25/4
+    reference_id:
+  - id: 384448
+    url: http://www.securityfocus.com/bid/33873
+    reference_id:
+  - id: 384449
+    url: http://www.vupen.com/english/advisories/2009/0510
+    reference_id:
+  - id: 214334
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=487364
+    reference_id: 487364
+  - id: 384452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:*:*:*:*:*:*:*:*
+  - id: 384453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.0:*:*:*:*:*:*:*
+  - id: 384454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.1:*:*:*:*:*:*:*
+  - id: 384455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.2:*:*:*:*:*:*:*
+  - id: 384458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.3:*:*:*:*:*:*:*
+  - id: 384456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.3.1:*:*:*:*:*:*:*
+  - id: 384457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.3.2:*:*:*:*:*:*:*
+  - id: 384467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4:*:*:*:*:*:*:*
+  - id: 384459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.1:*:*:*:*:*:*:*
+  - id: 384460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.2:*:*:*:*:*:*:*
+  - id: 384461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.3:*:*:*:*:*:*:*
+  - id: 384462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.4:*:*:*:*:*:*:*
+  - id: 384463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.5:*:*:*:*:*:*:*
+  - id: 384464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.6:*:*:*:*:*:*:*
+  - id: 384465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.7:*:*:*:*:*:*:*
+  - id: 384466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.4.8:*:*:*:*:*:*:*
+  - id: 384473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5:*:*:*:*:*:*:*
+  - id: 384468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5.1:*:*:*:*:*:*:*
+  - id: 384469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5.2:*:*:*:*:*:*:*
+  - id: 384470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5.3:*:*:*:*:*:*:*
+  - id: 384471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5.4:*:*:*:*:*:*:*
+  - id: 384472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.5.5:*:*:*:*:*:*:*
+  - id: 384475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.6:*:*:*:*:*:*:*
+  - id: 384474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cosmin_truta:optipng:0.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cosmin_truta:optipng:0.6.1:*:*:*:*:*:*:*
+  - id: 384451
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-0749
+    reference_id: CVE-2009-0749
+weaknesses: []

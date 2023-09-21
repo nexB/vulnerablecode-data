@@ -1,0 +1,63 @@
+vulnerability_id: VCID-be5n-gzwa-aaar
+aliases:
+  - CVE-2019-17362
+summary: In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c)
+  does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers
+  to cause a denial of service (out-of-bounds read and crash) or read information from other
+  memory locations via carefully crafted DER-encoded data.
+severities:
+  - id: 76480
+    reference_id: 207419
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+  - id: 76479
+    reference_id: 207418
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 391432
+    reference_id: 785882
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 391430
+    reference_id: 785882
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 785876
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
+    reference_id:
+  - id: 785877
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
+    reference_id:
+  - id: 207419
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17362.json
+    reference_id:
+  - id: 785878
+    url: https://github.com/libtom/libtomcrypt/issues/507
+    reference_id:
+  - id: 785879
+    url: https://github.com/libtom/libtomcrypt/pull/508
+    reference_id:
+  - id: 785880
+    url: https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
+    reference_id:
+  - id: 785881
+    url: https://vuldb.com/?id.142995
+    reference_id:
+  - id: 207418
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1775212
+    reference_id: 1775212
+  - id: 651507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtom:libtomcrypt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtom:libtomcrypt:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 785882
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17362
+    reference_id: CVE-2019-17362
+weaknesses: []

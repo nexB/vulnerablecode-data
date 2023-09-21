@@ -1,0 +1,110 @@
+vulnerability_id: VCID-5je2-vnfx-aaar
+aliases:
+  - CVE-2018-17204
+summary: An issue was discovered in Open vSwitch (OvS) 2.7.x through 2.7.6, affecting parse_group_prop_ntr_selection_method
+  in lib/ofp-util.c. When decoding a group mod, it validates the group type and command after
+  the whole group mod has been decoded. The OF1.5 decoder, however, tries to use the type and
+  command earlier, when it might still be invalid. This causes an assertion failure (via OVS_NOT_REACHED).
+  ovs-vswitchd does not enable support for OpenFlow 1.5 by default.
+severities:
+  - id: 685284
+    reference_id: 1447694
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614271
+    reference_id: 934493
+    scoring_system: cvssv3
+    value: '2.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L
+  - id: 685285
+    reference_id: 1447695
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685286
+    reference_id: 1447696
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 332056
+    reference_id: 740860
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 332054
+    reference_id: 740860
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 614270
+    reference_id: 934492
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 614268
+    reference_id: 934490
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 614269
+    reference_id: 934491
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1447694
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-17204.html
+    reference_id:
+  - id: 934493
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-17204.json
+    reference_id:
+  - id: 1447695
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17204
+    reference_id:
+  - id: 740858
+    url: https://github.com/openvswitch/ovs/commit/4af6da3b275b764b1afe194df6499b33d2bf4cde
+    reference_id:
+  - id: 616960
+    url: https://lists.debian.org/debian-lts-announce/2021/02/msg00032.html
+    reference_id:
+  - id: 1447696
+    url: https://ubuntu.com/security/notices/USN-3873-1
+    reference_id:
+  - id: 740859
+    url: https://usn.ubuntu.com/3873-1/
+    reference_id:
+  - id: 684484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openvswitch:openvswitch:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openvswitch:openvswitch:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 740860
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-17204
+    reference_id: CVE-2018-17204
+  - id: 934489
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1632522
+    reference_id: RHBA-2018:3683
+  - id: 934492
+    url: https://access.redhat.com/errata/RHSA-2018:3500
+    reference_id: RHSA-2018:3500
+  - id: 934490
+    url: https://access.redhat.com/errata/RHSA-2019:0053
+    reference_id: RHSA-2019:0053
+  - id: 934491
+    url: https://access.redhat.com/errata/RHSA-2019:0081
+    reference_id: RHSA-2019:0081
+weaknesses: []

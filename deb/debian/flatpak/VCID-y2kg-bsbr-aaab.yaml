@@ -1,0 +1,185 @@
+vulnerability_id: VCID-y2kg-bsbr-aaab
+aliases:
+  - CVE-2021-21381
+summary: 'Flatpak is a system for building, distributing, and running sandboxed desktop applications
+  on Linux. In Flatpack since version 0.9.4 and before version 1.10.2 has a vulnerability in
+  the "file forwarding" feature which can be used by an attacker to gain access to files that
+  would not ordinarily be allowed by the app''s permissions. By putting the special tokens `@@`
+  and/or `@@u` in the Exec field of a Flatpak app''s .desktop file, a malicious app publisher
+  can trick flatpak into behaving as though the user had chosen to open a target file with their
+  Flatpak app, which automatically makes that file available to the Flatpak app. This is fixed
+  in version 1.10.2. A minimal solution is the first commit "`Disallow @@ and @@U usage in desktop
+  files`". The follow-up commits "`dir: Reserve the whole @@ prefix`" and "`dir: Refuse to export
+  .desktop files with suspicious uses of @@ tokens`" are recommended, but not strictly required.
+  As a workaround, avoid installing Flatpak apps from untrusted sources, or check the contents
+  of the exported `.desktop` files in `exports/share/applications/*.desktop` (typically `~/.local/share/flatpak/exports/share/applications/*.desktop`
+  and `/var/lib/flatpak/exports/share/applications/*.desktop`) to make sure that literal filenames
+  do not follow `@@` or `@@u`.'
+severities:
+  - id: 700744
+    reference_id: 1460239
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606566
+    reference_id: 928825
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+  - id: 700745
+    reference_id: 1460240
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700746
+    reference_id: 864051
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700747
+    reference_id: 864052
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700748
+    reference_id: 864053
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700749
+    reference_id: 1460241
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700750
+    reference_id: 864054
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700751
+    reference_id: 864055
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700752
+    reference_id: 864056
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700753
+    reference_id: 1460242
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606561
+    reference_id: 928820
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 508320
+    reference_id: 864060
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 508318
+    reference_id: 864060
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N
+  - id: 606564
+    reference_id: 928823
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 606565
+    reference_id: 928824
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 606562
+    reference_id: 928821
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 606563
+    reference_id: 928822
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1460239
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-21381.html
+    reference_id:
+  - id: 928825
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-21381.json
+    reference_id:
+  - id: 1460240
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21381
+    reference_id:
+  - id: 864051
+    url: https://github.com/flatpak/flatpak/commit/8279c5818425b6812523e3805bbe242fb6a5d961
+    reference_id:
+  - id: 864052
+    url: https://github.com/flatpak/flatpak/commit/a7401e638bf0c03102039e216ab1081922f140ae
+    reference_id:
+  - id: 864053
+    url: https://github.com/flatpak/flatpak/commit/eb7946bb6248923d8c90fe9b84425fef97ae580d
+    reference_id:
+  - id: 1460241
+    url: https://github.com/flatpak/flatpak/issues/4146
+    reference_id:
+  - id: 864054
+    url: https://github.com/flatpak/flatpak/pull/4156
+    reference_id:
+  - id: 864055
+    url: https://github.com/flatpak/flatpak/releases/tag/1.10.2
+    reference_id:
+  - id: 864056
+    url: https://github.com/flatpak/flatpak/security/advisories/GHSA-xgh4-387p-hqpp
+    reference_id:
+  - id: 864057
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2MXXLXC2DPJ45HSMTI5MZYHMYEGQN6AA/
+    reference_id:
+  - id: 864058
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WXNVFOIB6ZP4DGOVKAM25T6OIEP3YLGV/
+    reference_id:
+  - id: 1460242
+    url: https://ubuntu.com/security/notices/USN-4951-1
+    reference_id:
+  - id: 864059
+    url: https://www.debian.org/security/2021/dsa-4868
+    reference_id:
+  - id: 928820
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1936985
+    reference_id: '1936985'
+  - id: 41011
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=984859
+    reference_id: 984859
+  - id: 716770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:flatpak:flatpak:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:flatpak:flatpak:*:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 864060
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-21381
+    reference_id: CVE-2021-21381
+  - id: 928823
+    url: https://access.redhat.com/errata/RHSA-2021:1002
+    reference_id: RHSA-2021:1002
+  - id: 928824
+    url: https://access.redhat.com/errata/RHSA-2021:1068
+    reference_id: RHSA-2021:1068
+  - id: 928821
+    url: https://access.redhat.com/errata/RHSA-2021:1073
+    reference_id: RHSA-2021:1073
+  - id: 928822
+    url: https://access.redhat.com/errata/RHSA-2021:1074
+    reference_id: RHSA-2021:1074
+weaknesses: []

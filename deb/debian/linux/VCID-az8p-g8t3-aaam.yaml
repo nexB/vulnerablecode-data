@@ -1,0 +1,80 @@
+vulnerability_id: VCID-az8p-g8t3-aaam
+aliases:
+  - CVE-2016-10764
+summary: In the Linux kernel before 4.9.6, there is an off by one in the drivers/mtd/spi-nor/cadence-quadspi.c
+  cqspi_setup_flash() function. There are CQSPI_MAX_CHIPSELECT elements in the ->f_pdata array
+  so the ">" should be ">=" instead.
+severities:
+  - id: 666756
+    reference_id: 1433099
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77252
+    reference_id: 208181
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 666757
+    reference_id: 1433100
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666758
+    reference_id: 1433101
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77251
+    reference_id: 208180
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 215663
+    reference_id: 629119
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 215661
+    reference_id: 629119
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1433099
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10764.html
+    reference_id:
+  - id: 208181
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-10764.json
+    reference_id:
+  - id: 1433100
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10764
+    reference_id:
+  - id: 629115
+    url: https://github.com/torvalds/linux/commit/193e87143c290ec16838f5368adc0e0bc94eb931
+    reference_id:
+  - id: 629114
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=193e87143c290ec16838f5368adc0e0bc94eb931
+    reference_id:
+  - id: 1433101
+    url: https://git.kernel.org/linus/193e87143c290ec16838f5368adc0e0bc94eb931
+    reference_id:
+  - id: 629116
+    url: https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.6
+    reference_id:
+  - id: 629117
+    url: https://support.f5.com/csp/article/K24444495
+    reference_id:
+  - id: 629118
+    url: https://support.f5.com/csp/article/K24444495?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 208180
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1735633
+    reference_id: 1735633
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 629119
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10764
+    reference_id: CVE-2016-10764
+weaknesses: []

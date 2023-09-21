@@ -1,0 +1,54 @@
+vulnerability_id: VCID-vty1-t5dv-aaac
+aliases:
+  - CVE-2021-32798
+  - GHSA-hwvq-6gjx-j797
+  - PYSEC-2021-118
+summary: The Jupyter notebook is a web-based notebook environment for interactive computing.
+  In affected versions untrusted notebook can execute code on load. Jupyter Notebook uses a
+  deprecated version of Google Caja to sanitize user inputs. A public Caja bypass can be used
+  to trigger an XSS when a victim opens a malicious ipynb document in Jupyter Notebook. The
+  XSS allows an attacker to execute arbitrary code on the victim computer using Jupyter APIs.
+severities:
+  - id: 541005
+    reference_id: 23339
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 541003
+    reference_id: 23339
+    scoring_system: cvssv3
+    value: '9.6'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+  - id: 4025
+    reference_id: 23340
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+  - id: 4024
+    reference_id: 23338
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 7419
+    url: https://github.com/jupyter/notebook/commit/79fc76e890a8ec42f73a3d009e44ef84c14ef0d5
+    reference_id:
+  - id: 42374
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=992704
+    reference_id: 992704
+  - id: 745829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jupyter:notebook:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jupyter:notebook:*:*:*:*:*:*:*:*
+  - id: 885062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jupyter:notebook:6.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jupyter:notebook:6.4.0:*:*:*:*:*:*:*
+  - id: 23339
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32798
+    reference_id: CVE-2021-32798
+  - id: 23340
+    url: https://github.com/advisories/GHSA-hwvq-6gjx-j797
+    reference_id: GHSA-hwvq-6gjx-j797
+  - id: 23338
+    url: https://github.com/jupyter/notebook/security/advisories/GHSA-hwvq-6gjx-j797
+    reference_id: GHSA-hwvq-6gjx-j797
+weaknesses: []

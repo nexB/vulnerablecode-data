@@ -1,0 +1,139 @@
+vulnerability_id: VCID-ap5h-rc6b-aaas
+aliases:
+  - CVE-2016-4037
+summary: The ehci_advance_state function in hw/usb/hcd-ehci.c in QEMU allows local guest OS
+  administrators to cause a denial of service (infinite loop and CPU consumption) via a circular
+  split isochronous transfer descriptor (siTD) list, a related issue to CVE-2015-8558.
+severities:
+  - id: 668751
+    reference_id: 1434710
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668753
+    reference_id: 1434711
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668754
+    reference_id: 643959
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 667924
+    reference_id: 1434073
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668752
+    reference_id: 643956
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 50204
+    reference_id: 174714
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 226685
+    reference_id: 643961
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 226683
+    reference_id: 643961
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H
+references:
+  - id: 643955
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=1ae3f2f178087711f9591350abad133525ba93f2
+    reference_id:
+  - id: 643642
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-April/183275.html
+    reference_id:
+  - id: 643643
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-May/183350.html
+    reference_id:
+  - id: 643644
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-May/184209.html
+    reference_id:
+  - id: 1434710
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4037.html
+    reference_id:
+  - id: 174715
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-4037.json
+    reference_id:
+  - id: 1434711
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4037
+    reference_id:
+  - id: 638999
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00038.html
+    reference_id:
+  - id: 643959
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-04/msg02691.html
+    reference_id:
+  - id: 643960
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-04/msg02734.html
+    reference_id:
+  - id: 1434073
+    url: https://ubuntu.com/security/notices/USN-2974-1
+    reference_id:
+  - id: 643956
+    url: http://www.openwall.com/lists/oss-security/2016/04/18/3
+    reference_id:
+  - id: 643957
+    url: http://www.openwall.com/lists/oss-security/2016/04/18/6
+    reference_id:
+  - id: 643958
+    url: http://www.securityfocus.com/bid/86283
+    reference_id:
+  - id: 638997
+    url: http://www.ubuntu.com/usn/USN-2974-1
+    reference_id:
+  - id: 174714
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1325129
+    reference_id: 1325129
+  - id: 111917
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=822344
+    reference_id: 822344
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 638318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.6.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.6.0:rc0:*:*:*:*:*:*
+  - id: 638319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.6.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.6.0:rc1:*:*:*:*:*:*
+  - id: 638320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.6.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.6.0:rc2:*:*:*:*:*:*
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*
+  - id: 157871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:23:*:*:*:*:*:*:*
+  - id: 157930
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:24:*:*:*:*:*:*:*
+  - id: 643961
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-4037
+    reference_id: CVE-2016-4037
+weaknesses: []

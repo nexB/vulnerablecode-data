@@ -1,0 +1,64 @@
+vulnerability_id: VCID-rc38-hg6r-aaaq
+aliases:
+  - CVE-2020-27753
+summary: There are several memory leaks in the MIFF coder in /coders/miff.c due to improper
+  image depth values, which can be triggered by a specially crafted input file. These leaks
+  could potentially lead to an impact to application availability or cause a denial of service.
+  It was originally reported that the issues were in `AcquireMagickMemory()` because that is
+  where LeakSanitizer detected the leaks, but the patch resolves issues in the MIFF coder, which
+  incorrectly handles data being passed to `AcquireMagickMemory()`. This flaw affects ImageMagick
+  versions prior to 7.0.9-0.
+severities:
+  - id: 698256
+    reference_id: 1458135
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 68912
+    reference_id: '198553'
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 698257
+    reference_id: 1458136
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675474
+    reference_id: 1440222
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 467346
+    reference_id: 837744
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 467344
+    reference_id: 837744
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1458135
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27753.html
+    reference_id:
+  - id: '198553'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27753.json
+    reference_id:
+  - id: 837743
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1894229
+    reference_id:
+  - id: 1458136
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27753
+    reference_id:
+  - id: 1440222
+    url: https://ubuntu.com/security/notices/USN-4988-1
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 837744
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27753
+    reference_id: CVE-2020-27753
+weaknesses: []

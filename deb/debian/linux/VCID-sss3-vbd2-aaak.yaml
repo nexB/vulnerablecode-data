@@ -1,0 +1,171 @@
+vulnerability_id: VCID-sss3-vbd2-aaak
+aliases:
+  - CVE-2017-1000405
+summary: The Linux Kernel versions 2.6.38 through 4.14 have a problematic use of pmd_mkdirty()
+  in the touch_pmd() function inside the THP implementation. touch_pmd() can be reached by get_user_pages().
+  In such case, the pmd will become dirty. This scenario breaks the new can_follow_write_pmd()'s
+  logic - pmd can become dirty without going through a COW cycle. This bug is not as severe
+  as the original "Dirty cow" because an ext4 file (or any other regular file) cannot be mapped
+  using THP. Nevertheless, it does allow us to overwrite read-only huge pages. For example,
+  the zero huge page and sealed shmem files can be overwritten (since their mapping can be populated
+  using THP). Note that after the first write page-fault to the zero page, it will be replaced
+  with a new fresh (and zeroed) thp.
+severities:
+  - id: 673177
+    reference_id: 1438361
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 619519
+    reference_id: 938253
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L
+  - id: 673179
+    reference_id: 1438363
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673180
+    reference_id: 668873
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673181
+    reference_id: 1438364
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673182
+    reference_id: 1438365
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673183
+    reference_id: 1438366
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673184
+    reference_id: 1438367
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673185
+    reference_id: 1438368
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673186
+    reference_id: 1438369
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673187
+    reference_id: 1438370
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673188
+    reference_id: 1438371
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673189
+    reference_id: 1438372
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673178
+    reference_id: 1438362
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 619517
+    reference_id: 938251
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 250088
+    reference_id: 668876
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 250086
+    reference_id: 668876
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 619518
+    reference_id: 938252
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1438361
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000405.html
+    reference_id:
+  - id: 938253
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000405.json
+    reference_id:
+  - id: 1438363
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000405
+    reference_id:
+  - id: 668873
+    url: https://medium.com/bindecy/huge-dirty-cow-cve-2017-1000405-110eca132de0
+    reference_id:
+  - id: 668874
+    url: https://source.android.com/security/bulletin/pixel/2018-02-01
+    reference_id:
+  - id: 1438364
+    url: https://ubuntu.com/security/notices/USN-3507-1
+    reference_id:
+  - id: 1438365
+    url: https://ubuntu.com/security/notices/USN-3507-2
+    reference_id:
+  - id: 1438366
+    url: https://ubuntu.com/security/notices/USN-3508-1
+    reference_id:
+  - id: 1438367
+    url: https://ubuntu.com/security/notices/USN-3508-2
+    reference_id:
+  - id: 1438368
+    url: https://ubuntu.com/security/notices/USN-3509-1
+    reference_id:
+  - id: 1438369
+    url: https://ubuntu.com/security/notices/USN-3509-2
+    reference_id:
+  - id: 1438370
+    url: https://ubuntu.com/security/notices/USN-3510-1
+    reference_id:
+  - id: 1438371
+    url: https://ubuntu.com/security/notices/USN-3510-2
+    reference_id:
+  - id: 1438372
+    url: https://ubuntu.com/security/notices/USN-3511-1
+    reference_id:
+  - id: 668875
+    url: https://www.exploit-db.com/exploits/43199/
+    reference_id:
+  - id: 1438362
+    url: http://www.openwall.com/lists/oss-security/2017/11/30/1
+    reference_id:
+  - id: 668870
+    url: http://www.securityfocus.com/bid/102032
+    reference_id:
+  - id: 668871
+    url: http://www.securitytracker.com/id/1040020
+    reference_id:
+  - id: 938251
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1516514
+    reference_id: 1516514
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 668876
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000405
+    reference_id: CVE-2017-1000405
+  - id: 938252
+    url: https://access.redhat.com/errata/RHSA-2018:0180
+    reference_id: RHSA-2018:0180
+weaknesses: []

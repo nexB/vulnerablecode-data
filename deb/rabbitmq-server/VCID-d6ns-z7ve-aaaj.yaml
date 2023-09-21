@@ -1,0 +1,22 @@
+affected_purls:
+- pkg:deb/debian/rabbitmq-server@3.7.8-4
+- pkg:deb/debian/rabbitmq-server@3.8.9-3
+aliases:
+- CVE-2021-32719
+fixed_purl:
+- pkg:deb/debian/rabbitmq-server@3.10.8-1.1
+references:
+- id: 129806
+  reference_id: '990524'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990524
+severities: []
+summary: RabbitMQ is a multi-protocol messaging broker. In rabbitmq-server prior to
+  version 3.8.18, when a federation link was displayed in the RabbitMQ management
+  UI via the `rabbitmq_federation_management` plugin, its consumer tag was rendered
+  without proper <script> tag sanitization. This potentially allows for JavaScript
+  code execution in the context of the page. The user must be signed in and have elevated
+  permissions (manage federation upstreams and policies) for this to occur. The vulnerability
+  is patched in RabbitMQ 3.8.18. As a workaround, disable the `rabbitmq_federation_management`
+  plugin and use [CLI tools](https://www.rabbitmq.com/cli.html) instead.
+vulnerability_id: VCID-d6ns-z7ve-aaaj
+weaknesses: []

@@ -1,0 +1,59 @@
+vulnerability_id: VCID-r2ur-ga9h-aaae
+aliases:
+  - CVE-2017-16005
+  - GHSA-q257-vv4p-fg92
+summary: |
+  Improper Verification of Cryptographic Signature
+  http-signature signs only the header values, but not the header names. This makes http-signature vulnerable to header forgery. Thus, if an attacker can intercept a request, he can swap header names and change the meaning of the request without changing the signature.
+severities:
+  - id: 61423
+    reference_id: 188997
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 61422
+    reference_id: 188996
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 269624
+    reference_id: 34366
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 269622
+    reference_id: 34366
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 705601
+    reference_id: 1466750
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 188997
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-16005.json
+    reference_id:
+  - id: 687514
+    url: https://github.com/joyent/node-http-signature/issues/10
+    reference_id:
+  - id: 687515
+    url: https://nodesecurity.io/advisories/318
+    reference_id:
+  - id: 1466751
+    url: https://www.npmjs.com/advisories/318
+    reference_id:
+  - id: 188996
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1588846
+    reference_id: 1588846
+  - id: 687516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:joyent:http-signature:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:joyent:http-signature:*:*:*:*:*:node.js:*:*
+  - id: 34366
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16005
+    reference_id: CVE-2017-16005
+  - id: 1466750
+    url: https://github.com/advisories/GHSA-q257-vv4p-fg92
+    reference_id: GHSA-q257-vv4p-fg92
+weaknesses: []

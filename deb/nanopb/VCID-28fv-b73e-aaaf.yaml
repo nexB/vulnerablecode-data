@@ -1,0 +1,117 @@
+affected_purls:
+- pkg:pypi/nanopb@0.3.9.4.post3
+- pkg:pypi/nanopb@0.3.9.5
+- pkg:pypi/nanopb@0.3.9.6
+- pkg:pypi/nanopb@0.4.0
+- pkg:pypi/nanopb@0.4.1
+- pkg:pypi/nanopb@0.4.1.dev1003
+- pkg:pypi/nanopb@0.4.1.dev1007
+- pkg:pypi/nanopb@0.4.1.dev1012
+- pkg:pypi/nanopb@0.4.1.dev1013
+- pkg:pypi/nanopb@0.4.1.dev1017
+- pkg:pypi/nanopb@0.4.1.dev1036
+- pkg:pypi/nanopb@0.4.1.dev959
+- pkg:pypi/nanopb@0.4.1.dev961
+- pkg:pypi/nanopb@0.4.1.dev962
+- pkg:pypi/nanopb@0.4.1.dev964
+- pkg:pypi/nanopb@0.4.1.dev971
+- pkg:pypi/nanopb@0.4.1.dev978
+- pkg:pypi/nanopb@0.4.1.dev980
+- pkg:pypi/nanopb@0.4.1.dev985
+- pkg:pypi/nanopb@0.4.1.dev987
+- pkg:pypi/nanopb@0.4.1.dev988
+- pkg:pypi/nanopb@0.4.1.dev996
+- pkg:pypi/nanopb@0.4.1.dev997
+- pkg:pypi/nanopb@0.4.2
+- pkg:pypi/nanopb@0.4.2.dev1041
+- pkg:pypi/nanopb@0.4.2.dev1043
+- pkg:pypi/nanopb@0.4.2.dev1044
+- pkg:pypi/nanopb@0.4.2.dev1045
+- pkg:pypi/nanopb@0.4.2.dev1048
+- pkg:pypi/nanopb@0.4.2.dev1050
+- pkg:pypi/nanopb@0.4.2.dev1053
+- pkg:pypi/nanopb@0.4.2.dev1054
+- pkg:pypi/nanopb@0.4.2.dev1055
+- pkg:pypi/nanopb@0.4.2.dev1058
+- pkg:pypi/nanopb@0.4.2.dev1059
+- pkg:pypi/nanopb@0.4.2.dev1063
+- pkg:pypi/nanopb@0.4.2.dev1066
+- pkg:pypi/nanopb@0.4.2.dev1070
+- pkg:pypi/nanopb@0.4.2.dev1071
+- pkg:pypi/nanopb@0.4.2.dev1072
+- pkg:pypi/nanopb@0.4.2.dev1076
+- pkg:pypi/nanopb@0.4.2.dev1088
+- pkg:pypi/nanopb@0.4.2.dev1091
+- pkg:pypi/nanopb@0.4.3
+- pkg:pypi/nanopb@0.4.3.dev1128
+- pkg:pypi/nanopb@0.4.3.dev1131
+- pkg:pypi/nanopb@0.4.3.dev1132
+- pkg:pypi/nanopb@0.4.3.dev1133
+- pkg:pypi/nanopb@0.4.3.dev1137
+- pkg:pypi/nanopb@0.4.3.dev1150
+- pkg:pypi/nanopb@0.4.3.dev1164
+- pkg:pypi/nanopb@0.4.3.dev1172
+- pkg:pypi/nanopb@0.4.3.dev1175
+- pkg:pypi/nanopb@0.4.3.dev1177
+- pkg:pypi/nanopb@0.4.4.dev1181
+- pkg:pypi/nanopb@0.4.4.dev1182
+- pkg:pypi/nanopb@0.4.4.dev1184
+- pkg:pypi/nanopb@0.4.4.dev1185
+- pkg:pypi/nanopb@0.4.4.dev1188
+- pkg:pypi/nanopb@0.4.4.dev1192
+- pkg:pypi/nanopb@0.4.4.dev1193
+aliases:
+- CVE-2020-26243
+- GHSA-85rr-4rh9-hhwh
+fixed_purl:
+- pkg:deb/debian/nanopb@0.4.4-1?distro=sid
+- pkg:deb/debian/nanopb@0.4.4-2?distro=sid
+- pkg:deb/debian/nanopb@0.4.7-2?distro=sid
+- pkg:pypi/nanopb@0.3.9.7
+- pkg:pypi/nanopb@0.4.4
+references:
+- id: 153107
+  reference_id: ''
+  url: https://github.com/nanopb/nanopb/blob/2b48a361786dfb1f63d229840217a93aae064667/CHANGELOG.txt
+- id: 153106
+  reference_id: ''
+  url: https://github.com/nanopb/nanopb/commit/4fe23595732b6f1254cfc11a9b8d6da900b55b0c
+- id: 153105
+  reference_id: ''
+  url: https://github.com/nanopb/nanopb/issues/615
+- id: 129332
+  reference_id: '975838'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=975838
+- id: 153108
+  reference_id: CVE-2020-26243
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-26243
+- id: 153109
+  reference_id: GHSA-85rr-4rh9-hhwh
+  url: https://github.com/advisories/GHSA-85rr-4rh9-hhwh
+- id: 153104
+  reference_id: GHSA-85rr-4rh9-hhwh
+  url: https://github.com/nanopb/nanopb/security/advisories/GHSA-85rr-4rh9-hhwh
+severities:
+- id: 21881
+  reference_id: 153109
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 21880
+  reference_id: 153104
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: 'Nanopb is a small code-size Protocol Buffers implementation. In Nanopb before
+  versions 0.4.4 and 0.3.9.7, decoding specifically formed message can leak memory
+  if dynamic allocation is enabled and an oneof field contains a static submessage
+  that contains a dynamic field, and the message being decoded contains the submessage
+  multiple times. This is rare in normal messages, but it is a concern when untrusted
+  data is parsed. This is fixed in versions 0.3.9.7 and 0.4.4. The following workarounds
+  are available: 1) Set the option `no_unions` for the oneof field. This will generate
+  fields as separate instead of C union, and avoids triggering the problematic code.
+  2) Set the type of the submessage field inside oneof to `FT_POINTER`. This way the
+  whole submessage will be dynamically allocated and the problematic code is not executed.
+  3) Use an arena allocator for nanopb, to make sure all memory can be released afterwards.'
+vulnerability_id: VCID-28fv-b73e-aaaf
+weaknesses: []

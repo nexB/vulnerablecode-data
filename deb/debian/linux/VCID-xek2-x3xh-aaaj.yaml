@@ -1,0 +1,434 @@
+vulnerability_id: VCID-xek2-x3xh-aaaj
+aliases:
+  - CVE-2018-13405
+summary: The inode_init_owner function in fs/inode.c in the Linux kernel through 3.16 allows
+  local users to create files with an unintended group ownership, in a scenario where a directory
+  is SGID to a certain group and is writable by a user who is not a member of that group. Here,
+  the non-member can trigger creation of a plain file whose group ownership is that group. The
+  intended behavior was that the non-member can trigger creation of a directory (but not a plain
+  file) whose group ownership is that group. The non-member can escalate privileges by making
+  the plain file executable and SGID.
+severities:
+  - id: 684162
+    reference_id: 1446819
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615415
+    reference_id: 935324
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+  - id: 684163
+    reference_id: 1446820
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684164
+    reference_id: 1446821
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684165
+    reference_id: 731810
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682370
+    reference_id: 1445436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682371
+    reference_id: 1445437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682372
+    reference_id: 1445438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674913
+    reference_id: 1439809
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674914
+    reference_id: 1439810
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684166
+    reference_id: 1446822
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615412
+    reference_id: 935321
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 320337
+    reference_id: 731813
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 320335
+    reference_id: 731813
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 615414
+    reference_id: 935323
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 615413
+    reference_id: 935322
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 731796
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0fa3ecd87848c9c93c2c828ef4c3a8ca36ce46c7
+    reference_id:
+  - id: 731797
+    url: http://openwall.com/lists/oss-security/2018/07/13/2
+    reference_id:
+  - id: 1446819
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-13405.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 731799
+    url: https://access.redhat.com/errata/RHSA-2019:2476
+    reference_id:
+  - id: 731801
+    url: https://access.redhat.com/errata/RHSA-2019:2696
+    reference_id:
+  - id: 731802
+    url: https://access.redhat.com/errata/RHSA-2019:2730
+    reference_id:
+  - id: 668154
+    url: https://access.redhat.com/errata/RHSA-2019:4159
+    reference_id:
+  - id: 731803
+    url: https://access.redhat.com/errata/RHSA-2019:4164
+    reference_id:
+  - id: 935324
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-13405.json
+    reference_id:
+  - id: 1446820
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-13405
+    reference_id:
+  - id: 731805
+    url: https://github.com/torvalds/linux/commit/0fa3ecd87848c9c93c2c828ef4c3a8ca36ce46c7
+    reference_id:
+  - id: 1446821
+    url: https://git.kernel.org/linux/0fa3ecd87848c9c93c2c828ef4c3a8ca36ce46c7
+    reference_id:
+  - id: 731804
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/commit/?id=0b3369840cd61c23e2b9241093737b4c395cb406
+    reference_id:
+  - id: 731806
+    url: https://lists.debian.org/debian-lts-announce/2018/08/msg00014.html
+    reference_id:
+  - id: 731807
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HRBNBX73SAFKQWBOX76SLMWPTKJPVGEJ/
+    reference_id:
+  - id: 731808
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MTKKIAUMR5FAYLZ7HLEPOXMKAAE3BYBQ/
+    reference_id:
+  - id: 731809
+    url: https://support.f5.com/csp/article/K00854051
+    reference_id:
+  - id: 731810
+    url: https://twitter.com/grsecurity/status/1015082951204327425
+    reference_id:
+  - id: 1445436
+    url: https://ubuntu.com/security/notices/USN-3752-1
+    reference_id:
+  - id: 1445437
+    url: https://ubuntu.com/security/notices/USN-3752-2
+    reference_id:
+  - id: 1445438
+    url: https://ubuntu.com/security/notices/USN-3752-3
+    reference_id:
+  - id: 1439809
+    url: https://ubuntu.com/security/notices/USN-3753-1
+    reference_id:
+  - id: 1439810
+    url: https://ubuntu.com/security/notices/USN-3753-2
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 721706
+    url: https://usn.ubuntu.com/3752-1/
+    reference_id:
+  - id: 721707
+    url: https://usn.ubuntu.com/3752-2/
+    reference_id:
+  - id: 721708
+    url: https://usn.ubuntu.com/3752-3/
+    reference_id:
+  - id: 679659
+    url: https://usn.ubuntu.com/3753-1/
+    reference_id:
+  - id: 679660
+    url: https://usn.ubuntu.com/3753-2/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 731811
+    url: https://www.debian.org/security/2018/dsa-4266
+    reference_id:
+  - id: 731812
+    url: https://www.exploit-db.com/exploits/45033/
+    reference_id:
+  - id: 1446822
+    url: https://www.halfdog.net/Security/2015/SetgidDirectoryPrivilegeEscalation/
+    reference_id:
+  - id: 725057
+    url: http://www.securityfocus.com/bid/106503
+    reference_id:
+  - id: 935321
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1599161
+    reference_id: 1599161
+  - id: 464777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
+  - id: 731814
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_access_policy_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_access_policy_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731815
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_access_policy_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_access_policy_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 528838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*
+  - id: 731816
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_advanced_firewall_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_advanced_firewall_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731817
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_advanced_firewall_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_advanced_firewall_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 464778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_analytics:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_analytics:*:*:*:*:*:*:*:*
+  - id: 731818
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_analytics:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_analytics:15.1.0:*:*:*:*:*:*:*
+  - id: 731819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_analytics:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_analytics:16.0.0:*:*:*:*:*:*:*
+  - id: 528841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_acceleration_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_acceleration_manager:*:*:*:*:*:*:*:*
+  - id: 731820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_acceleration_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_acceleration_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731821
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_acceleration_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_acceleration_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 464779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*
+  - id: 731822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_security_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_security_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_security_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_security_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 575041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_domain_name_system:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_domain_name_system:*:*:*:*:*:*:*:*
+  - id: 731824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_domain_name_system:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_domain_name_system:15.1.0:*:*:*:*:*:*:*
+  - id: 731825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_domain_name_system:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_domain_name_system:16.0.0:*:*:*:*:*:*:*
+  - id: 464780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_edge_gateway:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_edge_gateway:*:*:*:*:*:*:*:*
+  - id: 731826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_edge_gateway:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_edge_gateway:15.1.0:*:*:*:*:*:*:*
+  - id: 731827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_edge_gateway:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_edge_gateway:16.0.0:*:*:*:*:*:*:*
+  - id: 704833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_fraud_protection_service:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_fraud_protection_service:*:*:*:*:*:*:*:*
+  - id: 731828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_fraud_protection_service:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_fraud_protection_service:15.1.0:*:*:*:*:*:*:*
+  - id: 731829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_fraud_protection_service:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_fraud_protection_service:16.0.0:*:*:*:*:*:*:*
+  - id: 464781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_global_traffic_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_global_traffic_manager:*:*:*:*:*:*:*:*
+  - id: 731830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_global_traffic_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_global_traffic_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_global_traffic_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_global_traffic_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 464782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_link_controller:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_link_controller:*:*:*:*:*:*:*:*
+  - id: 731832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_link_controller:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_link_controller:15.1.0:*:*:*:*:*:*:*
+  - id: 731833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_link_controller:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_link_controller:16.0.0:*:*:*:*:*:*:*
+  - id: 464783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*
+  - id: 731834
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_local_traffic_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_local_traffic_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_local_traffic_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_local_traffic_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 528846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*
+  - id: 731836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_policy_enforcement_manager:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_policy_enforcement_manager:15.1.0:*:*:*:*:*:*:*
+  - id: 731837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_policy_enforcement_manager:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_policy_enforcement_manager:16.0.0:*:*:*:*:*:*:*
+  - id: 464786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_webaccelerator:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_webaccelerator:*:*:*:*:*:*:*:*
+  - id: 731838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_webaccelerator:15.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_webaccelerator:15.1.0:*:*:*:*:*:*:*
+  - id: 731839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_webaccelerator:16.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_webaccelerator:16.0.0:*:*:*:*:*:*:*
+  - id: 582844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*
+  - id: 676013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 664118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 540942
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+  - id: 540943
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+  - id: 642991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_for_real_time:7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_for_real_time:7:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 572913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.6:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+  - id: 162136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 731813
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-13405
+    reference_id: CVE-2018-13405
+  - id: 935323
+    url: https://access.redhat.com/errata/RHSA-2019:0717
+    reference_id: RHSA-2019:0717
+  - id: 935322
+    url: https://access.redhat.com/errata/RHSA-2019:2566
+    reference_id: RHSA-2019:2566
+weaknesses: []

@@ -1,0 +1,82 @@
+vulnerability_id: VCID-zyej-42du-aaak
+aliases:
+  - CVE-2019-11246
+summary: The kubectl cp command allows copying files between containers and the user machine.
+  To copy files from a container, Kubernetes runs tar inside the container to create a tar archive,
+  copies it over the network, and kubectl unpacks it on the user’s machine. If the tar binary
+  in the container is malicious, it could run any code and output unexpected, malicious results.
+  An attacker could use this to write files to any path on the user’s machine when kubectl cp
+  is called, limited only by the system permissions of the local user. Kubernetes affected versions
+  include versions prior to 1.12.9, versions prior to 1.13.6, versions prior to 1.14.2, and
+  versions 1.1, 1.2, 1.4, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11.
+severities:
+  - id: 612110
+    reference_id: 932880
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
+  - id: 612106
+    reference_id: 932876
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 371367
+    reference_id: 769725
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 371365
+    reference_id: 769725
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+  - id: 612108
+    reference_id: 932878
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 612107
+    reference_id: 932877
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 612109
+    reference_id: 932879
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 932880
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11246.json
+    reference_id:
+  - id: 769723
+    url: https://github.com/kubernetes/kubernetes/pull/76788
+    reference_id:
+  - id: 769724
+    url: https://groups.google.com/forum/#!topic/kubernetes-security-announce/NLs2TGbfPdo
+    reference_id:
+  - id: 769719
+    url: https://security.netapp.com/advisory/ntap-20190919-0003/
+    reference_id:
+  - id: 932876
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1721704
+    reference_id: 1721704
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 769726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.12.11:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.12.11:beta0:*:*:*:*:*:*
+  - id: 769725
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11246
+    reference_id: CVE-2019-11246
+  - id: 932878
+    url: https://access.redhat.com/errata/RHSA-2019:1632
+    reference_id: RHSA-2019:1632
+  - id: 932877
+    url: https://access.redhat.com/errata/RHSA-2019:1633
+    reference_id: RHSA-2019:1633
+  - id: 932879
+    url: https://access.redhat.com/errata/RHSA-2019:1852
+    reference_id: RHSA-2019:1852
+weaknesses: []

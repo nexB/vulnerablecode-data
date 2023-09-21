@@ -1,0 +1,170 @@
+vulnerability_id: VCID-59nd-8c5v-aaab
+aliases:
+  - CVE-2020-7247
+summary: smtp_mailaddr in smtp_session.c in OpenSMTPD 6.6, as used in OpenBSD 6.6 and other
+  products, allows remote attackers to execute arbitrary commands as root via a crafted SMTP
+  session, as demonstrated by shell metacharacters in a MAIL FROM field. This affects the "uncommented"
+  default configuration. The issue exists because of an incorrect return value upon failure
+  of input validation.
+severities:
+  - id: 699697
+    reference_id: 851869
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699698
+    reference_id: 851870
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699699
+    reference_id: 1459374
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699701
+    reference_id: 1459375
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699702
+    reference_id: 1459376
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699703
+    reference_id: 851878
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699709
+    reference_id: 1459379
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699704
+    reference_id: 1459377
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699705
+    reference_id: 851880
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699706
+    reference_id: 851881
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699707
+    reference_id: 851882
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699708
+    reference_id: 1459378
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699700
+    reference_id: 851875
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 487946
+    reference_id: 851883
+    scoring_system: cvssv2
+    value: '10.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:C/I:C/A:C
+  - id: 487944
+    reference_id: 851883
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 851869
+    url: http://packetstormsecurity.com/files/156137/OpenBSD-OpenSMTPD-Privilege-Escalation-Code-Execution.html
+    reference_id:
+  - id: 851870
+    url: http://packetstormsecurity.com/files/156145/OpenSMTPD-6.6.2-Remote-Code-Execution.html
+    reference_id:
+  - id: 851871
+    url: http://packetstormsecurity.com/files/156249/OpenSMTPD-MAIL-FROM-Remote-Code-Execution.html
+    reference_id:
+  - id: 851872
+    url: http://packetstormsecurity.com/files/156295/OpenSMTPD-6.6.1-Local-Privilege-Escalation.html
+    reference_id:
+  - id: 851873
+    url: http://packetstormsecurity.com/files/162093/OpenBSD-OpenSMTPD-6.6-Remote-Code-Execution.html
+    reference_id:
+  - id: 1459374
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-7247.html
+    reference_id:
+  - id: 1459375
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7247
+    reference_id:
+  - id: 851874
+    url: http://seclists.org/fulldisclosure/2020/Jan/49
+    reference_id:
+  - id: 1459376
+    url: https://ftp.openbsd.org/pub/OpenBSD/patches/6.6/common/019_smtpd_exec.patch.sig
+    reference_id:
+  - id: 851876
+    url: https://github.com/openbsd/src/commit/9dcfda045474d8903224d175907bfc29761dcb45
+    reference_id:
+  - id: 851877
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OPH4QU4DNVHA7ACFXMYFCEP5PSXXPN4E/
+    reference_id:
+  - id: 851878
+    url: https://seclists.org/bugtraq/2020/Jan/51
+    reference_id:
+  - id: 1459379
+    url: https://ubuntu.com/security/notices/USN-4268-1
+    reference_id:
+  - id: 851879
+    url: https://usn.ubuntu.com/4268-1/
+    reference_id:
+  - id: 1459377
+    url: https://usn.ubuntu.com/usn/usn-4268-1
+    reference_id:
+  - id: 851880
+    url: https://www.debian.org/security/2020/dsa-4611
+    reference_id:
+  - id: 851881
+    url: https://www.kb.cert.org/vuls/id/390745
+    reference_id:
+  - id: 851882
+    url: https://www.openbsd.org/security.html
+    reference_id:
+  - id: 1459378
+    url: https://www.openwall.com/lists/oss-security/2020/01/28/3
+    reference_id:
+  - id: 851875
+    url: http://www.openwall.com/lists/oss-security/2020/01/28/3
+    reference_id:
+  - id: 88518
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=950121
+    reference_id: 950121
+  - id: 851884
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:opensmtpd:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:opensmtpd:6.6:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 851883
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-7247
+    reference_id: CVE-2020-7247
+weaknesses: []

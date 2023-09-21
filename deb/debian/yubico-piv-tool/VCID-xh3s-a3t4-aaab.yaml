@@ -1,0 +1,45 @@
+vulnerability_id: VCID-xh3s-a3t4-aaab
+aliases:
+  - CVE-2020-13131
+summary: An issue was discovered in Yubico libykpiv before 2.1.0. lib/util.c in this library
+  (which is included in yubico-piv-tool) does not properly check embedded length fields during
+  device communication. A malicious PIV token can misreport the returned length fields during
+  RSA key generation. This will cause stack memory to be copied into heap allocated memory that
+  gets returned to the caller. The leaked memory could include PINs, passwords, key material,
+  and other sensitive information depending on the integration. During further processing by
+  the caller, this information could leak across trust boundaries. Note that RSA key generation
+  is triggered by the host and cannot directly be triggered by the token.
+severities:
+  - id: 437907
+    reference_id: 817355
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 437905
+    reference_id: 817355
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.1/AV:P/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+references:
+  - id: 817353
+    url: https://blog.inhq.net/posts/yubico-libykpiv-vuln/
+    reference_id:
+  - id: 817354
+    url: https://www.yubico.com/products/services-software/download/smart-card-drivers-tools/
+    reference_id:
+  - id: 147353
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=975612
+    reference_id: 975612
+  - id: 817356
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:libykpiv:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:libykpiv:*:*:*:*:*:*:*:*
+  - id: 817357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_tool_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_tool_manager:*:*:*:*:*:*:*:*
+  - id: 817358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:yubikey_smart_card_minidriver:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:yubikey_smart_card_minidriver:*:*:*:*:*:*:*:*
+  - id: 817355
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-13131
+    reference_id: CVE-2020-13131
+weaknesses: []

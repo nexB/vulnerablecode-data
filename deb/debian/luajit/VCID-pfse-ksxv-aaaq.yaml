@@ -1,0 +1,38 @@
+vulnerability_id: VCID-pfse-ksxv-aaaq
+aliases:
+  - CVE-2019-19391
+summary: '** DISPUTED ** In LuaJIT through 2.0.5, as used in Moonjit before 2.1.2 and other
+  products, debug.getinfo has a type confusion issue that leads to arbitrary memory write or
+  read operations, because certain cases involving valid stack levels and > options are mishandled.
+  NOTE: The LuaJIT project owner states that the debug libary is unsafe by definition and that
+  this is not a vulnerability. When LuaJIT was originally developed, the expectation was that
+  the entire debug library had no security guarantees and thus it made no sense to assign CVEs.
+  However, not all users of later LuaJIT derivatives share this perspective.'
+severities:
+  - id: 396298
+    reference_id: 790077
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:N
+  - id: 396296
+    reference_id: 790077
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 790076
+    url: https://github.com/LuaJIT/LuaJIT/pull/526
+    reference_id:
+  - id: 62600
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=946053
+    reference_id: 946053
+  - id: 790078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:luajit:luajit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:luajit:luajit:*:*:*:*:*:*:*:*
+  - id: 790079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:moonjit_project:moonjit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:moonjit_project:moonjit:*:*:*:*:*:*:*:*
+  - id: 790077
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19391
+    reference_id: CVE-2019-19391
+weaknesses: []

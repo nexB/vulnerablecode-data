@@ -1,0 +1,29 @@
+affected_purls:
+- pkg:conan/cairo@1.16.0
+- pkg:conan/cairo@1.17.2
+aliases:
+- CVE-2020-35492
+fixed_purl:
+- pkg:conan/cairo@1.17.4
+- pkg:deb/debian/cairo@1.16.0-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/cairo@1.16.0-5?distro=sid
+- pkg:deb/debian/cairo@1.16.0-7?distro=sid
+references:
+- id: 183107
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1898396
+- id: 129418
+  reference_id: '978658'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=978658
+- id: 183106
+  reference_id: CVE-2020-35492
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-35492
+severities: []
+summary: A flaw was found in cairo's image-compositor.c in all versions prior to 1.17.4.
+  This flaw allows an attacker who can provide a crafted input file to cairo's image-compositor
+  (for example, by convincing a user to open a file in an application using cairo,
+  or if an application uses cairo on untrusted input) to cause a stack buffer overflow
+  -> out-of-bounds WRITE. The highest impact from this vulnerability is to confidentiality,
+  integrity, as well as system availability.
+vulnerability_id: VCID-p2hm-tmjw-aaae
+weaknesses: []

@@ -1,0 +1,158 @@
+vulnerability_id: VCID-nq7f-89nm-aaap
+aliases:
+  - CVE-2019-13272
+summary: 'In the Linux kernel before 5.1.17, ptrace_link in kernel/ptrace.c mishandles the recording
+  of the credentials of a process that wants to create a ptrace relationship, which allows local
+  users to obtain root access by leveraging certain scenarios with a parent-child process relationship,
+  where a parent drops privileges and calls execve (potentially allowing control by an attacker).
+  One contributing factor is an object lifetime issue (which can also cause a panic). Another
+  contributing factor is incorrect marking of a ptrace relationship as privileged, which is
+  exploitable through (for example) Polkit''s pkexec helper with PTRACE_TRACEME. NOTE: SELinux
+  deny_ptrace might be a usable workaround in some environments.'
+severities:
+  - id: 690954
+    reference_id: 1452214
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690955
+    reference_id: 1452215
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 70631
+    reference_id: 200825
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 690956
+    reference_id: 1452216
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690957
+    reference_id: 1452217
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689495
+    reference_id: 1451107
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684053
+    reference_id: 1446738
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687783
+    reference_id: 1449812
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689496
+    reference_id: 1451108
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684054
+    reference_id: 1446739
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689493
+    reference_id: 1451105
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684065
+    reference_id: 1446745
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687779
+    reference_id: 1449808
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689494
+    reference_id: 1451106
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684066
+    reference_id: 1446746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 70628
+    reference_id: 200822
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 70630
+    reference_id: 200824
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 70629
+    reference_id: 200823
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1452214
+    url: http://packetstormsecurity.com/files/153663/Linux-PTRACE_TRACEME-Broken-Permission-Object-Lifetime-Handling.html
+    reference_id:
+  - id: 1452215
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-13272.html
+    reference_id:
+  - id: 200825
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-13272.json
+    reference_id:
+  - id: 1452216
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13272
+    reference_id:
+  - id: 1452217
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6994eefb0053799d2e07cd140df6c2ea106c41ee
+    reference_id:
+  - id: 1451107
+    url: https://ubuntu.com/security/notices/USN-4093-1
+    reference_id:
+  - id: 1446738
+    url: https://ubuntu.com/security/notices/USN-4094-1
+    reference_id:
+  - id: 1449812
+    url: https://ubuntu.com/security/notices/USN-4095-1
+    reference_id:
+  - id: 1451108
+    url: https://ubuntu.com/security/notices/USN-4117-1
+    reference_id:
+  - id: 1446739
+    url: https://ubuntu.com/security/notices/USN-4118-1
+    reference_id:
+  - id: 1451105
+    url: https://usn.ubuntu.com/usn/usn-4093-1
+    reference_id:
+  - id: 1446745
+    url: https://usn.ubuntu.com/usn/usn-4094-1
+    reference_id:
+  - id: 1449808
+    url: https://usn.ubuntu.com/usn/usn-4095-1
+    reference_id:
+  - id: 1451106
+    url: https://usn.ubuntu.com/usn/usn-4117-1
+    reference_id:
+  - id: 1446746
+    url: https://usn.ubuntu.com/usn/usn-4118-1
+    reference_id:
+  - id: 200822
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1730895
+    reference_id: 1730895
+  - id: 200824
+    url: https://access.redhat.com/errata/RHSA-2019:2405
+    reference_id: RHSA-2019:2405
+  - id: 200823
+    url: https://access.redhat.com/errata/RHSA-2019:2411
+    reference_id: RHSA-2019:2411
+weaknesses: []

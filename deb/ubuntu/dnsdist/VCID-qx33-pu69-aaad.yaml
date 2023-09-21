@@ -1,0 +1,69 @@
+vulnerability_id: VCID-qx33-pu69-aaad
+aliases:
+  - CVE-2016-7069
+summary: An issue has been found in dnsdist before 1.2.0 in the way EDNS0 OPT records are handled
+  when parsing responses from a backend. When dnsdist is configured to add EDNS Client Subnet
+  to a query, the response may contain an EDNS0 OPT record that has to be removed before forwarding
+  the response to the initial client. On a 32-bit system, the pointer arithmetic used when parsing
+  the received response to remove that record might trigger an undefined behavior leading to
+  a crash.
+severities:
+  - id: 670883
+    reference_id: 1436508
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 670884
+    reference_id: 1436509
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 670885
+    reference_id: 655186
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 670886
+    reference_id: 1436510
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 237230
+    reference_id: 655187
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 237228
+    reference_id: 655187
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1436508
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7069.html
+    reference_id:
+  - id: 655185
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-7069
+    reference_id:
+  - id: 1436509
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7069
+    reference_id:
+  - id: 655186
+    url: https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2017-01.html
+    reference_id:
+  - id: 1436510
+    url: https://downloads.powerdns.com/patches/2017-01
+    reference_id:
+  - id: 655184
+    url: http://www.securityfocus.com/bid/100509
+    reference_id:
+  - id: 40525
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=872854
+    reference_id: 872854
+  - id: 655188
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:powerdns:dnsdist:*:*:x86:*:*:*:*:*
+    reference_id: cpe:2.3:a:powerdns:dnsdist:*:*:x86:*:*:*:*:*
+  - id: 655187
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-7069
+    reference_id: CVE-2016-7069
+weaknesses: []

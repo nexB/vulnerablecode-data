@@ -1,0 +1,112 @@
+vulnerability_id: VCID-tmes-uxf3-aaab
+aliases:
+  - CVE-2017-18191
+summary: An issue was discovered in OpenStack Nova 15.x through 15.1.0 and 16.x through 16.1.1.
+  By detaching and reattaching an encrypted volume, an attacker may access the underlying raw
+  volume and corrupt the LUKS header, resulting in a denial of service attack on the compute
+  host. (The same code error also results in data loss, but that is not a vulnerability because
+  the user loses their own data.) All Nova setups supporting encrypted volumes are affected.
+severities:
+  - id: 677386
+    reference_id: 1441474
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 618313
+    reference_id: 937414
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 677387
+    reference_id: 1441475
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 677388
+    reference_id: 693130
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 618309
+    reference_id: 937410
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 276416
+    reference_id: 693132
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 276414
+    reference_id: 693132
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 618312
+    reference_id: 937413
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 618310
+    reference_id: 937411
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 618311
+    reference_id: 937412
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 693124
+    url: http://openwall.com/lists/oss-security/2018/04/20/3
+    reference_id:
+  - id: 1441474
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-18191.html
+    reference_id:
+  - id: 937414
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18191.json
+    reference_id:
+  - id: 1441475
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18191
+    reference_id:
+  - id: 693129
+    url: https://launchpad.net/bugs/1739593
+    reference_id:
+  - id: 693130
+    url: https://review.openstack.org/539893
+    reference_id:
+  - id: 693131
+    url: https://security.openstack.org/ossa/OSSA-2018-001.html
+    reference_id:
+  - id: 693125
+    url: http://www.securityfocus.com/bid/103104
+    reference_id:
+  - id: 937410
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1546937
+    reference_id: 1546937
+  - id: 464522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 170268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:12:*:*:*:*:*:*:*
+  - id: 640062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+  - id: 693132
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18191
+    reference_id: CVE-2017-18191
+  - id: 937413
+    url: https://access.redhat.com/errata/RHSA-2018:2332
+    reference_id: RHSA-2018:2332
+  - id: 937411
+    url: https://access.redhat.com/errata/RHSA-2018:2714
+    reference_id: RHSA-2018:2714
+  - id: 937412
+    url: https://access.redhat.com/errata/RHSA-2018:2855
+    reference_id: RHSA-2018:2855
+weaknesses: []

@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2020-29486
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B57-g41a822c392-2?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B88-g1d1d1f5391-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.14.x. Nodes in xenstore have an
+  ownership. In oxenstored, a owner could give a node away. However, node ownership
+  has quota implications. Any guest can run another guest out of quota, or create
+  an unbounded number of nodes owned by dom0, thus running xenstored out of memory
+  A malicious guest administrator can cause a denial of service against a specific
+  guest or against the whole host. All systems using oxenstored are vulnerable. Building
+  and using oxenstored is the default in the upstream Xen distribution, if the Ocaml
+  compiler is available. Systems using C xenstored are not vulnerable.
+vulnerability_id: VCID-xv44-krvh-aaah
+weaknesses: []

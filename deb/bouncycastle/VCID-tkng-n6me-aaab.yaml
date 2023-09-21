@@ -1,0 +1,78 @@
+affected_purls:
+- pkg:deb/debian/bouncycastle@1.60-1
+- pkg:maven/org.bouncycastle/bc-fips@1.0.0
+- pkg:maven/org.bouncycastle/bc-fips@1.0.1
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.38
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.43
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.44
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.45
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.46
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.47
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.48
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.49
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.50
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.51
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.53
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.54
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.55
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.56
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.57
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.58
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.59
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.60
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.32
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.38
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.40
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.43
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.44
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.45
+- pkg:maven/org.bouncycastle/bcprov-jdk15@1.46
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.38
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.40
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.43
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.44
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.45
+- pkg:maven/org.bouncycastle/bcprov-jdk16@1.46
+aliases:
+- CVE-2020-26939
+- GHSA-72m5-fvvv-55m6
+fixed_purl:
+- pkg:deb/debian/bouncycastle@1.68-2
+- pkg:maven/org.bouncycastle/bc-fips@1.0.2
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.61
+references:
+- id: 153355
+  reference_id: ''
+  url: https://github.com/bcgit/bc-java/commit/930f8b274c4f1f3a46e68b5441f1e7fadb57e8c1
+- id: 153359
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/r8c36ba34e80e05eecb1f80071cc834d705616f315b634ec0c7d8f42e@%3Cissues.solr.apache.org%3E
+- id: 153357
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/11/msg00007.html
+- id: 153358
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20201202-0005/
+- id: 153356
+  reference_id: CVE-2020-26939
+  url: https://github.com/bcgit/bc-java/wiki/CVE-2020-26939
+- id: 153354
+  reference_id: CVE-2020-26939
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-26939
+- id: 153360
+  reference_id: GHSA-72m5-fvvv-55m6
+  url: https://github.com/advisories/GHSA-72m5-fvvv-55m6
+severities:
+- id: 21954
+  reference_id: 153360
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: In Legion of the Bouncy Castle BC before 1.61 and BC-FJA before 1.0.1.2,
+  attackers can obtain sensitive information about a private exponent because of Observable
+  Differences in Behavior to Error Inputs. This occurs in org.bouncycastle.crypto.encodings.OAEPEncoding.
+  Sending invalid ciphertext that decrypts to a short payload in the OAEP Decoder
+  could result in the throwing of an early exception, potentially leaking some information
+  about the private exponent of the RSA private key performing the encryption.
+vulnerability_id: VCID-tkng-n6me-aaab
+weaknesses: []

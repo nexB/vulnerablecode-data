@@ -1,0 +1,84 @@
+vulnerability_id: VCID-5yx6-qj8x-aaaq
+aliases:
+  - CVE-2018-1080
+summary: Dogtag PKI, through version 10.6.1, has a vulnerability in AAclAuthz.java that, under
+  certain configurations, causes the application of ACL allow and deny rules to be reversed.
+  If a server is configured to process allow rules before deny rules (authz.evaluateOrder=allow,deny),
+  then allow rules will deny access and deny rules will grant access. This may result in an
+  escalation of privileges or have other unintended consequences.
+severities:
+  - id: 682801
+    reference_id: 1445745
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617719
+    reference_id: 936989
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 682802
+    reference_id: 1445746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682803
+    reference_id: 724756
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617717
+    reference_id: 936987
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 311309
+    reference_id: 724758
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 311307
+    reference_id: 724758
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 617718
+    reference_id: 936988
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1445745
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1080.html
+    reference_id:
+  - id: 936989
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1080.json
+    reference_id:
+  - id: 724755
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-1080
+    reference_id:
+  - id: 1445746
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1080
+    reference_id:
+  - id: 724756
+    url: https://pagure.io/freeipa/issue/7453
+    reference_id:
+  - id: 724757
+    url: https://review.gerrithub.io/c/dogtagpki/pki/+/404435
+    reference_id:
+  - id: 936987
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1556657
+    reference_id: 1556657
+  - id: 40547
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=893690
+    reference_id: 893690
+  - id: 709682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dogtagpki:dogtagpki:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dogtagpki:dogtagpki:*:*:*:*:*:*:*:*
+  - id: 724758
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1080
+    reference_id: CVE-2018-1080
+  - id: 936988
+    url: https://access.redhat.com/errata/RHSA-2018:1979
+    reference_id: RHSA-2018:1979
+weaknesses: []

@@ -1,0 +1,52 @@
+vulnerability_id: VCID-vjrn-h5jx-aaaj
+aliases:
+  - CVE-2021-42740
+  - GHSA-g4rg-993r-mgx7
+summary: |
+  Improper Neutralization of Special Elements used in a Command ('Command Injection')
+  The shell-quote package for Node.js allows command injection. An attacker can inject unescaped shell metacharacters through a regex designed to support Windows drive letters. If the output of this package is passed to a real shell as a quoted argument to a command with exec(), an attacker can inject arbitrary commands. This is because the Windows drive letter regex character class is {A-z] instead of the correct {A-Za-z]. Several shell metacharacters exist in the space between capital letter Z case letter a, such as the backtick character.
+severities:
+  - id: 565627
+    reference_id: 33633
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 565625
+    reference_id: 33633
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 706861
+    reference_id: 1468534
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 1468533
+    url: https://github.com/ljharb/shell-quote/blob/master/CHANGELOG.md#173
+    reference_id:
+  - id: 1468532
+    url: https://github.com/ljharb/shell-quote/commit/5799416ed454aa4ec9afafc895b4e31760ea1abe
+    reference_id:
+  - id: 901654
+    url: https://github.com/substack/node-shell-quote/blob/master/CHANGELOG.md#173
+    reference_id:
+  - id: 901655
+    url: https://github.com/substack/node-shell-quote/commit/5799416ed454aa4ec9afafc895b4e31760ea1abe
+    reference_id:
+  - id: 33634
+    url: https://www.npmjs.com/package/shell-quote
+    reference_id:
+  - id: 78858
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=998418
+    reference_id: 998418
+  - id: 628621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:shell-quote_project:shell-quote:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:shell-quote_project:shell-quote:*:*:*:*:*:node.js:*:*
+  - id: 33633
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-42740
+    reference_id: CVE-2021-42740
+  - id: 1468534
+    url: https://github.com/advisories/GHSA-g4rg-993r-mgx7
+    reference_id: GHSA-g4rg-993r-mgx7
+weaknesses: []

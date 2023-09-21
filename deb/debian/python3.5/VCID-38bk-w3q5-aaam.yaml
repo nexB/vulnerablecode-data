@@ -1,0 +1,120 @@
+vulnerability_id: VCID-38bk-w3q5-aaam
+aliases:
+  - CVE-2018-1000030
+summary: Python 2.7.14 is vulnerable to a Heap-Buffer-Overflow as well as a Heap-Use-After-Free.
+  Python versions prior to 2.7.14 may also be vulnerable and it appears that Python 2.7.17 and
+  prior may also be vulnerable however this has not been confirmed. The vulnerability lies when
+  multiply threads are handling large amounts of data. In both cases there is essentially a
+  race condition that occurs. For the Heap-Buffer-Overflow, Thread 2 is creating the size for
+  a buffer, but Thread1 is already writing to the buffer without knowing how much to write.
+  So when a large amount of data is being processed, it is very easy to cause memory corruption
+  using a Heap-Buffer-Overflow. As for the Use-After-Free, Thread3->Malloc->Thread1->Free's->Thread2-Re-uses-Free'd
+  Memory. The PSRT has stated that this is not a security vulnerability due to the fact that
+  the attacker must be able to run code, however in some situations, such as function as a service,
+  this vulnerability can potentially be used by an attacker to violate a trust boundary, as
+  such the DWF feels this issue deserves a CVE.
+severities:
+  - id: 682201
+    reference_id: 1445322
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 620650
+    reference_id: 939040
+    scoring_system: cvssv3
+    value: '3.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:L
+  - id: 682202
+    reference_id: 1445323
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682203
+    reference_id: 1445324
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682204
+    reference_id: 1445325
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697817
+    reference_id: 2757
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 620649
+    reference_id: 939039
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 307054
+    reference_id: 721226
+    scoring_system: cvssv2
+    value: '3.3'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:P
+  - id: 307052
+    reference_id: 721226
+    scoring_system: cvssv3
+    value: '3.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:L
+references:
+  - id: 1445322
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1000030.html
+    reference_id:
+  - id: 939040
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1000030.json
+    reference_id:
+  - id: 721220
+    url: https://bugs.python.org/issue31530
+    reference_id:
+  - id: 1445323
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000030
+    reference_id:
+  - id: 721221
+    url: https://drive.google.com/file/d/1oyR9DAZjZK_SCn3mor6NRAYLJS6ueXaY/view
+    reference_id:
+  - id: 721222
+    url: https://security.gentoo.org/glsa/201811-02
+    reference_id:
+  - id: 1445324
+    url: https://ubuntu.com/security/notices/USN-3817-1
+    reference_id:
+  - id: 1445325
+    url: https://ubuntu.com/security/notices/USN-3817-2
+    reference_id:
+  - id: 721223
+    url: https://usn.ubuntu.com/3817-1/
+    reference_id:
+  - id: 721224
+    url: https://usn.ubuntu.com/3817-2/
+    reference_id:
+  - id: 721225
+    url: https://www.dropbox.com/sh/sj3ee7xv55j36k7/AADwP-YfOYikBMuy32e0uvPFa?dl=0
+    reference_id:
+  - id: 2757
+    url: https://www.oracle.com/security-alerts/cpujan2020.html
+    reference_id:
+  - id: 939039
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1541558
+    reference_id: 1541558
+  - id: 432170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 721226
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1000030
+    reference_id: CVE-2018-1000030
+weaknesses: []

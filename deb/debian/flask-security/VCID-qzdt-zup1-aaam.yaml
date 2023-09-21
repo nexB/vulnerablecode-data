@@ -1,0 +1,66 @@
+vulnerability_id: VCID-qzdt-zup1-aaam
+aliases:
+  - CVE-2021-21241
+  - GHSA-hh7m-rx4f-4vpv
+  - PYSEC-2021-91
+summary: The Python "Flask-Security-Too" package is used for adding security features to your
+  Flask application. It is an is a independently maintained version of Flask-Security based
+  on the 3.0.0 version of Flask-Security. In Flask-Security-Too from version 3.3.0 and before
+  version 3.4.5, the /login and /change endpoints can return the authenticated user's authentication
+  token in response to a GET request. Since GET requests aren't protected with a CSRF token,
+  this could lead to a malicious 3rd party site acquiring the authentication token. Version
+  3.4.5 and version 4.0.0 are patched. As a workaround, if you aren't using authentication tokens
+  - you can set the SECURITY_TOKEN_MAX_AGE to "0" (seconds) which should make the token unusable.
+severities:
+  - id: 507686
+    reference_id: 23774
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 507684
+    reference_id: 23774
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N
+  - id: 4460
+    reference_id: 25174
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 4459
+    reference_id: 25173
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 8587
+    url: https://github.com/Flask-Middleware/flask-security/commit/61d313150b5f620d0b800896c4f2199005e84b1f
+    reference_id:
+  - id: 8590
+    url: https://github.com/Flask-Middleware/flask-security/commit/6d50ee9169acf813257c37b75babe9c28e83542a
+    reference_id:
+  - id: 8589
+    url: https://github.com/Flask-Middleware/flask-security/pull/422
+    reference_id:
+  - id: 8585
+    url: https://github.com/Flask-Middleware/flask-security/releases/tag/3.4.5
+    reference_id:
+  - id: 8586
+    url: https://pypi.org/project/Flask-Security-Too
+    reference_id:
+  - id: 41006
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=980189
+    reference_id: 980189
+  - id: 863551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:flask-security-too_project:flask-security-too:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:flask-security-too_project:flask-security-too:*:*:*:*:*:*:*:*
+  - id: 23774
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-21241
+    reference_id: CVE-2021-21241
+  - id: 25174
+    url: https://github.com/advisories/GHSA-hh7m-rx4f-4vpv
+    reference_id: GHSA-hh7m-rx4f-4vpv
+  - id: 25173
+    url: https://github.com/Flask-Middleware/flask-security/security/advisories/GHSA-hh7m-rx4f-4vpv
+    reference_id: GHSA-hh7m-rx4f-4vpv
+weaknesses: []

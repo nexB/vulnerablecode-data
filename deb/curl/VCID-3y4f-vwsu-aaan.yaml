@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2021-22925
+fixed_purl:
+- pkg:deb/debian/curl@0?distro=sid
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u7?distro=sid
+- pkg:deb/debian/curl@7.88.1-10?distro=sid
+references: []
+severities: []
+summary: curl supports the `-t` command line option, known as `CURLOPT_TELNETOPTIONS`in
+  libcurl. This rarely used option is used to send variable=content pairs toTELNET
+  servers.Due to flaw in the option parser for sending `NEW_ENV` variables, libcurlcould
+  be made to pass on uninitialized data from a stack based buffer to theserver. Therefore
+  potentially revealing sensitive internal information to theserver using a clear-text
+  network protocol.This could happen because curl did not call and use sscanf() correctly
+  whenparsing the string provided by the application.
+vulnerability_id: VCID-3y4f-vwsu-aaan
+weaknesses: []

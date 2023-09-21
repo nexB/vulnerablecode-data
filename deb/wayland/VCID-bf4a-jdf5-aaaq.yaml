@@ -1,0 +1,20 @@
+affected_purls:
+- pkg:deb/debian/wayland@1.16.0-1
+- pkg:deb/debian/wayland@1.18.0-2~exp1.1
+aliases:
+- CVE-2021-3782
+fixed_purl:
+- pkg:deb/debian/wayland@1.21.0-1
+references: []
+severities: []
+summary: An internal reference count is held on the buffer pool, incremented every
+  time a new buffer is created from the pool. The reference count is maintained as
+  an int; on LP64 systems this can cause the reference count to overflow if the client
+  creates a large number of wl_shm buffer objects, or if it can coerce the server
+  to create a large number of external references to the buffer storage. With the
+  reference count overflowing, a use-after-free can be constructed on the wl_shm_pool
+  tracking structure, where values may be incremented or decremented; it may also
+  be possible to construct a limited oracle to leak 4 bytes of server-side memory
+  to the attacking client at a time.
+vulnerability_id: VCID-bf4a-jdf5-aaaq
+weaknesses: []

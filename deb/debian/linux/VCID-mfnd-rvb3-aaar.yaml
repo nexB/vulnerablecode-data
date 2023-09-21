@@ -1,0 +1,136 @@
+vulnerability_id: VCID-mfnd-rvb3-aaar
+aliases:
+  - CVE-2018-10853
+summary: A flaw was found in the way Linux kernel KVM hypervisor before 4.18 emulated instructions
+  such as sgdt/sidt/fxsave/fxrstor. It did not check current privilege(CPL) level while emulating
+  unprivileged instructions. An unprivileged guest user/process could use this flaw to potentially
+  escalate privileges inside guest.
+severities:
+  - id: 682857
+    reference_id: 1445792
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615827
+    reference_id: 935624
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 682858
+    reference_id: 1445793
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682859
+    reference_id: 1445794
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682860
+    reference_id: 1445795
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682861
+    reference_id: 1445796
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615826
+    reference_id: 935623
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 311473
+    reference_id: 724918
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 311471
+    reference_id: 724918
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 721719
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00043.html
+    reference_id:
+  - id: 1445792
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10853.html
+    reference_id:
+  - id: 724908
+    url: https://access.redhat.com/errata/RHSA-2019:2029
+    reference_id:
+  - id: 724909
+    url: https://access.redhat.com/errata/RHSA-2019:2043
+    reference_id:
+  - id: 666764
+    url: https://access.redhat.com/errata/RHSA-2020:0036
+    reference_id:
+  - id: 724910
+    url: https://access.redhat.com/errata/RHSA-2020:0103
+    reference_id:
+  - id: 724911
+    url: https://access.redhat.com/errata/RHSA-2020:0179
+    reference_id:
+  - id: 935624
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10853.json
+    reference_id:
+  - id: 724912
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10853
+    reference_id:
+  - id: 1445793
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10853
+    reference_id:
+  - id: 724913
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=129a72a0d3c8e139a04512325384fe5ac119e74
+    reference_id:
+  - id: 724914
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3c9fa24ca7c9c47605672916491f79e8ccacb9e6
+    reference_id:
+  - id: 721722
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00015.html
+    reference_id:
+  - id: 721723
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00016.html
+    reference_id:
+  - id: 693387
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00020.html
+    reference_id:
+  - id: 1445794
+    url: https://patchwork.kernel.org/patch/10449159/
+    reference_id:
+  - id: 1445795
+    url: https://ubuntu.com/security/notices/USN-3777-1
+    reference_id:
+  - id: 1445796
+    url: https://ubuntu.com/security/notices/USN-3777-2
+    reference_id:
+  - id: 724915
+    url: https://usn.ubuntu.com/3777-1/
+    reference_id:
+  - id: 724916
+    url: https://usn.ubuntu.com/3777-2/
+    reference_id:
+  - id: 724917
+    url: https://www.openwall.com/lists/oss-security/2018/09/02/1
+    reference_id:
+  - id: 935623
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1589890
+    reference_id: 1589890
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 724918
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10853
+    reference_id: CVE-2018-10853
+weaknesses: []

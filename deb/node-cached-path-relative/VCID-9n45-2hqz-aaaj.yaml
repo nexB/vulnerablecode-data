@@ -1,0 +1,50 @@
+affected_purls:
+- pkg:npm/cached-path-relative@1.0.0
+- pkg:npm/cached-path-relative@1.0.1
+- pkg:npm/cached-path-relative@1.0.2
+aliases:
+- CVE-2021-23518
+- GHSA-wg6g-ppvx-927h
+fixed_purl:
+- pkg:deb/debian/node-cached-path-relative@1.0.1-2?distro=sid
+- pkg:deb/debian/node-cached-path-relative@1.0.1-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/node-cached-path-relative@1.0.2-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/node-cached-path-relative@1.1.0%2B~1.0.0-1?distro=sid
+- pkg:deb/debian/node-cached-path-relative@1.1.0%2B~1.0.0-3?distro=sid
+- pkg:npm/cached-path-relative@1.1.0
+references:
+- id: 158365
+  reference_id: ''
+  url: https://github.com/ashaffer/cached-path-relative/commit/40c73bf70c58add5aec7d11e4f36b93d144bb760
+- id: 144616
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2022/12/msg00006.html
+- id: 158367
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2348246
+- id: 158366
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-JS-CACHEDPATHRELATIVE-2342653
+- id: 129673
+  reference_id: '1004338'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004338
+- id: 158364
+  reference_id: CVE-2021-23518
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-23518
+- id: 158368
+  reference_id: GHSA-wg6g-ppvx-927h
+  url: https://github.com/advisories/GHSA-wg6g-ppvx-927h
+severities:
+- id: 23000
+  reference_id: 158368
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: The package cached-path-relative before 1.1.0 are vulnerable to Prototype
+  Pollution via the cache variable that is set as {} instead of Object.create(null)
+  in the cachedPathRelative function, which allows access to the parent prototype
+  properties when the object is used to create the cached relative path. When using
+  the origin path as __proto__, the attribute of the object is accessed instead of
+  a path. **Note:** This vulnerability derives from an incomplete fix in https://security.snyk.io/vuln/SNYK-JS-CACHEDPATHRELATIVE-72573
+vulnerability_id: VCID-9n45-2hqz-aaaj
+weaknesses: []

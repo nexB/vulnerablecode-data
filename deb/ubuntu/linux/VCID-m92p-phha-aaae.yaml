@@ -1,0 +1,85 @@
+vulnerability_id: VCID-m92p-phha-aaae
+aliases:
+  - CVE-2017-13715
+summary: The __skb_flow_dissect function in net/core/flow_dissector.c in the Linux kernel before
+  4.3 does not ensure that n_proto, ip_proto, and thoff are initialized, which allows remote
+  attackers to cause a denial of service (system crash) or possibly execute arbitrary code via
+  a single crafted MPLS packet.
+severities:
+  - id: 674981
+    reference_id: 680325
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674982
+    reference_id: 1439864
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 53692
+    reference_id: 178784
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 674984
+    reference_id: 1439865
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674983
+    reference_id: 680326
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674985
+    reference_id: 680328
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 53691
+    reference_id: 178783
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 262073
+    reference_id: 680329
+    scoring_system: cvssv2
+    value: '10.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:C/I:C/A:C
+  - id: 262071
+    reference_id: 680329
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 680325
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a6e544b0a88b53114bfa5a57e21b7be7a8dfc9d0
+    reference_id:
+  - id: 1439864
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-13715.html
+    reference_id:
+  - id: 178784
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-13715.json
+    reference_id:
+  - id: 1439865
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13715
+    reference_id:
+  - id: 680326
+    url: http://seclists.org/oss-sec/2017/q3/345
+    reference_id:
+  - id: 680328
+    url: https://github.com/torvalds/linux/commit/a6e544b0a88b53114bfa5a57e21b7be7a8dfc9d0
+    reference_id:
+  - id: 680327
+    url: http://www.securityfocus.com/bid/100517
+    reference_id:
+  - id: 178783
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1485246
+    reference_id: 1485246
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 680329
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-13715
+    reference_id: CVE-2017-13715
+weaknesses: []

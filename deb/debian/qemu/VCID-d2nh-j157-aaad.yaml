@@ -1,0 +1,202 @@
+vulnerability_id: VCID-d2nh-j157-aaad
+aliases:
+  - CVE-2016-1714
+summary: The (1) fw_cfg_write and (2) fw_cfg_read functions in hw/nvram/fw_cfg.c in QEMU before
+  2.4, when built with the Firmware Configuration device emulation support, allow guest OS users
+  with the CAP_SYS_RAWIO privilege to cause a denial of service (out-of-bounds read or write
+  access and process crash) or possibly execute arbitrary code via an invalid current entry
+  value in a firmware configuration.
+severities:
+  - id: 667195
+    reference_id: 1433485
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 667196
+    reference_id: 1433486
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 667197
+    reference_id: 636262
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663719
+    reference_id: 1430717
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 652243
+    reference_id: 158190
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 51933
+    reference_id: 176633
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 219218
+    reference_id: 636263
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 219216
+    reference_id: 636263
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+  - id: 51936
+    reference_id: 176636
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51937
+    reference_id: 176637
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51934
+    reference_id: 176634
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51896
+    reference_id: 176592
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51935
+    reference_id: 176635
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51897
+    reference_id: 176593
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51894
+    reference_id: 176590
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51895
+    reference_id: 176591
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1433485
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-1714.html
+    reference_id:
+  - id: 636253
+    url: http://rhn.redhat.com/errata/RHSA-2016-0081.html
+    reference_id:
+  - id: 636254
+    url: http://rhn.redhat.com/errata/RHSA-2016-0082.html
+    reference_id:
+  - id: 636255
+    url: http://rhn.redhat.com/errata/RHSA-2016-0083.html
+    reference_id:
+  - id: 635549
+    url: http://rhn.redhat.com/errata/RHSA-2016-0084.html
+    reference_id:
+  - id: 636256
+    url: http://rhn.redhat.com/errata/RHSA-2016-0085.html
+    reference_id:
+  - id: 635550
+    url: http://rhn.redhat.com/errata/RHSA-2016-0086.html
+    reference_id:
+  - id: 635551
+    url: http://rhn.redhat.com/errata/RHSA-2016-0087.html
+    reference_id:
+  - id: 635552
+    url: http://rhn.redhat.com/errata/RHSA-2016-0088.html
+    reference_id:
+  - id: 176638
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-1714.json
+    reference_id:
+  - id: 1433486
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1714
+    reference_id:
+  - id: 636262
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg00428.html
+    reference_id:
+  - id: 619148
+    url: https://security.gentoo.org/glsa/201604-01
+    reference_id:
+  - id: 1430717
+    url: https://ubuntu.com/security/notices/USN-2891-1
+    reference_id:
+  - id: 163209
+    url: http://www.debian.org/security/2016/dsa-3469
+    reference_id:
+  - id: 163210
+    url: http://www.debian.org/security/2016/dsa-3470
+    reference_id:
+  - id: 163211
+    url: http://www.debian.org/security/2016/dsa-3471
+    reference_id:
+  - id: 636257
+    url: http://www.openwall.com/lists/oss-security/2016/01/11/7
+    reference_id:
+  - id: 636258
+    url: http://www.openwall.com/lists/oss-security/2016/01/12/10
+    reference_id:
+  - id: 636259
+    url: http://www.openwall.com/lists/oss-security/2016/01/12/11
+    reference_id:
+  - id: 158190
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html
+    reference_id:
+  - id: 636260
+    url: http://www.securityfocus.com/bid/80250
+    reference_id:
+  - id: 636261
+    url: http://www.securitytracker.com/id/1034858
+    reference_id:
+  - id: 176633
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1296060
+    reference_id: 1296060
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 158175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*
+  - id: 111849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*
+  - id: 111850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*
+  - id: 636263
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-1714
+    reference_id: CVE-2016-1714
+  - id: 176636
+    url: https://access.redhat.com/errata/RHSA-2016:0081
+    reference_id: RHSA-2016:0081
+  - id: 176637
+    url: https://access.redhat.com/errata/RHSA-2016:0082
+    reference_id: RHSA-2016:0082
+  - id: 176634
+    url: https://access.redhat.com/errata/RHSA-2016:0083
+    reference_id: RHSA-2016:0083
+  - id: 176592
+    url: https://access.redhat.com/errata/RHSA-2016:0084
+    reference_id: RHSA-2016:0084
+  - id: 176635
+    url: https://access.redhat.com/errata/RHSA-2016:0085
+    reference_id: RHSA-2016:0085
+  - id: 176593
+    url: https://access.redhat.com/errata/RHSA-2016:0086
+    reference_id: RHSA-2016:0086
+  - id: 176590
+    url: https://access.redhat.com/errata/RHSA-2016:0087
+    reference_id: RHSA-2016:0087
+  - id: 176591
+    url: https://access.redhat.com/errata/RHSA-2016:0088
+    reference_id: RHSA-2016:0088
+weaknesses: []

@@ -1,0 +1,28 @@
+vulnerability_id: VCID-dz5a-x6e3-aaan
+aliases:
+  - CVE-2020-6165
+summary: |
+  Incorrect Default Permissions
+  The automatic permission-checking mechanism in the `silverstripe/graphql` module does not provide complete protection against lists that are limited (e.g., through pagination), resulting in records that should have failed a permission check being added to the final result set. GraphQL endpoints are configured by default (e.g., for assets), but the `admin/graphql` endpoint is access protected by default. This limits the vulnerability to all authenticated users, including those with limited permissions (e.g., where viewing records exposed through `admin/graphql` requires administrator permissions). However, if custom GraphQL endpoints have been configured for a specific implementation (usually under `/graphql`), this vulnerability could also be exploited through unauthenticated requests. This vulnerability only applies to reading records; it does not allow unauthorised changing of records.
+severities:
+  - id: 484658
+    reference_id: 25736
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 484656
+    reference_id: 25736
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 849603
+    url: https://www.silverstripe.org/download/security-releases/CVE-2020-6165
+    reference_id:
+  - id: 375295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:silverstripe:silverstripe:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:silverstripe:silverstripe:*:*:*:*:*:*:*:*
+  - id: 25736
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-6165
+    reference_id: CVE-2020-6165
+weaknesses: []

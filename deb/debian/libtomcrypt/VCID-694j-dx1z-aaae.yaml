@@ -1,0 +1,49 @@
+vulnerability_id: VCID-694j-dx1z-aaae
+aliases:
+  - CVE-2016-6129
+summary: The rsa_verify_hash_ex function in rsa_verify_hash.c in LibTomCrypt, as used in OP-TEE
+  before 2.2.0, does not validate that the message length is equal to the ASN.1 encoded data
+  length, which makes it easier for remote attackers to forge RSA signatures or public certificates
+  by leveraging a Bleichenbacher signature forgery attack.
+severities:
+  - id: 49959
+    reference_id: 174416
+    scoring_system: cvssv3
+    value: '4.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 233974
+    reference_id: 651506
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 233972
+    reference_id: 651506
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 174416
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-6129.json
+    reference_id:
+  - id: 651503
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1370955
+    reference_id:
+  - id: 651504
+    url: https://github.com/libtom/libtomcrypt/commit/5eb9743410ce4657e9d54fef26a2ee31a1b5dd0
+    reference_id:
+  - id: 651505
+    url: https://www.op-tee.org/advisories/
+    reference_id:
+  - id: 45698
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837042
+    reference_id: 837042
+  - id: 651507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtom:libtomcrypt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtom:libtomcrypt:*:*:*:*:*:*:*:*
+  - id: 651508
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:op-tee:op-tee_os:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:op-tee:op-tee_os:*:*:*:*:*:*:*:*
+  - id: 651506
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-6129
+    reference_id: CVE-2016-6129
+weaknesses: []

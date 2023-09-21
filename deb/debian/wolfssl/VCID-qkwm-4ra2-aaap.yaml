@@ -1,0 +1,30 @@
+vulnerability_id: VCID-qkwm-4ra2-aaap
+aliases:
+  - CVE-2019-18840
+summary: In wolfSSL 4.1.0 through 4.2.0c, there are missing sanity checks of memory accesses
+  in parsing ASN.1 certificate data while handshaking. Specifically, there is a one-byte heap-based
+  buffer overflow inside the DecodedCert structure in GetName in wolfcrypt/src/asn.c because
+  the domain name location index is mishandled. Because a pointer is overwritten, there is an
+  invalid free.
+severities:
+  - id: 394466
+    reference_id: 788688
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 394464
+    reference_id: 788688
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 788687
+    url: https://github.com/wolfSSL/wolfssl/issues/2555
+    reference_id:
+  - id: 167308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+  - id: 788688
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18840
+    reference_id: CVE-2019-18840
+weaknesses: []

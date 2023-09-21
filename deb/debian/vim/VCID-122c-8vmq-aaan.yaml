@@ -1,0 +1,128 @@
+vulnerability_id: VCID-122c-8vmq-aaan
+aliases:
+  - CVE-2017-17087
+summary: fileio.c in Vim prior to 8.0.1263 sets the group ownership of a .swp file to the editor's
+  primary group (which may be different from the group ownership of the original file), which
+  allows local users to obtain sensitive information by leveraging an applicable group membership,
+  as demonstrated by /etc/shadow owned by root:shadow mode 0640, but /etc/.shadow.swp owned
+  by root:users mode 0640, a different vulnerability than CVE-2017-1000382.
+severities:
+  - id: 676849
+    reference_id: 690123
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676850
+    reference_id: 1441116
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 618188
+    reference_id: 937321
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 676852
+    reference_id: 1441117
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676851
+    reference_id: 690124
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676853
+    reference_id: 690125
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676854
+    reference_id: 690126
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676855
+    reference_id: 1441118
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676856
+    reference_id: 1441119
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618187
+    reference_id: 937320
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 272812
+    reference_id: 690129
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 272810
+    reference_id: 690129
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 690123
+    url: http://openwall.com/lists/oss-security/2017/11/27/2
+    reference_id:
+  - id: 1441116
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17087.html
+    reference_id:
+  - id: 937321
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17087.json
+    reference_id:
+  - id: 1441117
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17087
+    reference_id:
+  - id: 690124
+    url: http://security.cucumberlinux.com/security/details.php?id=166
+    reference_id:
+  - id: 690125
+    url: https://github.com/vim/vim/commit/5a73e0ca54c77e067c3b12ea6f35e3e8681e8cf8
+    reference_id:
+  - id: 690126
+    url: https://groups.google.com/d/msg/vim_dev/sRT9BtjLWMk/BRtSXNU4BwAJ
+    reference_id:
+  - id: 671994
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00003.html
+    reference_id:
+  - id: 690127
+    url: https://lists.debian.org/debian-lts-announce/2022/01/msg00003.html
+    reference_id:
+  - id: 1441118
+    url: https://ubuntu.com/security/notices/USN-4582-1
+    reference_id:
+  - id: 1441119
+    url: https://ubuntu.com/security/notices/USN-5147-1
+    reference_id:
+  - id: 690128
+    url: https://usn.ubuntu.com/4582-1/
+    reference_id:
+  - id: 937320
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1524485
+    reference_id: 1524485
+  - id: 344541
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:vim:vim:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:vim:vim:*:*:*:*:*:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 690129
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17087
+    reference_id: CVE-2017-17087
+weaknesses: []

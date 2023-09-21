@@ -1,0 +1,45 @@
+vulnerability_id: VCID-y2zu-6pnf-aaap
+aliases:
+  - CVE-2021-32635
+summary: 'Singularity is an open source container platform. In verions 3.7.2 and 3.7.3, Dde
+  to incorrect use of a default URL, `singularity` action commands (`run`/`shell`/`exec`) specifying
+  a container using a `library://` URI will always attempt to retrieve the container from the
+  default remote endpoint (`cloud.sylabs.io`) rather than the configured remote endpoint. An
+  attacker may be able to push a malicious container to the default remote endpoint with a URI
+  that is identical to the URI used by a victim with a non-default remote endpoint, thus executing
+  the malicious container. Only action commands (`run`/`shell`/`exec`) against `library://`
+  URIs are affected. Other commands such as `pull` / `push` respect the configured remote endpoint.
+  The vulnerability is patched in Singularity version 3.7.4. Two possible workarounds exist:
+  Users can only interact with the default remote endpoint, or an installation can have an execution
+  control list configured to restrict execution to containers signed with specific secure keys.'
+severities:
+  - id: 540309
+    reference_id: 884471
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 540307
+    reference_id: 884471
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+references:
+  - id: 884468
+    url: https://github.com/sylabs/singularity/releases/tag/v3.7.4
+    reference_id:
+  - id: 884469
+    url: https://github.com/sylabs/singularity/security/advisories/GHSA-5mv9-q7fq-9394
+    reference_id:
+  - id: 884470
+    url: https://security.gentoo.org/glsa/202107-50
+    reference_id:
+  - id: 884472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sylabs:singularity:3.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sylabs:singularity:3.7.2:*:*:*:*:*:*:*
+  - id: 884473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sylabs:singularity:3.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sylabs:singularity:3.7.3:*:*:*:*:*:*:*
+  - id: 884471
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32635
+    reference_id: CVE-2021-32635
+weaknesses: []

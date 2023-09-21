@@ -1,0 +1,144 @@
+vulnerability_id: VCID-d1jn-ps42-aaab
+aliases:
+  - CVE-2020-16120
+summary: 'Overlayfs did not properly perform permission checking when copying up files in an
+  overlayfs and could be exploited from within a user namespace, if, for example, unprivileged
+  user namespaces were allowed. It was possible to have a file not readable by an unprivileged
+  user to be copied to a mountpoint controlled by the user, like a removable device. This was
+  introduced in kernel version 4.19 by commit d1d04ef ("ovl: stack file ops"). This was fixed
+  in kernel version 5.8 by commits 56230d9 ("ovl: verify permissions in ovl_path_open()"), 48bd024
+  ("ovl: switch to mounter creds in readdir") and 05acefb ("ovl: check permission to open real
+  file"). Additionally, commits 130fdbc ("ovl: pass correct flags for opening real directory")
+  and 292f902 ("ovl: call secutiry hook in ovl_real_ioctl()") in kernel 5.8 might also be desired
+  or necessary. These additional commits introduced a regression in overlay mounts within user
+  namespaces which prevented access to files with ownership outside of the user namespace. This
+  regression was mitigated by subsequent commit b6650da ("ovl: do not fail because of O_NOATIMEi")
+  in kernel 5.11.'
+severities:
+  - id: 697318
+    reference_id: 1457330
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604597
+    reference_id: 927377
+    scoring_system: cvssv3
+    value: '4.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N
+  - id: 697319
+    reference_id: 1457331
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696381
+    reference_id: 1456505
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697315
+    reference_id: 1457327
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682619
+    reference_id: 1445605
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697320
+    reference_id: 1457332
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604596
+    reference_id: 927376
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 448335
+    reference_id: 825365
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 448333
+    reference_id: 825365
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1457330
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-16120.html
+    reference_id:
+  - id: 927377
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-16120.json
+    reference_id:
+  - id: 1457331
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16120
+    reference_id:
+  - id: 825357
+    url: https://git.kernel.org/linus/05acefb4872dae89e772729efb194af754c877e8
+    reference_id:
+  - id: 825358
+    url: https://git.kernel.org/linus/48bd024b8a40d73ad6b086de2615738da0c7004f
+    reference_id:
+  - id: 825359
+    url: https://git.kernel.org/linus/56230d956739b9cb1cbde439d76227d77979a04d
+    reference_id:
+  - id: 825360
+    url: https://git.kernel.org/linus/b6650dab404c701d7fe08a108b746542a934da84
+    reference_id:
+  - id: 825361
+    url: https://git.kernel.org/linus/d1d04ef8572bc8c22265057bd3d5a79f223f8f52
+    reference_id:
+  - id: 825362
+    url: https://launchpad.net/bugs/1894980
+    reference_id:
+  - id: 825363
+    url: https://launchpad.net/bugs/1900141
+    reference_id:
+  - id: 1456505
+    url: https://ubuntu.com/security/notices/USN-4576-1
+    reference_id:
+  - id: 1457327
+    url: https://ubuntu.com/security/notices/USN-4577-1
+    reference_id:
+  - id: 1445605
+    url: https://ubuntu.com/security/notices/USN-4578-1
+    reference_id:
+  - id: 825350
+    url: https://ubuntu.com/USN-4576-1
+    reference_id:
+  - id: 825351
+    url: https://ubuntu.com/USN-4577-1
+    reference_id:
+  - id: 825352
+    url: https://ubuntu.com/USN-4578-1
+    reference_id:
+  - id: 1457332
+    url: https://www.openwall.com/lists/oss-security/2020/10/13/6
+    reference_id:
+  - id: 825364
+    url: https://www.openwall.com/lists/oss-security/2020/10/14/2
+    reference_id:
+  - id: 927376
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1886387
+    reference_id: 1886387
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 825365
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-16120
+    reference_id: CVE-2020-16120
+weaknesses: []

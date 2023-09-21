@@ -1,0 +1,214 @@
+vulnerability_id: VCID-7ze9-2c9n-aaaj
+aliases:
+  - CVE-2018-16884
+summary: A flaw was found in the Linux kernel's NFS41+ subsystem. NFS41+ shares mounted in different
+  network namespaces at the same time can make bc_svc_process() use wrong back-channel IDs and
+  cause a use-after-free vulnerability. Thus a malicious container user can cause a host kernel
+  memory corruption and a system panic. Due to the nature of the flaw, privilege escalation
+  cannot be fully ruled out.
+severities:
+  - id: 685207
+    reference_id: 1447630
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613668
+    reference_id: 934048
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:C/C:N/I:L/A:H
+  - id: 685208
+    reference_id: 1447631
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687971
+    reference_id: 629035
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687972
+    reference_id: 629036
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685209
+    reference_id: 1447632
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677515
+    reference_id: 1441551
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677516
+    reference_id: 1441552
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683586
+    reference_id: 1446339
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683587
+    reference_id: 1446340
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683588
+    reference_id: 1446341
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683589
+    reference_id: 1446342
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613667
+    reference_id: 934047
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 331140
+    reference_id: 740139
+    scoring_system: cvssv2
+    value: '6.7'
+    scoring_elements: AV:A/AC:L/Au:S/C:P/I:P/A:C
+  - id: 331138
+    reference_id: 740139
+    scoring_system: cvssv3
+    value: '8.0'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 48956
+    reference_id: 173266
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1447630
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-16884.html
+    reference_id:
+  - id: 740129
+    url: https://access.redhat.com/errata/RHSA-2019:1873
+    reference_id:
+  - id: 740130
+    url: https://access.redhat.com/errata/RHSA-2019:1891
+    reference_id:
+  - id: 731801
+    url: https://access.redhat.com/errata/RHSA-2019:2696
+    reference_id:
+  - id: 731802
+    url: https://access.redhat.com/errata/RHSA-2019:2730
+    reference_id:
+  - id: 727325
+    url: https://access.redhat.com/errata/RHSA-2019:3309
+    reference_id:
+  - id: 600085
+    url: https://access.redhat.com/errata/RHSA-2019:3517
+    reference_id:
+  - id: 727330
+    url: https://access.redhat.com/errata/RHSA-2020:0204
+    reference_id:
+  - id: 934048
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16884.json
+    reference_id:
+  - id: 740131
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16884
+    reference_id:
+  - id: 1447631
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16884
+    reference_id:
+  - id: 629035
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00034.html
+    reference_id:
+  - id: 629036
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00004.html
+    reference_id:
+  - id: 721206
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00002.html
+    reference_id:
+  - id: 1447632
+    url: https://lore.kernel.org/linux-nfs/1b3282c0-12ce-0e2c-0fa9-63418a3f2a80@virtuozzo.com/T/#m6b9e4d7efcc6b3564f9d53c051caf2370ae8e70a
+    reference_id:
+  - id: 740132
+    url: https://patchwork.kernel.org/cover/10733767/
+    reference_id:
+  - id: 740133
+    url: https://patchwork.kernel.org/patch/10733769/
+    reference_id:
+  - id: 740134
+    url: https://support.f5.com/csp/article/K21430012
+    reference_id:
+  - id: 1441551
+    url: https://ubuntu.com/security/notices/USN-3932-1
+    reference_id:
+  - id: 1441552
+    url: https://ubuntu.com/security/notices/USN-3932-2
+    reference_id:
+  - id: 1446339
+    url: https://ubuntu.com/security/notices/USN-3980-1
+    reference_id:
+  - id: 1446340
+    url: https://ubuntu.com/security/notices/USN-3980-2
+    reference_id:
+  - id: 1446341
+    url: https://ubuntu.com/security/notices/USN-3981-1
+    reference_id:
+  - id: 1446342
+    url: https://ubuntu.com/security/notices/USN-3981-2
+    reference_id:
+  - id: 693369
+    url: https://usn.ubuntu.com/3932-1/
+    reference_id:
+  - id: 693370
+    url: https://usn.ubuntu.com/3932-2/
+    reference_id:
+  - id: 740135
+    url: https://usn.ubuntu.com/3980-1/
+    reference_id:
+  - id: 740136
+    url: https://usn.ubuntu.com/3980-2/
+    reference_id:
+  - id: 740137
+    url: https://usn.ubuntu.com/3981-1/
+    reference_id:
+  - id: 740138
+    url: https://usn.ubuntu.com/3981-2/
+    reference_id:
+  - id: 420
+    url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_id:
+  - id: 740128
+    url: http://www.securityfocus.com/bid/106253
+    reference_id:
+  - id: 934047
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1660375
+    reference_id: 1660375
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 343431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 458549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+  - id: 740139
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16884
+    reference_id: CVE-2018-16884
+  - id: 173266
+    url: https://access.redhat.com/errata/RHSA-2020:2854
+    reference_id: RHSA-2020:2854
+weaknesses: []

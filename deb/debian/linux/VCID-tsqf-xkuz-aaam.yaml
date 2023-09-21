@@ -1,0 +1,74 @@
+vulnerability_id: VCID-tsqf-xkuz-aaam
+aliases:
+  - CVE-2019-18805
+summary: An issue was discovered in net/ipv4/sysctl_net_ipv4.c in the Linux kernel before 5.0.11.
+  There is a net/ipv4/tcp_input.c signed integer overflow in tcp_ack_update_rtt() when userspace
+  writes a very large integer to /proc/sys/net/ipv4/tcp_min_rtt_wlen, leading to a denial of
+  service or possibly unspecified other impact, aka CID-19fad20d15a6.
+severities:
+  - id: 692259
+    reference_id: 1453205
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 612437
+    reference_id: 933125
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H
+  - id: 692260
+    reference_id: 782270
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692261
+    reference_id: 1453206
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692262
+    reference_id: 1453207
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 612436
+    reference_id: 933124
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 53852
+    reference_id: 178976
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53851
+    reference_id: 178975
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1453205
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-18805.html
+    reference_id:
+  - id: 933125
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-18805.json
+    reference_id:
+  - id: 782270
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.0.11
+    reference_id:
+  - id: 1453206
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18805
+    reference_id:
+  - id: 1453207
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=19fad20d15a6494f47f85d869f00b11343ee5c78
+    reference_id:
+  - id: 933124
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1771496
+    reference_id: 1771496
+  - id: 178976
+    url: https://access.redhat.com/errata/RHSA-2020:1567
+    reference_id: RHSA-2020:1567
+  - id: 178975
+    url: https://access.redhat.com/errata/RHSA-2020:1769
+    reference_id: RHSA-2020:1769
+weaknesses: []

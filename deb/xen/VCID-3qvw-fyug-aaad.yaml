@@ -1,0 +1,27 @@
+affected_purls: []
+aliases:
+- CVE-2020-25595
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B37-g3263f257ca-1?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B80-gd101b417b7-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.14.x. The PCI passthrough code improperly
+  uses register data. Code paths in Xen's MSI handling have been identified that act
+  on unsanitized values read back from device hardware registers. While devices strictly
+  compliant with PCI specifications shouldn't be able to affect these registers, experience
+  shows that it's very common for devices to have out-of-spec "backdoor" operations
+  that can affect the result of these reads. A not fully trusted guest may be able
+  to crash Xen, leading to a Denial of Service (DoS) for the entire system. Privilege
+  escalation and information leaks cannot be excluded. All versions of Xen supporting
+  PCI passthrough are affected. Only x86 systems are vulnerable. Arm systems are not
+  vulnerable. Only guests with passed through PCI devices may be able to leverage
+  the vulnerability. Only systems passing through devices with out-of-spec ("backdoor")
+  functionality can cause issues. Experience shows that such out-of-spec functionality
+  is common; unless you have reason to believe that your device does not have such
+  functionality, it's better to assume that it does.
+vulnerability_id: VCID-3qvw-fyug-aaad
+weaknesses: []

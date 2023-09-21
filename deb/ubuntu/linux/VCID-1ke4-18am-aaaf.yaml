@@ -1,0 +1,163 @@
+vulnerability_id: VCID-1ke4-18am-aaaf
+aliases:
+  - CVE-2020-8835
+summary: In the Linux kernel 5.5.0 and newer, the bpf verifier (kernel/bpf/verifier.c) did not
+  properly restrict the register bounds for 32-bit operations, leading to out-of-bounds reads
+  and writes in kernel memory. The vulnerability also affects the Linux 5.4 stable series, starting
+  with v5.4.7, as the introducing commit was backported to that branch. This vulnerability was
+  fixed in 5.6.1, 5.5.14, and 5.4.29. (issue is aka ZDI-CAN-10780)
+severities:
+  - id: 699939
+    reference_id: 1459555
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 52897
+    reference_id: 177856
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 699940
+    reference_id: 1459556
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699941
+    reference_id: 855619
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699942
+    reference_id: 855622
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699947
+    reference_id: 1459558
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699943
+    reference_id: 855624
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699944
+    reference_id: 855625
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699945
+    reference_id: 855626
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699946
+    reference_id: 1459557
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 52896
+    reference_id: 177855
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 492868
+    reference_id: 855627
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 492866
+    reference_id: 855627
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1459555
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8835.html
+    reference_id:
+  - id: 177856
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8835.json
+    reference_id:
+  - id: 1459556
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8835
+    reference_id:
+  - id: 855618
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=f2d67fec0b43edce8c416101cdc52e71145b5fef
+    reference_id:
+  - id: 855619
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f2d67fec0b43edce8c416101cdc52e71145b5fef
+    reference_id:
+  - id: 855620
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F7OONYGMSYBEFHLHZJK3GOI5Z553G4LD/
+    reference_id:
+  - id: 790947
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TF4PQZBEPNXDSK5DOBMW54OCLP25FTCD/
+    reference_id:
+  - id: 855621
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YXBWSHZ6DJIZVXKXGZPK6QPFCY7VKZEG/
+    reference_id:
+  - id: 855622
+    url: https://lore.kernel.org/bpf/20200330160324.15259-1-daniel@iogearbox.net/T/
+    reference_id:
+  - id: 792745
+    url: https://security.netapp.com/advisory/ntap-20200430-0004/
+    reference_id:
+  - id: 1459558
+    url: https://ubuntu.com/security/notices/USN-4313-1
+    reference_id:
+  - id: 855623
+    url: https://usn.ubuntu.com/4313-1/
+    reference_id:
+  - id: 855624
+    url: https://usn.ubuntu.com/usn/usn-4313-1
+    reference_id:
+  - id: 855625
+    url: https://www.openwall.com/lists/oss-security/2020/03/30/3
+    reference_id:
+  - id: 855626
+    url: https://www.thezdi.com/blog/2020/3/19/pwn2own-2020-day-one-results
+    reference_id:
+  - id: 1459557
+    url: https://www.zerodayinitiative.com/advisories/ZDI-20-350/
+    reference_id:
+  - id: 855617
+    url: http://www.openwall.com/lists/oss-security/2021/07/20/1
+    reference_id:
+  - id: 177855
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1817350
+    reference_id: 1817350
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 408940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 855627
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8835
+    reference_id: CVE-2020-8835
+weaknesses: []

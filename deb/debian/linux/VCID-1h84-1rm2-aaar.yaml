@@ -1,0 +1,40 @@
+vulnerability_id: VCID-1h84-1rm2-aaar
+aliases:
+  - CVE-2013-2239
+summary: vzkernel before 042stab080.2 in the OpenVZ modification for the Linux kernel 2.6.32
+  does not initialize certain length variables, which allows local users to obtain sensitive
+  information from kernel stack memory via (1) a crafted ploop driver ioctl call, related to
+  the ploop_getdevice_ioc function in drivers/block/ploop/dev.c, or (2) a crafted quotactl system
+  call, related to the compat_quotactl function in fs/quota/quota.c.
+severities:
+  - id: 165131
+    reference_id: 524274
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:N/A:N
+references:
+  - id: 524270
+    url: http://openwall.com/lists/oss-security/2013/07/04/9
+    reference_id:
+  - id: 213898
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-2239.json
+    reference_id:
+  - id: 524272
+    url: https://bugs.gentoo.org/show_bug.cgi?id=475762
+    reference_id:
+  - id: 524273
+    url: https://security-tracker.debian.org/tracker/CVE-2013-2239
+    reference_id:
+  - id: 524271
+    url: http://wiki.openvz.org/Download/kernel/rhel6-testing/042stab080.2
+    reference_id:
+  - id: 513513
+    url: http://www.debian.org/security/2013/dsa-2766
+    reference_id:
+  - id: 524275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:openvz:vzkernel:2.6.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:openvz:vzkernel:2.6.32:*:*:*:*:*:*:*
+  - id: 524274
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-2239
+    reference_id: CVE-2013-2239
+weaknesses: []

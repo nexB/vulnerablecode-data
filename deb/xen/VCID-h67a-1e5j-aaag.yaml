@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2021-3308
+fixed_purl:
+- pkg:deb/debian/xen@0?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.1%2B11-gb0b734a8b3-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 129832
+  reference_id: '981052'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=981052
+severities: []
+summary: An issue was discovered in Xen 4.12.3 through 4.12.4 and 4.13.1 through 4.14.x.
+  An x86 HVM guest with PCI pass through devices can force the allocation of all IDT
+  vectors on the system by rebooting itself with MSI or MSI-X capabilities enabled
+  and entries setup. Such reboots will leak any vectors used by the MSI(-X) entries
+  that the guest might had enabled, and hence will lead to vector exhaustion on the
+  system, not allowing further PCI pass through devices to work properly. HVM guests
+  with PCI pass through devices can mount a Denial of Service (DoS) attack affecting
+  the pass through of PCI devices to other guests or the hardware domain. In the latter
+  case, this would affect the entire host.
+vulnerability_id: VCID-h67a-1e5j-aaag
+weaknesses: []

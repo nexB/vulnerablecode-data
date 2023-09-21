@@ -1,0 +1,67 @@
+vulnerability_id: VCID-f41e-f6yq-aaar
+aliases:
+  - CVE-2020-36317
+summary: In the standard library in Rust before 1.49.0, String::retain() function has a panic
+  safety problem. It allows creation of a non-UTF-8 Rust string when the provided closure panics.
+  This bug could result in a memory safety violation when other string APIs assume that UTF-8
+  encoding is used on the same string.
+severities:
+  - id: 608874
+    reference_id: 930524
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 608873
+    reference_id: 930523
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 476657
+    reference_id: 844002
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 476655
+    reference_id: 844002
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 608163
+    reference_id: 929996
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 608164
+    reference_id: 929997
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 930524
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-36317.json
+    reference_id:
+  - id: 844000
+    url: https://github.com/rust-lang/rust/issues/78498
+    reference_id:
+  - id: 844001
+    url: https://github.com/rust-lang/rust/pull/78499
+    reference_id:
+  - id: 930523
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1949189
+    reference_id: '1949189'
+  - id: 120815
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986803
+    reference_id: 986803
+  - id: 169110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+  - id: 844002
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-36317
+    reference_id: CVE-2020-36317
+  - id: 929996
+    url: https://access.redhat.com/errata/RHSA-2021:1935
+    reference_id: RHSA-2021:1935
+  - id: 929997
+    url: https://access.redhat.com/errata/RHSA-2021:2243
+    reference_id: RHSA-2021:2243
+weaknesses: []

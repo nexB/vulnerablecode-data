@@ -1,0 +1,827 @@
+vulnerability_id: VCID-frgh-n7zt-aaar
+aliases:
+  - CVE-2013-4322
+summary: 'Apache Tomcat before 6.0.39, 7.x before 7.0.50, and 8.x before 8.0.0-RC10 processes
+  chunked transfer coding without properly handling (1) a large total amount of chunked data
+  or (2) whitespace characters in an HTTP header value within a trailer field, which allows
+  remote attackers to cause a denial of service by streaming data.  NOTE: this vulnerability
+  exists because of an incomplete fix for CVE-2012-3544.'
+severities:
+  - id: 652779
+    reference_id: 1422353
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 652780
+    reference_id: 1422354
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 652742
+    reference_id: 1422321
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650165
+    reference_id: 9068
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 651923
+    reference_id: 14815
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 652740
+    reference_id: 14816
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 655521
+    reference_id: 13681
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650842
+    reference_id: 13682
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 168963
+    reference_id: 534389
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 60234
+    reference_id: 187236
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 60233
+    reference_id: 187235
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 60236
+    reference_id: 187238
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 60237
+    reference_id: 187239
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 60235
+    reference_id: 187237
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 59401
+    reference_id: 186019
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 531588
+    url: http://advisories.mageia.org/MGASA-2014-0148.html
+    reference_id:
+  - id: 531590
+    url: http://marc.info/?l=bugtraq&m=144498216801440&w=2
+    reference_id:
+  - id: 1422353
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-4322.html
+    reference_id:
+  - id: 187240
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-4322.json
+    reference_id:
+  - id: 534388
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1069905
+    reference_id:
+  - id: 1422354
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4322
+    reference_id:
+  - id: 13643
+    url: http://seclists.org/fulldisclosure/2014/Dec/23
+    reference_id:
+  - id: 531595
+    url: http://secunia.com/advisories/59036
+    reference_id:
+  - id: 531596
+    url: http://secunia.com/advisories/59675
+    reference_id:
+  - id: 531597
+    url: http://secunia.com/advisories/59722
+    reference_id:
+  - id: 531598
+    url: http://secunia.com/advisories/59724
+    reference_id:
+  - id: 531600
+    url: http://secunia.com/advisories/59873
+    reference_id:
+  - id: 531612
+    url: https://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04851013
+    reference_id:
+  - id: 1738
+    url: https://lists.apache.org/thread.html/37220405a377c0182d2afdbc36461c4783b2930fbeae3a17f1333113@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 1740
+    url: https://lists.apache.org/thread.html/39ae1f0bd5867c15755a6f959b271ade1aea04ccdc3b2e639dcd903b@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 1746
+    url: https://lists.apache.org/thread.html/b84ad1258a89de5c9c853c7f2d3ad77e5b8b2930be9e132d5cef6b95@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 1747
+    url: https://lists.apache.org/thread.html/b8a1bf18155b552dcf9a928ba808cbadad84c236d85eab3033662cfb@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 1748
+    url: https://lists.apache.org/thread.html/r03c597a64de790ba42c167efacfa23300c3d6c9fe589ab87fe02859c@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 1749
+    url: https://lists.apache.org/thread.html/r587e50b86c1a96ee301f751d50294072d142fd6dc08a8987ae9f3a9b@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 531613
+    url: https://rhn.redhat.com/errata/RHSA-2014-0686.html
+    reference_id:
+  - id: 1473611
+    url: https://svn.apache.org/viewvc?view=rev&rev=1521834
+    reference_id:
+  - id: 1473613
+    url: https://svn.apache.org/viewvc?view=rev&rev=1521864
+    reference_id:
+  - id: 1473612
+    url: https://svn.apache.org/viewvc?view=rev&rev=1549522
+    reference_id:
+  - id: 1473614
+    url: https://svn.apache.org/viewvc?view=rev&rev=1549523
+    reference_id:
+  - id: 1422321
+    url: https://ubuntu.com/security/notices/USN-2130-1
+    reference_id:
+  - id: 534382
+    url: http://svn.apache.org/viewvc?view=revision&revision=1521834
+    reference_id:
+  - id: 534383
+    url: http://svn.apache.org/viewvc?view=revision&revision=1521864
+    reference_id:
+  - id: 534384
+    url: http://svn.apache.org/viewvc?view=revision&revision=1549522
+    reference_id:
+  - id: 534385
+    url: http://svn.apache.org/viewvc?view=revision&revision=1549523
+    reference_id:
+  - id: 534386
+    url: http://svn.apache.org/viewvc?view=revision&revision=1556540
+    reference_id:
+  - id: 9068
+    url: http://tomcat.apache.org/security-6.html
+    reference_id:
+  - id: 14815
+    url: http://tomcat.apache.org/security-7.html
+    reference_id:
+  - id: 14816
+    url: http://tomcat.apache.org/security-8.html
+    reference_id:
+  - id: 531604
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21667883
+    reference_id:
+  - id: 531605
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21675886
+    reference_id:
+  - id: 531606
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21677147
+    reference_id:
+  - id: 531607
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21678113
+    reference_id:
+  - id: 531608
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21678231
+    reference_id:
+  - id: 147734
+    url: http://www.debian.org/security/2016/dsa-3530
+    reference_id:
+  - id: 531609
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:052
+    reference_id:
+  - id: 14834
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:084
+    reference_id:
+  - id: 13678
+    url: http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html
+    reference_id:
+  - id: 13681
+    url: http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html
+    reference_id:
+  - id: 13682
+    url: http://www.oracle.com/technetwork/topics/security/cpuoct2014-1972960.html
+    reference_id:
+  - id: 13683
+    url: http://www.securityfocus.com/archive/1/534161/100/0/threaded
+    reference_id:
+  - id: 534387
+    url: http://www.securityfocus.com/bid/65767
+    reference_id:
+  - id: 14840
+    url: http://www.ubuntu.com/usn/USN-2130-1
+    reference_id:
+  - id: 13685
+    url: http://www.vmware.com/security/advisories/VMSA-2014-0008.html
+    reference_id:
+  - id: 13686
+    url: http://www.vmware.com/security/advisories/VMSA-2014-0012.html
+    reference_id:
+  - id: 53215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
+  - id: 531615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:1.1.3:*:*:*:*:*:*:*
+  - id: 51983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.0:*:*:*:*:*:*:*
+  - id: 51984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.1:*:*:*:*:*:*:*
+  - id: 71453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.1.1:*:*:*:*:*:*:*
+  - id: 71457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2:*:*:*:*:*:*:*
+  - id: 59249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2.1:*:*:*:*:*:*:*
+  - id: 397860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2.2:*:*:*:*:*:*:*
+  - id: 71454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2.2:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2.2:beta2:*:*:*:*:*:*
+  - id: 71455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2.3:*:*:*:*:*:*:*
+  - id: 71456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.2.4:*:*:*:*:*:*:*
+  - id: 71459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.3:*:*:*:*:*:*:*
+  - id: 71458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.3.1:*:*:*:*:*:*:*
+  - id: 79787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.3.1a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.3.1a:*:*:*:*:*:*:*
+  - id: 296591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:3.3.2:*:*:*:*:*:*:*
+  - id: 531616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4:*:*:*:*:*:*:*
+  - id: 71460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.0:*:*:*:*:*:*:*
+  - id: 59750
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.1:*:*:*:*:*:*:*
+  - id: 71461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.2:*:*:*:*:*:*:*
+  - id: 68488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.3:*:*:*:*:*:*:*
+  - id: 71462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.4:*:*:*:*:*:*:*
+  - id: 73200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.5:*:*:*:*:*:*:*
+  - id: 78265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.0.6:*:*:*:*:*:*:*
+  - id: 71463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.0:*:*:*:*:*:*:*
+  - id: 78267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.1:*:*:*:*:*:*:*
+  - id: 71464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.10:*:*:*:*:*:*:*
+  - id: 78266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.12:*:*:*:*:*:*:*
+  - id: 146329
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.15:*:*:*:*:*:*:*
+  - id: 78268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.2:*:*:*:*:*:*:*
+  - id: 125593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.24:*:*:*:*:*:*:*
+  - id: 280693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.28:*:*:*:*:*:*:*
+  - id: 146342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.29:*:*:*:*:*:*:*
+  - id: 78269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.3:*:*:*:*:*:*:*
+  - id: 146345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.31:*:*:*:*:*:*:*
+  - id: 146350
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.36:*:*:*:*:*:*:*
+  - id: 71465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.3:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.3:beta:*:*:*:*:*:*
+  - id: 71466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:4.1.9:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:4.1.9:beta:*:*:*:*:*:*
+  - id: 531617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5:*:*:*:*:*:*:*
+  - id: 269600
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.0:*:*:*:*:*:*:*
+  - id: 269610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.1:*:*:*:*:*:*:*
+  - id: 269601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.10:*:*:*:*:*:*:*
+  - id: 269602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.11:*:*:*:*:*:*:*
+  - id: 269603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.12:*:*:*:*:*:*:*
+  - id: 269604
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.13:*:*:*:*:*:*:*
+  - id: 269605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.14:*:*:*:*:*:*:*
+  - id: 269606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.15:*:*:*:*:*:*:*
+  - id: 269607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.16:*:*:*:*:*:*:*
+  - id: 269608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.17:*:*:*:*:*:*:*
+  - id: 269609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.18:*:*:*:*:*:*:*
+  - id: 125594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.19:*:*:*:*:*:*:*
+  - id: 269619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.2:*:*:*:*:*:*:*
+  - id: 269611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.21:*:*:*:*:*:*:*
+  - id: 269612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.22:*:*:*:*:*:*:*
+  - id: 269613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.23:*:*:*:*:*:*:*
+  - id: 269614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.24:*:*:*:*:*:*:*
+  - id: 269615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.25:*:*:*:*:*:*:*
+  - id: 269616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.26:*:*:*:*:*:*:*
+  - id: 269617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.27:*:*:*:*:*:*:*
+  - id: 245977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.28:*:*:*:*:*:*:*
+  - id: 269618
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.29:*:*:*:*:*:*:*
+  - id: 269626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.3:*:*:*:*:*:*:*
+  - id: 269620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.30:*:*:*:*:*:*:*
+  - id: 269627
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.4:*:*:*:*:*:*:*
+  - id: 269628
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.5:*:*:*:*:*:*:*
+  - id: 269629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.6:*:*:*:*:*:*:*
+  - id: 269630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.7:*:*:*:*:*:*:*
+  - id: 269631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.8:*:*:*:*:*:*:*
+  - id: 269632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.0.9:*:*:*:*:*:*:*
+  - id: 136271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*
+  - id: 136274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.1:*:*:*:*:*:*:*
+  - id: 136272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.10:*:*:*:*:*:*:*
+  - id: 136273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.11:*:*:*:*:*:*:*
+  - id: 156619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.12:*:*:*:*:*:*:*
+  - id: 156620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.13:*:*:*:*:*:*:*
+  - id: 156621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.14:*:*:*:*:*:*:*
+  - id: 156622
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.15:*:*:*:*:*:*:*
+  - id: 156623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.16:*:*:*:*:*:*:*
+  - id: 156624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.17:*:*:*:*:*:*:*
+  - id: 156625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.18:*:*:*:*:*:*:*
+  - id: 156626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.19:*:*:*:*:*:*:*
+  - id: 136275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.2:*:*:*:*:*:*:*
+  - id: 156627
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.20:*:*:*:*:*:*:*
+  - id: 156628
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.21:*:*:*:*:*:*:*
+  - id: 156629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.22:*:*:*:*:*:*:*
+  - id: 156630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.23:*:*:*:*:*:*:*
+  - id: 156631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.24:*:*:*:*:*:*:*
+  - id: 156632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.25:*:*:*:*:*:*:*
+  - id: 156633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.26:*:*:*:*:*:*:*
+  - id: 156634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.27:*:*:*:*:*:*:*
+  - id: 156635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.28:*:*:*:*:*:*:*
+  - id: 416032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.29:*:*:*:*:*:*:*
+  - id: 136276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.3:*:*:*:*:*:*:*
+  - id: 433167
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.30:*:*:*:*:*:*:*
+  - id: 444031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.31:*:*:*:*:*:*:*
+  - id: 433168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.32:*:*:*:*:*:*:*
+  - id: 451652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.33:*:*:*:*:*:*:*
+  - id: 457862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.34:*:*:*:*:*:*:*
+  - id: 473687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.35:*:*:*:*:*:*:*
+  - id: 136277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.4:*:*:*:*:*:*:*
+  - id: 136278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.5:*:*:*:*:*:*:*
+  - id: 136279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.6:*:*:*:*:*:*:*
+  - id: 136280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.7:*:*:*:*:*:*:*
+  - id: 136281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.8:*:*:*:*:*:*:*
+  - id: 136282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:5.5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:5.5.9:*:*:*:*:*:*:*
+  - id: 531618
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6:*:*:*:*:*:*:*
+  - id: 156646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0:*:*:*:*:*:*:*
+  - id: 147752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.0:*:*:*:*:*:*:*
+  - id: 147753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.0:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.0:alpha:*:*:*:*:*:*
+  - id: 147760
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.1:*:*:*:*:*:*:*
+  - id: 147754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.10:*:*:*:*:*:*:*
+  - id: 147755
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.11:*:*:*:*:*:*:*
+  - id: 156636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.12:*:*:*:*:*:*:*
+  - id: 147756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.13:*:*:*:*:*:*:*
+  - id: 147757
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.14:*:*:*:*:*:*:*
+  - id: 156637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.15:*:*:*:*:*:*:*
+  - id: 147758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.16:*:*:*:*:*:*:*
+  - id: 156638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.17:*:*:*:*:*:*:*
+  - id: 147759
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.18:*:*:*:*:*:*:*
+  - id: 156639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.19:*:*:*:*:*:*:*
+  - id: 147761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.1:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.1:alpha:*:*:*:*:*:*
+  - id: 147767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.2:*:*:*:*:*:*:*
+  - id: 147762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.20:*:*:*:*:*:*:*
+  - id: 147763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.24:*:*:*:*:*:*:*
+  - id: 147764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.26:*:*:*:*:*:*:*
+  - id: 423223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.27:*:*:*:*:*:*:*
+  - id: 147765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.28:*:*:*:*:*:*:*
+  - id: 147766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.29:*:*:*:*:*:*:*
+  - id: 147768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.2:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.2:alpha:*:*:*:*:*:*
+  - id: 147769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.2:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.2:beta:*:*:*:*:*:*
+  - id: 156640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.3:*:*:*:*:*:*:*
+  - id: 147770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.30:*:*:*:*:*:*:*
+  - id: 451653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.31:*:*:*:*:*:*:*
+  - id: 147771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.32:*:*:*:*:*:*:*
+  - id: 147772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.33:*:*:*:*:*:*:*
+  - id: 147773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.35:*:*:*:*:*:*:*
+  - id: 147774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:6.0.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:6.0.36:*:*:*:*:*:*:*
+  - id: 433169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.0:*:*:*:*:*:*:*
+  - id: 147782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.0:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.0:beta:*:*:*:*:*:*
+  - id: 433170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.1:*:*:*:*:*:*:*
+  - id: 147783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.10:*:*:*:*:*:*:*
+  - id: 147784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.11:*:*:*:*:*:*:*
+  - id: 147785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.12:*:*:*:*:*:*:*
+  - id: 454845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.13:*:*:*:*:*:*:*
+  - id: 147786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.14:*:*:*:*:*:*:*
+  - id: 457863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.15:*:*:*:*:*:*:*
+  - id: 147787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.16:*:*:*:*:*:*:*
+  - id: 457864
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.17:*:*:*:*:*:*:*
+  - id: 457865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.18:*:*:*:*:*:*:*
+  - id: 147788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.19:*:*:*:*:*:*:*
+  - id: 433171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.2:*:*:*:*:*:*:*
+  - id: 147789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.20:*:*:*:*:*:*:*
+  - id: 147790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.21:*:*:*:*:*:*:*
+  - id: 147791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.22:*:*:*:*:*:*:*
+  - id: 147792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.23:*:*:*:*:*:*:*
+  - id: 513788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.24:*:*:*:*:*:*:*
+  - id: 147793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.25:*:*:*:*:*:*:*
+  - id: 147794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.26:*:*:*:*:*:*:*
+  - id: 147795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.27:*:*:*:*:*:*:*
+  - id: 147796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.28:*:*:*:*:*:*:*
+  - id: 147797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.29:*:*:*:*:*:*:*
+  - id: 147798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.2:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.2:beta:*:*:*:*:*:*
+  - id: 433172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.3:*:*:*:*:*:*:*
+  - id: 147799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.30:*:*:*:*:*:*:*
+  - id: 513789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.31:*:*:*:*:*:*:*
+  - id: 147800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.32:*:*:*:*:*:*:*
+  - id: 147801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.33:*:*:*:*:*:*:*
+  - id: 147802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.34:*:*:*:*:*:*:*
+  - id: 147803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.35:*:*:*:*:*:*:*
+  - id: 513790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.36:*:*:*:*:*:*:*
+  - id: 147804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.37:*:*:*:*:*:*:*
+  - id: 513791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.38:*:*:*:*:*:*:*
+  - id: 147805
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.39:*:*:*:*:*:*:*
+  - id: 436840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.4:*:*:*:*:*:*:*
+  - id: 147806
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.40:*:*:*:*:*:*:*
+  - id: 147807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.41:*:*:*:*:*:*:*
+  - id: 147808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.42:*:*:*:*:*:*:*
+  - id: 513792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.43:*:*:*:*:*:*:*
+  - id: 513793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.44:*:*:*:*:*:*:*
+  - id: 513794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.45:*:*:*:*:*:*:*
+  - id: 513795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.46:*:*:*:*:*:*:*
+  - id: 147810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.4:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.4:beta:*:*:*:*:*:*
+  - id: 147811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:7.0.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:7.0.50:*:*:*:*:*:*:*
+  - id: 147826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc1:*:*:*:*:*:*
+  - id: 531619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc2:*:*:*:*:*:*
+  - id: 147827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc3:*:*:*:*:*:*
+  - id: 534390
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc4:*:*:*:*:*:*
+  - id: 147828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc5:*:*:*:*:*:*
+  - id: 534391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc6:*:*:*:*:*:*
+  - id: 534392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc7:*:*:*:*:*:*
+  - id: 534393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc8:*:*:*:*:*:*
+  - id: 534394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:tomcat:8.0.0:rc9:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:tomcat:8.0.0:rc9:*:*:*:*:*:*
+  - id: 534389
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-4322
+    reference_id: CVE-2013-4322
+  - id: 187236
+    url: https://access.redhat.com/errata/RHSA-2014:0429
+    reference_id: RHSA-2014:0429
+  - id: 187235
+    url: https://access.redhat.com/errata/RHSA-2014:0525
+    reference_id: RHSA-2014:0525
+  - id: 187238
+    url: https://access.redhat.com/errata/RHSA-2014:0526
+    reference_id: RHSA-2014:0526
+  - id: 187239
+    url: https://access.redhat.com/errata/RHSA-2014:0527
+    reference_id: RHSA-2014:0527
+  - id: 187237
+    url: https://access.redhat.com/errata/RHSA-2014:0528
+    reference_id: RHSA-2014:0528
+  - id: 186019
+    url: https://access.redhat.com/errata/RHSA-2014:0686
+    reference_id: RHSA-2014:0686
+weaknesses: []

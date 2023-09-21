@@ -1,0 +1,95 @@
+vulnerability_id: VCID-nzwd-msy3-aaaj
+aliases:
+  - CVE-2020-8831
+summary: Apport creates a world writable lock file with root ownership in the world writable
+  /var/lock/apport directory. If the apport/ directory does not exist (this is not uncommon
+  as /var/lock is a tmpfs), it will create the directory, otherwise it will simply continue
+  execution using the existing directory. This allows for a symlink attack if an attacker were
+  to create a symlink at /var/lock/apport, changing apport's lock file location. This file could
+  then be used to escalate privileges, for example. Fixed in versions 2.20.1-0ubuntu2.23, 2.20.9-0ubuntu7.14,
+  2.20.11-0ubuntu8.8 and 2.20.11-0ubuntu22.
+severities:
+  - id: 699926
+    reference_id: 1459543
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699927
+    reference_id: 1459544
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 699930
+    reference_id: 1459547
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699931
+    reference_id: 1459548
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699928
+    reference_id: 1459545
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699929
+    reference_id: 1459546
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 492852
+    reference_id: 855607
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:N
+  - id: 492850
+    reference_id: 855607
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 1459543
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8831.html
+    reference_id:
+  - id: 1459544
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8831
+    reference_id:
+  - id: 855604
+    url: https://launchpad.net/bugs/1862348
+    reference_id:
+  - id: 1459547
+    url: https://ubuntu.com/security/notices/USN-4315-1
+    reference_id:
+  - id: 1459548
+    url: https://ubuntu.com/security/notices/USN-4315-2
+    reference_id:
+  - id: 855605
+    url: https://usn.ubuntu.com/4315-1/
+    reference_id:
+  - id: 855606
+    url: https://usn.ubuntu.com/4315-2/
+    reference_id:
+  - id: 1459545
+    url: https://usn.ubuntu.com/usn/usn-4315-1
+    reference_id:
+  - id: 1459546
+    url: https://usn.ubuntu.com/usn/usn-4315-2
+    reference_id:
+  - id: 770612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apport_project:apport:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apport_project:apport:-:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 855607
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8831
+    reference_id: CVE-2020-8831
+weaknesses: []

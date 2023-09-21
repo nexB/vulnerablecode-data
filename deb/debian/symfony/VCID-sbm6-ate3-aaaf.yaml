@@ -1,0 +1,93 @@
+vulnerability_id: VCID-sbm6-ate3-aaaf
+aliases:
+  - CVE-2018-14773
+  - GHSA-8wgj-6wx8-h5hq
+summary: |
+  Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')
+  An issue was discovered in Http Foundation in Symfony. It arises from support for a (legacy) IIS header that lets users override the path in the request URL via the `X-Original-URL` or `X-Rewrite-URL` HTTP request header. These headers are designed for IIS support, but it's not verified that the server is in fact running IIS, which means anybody who can send these requests to an application can trigger this. This affects `\Symfony\Component\HttpFoundation\Request::prepareRequestUri()` where `X-Original-URL` and `X_REWRITE_URL` are both used.
+severities:
+  - id: 684621
+    reference_id: 1447147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684622
+    reference_id: 1447148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684623
+    reference_id: 735169
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689771
+    reference_id: '19981'
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 324655
+    reference_id: 735171
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:P/A:N
+  - id: 324653
+    reference_id: 735171
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 707959
+    reference_id: 1471532
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1447147
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14773.html
+    reference_id:
+  - id: 1447148
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14773
+    reference_id:
+  - id: 735168
+    url: https://github.com/symfony/symfony/commit/e447e8b92148ddb3d1956b96638600ec95e08f6b
+    reference_id:
+  - id: 688848
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00009.html
+    reference_id:
+  - id: '19977'
+    url: https://seclists.org/bugtraq/2019/May/21
+    reference_id:
+  - id: 735169
+    url: https://symfony.com/blog/cve-2018-14773-remove-support-for-legacy-and-risky-http-headers
+    reference_id:
+  - id: '19981'
+    url: https://www.debian.org/security/2019/dsa-4441
+    reference_id:
+  - id: 735170
+    url: https://www.drupal.org/SA-CORE-2018-005
+    reference_id:
+  - id: 735166
+    url: http://www.securityfocus.com/bid/104943
+    reference_id:
+  - id: 735167
+    url: http://www.securitytracker.com/id/1041405
+    reference_id:
+  - id: 153240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
+  - id: 492761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 735171
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14773
+    reference_id: CVE-2018-14773
+  - id: 1471532
+    url: https://github.com/advisories/GHSA-8wgj-6wx8-h5hq
+    reference_id: GHSA-8wgj-6wx8-h5hq
+weaknesses: []

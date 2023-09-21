@@ -1,0 +1,38 @@
+vulnerability_id: VCID-tacd-8krx-aaaj
+aliases:
+  - CVE-2022-27114
+summary: There is a vulnerability in htmldoc 1.9.16. In image_load_jpeg function image.cxx when
+  it calls malloc,'img->width' and 'img->height' they are large enough to cause an integer overflow.
+  So, the malloc function may return a heap blosmaller than the expected size, and it will cause
+  a buffer overflow/Address boundary error in the jpeg_read_scanlines function.
+severities:
+  - id: 594454
+    reference_id: 920335
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 594452
+    reference_id: 920335
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 920332
+    url: https://github.com/michaelrsweet/htmldoc/commit/31f780487e5ddc426888638786cdc47631687275
+    reference_id:
+  - id: 920333
+    url: https://github.com/michaelrsweet/htmldoc/issues/471
+    reference_id:
+  - id: 920334
+    url: https://lists.debian.org/debian-lts-announce/2022/05/msg00014.html
+    reference_id:
+  - id: 920336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:htmldoc_project:htmldoc:1.9.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:htmldoc_project:htmldoc:1.9.16:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 920335
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-27114
+    reference_id: CVE-2022-27114
+weaknesses: []

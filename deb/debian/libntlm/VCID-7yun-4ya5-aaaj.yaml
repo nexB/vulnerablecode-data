@@ -1,0 +1,101 @@
+vulnerability_id: VCID-7yun-4ya5-aaaj
+aliases:
+  - CVE-2019-17455
+summary: Libntlm through 1.5 relies on a fixed buffer size for tSmbNtlmAuthRequest, tSmbNtlmAuthChallenge,
+  and tSmbNtlmAuthResponse read and write operations, as demonstrated by a stack-based buffer
+  over-read in buildSmbNtlmAuthRequest in smbutil.c for a crafted NTLM request.
+severities:
+  - id: 70416
+    reference_id: 200529
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 70415
+    reference_id: 200528
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 391740
+    reference_id: 786140
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 391738
+    reference_id: 786140
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 786130
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00029.html
+    reference_id:
+  - id: 786131
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00032.html
+    reference_id:
+  - id: 200529
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17455.json
+    reference_id:
+  - id: 786132
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=942145
+    reference_id:
+  - id: 786133
+    url: https://gitlab.com/jas/libntlm/issues/2
+    reference_id:
+  - id: 786134
+    url: https://lists.debian.org/debian-lts-announce/2020/05/msg00010.html
+    reference_id:
+  - id: 786135
+    url: https://lists.debian.org/debian-lts-announce/2021/11/msg00026.html
+    reference_id:
+  - id: 786136
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3BVFO3OVJPMSGIXBKNOCVOJZ3UTGZQF5/
+    reference_id:
+  - id: 786137
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YZ5YWYNOJ5HMCKAHWLTY4MXZQWJJCBI7/
+    reference_id:
+  - id: 786138
+    url: https://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-17455.html
+    reference_id:
+  - id: 786139
+    url: https://security-tracker.debian.org/tracker/CVE-2019-17455
+    reference_id:
+  - id: 200528
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1768463
+    reference_id: 1768463
+  - id: 786141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nongnu:libntlm:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nongnu:libntlm:*:*:*:*:*:*:*:*
+  - id: 745202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:opensuse:backports_sle:15.0:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:opensuse:backports_sle:15.0:sp1:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 786140
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17455
+    reference_id: CVE-2019-17455
+weaknesses: []

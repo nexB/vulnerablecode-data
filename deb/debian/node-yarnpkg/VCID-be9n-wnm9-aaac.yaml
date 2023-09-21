@@ -1,0 +1,59 @@
+vulnerability_id: VCID-be9n-wnm9-aaac
+aliases:
+  - CVE-2019-15608
+  - GHSA-hjxc-462x-x77j
+summary: |
+  Time-of-check Time-of-use (TOCTOU) Race Condition
+  The package integrity validation in yarn contains a TOCTOU vulnerability where the hash is computed before writing a package to cache. It's not computed again when reading from the cache. This may lead to a cache pollution attack.
+severities:
+  - id: 54406
+    reference_id: 179598
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:N
+  - id: 54405
+    reference_id: 179597
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 385767
+    reference_id: 32934
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 385765
+    reference_id: 32934
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 706044
+    reference_id: 1467518
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 179598
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-15608.json
+    reference_id:
+  - id: 781186
+    url: https://github.com/yarnpkg/yarn/blob/master/CHANGELOG.md#1190
+    reference_id:
+  - id: 781187
+    url: https://github.com/yarnpkg/yarn/commit/0474b8c66a8ea298f5e4dedc67b2de464297ad1c
+    reference_id:
+  - id: 781188
+    url: https://hackerone.com/reports/703138
+    reference_id:
+  - id: 179597
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1851875
+    reference_id: 1851875
+  - id: 768315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yarnpkg:yarn:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yarnpkg:yarn:*:*:*:*:*:*:*:*
+  - id: 32934
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-15608
+    reference_id: CVE-2019-15608
+  - id: 1467518
+    url: https://github.com/advisories/GHSA-hjxc-462x-x77j
+    reference_id: GHSA-hjxc-462x-x77j
+weaknesses: []

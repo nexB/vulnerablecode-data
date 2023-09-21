@@ -1,0 +1,21 @@
+affected_purls:
+- pkg:deb/debian/modsecurity@3.0.3-1%2Bdeb10u2
+- pkg:deb/debian/modsecurity@3.0.4-2
+aliases:
+- CVE-2021-42717
+fixed_purl:
+- pkg:deb/debian/modsecurity@3.0.8-1
+- pkg:deb/debian/modsecurity-apache@2.9.3-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/modsecurity-apache@2.9.3-3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/modsecurity-apache@2.9.5-1?distro=sid
+- pkg:deb/debian/modsecurity-apache@2.9.7-1?distro=sid
+references: []
+severities: []
+summary: 'ModSecurity 3.x through 3.0.5 mishandles excessively nested JSON objects.
+  Crafted JSON objects with nesting tens-of-thousands deep could result in the web
+  server being unable to service legitimate requests. Even a moderately large (e.g.,
+  300KB) HTTP request can occupy one of the limited NGINX worker processes for minutes
+  and consume almost all of the available CPU on the machine. Modsecurity 2 is similarly
+  vulnerable: the affected versions include 2.8.0 through 2.9.4.'
+vulnerability_id: VCID-765b-928a-aaap
+weaknesses: []

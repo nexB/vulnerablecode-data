@@ -1,0 +1,40 @@
+vulnerability_id: VCID-9peg-m9e7-aaap
+aliases:
+  - CVE-2023-22742
+  - GHSA-8643-3wh5-rmjq
+summary: libgit2 is a cross-platform, linkable library implementation of Git. When using an
+  SSH remote with the optional libssh2 backend, libgit2 does not perform certificate checking
+  by default. Prior versions of libgit2 require the caller to set the `certificate_check` field
+  of libgit2's `git_remote_callbacks` structure - if a certificate check callback is not set,
+  libgit2 does not perform any certificate checking. This means that by default - without configuring
+  a certificate check callback, clients will not perform validation on the server SSH keys and
+  may be subject to a man-in-the-middle attack. Users are encouraged to upgrade to v1.4.5 or
+  v1.5.1. Users unable to upgrade should ensure that all relevant certificates are manually
+  checked.
+severities: []
+references:
+  - id: 1471908
+    url: https://github.com/libgit2/libgit2/commit/42e5db98b963ae503229c63e44e06e439df50e56
+    reference_id:
+  - id: 1471911
+    url: https://github.com/libgit2/libgit2/commit/cd6f679af401eda1f172402006ef8265f8bd58ea
+    reference_id:
+  - id: 1471912
+    url: https://github.com/libgit2/libgit2/releases/tag/v1.4.5
+    reference_id:
+  - id: 1471909
+    url: https://github.com/libgit2/libgit2/releases/tag/v1.5.1
+    reference_id:
+  - id: 1471913
+    url: https://www.libssh2.org
+    reference_id:
+  - id: 1470683
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1029368
+    reference_id: 1029368
+  - id: 1471907
+    url: https://nvd.nist.gov/vuln/detail/CVE-2023-22742
+    reference_id: CVE-2023-22742
+  - id: 1471910
+    url: https://github.com/libgit2/libgit2/security/advisories/GHSA-8643-3wh5-rmjq
+    reference_id: GHSA-8643-3wh5-rmjq
+weaknesses: []

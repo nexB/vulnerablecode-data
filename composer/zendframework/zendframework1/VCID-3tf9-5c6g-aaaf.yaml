@@ -1,0 +1,12 @@
+vulnerability_id: VCID-3tf9-5c6g-aaaf
+aliases:
+  - GMS-2015-49
+summary: |
+  Potential Information Disclosure and Insufficient Entropy in Zend\Captcha\Word
+  Zend generates a "word" for a CAPTCHA challenge by selecting a sequence of random letters from a character set. The selection is performed using PHP's internal `array_rand()` function. This function does not generate sufficient entropy due to its usage of `rand()` instead of more cryptographically secure methods such as `openssl_pseudo_random_bytes()`. This can potentially lead to information disclosure should an attacker be able to brute force the random number generation.
+severities: []
+references:
+  - id: 24815
+    url: http://framework.zend.com/security/advisory/ZF2015-09
+    reference_id:
+weaknesses: []

@@ -1,0 +1,67 @@
+vulnerability_id: VCID-76fh-7534-aaac
+aliases:
+  - CVE-2020-25665
+summary: The PALM image coder at coders/palm.c makes an improper call to AcquireQuantumMemory()
+  in routine WritePALMImage() because it needs to be offset by 256. This can cause a out-of-bounds
+  read later on in the routine. The patch adds 256 to bytes_per_row in the call to AcquireQuantumMemory().
+  This could cause impact to reliability. This flaw affects ImageMagick versions prior to 7.0.8-68.
+severities:
+  - id: 697751
+    reference_id: 1457681
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 70952
+    reference_id: 201257
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 697752
+    reference_id: 1457682
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675474
+    reference_id: 1440222
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 462070
+    reference_id: 834106
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 462068
+    reference_id: 834106
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1457681
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-25665.html
+    reference_id:
+  - id: 201257
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25665.json
+    reference_id:
+  - id: 834105
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1891606
+    reference_id:
+  - id: 1457682
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25665
+    reference_id:
+  - id: 682824
+    url: https://lists.debian.org/debian-lts-announce/2021/01/msg00010.html
+    reference_id:
+  - id: 1440222
+    url: https://ubuntu.com/security/notices/USN-4988-1
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 834106
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25665
+    reference_id: CVE-2020-25665
+weaknesses: []

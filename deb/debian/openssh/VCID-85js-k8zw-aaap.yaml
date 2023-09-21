@@ -1,0 +1,664 @@
+vulnerability_id: VCID-85js-k8zw-aaap
+aliases:
+  - CVE-2008-5161
+summary: Error handling in the SSH protocol in (1) SSH Tectia Client and Server and Connector
+  4.0 through 4.4.11, 5.0 through 5.2.4, and 5.3 through 5.3.8; Client and Server and ConnectSecure
+  6.0 through 6.0.4; Server for Linux on IBM System z 6.0.4; Server for IBM z/OS 5.5.1 and earlier,
+  6.0.0, and 6.0.1; and Client 4.0-J through 4.3.3-J and 4.0-K through 4.3.10-K; and (2) OpenSSH
+  4.7p1 and possibly other versions, when using a block cipher algorithm in Cipher Block Chaining
+  (CBC) mode, makes it easier for remote attackers to recover certain plaintext data from an
+  arbitrary block of ciphertext in an SSH session via unknown vectors.
+severities:
+  - id: 73665
+    reference_id: 204424
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 117642
+    reference_id: 364234
+    scoring_system: cvssv2
+    value: '2.6'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:N/A:N
+  - id: 73666
+    reference_id: 204425
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 364200
+    url: http://isc.sans.org/diary.html?storyid=5366
+    reference_id:
+  - id: 44897
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    reference_id:
+  - id: 148476
+    url: http://lists.apple.com/archives/security-announce/2009/Nov/msg00000.html
+    reference_id:
+  - id: 156421
+    url: http://marc.info/?l=bugtraq&m=125017764422557&w=2
+    reference_id:
+  - id: 364201
+    url: http://openssh.org/txt/cbc.adv
+    reference_id:
+  - id: 364202
+    url: http://osvdb.org/49872
+    reference_id:
+  - id: 364203
+    url: http://osvdb.org/50035
+    reference_id:
+  - id: 364204
+    url: http://osvdb.org/50036
+    reference_id:
+  - id: 364205
+    url: http://rhn.redhat.com/errata/RHSA-2009-1287.html
+    reference_id:
+  - id: 204426
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2008-5161.json
+    reference_id:
+  - id: 364206
+    url: http://secunia.com/advisories/32740
+    reference_id:
+  - id: 364207
+    url: http://secunia.com/advisories/32760
+    reference_id:
+  - id: 364208
+    url: http://secunia.com/advisories/32833
+    reference_id:
+  - id: 364209
+    url: http://secunia.com/advisories/33121
+    reference_id:
+  - id: 364210
+    url: http://secunia.com/advisories/33308
+    reference_id:
+  - id: 364211
+    url: http://secunia.com/advisories/34857
+    reference_id:
+  - id: 364212
+    url: http://secunia.com/advisories/36558
+    reference_id:
+  - id: 364230
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/46620
+    reference_id:
+  - id: 161196
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05157667
+    reference_id:
+  - id: 364231
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10106
+    reference_id:
+  - id: 364232
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10163
+    reference_id:
+  - id: 364233
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11279
+    reference_id:
+  - id: 364213
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-247186-1
+    reference_id:
+  - id: 148494
+    url: http://support.apple.com/kb/HT3937
+    reference_id:
+  - id: 364214
+    url: http://support.attachmate.com/techdocs/2398.html
+    reference_id:
+  - id: 364215
+    url: http://support.avaya.com/elmodocs2/security/ASA-2008-503.htm
+    reference_id:
+  - id: 364216
+    url: http://www.cpni.gov.uk/Docs/Vulnerability_Advisory_SSH.txt
+    reference_id:
+  - id: 364217
+    url: http://www.kb.cert.org/vuls/id/958563
+    reference_id:
+  - id: 364218
+    url: http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/CPNI957037.html
+    reference_id:
+  - id: 364219
+    url: http://www.securityfocus.com/archive/1/498558/100/0/threaded
+    reference_id:
+  - id: 364220
+    url: http://www.securityfocus.com/archive/1/498579/100/0/threaded
+    reference_id:
+  - id: 364221
+    url: http://www.securityfocus.com/bid/32319
+    reference_id:
+  - id: 364222
+    url: http://www.securitytracker.com/id?1021235
+    reference_id:
+  - id: 364223
+    url: http://www.securitytracker.com/id?1021236
+    reference_id:
+  - id: 364224
+    url: http://www.securitytracker.com/id?1021382
+    reference_id:
+  - id: 364225
+    url: http://www.ssh.com/company/news/article/953/
+    reference_id:
+  - id: 364226
+    url: http://www.vupen.com/english/advisories/2008/3172
+    reference_id:
+  - id: 364227
+    url: http://www.vupen.com/english/advisories/2008/3173
+    reference_id:
+  - id: 364228
+    url: http://www.vupen.com/english/advisories/2008/3409
+    reference_id:
+  - id: 364229
+    url: http://www.vupen.com/english/advisories/2009/1135
+    reference_id:
+  - id: 148513
+    url: http://www.vupen.com/english/advisories/2009/3184
+    reference_id:
+  - id: 204424
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=472068
+    reference_id: 472068
+  - id: 88818
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=506115
+    reference_id: 506115
+  - id: 364235
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*
+  - id: 249975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.0:*:*:*:*:*:*:*
+  - id: 249971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.0.1:*:*:*:*:*:*:*
+  - id: 249972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.0.3:*:*:*:*:*:*:*
+  - id: 249973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.0.4:*:*:*:*:*:*:*
+  - id: 249974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.0.5:*:*:*:*:*:*:*
+  - id: 249977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.2:*:*:*:*:*:*:*
+  - id: 249976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.2.1:*:*:*:*:*:*:*
+  - id: 249987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3:*:*:*:*:*:*:*
+  - id: 249978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.1:*:*:*:*:*:*:*
+  - id: 249979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.1j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.1j:*:*:*:*:*:*:*
+  - id: 249980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.2:*:*:*:*:*:*:*
+  - id: 364236
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.2j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.2j:*:*:*:*:*:*:*
+  - id: 249981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.3:*:*:*:*:*:*:*
+  - id: 249982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.4:*:*:*:*:*:*:*
+  - id: 249983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.5:*:*:*:*:*:*:*
+  - id: 249984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.6:*:*:*:*:*:*:*
+  - id: 249985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.7:*:*:*:*:*:*:*
+  - id: 249986
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.8k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.8k:*:*:*:*:*:*:*
+  - id: 364237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.3.9k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.3.9k:*:*:*:*:*:*:*
+  - id: 249993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4:*:*:*:*:*:*:*
+  - id: 249988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.1:*:*:*:*:*:*:*
+  - id: 364238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.10:*:*:*:*:*:*:*
+  - id: 364239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.11:*:*:*:*:*:*:*
+  - id: 249989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.2:*:*:*:*:*:*:*
+  - id: 249990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.3:*:*:*:*:*:*:*
+  - id: 249991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.4:*:*:*:*:*:*:*
+  - id: 364240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.6:*:*:*:*:*:*:*
+  - id: 364241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.7:*:*:*:*:*:*:*
+  - id: 364242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.8:*:*:*:*:*:*:*
+  - id: 364243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:4.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:4.4.9:*:*:*:*:*:*:*
+  - id: 364244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.0:*:*:*:*:*:*:*
+  - id: 364245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.0f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.0f:*:*:*:*:*:*:*
+  - id: 249994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.1:*:*:*:*:*:*:*
+  - id: 364246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.1f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.1f:*:*:*:*:*:*:*
+  - id: 364247
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.2:*:*:*:*:*:*:*
+  - id: 364248
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.2f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.2f:*:*:*:*:*:*:*
+  - id: 364249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.3:*:*:*:*:*:*:*
+  - id: 364250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.0.3f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.0.3f:*:*:*:*:*:*:*
+  - id: 364251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.1.0:*:*:*:*:*:*:*
+  - id: 364252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.1.1:*:*:*:*:*:*:*
+  - id: 364253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.1.2:*:*:*:*:*:*:*
+  - id: 364254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.1.3:*:*:*:*:*:*:*
+  - id: 364255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.2.0:*:*:*:*:*:*:*
+  - id: 364256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.2.1:*:*:*:*:*:*:*
+  - id: 364257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.2.2:*:*:*:*:*:*:*
+  - id: 364258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.2.3:*:*:*:*:*:*:*
+  - id: 364259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.2.4:*:*:*:*:*:*:*
+  - id: 364260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.0:*:*:*:*:*:*:*
+  - id: 364261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.1:*:*:*:*:*:*:*
+  - id: 364262
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.2:*:*:*:*:*:*:*
+  - id: 364263
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.3:*:*:*:*:*:*:*
+  - id: 364264
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.5:*:*:*:*:*:*:*
+  - id: 364265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.6:*:*:*:*:*:*:*
+  - id: 364266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.7:*:*:*:*:*:*:*
+  - id: 364267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:5.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:5.3.8:*:*:*:*:*:*:*
+  - id: 364268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:6.0.0:*:*:*:*:*:*:*
+  - id: 364269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:6.0.1:*:*:*:*:*:*:*
+  - id: 364270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:6.0.2:*:*:*:*:*:*:*
+  - id: 364271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:6.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:6.0.3:*:*:*:*:*:*:*
+  - id: 364272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_client:6.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_client:6.0.4:*:*:*:*:*:*:*
+  - id: 364273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.0.7:*:*:*:*:*:*:*
+  - id: 364274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.1.2:*:*:*:*:*:*:*
+  - id: 364275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.1.3:*:*:*:*:*:*:*
+  - id: 364276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.1.5:*:*:*:*:*:*:*
+  - id: 364277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.2.0:*:*:*:*:*:*:*
+  - id: 364278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.3.0:*:*:*:*:*:*:*
+  - id: 364279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.3.4:*:*:*:*:*:*:*
+  - id: 364280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.3.5:*:*:*:*:*:*:*
+  - id: 364281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.0:*:*:*:*:*:*:*
+  - id: 364282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.10:*:*:*:*:*:*:*
+  - id: 364283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.2:*:*:*:*:*:*:*
+  - id: 364284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.4:*:*:*:*:*:*:*
+  - id: 364285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.6:*:*:*:*:*:*:*
+  - id: 364286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.7:*:*:*:*:*:*:*
+  - id: 364287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:4.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:4.4.9:*:*:*:*:*:*:*
+  - id: 364288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.0.0:*:*:*:*:*:*:*
+  - id: 249996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.0.1:*:*:*:*:*:*:*
+  - id: 364289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.0.2:*:*:*:*:*:*:*
+  - id: 364290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.0.3:*:*:*:*:*:*:*
+  - id: 364291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.1.0:*:*:*:*:*:*:*
+  - id: 364292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.1.1:*:*:*:*:*:*:*
+  - id: 364293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.1.2:*:*:*:*:*:*:*
+  - id: 364294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.1.3:*:*:*:*:*:*:*
+  - id: 364295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.2.2:*:*:*:*:*:*:*
+  - id: 364296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.0:*:*:*:*:*:*:*
+  - id: 364297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.1:*:*:*:*:*:*:*
+  - id: 364298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.2:*:*:*:*:*:*:*
+  - id: 364299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.3:*:*:*:*:*:*:*
+  - id: 364300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.7:*:*:*:*:*:*:*
+  - id: 364301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connector:5.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connector:5.3.8:*:*:*:*:*:*:*
+  - id: 364302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connectsecure:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connectsecure:6.0.0:*:*:*:*:*:*:*
+  - id: 364303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connectsecure:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connectsecure:6.0.1:*:*:*:*:*:*:*
+  - id: 364304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connectsecure:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connectsecure:6.0.2:*:*:*:*:*:*:*
+  - id: 364305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connectsecure:6.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connectsecure:6.0.3:*:*:*:*:*:*:*
+  - id: 364306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_connectsecure:6.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_connectsecure:6.0.4:*:*:*:*:*:*:*
+  - id: 250002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.0:*:*:*:*:*:*:*
+  - id: 86825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.0.3:*:*:*:*:*:*:*
+  - id: 86826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.0.4:*:*:*:*:*:*:*
+  - id: 250001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.0.5:*:*:*:*:*:*:*
+  - id: 364307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.0.7:*:*:*:*:*:*:*
+  - id: 364308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.1.2:*:*:*:*:*:*:*
+  - id: 364309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.1.3:*:*:*:*:*:*:*
+  - id: 364310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.1.5:*:*:*:*:*:*:*
+  - id: 364311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.2.0:*:*:*:*:*:*:*
+  - id: 250003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.2.1:*:*:*:*:*:*:*
+  - id: 364312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.2.2:*:*:*:*:*:*:*
+  - id: 250010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3:*:*:*:*:*:*:*
+  - id: 364313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.0:*:*:*:*:*:*:*
+  - id: 125541
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.1:*:*:*:*:*:*:*
+  - id: 250004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.2:*:*:*:*:*:*:*
+  - id: 250005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.3:*:*:*:*:*:*:*
+  - id: 250006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.4:*:*:*:*:*:*:*
+  - id: 250007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.5:*:*:*:*:*:*:*
+  - id: 250008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.6:*:*:*:*:*:*:*
+  - id: 250009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.3.7:*:*:*:*:*:*:*
+  - id: 250015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4:*:*:*:*:*:*:*
+  - id: 364314
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.0:*:*:*:*:*:*:*
+  - id: 364317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.1:*:*:*:*:*:*:*
+  - id: 364315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.10:*:*:*:*:*:*:*
+  - id: 364316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.11:*:*:*:*:*:*:*
+  - id: 250011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.2:*:*:*:*:*:*:*
+  - id: 250013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.4:*:*:*:*:*:*:*
+  - id: 250014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.5:*:*:*:*:*:*:*
+  - id: 364318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.6:*:*:*:*:*:*:*
+  - id: 364319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.7:*:*:*:*:*:*:*
+  - id: 364320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.8:*:*:*:*:*:*:*
+  - id: 364321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:4.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:4.4.9:*:*:*:*:*:*:*
+  - id: 364322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.0.0:*:*:*:*:*:*:*
+  - id: 250016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.0.1:*:*:*:*:*:*:*
+  - id: 364323
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.0.2:*:*:*:*:*:*:*
+  - id: 364324
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.0.3:*:*:*:*:*:*:*
+  - id: 364325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.1.0:*:*:*:*:*:*:*
+  - id: 364326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.1.1:*:*:*:*:*:*:*
+  - id: 364327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.1.1:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.1.1:*:ibm_zos:*:*:*:*:*
+  - id: 364328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.1.2:*:*:*:*:*:*:*
+  - id: 364329
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.1.3:*:*:*:*:*:*:*
+  - id: 364330
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.0:*:*:*:*:*:*:*
+  - id: 286017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.0:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.0:*:ibm_zos:*:*:*:*:*
+  - id: 364331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.1:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.1:*:ibm_zos:*:*:*:*:*
+  - id: 364332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.2:*:*:*:*:*:*:*
+  - id: 364333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.2:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.2:*:ibm_zos:*:*:*:*:*
+  - id: 364334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.3:*:*:*:*:*:*:*
+  - id: 364335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.2.4:*:*:*:*:*:*:*
+  - id: 364336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.0:*:*:*:*:*:*:*
+  - id: 364337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.0:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.0:*:ibm_zos:*:*:*:*:*
+  - id: 364338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.1:*:*:*:*:*:*:*
+  - id: 364339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.2:*:*:*:*:*:*:*
+  - id: 364340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.3:*:*:*:*:*:*:*
+  - id: 364341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.4:*:*:*:*:*:*:*
+  - id: 364342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.5:*:*:*:*:*:*:*
+  - id: 364343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.6:*:*:*:*:*:*:*
+  - id: 364344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.7:*:*:*:*:*:*:*
+  - id: 364345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.3.8:*:*:*:*:*:*:*
+  - id: 364346
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.4.0:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.4.0:*:ibm_zos:*:*:*:*:*
+  - id: 364347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.4.1:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.4.1:*:ibm_zos:*:*:*:*:*
+  - id: 364348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.4.2:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.4.2:*:ibm_zos:*:*:*:*:*
+  - id: 364349
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.5.0:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.5.0:*:ibm_zos:*:*:*:*:*
+  - id: 364350
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:5.5.1:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:5.5.1:*:ibm_zos:*:*:*:*:*
+  - id: 364351
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.0:*:*:*:*:*:*:*
+  - id: 364352
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.0:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.0:*:ibm_zos:*:*:*:*:*
+  - id: 364353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.1:*:*:*:*:*:*:*
+  - id: 364354
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.1:*:ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.1:*:ibm_zos:*:*:*:*:*
+  - id: 364355
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.2:*:*:*:*:*:*:*
+  - id: 364356
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.3:*:*:*:*:*:*:*
+  - id: 364357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.4:*:*:*:*:*:*:*
+  - id: 364358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ssh:tectia_server:6.0.4:*:linux_ibm_zos:*:*:*:*:*
+    reference_id: cpe:2.3:a:ssh:tectia_server:6.0.4:*:linux_ibm_zos:*:*:*:*:*
+  - id: 364234
+    url: https://nvd.nist.gov/vuln/detail/CVE-2008-5161
+    reference_id: CVE-2008-5161
+  - id: 204425
+    url: https://access.redhat.com/errata/RHSA-2009:1287
+    reference_id: RHSA-2009:1287
+weaknesses: []

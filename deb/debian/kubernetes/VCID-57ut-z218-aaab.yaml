@@ -1,0 +1,64 @@
+vulnerability_id: VCID-57ut-z218-aaab
+aliases:
+  - CVE-2019-1002100
+summary: 'In all Kubernetes versions prior to v1.11.8, v1.12.6, and v1.13.4, users that are
+  authorized to make patch requests to the Kubernetes API Server can send a specially crafted
+  patch of type "json-patch" (e.g. `kubectl patch --type json` or `"Content-Type: application/json-patch+json"`)
+  that consumes excessive resources while processing, causing a Denial of Service on the API
+  Server.'
+severities:
+  - id: 612841
+    reference_id: 933436
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 612840
+    reference_id: 933435
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 365568
+    reference_id: 765195
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 365566
+    reference_id: 765195
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 765190
+    url: https://access.redhat.com/errata/RHSA-2019:1851
+    reference_id:
+  - id: 765191
+    url: https://access.redhat.com/errata/RHSA-2019:3239
+    reference_id:
+  - id: 933436
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-1002100.json
+    reference_id:
+  - id: 765192
+    url: https://github.com/kubernetes/kubernetes/issues/74534
+    reference_id:
+  - id: 765193
+    url: https://groups.google.com/forum/#!topic/kubernetes-announce/vmUUNkYfG9g
+    reference_id:
+  - id: 765194
+    url: https://security.netapp.com/advisory/ntap-20190416-0002/
+    reference_id:
+  - id: 765189
+    url: http://www.securityfocus.com/bid/107290
+    reference_id:
+  - id: 933435
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1683190
+    reference_id: 1683190
+  - id: 42764
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923686
+    reference_id: 923686
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 765195
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-1002100
+    reference_id: CVE-2019-1002100
+weaknesses: []

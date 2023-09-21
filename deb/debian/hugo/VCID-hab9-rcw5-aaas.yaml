@@ -1,0 +1,35 @@
+vulnerability_id: VCID-hab9-rcw5-aaas
+aliases:
+  - CVE-2020-26284
+summary: Hugo is a fast and Flexible Static Site Generator built in Go. Hugo depends on Go's
+  `os/exec` for certain features, e.g. for rendering of Pandoc documents if these binaries are
+  found in the system `%PATH%` on Windows. In Hugo before version 0.79.1, if a malicious file
+  with the same name (`exe` or `bat`) is found in the current working directory at the time
+  of running `hugo`, the malicious command will be invoked instead of the system one. Windows
+  users who run `hugo` inside untrusted Hugo sites are affected. Users should upgrade to Hugo
+  v0.79.1. Other than avoiding untrusted Hugo sites, there is no workaround.
+severities:
+  - id: 463991
+    reference_id: 835473
+    scoring_system: cvssv2
+    value: '8.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:C/I:C/A:C
+  - id: 463989
+    reference_id: 835473
+    scoring_system: cvssv3
+    value: '8.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 835471
+    url: https://github.com/gohugoio/hugo/security/advisories/GHSA-8j34-9876-pvfq
+    reference_id:
+  - id: 835472
+    url: https://github.com/golang/go/issues/38736
+    reference_id:
+  - id: 835474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gohugo:hugo:*:*:*:*:*:windows:*:*
+    reference_id: cpe:2.3:a:gohugo:hugo:*:*:*:*:*:windows:*:*
+  - id: 835473
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-26284
+    reference_id: CVE-2020-26284
+weaknesses: []

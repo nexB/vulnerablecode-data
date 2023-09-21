@@ -1,0 +1,113 @@
+vulnerability_id: VCID-5dtc-vqud-aaah
+aliases:
+  - CVE-2015-4170
+summary: Race condition in the ldsem_cmpxchg function in drivers/tty/tty_ldsem.c in the Linux
+  kernel before 3.13-rc4-next-20131218 allows local users to cause a denial of service (ldsem_down_read
+  and ldsem_down_write deadlock) by establishing a new tty thread during shutdown of a previous
+  tty thread.
+severities:
+  - id: 662096
+    reference_id: 1429344
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662099
+    reference_id: 1429346
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662097
+    reference_id: 609457
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662098
+    reference_id: 1429345
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 200692
+    reference_id: 609463
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:C
+  - id: 200690
+    reference_id: 609463
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 51415
+    reference_id: 176093
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53107
+    reference_id: 178101
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 609456
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=cf872776fc84128bb779ce2b83a37c884c3203ae
+    reference_id:
+  - id: 1429344
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-4170.html
+    reference_id:
+  - id: 609459
+    url: https://access.redhat.com/errata/RHSA-2016:1395
+    reference_id:
+  - id: 182830
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-4170.json
+    reference_id:
+  - id: 609460
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1218879
+    reference_id:
+  - id: 1429346
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4170
+    reference_id:
+  - id: 609461
+    url: https://github.com/torvalds/linux/commit/cf872776fc84128bb779ce2b83a37c884c3203ae
+    reference_id:
+  - id: 609462
+    url: https://www.kernel.org/pub/linux/kernel/next/patch-v3.13-rc4-next-20131218.xz
+    reference_id:
+  - id: 609457
+    url: http://www.openwall.com/lists/oss-security/2015/05/26/1
+    reference_id:
+  - id: 1429345
+    url: http://www.openwall.com/lists/oss-security/2015/06/03/2
+    reference_id:
+  - id: 27563
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    reference_id:
+  - id: 609458
+    url: http://www.securityfocus.com/bid/74820
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 606464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_compute_node_eus:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_compute_node_eus:7.1:*:*:*:*:*:*:*
+  - id: 609464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_for_ibm_z_systems_eus:7.1_s390x:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_for_ibm_z_systems_eus:7.1_s390x:*:*:*:*:*:*:*
+  - id: 606472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_for_power_big_endian_eus:7.1_ppc64:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_for_power_big_endian_eus:7.1_ppc64:*:*:*:*:*:*:*
+  - id: 609465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_for_power_little_endian_eus:7.1_ppc64le:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_for_power_little_endian_eus:7.1_ppc64le:*:*:*:*:*:*:*
+  - id: 158536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.1:*:*:*:*:*:*:*
+  - id: 609463
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-4170
+    reference_id: CVE-2015-4170
+  - id: 176093
+    url: https://access.redhat.com/errata/RHSA-2015:2152
+    reference_id: RHSA-2015:2152
+  - id: 178101
+    url: https://access.redhat.com/errata/RHSA-2015:2411
+    reference_id: RHSA-2015:2411
+weaknesses: []

@@ -1,0 +1,323 @@
+vulnerability_id: VCID-yys5-r1et-aaar
+aliases:
+  - CVE-2010-0542
+summary: The _WriteProlog function in texttops.c in texttops in the Text Filter subsystem in
+  CUPS before 1.4.4 does not check the return values of certain calloc calls, which allows remote
+  attackers to cause a denial of service (NULL pointer dereference or heap memory corruption)
+  or possibly execute arbitrary code via a crafted file.
+severities:
+  - id: 130524
+    reference_id: 412233
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 69962
+    reference_id: '199880'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 410746
+    url: http://cups.org/articles.php?L596
+    reference_id:
+  - id: 412228
+    url: http://cups.org/strfiles/3516/str3516.patch
+    reference_id:
+  - id: 412227
+    url: http://cups.org/str.php?L3516
+    reference_id:
+  - id: 323374
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-12/msg00000.html
+    reference_id:
+  - id: '199881'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-0542.json
+    reference_id:
+  - id: 412231
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=587746
+    reference_id:
+  - id: 323378
+    url: http://secunia.com/advisories/43521
+    reference_id:
+  - id: 323379
+    url: http://security.gentoo.org/glsa/glsa-201207-10.xml
+    reference_id:
+  - id: 412229
+    url: http://securitytracker.com/id?1024121
+    reference_id:
+  - id: 412232
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10365
+    reference_id:
+  - id: 323382
+    url: http://www.debian.org/security/2011/dsa-2176
+    reference_id:
+  - id: 323383
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:232
+    reference_id:
+  - id: 323385
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:234
+    reference_id:
+  - id: 412230
+    url: http://www.securityfocus.com/bid/40943
+    reference_id:
+  - id: 323394
+    url: http://www.vupen.com/english/advisories/2011/0535
+    reference_id:
+  - id: 296711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:*:*:*:*:*:*:*:*
+  - id: 322845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1:*:*:*:*:*:*:*
+  - id: 322815
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.1:*:*:*:*:*:*:*
+  - id: 322800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.10:*:*:*:*:*:*:*
+  - id: 322799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.10-1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.10-1:*:*:*:*:*:*:*
+  - id: 322801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.11:*:*:*:*:*:*:*
+  - id: 322802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.12:*:*:*:*:*:*:*
+  - id: 322803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.13:*:*:*:*:*:*:*
+  - id: 322804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.14:*:*:*:*:*:*:*
+  - id: 322805
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.15:*:*:*:*:*:*:*
+  - id: 322806
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.16:*:*:*:*:*:*:*
+  - id: 322807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.17:*:*:*:*:*:*:*
+  - id: 322808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.18:*:*:*:*:*:*:*
+  - id: 322809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:*:*:*:*:*:*:*
+  - id: 322810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:rc1:*:*:*:*:*:*
+  - id: 322811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:rc2:*:*:*:*:*:*
+  - id: 322812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:rc3:*:*:*:*:*:*
+  - id: 322813
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:rc4:*:*:*:*:*:*
+  - id: 322814
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.19:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.19:rc5:*:*:*:*:*:*
+  - id: 322831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.2:*:*:*:*:*:*:*
+  - id: 322816
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:*:*:*:*:*:*:*
+  - id: 322817
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc1:*:*:*:*:*:*
+  - id: 322818
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc2:*:*:*:*:*:*
+  - id: 322819
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc3:*:*:*:*:*:*
+  - id: 322820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc4:*:*:*:*:*:*
+  - id: 322821
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc5:*:*:*:*:*:*
+  - id: 322822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.20:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.20:rc6:*:*:*:*:*:*
+  - id: 322823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.21:*:*:*:*:*:*:*
+  - id: 322824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.21:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.21:rc1:*:*:*:*:*:*
+  - id: 322825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.21:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.21:rc2:*:*:*:*:*:*
+  - id: 322826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.22:*:*:*:*:*:*:*
+  - id: 322827
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.22:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.22:rc1:*:*:*:*:*:*
+  - id: 322828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.22:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.22:rc2:*:*:*:*:*:*
+  - id: 322829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.23:*:*:*:*:*:*:*
+  - id: 322830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.23:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.23:rc1:*:*:*:*:*:*
+  - id: 322832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.3:*:*:*:*:*:*:*
+  - id: 322833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.4:*:*:*:*:*:*:*
+  - id: 322836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.5:*:*:*:*:*:*:*
+  - id: 322834
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.5-1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.5-1:*:*:*:*:*:*:*
+  - id: 322835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.5-2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.5-2:*:*:*:*:*:*:*
+  - id: 322840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.6:*:*:*:*:*:*:*
+  - id: 322837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.6-1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.6-1:*:*:*:*:*:*:*
+  - id: 322838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.6-2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.6-2:*:*:*:*:*:*:*
+  - id: 322839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.6-3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.6-3:*:*:*:*:*:*:*
+  - id: 322841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.7:*:*:*:*:*:*:*
+  - id: 322842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.8:*:*:*:*:*:*:*
+  - id: 322844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.9:*:*:*:*:*:*:*
+  - id: 322843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.1.9-1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.1.9-1:*:*:*:*:*:*:*
+  - id: 322846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.0:*:*:*:*:*:*:*
+  - id: 322850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.1:*:*:*:*:*:*:*
+  - id: 322847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.10:*:*:*:*:*:*:*
+  - id: 322848
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.11:*:*:*:*:*:*:*
+  - id: 322849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.12:*:*:*:*:*:*:*
+  - id: 322851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.2:*:*:*:*:*:*:*
+  - id: 322852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.3:*:*:*:*:*:*:*
+  - id: 322853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.4:*:*:*:*:*:*:*
+  - id: 322854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.5:*:*:*:*:*:*:*
+  - id: 322855
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.6:*:*:*:*:*:*:*
+  - id: 322856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.7:*:*:*:*:*:*:*
+  - id: 322857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.8:*:*:*:*:*:*:*
+  - id: 322858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2.9:*:*:*:*:*:*:*
+  - id: 322859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2:b1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2:b1:*:*:*:*:*:*
+  - id: 322860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2:b2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2:b2:*:*:*:*:*:*
+  - id: 322861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2:rc1:*:*:*:*:*:*
+  - id: 322862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2:rc2:*:*:*:*:*:*
+  - id: 322863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.2:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.2:rc3:*:*:*:*:*:*
+  - id: 322864
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.0:*:*:*:*:*:*:*
+  - id: 322865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.1:*:*:*:*:*:*:*
+  - id: 323398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.10:*:*:*:*:*:*:*
+  - id: 323399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.11:*:*:*:*:*:*:*
+  - id: 322866
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.2:*:*:*:*:*:*:*
+  - id: 322867
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.3:*:*:*:*:*:*:*
+  - id: 322868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.4:*:*:*:*:*:*:*
+  - id: 323400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.5:*:*:*:*:*:*:*
+  - id: 323401
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.6:*:*:*:*:*:*:*
+  - id: 323402
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.7:*:*:*:*:*:*:*
+  - id: 323403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.8:*:*:*:*:*:*:*
+  - id: 322869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3.9:*:*:*:*:*:*:*
+  - id: 322870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3:b1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3:b1:*:*:*:*:*:*
+  - id: 322871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3:rc1:*:*:*:*:*:*
+  - id: 322872
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.3:rc2:*:*:*:*:*:*
+  - id: 323404
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.4.0:*:*:*:*:*:*:*
+  - id: 322873
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.4.1:*:*:*:*:*:*:*
+  - id: 323405
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apple:cups:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apple:cups:1.4.2:*:*:*:*:*:*:*
+  - id: 412233
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-0542
+    reference_id: CVE-2010-0542
+  - id: '199880'
+    url: https://access.redhat.com/errata/RHSA-2010:0490
+    reference_id: RHSA-2010:0490
+weaknesses: []

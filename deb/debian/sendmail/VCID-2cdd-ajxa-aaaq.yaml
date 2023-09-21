@@ -1,0 +1,295 @@
+vulnerability_id: VCID-2cdd-ajxa-aaaq
+aliases:
+  - CVE-2009-4565
+summary: sendmail before 8.14.4 does not properly handle a '\0' character in a Common Name (CN)
+  field of an X.509 certificate, which (1) allows man-in-the-middle attackers to spoof arbitrary
+  SSL-based SMTP servers via a crafted server certificate issued by a legitimate Certification
+  Authority, and (2) allows remote attackers to bypass intended access restrictions via a crafted
+  client certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.
+severities:
+  - id: 70909
+    reference_id: 201204
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 128367
+    reference_id: 405026
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 70911
+    reference_id: 201206
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 70910
+    reference_id: 201205
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 29823
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-03/msg00004.html
+    reference_id:
+  - id: 405008
+    url: http://marc.info/?l=bugtraq&m=126953289726317&w=2
+    reference_id:
+  - id: 201207
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-4565.json
+    reference_id:
+  - id: 405009
+    url: http://secunia.com/advisories/37998
+    reference_id:
+  - id: 405010
+    url: http://secunia.com/advisories/38314
+    reference_id:
+  - id: 29826
+    url: http://secunia.com/advisories/38915
+    reference_id:
+  - id: 405011
+    url: http://secunia.com/advisories/39088
+    reference_id:
+  - id: 405012
+    url: http://secunia.com/advisories/40109
+    reference_id:
+  - id: 405013
+    url: http://secunia.com/advisories/43366
+    reference_id:
+  - id: 405014
+    url: http://security.gentoo.org/glsa/glsa-201206-30.xml
+    reference_id:
+  - id: 405024
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10255
+    reference_id:
+  - id: 405025
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11822
+    reference_id:
+  - id: 405015
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-77-1021797.1-1
+    reference_id:
+  - id: 405016
+    url: http://www.debian.org/security/2010/dsa-1985
+    reference_id:
+  - id: 405017
+    url: http://www.redhat.com/support/errata/RHSA-2011-0262.html
+    reference_id:
+  - id: 405018
+    url: http://www.securityfocus.com/bid/37543
+    reference_id:
+  - id: 405019
+    url: http://www.sendmail.org/releases/8.14.4
+    reference_id:
+  - id: 405020
+    url: http://www.vupen.com/english/advisories/2009/3661
+    reference_id:
+  - id: 405021
+    url: http://www.vupen.com/english/advisories/2010/0719
+    reference_id:
+  - id: 405022
+    url: http://www.vupen.com/english/advisories/2010/1386
+    reference_id:
+  - id: 405023
+    url: http://www.vupen.com/english/advisories/2011/0415
+    reference_id:
+  - id: 201204
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=552622
+    reference_id: 552622
+  - id: 123317
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=564581
+    reference_id: 564581
+  - id: 44820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:*:*:*:*:*:*:*:*
+  - id: 80832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:2.6:*:*:*:*:*:*:*
+  - id: 80830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:2.6.1:*:*:*:*:*:*:*
+  - id: 80836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:3.0:*:*:*:*:*:*:*
+  - id: 80833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:3.0.1:*:*:*:*:*:*:*
+  - id: 250892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:4.1:*:*:*:*:*:*:*
+  - id: 250893
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:4.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:4.55:*:*:*:*:*:*:*
+  - id: 390394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:5:*:*:*:*:*:*:*
+  - id: 48901
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:5.59:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:5.59:*:*:*:*:*:*:*
+  - id: 48902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:5.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:5.61:*:*:*:*:*:*:*
+  - id: 48903
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:5.65:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:5.65:*:*:*:*:*:*:*
+  - id: 62335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.10:*:*:*:*:*:*:*
+  - id: 78208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.10.0:*:*:*:*:*:*:*
+  - id: 62333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.10.1:*:*:*:*:*:*:*
+  - id: 62334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.10.2:*:*:*:*:*:*:*
+  - id: 58334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.0:*:*:*:*:*:*:*
+  - id: 58335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.1:*:*:*:*:*:*:*
+  - id: 58336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.2:*:*:*:*:*:*:*
+  - id: 58337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.3:*:*:*:*:*:*:*
+  - id: 58338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.4:*:*:*:*:*:*:*
+  - id: 58339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.5:*:*:*:*:*:*:*
+  - id: 75693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.6:*:*:*:*:*:*:*
+  - id: 78209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.11.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.11.7:*:*:*:*:*:*:*
+  - id: 69974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.0:*:*:*:*:*:*:*
+  - id: 69975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.1:*:*:*:*:*:*:*
+  - id: 125384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.10:*:*:*:*:*:*:*
+  - id: 71574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.2:*:*:*:*:*:*:*
+  - id: 69976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.3:*:*:*:*:*:*:*
+  - id: 69977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.4:*:*:*:*:*:*:*
+  - id: 71575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.5:*:*:*:*:*:*:*
+  - id: 71576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.6:*:*:*:*:*:*:*
+  - id: 80837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.7:*:*:*:*:*:*:*
+  - id: 80838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.8:*:*:*:*:*:*:*
+  - id: 81834
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12.9:*:*:*:*:*:*:*
+  - id: 58340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12:beta10:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12:beta10:*:*:*:*:*:*
+  - id: 58341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12:beta12:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12:beta12:*:*:*:*:*:*
+  - id: 58342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12:beta16:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12:beta16:*:*:*:*:*:*
+  - id: 58343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12:beta5:*:*:*:*:*:*
+  - id: 58344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.12:beta7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.12:beta7:*:*:*:*:*:*
+  - id: 215767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.0:*:*:*:*:*:*:*
+  - id: 215768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.1:*:*:*:*:*:*:*
+  - id: 224683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.1.2:*:*:*:*:*:*:*
+  - id: 215769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.2:*:*:*:*:*:*:*
+  - id: 215770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.3:*:*:*:*:*:*:*
+  - id: 215771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.4:*:*:*:*:*:*:*
+  - id: 215772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.5:*:*:*:*:*:*:*
+  - id: 250894
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.6:*:*:*:*:*:*:*
+  - id: 250895
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.7:*:*:*:*:*:*:*
+  - id: 405027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.13.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.13.8:*:*:*:*:*:*:*
+  - id: 405028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.14.1:*:*:*:*:*:*:*
+  - id: 405029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.14.2:*:*:*:*:*:*:*
+  - id: 390395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.6.7:*:*:*:*:*:*:*
+  - id: 390396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.7.10:*:*:*:*:*:*:*
+  - id: 390397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.7.6:*:*:*:*:*:*:*
+  - id: 390398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.7.7:*:*:*:*:*:*:*
+  - id: 390399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.7.8:*:*:*:*:*:*:*
+  - id: 390400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.7.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.7.9:*:*:*:*:*:*:*
+  - id: 83953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.8.8:*:*:*:*:*:*:*
+  - id: 75694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.9.0:*:*:*:*:*:*:*
+  - id: 75695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.9.1:*:*:*:*:*:*:*
+  - id: 75696
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.9.2:*:*:*:*:*:*:*
+  - id: 75697
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sendmail:sendmail:8.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sendmail:sendmail:8.9.3:*:*:*:*:*:*:*
+  - id: 405026
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-4565
+    reference_id: CVE-2009-4565
+  - id: 201206
+    url: https://access.redhat.com/errata/RHSA-2010:0237
+    reference_id: RHSA-2010:0237
+  - id: 201205
+    url: https://access.redhat.com/errata/RHSA-2011:0262
+    reference_id: RHSA-2011:0262
+weaknesses: []

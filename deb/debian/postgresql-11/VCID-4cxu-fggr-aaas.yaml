@@ -1,0 +1,53 @@
+vulnerability_id: VCID-4cxu-fggr-aaas
+aliases:
+  - CVE-2019-10128
+summary: A vulnerability was found in postgresql versions 11.x prior to 11.3. The Windows installer
+  for EnterpriseDB-supplied PostgreSQL does not lock down the ACL of the binary installation
+  directory or the ACL of the data directory; it keeps the inherited ACL. In the default configuration,
+  this allows a local attacker to read arbitrary data directory files, essentially bypassing
+  database-imposed read access limitations. In plausible non-default configurations, an attacker
+  having both an unprivileged Windows account and an unprivileged PostgreSQL account can cause
+  the PostgreSQL service account to execute arbitrary code.
+severities:
+  - id: 612332
+    reference_id: 933040
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 689500
+    reference_id: 766191
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612331
+    reference_id: 933039
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 366924
+    reference_id: 766194
+    scoring_system: cvssv2
+    value: '4.1'
+    scoring_elements: AV:L/AC:M/Au:S/C:P/I:P/A:P
+  - id: 366922
+    reference_id: 766194
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 933040
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-10128.json
+    reference_id:
+  - id: 766190
+    url: https://security.netapp.com/advisory/ntap-20210430-0004/
+    reference_id:
+  - id: 766191
+    url: https://www.postgresql.org/about/news/1939/
+    reference_id:
+  - id: 933039
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1707102
+    reference_id: 1707102
+  - id: 766194
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10128
+    reference_id: CVE-2019-10128
+weaknesses: []

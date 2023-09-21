@@ -1,0 +1,139 @@
+vulnerability_id: VCID-jddr-76dd-aaaj
+aliases:
+  - CVE-2018-14617
+summary: An issue was discovered in the Linux kernel through 4.17.10. There is a NULL pointer
+  dereference and panic in hfsplus_lookup() in fs/hfsplus/dir.c when opening a file (that is
+  purportedly a hard link) in an hfs+ filesystem that has malformed catalog data, and is mounted
+  read-only without a metadata directory.
+severities:
+  - id: 684493
+    reference_id: 1447043
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615486
+    reference_id: 935376
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 684494
+    reference_id: 734736
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684495
+    reference_id: 1447044
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682924
+    reference_id: 1445847
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682925
+    reference_id: 1445848
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684053
+    reference_id: 1446738
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684054
+    reference_id: 1446739
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684496
+    reference_id: 734737
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615485
+    reference_id: 935375
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 324131
+    reference_id: 734738
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 324129
+    reference_id: 734738
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1447043
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14617.html
+    reference_id:
+  - id: 935376
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14617.json
+    reference_id:
+  - id: 734736
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=200297
+    reference_id:
+  - id: 1447044
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14617
+    reference_id:
+  - id: 725216
+    url: https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html
+    reference_id:
+  - id: 1445847
+    url: https://ubuntu.com/security/notices/USN-3821-1
+    reference_id:
+  - id: 1445848
+    url: https://ubuntu.com/security/notices/USN-3821-2
+    reference_id:
+  - id: 1446738
+    url: https://ubuntu.com/security/notices/USN-4094-1
+    reference_id:
+  - id: 1446739
+    url: https://ubuntu.com/security/notices/USN-4118-1
+    reference_id:
+  - id: 725098
+    url: https://usn.ubuntu.com/3821-1/
+    reference_id:
+  - id: 725099
+    url: https://usn.ubuntu.com/3821-2/
+    reference_id:
+  - id: 730975
+    url: https://usn.ubuntu.com/4094-1/
+    reference_id:
+  - id: 730976
+    url: https://usn.ubuntu.com/4118-1/
+    reference_id:
+  - id: 725220
+    url: https://www.debian.org/security/2018/dsa-4308
+    reference_id:
+  - id: 734737
+    url: https://www.spinics.net/lists/linux-fsdevel/msg130021.html
+    reference_id:
+  - id: 734706
+    url: http://www.securityfocus.com/bid/104917
+    reference_id:
+  - id: 935375
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1610110
+    reference_id: 1610110
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 734738
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14617
+    reference_id: CVE-2018-14617
+weaknesses: []

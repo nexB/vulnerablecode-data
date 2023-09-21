@@ -1,0 +1,44 @@
+vulnerability_id: VCID-qm7g-n9c9-aaad
+aliases:
+  - CVE-2018-20167
+summary: Terminology before 1.3.1 allows Remote Code Execution because popmedia is mishandled,
+  as demonstrated by an unsafe "cat README.md" command when \e}pn is used. A popmedia control
+  sequence can allow the malicious execution of executable file formats registered in the X
+  desktop share MIME types (/usr/share/applications). The control sequence defers unknown file
+  types to the handle_unknown_media() function, which executes xdg-open against the filename
+  specified in the sequence. The use of xdg-open for all unknown file types allows executable
+  file formats with a registered shared MIME type to be executed. An attacker can achieve remote
+  code execution by introducing an executable file and a plain text file containing the control
+  sequence through a fake software project (e.g., in Git or a tarball). When the control sequence
+  is rendered (such as with cat), the executable file will be run.
+severities:
+  - id: 341048
+    reference_id: 747867
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 341046
+    reference_id: 747867
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 747865
+    url: https://phab.enlightenment.org/rTRM1ac204da9148e7bccb1b5f34b523e2094dfc39e2
+    reference_id:
+  - id: 747864
+    url: https://phab.enlightenment.org/T7504
+    reference_id:
+  - id: 747866
+    url: https://www.enlightenment.org/news/2018-12-16-terminology-1.3.1
+    reference_id:
+  - id: 136000
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916630
+    reference_id: 916630
+  - id: 747868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:enlightenment:terminology:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:enlightenment:terminology:*:*:*:*:*:*:*:*
+  - id: 747867
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-20167
+    reference_id: CVE-2018-20167
+weaknesses: []

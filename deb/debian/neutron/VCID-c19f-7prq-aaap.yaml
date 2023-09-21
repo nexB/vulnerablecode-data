@@ -1,0 +1,140 @@
+vulnerability_id: VCID-c19f-7prq-aaap
+aliases:
+  - CVE-2019-9735
+  - PYSEC-2019-190
+summary: An issue was discovered in the iptables firewall module in OpenStack Neutron before
+  10.0.8, 11.x before 11.0.7, 12.x before 12.0.6, and 13.x before 13.0.3. By setting a destination
+  port in a security group rule along with a protocol that doesn't support that option (for
+  example, VRRP), an authenticated user may block further application of security group rules
+  for instances from any project/tenant on the compute hosts to which it's applied. (Only deployments
+  using the iptables security group driver are affected.)
+severities:
+  - id: 695095
+    reference_id: 1455492
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61178
+    reference_id: 188684
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H
+  - id: 695096
+    reference_id: 22600
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695097
+    reference_id: 1455493
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695098
+    reference_id: 1455494
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61174
+    reference_id: 188680
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 423255
+    reference_id: 22599
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 423253
+    reference_id: 22599
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 61176
+    reference_id: 188682
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 61175
+    reference_id: 188681
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 61177
+    reference_id: 188683
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1455492
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-9735.html
+    reference_id:
+  - id: 188684
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-9735.json
+    reference_id:
+  - id: 22600
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9735
+    reference_id:
+  - id: 22601
+    url: https://cwe.mitre.org/data/definitions/355.html
+    reference_id:
+  - id: 6379
+    url: https://launchpad.net/bugs/1818385
+    reference_id:
+  - id: 6383
+    url: https://seclists.org/bugtraq/2019/Mar/24
+    reference_id:
+  - id: 1455493
+    url: https://seclists.org/oss-sec/2019/q1/183
+    reference_id:
+  - id: 6382
+    url: https://security.openstack.org/ossa/OSSA-2019-001.html
+    reference_id:
+  - id: 1455494
+    url: https://ubuntu.com/security/notices/USN-4036-1
+    reference_id:
+  - id: 6386
+    url: https://usn.ubuntu.com/4036-1/
+    reference_id:
+  - id: 6381
+    url: https://www.debian.org/security/2019/dsa-4409
+    reference_id:
+  - id: 6384
+    url: http://www.openwall.com/lists/oss-security/2019/03/18/2
+    reference_id:
+  - id: 6380
+    url: http://www.securityfocus.com/bid/107390
+    reference_id:
+  - id: 188680
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1690745
+    reference_id: 1690745
+  - id: 77242
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=924508
+    reference_id: 924508
+  - id: 544201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 739950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:14:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 22599
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-9735
+    reference_id: CVE-2019-9735
+  - id: 188682
+    url: https://access.redhat.com/errata/RHSA-2019:0879
+    reference_id: RHSA-2019:0879
+  - id: 188681
+    url: https://access.redhat.com/errata/RHSA-2019:0916
+    reference_id: RHSA-2019:0916
+  - id: 188683
+    url: https://access.redhat.com/errata/RHSA-2019:0935
+    reference_id: RHSA-2019:0935
+weaknesses: []

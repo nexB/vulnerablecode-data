@@ -1,0 +1,188 @@
+vulnerability_id: VCID-t83x-ctfa-aaad
+aliases:
+  - CVE-2018-14734
+summary: drivers/infiniband/core/ucma.c in the Linux kernel through 4.17.11 allows ucma_leave_multicast
+  to access a certain data structure after a cleanup step in ucma_process_join, which allows
+  attackers to cause a denial of service (use-after-free).
+severities:
+  - id: 684614
+    reference_id: 735126
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684615
+    reference_id: 1447143
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615882
+    reference_id: 935661
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:H
+  - id: 684616
+    reference_id: 1447144
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684617
+    reference_id: 735127
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683066
+    reference_id: 1445955
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683067
+    reference_id: 1445956
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682960
+    reference_id: 1445878
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682961
+    reference_id: 1445879
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682962
+    reference_id: 1445880
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677916
+    reference_id: 1441864
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677917
+    reference_id: 1441865
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615881
+    reference_id: 935660
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 324579
+    reference_id: 735128
+    scoring_system: cvssv2
+    value: '6.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:C
+  - id: 324577
+    reference_id: 735128
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 612861
+    reference_id: 933450
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 735126
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=cb2595c1393b4a5211534e6f0a0fbad369e21ad8
+    reference_id:
+  - id: 1447143
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14734.html
+    reference_id:
+  - id: 724908
+    url: https://access.redhat.com/errata/RHSA-2019:2029
+    reference_id:
+  - id: 724909
+    url: https://access.redhat.com/errata/RHSA-2019:2043
+    reference_id:
+  - id: 935661
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14734.json
+    reference_id:
+  - id: 1447144
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14734
+    reference_id:
+  - id: 735127
+    url: https://github.com/torvalds/linux/commit/cb2595c1393b4a5211534e6f0a0fbad369e21ad8
+    reference_id:
+  - id: 725216
+    url: https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html
+    reference_id:
+  - id: 1445955
+    url: https://ubuntu.com/security/notices/USN-3797-1
+    reference_id:
+  - id: 1445956
+    url: https://ubuntu.com/security/notices/USN-3797-2
+    reference_id:
+  - id: 1445878
+    url: https://ubuntu.com/security/notices/USN-3847-1
+    reference_id:
+  - id: 1445879
+    url: https://ubuntu.com/security/notices/USN-3847-2
+    reference_id:
+  - id: 1445880
+    url: https://ubuntu.com/security/notices/USN-3847-3
+    reference_id:
+  - id: 1441864
+    url: https://ubuntu.com/security/notices/USN-3849-1
+    reference_id:
+  - id: 1441865
+    url: https://ubuntu.com/security/notices/USN-3849-2
+    reference_id:
+  - id: 725420
+    url: https://usn.ubuntu.com/3797-1/
+    reference_id:
+  - id: 725421
+    url: https://usn.ubuntu.com/3797-2/
+    reference_id:
+  - id: 725217
+    url: https://usn.ubuntu.com/3847-1/
+    reference_id:
+  - id: 725218
+    url: https://usn.ubuntu.com/3847-2/
+    reference_id:
+  - id: 725219
+    url: https://usn.ubuntu.com/3847-3/
+    reference_id:
+  - id: 696439
+    url: https://usn.ubuntu.com/3849-1/
+    reference_id:
+  - id: 696440
+    url: https://usn.ubuntu.com/3849-2/
+    reference_id:
+  - id: 725220
+    url: https://www.debian.org/security/2018/dsa-4308
+    reference_id:
+  - id: 935660
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1611005
+    reference_id: 1611005
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 735128
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14734
+    reference_id: CVE-2018-14734
+  - id: 933450
+    url: https://access.redhat.com/errata/RHSA-2019:0831
+    reference_id: RHSA-2019:0831
+weaknesses: []

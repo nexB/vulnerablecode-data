@@ -1,0 +1,643 @@
+vulnerability_id: VCID-5nv9-hkcc-aaam
+aliases:
+  - CVE-2008-1447
+summary: The DNS protocol, as implemented in (1) BIND 8 and 9 before 9.5.0-P1, 9.4.2-P1, and
+  9.3.5-P1; (2) Microsoft DNS in Windows 2000 SP4, XP SP2 and SP3, and Server 2003 SP1 and SP2;
+  and other implementations allow remote attackers to spoof DNS traffic via a birthday attack
+  that uses in-bailiwick referrals to conduct cache poisoning against recursive resolvers, related
+  to insufficient randomness of DNS transaction IDs and source ports, aka "DNS Insufficient
+  Socket Entropy Vulnerability" or "the Kaminsky bug."
+severities:
+  - id: 74554
+    reference_id: 205463
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 110557
+    reference_id: 334194
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 110555
+    reference_id: 334194
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N
+  - id: 74555
+    reference_id: 205464
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 74556
+    reference_id: 205465
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 334024
+    url: ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2008-009.txt.asc
+    reference_id:
+  - id: 334025
+    url: http://blog.invisibledenizen.org/2008/07/kaminskys-dns-issue-accidentally-leaked.html
+    reference_id:
+  - id: 315232
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=494401
+    reference_id:
+  - id: 334026
+    url: http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01523520
+    reference_id:
+  - id: 334027
+    url: http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01662368
+    reference_id:
+  - id: 306296
+    url: http://lists.apple.com/archives/security-announce//2008/Jul/msg00003.html
+    reference_id:
+  - id: 334028
+    url: http://lists.apple.com/archives/security-announce//2008/Sep/msg00003.html
+    reference_id:
+  - id: 334029
+    url: http://lists.apple.com/archives/security-announce//2008/Sep/msg00004.html
+    reference_id:
+  - id: 325213
+    url: http://lists.apple.com/archives/security-announce//2008/Sep/msg00005.html
+    reference_id:
+  - id: 311135
+    url: http://lists.grok.org.uk/pipermail/full-disclosure/2008-August/064118.html
+    reference_id:
+  - id: 334030
+    url: http://lists.opensuse.org/opensuse-security-announce/2008-07/msg00003.html
+    reference_id:
+  - id: 269955
+    url: http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00006.html
+    reference_id:
+  - id: 334031
+    url: http://marc.info/?l=bugtraq&m=121630706004256&w=2
+    reference_id:
+  - id: 334032
+    url: http://marc.info/?l=bugtraq&m=121866517322103&w=2
+    reference_id:
+  - id: 334033
+    url: http://marc.info/?l=bugtraq&m=123324863916385&w=2
+    reference_id:
+  - id: 248108
+    url: http://marc.info/?l=bugtraq&m=141879471518471&w=2
+    reference_id:
+  - id: 334034
+    url: http://rhn.redhat.com/errata/RHSA-2008-0533.html
+    reference_id:
+  - id: 205466
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2008-1447.json
+    reference_id:
+  - id: 334181
+    url: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-037
+    reference_id:
+  - id: 334035
+    url: http://secunia.com/advisories/30925
+    reference_id:
+  - id: 334036
+    url: http://secunia.com/advisories/30973
+    reference_id:
+  - id: 334037
+    url: http://secunia.com/advisories/30977
+    reference_id:
+  - id: 334038
+    url: http://secunia.com/advisories/30979
+    reference_id:
+  - id: 334039
+    url: http://secunia.com/advisories/30980
+    reference_id:
+  - id: 334040
+    url: http://secunia.com/advisories/30988
+    reference_id:
+  - id: 334041
+    url: http://secunia.com/advisories/30989
+    reference_id:
+  - id: 334042
+    url: http://secunia.com/advisories/30998
+    reference_id:
+  - id: 334043
+    url: http://secunia.com/advisories/31011
+    reference_id:
+  - id: 334044
+    url: http://secunia.com/advisories/31012
+    reference_id:
+  - id: 334045
+    url: http://secunia.com/advisories/31014
+    reference_id:
+  - id: 334046
+    url: http://secunia.com/advisories/31019
+    reference_id:
+  - id: 334047
+    url: http://secunia.com/advisories/31022
+    reference_id:
+  - id: 334048
+    url: http://secunia.com/advisories/31030
+    reference_id:
+  - id: 334049
+    url: http://secunia.com/advisories/31031
+    reference_id:
+  - id: 334050
+    url: http://secunia.com/advisories/31033
+    reference_id:
+  - id: 334051
+    url: http://secunia.com/advisories/31052
+    reference_id:
+  - id: 334052
+    url: http://secunia.com/advisories/31065
+    reference_id:
+  - id: 334053
+    url: http://secunia.com/advisories/31072
+    reference_id:
+  - id: 334054
+    url: http://secunia.com/advisories/31093
+    reference_id:
+  - id: 334055
+    url: http://secunia.com/advisories/31094
+    reference_id:
+  - id: 334056
+    url: http://secunia.com/advisories/31137
+    reference_id:
+  - id: 334057
+    url: http://secunia.com/advisories/31143
+    reference_id:
+  - id: 334058
+    url: http://secunia.com/advisories/31151
+    reference_id:
+  - id: 334059
+    url: http://secunia.com/advisories/31152
+    reference_id:
+  - id: 334060
+    url: http://secunia.com/advisories/31153
+    reference_id:
+  - id: 334061
+    url: http://secunia.com/advisories/31169
+    reference_id:
+  - id: 334062
+    url: http://secunia.com/advisories/31197
+    reference_id:
+  - id: 334063
+    url: http://secunia.com/advisories/31199
+    reference_id:
+  - id: 329415
+    url: http://secunia.com/advisories/31204
+    reference_id:
+  - id: 334064
+    url: http://secunia.com/advisories/31207
+    reference_id:
+  - id: 334065
+    url: http://secunia.com/advisories/31209
+    reference_id:
+  - id: 334066
+    url: http://secunia.com/advisories/31212
+    reference_id:
+  - id: 334067
+    url: http://secunia.com/advisories/31213
+    reference_id:
+  - id: 334068
+    url: http://secunia.com/advisories/31221
+    reference_id:
+  - id: 334069
+    url: http://secunia.com/advisories/31236
+    reference_id:
+  - id: 334070
+    url: http://secunia.com/advisories/31237
+    reference_id:
+  - id: 334071
+    url: http://secunia.com/advisories/31254
+    reference_id:
+  - id: 306306
+    url: http://secunia.com/advisories/31326
+    reference_id:
+  - id: 334072
+    url: http://secunia.com/advisories/31354
+    reference_id:
+  - id: 334073
+    url: http://secunia.com/advisories/31422
+    reference_id:
+  - id: 315233
+    url: http://secunia.com/advisories/31430
+    reference_id:
+  - id: 334074
+    url: http://secunia.com/advisories/31451
+    reference_id:
+  - id: 334075
+    url: http://secunia.com/advisories/31482
+    reference_id:
+  - id: 334076
+    url: http://secunia.com/advisories/31495
+    reference_id:
+  - id: 334077
+    url: http://secunia.com/advisories/31588
+    reference_id:
+  - id: 269957
+    url: http://secunia.com/advisories/31687
+    reference_id:
+  - id: 334078
+    url: http://secunia.com/advisories/31823
+    reference_id:
+  - id: 325220
+    url: http://secunia.com/advisories/31882
+    reference_id:
+  - id: 334079
+    url: http://secunia.com/advisories/31900
+    reference_id:
+  - id: 308175
+    url: http://secunia.com/advisories/33178
+    reference_id:
+  - id: 334080
+    url: http://secunia.com/advisories/33714
+    reference_id:
+  - id: 334081
+    url: http://secunia.com/advisories/33786
+    reference_id:
+  - id: 334082
+    url: http://security.freebsd.org/advisories/FreeBSD-SA-08:06.bind.asc
+    reference_id:
+  - id: 334083
+    url: http://security.gentoo.org/glsa/glsa-200807-08.xml
+    reference_id:
+  - id: 308176
+    url: http://security.gentoo.org/glsa/glsa-200812-17.xml
+    reference_id:
+  - id: 152018
+    url: http://security.gentoo.org/glsa/glsa-201209-25.xml
+    reference_id:
+  - id: 334182
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/43334
+    reference_id:
+  - id: 334183
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/43637
+    reference_id:
+  - id: 334084
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2008&m=slackware-security.452680
+    reference_id:
+  - id: 334085
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2008&m=slackware-security.539239
+    reference_id:
+  - id: 334184
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12117
+    reference_id:
+  - id: 334185
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A5725
+    reference_id:
+  - id: 334186
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A5761
+    reference_id:
+  - id: 334187
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A5917
+    reference_id:
+  - id: 334188
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9627
+    reference_id:
+  - id: 334086
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-239392-1
+    reference_id:
+  - id: 334087
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-240048-1
+    reference_id:
+  - id: 334088
+    url: http://support.apple.com/kb/HT3026
+    reference_id:
+  - id: 334089
+    url: http://support.apple.com/kb/HT3129
+    reference_id:
+  - id: 334090
+    url: http://support.citrix.com/article/CTX117991
+    reference_id:
+  - id: 334091
+    url: http://support.citrix.com/article/CTX118183
+    reference_id:
+  - id: 334092
+    url: http://support.nortel.com/go/main.jsp?cscat=BLTNDETAIL&id=762152
+    reference_id:
+  - id: 334189
+    url: https://www.exploit-db.com/exploits/6122
+    reference_id:
+  - id: 334190
+    url: https://www.exploit-db.com/exploits/6123
+    reference_id:
+  - id: 334191
+    url: https://www.exploit-db.com/exploits/6130
+    reference_id:
+  - id: 334192
+    url: https://www.redhat.com/archives/fedora-package-announce/2008-July/msg00402.html
+    reference_id:
+  - id: 334193
+    url: https://www.redhat.com/archives/fedora-package-announce/2008-July/msg00458.html
+    reference_id:
+  - id: 334093
+    url: http://up2date.astaro.com/2008/08/up2date_7202_released.html
+    reference_id:
+  - id: 334094
+    url: http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0231
+    reference_id:
+  - id: 334095
+    url: http://wiki.rpath.com/wiki/Advisories:rPSA-2010-0018
+    reference_id:
+  - id: 334096
+    url: http://www.bluecoat.com/support/security-advisories/dns_cache_poisoning
+    reference_id:
+  - id: 334097
+    url: http://www.caughq.org/exploits/CAU-EX-2008-0002.txt
+    reference_id:
+  - id: 334098
+    url: http://www.caughq.org/exploits/CAU-EX-2008-0003.txt
+    reference_id:
+  - id: 334099
+    url: http://www.cisco.com/en/US/products/products_security_advisory09186a00809c2168.shtml
+    reference_id:
+  - id: 334100
+    url: http://www.debian.org/security/2008/dsa-1603
+    reference_id:
+  - id: 334101
+    url: http://www.debian.org/security/2008/dsa-1604
+    reference_id:
+  - id: 334102
+    url: http://www.debian.org/security/2008/dsa-1605
+    reference_id:
+  - id: 334103
+    url: http://www.debian.org/security/2008/dsa-1619
+    reference_id:
+  - id: 334104
+    url: http://www.debian.org/security/2008/dsa-1623
+    reference_id:
+  - id: 334106
+    url: http://www.doxpara.com/DMK_BO2K8.ppt
+    reference_id:
+  - id: 334105
+    url: http://www.doxpara.com/?p=1176
+    reference_id:
+  - id: 334107
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26667
+    reference_id:
+  - id: 334108
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26668
+    reference_id:
+  - id: 334109
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26669
+    reference_id:
+  - id: 334110
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26670
+    reference_id:
+  - id: 334111
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26671
+    reference_id:
+  - id: 334112
+    url: http://www.ibm.com/support/docview.wss?uid=isg1IZ26672
+    reference_id:
+  - id: 329420
+    url: http://www.ipcop.org/index.php?name=News&file=article&sid=40
+    reference_id:
+  - id: 66757
+    url: http://www.isc.org/index.pl?/sw/bind/bind-security.php
+    reference_id:
+  - id: 334113
+    url: http://www.kb.cert.org/vuls/id/800113
+    reference_id:
+  - id: 334114
+    url: http://www.kb.cert.org/vuls/id/MIMG-7DWR4J
+    reference_id:
+  - id: 334115
+    url: http://www.kb.cert.org/vuls/id/MIMG-7ECL8Q
+    reference_id:
+  - id: 334116
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2008:139
+    reference_id:
+  - id: 334117
+    url: http://www.nominum.com/asset_upload_file741_2661.pdf
+    reference_id:
+  - id: 334118
+    url: http://www.novell.com/support/viewContent.do?externalId=7000912
+    reference_id:
+  - id: 334119
+    url: http://www.openbsd.org/errata42.html#013_bind
+    reference_id:
+  - id: 334120
+    url: http://www.openbsd.org/errata43.html#004_bind
+    reference_id:
+  - id: 334121
+    url: http://www.phys.uu.nl/~rombouts/pdnsd/ChangeLog
+    reference_id:
+  - id: 231548
+    url: http://www.phys.uu.nl/~rombouts/pdnsd.html
+    reference_id:
+  - id: 334122
+    url: http://www.redhat.com/support/errata/RHSA-2008-0789.html
+    reference_id:
+  - id: 334123
+    url: http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/VU800113.html
+    reference_id:
+  - id: 315247
+    url: http://www.ruby-lang.org/en/news/2008/08/08/multiple-vulnerabilities-in-ruby/
+    reference_id:
+  - id: 334124
+    url: http://www.securityfocus.com/archive/1/495289/100/0/threaded
+    reference_id:
+  - id: 311144
+    url: http://www.securityfocus.com/archive/1/495869/100/0/threaded
+    reference_id:
+  - id: 334125
+    url: http://www.securityfocus.com/bid/30131
+    reference_id:
+  - id: 334126
+    url: http://www.securitytracker.com/id?1020437
+    reference_id:
+  - id: 334127
+    url: http://www.securitytracker.com/id?1020438
+    reference_id:
+  - id: 334128
+    url: http://www.securitytracker.com/id?1020440
+    reference_id:
+  - id: 334129
+    url: http://www.securitytracker.com/id?1020448
+    reference_id:
+  - id: 334130
+    url: http://www.securitytracker.com/id?1020449
+    reference_id:
+  - id: 334131
+    url: http://www.securitytracker.com/id?1020548
+    reference_id:
+  - id: 334132
+    url: http://www.securitytracker.com/id?1020558
+    reference_id:
+  - id: 334133
+    url: http://www.securitytracker.com/id?1020560
+    reference_id:
+  - id: 334134
+    url: http://www.securitytracker.com/id?1020561
+    reference_id:
+  - id: 334135
+    url: http://www.securitytracker.com/id?1020575
+    reference_id:
+  - id: 334136
+    url: http://www.securitytracker.com/id?1020576
+    reference_id:
+  - id: 334137
+    url: http://www.securitytracker.com/id?1020577
+    reference_id:
+  - id: 334138
+    url: http://www.securitytracker.com/id?1020578
+    reference_id:
+  - id: 334139
+    url: http://www.securitytracker.com/id?1020579
+    reference_id:
+  - id: 334140
+    url: http://www.securitytracker.com/id?1020651
+    reference_id:
+  - id: 334141
+    url: http://www.securitytracker.com/id?1020653
+    reference_id:
+  - id: 334142
+    url: http://www.securitytracker.com/id?1020702
+    reference_id:
+  - id: 334143
+    url: http://www.securitytracker.com/id?1020802
+    reference_id:
+  - id: 334144
+    url: http://www.securitytracker.com/id?1020804
+    reference_id:
+  - id: 334145
+    url: http://www.ubuntu.com/usn/usn-622-1
+    reference_id:
+  - id: 334146
+    url: http://www.ubuntu.com/usn/usn-627-1
+    reference_id:
+  - id: 334147
+    url: http://www.unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html
+    reference_id:
+  - id: 323301
+    url: http://www.us-cert.gov/cas/techalerts/TA08-190A.html
+    reference_id:
+  - id: 334148
+    url: http://www.us-cert.gov/cas/techalerts/TA08-190B.html
+    reference_id:
+  - id: 325227
+    url: http://www.us-cert.gov/cas/techalerts/TA08-260A.html
+    reference_id:
+  - id: 311146
+    url: http://www.vmware.com/security/advisories/VMSA-2008-0014.html
+    reference_id:
+  - id: 334149
+    url: http://www.vupen.com/english/advisories/2008/2019/references
+    reference_id:
+  - id: 334150
+    url: http://www.vupen.com/english/advisories/2008/2023/references
+    reference_id:
+  - id: 334151
+    url: http://www.vupen.com/english/advisories/2008/2025/references
+    reference_id:
+  - id: 334152
+    url: http://www.vupen.com/english/advisories/2008/2029/references
+    reference_id:
+  - id: 334153
+    url: http://www.vupen.com/english/advisories/2008/2030/references
+    reference_id:
+  - id: 334154
+    url: http://www.vupen.com/english/advisories/2008/2050/references
+    reference_id:
+  - id: 334155
+    url: http://www.vupen.com/english/advisories/2008/2051/references
+    reference_id:
+  - id: 334156
+    url: http://www.vupen.com/english/advisories/2008/2052/references
+    reference_id:
+  - id: 334157
+    url: http://www.vupen.com/english/advisories/2008/2055/references
+    reference_id:
+  - id: 334158
+    url: http://www.vupen.com/english/advisories/2008/2092/references
+    reference_id:
+  - id: 334159
+    url: http://www.vupen.com/english/advisories/2008/2113/references
+    reference_id:
+  - id: 334160
+    url: http://www.vupen.com/english/advisories/2008/2114/references
+    reference_id:
+  - id: 334161
+    url: http://www.vupen.com/english/advisories/2008/2123/references
+    reference_id:
+  - id: 334162
+    url: http://www.vupen.com/english/advisories/2008/2139/references
+    reference_id:
+  - id: 334163
+    url: http://www.vupen.com/english/advisories/2008/2166/references
+    reference_id:
+  - id: 334164
+    url: http://www.vupen.com/english/advisories/2008/2195/references
+    reference_id:
+  - id: 334165
+    url: http://www.vupen.com/english/advisories/2008/2196/references
+    reference_id:
+  - id: 334166
+    url: http://www.vupen.com/english/advisories/2008/2197/references
+    reference_id:
+  - id: 306328
+    url: http://www.vupen.com/english/advisories/2008/2268
+    reference_id:
+  - id: 334167
+    url: http://www.vupen.com/english/advisories/2008/2291
+    reference_id:
+  - id: 315251
+    url: http://www.vupen.com/english/advisories/2008/2334
+    reference_id:
+  - id: 334168
+    url: http://www.vupen.com/english/advisories/2008/2342
+    reference_id:
+  - id: 334169
+    url: http://www.vupen.com/english/advisories/2008/2377
+    reference_id:
+  - id: 334170
+    url: http://www.vupen.com/english/advisories/2008/2383
+    reference_id:
+  - id: 334171
+    url: http://www.vupen.com/english/advisories/2008/2384
+    reference_id:
+  - id: 311147
+    url: http://www.vupen.com/english/advisories/2008/2466
+    reference_id:
+  - id: 334172
+    url: http://www.vupen.com/english/advisories/2008/2467
+    reference_id:
+  - id: 334173
+    url: http://www.vupen.com/english/advisories/2008/2482
+    reference_id:
+  - id: 334174
+    url: http://www.vupen.com/english/advisories/2008/2525
+    reference_id:
+  - id: 334175
+    url: http://www.vupen.com/english/advisories/2008/2549
+    reference_id:
+  - id: 334176
+    url: http://www.vupen.com/english/advisories/2008/2558
+    reference_id:
+  - id: 334177
+    url: http://www.vupen.com/english/advisories/2008/2582
+    reference_id:
+  - id: 325229
+    url: http://www.vupen.com/english/advisories/2008/2584
+    reference_id:
+  - id: 334178
+    url: http://www.vupen.com/english/advisories/2009/0297
+    reference_id:
+  - id: 334179
+    url: http://www.vupen.com/english/advisories/2009/0311
+    reference_id:
+  - id: 334180
+    url: http://www.vupen.com/english/advisories/2010/0622
+    reference_id:
+  - id: 205463
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=449345
+    reference_id: 449345
+  - id: 39383
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=490123
+    reference_id: 490123
+  - id: 334194
+    url: https://nvd.nist.gov/vuln/detail/CVE-2008-1447
+    reference_id: CVE-2008-1447
+  - id: 205464
+    url: https://access.redhat.com/errata/RHSA-2008:0533
+    reference_id: RHSA-2008:0533
+  - id: 205465
+    url: https://access.redhat.com/errata/RHSA-2008:0789
+    reference_id: RHSA-2008:0789
+weaknesses: []

@@ -1,0 +1,56 @@
+vulnerability_id: VCID-cnw9-mvkm-aaan
+aliases:
+  - CVE-2019-14842
+summary: Structured reply is a feature of the newstyle NBD protocol allowing the server to send
+  a reply in chunks. A bounds check which was supposed to test for chunk offsets smaller than
+  the beginning of the request did not work because of signed/unsigned confusion. If one of
+  these chunks contains a negative offset then data under control of the server is written to
+  memory before the read buffer supplied by the client. If the read buffer is located on the
+  stack then this allows the stack return address from nbd_pread() to be trivially modified,
+  allowing arbitrary code execution under the control of the server. If the buffer is located
+  on the heap then other memory objects before the buffer can be overwritten, which again would
+  usually lead to arbitrary code execution.
+severities:
+  - id: 70236
+    reference_id: 200277
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 70235
+    reference_id: 200276
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 383117
+    reference_id: 779345
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 383115
+    reference_id: 779345
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 200277
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-14842.json
+    reference_id:
+  - id: 779343
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14842
+    reference_id:
+  - id: 779344
+    url: https://www.redhat.com/archives/libguestfs/2019-October/msg00060.html
+    reference_id:
+  - id: 200276
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1776860
+    reference_id: 1776860
+  - id: 43172
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=942215
+    reference_id: 942215
+  - id: 779346
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libnbd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libnbd:*:*:*:*:*:*:*:*
+  - id: 779345
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14842
+    reference_id: CVE-2019-14842
+weaknesses: []

@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2019-13565
+fixed_purl:
+- pkg:deb/debian/openldap@2.4.47%2Bdfsg-3%2Bdeb10u1?distro=sid
+- pkg:deb/debian/openldap@2.4.47%2Bdfsg-3%2Bdeb10u7?distro=sid
+- pkg:deb/debian/openldap@2.4.48%2Bdfsg-1?distro=sid
+- pkg:deb/debian/openldap@2.4.57%2Bdfsg-3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/openldap@2.5.13%2Bdfsg-5?distro=sid
+references:
+- id: 128600
+  reference_id: '932998'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=932998
+severities: []
+summary: An issue was discovered in OpenLDAP 2.x before 2.4.48. When using SASL authentication
+  and session encryption, and relying on the SASL security layers in slapd access
+  controls, it is possible to obtain access that would otherwise be denied via a simple
+  bind for any identity covered in those ACLs. After the first SASL bind is completed,
+  the sasl_ssf value is retained for all new non-SASL connections. Depending on the
+  ACL configuration, this can affect different types of operations (searches, modifications,
+  etc.). In other words, a successful authorization step completed by one user affects
+  the authorization requirement for a different user.
+vulnerability_id: VCID-9azd-ptyu-aaas
+weaknesses: []

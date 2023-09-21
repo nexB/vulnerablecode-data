@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2017-15129
+fixed_purl:
+- pkg:deb/debian/linux@4.14.12-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: A use-after-free vulnerability was found in network namespaces code affecting
+  the Linux kernel before 4.14.11. The function get_net_ns_by_id() in net/core/net_namespace.c
+  does not check for the net::count value after it has found a peer network in netns_ids
+  idr, which could lead to double free and memory corruption. This vulnerability could
+  allow an unprivileged local user to induce kernel memory corruption on the system,
+  leading to a crash. Due to the nature of the flaw, privilege escalation cannot be
+  fully ruled out, although it is thought to be unlikely.
+vulnerability_id: VCID-t899-kmmm-aaaf
+weaknesses: []

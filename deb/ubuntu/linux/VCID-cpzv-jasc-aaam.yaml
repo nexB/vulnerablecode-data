@@ -1,0 +1,108 @@
+vulnerability_id: VCID-cpzv-jasc-aaam
+aliases:
+  - CVE-2020-10690
+summary: There is a use-after-free in kernel versions before 5.5 due to a race condition between
+  the release of ptp_clock and cdev while resource deallocation. When a (high privileged) process
+  allocates a ptp device file (like /dev/ptpX) and voluntarily goes to sleep. During this time
+  if the underlying device is removed, it can cause an exploitable condition as the process
+  wakes up to terminate and clean all attached files. The system crashes due to the cdev structure
+  being invalid (as already freed) which is pointed to by the inode.
+severities:
+  - id: 703854
+    reference_id: 1465392
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64704
+    reference_id: '193378'
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H
+  - id: 703855
+    reference_id: 1465393
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 703856
+    reference_id: 1465394
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 703857
+    reference_id: 1465395
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695356
+    reference_id: 1455718
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 696130
+    reference_id: 1456315
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 64703
+    reference_id: '193377'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 53852
+    reference_id: 178976
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53851
+    reference_id: 178975
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49178
+    reference_id: 173457
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49177
+    reference_id: 173456
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1465392
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10690.html
+    reference_id:
+  - id: '193378'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10690.json
+    reference_id:
+  - id: 1465393
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10690
+    reference_id:
+  - id: 1465394
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10690
+    reference_id:
+  - id: 1465395
+    url: https://lore.kernel.org/linux-fsdevel/20191125125342.6189-1-vdronov@redhat.com/T/#u
+    reference_id:
+  - id: 1455718
+    url: https://ubuntu.com/security/notices/USN-4419-1
+    reference_id:
+  - id: 1456315
+    url: https://usn.ubuntu.com/usn/usn-4419-1
+    reference_id:
+  - id: '193377'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1817141
+    reference_id: 1817141
+  - id: 178976
+    url: https://access.redhat.com/errata/RHSA-2020:1567
+    reference_id: RHSA-2020:1567
+  - id: 178975
+    url: https://access.redhat.com/errata/RHSA-2020:1769
+    reference_id: RHSA-2020:1769
+  - id: 173457
+    url: https://access.redhat.com/errata/RHSA-2020:4060
+    reference_id: RHSA-2020:4060
+  - id: 173456
+    url: https://access.redhat.com/errata/RHSA-2020:4062
+    reference_id: RHSA-2020:4062
+weaknesses: []

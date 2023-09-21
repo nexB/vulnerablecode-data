@@ -1,0 +1,35 @@
+vulnerability_id: VCID-gxbu-28g5-aaaa
+aliases:
+  - CVE-2020-12457
+summary: An issue was discovered in wolfSSL before 4.5.0. It mishandles the change_cipher_spec
+  (CCS) message processing logic for TLS 1.3. If an attacker sends ChangeCipherSpec messages
+  in a crafted way involving more than one in a row, the server becomes stuck in the ProcessReply()
+  loop, i.e., a denial of service.
+severities:
+  - id: 436283
+    reference_id: 816111
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 436281
+    reference_id: 816111
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 816109
+    url: https://github.com/wolfSSL/wolfssl/pull/2927
+    reference_id:
+  - id: 816110
+    url: https://github.com/wolfSSL/wolfssl/releases/tag/v4.5.0-stable
+    reference_id:
+  - id: 147108
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969663
+    reference_id: 969663
+  - id: 167308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+  - id: 816111
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-12457
+    reference_id: CVE-2020-12457
+weaknesses: []

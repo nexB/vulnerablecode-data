@@ -1,0 +1,53 @@
+vulnerability_id: VCID-te29-tva5-aaar
+aliases:
+  - CVE-2019-13179
+summary: Calamares versions 3.1 through 3.2.10 copies a LUKS encryption keyfile from /crypto_keyfile.bin
+  (mode 0600 owned by root) to /boot within a globally readable initramfs image with insecure
+  permissions, which allows this originally protected file to be read by any user, thereby disclosing
+  decryption keys for LUKS containers created with Full Disk Encryption.
+severities:
+  - id: 377850
+    reference_id: 775437
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 377848
+    reference_id: 775437
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 775423
+    url: https://bugs.launchpad.net/ubuntu/+source/initramfs-tools/+bug/1835095
+    reference_id:
+  - id: 775424
+    url: https://bugs.launchpad.net/ubuntu/+source/initramfs-tools/+bug/1835096
+    reference_id:
+  - id: 775436
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1726542
+    reference_id:
+  - id: 775426
+    url: https://calamares.io/calamares-3.2.11-is-out/
+    reference_id:
+  - id: 775427
+    url: https://calamares.io/calamares-cve-2019/
+    reference_id:
+  - id: 775429
+    url: https://github.com/calamares/calamares/issues/1191
+    reference_id:
+  - id: 775430
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q57BOTBA2J5U4GVKUP7N2PD5H7B3BVUU/
+    reference_id:
+  - id: 775431
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R2ZDQRGBGRVRW5LPJWKUNS3M66LZ3KYC/
+    reference_id:
+  - id: 40002
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=931373
+    reference_id: 931373
+  - id: 775435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:calamares:calamares:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:calamares:calamares:*:*:*:*:*:*:*:*
+  - id: 775437
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13179
+    reference_id: CVE-2019-13179
+weaknesses: []

@@ -1,0 +1,144 @@
+vulnerability_id: VCID-77rf-m7q5-aaan
+aliases:
+  - CVE-2021-31916
+summary: An out-of-bounds (OOB) memory write flaw was found in list_devices in drivers/md/dm-ioctl.c
+  in the Multi-device driver module in the Linux kernel before 5.12. A bound check failure allows
+  an attacker with special user (CAP_SYS_ADMIN) privilege to gain access to out-of-bounds memory
+  leading to a system crash or a leak of internal kernel information. The highest threat from
+  this vulnerability is to system availability.
+severities:
+  - id: 702166
+    reference_id: 1461463
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606195
+    reference_id: 928547
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 702167
+    reference_id: 1461464
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702168
+    reference_id: 1461465
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697767
+    reference_id: 1457697
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697768
+    reference_id: 1457698
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701430
+    reference_id: 1460846
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702169
+    reference_id: 1461466
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606194
+    reference_id: 928546
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 538763
+    reference_id: 883471
+    scoring_system: cvssv2
+    value: '6.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:C
+  - id: 538761
+    reference_id: 883471
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1461463
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-31916.html
+    reference_id:
+  - id: 928547
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-31916.json
+    reference_id:
+  - id: 1461464
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31916
+    reference_id:
+  - id: 883469
+    url: https://github.com/torvalds/linux/commit/4edbe1d7bcffcd6269f3b5eb63f710393ff2ec7a
+    reference_id:
+  - id: 1461465
+    url: https://git.kernel.org/linus/4edbe1d7bcffcd6269f3b5eb63f710393ff2ec7a
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 171248
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html
+    reference_id:
+  - id: 883470
+    url: https://seclists.org/oss-sec/2021/q1/268
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 1457697
+    url: https://ubuntu.com/security/notices/USN-4979-1
+    reference_id:
+  - id: 1457698
+    url: https://ubuntu.com/security/notices/USN-4982-1
+    reference_id:
+  - id: 1460846
+    url: https://ubuntu.com/security/notices/USN-4984-1
+    reference_id:
+  - id: 1461466
+    url: https://www.openwall.com/lists/oss-security/2021/03/28/1
+    reference_id:
+  - id: 928546
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1946965
+    reference_id: '1946965'
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 883471
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-31916
+    reference_id: CVE-2021-31916
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

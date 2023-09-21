@@ -1,0 +1,66 @@
+affected_purls:
+- pkg:deb/debian/flask-security@1.7.5-2
+- pkg:pypi/flask-security@1.2.0
+- pkg:pypi/flask-security@1.2.1
+- pkg:pypi/flask-security@1.2.2
+- pkg:pypi/flask-security@1.2.3
+- pkg:pypi/flask-security@1.5.0
+- pkg:pypi/flask-security@1.5.1
+- pkg:pypi/flask-security@1.5.2
+- pkg:pypi/flask-security@1.5.3
+- pkg:pypi/flask-security@1.5.4
+- pkg:pypi/flask-security@1.6.0
+- pkg:pypi/flask-security@1.6.1
+- pkg:pypi/flask-security@1.6.2
+- pkg:pypi/flask-security@1.6.3
+- pkg:pypi/flask-security@1.6.4
+- pkg:pypi/flask-security@1.6.5
+- pkg:pypi/flask-security@1.6.6
+- pkg:pypi/flask-security@1.6.7
+- pkg:pypi/flask-security@1.6.8
+- pkg:pypi/flask-security@1.6.9
+- pkg:pypi/flask-security@1.7.0
+- pkg:pypi/flask-security@1.7.1
+- pkg:pypi/flask-security@1.7.2
+- pkg:pypi/flask-security@1.7.3
+- pkg:pypi/flask-security@1.7.4
+- pkg:pypi/flask-security@1.7.5
+- pkg:pypi/flask-security@3.0.0
+aliases:
+- CVE-2021-23385
+- GHSA-cg8c-gc2j-2wf7
+fixed_purl:
+- pkg:deb/debian/flask-security@4.0.0-1%2Bdeb11u1
+references:
+- id: 157948
+  reference_id: ''
+  url: https://github.com/mattupstate/flask-security
+- id: 157949
+  reference_id: ''
+  url: https://security.snyk.io/vuln/SNYK-PYTHON-FLASKSECURITY-1293234
+- id: 157950
+  reference_id: ''
+  url: https://snyk.io/blog/url-confusion-vulnerabilities/
+- id: 129667
+  reference_id: '1021279'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1021279
+- id: 157947
+  reference_id: CVE-2021-23385
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-23385
+- id: 157951
+  reference_id: GHSA-cg8c-gc2j-2wf7
+  url: https://github.com/advisories/GHSA-cg8c-gc2j-2wf7
+severities:
+- id: 22922
+  reference_id: 157951
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: This affects all versions of package Flask-Security. When using the get_post_logout_redirect
+  and get_post_login_redirect functions, it is possible to bypass URL validation and
+  redirect a user to an arbitrary URL by providing multiple back slashes such as \\\evil.com/path.
+  This vulnerability is only exploitable if an alternative WSGI server other than
+  Werkzeug is used, or the default behaviour of Werkzeug is modified using 'autocorrect_location_header=False.
+  **Note:** Flask-Security is not maintained anymore.
+vulnerability_id: VCID-ny6c-1sab-aaas
+weaknesses: []

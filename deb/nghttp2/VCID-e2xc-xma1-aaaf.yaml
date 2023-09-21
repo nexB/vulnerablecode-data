@@ -1,0 +1,48 @@
+affected_purls:
+- pkg:deb/debian/nghttp2@1.36.0-2%2Bdeb10u1
+- pkg:github/istio/istio@1.4.0
+- pkg:github/istio/istio@1.4.1
+- pkg:github/istio/istio@1.4.2
+- pkg:github/istio/istio@1.4.3
+- pkg:github/istio/istio@1.4.4
+- pkg:github/istio/istio@1.4.5
+- pkg:github/istio/istio@1.4.6
+- pkg:github/istio/istio@1.4.7
+- pkg:github/istio/istio@1.4.8
+- pkg:github/istio/istio@1.4.9
+- pkg:github/istio/istio@1.5.0
+- pkg:github/istio/istio@1.5.1
+- pkg:github/istio/istio@1.5.2
+- pkg:github/istio/istio@1.5.3
+- pkg:github/istio/istio@1.5.4
+- pkg:github/istio/istio@1.6.0
+- pkg:github/istio/istio@1.6.1
+aliases:
+- CVE-2020-11080
+fixed_purl:
+- pkg:deb/debian/nghttp2@1.43.0-1
+- pkg:deb/debian/nodejs@10.21.0~dfsg-1?distro=sid
+- pkg:deb/debian/nodejs@10.21.0~dfsg-1~deb10u1?distro=sid
+- pkg:deb/debian/nodejs@10.24.0~dfsg-1~deb10u1?distro=sid
+- pkg:deb/debian/nodejs@12.22.12~dfsg-1~deb11u3?distro=sid
+- pkg:deb/debian/nodejs@18.13.0%2Bdfsg1-1?distro=sid
+- pkg:github/istio/istio@1.5.0-alpha.0
+- pkg:github/istio/istio@1.5.5
+- pkg:github/istio/istio@1.6.2
+references:
+- id: 129073
+  reference_id: '962145'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=962145
+- id: 179421
+  reference_id: ISTIO-SECURITY-2020-006
+  url: https://istio.io/latest/news/security/ISTIO-SECURITY-2020-006/
+severities: []
+summary: In nghttp2 before version 1.41.0, the overly large HTTP/2 SETTINGS frame
+  payload causes denial of service. The proof of concept attack involves a malicious
+  client constructing a SETTINGS frame with a length of 14,400 bytes (2400 individual
+  settings entries) over and over again. The attack causes the CPU to spike at 100%.
+  nghttp2 v1.41.0 fixes this vulnerability. There is a workaround to this vulnerability.
+  Implement nghttp2_on_frame_recv_callback callback, and if received frame is SETTINGS
+  frame and the number of settings entries are large (e.g., > 32), then drop the connection.
+vulnerability_id: VCID-e2xc-xma1-aaaf
+weaknesses: []

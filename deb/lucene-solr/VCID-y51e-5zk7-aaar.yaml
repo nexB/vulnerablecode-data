@@ -1,0 +1,68 @@
+affected_purls:
+- pkg:maven/org.apache.solr/solr-core@6.0.0
+- pkg:maven/org.apache.solr/solr-core@6.0.1
+- pkg:maven/org.apache.solr/solr-core@6.1.0
+- pkg:maven/org.apache.solr/solr-core@6.2.0
+- pkg:maven/org.apache.solr/solr-core@6.2.1
+- pkg:maven/org.apache.solr/solr-core@6.3.0
+- pkg:maven/org.apache.solr/solr-core@6.4.0
+- pkg:maven/org.apache.solr/solr-core@6.4.1
+- pkg:maven/org.apache.solr/solr-core@6.4.2
+- pkg:maven/org.apache.solr/solr-core@6.5.0
+- pkg:maven/org.apache.solr/solr-core@6.5.1
+- pkg:maven/org.apache.solr/solr-core@6.6.0
+- pkg:maven/org.apache.solr/solr-core@6.6.1
+- pkg:maven/org.apache.solr/solr-core@6.6.2
+- pkg:maven/org.apache.solr/solr-core@6.6.3
+- pkg:maven/org.apache.solr/solr-core@6.6.4
+- pkg:maven/org.apache.solr/solr-core@7.0.0
+- pkg:maven/org.apache.solr/solr-core@7.0.1
+- pkg:maven/org.apache.solr/solr-core@7.1.0
+- pkg:maven/org.apache.solr/solr-core@7.2.0
+- pkg:maven/org.apache.solr/solr-core@7.2.1
+- pkg:maven/org.apache.solr/solr-core@7.3.0
+- pkg:maven/org.apache.solr/solr-core@7.3.1
+aliases:
+- CVE-2018-8026
+- GHSA-7px3-6f6g-hxcj
+fixed_purl:
+- pkg:deb/debian/lucene-solr@0?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-20%2Bdeb10u2?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-24?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-26?distro=sid
+- pkg:maven/org.apache.solr/solr-core@6.6.5
+- pkg:maven/org.apache.solr/solr-core@7.4.0
+references:
+- id: 145711
+  reference_id: ''
+  url: https://issues.apache.org/jira/browse/SOLR-12450
+- id: 145712
+  reference_id: ''
+  url: https://mail-archives.apache.org/mod_mbox/lucene-solr-user/201807.mbox/%3C0cdc01d413b7%24f97ba580%24ec72f080%24%40apache.org%3E
+- id: 145713
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20190307-0002/
+- id: 145714
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/104690
+- id: 145709
+  reference_id: CVE-2018-8026
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-8026
+- id: 145710
+  reference_id: GHSA-7px3-6f6g-hxcj
+  url: https://github.com/advisories/GHSA-7px3-6f6g-hxcj
+severities:
+- id: 20455
+  reference_id: 145710
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: This vulnerability in Apache Solr 6.0.0 to 6.6.4 and 7.0.0 to 7.3.1 relates
+  to an XML external entity expansion (XXE) in Solr config files (currency.xml, enumsConfig.xml
+  referred from schema.xml, TIKA parsecontext config file). In addition, Xinclude
+  functionality provided in these config files is also affected in a similar way.
+  The vulnerability can be used as XXE using file/ftp/http protocols in order to read
+  arbitrary local files from the Solr server or the internal network. The manipulated
+  files can be uploaded as configsets using Solr's API, allowing to exploit that vulnerability.
+vulnerability_id: VCID-y51e-5zk7-aaar
+weaknesses: []

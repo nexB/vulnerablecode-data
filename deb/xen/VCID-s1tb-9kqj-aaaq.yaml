@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2021-28710
+fixed_purl:
+- pkg:deb/debian/xen@0?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: certain VT-d IOMMUs may not work in shared page table mode For efficiency
+  reasons, address translation control structures (page tables) may (and, on suitable
+  hardware, by default will) be shared between CPUs, for second-level translation
+  (EPT), and IOMMUs. These page tables are presently set up to always be 4 levels
+  deep. However, an IOMMU may require the use of just 3 page table levels. In such
+  a configuration the lop level table needs to be stripped before inserting the root
+  table's address into the hardware pagetable base register. When sharing page tables,
+  Xen erroneously skipped this stripping. Consequently, the guest is able to write
+  to leaf page table entries.
+vulnerability_id: VCID-s1tb-9kqj-aaaq
+weaknesses: []

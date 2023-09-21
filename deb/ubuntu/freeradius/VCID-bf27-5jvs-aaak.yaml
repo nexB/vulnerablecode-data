@@ -1,0 +1,104 @@
+vulnerability_id: VCID-bf27-5jvs-aaak
+aliases:
+  - CVE-2019-17185
+summary: In FreeRADIUS 3.0.x before 3.0.20, the EAP-pwd module used a global OpenSSL BN_CTX
+  instance to handle all handshakes. This mean multiple threads use the same BN_CTX instance
+  concurrently, resulting in crashes when concurrent EAP-pwd handshakes are initiated. This
+  can be abused by an adversary as a Denial-of-Service (DoS) attack.
+severities:
+  - id: 691945
+    reference_id: 1453000
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 66277
+    reference_id: '195327'
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 691946
+    reference_id: 1453001
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691947
+    reference_id: 766248
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691948
+    reference_id: 1453002
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691949
+    reference_id: 785346
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 66274
+    reference_id: '195324'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 390768
+    reference_id: 785347
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 390766
+    reference_id: 785347
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 66275
+    reference_id: '195325'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 66276
+    reference_id: '195326'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 776172
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00039.html
+    reference_id:
+  - id: 1453000
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-17185.html
+    reference_id:
+  - id: '195327'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17185.json
+    reference_id:
+  - id: 1453001
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17185
+    reference_id:
+  - id: 766248
+    url: https://freeradius.org/security/
+    reference_id:
+  - id: 1453002
+    url: https://github.com/FreeRADIUS/freeradius-server/commit/6b522f8780813726799e6b8cf0f1f8e0ce2c8ebf
+    reference_id:
+  - id: 785346
+    url: https://github.com/FreeRADIUS/freeradius-server/releases/tag/release_3_0_20
+    reference_id:
+  - id: '195324'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1816680
+    reference_id: 1816680
+  - id: 66168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 785347
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17185
+    reference_id: CVE-2019-17185
+  - id: '195325'
+    url: https://access.redhat.com/errata/RHSA-2020:3984
+    reference_id: RHSA-2020:3984
+  - id: '195326'
+    url: https://access.redhat.com/errata/RHSA-2020:4799
+    reference_id: RHSA-2020:4799
+weaknesses: []

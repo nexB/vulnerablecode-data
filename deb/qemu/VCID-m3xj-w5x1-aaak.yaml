@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2015-8701
+fixed_purl:
+- pkg:deb/debian/qemu@1:2.5%2Bdfsg-3?distro=sid
+- pkg:deb/debian/qemu@1:3.1%2Bdfsg-8%2Bdeb10u8?distro=sid
+- pkg:deb/debian/qemu@1:5.2%2Bdfsg-11%2Bdeb11u2?distro=sid
+- pkg:deb/debian/qemu@1:7.2%2Bdfsg-7?distro=sid
+references:
+- id: 126019
+  reference_id: '809313'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=809313
+severities: []
+summary: QEMU (aka Quick Emulator) built with the Rocker switch emulation support
+  is vulnerable to an off-by-one error. It happens while processing transmit (tx)
+  descriptors in 'tx_consume' routine, if a descriptor was to have more than allowed
+  (ROCKER_TX_FRAGS_MAX=16) fragments. A privileged user inside guest could use this
+  flaw to cause memory leakage on the host or crash the QEMU process instance resulting
+  in DoS issue.
+vulnerability_id: VCID-m3xj-w5x1-aaak
+weaknesses: []

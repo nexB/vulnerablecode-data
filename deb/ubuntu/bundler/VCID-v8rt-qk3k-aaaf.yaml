@@ -1,0 +1,112 @@
+vulnerability_id: VCID-v8rt-qk3k-aaaf
+aliases:
+  - CVE-2013-0334
+  - GHSA-49jx-9cmc-xjxm
+summary: |
+  Remote code execution
+  Any Gemfile with multiple top-level `source` lines cannot reliably control the gem server that a particular gem is fetched from. As a result, Bundler might install the wrong gem if more than one source provides a gem with the same name. This is especially possible in the case of Github's legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on Rubygems.org with the same name as a commonly-used Github gem. From that point forward, running `bundle install` might result in the malicious gem being used instead of the expected gem.
+severities:
+  - id: 651388
+    reference_id: 1421355
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651389
+    reference_id: 1421356
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 58830
+    reference_id: 185248
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 161388
+    reference_id: 513644
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 708166
+    reference_id: 1472399
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 58831
+    reference_id: 185249
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 513637
+    url: http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html
+    reference_id:
+  - id: 513638
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140609.html
+    reference_id:
+  - id: 513639
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140654.html
+    reference_id:
+  - id: 513640
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140655.html
+    reference_id:
+  - id: 513641
+    url: http://lists.opensuse.org/opensuse-updates/2015-03/msg00092.html
+    reference_id:
+  - id: 38766
+    url: http://osvdb.org/show/osvdb/110004
+    reference_id:
+  - id: 1421355
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-0334.html
+    reference_id:
+  - id: 185250
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-0334.json
+    reference_id:
+  - id: 1421356
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0334
+    reference_id:
+  - id: 38767
+    url: https://groups.google.com/forum/#!topic/ruby-security-ann/Rms5sZhLxdo
+    reference_id:
+  - id: 513643
+    url: https://security.gentoo.org/glsa/201609-02
+    reference_id:
+  - id: 27563
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    reference_id:
+  - id: 513642
+    url: http://www.securityfocus.com/bid/70099
+    reference_id:
+  - id: 185248
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1146335
+    reference_id: 1146335
+  - id: 39893
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=762739
+    reference_id: 762739
+  - id: 513645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:bundler:bundler:*:*:*:*:*:ruby:*:*
+    reference_id: cpe:2.3:a:bundler:bundler:*:*:*:*:*:ruby:*:*
+  - id: 79278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+  - id: 443591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+  - id: 157852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*
+  - id: 157777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+  - id: 157778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+  - id: 513644
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-0334
+    reference_id: CVE-2013-0334
+  - id: 1472399
+    url: https://github.com/advisories/GHSA-49jx-9cmc-xjxm
+    reference_id: GHSA-49jx-9cmc-xjxm
+  - id: 185249
+    url: https://access.redhat.com/errata/RHSA-2015:2180
+    reference_id: RHSA-2015:2180
+weaknesses: []

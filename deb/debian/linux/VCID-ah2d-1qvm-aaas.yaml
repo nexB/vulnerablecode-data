@@ -1,0 +1,132 @@
+vulnerability_id: VCID-ah2d-1qvm-aaas
+aliases:
+  - CVE-2021-3490
+summary: 'The eBPF ALU32 bounds tracking for bitwise ops (AND, OR and XOR) in the Linux kernel
+  did not properly update 32-bit bounds, which could be turned into out of bounds reads and
+  writes in the Linux kernel and therefore, arbitrary code execution. This issue was fixed via
+  commit 049c4e13714e ("bpf: Fix alu32 const subreg bound tracking on bitwise operations") (v5.13-rc4)
+  and backported to the stable kernels in v5.12.4, v5.11.21, and v5.10.37. The AND/OR issues
+  were introduced by commit 3f50f132d840 ("bpf: Verifier, do explicit ALU32 bounds tracking")
+  (5.7-rc1) and the XOR variant was introduced by 2921c90d4718 ("bpf:Fix a verifier failure
+  with xor") ( 5.10-rc1).'
+severities:
+  - id: 702490
+    reference_id: 1461724
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605303
+    reference_id: 927900
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702491
+    reference_id: 1461725
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702492
+    reference_id: 888419
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697715
+    reference_id: 888388
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702488
+    reference_id: 888389
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702493
+    reference_id: 888420
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 605302
+    reference_id: 927899
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 545860
+    reference_id: 888422
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 545858
+    reference_id: 888422
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 888418
+    url: http://packetstormsecurity.com/files/164015/Linux-eBPF-ALU32-32-bit-Invalid-Bounds-Tracking-Local-Privilege-Escalation.html
+    reference_id:
+  - id: 1461724
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3490.html
+    reference_id:
+  - id: 927900
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3490.json
+    reference_id:
+  - id: 1461725
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3490
+    reference_id:
+  - id: 888419
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=049c4e13714ecbca567b4d5f6d563f05d431c80e
+    reference_id:
+  - id: 888387
+    url: https://security.netapp.com/advisory/ntap-20210716-0004/
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 888388
+    url: https://ubuntu.com/security/notices/USN-4949-1
+    reference_id:
+  - id: 888389
+    url: https://ubuntu.com/security/notices/USN-4950-1
+    reference_id:
+  - id: 888420
+    url: https://www.openwall.com/lists/oss-security/2021/05/11/11
+    reference_id:
+  - id: 888421
+    url: https://www.zerodayinitiative.com/advisories/ZDI-21-606/
+    reference_id:
+  - id: 927899
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1959556
+    reference_id: '1959556'
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 822399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.10:*:*:*:*:*:*:*
+  - id: 637847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:21.04:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 888393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:-:*:*:*:*:*:*
+  - id: 888394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+  - id: 888395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+  - id: 888396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+  - id: 888422
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3490
+    reference_id: CVE-2021-3490
+weaknesses: []

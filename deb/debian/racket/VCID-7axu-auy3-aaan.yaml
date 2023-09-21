@@ -1,0 +1,40 @@
+vulnerability_id: VCID-7axu-auy3-aaan
+aliases:
+  - CVE-2021-32773
+summary: Racket is a general-purpose programming language and an ecosystem for language-oriented
+  programming. In versions prior to 8.2, code evaluated using the Racket sandbox could cause
+  system modules to incorrectly use attacker-created modules instead of their intended dependencies.
+  This could allow system functions to be controlled by the attacker, giving access to facilities
+  intended to be restricted. This problem is fixed in Racket version 8.2. A workaround is available,
+  depending on system settings. For systems that provide arbitrary Racket evaluation, external
+  sandboxing such as containers limit the impact of the problem. For multi-user evaluation systems,
+  such as the `handin-server` system, it is not possible to work around this problem and upgrading
+  is required.
+severities:
+  - id: 540897
+    reference_id: 884977
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 540895
+    reference_id: 884977
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 884975
+    url: https://github.com/racket/racket/commit/6ca4ffeca1e5877d44f835760ad89f18488d97e1
+    reference_id:
+  - id: 884976
+    url: https://github.com/racket/racket/security/advisories/GHSA-cgrw-p7p7-937c
+    reference_id:
+  - id: 112899
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991327
+    reference_id: 991327
+  - id: 884978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:racket-lang:racket:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:racket-lang:racket:*:*:*:*:*:*:*:*
+  - id: 884977
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-32773
+    reference_id: CVE-2021-32773
+weaknesses: []

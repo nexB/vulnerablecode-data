@@ -1,0 +1,68 @@
+vulnerability_id: VCID-zkqv-bzeq-aaan
+aliases:
+  - CVE-2019-6488
+summary: The string component in the GNU C Library (aka glibc or libc6) through 2.28, when running
+  on the x32 architecture, incorrectly attempts to use a 64-bit register for size_t in assembly
+  codes, which can lead to a segmentation fault or possibly unspecified other impact, as demonstrated
+  by a crash in __memmove_avx_unaligned_erms in sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+  during a memcpy.
+severities:
+  - id: 694363
+    reference_id: 1454885
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 613127
+    reference_id: 933644
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 694364
+    reference_id: 1454886
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 613126
+    reference_id: 933643
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 413018
+    reference_id: 801486
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 413016
+    reference_id: 801486
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1454885
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-6488.html
+    reference_id:
+  - id: 933644
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-6488.json
+    reference_id:
+  - id: 1454886
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6488
+    reference_id:
+  - id: 801484
+    url: https://security.gentoo.org/glsa/202006-04
+    reference_id:
+  - id: 801485
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=24097
+    reference_id:
+  - id: 801483
+    url: http://www.securityfocus.com/bid/106671
+    reference_id:
+  - id: 933643
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1667931
+    reference_id: 1667931
+  - id: 44112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  - id: 801486
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-6488
+    reference_id: CVE-2019-6488
+weaknesses: []

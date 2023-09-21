@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2020-11501
+fixed_purl:
+- pkg:deb/debian/gnutls28@3.6.13-2?distro=sid
+- pkg:deb/debian/gnutls28@3.6.7-4%2Bdeb10u3?distro=sid
+- pkg:deb/debian/gnutls28@3.6.7-4%2Bdeb10u8?distro=sid
+- pkg:deb/debian/gnutls28@3.7.1-5%2Bdeb11u3?distro=sid
+- pkg:deb/debian/gnutls28@3.7.9-2?distro=sid
+references:
+- id: 129076
+  reference_id: '955556'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=955556
+severities: []
+summary: GnuTLS 3.6.x before 3.6.13 uses incorrect cryptography for DTLS. The earliest
+  affected version is 3.6.3 (2018-07-16) because of an error in a 2017-10-06 commit.
+  The DTLS client always uses 32 '\0' bytes instead of a random value, and thus contributes
+  no randomness to a DTLS negotiation. This breaks the security guarantees of the
+  DTLS protocol.
+vulnerability_id: VCID-ayhy-1bfn-aaaa
+weaknesses: []

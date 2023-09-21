@@ -1,0 +1,12 @@
+vulnerability_id: VCID-8w7k-3342-aaag
+aliases:
+  - SS-2016-013
+summary: |
+  Member.Name isn't escaped
+  The core template `framework/templates/Includes/GridField_print.ss` uses "Printed by $Member.Name". If the currently logged in members first name or surname contain XSS, this prints the raw HTML out, because `Member->getName()` just returns the raw `FirstName + Surname` as a string, which is injected directly.
+severities: []
+references:
+  - id: 25793
+    url: https://www.silverstripe.org/download/security-releases/ss-2016-013/
+    reference_id:
+weaknesses: []

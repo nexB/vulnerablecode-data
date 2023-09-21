@@ -1,0 +1,169 @@
+vulnerability_id: VCID-sjtp-duhm-aaad
+aliases:
+  - CVE-2017-16994
+summary: The walk_hugetlb_range function in mm/pagewalk.c in the Linux kernel before 4.14.2
+  mishandles holes in hugetlb ranges, which allows local users to obtain sensitive information
+  from uninitialized kernel memory via crafted use of the mincore() system call.
+severities:
+  - id: 676782
+    reference_id: 689857
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676783
+    reference_id: 1441077
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619749
+    reference_id: 938412
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 676785
+    reference_id: 689861
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676786
+    reference_id: 1441078
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676787
+    reference_id: 689862
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672917
+    reference_id: 1438146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672918
+    reference_id: 1438147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672919
+    reference_id: 1438148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672922
+    reference_id: 1438151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676784
+    reference_id: 689858
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619748
+    reference_id: 938411
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 272620
+    reference_id: 689864
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 272618
+    reference_id: 689864
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 619408
+    reference_id: 938173
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 689857
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=373c4557d2aa362702c4c2d41288fb1e54990b7c
+    reference_id:
+  - id: 1441077
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16994.html
+    reference_id:
+  - id: 938412
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-16994.json
+    reference_id:
+  - id: 689861
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1431
+    reference_id:
+  - id: 1441078
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16994
+    reference_id:
+  - id: 689862
+    url: https://github.com/torvalds/linux/commit/373c4557d2aa362702c4c2d41288fb1e54990b7c
+    reference_id:
+  - id: 1438146
+    url: https://ubuntu.com/security/notices/USN-3617-1
+    reference_id:
+  - id: 1438147
+    url: https://ubuntu.com/security/notices/USN-3617-2
+    reference_id:
+  - id: 1438148
+    url: https://ubuntu.com/security/notices/USN-3617-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1438151
+    url: https://ubuntu.com/security/notices/USN-3632-1
+    reference_id:
+  - id: 666768
+    url: https://usn.ubuntu.com/3617-1/
+    reference_id:
+  - id: 666769
+    url: https://usn.ubuntu.com/3617-2/
+    reference_id:
+  - id: 666770
+    url: https://usn.ubuntu.com/3617-3/
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 666773
+    url: https://usn.ubuntu.com/3632-1/
+    reference_id:
+  - id: 689863
+    url: https://www.exploit-db.com/exploits/43178/
+    reference_id:
+  - id: 689858
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.2
+    reference_id:
+  - id: 689859
+    url: http://www.securityfocus.com/bid/101969
+    reference_id:
+  - id: 938411
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1518155
+    reference_id: 1518155
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 689864
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16994
+    reference_id: CVE-2017-16994
+  - id: 938173
+    url: https://access.redhat.com/errata/RHSA-2018:0502
+    reference_id: RHSA-2018:0502
+weaknesses: []

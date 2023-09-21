@@ -1,0 +1,83 @@
+vulnerability_id: VCID-5axj-fhxv-aaad
+aliases:
+  - CVE-2011-1749
+summary: The nfs_addmntent function in support/nfs/nfs_mntent.c in the mount.nsf tool in nfs-utils
+  before 1.2.4 attempts to append to the /etc/mtab file without first checking whether resource
+  limits would interfere, which allows local users to corrupt this file via a process with a
+  small RLIMIT_FSIZE value, a related issue to CVE-2011-1089.
+severities:
+  - id: 648852
+    reference_id: 1419318
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 648853
+    reference_id: 1419319
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 142959
+    reference_id: 455828
+    scoring_system: cvssv2
+    value: '3.3'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:P/A:P
+  - id: 67226
+    reference_id: '196477'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 67636
+    reference_id: '197016'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 1419318
+    url: http://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-1749.html
+    reference_id:
+  - id: 455823
+    url: http://rhn.redhat.com/errata/RHSA-2011-1534.html
+    reference_id:
+  - id: 455824
+    url: http://rhn.redhat.com/errata/RHSA-2012-0310.html
+    reference_id:
+  - id: '197017'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-1749.json
+    reference_id:
+  - id: 455827
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=697975
+    reference_id:
+  - id: 1419319
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1749
+    reference_id:
+  - id: 455825
+    url: http://sourceforge.net/projects/nfs/files/nfs-utils/1.2.4/Changelog-nfs-utils-1.2.4/download
+    reference_id:
+  - id: 455826
+    url: http://www.openwall.com/lists/oss-security/2011/04/25/5
+    reference_id:
+  - id: 77499
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=629420
+    reference_id: 629420
+  - id: 455829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux-nfs:nfs-utils:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux-nfs:nfs-utils:*:*:*:*:*:*:*:*
+  - id: 455830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux-nfs:nfs-utils:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux-nfs:nfs-utils:1.2.0:*:*:*:*:*:*:*
+  - id: 455831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux-nfs:nfs-utils:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux-nfs:nfs-utils:1.2.1:*:*:*:*:*:*:*
+  - id: 455832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux-nfs:nfs-utils:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux-nfs:nfs-utils:1.2.2:*:*:*:*:*:*:*
+  - id: 455828
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-1749
+    reference_id: CVE-2011-1749
+  - id: '196477'
+    url: https://access.redhat.com/errata/RHSA-2011:1534
+    reference_id: RHSA-2011:1534
+  - id: '197016'
+    url: https://access.redhat.com/errata/RHSA-2012:0310
+    reference_id: RHSA-2012:0310
+weaknesses: []

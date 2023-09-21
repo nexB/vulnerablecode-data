@@ -1,0 +1,68 @@
+affected_purls:
+- pkg:maven/org.springframework/spring-oxm@5.2.0.RELEASE
+- pkg:maven/org.springframework/spring-oxm@5.2.1.RELEASE
+- pkg:maven/org.springframework/spring-oxm@5.2.2.RELEASE
+- pkg:maven/org.springframework/spring-webflux@5.2.0.RELEASE
+- pkg:maven/org.springframework/spring-webflux@5.2.1.RELEASE
+- pkg:maven/org.springframework/spring-webflux@5.2.2.RELEASE
+- pkg:maven/org.springframework/spring-webmvc@5.2.0.RELEASE
+- pkg:maven/org.springframework/spring-webmvc@5.2.1.RELEASE
+- pkg:maven/org.springframework/spring-webmvc@5.2.2.RELEASE
+aliases:
+- CVE-2020-5397
+- GHSA-7pm4-g2qj-j85x
+fixed_purl:
+- pkg:deb/debian/libspring-java@0?distro=sid
+- pkg:deb/debian/libspring-java@4.3.22-4?distro=sid
+- pkg:deb/debian/libspring-java@4.3.30-1?distro=sid
+- pkg:deb/debian/libspring-java@4.3.30-2?distro=sid
+- pkg:maven/org.springframework/spring-oxm@5.2.3.RELEASE
+- pkg:maven/org.springframework/spring-webflux@5.2.3.RELEASE
+- pkg:maven/org.springframework/spring-webmvc@5.2.3.RELEASE
+references:
+- id: 154974
+  reference_id: ''
+  url: https://github.com/spring-projects/spring-framework
+- id: 133144
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuapr2020.html
+- id: 138341
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2020.html
+- id: 134316
+  reference_id: ''
+  url: https://www.oracle.com//security-alerts/cpujul2021.html
+- id: 138518
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2022.html
+- id: 135896
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2020.html
+- id: 136182
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2021.html
+- id: 154972
+  reference_id: CVE-2020-5397
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-5397
+- id: 154973
+  reference_id: CVE-2020-5397
+  url: https://pivotal.io/security/cve-2020-5397
+- id: 154975
+  reference_id: GHSA-7pm4-g2qj-j85x
+  url: https://github.com/advisories/GHSA-7pm4-g2qj-j85x
+severities:
+- id: 22294
+  reference_id: 154975
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Spring Framework, versions 5.2.x prior to 5.2.3 are vulnerable to CSRF attacks
+  through CORS preflight requests that target Spring MVC (spring-webmvc module) or
+  Spring WebFlux (spring-webflux module) endpoints. Only non-authenticated endpoints
+  are vulnerable because preflight requests should not include credentials and therefore
+  requests should fail authentication. However a notable exception to this are Chrome
+  based browsers when using client certificates for authentication since Chrome sends
+  TLS client certificates in CORS preflight requests in violation of spec requirements.
+  No HTTP body can be sent or received as a result of this attack.
+vulnerability_id: VCID-s728-tvgp-aaah
+weaknesses: []

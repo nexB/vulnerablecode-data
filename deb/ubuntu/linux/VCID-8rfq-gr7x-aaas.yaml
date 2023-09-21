@@ -1,0 +1,143 @@
+vulnerability_id: VCID-8rfq-gr7x-aaas
+aliases:
+  - CVE-2019-19602
+summary: fpregs_state_valid in arch/x86/include/asm/fpu/internal.h in the Linux kernel before
+  5.4.2, when GCC 9 is used, allows context-dependent attackers to cause a denial of service
+  (memory corruption) or possibly have unspecified other impact because of incorrect fpu_fpregs_owner_ctx
+  caching, as demonstrated by mishandling of signal-based non-cooperative preemption in Go 1.14
+  prereleases on amd64, aka CID-59c4bd853abc.
+severities:
+  - id: 692731
+    reference_id: 1453528
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64623
+    reference_id: '193282'
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L
+  - id: 692732
+    reference_id: 790543
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692533
+    reference_id: 789595
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692733
+    reference_id: 1453529
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692736
+    reference_id: 790545
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692737
+    reference_id: 790546
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692734
+    reference_id: 790544
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692735
+    reference_id: 1453530
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691581
+    reference_id: 1452720
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691569
+    reference_id: 1452708
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64622
+    reference_id: '193281'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 396886
+    reference_id: 790547
+    scoring_system: cvssv2
+    value: '5.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:N/A:P
+  - id: 396884
+    reference_id: 790547
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L
+  - id: 49231
+    reference_id: 173526
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1453528
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19602.html
+    reference_id:
+  - id: '193282'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19602.json
+    reference_id:
+  - id: 790543
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=205663
+    reference_id:
+  - id: 789595
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.2
+    reference_id:
+  - id: 1453529
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19602
+    reference_id:
+  - id: 790545
+    url: https://github.com/golang/go/issues/35777#issuecomment-561935388
+    reference_id:
+  - id: 790546
+    url: https://github.com/torvalds/linux/commit/59c4bd853abcea95eccc167a7d7fd5f1a5f47b98
+    reference_id:
+  - id: 790544
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=59c4bd853abcea95eccc167a7d7fd5f1a5f47b98
+    reference_id:
+  - id: 1453530
+    url: https://git.kernel.org/linus/59c4bd853abcea95eccc167a7d7fd5f1a5f47b98
+    reference_id:
+  - id: 766629
+    url: https://security.netapp.com/advisory/ntap-20200103-0001/
+    reference_id:
+  - id: 1452720
+    url: https://ubuntu.com/security/notices/USN-4284-1
+    reference_id:
+  - id: 780073
+    url: https://usn.ubuntu.com/4284-1/
+    reference_id:
+  - id: 1452708
+    url: https://usn.ubuntu.com/usn/usn-4284-1
+    reference_id:
+  - id: '193281'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1784572
+    reference_id: 1784572
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 790547
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19602
+    reference_id: CVE-2019-19602
+  - id: 173526
+    url: https://access.redhat.com/errata/RHSA-2020:4431
+    reference_id: RHSA-2020:4431
+weaknesses: []

@@ -1,0 +1,47 @@
+vulnerability_id: VCID-ndgt-ubse-aaaf
+aliases:
+  - CVE-2013-0151
+summary: The do_hvm_op function in xen/arch/x86/hvm/hvm.c in Xen 4.2.x on the x86_32 platform
+  does not prevent HVM_PARAM_NESTEDHVM (aka nested virtualization) operations, which allows
+  guest OS users to cause a denial of service (long-duration page mappings and host OS crash)
+  by leveraging administrative access to an HVM guest in a domain with a large number of VCPUs.
+severities:
+  - id: 63262
+    reference_id: '191446'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 160958
+    reference_id: 512033
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:A/AC:H/Au:N/C:N/I:N/A:C
+references:
+  - id: 512031
+    url: http://openwall.com/lists/oss-security/2013/01/22/10
+    reference_id:
+  - id: '191447'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-0151.json
+    reference_id:
+  - id: 453943
+    url: http://secunia.com/advisories/55082
+    reference_id:
+  - id: 453944
+    url: http://security.gentoo.org/glsa/glsa-201309-24.xml
+    reference_id:
+  - id: 512032
+    url: http://xenbits.xen.org/gitweb/?p=xen.git;a=commit;h=d60d7082289a74e44b3dc8f67df46c3404ca08bf
+    reference_id:
+  - id: '191446'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=893144
+    reference_id: 893144
+  - id: 497549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.0:-:*:*:*:*:x86:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.0:-:*:*:*:*:x86:*
+  - id: 512034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.2.1:-:*:*:*:*:x86:*
+    reference_id: cpe:2.3:o:xen:xen:4.2.1:-:*:*:*:*:x86:*
+  - id: 512033
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-0151
+    reference_id: CVE-2013-0151
+weaknesses: []

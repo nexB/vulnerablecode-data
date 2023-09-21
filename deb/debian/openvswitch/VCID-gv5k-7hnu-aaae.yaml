@@ -1,0 +1,65 @@
+vulnerability_id: VCID-gv5k-7hnu-aaae
+aliases:
+  - CVE-2016-10377
+summary: In Open vSwitch (OvS) 2.5.0, a malformed IP packet can cause the switch to read past
+  the end of the packet buffer due to an unsigned integer underflow in `lib/flow.c` in the function
+  `miniflow_extract`, permitting remote bypass of the access control list enforced by the switch.
+severities:
+  - id: 666621
+    reference_id: 1433019
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 47944
+    reference_id: 172513
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 666622
+    reference_id: 1433020
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666623
+    reference_id: 628323
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 47943
+    reference_id: 172512
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 214007
+    reference_id: 628324
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:A/AC:L/Au:N/C:P/I:P/A:P
+  - id: 214005
+    reference_id: 628324
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1433019
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10377.html
+    reference_id:
+  - id: 172513
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-10377.json
+    reference_id:
+  - id: 1433020
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10377
+    reference_id:
+  - id: 628323
+    url: https://mail.openvswitch.org/pipermail/ovs-dev/2016-July/319503.html
+    reference_id:
+  - id: 172512
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1457325
+    reference_id: 1457325
+  - id: 628325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openvswitch:openvswitch:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openvswitch:openvswitch:2.5.0:*:*:*:*:*:*:*
+  - id: 628324
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10377
+    reference_id: CVE-2016-10377
+weaknesses: []

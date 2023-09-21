@@ -1,0 +1,29 @@
+affected_purls: []
+aliases:
+- CVE-2019-18425
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: An issue was discovered in Xen through 4.12.x allowing 32-bit PV guest OS
+  users to gain guest OS privileges by installing and using descriptors. There is
+  missing descriptor table limit checking in x86 PV emulation. When emulating certain
+  PV guest operations, descriptor table accesses are performed by the emulating code.
+  Such accesses should respect the guest specified limits, unless otherwise guaranteed
+  to fail in such a case. Without this, emulation of 32-bit guest user mode calls
+  through call gates would allow guest user mode to install and then use descriptors
+  of their choice, as long as the guest kernel did not itself install an LDT. (Most
+  OSes don't install any LDT by default). 32-bit PV guest user mode can elevate its
+  privileges to that of the guest kernel. Xen versions from at least 3.2 onwards are
+  affected. Only 32-bit PV guest user mode can leverage this vulnerability. HVM, PVH,
+  as well as 64-bit PV guests cannot leverage this vulnerability. Arm systems are
+  unaffected.
+vulnerability_id: VCID-3dmm-ezy8-aaac
+weaknesses: []

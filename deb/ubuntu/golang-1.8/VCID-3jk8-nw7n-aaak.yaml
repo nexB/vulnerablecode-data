@@ -1,0 +1,109 @@
+vulnerability_id: VCID-3jk8-nw7n-aaak
+aliases:
+  - CVE-2017-8932
+summary: A bug in the standard library ScalarMult implementation of curve P-256 for amd64 architectures
+  in Go before 1.7.6 and 1.8.x before 1.8.2 causes incorrect results to be generated for specific
+  input points. An adaptive attack can be mounted to progressively extract the scalar input
+  to ScalarMult by submitting crafted points and observing failures to the derive correct output.
+  This leads to a full key recovery attack against static ECDH, as used in popular JWT libraries.
+severities:
+  - id: 681325
+    reference_id: 1444684
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 622850
+    reference_id: 940597
+    scoring_system: cvssv3
+    value: '4.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 681326
+    reference_id: 1444685
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 622848
+    reference_id: 940595
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 299354
+    reference_id: 714157
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 299352
+    reference_id: 714157
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 622849
+    reference_id: 940596
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 714148
+    url: http://lists.opensuse.org/opensuse-updates/2017-06/msg00079.html
+    reference_id:
+  - id: 714149
+    url: http://lists.opensuse.org/opensuse-updates/2017-06/msg00080.html
+    reference_id:
+  - id: 1444684
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-8932.html
+    reference_id:
+  - id: 940597
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-8932.json
+    reference_id:
+  - id: 714151
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1455191
+    reference_id:
+  - id: 1444685
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8932
+    reference_id:
+  - id: 714152
+    url: https://github.com/golang/go/commit/9294fa2749ffee7edbbb817a0ef9fe633136fa9c
+    reference_id:
+  - id: 714153
+    url: https://github.com/golang/go/issues/20040
+    reference_id:
+  - id: 714154
+    url: https://go-review.googlesource.com/c/41070/
+    reference_id:
+  - id: 714155
+    url: https://groups.google.com/d/msg/golang-announce/B5ww0iFt1_Q/TgUFJV14BgAJ
+    reference_id:
+  - id: 714156
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LZH4T47ROLZ6YEZBDVXVS2KISTDMXAPS/
+    reference_id:
+  - id: 940595
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1455189
+    reference_id: 1455189
+  - id: 41467
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863307
+    reference_id: 863307
+  - id: 162127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+  - id: 714159
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:1.8:*:*:*:*:*:*:*
+  - id: 714158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:1.8.1:*:*:*:*:*:*:*
+  - id: 635842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:novell:suse_package_hub_for_suse_linux_enterprise:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:novell:suse_package_hub_for_suse_linux_enterprise:12:*:*:*:*:*:*:*
+  - id: 157931
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:25:*:*:*:*:*:*:*
+  - id: 157932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+  - id: 714157
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8932
+    reference_id: CVE-2017-8932
+  - id: 940596
+    url: https://access.redhat.com/errata/RHSA-2017:1859
+    reference_id: RHSA-2017:1859
+weaknesses: []

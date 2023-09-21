@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-12210
+fixed_purl:
+- pkg:deb/debian/pam-u2f@1.0.7-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/pam-u2f@1.0.8-1?distro=sid
+- pkg:deb/debian/pam-u2f@1.1.0-1.1?distro=sid
+references:
+- id: 128502
+  reference_id: '930023'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=930023
+severities: []
+summary: In Yubico pam-u2f 1.0.7, when configured with debug and a custom debug log
+  file is set using debug_file, that file descriptor is not closed when a new process
+  is spawned. This leads to the file descriptor being inherited into the child process;
+  the child process can then read from and write to it. This can leak sensitive information
+  and also, if written to, be used to fill the disk or plant misinformation.
+vulnerability_id: VCID-djdf-3tpr-aaac
+weaknesses: []

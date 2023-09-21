@@ -1,0 +1,68 @@
+vulnerability_id: VCID-v2eg-au83-aaac
+aliases:
+  - CVE-2017-16667
+summary: backintime (aka Back in Time) before 1.1.24 did improper escaping/quoting of file paths
+  used as arguments to the 'notify-send' command, leading to some parts of file paths being
+  executed as shell commands within an os.system call in qt4/plugins/notifyplugin.py. This could
+  allow an attacker to craft an unreadable file with a specific name to run arbitrary shell
+  commands.
+severities:
+  - id: 676590
+    reference_id: 1440960
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676591
+    reference_id: 1440961
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676592
+    reference_id: 688881
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676593
+    reference_id: 688882
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 271552
+    reference_id: 688885
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 271550
+    reference_id: 688885
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1440960
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16667.html
+    reference_id:
+  - id: 1440961
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16667
+    reference_id:
+  - id: 688881
+    url: https://github.com/bit-team/backintime/commit/cef81d0da93ff601252607df3db1a48f7f6f01b3
+    reference_id:
+  - id: 688882
+    url: https://github.com/bit-team/backintime/issues/834
+    reference_id:
+  - id: 688883
+    url: https://github.com/bit-team/backintime/releases/tag/v1.1.24
+    reference_id:
+  - id: 688884
+    url: https://security.gentoo.org/glsa/201801-06
+    reference_id:
+  - id: 39701
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=881205
+    reference_id: 881205
+  - id: 688886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:backintime_project:backintime:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:backintime_project:backintime:*:*:*:*:*:*:*:*
+  - id: 688885
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16667
+    reference_id: CVE-2017-16667
+weaknesses: []

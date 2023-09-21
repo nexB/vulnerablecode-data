@@ -1,0 +1,110 @@
+vulnerability_id: VCID-bz43-6hzb-aaap
+aliases:
+  - CVE-2020-13962
+summary: Qt 5.12.2 through 5.14.2, as used in unofficial builds of Mumble 1.3.0 and other products,
+  mishandles OpenSSL's error queue, which can cause a denial of service to QSslSocket users.
+  Because errors leak in unrelated TLS sessions, an unrelated session may be disconnected when
+  any handshake fails. (Mumble 1.3.1 is not affected, regardless of the Qt version.)
+severities:
+  - id: 696327
+    reference_id: 1456466
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 611657
+    reference_id: 932540
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 696328
+    reference_id: 1456467
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696329
+    reference_id: 819522
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 611656
+    reference_id: 932539
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 440667
+    reference_id: 819527
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 440665
+    reference_id: 819527
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 54074
+    reference_id: 179259
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 819519
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00004.html
+    reference_id:
+  - id: 1456466
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-13962.html
+    reference_id:
+  - id: 932540
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-13962.json
+    reference_id:
+  - id: 819520
+    url: https://bugreports.qt.io/browse/QTBUG-83450
+    reference_id:
+  - id: 1456467
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13962
+    reference_id:
+  - id: 819521
+    url: https://github.com/mumble-voip/mumble/issues/3679
+    reference_id:
+  - id: 819522
+    url: https://github.com/mumble-voip/mumble/pull/4032
+    reference_id:
+  - id: 819523
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X6EDPIIAQPVP2CHL2CHDHJ25EECA7UE/
+    reference_id:
+  - id: 819524
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UQJDBZUYMMF4R5QQKD2HTIKQU2NSKO63/
+    reference_id:
+  - id: 819525
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V3IZY7LKJ6NAXQDFYFR4S7L5BBHYK53K/
+    reference_id:
+  - id: 819526
+    url: https://security.gentoo.org/glsa/202007-18
+    reference_id:
+  - id: 932539
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1849734
+    reference_id: 1849734
+  - id: 819528
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mumble:mumble:1.3.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mumble:mumble:1.3.0:-:*:*:*:*:*:*
+  - id: 464877
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qt:qt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qt:qt:*:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 168171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+  - id: 819527
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-13962
+    reference_id: CVE-2020-13962
+  - id: 179259
+    url: https://access.redhat.com/errata/RHSA-2020:4690
+    reference_id: RHSA-2020:4690
+weaknesses: []

@@ -1,0 +1,39 @@
+vulnerability_id: VCID-j1bc-rwsc-aaaf
+aliases:
+  - CVE-2019-18625
+summary: An issue was discovered in Suricata 5.0.0. It was possible to bypass/evade any tcp
+  based signature by faking a closed TCP session using an evil server. After the TCP SYN packet,
+  it is possible to inject a RST ACK and a FIN ACK packet with a bad TCP Timestamp option. The
+  client will ignore the RST ACK and the FIN ACK packets because of the bad TCP Timestamp option.
+  Both linux and windows client are ignoring the injected packets.
+severities:
+  - id: 393966
+    reference_id: 788128
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 393964
+    reference_id: 788128
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 788123
+    url: https://github.com/OISF/suricata/commit/9f0294fadca3dcc18c919424242a41e01f3e8318
+    reference_id:
+  - id: 788124
+    url: https://github.com/OISF/suricata/commit/ea0659de7640cf6a51de5bbd1dbbb0414e4623a0
+    reference_id:
+  - id: 788125
+    url: https://lists.debian.org/debian-lts-announce/2020/01/msg00032.html
+    reference_id:
+  - id: 788126
+    url: https://redmine.openinfosecfoundation.org/issues/3286
+    reference_id:
+  - id: 788127
+    url: https://redmine.openinfosecfoundation.org/issues/3395
+    reference_id:
+  - id: 788128
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18625
+    reference_id: CVE-2019-18625
+weaknesses: []

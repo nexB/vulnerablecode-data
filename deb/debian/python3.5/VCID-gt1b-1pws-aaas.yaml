@@ -1,0 +1,252 @@
+vulnerability_id: VCID-gt1b-1pws-aaas
+aliases:
+  - CVE-2016-0772
+summary: The smtplib library in CPython (aka Python) before 2.7.12, 3.x before 3.4.5, and 3.5.x
+  before 3.5.2 does not return an error when StartTLS fails, which might allow man-in-the-middle
+  attackers to bypass the TLS protections by leveraging a network position between the client
+  and the registry to block the StartTLS command, aka a "StartTLS stripping attack."
+severities:
+  - id: 665868
+    reference_id: 1432401
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 49304
+    reference_id: 173599
+    scoring_system: cvssv3
+    value: '4.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 665870
+    reference_id: 1432402
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665872
+    reference_id: 1432404
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665871
+    reference_id: 1432403
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665869
+    reference_id: 625331
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 211284
+    reference_id: 625343
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 211282
+    reference_id: 625343
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N
+  - id: 48314
+    reference_id: 172801
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 48315
+    reference_id: 172802
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 48312
+    reference_id: 172799
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 48313
+    reference_id: 172800
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 48311
+    reference_id: 172798
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 466163
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html
+    reference_id:
+  - id: 1432401
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-0772.html
+    reference_id:
+  - id: 625326
+    url: http://rhn.redhat.com/errata/RHSA-2016-1626.html
+    reference_id:
+  - id: 625327
+    url: http://rhn.redhat.com/errata/RHSA-2016-1627.html
+    reference_id:
+  - id: 625328
+    url: http://rhn.redhat.com/errata/RHSA-2016-1628.html
+    reference_id:
+  - id: 625329
+    url: http://rhn.redhat.com/errata/RHSA-2016-1629.html
+    reference_id:
+  - id: 625330
+    url: http://rhn.redhat.com/errata/RHSA-2016-1630.html
+    reference_id:
+  - id: 173599
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-0772.json
+    reference_id:
+  - id: 625335
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1303647
+    reference_id:
+  - id: 1432402
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0772
+    reference_id:
+  - id: 625336
+    url: https://docs.python.org/3.4/whatsnew/changelog.html#python-3-4-5
+    reference_id:
+  - id: 625337
+    url: https://docs.python.org/3.5/whatsnew/changelog.html#python-3-5-2
+    reference_id:
+  - id: 625338
+    url: https://hg.python.org/cpython/raw-file/v2.7.12/Misc/NEWS
+    reference_id:
+  - id: 625339
+    url: https://hg.python.org/cpython/rev/b3ce713fb9be
+    reference_id:
+  - id: 625340
+    url: https://hg.python.org/cpython/rev/d590114c2394
+    reference_id:
+  - id: 625341
+    url: https://lists.debian.org/debian-lts-announce/2019/02/msg00011.html
+    reference_id:
+  - id: 625342
+    url: https://security.gentoo.org/glsa/201701-18
+    reference_id:
+  - id: 1432404
+    url: https://ubuntu.com/security/notices/USN-3134-1
+    reference_id:
+  - id: 1432403
+    url: https://usn.ubuntu.com/usn/usn-3134-1
+    reference_id:
+  - id: 625331
+    url: http://www.openwall.com/lists/oss-security/2016/06/14/9
+    reference_id:
+  - id: 625332
+    url: http://www.securityfocus.com/bid/91225
+    reference_id:
+  - id: 625333
+    url: http://www.splunk.com/view/SP-CAAAPSV
+    reference_id:
+  - id: 625334
+    url: http://www.splunk.com/view/SP-CAAAPUE
+    reference_id:
+  - id: 432170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:*:*:*:*:*:*:*:*
+  - id: 450285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.0:*:*:*:*:*:*:*
+  - id: 454308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.0.1:*:*:*:*:*:*:*
+  - id: 572693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.0:*:*:*:*:*:*:*
+  - id: 454309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.1:*:*:*:*:*:*:*
+  - id: 454310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.2:*:*:*:*:*:*:*
+  - id: 454311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.3:*:*:*:*:*:*:*
+  - id: 474229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.4:*:*:*:*:*:*:*
+  - id: 474230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.5:*:*:*:*:*:*:*
+  - id: 523091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.0:*:*:*:*:*:*:*
+  - id: 523092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.1:*:*:*:*:*:*:*
+  - id: 523093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.2:*:*:*:*:*:*:*
+  - id: 489840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.3:*:*:*:*:*:*:*
+  - id: 523094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.4:*:*:*:*:*:*:*
+  - id: 523095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.5:*:*:*:*:*:*:*
+  - id: 548843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.6:*:*:*:*:*:*:*
+  - id: 523096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.0:*:*:*:*:*:*:*
+  - id: 523097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.1:*:*:*:*:*:*:*
+  - id: 523098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.2:*:*:*:*:*:*:*
+  - id: 546840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.3:*:*:*:*:*:*:*
+  - id: 546843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.4:*:*:*:*:*:*:*
+  - id: 562240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.5:*:*:*:*:*:*:*
+  - id: 562241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.6:*:*:*:*:*:*:*
+  - id: 562242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.0:*:*:*:*:*:*:*
+  - id: 562243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.1:*:*:*:*:*:*:*
+  - id: 562244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.2:*:*:*:*:*:*:*
+  - id: 572694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.3:*:*:*:*:*:*:*
+  - id: 572695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.4:*:*:*:*:*:*:*
+  - id: 572699
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.5.0:*:*:*:*:*:*:*
+  - id: 625344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.5.1:*:*:*:*:*:*:*
+  - id: 625343
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-0772
+    reference_id: CVE-2016-0772
+  - id: 172801
+    url: https://access.redhat.com/errata/RHSA-2016:1626
+    reference_id: RHSA-2016:1626
+  - id: 172802
+    url: https://access.redhat.com/errata/RHSA-2016:1627
+    reference_id: RHSA-2016:1627
+  - id: 172799
+    url: https://access.redhat.com/errata/RHSA-2016:1628
+    reference_id: RHSA-2016:1628
+  - id: 172800
+    url: https://access.redhat.com/errata/RHSA-2016:1629
+    reference_id: RHSA-2016:1629
+  - id: 172798
+    url: https://access.redhat.com/errata/RHSA-2016:1630
+    reference_id: RHSA-2016:1630
+weaknesses: []

@@ -1,0 +1,61 @@
+vulnerability_id: VCID-grmc-er52-aaae
+aliases:
+  - CVE-2019-12454
+summary: '** DISPUTED ** An issue was discovered in wcd9335_codec_enable_dec in sound/soc/codecs/wcd9335.c
+  in the Linux kernel through 5.1.5. It uses kstrndup instead of kmemdup_nul, which allows attackers
+  to have an unspecified impact via unknown vectors. NOTE: The vendor disputes this issues as
+  not being a vulnerability because switching to kmemdup_nul() would only fix a security issue
+  if the source string wasn''t NUL-terminated, which is not the case.'
+severities:
+  - id: 75146
+    reference_id: 206067
+    scoring_system: cvssv3
+    value: '2.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 75145
+    reference_id: 206066
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 375306
+    reference_id: 773314
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 375304
+    reference_id: 773314
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 206067
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-12454.json
+    reference_id:
+  - id: 773309
+    url: https://bugzilla.suse.com/show_bug.cgi?id=1136963#c1
+    reference_id:
+  - id: 773310
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git/commit/?h=for-5.3&id=a54988113985ca22e414e132054f234fc8a92604
+    reference_id:
+  - id: 773070
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J36BIJTKEPUOZKJNHQBUZA47RQONUKOI/
+    reference_id:
+  - id: 773311
+    url: https://lkml.org/lkml/2019/5/29/705
+    reference_id:
+  - id: 773312
+    url: https://support.f5.com/csp/article/K13523672
+    reference_id:
+  - id: 773313
+    url: https://support.f5.com/csp/article/K13523672?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 206066
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1716996
+    reference_id: 1716996
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 773314
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-12454
+    reference_id: CVE-2019-12454
+weaknesses: []

@@ -1,0 +1,106 @@
+vulnerability_id: VCID-x8da-4u9k-aaaq
+aliases:
+  - CVE-2017-14172
+summary: In coders/ps.c in ImageMagick 7.0.7-0 Q16, a DoS in ReadPSImage() due to lack of an
+  EOF (End of File) check might cause huge CPU consumption. When a crafted PSD file, which claims
+  a large "extent" field in the header but does not contain sufficient backing data, is provided,
+  the loop over "length" would consume huge CPU resources, since there is no EOF check inside
+  the loop.
+severities:
+  - id: 675310
+    reference_id: 1440091
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 70875
+    reference_id: 201163
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 675311
+    reference_id: 1440092
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673229
+    reference_id: 1438404
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 70874
+    reference_id: 201162
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 263524
+    reference_id: 681607
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 263522
+    reference_id: 681607
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1440091
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-14172.html
+    reference_id:
+  - id: 201163
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-14172.json
+    reference_id:
+  - id: 1440092
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14172
+    reference_id:
+  - id: 681605
+    url: https://github.com/ImageMagick/ImageMagick/commit/bdbbb13f1fe9b7e2465502c500561720f7456aac
+    reference_id:
+  - id: 681606
+    url: https://github.com/ImageMagick/ImageMagick/issues/715
+    reference_id:
+  - id: 669012
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00015.html
+    reference_id:
+  - id: 669013
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00007.html
+    reference_id:
+  - id: 674307
+    url: https://security.gentoo.org/glsa/201711-07
+    reference_id:
+  - id: 1438404
+    url: https://ubuntu.com/security/notices/USN-3681-1
+    reference_id:
+  - id: 669014
+    url: https://usn.ubuntu.com/3681-1/
+    reference_id:
+  - id: 201162
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1489700
+    reference_id: 1489700
+  - id: 42037
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=875506
+    reference_id: 875506
+  - id: 681593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:7.0.7-0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:7.0.7-0:*:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 169418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 681607
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14172
+    reference_id: CVE-2017-14172
+weaknesses: []

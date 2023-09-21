@@ -1,0 +1,27 @@
+affected_purls:
+- pkg:deb/debian/ring@20190215.1.f152c98~ds1-1%2Bdeb10u1
+- pkg:deb/debian/ring@20210112.2.b757bac~ds1-1
+aliases:
+- CVE-2021-32686
+fixed_purl:
+- pkg:deb/debian/asterisk@1:16.16.1~dfsg-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/asterisk@1:16.16.1~dfsg-2?distro=sid
+- pkg:deb/debian/asterisk@1:16.2.1~dfsg-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/asterisk@1:16.28.0~dfsg-0%2Bdeb11u2?distro=sid
+- pkg:deb/debian/asterisk@1:20.2.1~dfsg%2B~cs6.13.40431413-1?distro=sid
+- pkg:deb/debian/ring@20230206.0~ds2-1.1
+references:
+- id: 129804
+  reference_id: '991931'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991931
+severities: []
+summary: PJSIP is a free and open source multimedia communication library written
+  in C language implementing standard based protocols such as SIP, SDP, RTP, STUN,
+  TURN, and ICE. In PJSIP before version 2.11.1, there are a couple of issues found
+  in the SSL socket. First, a race condition between callback and destroy, due to
+  the accepted socket having no group lock. Second, the SSL socket parent/listener
+  may get destroyed during handshake. Both issues were reported to happen intermittently
+  in heavy load TLS connections. They cause a crash, resulting in a denial of service.
+  These are fixed in version 2.11.1.
+vulnerability_id: VCID-r366-52wp-aaac
+weaknesses: []

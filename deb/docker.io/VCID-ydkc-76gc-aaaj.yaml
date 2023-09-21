@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2016-9962
+fixed_purl:
+- pkg:deb/debian/docker.io@1.13.1~ds1-2?distro=sid
+- pkg:deb/debian/docker.io@18.09.1%2Bdfsg1-7.1%2Bdeb10u3?distro=sid
+- pkg:deb/debian/docker.io@20.10.24%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/docker.io@20.10.5%2Bdfsg1-1%2Bdeb11u2?distro=sid
+- pkg:deb/debian/runc@0.1.1%2Bdfsg1-2?distro=sid
+- pkg:deb/debian/runc@1.0.0~rc6%2Bdfsg1-3?distro=sid
+- pkg:deb/debian/runc@1.0.0~rc93%2Bds1-5%2Bdeb11u2?distro=sid
+- pkg:deb/debian/runc@1.1.5%2Bds1-1?distro=sid
+references:
+- id: 126631
+  reference_id: '850951'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=850951
+severities: []
+summary: RunC allowed additional container processes via 'runc exec' to be ptraced
+  by the pid 1 of the container.  This allows the main processes of the container,
+  if running as root, to gain access to file-descriptors of these new processes during
+  the initialization and can lead to container escapes or modification of runC state
+  before the process is fully placed inside the container.
+vulnerability_id: VCID-ydkc-76gc-aaaj
+weaknesses: []

@@ -1,0 +1,112 @@
+vulnerability_id: VCID-5qkx-2bk8-aaag
+aliases:
+  - CVE-2021-3748
+summary: A use-after-free vulnerability was found in the virtio-net device of QEMU. It could
+  occur when the descriptor's address belongs to the non direct access region, due to num_buffers
+  being set after the virtqueue elem has been unmapped. A malicious guest could use this flaw
+  to crash QEMU, resulting in a denial of service condition, or potentially execute code on
+  the host with the privileges of the QEMU process.
+severities:
+  - id: 602849
+    reference_id: 926091
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 602846
+    reference_id: 926088
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 551711
+    reference_id: 892117
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 551709
+    reference_id: 892117
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 602848
+    reference_id: 926090
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 602847
+    reference_id: 926089
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 271995
+    reference_id: 689253
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 926091
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3748.json
+    reference_id:
+  - id: 892113
+    url: https://github.com/qemu/qemu/commit/bedd7e93d01961fcb16a97ae45d93acf357e11f6
+    reference_id:
+  - id: 861207
+    url: https://lists.debian.org/debian-lts-announce/2022/04/msg00002.html
+    reference_id:
+  - id: 1415761
+    url: https://lists.debian.org/debian-lts-announce/2022/09/msg00008.html
+    reference_id:
+  - id: 892114
+    url: https://lists.nongnu.org/archive/html/qemu-devel/2021-09/msg00388.html
+    reference_id:
+  - id: 1340335
+    url: https://security.gentoo.org/glsa/202208-27
+    reference_id:
+  - id: 892115
+    url: https://security.netapp.com/advisory/ntap-20220425-0004/
+    reference_id:
+  - id: 892116
+    url: https://ubuntu.com/security/CVE-2021-3748
+    reference_id:
+  - id: 926088
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1998514
+    reference_id: '1998514'
+  - id: 112135
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=993401
+    reference_id: 993401
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 637848
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:21.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:21.10:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 772353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+  - id: 892118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_advanced_virtualization_eus:8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_advanced_virtualization_eus:8.4:*:*:*:*:*:*:*
+  - id: 892117
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3748
+    reference_id: CVE-2021-3748
+  - id: 926090
+    url: https://access.redhat.com/errata/RHSA-2021:4112
+    reference_id: RHSA-2021:4112
+  - id: 926089
+    url: https://access.redhat.com/errata/RHSA-2021:5036
+    reference_id: RHSA-2021:5036
+  - id: 689253
+    url: https://access.redhat.com/errata/RHSA-2022:1759
+    reference_id: RHSA-2022:1759
+weaknesses: []

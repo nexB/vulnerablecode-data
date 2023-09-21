@@ -1,0 +1,44 @@
+affected_purls:
+- pkg:deb/ubuntu/sanlock@2.2-1
+aliases:
+- CVE-2012-5638
+fixed_purl:
+- pkg:deb/debian/sanlock@2.2-2?distro=sid
+- pkg:deb/debian/sanlock@3.6.0-3?distro=sid
+- pkg:deb/debian/sanlock@3.8.2-2?distro=sid
+- pkg:deb/debian/sanlock@3.8.5-1?distro=sid
+- pkg:deb/ubuntu/sanlock@2.2-2
+references:
+- id: 184199
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2012/CVE-2012-5638.html
+- id: 184200
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=887010
+- id: 184201
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5638
+- id: 124856
+  reference_id: '696424'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=696424
+severities:
+- id: 31347
+  reference_id: 184199
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31348
+  reference_id: 184200
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31349
+  reference_id: 184201
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+summary: The setup_logging function in log.h in SANLock uses world-writable permissions
+  for /var/log/sanlock.log, which allows local users to overwrite the file content
+  or bypass intended disk-quota restrictions via standard filesystem write operations.
+vulnerability_id: VCID-3h87-f995-aaam
+weaknesses: []

@@ -1,0 +1,107 @@
+vulnerability_id: VCID-rnrp-t4md-aaaf
+aliases:
+  - CVE-2018-20855
+summary: An issue was discovered in the Linux kernel before 4.18.7. In create_qp_common in drivers/infiniband/hw/mlx5/qp.c,
+  mlx5_ib_create_qp_resp was never initialized, resulting in a leak of stack memory to userspace.
+severities:
+  - id: 686627
+    reference_id: 1448698
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 77290
+    reference_id: 208215
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 686628
+    reference_id: 749963
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686629
+    reference_id: 1448699
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686631
+    reference_id: 749965
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686630
+    reference_id: 749964
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 77289
+    reference_id: 208214
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 343160
+    reference_id: 749966
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 343158
+    reference_id: 749966
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 749961
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00055.html
+    reference_id:
+  - id: 749962
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00056.html
+    reference_id:
+  - id: 1448698
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-20855.html
+    reference_id:
+  - id: 208215
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-20855.json
+    reference_id:
+  - id: 749963
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.18.7
+    reference_id:
+  - id: 1448699
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20855
+    reference_id:
+  - id: 749965
+    url: https://github.com/torvalds/linux/commit/0625b4ba1a5d4703c7fb01c497bd6c156908af00
+    reference_id:
+  - id: 749964
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0625b4ba1a5d4703c7fb01c497bd6c156908af00
+    reference_id:
+  - id: 749957
+    url: https://security.netapp.com/advisory/ntap-20190905-0002/
+    reference_id:
+  - id: 208214
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1738708
+    reference_id: 1738708
+  - id: 728605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_performance_analytics_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_performance_analytics_services:-:*:*:*:*:*:*:*
+  - id: 722617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+  - id: 727343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+  - id: 697804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:element_software:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:element_software:-:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 749966
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-20855
+    reference_id: CVE-2018-20855
+weaknesses: []

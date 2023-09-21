@@ -1,0 +1,76 @@
+vulnerability_id: VCID-5bvp-k6v9-aaaf
+aliases:
+  - CVE-2021-20230
+summary: A flaw was found in stunnel before 5.57, where it improperly validates client certificates
+  when it is configured to use both redirect and verifyChain options. This flaw allows an attacker
+  with a certificate signed by a Certificate Authority, which is not the one accepted by the
+  stunnel server, to access the tunneled service instead of being redirected to the address
+  specified in the redirect option. The highest threat from this vulnerability is to confidentiality.
+severities:
+  - id: 609326
+    reference_id: 930854
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 609322
+    reference_id: 930850
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 503984
+    reference_id: 861314
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 503982
+    reference_id: 861314
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 609323
+    reference_id: 930851
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609324
+    reference_id: 930852
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609325
+    reference_id: 930853
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 930854
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20230.json
+    reference_id:
+  - id: 861312
+    url: https://github.com/mtrojnar/stunnel/commit/ebad9ddc4efb2635f37174c9d800d06206f1edf9
+    reference_id:
+  - id: 861313
+    url: https://security.gentoo.org/glsa/202105-02
+    reference_id:
+  - id: 930850
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1925226
+    reference_id: '1925226'
+  - id: 129688
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982578
+    reference_id: 982578
+  - id: 520047
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:stunnel:stunnel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:stunnel:stunnel:*:*:*:*:*:*:*:*
+  - id: 861314
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-20230
+    reference_id: CVE-2021-20230
+  - id: 930851
+    url: https://access.redhat.com/errata/RHSA-2021:0618
+    reference_id: RHSA-2021:0618
+  - id: 930852
+    url: https://access.redhat.com/errata/RHSA-2021:0619
+    reference_id: RHSA-2021:0619
+  - id: 930853
+    url: https://access.redhat.com/errata/RHSA-2021:0620
+    reference_id: RHSA-2021:0620
+weaknesses: []

@@ -1,0 +1,157 @@
+vulnerability_id: VCID-9hyf-c71r-aaap
+aliases:
+  - CVE-2017-7889
+summary: The mm subsystem in the Linux kernel through 3.2 does not properly enforce the CONFIG_STRICT_DEVMEM
+  protection mechanism, which allows local users to read or write to kernel memory locations
+  in the first megabyte (and bypass slab-allocation access restrictions) via an application
+  that opens the /dev/mem file, related to arch/x86/mm/init.c and drivers/char/mem.c.
+severities:
+  - id: 680878
+    reference_id: 710830
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680879
+    reference_id: 1444373
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 623590
+    reference_id: 941108
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 680881
+    reference_id: 1444374
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680882
+    reference_id: 710834
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671422
+    reference_id: 1436943
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671423
+    reference_id: 1436944
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672406
+    reference_id: 1437722
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660540
+    reference_id: 1428089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672902
+    reference_id: 1438134
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672903
+    reference_id: 1438135
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680880
+    reference_id: 710831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 623589
+    reference_id: 941107
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 295602
+    reference_id: 710835
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 295600
+    reference_id: 710835
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 710830
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a4866aa812518ed1a37d8ea0c881dc946409de94
+    reference_id:
+  - id: 1444373
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7889.html
+    reference_id:
+  - id: 585053
+    url: https://access.redhat.com/errata/RHSA-2017:1842
+    reference_id:
+  - id: 585054
+    url: https://access.redhat.com/errata/RHSA-2017:2077
+    reference_id:
+  - id: 620087
+    url: https://access.redhat.com/errata/RHSA-2017:2669
+    reference_id:
+  - id: 511654
+    url: https://access.redhat.com/errata/RHSA-2018:1854
+    reference_id:
+  - id: 941108
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7889.json
+    reference_id:
+  - id: 1444374
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7889
+    reference_id:
+  - id: 710834
+    url: https://github.com/torvalds/linux/commit/a4866aa812518ed1a37d8ea0c881dc946409de94
+    reference_id:
+  - id: 710833
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/commit/?id=b8f254aa17f720053054c4ecff3920973a83b9d6
+    reference_id:
+  - id: 1436943
+    url: https://ubuntu.com/security/notices/USN-3312-1
+    reference_id:
+  - id: 1436944
+    url: https://ubuntu.com/security/notices/USN-3312-2
+    reference_id:
+  - id: 1437722
+    url: https://ubuntu.com/security/notices/USN-3314-1
+    reference_id:
+  - id: 1428089
+    url: https://ubuntu.com/security/notices/USN-3361-1
+    reference_id:
+  - id: 1438134
+    url: https://ubuntu.com/security/notices/USN-3583-1
+    reference_id:
+  - id: 1438135
+    url: https://ubuntu.com/security/notices/USN-3583-2
+    reference_id:
+  - id: 666591
+    url: https://usn.ubuntu.com/3583-1/
+    reference_id:
+  - id: 666592
+    url: https://usn.ubuntu.com/3583-2/
+    reference_id:
+  - id: 593209
+    url: http://www.debian.org/security/2017/dsa-3945
+    reference_id:
+  - id: 710831
+    url: http://www.openwall.com/lists/oss-security/2017/04/16/4
+    reference_id:
+  - id: 710832
+    url: http://www.securityfocus.com/bid/97690
+    reference_id:
+  - id: 941107
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1444493
+    reference_id: 1444493
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 710835
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7889
+    reference_id: CVE-2017-7889
+weaknesses: []

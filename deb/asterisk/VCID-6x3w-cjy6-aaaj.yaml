@@ -1,0 +1,33 @@
+affected_purls: []
+aliases:
+- CVE-2016-9938
+fixed_purl:
+- pkg:deb/debian/asterisk@1:13.13.1~dfsg-1?distro=sid
+- pkg:deb/debian/asterisk@1:16.2.1~dfsg-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/asterisk@1:16.28.0~dfsg-0%2Bdeb11u2?distro=sid
+- pkg:deb/debian/asterisk@1:20.2.1~dfsg%2B~cs6.13.40431413-1?distro=sid
+references:
+- id: 126624
+  reference_id: '847668'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=847668
+severities: []
+summary: 'An issue was discovered in Asterisk Open Source 11.x before 11.25.1, 13.x
+  before 13.13.1, and 14.x before 14.2.1 and Certified Asterisk 11.x before 11.6-cert16
+  and 13.x before 13.8-cert4. The chan_sip channel driver has a liberal definition
+  for whitespace when attempting to strip the content between a SIP header name and
+  a colon character. Rather than following RFC 3261 and stripping only spaces and
+  horizontal tabs, Asterisk treats any non-printable ASCII character as if it were
+  whitespace. This means that headers such as Contact\x01: will be seen as a valid
+  Contact header. This mostly does not pose a problem until Asterisk is placed in
+  tandem with an authenticating SIP proxy. In such a case, a crafty combination of
+  valid and invalid To headers can cause a proxy to allow an INVITE request into Asterisk
+  without authentication since it believes the request is an in-dialog request. However,
+  because of the bug described above, the request will look like an out-of-dialog
+  request to Asterisk. Asterisk will then process the request as a new call. The result
+  is that Asterisk can process calls from unvetted sources without any authentication.
+  If you do not use a proxy for authentication, then this issue does not affect you.
+  If your proxy is dialog-aware (meaning that the proxy keeps track of what dialogs
+  are currently valid), then this issue does not affect you. If you use chan_pjsip
+  instead of chan_sip, then this issue does not affect you.'
+vulnerability_id: VCID-6x3w-cjy6-aaaj
+weaknesses: []

@@ -1,0 +1,88 @@
+vulnerability_id: VCID-fnj9-f7hz-aaaa
+aliases:
+  - CVE-2014-5206
+summary: The do_remount function in fs/namespace.c in the Linux kernel through 3.16.1 does not
+  maintain the MNT_LOCK_READONLY bit across a remount of a bind mount, which allows local users
+  to bypass an intended read-only restriction and defeat certain sandbox protection mechanisms
+  via a "mount -o remount" command within a user namespace.
+severities:
+  - id: 657316
+    reference_id: 1425575
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 657318
+    reference_id: 1425576
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 657319
+    reference_id: 1425577
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 657320
+    reference_id: 1425578
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 657317
+    reference_id: 575012
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 183708
+    reference_id: 575018
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+references:
+  - id: 575011
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a6138db815df5ee542d848318e5dae681590fccd
+    reference_id:
+  - id: 1425575
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-5206.html
+    reference_id:
+  - id: 185379
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-5206.json
+    reference_id:
+  - id: 575016
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1129662
+    reference_id:
+  - id: 1425576
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5206
+    reference_id:
+  - id: 575017
+    url: https://github.com/torvalds/linux/commit/a6138db815df5ee542d848318e5dae681590fccd
+    reference_id:
+  - id: 1425577
+    url: https://ubuntu.com/security/notices/USN-2317-1
+    reference_id:
+  - id: 1425578
+    url: https://ubuntu.com/security/notices/USN-2318-1
+    reference_id:
+  - id: 575012
+    url: http://www.openwall.com/lists/oss-security/2014/08/13/4
+    reference_id:
+  - id: 575013
+    url: http://www.securityfocus.com/bid/69214
+    reference_id:
+  - id: 575014
+    url: http://www.ubuntu.com/usn/USN-2317-1
+    reference_id:
+  - id: 575015
+    url: http://www.ubuntu.com/usn/USN-2318-1
+    reference_id:
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 575018
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-5206
+    reference_id: CVE-2014-5206
+weaknesses: []

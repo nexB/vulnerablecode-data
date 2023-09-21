@@ -1,0 +1,142 @@
+vulnerability_id: VCID-1w8c-5p2q-aaan
+aliases:
+  - CVE-2018-11236
+summary: stdlib/canonicalize.c in the GNU C Library (aka glibc or libc6) 2.27 and earlier, when
+  processing very long pathname arguments to the realpath function, could encounter an integer
+  overflow on 32-bit architectures, leading to a stack-based buffer overflow and, potentially,
+  arbitrary code execution.
+severities:
+  - id: 683208
+    reference_id: 1446068
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618631
+    reference_id: 937636
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 683209
+    reference_id: 1446069
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674142
+    reference_id: 1439145
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674141
+    reference_id: 1439144
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 618630
+    reference_id: 937635
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 312964
+    reference_id: 726398
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 312962
+    reference_id: 726398
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 616042
+    reference_id: 935771
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1446068
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-11236.html
+    reference_id:
+  - id: 689882
+    url: https://access.redhat.com/errata/RHBA-2019:0327
+    reference_id:
+  - id: 937636
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-11236.json
+    reference_id:
+  - id: 1446069
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11236
+    reference_id:
+  - id: 693442
+    url: https://security.netapp.com/advisory/ntap-20190329-0001/
+    reference_id:
+  - id: 693443
+    url: https://security.netapp.com/advisory/ntap-20190401-0001/
+    reference_id:
+  - id: 726396
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=22786
+    reference_id:
+  - id: 726397
+    url: https://sourceware.org/git/gitweb.cgi?p=glibc.git;h=5460617d1567657621107d895ee2dd83bc1f88f2
+    reference_id:
+  - id: 1439145
+    url: https://ubuntu.com/security/notices/USN-4416-1
+    reference_id:
+  - id: 675725
+    url: https://usn.ubuntu.com/4416-1/
+    reference_id:
+  - id: 1439144
+    url: https://usn.ubuntu.com/usn/usn-4416-1
+    reference_id:
+  - id: 2744
+    url: https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+    reference_id:
+  - id: 726395
+    url: http://www.securityfocus.com/bid/104255
+    reference_id:
+  - id: 937635
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1581269
+    reference_id: 1581269
+  - id: 41369
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=899071
+    reference_id: 899071
+  - id: 44112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  - id: 628920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:data_ontap_edge:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:data_ontap_edge:-:*:*:*:*:*:*:*
+  - id: 726399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:element_software_management:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:element_software_management:-:*:*:*:*:*:*:*
+  - id: 594336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_session_border_controller:8.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_session_border_controller:8.0.0:*:*:*:*:*:*:*
+  - id: 726400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_session_border_controller:8.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_session_border_controller:8.1.0:*:*:*:*:*:*:*
+  - id: 726401
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_session_border_controller:8.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_session_border_controller:8.2.0:*:*:*:*:*:*:*
+  - id: 726402
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_communications_broker:3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_communications_broker:3.0.0:*:*:*:*:*:*:*
+  - id: 726403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_communications_broker:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_communications_broker:3.1.0:*:*:*:*:*:*:*
+  - id: 637845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 726398
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-11236
+    reference_id: CVE-2018-11236
+  - id: 935771
+    url: https://access.redhat.com/errata/RHSA-2018:3092
+    reference_id: RHSA-2018:3092
+weaknesses: []

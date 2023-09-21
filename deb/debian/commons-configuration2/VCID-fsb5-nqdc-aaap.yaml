@@ -1,0 +1,86 @@
+vulnerability_id: VCID-fsb5-nqdc-aaap
+aliases:
+  - CVE-2022-33980
+  - GHSA-xj57-8qj4-c4m6
+summary: 'Apache Commons Configuration performs variable interpolation, allowing properties
+  to be dynamically evaluated and expanded. The standard format for interpolation is "${prefix:name}",
+  where "prefix" is used to locate an instance of org.apache.commons.configuration2.interpol.Lookup
+  that performs the interpolation. Starting with version 2.4 and continuing through 2.7, the
+  set of default Lookup instances included interpolators that could result in arbitrary code
+  execution or contact with remote servers. These lookups are: - "script" - execute expressions
+  using the JVM script execution engine (javax.script) - "dns" - resolve dns records - "url"
+  - load values from urls, including from remote servers Applications using the interpolation
+  defaults in the affected versions may be vulnerable to remote code execution or unintentional
+  contact with remote servers if untrusted configuration values are used. Users are recommended
+  to upgrade to Apache Commons Configuration 2.8.0, which disables the problematic interpolators
+  by default.'
+severities:
+  - id: 638545
+    reference_id: 951767
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 638544
+    reference_id: 951766
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 637595
+    reference_id: 946154
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 637593
+    reference_id: 946154
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 630159
+    reference_id: 946159
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+references:
+  - id: 951767
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-33980.json
+    reference_id:
+  - id: 946156
+    url: https://commons.apache.org/proper/commons-configuration/changes-report.html#a2.8.0
+    reference_id:
+  - id: 946157
+    url: https://issues.apache.org/jira/browse/CONFIGURATION-753
+    reference_id:
+  - id: 946158
+    url: https://issues.apache.org/jira/browse/CONFIGURATION-764
+    reference_id:
+  - id: 946155
+    url: https://lists.apache.org/thread/tdf5n7j80lfxdhs2764vn0xmpfodm87s
+    reference_id:
+  - id: 1418317
+    url: https://security.netapp.com/advisory/ntap-20221028-0015/
+    reference_id:
+  - id: 1462528
+    url: https://www.debian.org/security/2022/dsa-5290
+    reference_id:
+  - id: 1418318
+    url: http://www.openwall.com/lists/oss-security/2022/07/06/5
+    reference_id:
+  - id: 1462066
+    url: http://www.openwall.com/lists/oss-security/2022/11/15/4
+    reference_id:
+  - id: 945221
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014960
+    reference_id: 1014960
+  - id: 951766
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2105067
+    reference_id: 2105067
+  - id: 950979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:commons_configuration:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:commons_configuration:*:*:*:*:*:*:*:*
+  - id: 946154
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-33980
+    reference_id: CVE-2022-33980
+  - id: 946159
+    url: https://github.com/advisories/GHSA-xj57-8qj4-c4m6
+    reference_id: GHSA-xj57-8qj4-c4m6
+weaknesses: []

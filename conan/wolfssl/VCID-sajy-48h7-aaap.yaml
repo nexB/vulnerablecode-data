@@ -1,0 +1,24 @@
+affected_purls:
+- pkg:conan/wolfssl@4.4.0
+aliases:
+- CVE-2020-24613
+fixed_purl:
+- pkg:conan/wolfssl@4.5.0
+- pkg:deb/debian/wolfssl@4.5.0%2Bdfsg-1?distro=sid
+- pkg:deb/debian/wolfssl@4.6.0%2Bp1-0%2Bdeb11u1?distro=sid
+- pkg:deb/debian/wolfssl@5.5.4-2?distro=sid
+references:
+- id: 129102
+  reference_id: '969663'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969663
+- id: 182973
+  reference_id: CVE-2020-24613
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-24613
+severities: []
+summary: wolfSSL before 4.5.0 mishandles TLS 1.3 server data in the WAIT_CERT_CR state,
+  within SanityCheckTls13MsgReceived() in tls13.c. This is an incorrect implementation
+  of the TLS 1.3 client state machine. This allows attackers in a privileged network
+  position to completely impersonate any TLS 1.3 servers, and read or modify potentially
+  sensitive information between clients using the wolfSSL library and these TLS servers.
+vulnerability_id: VCID-sajy-48h7-aaap
+weaknesses: []

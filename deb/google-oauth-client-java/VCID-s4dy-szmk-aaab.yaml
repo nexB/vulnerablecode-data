@@ -1,0 +1,41 @@
+affected_purls:
+- pkg:deb/debian/google-oauth-client-java@1.28.0-2
+- pkg:maven/com.google.oauth-client/google-oauth-client@1.32.1
+- pkg:maven/com.google.oauth-client/google-oauth-client@1.33.0
+- pkg:maven/com.google.oauth-client/google-oauth-client@1.33.1
+- pkg:maven/com.google.oauth-client/google-oauth-client@1.33.2
+aliases:
+- CVE-2021-22573
+- GHSA-xh97-72ww-2w58
+fixed_purl:
+- pkg:deb/debian/google-oauth-client-java@1.34.1-2
+- pkg:maven/com.google.oauth-client/google-oauth-client@1.33.3
+references:
+- id: 157571
+  reference_id: ''
+  url: https://github.com/googleapis/google-oauth-java-client/pull/872
+- id: 129643
+  reference_id: '1010657'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1010657
+- id: 157570
+  reference_id: CVE-2021-22573
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-22573
+- id: 157572
+  reference_id: GHSA-hw42-3568-wj87
+  url: https://github.com/googleapis/google-oauth-java-client/security/advisories/GHSA-hw42-3568-wj87
+- id: 157573
+  reference_id: GHSA-xh97-72ww-2w58
+  url: https://github.com/advisories/GHSA-xh97-72ww-2w58
+severities:
+- id: 22854
+  reference_id: 157573
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: The vulnerability is that IDToken verifier does not verify if token is properly
+  signed. Signature verification makes sure that the token's payload comes from valid
+  provider, not from someone else. An attacker can provide a compromised token with
+  custom payload. The token will pass the validation on the client side. We recommend
+  upgrading to version 1.33.3 or above
+vulnerability_id: VCID-s4dy-szmk-aaab
+weaknesses: []

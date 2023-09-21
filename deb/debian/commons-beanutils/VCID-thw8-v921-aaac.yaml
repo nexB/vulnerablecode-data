@@ -1,0 +1,684 @@
+vulnerability_id: VCID-thw8-v921-aaac
+aliases:
+  - CVE-2019-10086
+  - GHSA-6phf-73q6-gh87
+summary: Insecure Deserialization in Apache Commons Beanutils
+severities:
+  - id: 75920
+    reference_id: 206869
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 697874
+    reference_id: 495
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697817
+    reference_id: 2757
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 700199
+    reference_id: 277
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696536
+    reference_id: 406
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701265
+    reference_id: 387
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 366224
+    reference_id: 13542
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 366222
+    reference_id: 13542
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 1464
+    reference_id: 13584
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 75917
+    reference_id: 206865
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 75916
+    reference_id: 206864
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 75918
+    reference_id: 206866
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53487
+    reference_id: 178529
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53486
+    reference_id: 178528
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53488
+    reference_id: 178530
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53483
+    reference_id: 178525
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53270
+    reference_id: 178304
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53186
+    reference_id: 178202
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 69614
+    reference_id: '199397'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 50910
+    reference_id: 175528
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 52339
+    reference_id: 177155
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57398
+    reference_id: 183428
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51125
+    reference_id: 175779
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 75919
+    reference_id: 206868
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 75915
+    reference_id: 206863
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48019
+    reference_id: 172570
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48017
+    reference_id: 172567
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 50629
+    reference_id: 175220
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58607
+    reference_id: 184983
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 13562
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00007.html
+    reference_id:
+  - id: 13563
+    url: http://mail-archives.apache.org/mod_mbox/www-announce/201908.mbox/%3cC628798F-315D-4428-8CB1-4ED1ECC958E4@apache.org%3e
+    reference_id:
+  - id: 206869
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-10086.json
+    reference_id:
+  - id: 13550
+    url: https://lists.apache.org/thread.html/02094ad226dbc17a2368beaf27e61d8b1432f5baf77d0ca995bb78bc@%3Cissues.commons.apache.org%3E
+    reference_id:
+  - id: 13551
+    url: https://lists.apache.org/thread.html/1f78f1e32cc5614ec0c5b822ba4bd7fc8e8b5c46c8e038b6bd609cb5@%3Cissues.commons.apache.org%3E
+    reference_id:
+  - id: 13552
+    url: https://lists.apache.org/thread.html/2fd61dc89df9aeab738d2b49f48d42c76f7d53b980ba04e1d48bce48@%3Cdev.shiro.apache.org%3E
+    reference_id:
+  - id: 13553
+    url: https://lists.apache.org/thread.html/3d1ed1a1596c08c4d5fea97b36c651ce167b773f1afc75251ce7a125@%3Ccommits.tinkerpop.apache.org%3E
+    reference_id:
+  - id: 3096
+    url: https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+    reference_id:
+  - id: 13554
+    url: https://lists.apache.org/thread.html/5261066cd7adee081ee05c8bf0e96cf0b2eeaced391e19117ae4daa6@%3Cdev.shiro.apache.org%3E
+    reference_id:
+  - id: 13555
+    url: https://lists.apache.org/thread.html/956995acee0d8bc046f1df0a55b7fbeb65dd2f82864e5de1078bacb0@%3Cissues.commons.apache.org%3E
+    reference_id:
+  - id: 13556
+    url: https://lists.apache.org/thread.html/a684107d3a78e431cf0fbb90629e8559a36ff8fe94c3a76e620b39fa@%3Cdev.shiro.apache.org%3E
+    reference_id:
+  - id: 3098
+    url: https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+    reference_id:
+  - id: 13557
+    url: https://lists.apache.org/thread.html/c94bc9649d5109a663b2129371dc45753fbdeacd340105548bbe93c3@%3Cdev.shiro.apache.org%3E
+    reference_id:
+  - id: 13558
+    url: https://lists.apache.org/thread.html/d6ca9439c53374b597f33b7ec180001625597db48ea30356af01145f@%3Cdev.shiro.apache.org%3E
+    reference_id:
+  - id: 3099
+    url: https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+    reference_id:
+  - id: 13564
+    url: https://lists.apache.org/thread.html/r18d8b4f9263e5cad3bbaef0cdba0e2ccdf9201316ac4b85e23eb7ee4@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13578
+    url: https://lists.apache.org/thread.html/r2d5f1d88c39bd615271abda63964a0bee9b2b57fef1f84cb4c43032e@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13565
+    url: https://lists.apache.org/thread.html/r306c0322aa5c0da731e03f3ce9f07f4745c052c6b73f4e78faf232ca@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13566
+    url: https://lists.apache.org/thread.html/r43de02fd4a4f52c4bdeff8c02f09625d83cd047498009c1cdab857db@%3Cdev.rocketmq.apache.org%3E
+    reference_id:
+  - id: 13575
+    url: https://lists.apache.org/thread.html/r46e536fc98942dce99fadd2e313aeefe90c1a769c5cd85d98df9d098@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13573
+    url: https://lists.apache.org/thread.html/r513a7a21c422170318115463b399dd58ab447fe0990b13e5884f0825@%3Ccommits.dolphinscheduler.apache.org%3E
+    reference_id:
+  - id: 13567
+    url: https://lists.apache.org/thread.html/r6194ced4828deb32023cd314e31f41c61d388b58935d102c7de91f58@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 11199
+    url: https://lists.apache.org/thread.html/r967953a14e05016bc4bcae9ef3dd92e770181158b4246976ed8295c9@%3Cdev.brooklyn.apache.org%3E
+    reference_id:
+  - id: 13579
+    url: https://lists.apache.org/thread.html/ra41fd0ad4b7e1d675c03a5081a16a6603085a4e37d30b866067566fe@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13568
+    url: https://lists.apache.org/thread.html/ra87ac17410a62e813cba901fdd4e9a674dd53daaf714870f28e905f1@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13574
+    url: https://lists.apache.org/thread.html/ra9a139fdc0999750dcd519e81384bc1fe3946f311b1796221205f51c@%3Ccommits.dolphinscheduler.apache.org%3E
+    reference_id:
+  - id: 13569
+    url: https://lists.apache.org/thread.html/racd3e7b2149fa2f255f016bd6bffab0fea77b6fb81c50db9a17f78e6@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13570
+    url: https://lists.apache.org/thread.html/rae81e0c8ebdf47ffaa85a01240836bfece8a990c48f55c7933162b5c@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13583
+    url: https://lists.apache.org/thread.html/rb1f76c2c0a4d6efb8a3523974f9d085d5838b73e7bffdf9a8f212997@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13571
+    url: https://lists.apache.org/thread.html/rb8dac04cb7e9cc5dedee8dabaa1c92614f590642e5ebf02a145915ba@%3Ccommits.atlas.apache.org%3E
+    reference_id:
+  - id: 13576
+    url: https://lists.apache.org/thread.html/rcc029be4edaaf5b8bb85818aab494e16f312fced07a0f4a202771ba2@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13580
+    url: https://lists.apache.org/thread.html/rd2d2493f4f1af6980d265b8d84c857e2b7ab80a46e1423710c448957@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13581
+    url: https://lists.apache.org/thread.html/re2028d4d76ba1db3e3c3a722d6c6034e801cc3b309f69cc166eaa32b@%3Ccommits.nifi.apache.org%3E
+    reference_id:
+  - id: 13582
+    url: https://lists.apache.org/thread.html/re3cd7cb641d7fc6684e4fc3c336a8bad4a01434bb5625a06e3600fd1@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13577
+    url: https://lists.apache.org/thread.html/rec74f3a94dd850259c730b4ba6f7b6211222b58900ec088754aa0534@%3Cissues.nifi.apache.org%3E
+    reference_id:
+  - id: 13572
+    url: https://lists.apache.org/thread.html/reee57101464cf7622d640ae013b2162eb864f603ec4093de8240bb8f@%3Cdev.atlas.apache.org%3E
+    reference_id:
+  - id: 13559
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00030.html
+    reference_id:
+  - id: 13560
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4APPGLBWMFAS4WHNLR4LIJ65DJGPV7TF/
+    reference_id:
+  - id: 13561
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JIUYSL2RSIWZVNSUIXJTIFPIPIF6OAIO/
+    reference_id:
+  - id: 495
+    url: https://www.oracle.com/security-alerts/cpuapr2020.html
+    reference_id:
+  - id: 420
+    url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_id:
+  - id: 389
+    url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_id:
+  - id: 2757
+    url: https://www.oracle.com/security-alerts/cpujan2020.html
+    reference_id:
+  - id: 277
+    url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_id:
+  - id: 388
+    url: https://www.oracle.com/security-alerts/cpujan2022.html
+    reference_id:
+  - id: 406
+    url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_id:
+  - id: 386
+    url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 387
+    url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_id:
+  - id: 549993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:commons_beanutils:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:commons_beanutils:*:*:*:*:*:*:*:*
+  - id: 765574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:nifi:1.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:nifi:1.14.0:*:*:*:*:*:*:*
+  - id: 765575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:nifi:1.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:nifi:1.15.0:*:*:*:*:*:*:*
+  - id: 725716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_plm:9.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:agile_plm:9.3.3:*:*:*:*:*:*:*
+  - id: 669521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_plm:9.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:agile_plm:9.3.5:*:*:*:*:*:*:*
+  - id: 171274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_plm:9.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:agile_plm:9.3.6:*:*:*:*:*:*:*
+  - id: 765576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.5:*:*:*:*:e-business_suite:*:*
+    reference_id: cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.5:*:*:*:*:e-business_suite:*:*
+  - id: 765577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.5:*:*:*:*:sap:*:*
+    reference_id: cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.5:*:*:*:*:sap:*:*
+  - id: 765578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.6:*:*:*:*:e-business_suite:*:*
+    reference_id: cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.6:*:*:*:*:e-business_suite:*:*
+  - id: 765579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.6:*:*:*:*:sap:*:*
+    reference_id: cpe:2.3:a:oracle:agile_product_lifecycle_management_integration_pack:3.6:*:*:*:*:sap:*:*
+  - id: 702723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:application_testing_suite:13.3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:application_testing_suite:13.3.0.1:*:*:*:*:*:*:*
+  - id: 630081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:banking_platform:2.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:banking_platform:2.4.0:*:*:*:*:*:*:*
+  - id: 765580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:banking_platform:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:banking_platform:2.7.1:*:*:*:*:*:*:*
+  - id: 765581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:banking_platform:2.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:banking_platform:2.9.0:*:*:*:*:*:*:*
+  - id: 681554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:blockchain_platform:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:blockchain_platform:*:*:*:*:*:*:*:*
+  - id: 765582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_billing_and_revenue_management:12.0.0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_billing_and_revenue_management:12.0.0.3.0:*:*:*:*:*:*:*
+  - id: 625773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_billing_and_revenue_management:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_billing_and_revenue_management:7.5:*:*:*:*:*:*:*
+  - id: 765583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_billing_and_revenue_management_elastic_charging_engine:11.3.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_billing_and_revenue_management_elastic_charging_engine:11.3.0.9:*:*:*:*:*:*:*
+  - id: 765584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_billing_and_revenue_management_elastic_charging_engine:12.0.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_billing_and_revenue_management_elastic_charging_engine:12.0.0.3:*:*:*:*:*:*:*
+  - id: 765585
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_console:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_console:1.4.0:*:*:*:*:*:*:*
+  - id: 765586
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_policy:1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_policy:1.9.0:*:*:*:*:*:*:*
+  - id: 765587
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_cloud_native_core_unified_data_repository:1.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_cloud_native_core_unified_data_repository:1.6.0:*:*:*:*:*:*:*
+  - id: 765588
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_convergence:3.0.2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_convergence:3.0.2.2.0:*:*:*:*:*:*:*
+  - id: 765589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_design_studio:7.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_design_studio:7.3.4:*:*:*:*:*:*:*
+  - id: 765590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_design_studio:7.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_design_studio:7.3.5:*:*:*:*:*:*:*
+  - id: 765591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_design_studio:7.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_design_studio:7.4.0:*:*:*:*:*:*:*
+  - id: 765592
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_evolved_communications_application_server:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_evolved_communications_application_server:7.1:*:*:*:*:*:*:*
+  - id: 759258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_metasolv_solution:6.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_metasolv_solution:6.3.0:*:*:*:*:*:*:*
+  - id: 765593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_metasolv_solution:6.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_metasolv_solution:6.3.1:*:*:*:*:*:*:*
+  - id: 759299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_network_integrity:7.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_network_integrity:7.3.6:*:*:*:*:*:*:*
+  - id: 765594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_performance_intelligence_center:10.4.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_performance_intelligence_center:10.4.0.3:*:*:*:*:*:*:*
+  - id: 171280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_pricing_design_center:12.0.0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_pricing_design_center:12.0.0.3.0:*:*:*:*:*:*:*
+  - id: 725719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_unified_inventory_management:7.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_unified_inventory_management:7.3.4:*:*:*:*:*:*:*
+  - id: 725720
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_unified_inventory_management:7.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_unified_inventory_management:7.3.5:*:*:*:*:*:*:*
+  - id: 725721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_unified_inventory_management:7.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_unified_inventory_management:7.4.0:*:*:*:*:*:*:*
+  - id: 765595
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_unified_inventory_management:7.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_unified_inventory_management:7.4.1:*:*:*:*:*:*:*
+  - id: 723336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:customer_management_and_segmentation_foundation:18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:customer_management_and_segmentation_foundation:18.0:*:*:*:*:*:*:*
+  - id: 765596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_manager_for_virtualization:13.4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_manager_for_virtualization:13.4.0.0:*:*:*:*:*:*:*
+  - id: 765597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:financial_services_revenue_management_and_billing_analytics:2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:financial_services_revenue_management_and_billing_analytics:2.7:*:*:*:*:*:*:*
+  - id: 765598
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:financial_services_revenue_management_and_billing_analytics:2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:financial_services_revenue_management_and_billing_analytics:2.8:*:*:*:*:*:*:*
+  - id: 698774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:flexcube_private_banking:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:flexcube_private_banking:12.0.0:*:*:*:*:*:*:*
+  - id: 698775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:flexcube_private_banking:12.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:flexcube_private_banking:12.1.0:*:*:*:*:*:*:*
+  - id: 600939
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:fusion_middleware:11.1.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:fusion_middleware:11.1.1.9:*:*:*:*:*:*:*
+  - id: 728116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:fusion_middleware:12.2.1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:fusion_middleware:12.2.1.3.0:*:*:*:*:*:*:*
+  - id: 765599
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:fusion_middleware:12.2.1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:fusion_middleware:12.2.1.4.0:*:*:*:*:*:*:*
+  - id: 765600
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:healthcare_foundation:7.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:healthcare_foundation:7.1.5:*:*:*:*:*:*:*
+  - id: 765601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:healthcare_foundation:7.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:healthcare_foundation:7.2.2:*:*:*:*:*:*:*
+  - id: 765602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:healthcare_foundation:7.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:healthcare_foundation:7.3.0:*:*:*:*:*:*:*
+  - id: 765603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:healthcare_foundation:7.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:healthcare_foundation:7.3.1:*:*:*:*:*:*:*
+  - id: 765604
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:healthcare_foundation:8.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:healthcare_foundation:8.0.1:*:*:*:*:*:*:*
+  - id: 730481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:hospitality_opera_5:5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:hospitality_opera_5:5.5:*:*:*:*:*:*:*
+  - id: 730482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:hospitality_opera_5:5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:hospitality_opera_5:5.6:*:*:*:*:*:*:*
+  - id: 621370
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:hospitality_reporting_and_analytics:9.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:hospitality_reporting_and_analytics:9.1.0:*:*:*:*:*:*:*
+  - id: 765605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:insurance_data_gateway:1.0.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:insurance_data_gateway:1.0.2.3:*:*:*:*:*:*:*
+  - id: 765606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:jd_edwards_enterpriseone_orchestrator:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:jd_edwards_enterpriseone_orchestrator:*:*:*:*:*:*:*:*
+  - id: 765607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:jd_edwards_enterpriseone_orchestrator:9.2.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:jd_edwards_enterpriseone_orchestrator:9.2.5.3:*:*:*:*:*:*:*
+  - id: 765608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:*:*:*:*:*:*:*:*
+  - id: 765609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:9.2.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:jd_edwards_enterpriseone_tools:9.2.5.3:*:*:*:*:*:*:*
+  - id: 169482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.56:*:*:*:*:*:*:*
+  - id: 621376
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.57:*:*:*:*:*:*:*
+  - id: 170214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.56:*:*:*:*:*:*:*
+  - id: 694121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.57:*:*:*:*:*:*:*
+  - id: 694122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_pt_peopletools:8.58:*:*:*:*:*:*:*
+  - id: 702811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:primavera_gateway:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:primavera_gateway:*:*:*:*:*:*:*:*
+  - id: 765610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:real-time_decisions_solutions:3.2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:real-time_decisions_solutions:3.2.0.0:*:*:*:*:*:*:*
+  - id: 765611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_advanced_inventory_planning:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_advanced_inventory_planning:14.1:*:*:*:*:*:*:*
+  - id: 670747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_back_office:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_back_office:14.1:*:*:*:*:*:*:*
+  - id: 725277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_central_office:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_central_office:14.1:*:*:*:*:*:*:*
+  - id: 765612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_invoice_matching:16.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_invoice_matching:16.0.3:*:*:*:*:*:*:*
+  - id: 765613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_merchandising_system:5.0.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_merchandising_system:5.0.3.1:*:*:*:*:*:*:*
+  - id: 729952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_point-of-service:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_point-of-service:14.1:*:*:*:*:*:*:*
+  - id: 725297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_predictive_application_server:16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_predictive_application_server:16.0:*:*:*:*:*:*:*
+  - id: 765615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_price_management:14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_price_management:14.0:*:*:*:*:*:*:*
+  - id: 765614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_price_management:14.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_price_management:14.0.1:*:*:*:*:*:*:*
+  - id: 765616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_price_management:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_price_management:15.0:*:*:*:*:*:*:*
+  - id: 765617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_price_management:16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_price_management:16.0:*:*:*:*:*:*:*
+  - id: 725299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_returns_management:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_returns_management:14.1:*:*:*:*:*:*:*
+  - id: 670061
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_xstore_point_of_service:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_xstore_point_of_service:15.0:*:*:*:*:*:*:*
+  - id: 710081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_xstore_point_of_service:16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_xstore_point_of_service:16.0:*:*:*:*:*:*:*
+  - id: 710082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_xstore_point_of_service:17.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_xstore_point_of_service:17.0:*:*:*:*:*:*:*
+  - id: 765618
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_xstore_point_of_service:18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_xstore_point_of_service:18.0:*:*:*:*:*:*:*
+  - id: 642214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_xstore_point_of_service:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_xstore_point_of_service:7.1:*:*:*:*:*:*:*
+  - id: 669796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:service_bus:11.1.1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:service_bus:11.1.1.9.0:*:*:*:*:*:*:*
+  - id: 621391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:service_bus:12.2.1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:service_bus:12.2.1.3.0:*:*:*:*:*:*:*
+  - id: 765619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:service_bus:12.2.1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:service_bus:12.2.1.4.0:*:*:*:*:*:*:*
+  - id: 765620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:solaris_cluster:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:solaris_cluster:4.4:*:*:*:*:*:*:*
+  - id: 765621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:time_and_labor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:time_and_labor:*:*:*:*:*:*:*:*
+  - id: 621394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:*:*:*:*:*:*:*:*
+  - id: 722099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:4.2.0.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:4.2.0.2.0:*:*:*:*:*:*:*
+  - id: 722100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:4.2.0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:4.2.0.3.0:*:*:*:*:*:*:*
+  - id: 722101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:4.4.0.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:4.4.0.0.0:*:*:*:*:*:*:*
+  - id: 765622
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:4.4.0.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:4.4.0.2.0:*:*:*:*:*:*:*
+  - id: 765623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:utilities_framework:4.4.0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:utilities_framework:4.4.0.3.0:*:*:*:*:*:*:*
+  - id: 169619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 540945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 540946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+  - id: 540947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 13542
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10086
+    reference_id: CVE-2019-10086
+  - id: 13584
+    url: https://github.com/advisories/GHSA-6phf-73q6-gh87
+    reference_id: GHSA-6phf-73q6-gh87
+  - id: 206867
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1767483
+    reference_id: RHBA-2020:0496
+  - id: 206865
+    url: https://access.redhat.com/errata/RHSA-2019:4317
+    reference_id: RHSA-2019:4317
+  - id: 206864
+    url: https://access.redhat.com/errata/RHSA-2020:0057
+    reference_id: RHSA-2020:0057
+  - id: 206866
+    url: https://access.redhat.com/errata/RHSA-2020:0194
+    reference_id: RHSA-2020:0194
+  - id: 178529
+    url: https://access.redhat.com/errata/RHSA-2020:0804
+    reference_id: RHSA-2020:0804
+  - id: 178528
+    url: https://access.redhat.com/errata/RHSA-2020:0805
+    reference_id: RHSA-2020:0805
+  - id: 178530
+    url: https://access.redhat.com/errata/RHSA-2020:0806
+    reference_id: RHSA-2020:0806
+  - id: 178525
+    url: https://access.redhat.com/errata/RHSA-2020:0811
+    reference_id: RHSA-2020:0811
+  - id: 178304
+    url: https://access.redhat.com/errata/RHSA-2020:0899
+    reference_id: RHSA-2020:0899
+  - id: 178202
+    url: https://access.redhat.com/errata/RHSA-2020:0951
+    reference_id: RHSA-2020:0951
+  - id: '199397'
+    url: https://access.redhat.com/errata/RHSA-2020:1308
+    reference_id: RHSA-2020:1308
+  - id: 175528
+    url: https://access.redhat.com/errata/RHSA-2020:1454
+    reference_id: RHSA-2020:1454
+  - id: 177155
+    url: https://access.redhat.com/errata/RHSA-2020:2067
+    reference_id: RHSA-2020:2067
+  - id: 183428
+    url: https://access.redhat.com/errata/RHSA-2020:2321
+    reference_id: RHSA-2020:2321
+  - id: 175779
+    url: https://access.redhat.com/errata/RHSA-2020:2333
+    reference_id: RHSA-2020:2333
+  - id: 206868
+    url: https://access.redhat.com/errata/RHSA-2020:2619
+    reference_id: RHSA-2020:2619
+  - id: 206863
+    url: https://access.redhat.com/errata/RHSA-2020:2740
+    reference_id: RHSA-2020:2740
+  - id: 172570
+    url: https://access.redhat.com/errata/RHSA-2020:3192
+    reference_id: RHSA-2020:3192
+  - id: 172567
+    url: https://access.redhat.com/errata/RHSA-2020:3197
+    reference_id: RHSA-2020:3197
+  - id: 175220
+    url: https://access.redhat.com/errata/RHSA-2020:3247
+    reference_id: RHSA-2020:3247
+  - id: 184983
+    url: https://access.redhat.com/errata/RHSA-2020:3587
+    reference_id: RHSA-2020:3587
+weaknesses: []

@@ -1,0 +1,36 @@
+vulnerability_id: VCID-6xgb-65dd-aaaq
+aliases:
+  - CVE-2016-9122
+summary: go-jose before 1.0.4 suffers from multiple signatures exploitation. The go-jose library
+  supports messages with multiple signatures. However, when validating a signed message the
+  API did not indicate which signature was valid, which could potentially lead to confusion.
+  For example, users of the library might mistakenly read protected header values from an attached
+  signature that was different from the one originally validated.
+severities:
+  - id: 242848
+    reference_id: 661473
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 242846
+    reference_id: 661473
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 661471
+    url: https://github.com/square/go-jose/commit/2c5656adca9909843c4ff50acf1d2cf8f32da7e6
+    reference_id:
+  - id: 661472
+    url: https://hackerone.com/reports/169629
+    reference_id:
+  - id: 661466
+    url: http://www.openwall.com/lists/oss-security/2016/11/03/1
+    reference_id:
+  - id: 661470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:go-jose_project:go-jose:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:go-jose_project:go-jose:*:*:*:*:*:*:*:*
+  - id: 661473
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9122
+    reference_id: CVE-2016-9122
+weaknesses: []

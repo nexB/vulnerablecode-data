@@ -1,0 +1,227 @@
+vulnerability_id: VCID-uyqc-wd8j-aaaf
+aliases:
+  - CVE-2018-10902
+summary: It was found that the raw midi kernel driver does not protect against concurrent access
+  which leads to a double realloc (double free) in snd_rawmidi_input_params() and snd_rawmidi_output_status()
+  which are part of snd_rawmidi_ioctl() handler in rawmidi.c file. A malicious local attacker
+  could possibly use this for privilege escalation.
+severities:
+  - id: 682958
+    reference_id: 1445876
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 614713
+    reference_id: 934808
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 682959
+    reference_id: 1445877
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677451
+    reference_id: 1441511
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677452
+    reference_id: 1441512
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682960
+    reference_id: 1445878
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682961
+    reference_id: 1445879
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682962
+    reference_id: 1445880
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677916
+    reference_id: 1441864
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677917
+    reference_id: 1441865
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614710
+    reference_id: 934805
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 311693
+    reference_id: 725221
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 311691
+    reference_id: 725221
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 614712
+    reference_id: 934807
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 614711
+    reference_id: 934806
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1445876
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10902.html
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 725213
+    url: https://access.redhat.com/errata/RHSA-2019:3217
+    reference_id:
+  - id: 693197
+    url: https://access.redhat.com/errata/RHSA-2019:3967
+    reference_id:
+  - id: 934808
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10902.json
+    reference_id:
+  - id: 725214
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10902
+    reference_id:
+  - id: 1445877
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10902
+    reference_id:
+  - id: 725215
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=39675f7a7c7e7702f7d5341f1e0d01db746543a0
+    reference_id:
+  - id: 725216
+    url: https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html
+    reference_id:
+  - id: 1441511
+    url: https://ubuntu.com/security/notices/USN-3776-1
+    reference_id:
+  - id: 1441512
+    url: https://ubuntu.com/security/notices/USN-3776-2
+    reference_id:
+  - id: 1445878
+    url: https://ubuntu.com/security/notices/USN-3847-1
+    reference_id:
+  - id: 1445879
+    url: https://ubuntu.com/security/notices/USN-3847-2
+    reference_id:
+  - id: 1445880
+    url: https://ubuntu.com/security/notices/USN-3847-3
+    reference_id:
+  - id: 1441864
+    url: https://ubuntu.com/security/notices/USN-3849-1
+    reference_id:
+  - id: 1441865
+    url: https://ubuntu.com/security/notices/USN-3849-2
+    reference_id:
+  - id: 693246
+    url: https://usn.ubuntu.com/3776-1/
+    reference_id:
+  - id: 693247
+    url: https://usn.ubuntu.com/3776-2/
+    reference_id:
+  - id: 725217
+    url: https://usn.ubuntu.com/3847-1/
+    reference_id:
+  - id: 725218
+    url: https://usn.ubuntu.com/3847-2/
+    reference_id:
+  - id: 725219
+    url: https://usn.ubuntu.com/3847-3/
+    reference_id:
+  - id: 696439
+    url: https://usn.ubuntu.com/3849-1/
+    reference_id:
+  - id: 696440
+    url: https://usn.ubuntu.com/3849-2/
+    reference_id:
+  - id: 725220
+    url: https://www.debian.org/security/2018/dsa-4308
+    reference_id:
+  - id: 725210
+    url: http://www.securityfocus.com/bid/105119
+    reference_id:
+  - id: 725211
+    url: http://www.securitytracker.com/id/1041529
+    reference_id:
+  - id: 934805
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1590720
+    reference_id: 1590720
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 343431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 725221
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10902
+    reference_id: CVE-2018-10902
+  - id: 934807
+    url: https://access.redhat.com/errata/RHSA-2019:0415
+    reference_id: RHSA-2019:0415
+  - id: 934806
+    url: https://access.redhat.com/errata/RHSA-2019:0641
+    reference_id: RHSA-2019:0641
+weaknesses: []

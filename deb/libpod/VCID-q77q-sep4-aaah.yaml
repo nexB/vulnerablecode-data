@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2021-4024
+fixed_purl:
+- pkg:deb/debian/libpod@0?distro=sid
+- pkg:deb/debian/libpod@3.0.1%2Bdfsg1-3%2Bdeb11u4?distro=sid
+- pkg:deb/debian/libpod@3.4.3%2Bds1-1?distro=sid
+- pkg:deb/debian/libpod@4.3.1%2Bds1-8?distro=sid
+references:
+- id: 130044
+  reference_id: '1000844'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1000844
+severities: []
+summary: A flaw was found in podman. The `podman machine` function (used to create
+  and manage Podman virtual machine containing a Podman process) spawns a `gvproxy`
+  process on the host system. The `gvproxy` API is accessible on port 7777 on all
+  IP addresses on the host. If that port is open on the host's firewall, an attacker
+  can potentially use the `gvproxy` API to forward ports on the host to ports in the
+  VM, making private services on the VM accessible to the network. This issue could
+  be also used to interrupt the host's services by forwarding all ports to the VM.
+vulnerability_id: VCID-q77q-sep4-aaah
+weaknesses: []

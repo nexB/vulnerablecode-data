@@ -1,0 +1,83 @@
+vulnerability_id: VCID-ht71-p92a-aaaa
+aliases:
+  - CVE-2022-24772
+  - GHSA-x4jg-mjrx-434g
+summary: |
+  Improper Verification of Cryptographic Signature
+  Forge (also called `node-forge`) is a native implementation of Transport Layer Security in JavaScript. Prior to version 1.3.0, RSA PKCS#1 v1.5 signature verification code does not check for tailing garbage bytes after decoding a `DigestInfo` ASN.1 structure. This can allow padding bytes to be removed and garbage data added to forge a signature when a low public exponent is being used. The issue has been addressed in `node-forge` version 1.3.0. There are currently no known workarounds.
+severities:
+  - id: 142883
+    reference_id: 455507
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 142882
+    reference_id: 455506
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 590023
+    reference_id: 32956
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 590021
+    reference_id: 32956
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 707016
+    reference_id: 32957
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 37590
+    reference_id: 157295
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 142657
+    reference_id: 454659
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 645309
+    reference_id: 1413034
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 455507
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-24772.json
+    reference_id:
+  - id: 32942
+    url: https://github.com/digitalbazaar/forge/commit/3f0b49a0573ef1bb7af7f5673c0cfebf00424df1
+    reference_id:
+  - id: 32943
+    url: https://github.com/digitalbazaar/forge/commit/bb822c02df0b61211836472e29b9790cc541cdb2
+    reference_id:
+  - id: 917634
+    url: https://github.com/digitalbazaar/forge/security/advisories/GHSA-x4jg-mjrx-434g
+    reference_id:
+  - id: 455506
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2067458
+    reference_id: 2067458
+  - id: 852902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digitalbazaar:forge:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:digitalbazaar:forge:*:*:*:*:*:node.js:*:*
+  - id: 32956
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24772
+    reference_id: CVE-2022-24772
+  - id: 32957
+    url: https://github.com/advisories/GHSA-x4jg-mjrx-434g
+    reference_id: GHSA-x4jg-mjrx-434g
+  - id: 157295
+    url: https://access.redhat.com/errata/RHSA-2022:1681
+    reference_id: RHSA-2022:1681
+  - id: 454659
+    url: https://access.redhat.com/errata/RHSA-2022:1739
+    reference_id: RHSA-2022:1739
+  - id: 1413034
+    url: https://access.redhat.com/errata/RHSA-2022:6156
+    reference_id: RHSA-2022:6156
+weaknesses: []

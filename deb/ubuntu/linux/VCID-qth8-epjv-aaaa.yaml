@@ -1,0 +1,139 @@
+vulnerability_id: VCID-qth8-epjv-aaaa
+aliases:
+  - CVE-2020-29374
+summary: An issue was discovered in the Linux kernel before 5.7.3, related to mm/gup.c and mm/huge_memory.c.
+  The get_user_pages (aka gup) implementation, when used for a copy-on-write page, does not
+  properly consider the semantics of read operations and therefore can grant unintended write
+  access, aka CID-17839856fd58.
+severities:
+  - id: 698628
+    reference_id: 1458457
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 611898
+    reference_id: 932720
+    scoring_system: cvssv3
+    value: '3.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+  - id: 698594
+    reference_id: 840278
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698629
+    reference_id: 840300
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698630
+    reference_id: 1458458
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698631
+    reference_id: 1458459
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698632
+    reference_id: 840301
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698336
+    reference_id: 1458215
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697760
+    reference_id: 1457690
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 611897
+    reference_id: 932719
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 471057
+    reference_id: 840305
+    scoring_system: cvssv2
+    value: '3.3'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:N
+  - id: 471055
+    reference_id: 840305
+    scoring_system: cvssv3
+    value: '3.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+references:
+  - id: 836729
+    url: http://packetstormsecurity.com/files/162117/Kernel-Live-Patch-Security-Notice-LSN-0075-1.html
+    reference_id:
+  - id: 1458457
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-29374.html
+    reference_id:
+  - id: 932720
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-29374.json
+    reference_id:
+  - id: 840278
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=2045
+    reference_id:
+  - id: 840300
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.7.3
+    reference_id:
+  - id: 1458458
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-29374
+    reference_id:
+  - id: 1458459
+    url: https://git.kernel.org/linus/17839856fd588f4ab6b789f482ed3ffd7c403e1f
+    reference_id:
+  - id: 840301
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=17839856fd588f4ab6b789f482ed3ffd7c403e1f
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 171248
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00020.html
+    reference_id:
+  - id: 840302
+    url: https://lists.debian.org/debian-lts-announce/2022/03/msg00012.html
+    reference_id:
+  - id: 840303
+    url: https://security.netapp.com/advisory/ntap-20210115-0002/
+    reference_id:
+  - id: 1458215
+    url: https://ubuntu.com/security/notices/USN-4748-1
+    reference_id:
+  - id: 1457690
+    url: https://ubuntu.com/security/notices/USN-4749-1
+    reference_id:
+  - id: 840304
+    url: https://www.debian.org/security/2022/dsa-5096
+    reference_id:
+  - id: 932719
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1903249
+    reference_id: '1903249'
+  - id: 172254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+  - id: 834037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_\&_hci_storage_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_\&_hci_storage_node:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 815893
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:netapp:hci_compute_node_bios:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:netapp:hci_compute_node_bios:-:*:*:*:*:*:*:*
+  - id: 840305
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-29374
+    reference_id: CVE-2020-29374
+weaknesses: []

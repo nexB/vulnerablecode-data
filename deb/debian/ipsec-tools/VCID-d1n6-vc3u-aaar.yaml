@@ -1,0 +1,224 @@
+vulnerability_id: VCID-d1n6-vc3u-aaar
+aliases:
+  - CVE-2009-1632
+summary: Multiple memory leaks in Ipsec-tools before 0.7.2 allow remote attackers to cause a
+  denial of service (memory consumption) via vectors involving (1) signature verification during
+  user authentication with X.509 certificates, related to the eay_check_x509sign function in
+  src/racoon/crypto_openssl.c; and (2) the NAT-Traversal (aka NAT-T) keepalive implementation,
+  related to src/racoon/nattraversal.c.
+severities:
+  - id: 72891
+    reference_id: 203412
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 124812
+    reference_id: 391602
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 72890
+    reference_id: 203410
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 391592
+    url: http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon/crypto_openssl.c
+    reference_id:
+  - id: 391593
+    url: http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon/crypto_openssl.c.diff?r1=1.11.6.4&r2=1.11.6.5&f=h
+    reference_id:
+  - id: 391594
+    url: http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon/nattraversal.c
+    reference_id:
+  - id: 391595
+    url: http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon/nattraversal.c.diff?r1=1.6&r2=1.6.6.1&f=h
+    reference_id:
+  - id: 44897
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    reference_id:
+  - id: 148476
+    url: http://lists.apple.com/archives/security-announce/2009/Nov/msg00000.html
+    reference_id:
+  - id: 148574
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-07/msg00002.html
+    reference_id:
+  - id: 391596
+    url: http://marc.info/?l=oss-security&m=124101704828036&w=2
+    reference_id:
+  - id: 203413
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-1632.json
+    reference_id:
+  - id: 391126
+    url: http://secunia.com/advisories/35153
+    reference_id:
+  - id: 391127
+    url: http://secunia.com/advisories/35159
+    reference_id:
+  - id: 391128
+    url: http://secunia.com/advisories/35212
+    reference_id:
+  - id: 391129
+    url: http://secunia.com/advisories/35404
+    reference_id:
+  - id: 148576
+    url: http://secunia.com/advisories/35685
+    reference_id:
+  - id: 391130
+    url: http://security.gentoo.org/glsa/glsa-200905-03.xml
+    reference_id:
+  - id: 391597
+    url: http://sourceforge.net/mailarchive/forum.php?thread_name=20090422151825.GB46988%40zeninc.net&forum_name=ipsec-tools-announce
+    reference_id:
+  - id: 391131
+    url: http://sourceforge.net/project/shownotes.php?group_id=74601&release_id=677611
+    reference_id:
+  - id: 391600
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10581
+    reference_id:
+  - id: 391601
+    url: https://trac.ipsec-tools.net/ticket/303
+    reference_id:
+  - id: 148494
+    url: http://support.apple.com/kb/HT3937
+    reference_id:
+  - id: 391132
+    url: http://www.debian.org/security/2009/dsa-1804
+    reference_id:
+  - id: 391598
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2009:114
+    reference_id:
+  - id: 391599
+    url: http://www.openwall.com/lists/oss-security/2009/05/12/3
+    reference_id:
+  - id: 391136
+    url: http://www.redhat.com/support/errata/RHSA-2009-1036.html
+    reference_id:
+  - id: 391137
+    url: http://www.securityfocus.com/bid/34765
+    reference_id:
+  - id: 391138
+    url: http://www.ubuntu.com/usn/USN-785-1
+    reference_id:
+  - id: 148513
+    url: http://www.vupen.com/english/advisories/2009/3184
+    reference_id:
+  - id: 203412
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=500886
+    reference_id: 500886
+  - id: 42224
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=528933
+    reference_id: 528933
+  - id: 284409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:*:*:*:*:*:*:*:*
+  - id: 391146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.1:*:*:*:*:*:*:*
+  - id: 391151
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.2:*:*:*:*:*:*:*
+  - id: 391147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.1:*:*:*:*:*:*:*
+  - id: 391148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.2:*:*:*:*:*:*:*
+  - id: 391149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.3:*:*:*:*:*:*:*
+  - id: 391150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.2.4:*:*:*:*:*:*:*
+  - id: 94991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:*:*:*:*:*:*:*
+  - id: 94989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.1:*:*:*:*:*:*:*
+  - id: 94990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.2:*:*:*:*:*:*:*
+  - id: 115135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3.3:*:*:*:*:*:*:*
+  - id: 391152
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc1:*:*:*:*:*:*
+  - id: 94992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc1:*:*:*:*:*:*:*
+  - id: 391153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc2:*:*:*:*:*:*
+  - id: 94993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc2:*:*:*:*:*:*:*
+  - id: 391154
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc3:*:*:*:*:*:*
+  - id: 94994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc3:*:*:*:*:*:*:*
+  - id: 391155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc4:*:*:*:*:*:*
+  - id: 94995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc4:*:*:*:*:*:*:*
+  - id: 391156
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3:rc5:*:*:*:*:*:*
+  - id: 94996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.3_rc5:*:*:*:*:*:*:*
+  - id: 391157
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.4:*:*:*:*:*:*:*
+  - id: 391158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.4:rc1:*:*:*:*:*:*
+  - id: 115136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.5:*:*:*:*:*:*:*
+  - id: 137957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.5.1:*:*:*:*:*:*:*
+  - id: 137958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.5.2:*:*:*:*:*:*:*
+  - id: 137961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6:*:*:*:*:*:*:*
+  - id: 137959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.1:*:*:*:*:*:*:*
+  - id: 137960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.2:*:*:*:*:*:*:*
+  - id: 391159
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.3:*:*:*:*:*:*:*
+  - id: 391160
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.4:*:*:*:*:*:*:*
+  - id: 391161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.5:*:*:*:*:*:*:*
+  - id: 391162
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.6:*:*:*:*:*:*:*
+  - id: 391603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.6.7:*:*:*:*:*:*:*
+  - id: 391163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ipsec-tools:ipsec-tools:0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ipsec-tools:ipsec-tools:0.7:*:*:*:*:*:*:*
+  - id: 391602
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-1632
+    reference_id: CVE-2009-1632
+  - id: 203410
+    url: https://access.redhat.com/errata/RHSA-2009:1036
+    reference_id: RHSA-2009:1036
+weaknesses: []

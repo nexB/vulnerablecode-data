@@ -1,0 +1,74 @@
+vulnerability_id: VCID-6by6-a3mk-aaar
+aliases:
+  - CVE-2021-38209
+summary: net/netfilter/nf_conntrack_standalone.c in the Linux kernel before 5.12.2 allows observation
+  of changes in any net namespace because these changes are leaked into all other net namespaces.
+  This is related to the NF_SYSCTL_CT_MAX, NF_SYSCTL_CT_EXPECT_MAX, and NF_SYSCTL_CT_BUCKETS
+  sysctls.
+severities:
+  - id: 702554
+    reference_id: 1461761
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606066
+    reference_id: 928455
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 702555
+    reference_id: 893337
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702556
+    reference_id: 1461762
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702557
+    reference_id: 893338
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606065
+    reference_id: 928454
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 553665
+    reference_id: 893339
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 553663
+    reference_id: 893339
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 1461761
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-38209.html
+    reference_id:
+  - id: 928455
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-38209.json
+    reference_id:
+  - id: 893337
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.12.2
+    reference_id:
+  - id: 1461762
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38209
+    reference_id:
+  - id: 893338
+    url: https://github.com/torvalds/linux/commit/2671fa4dc0109d3fb581bc3078fdf17b5d9080f6
+    reference_id:
+  - id: 928454
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1992815
+    reference_id: '1992815'
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 893339
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-38209
+    reference_id: CVE-2021-38209
+weaknesses: []

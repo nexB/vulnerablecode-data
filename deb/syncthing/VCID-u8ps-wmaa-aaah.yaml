@@ -1,0 +1,21 @@
+affected_purls:
+- pkg:deb/debian/syncthing@1.0.0~ds1-1
+aliases:
+- CVE-2021-21404
+fixed_purl:
+- pkg:deb/debian/syncthing@1.12.1~ds1-4
+references:
+- id: 129623
+  reference_id: '986593'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986593
+severities: []
+summary: Syncthing is a continuous file synchronization program. In Syncthing before
+  version 1.15.0, the relay server `strelaysrv` can be caused to crash and exit by
+  sending a relay message with a negative length field. Similarly, Syncthing itself
+  can crash for the same reason if given a malformed message from a malicious relay
+  server when attempting to join the relay. Relay joins are essentially random (from
+  a subset of low latency relays) and Syncthing will by default restart when crashing,
+  at which point it's likely to pick another non-malicious relay. This flaw is fixed
+  in version 1.15.0.
+vulnerability_id: VCID-u8ps-wmaa-aaah
+weaknesses: []

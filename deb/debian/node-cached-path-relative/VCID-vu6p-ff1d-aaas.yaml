@@ -1,0 +1,81 @@
+vulnerability_id: VCID-vu6p-ff1d-aaas
+aliases:
+  - CVE-2021-23518
+  - GHSA-wg6g-ppvx-927h
+summary: |
+  Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')
+  The package cached-path-relative is vulnerable to Prototype Pollution via the cache variable that is set as {} instead of Object.create(null) in the cachedPathRelative function, which allows access to the parent prototype properties when the object is used to create the cached relative path. When using the origin path as __proto__, the attribute of the object is accessed instead of a path. **Note:** This vulnerability derives from an incomplete fix in https://security.snyk.io/vuln/SNYK-JS-CACHEDPATHRELATIVE-72573
+severities:
+  - id: 293376
+    reference_id: 708423
+    scoring_system: cvssv3
+    value: '8.6'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L
+  - id: 293375
+    reference_id: 708422
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 515623
+    reference_id: 31956
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 515621
+    reference_id: 31956
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 706630
+    reference_id: 1468260
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 219618
+    reference_id: 636476
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 135629
+    reference_id: 430321
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 708423
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-23518.json
+    reference_id:
+  - id: 31958
+    url: https://github.com/ashaffer/cached-path-relative/commit/40c73bf70c58add5aec7d11e4f36b93d144bb760
+    reference_id:
+  - id: 1467252
+    url: https://lists.debian.org/debian-lts-announce/2022/12/msg00006.html
+    reference_id:
+  - id: 31957
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2348246
+    reference_id:
+  - id: 31959
+    url: https://snyk.io/vuln/SNYK-JS-CACHEDPATHRELATIVE-2342653
+    reference_id:
+  - id: 78194
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004338
+    reference_id: 1004338
+  - id: 708422
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2044654
+    reference_id: 2044654
+  - id: 739093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cached-path-relative_project:cached-path-relative:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:cached-path-relative_project:cached-path-relative:*:*:*:*:*:node.js:*:*
+  - id: 31956
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-23518
+    reference_id: CVE-2021-23518
+  - id: 1468260
+    url: https://github.com/advisories/GHSA-wg6g-ppvx-927h
+    reference_id: GHSA-wg6g-ppvx-927h
+  - id: 636476
+    url: https://access.redhat.com/errata/RHSA-2022:1083
+    reference_id: RHSA-2022:1083
+  - id: 430321
+    url: https://access.redhat.com/errata/RHSA-2022:1476
+    reference_id: RHSA-2022:1476
+weaknesses: []

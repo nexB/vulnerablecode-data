@@ -1,0 +1,63 @@
+vulnerability_id: VCID-p7yy-u2nv-aaad
+aliases:
+  - CVE-2020-15703
+summary: |
+  Path Traversal
+  There is no input validation on the Locale property in an apt transaction. An unprivileged user can supply a full path to a writable directory, which lets aptd read a file as root. Having a symlink in place results in an error message if the file exists, and no error otherwise. This way an unprivileged user can check for the existence of any files on the system as root.
+severities:
+  - id: 697030
+    reference_id: 1457092
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697031
+    reference_id: 1457093
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697032
+    reference_id: 824115
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696849
+    reference_id: 824116
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 446995
+    reference_id: 23699
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 446993
+    reference_id: 23699
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 1457092
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-15703.html
+    reference_id:
+  - id: 1457093
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15703
+    reference_id:
+  - id: 824115
+    url: https://ubuntu.com/security/notices/USN-4537-1
+    reference_id:
+  - id: 824116
+    url: https://www.eyecontrol.nl/blog/the-story-of-3-cves-in-ubuntu-desktop.html
+    reference_id:
+  - id: 824117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu14.4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu14.4:*:*:*:*:*:*
+  - id: 824118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu19.4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu19.4:*:*:*:*:*:*
+  - id: 824119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu32.2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:aptdaemon_project:aptdaemon:1.1.1:bzr982-0ubuntu32.2:*:*:*:*:*:*
+  - id: 23699
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-15703
+    reference_id: CVE-2020-15703
+weaknesses: []

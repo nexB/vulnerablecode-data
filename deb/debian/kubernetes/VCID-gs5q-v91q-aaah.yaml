@@ -1,0 +1,70 @@
+vulnerability_id: VCID-gs5q-v91q-aaah
+aliases:
+  - CVE-2019-11244
+summary: In Kubernetes v1.8.x-v1.14.x, schema info is cached by kubectl in the location specified
+  by --cache-dir (defaulting to $HOME/.kube/http-cache), written with world-writeable permissions
+  (rw-rw-rw-). If --cache-dir is specified and pointed at a different location accessible to
+  other users/groups, the written files may be modified by other users/groups and disrupt the
+  kubectl invocation.
+severities:
+  - id: 55709
+    reference_id: 181070
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N
+  - id: 55705
+    reference_id: 181066
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 371359
+    reference_id: 769717
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:P/A:N
+  - id: 371357
+    reference_id: 769717
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N
+references:
+  - id: 769713
+    url: https://access.redhat.com/errata/RHSA-2019:3942
+    reference_id:
+  - id: 769714
+    url: https://access.redhat.com/errata/RHSA-2020:0020
+    reference_id:
+  - id: 769715
+    url: https://access.redhat.com/errata/RHSA-2020:0074
+    reference_id:
+  - id: 181070
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11244.json
+    reference_id:
+  - id: 769716
+    url: https://github.com/kubernetes/kubernetes/issues/76676
+    reference_id:
+  - id: 769709
+    url: https://security.netapp.com/advisory/ntap-20190509-0002/
+    reference_id:
+  - id: 769712
+    url: http://www.securityfocus.com/bid/108064
+    reference_id:
+  - id: 181066
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1703209
+    reference_id: 1703209
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 722774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*
+  - id: 625785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+  - id: 728886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.1:*:*:*:*:*:*:*
+  - id: 769717
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11244
+    reference_id: CVE-2019-11244
+weaknesses: []

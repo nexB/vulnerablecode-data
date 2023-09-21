@@ -1,0 +1,53 @@
+vulnerability_id: VCID-rw1u-45u7-aaaa
+aliases:
+  - CVE-2019-7628
+summary: Pagure 5.2 leaks API keys by e-mailing them to users. Few e-mail servers validate TLS
+  certificates, so it is easy for man-in-the-middle attackers to read these e-mails and gain
+  access to Pagure on behalf of other users. This issue is found in the API token expiration
+  reminder cron job in files/api_key_expire_mail.py; disabling that job is also a viable solution.
+  (E-mailing a substring of the API key was an attempted, but rejected, solution.)
+severities:
+  - id: 80389
+    reference_id: 213955
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 416330
+    reference_id: 804070
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 416328
+    reference_id: 804070
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 213956
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-7628.json
+    reference_id:
+  - id: 804065
+    url: https://pagure.io/pagure/c/9905fb1e64341822366b6ab1d414d2baa230af0a
+    reference_id:
+  - id: 804066
+    url: https://pagure.io/pagure/issue/4230
+    reference_id:
+  - id: 804067
+    url: https://pagure.io/pagure/issue/4252
+    reference_id:
+  - id: 804068
+    url: https://pagure.io/pagure/issue/4253
+    reference_id:
+  - id: 804069
+    url: https://pagure.io/pagure/pull-request/4254
+    reference_id:
+  - id: 213955
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1673983
+    reference_id: 1673983
+  - id: 804071
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:pagure:5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:pagure:5.2:*:*:*:*:*:*:*
+  - id: 804070
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-7628
+    reference_id: CVE-2019-7628
+weaknesses: []

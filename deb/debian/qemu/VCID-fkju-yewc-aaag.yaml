@@ -1,0 +1,87 @@
+vulnerability_id: VCID-fkju-yewc-aaag
+aliases:
+  - CVE-2018-16867
+summary: A flaw was found in qemu Media Transfer Protocol (MTP) before version 3.1.0. A path
+  traversal in the in usb_mtp_write_data function in hw/usb/dev-mtp.c due to an improper filename
+  sanitization. When the guest device is mounted in read-write mode, this allows to read/write
+  arbitrary files which may lead do DoS scenario OR possibly lead to code execution on the host.
+severities:
+  - id: 613597
+    reference_id: 933995
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H
+  - id: 613596
+    reference_id: 933994
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 331064
+    reference_id: 740039
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 331062
+    reference_id: 740039
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 933995
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16867.json
+    reference_id:
+  - id: 740035
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16867
+    reference_id:
+  - id: 740036
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CGCFIFSIWUREEQQOZDZFBYKWZHXCWBZN/
+    reference_id:
+  - id: 740037
+    url: https://usn.ubuntu.com/3923-1/
+    reference_id:
+  - id: 740038
+    url: https://www.openwall.com/lists/oss-security/2018/12/06/1
+    reference_id:
+  - id: 740034
+    url: http://www.securityfocus.com/bid/106195
+    reference_id:
+  - id: 933994
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1654885
+    reference_id: 1654885
+  - id: 112062
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=915884
+    reference_id: 915884
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 739915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:3.1.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:3.1.0:rc0:*:*:*:*:*:*
+  - id: 739916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:3.1.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:3.1.0:rc1:*:*:*:*:*:*
+  - id: 740040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:3.1.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:3.1.0:rc2:*:*:*:*:*:*
+  - id: 740041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:3.1.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:3.1.0:rc3:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 641049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+  - id: 740039
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16867
+    reference_id: CVE-2018-16867
+weaknesses: []

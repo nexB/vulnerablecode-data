@@ -1,0 +1,38 @@
+vulnerability_id: VCID-2w75-hru2-aaan
+aliases:
+  - CVE-2020-25667
+summary: TIFFGetProfiles() in /coders/tiff.c calls strstr() which causes a large out-of-bounds
+  read when it searches for `"dc:format=\"image/dng\"` within `profile` due to improper string
+  handling, when a crafted input file is provided to ImageMagick. The patch uses a StringInfo
+  type instead of a raw C string to remedy this. This could cause an impact to availability
+  of the application. This flaw affects ImageMagick versions prior to 7.0.9-0.
+severities:
+  - id: 69940
+    reference_id: '199852'
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 462078
+    reference_id: 834111
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 462076
+    reference_id: 834111
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: '199852'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25667.json
+    reference_id:
+  - id: 834110
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1891613
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 834111
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25667
+    reference_id: CVE-2020-25667
+weaknesses: []

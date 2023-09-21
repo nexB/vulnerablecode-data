@@ -1,0 +1,18 @@
+affected_purls:
+- pkg:deb/debian/rustc@1.41.1%2Bdfsg1-1~deb10u1
+- pkg:deb/debian/rustc@1.48.0%2Bdfsg1-2
+aliases:
+- CVE-2021-28878
+fixed_purl:
+- pkg:deb/debian/rustc@1.63.0%2Bdfsg1-2
+references:
+- id: 129449
+  reference_id: '986803'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986803
+severities: []
+summary: In the standard library in Rust before 1.52.0, the Zip implementation calls
+  __iterator_get_unchecked() more than once for the same index (under certain conditions)
+  when next_back() and next() are used together. This bug could lead to a memory safety
+  violation due to an unmet safety requirement for the TrustedRandomAccess trait.
+vulnerability_id: VCID-183v-5e7h-aaae
+weaknesses: []

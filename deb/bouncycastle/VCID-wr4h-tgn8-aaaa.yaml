@@ -1,0 +1,51 @@
+affected_purls:
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.51
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.53
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.54
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.55
+aliases:
+- CVE-2016-1000340
+- GHSA-r97x-3g8f-gx3m
+fixed_purl:
+- pkg:deb/debian/bouncycastle@1.56-1?distro=sid
+- pkg:deb/debian/bouncycastle@1.60-1?distro=sid
+- pkg:deb/debian/bouncycastle@1.68-2?distro=sid
+- pkg:deb/debian/bouncycastle@1.72-2?distro=sid
+- pkg:maven/org.bouncycastle/bcprov-jdk14@1.56
+references:
+- id: 136202
+  reference_id: ''
+  url: https://access.redhat.com/errata/RHSA-2018:2669
+- id: 138643
+  reference_id: ''
+  url: https://access.redhat.com/errata/RHSA-2018:2927
+- id: 138652
+  reference_id: ''
+  url: https://github.com/bcgit/bc-java/commit/790642084c4e0cadd47352054f868cc8397e2c00#diff-e5934feac8203ca0104ab291a3560a31
+- id: 138650
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20181127-0004/
+- id: 135896
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuoct2020.html
+- id: 138651
+  reference_id: CVE-2016-1000340
+  url: https://nvd.nist.gov/vuln/detail/CVE-2016-1000340
+- id: 138653
+  reference_id: GHSA-r97x-3g8f-gx3m
+  url: https://github.com/advisories/GHSA-r97x-3g8f-gx3m
+severities:
+- id: 19055
+  reference_id: 138653
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: In the Bouncy Castle JCE Provider versions 1.51 to 1.55, a carry propagation
+  bug was introduced in the implementation of squaring for several raw math classes
+  have been fixed (org.bouncycastle.math.raw.Nat???). These classes are used by our
+  custom elliptic curve implementations (org.bouncycastle.math.ec.custom.**), so there
+  was the possibility of rare (in general usage) spurious calculations for elliptic
+  curve scalar multiplications. Such errors would have been detected with high probability
+  by the output validation for our scalar multipliers.
+vulnerability_id: VCID-wr4h-tgn8-aaaa
+weaknesses: []

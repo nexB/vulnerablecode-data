@@ -1,0 +1,79 @@
+vulnerability_id: VCID-epvz-3a4j-aaab
+aliases:
+  - CVE-2018-7284
+summary: A Buffer Overflow issue was discovered in Asterisk through 13.19.1, 14.x through 14.7.5,
+  and 15.x through 15.2.1, and Certified Asterisk through 13.18-cert2. When processing a SUBSCRIBE
+  request, the res_pjsip_pubsub module stores the accepted formats present in the Accept headers
+  of the request. This code did not limit the number of headers it processed, despite having
+  a fixed limit of 32. If more than 32 Accept headers were present, the code would write outside
+  of its memory and cause a crash.
+severities:
+  - id: 688598
+    reference_id: 757854
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688599
+    reference_id: 1450488
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688600
+    reference_id: 1450489
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 355573
+    reference_id: 757858
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 355571
+    reference_id: 757858
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 757854
+    url: http://downloads.asterisk.org/pub/security/AST-2018-004.html
+    reference_id:
+  - id: 1450488
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-7284.html
+    reference_id:
+  - id: 1450489
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7284
+    reference_id:
+  - id: 728944
+    url: https://www.debian.org/security/2018/dsa-4320
+    reference_id:
+  - id: 757857
+    url: https://www.exploit-db.com/exploits/44184/
+    reference_id:
+  - id: 757855
+    url: http://www.securityfocus.com/bid/103151
+    reference_id:
+  - id: 757856
+    url: http://www.securitytracker.com/id/1040416
+    reference_id:
+  - id: 39626
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=891227
+    reference_id: 891227
+  - id: 229597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:*:*:*:*:*:*:*:*
+  - id: 690145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:certified_asterisk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:certified_asterisk:*:*:*:*:*:*:*:*
+  - id: 728946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:certified_asterisk:13.18:cert1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:certified_asterisk:13.18:cert1:*:*:*:*:*:*
+  - id: 728947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:certified_asterisk:13.18:cert2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:certified_asterisk:13.18:cert2:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 757858
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-7284
+    reference_id: CVE-2018-7284
+weaknesses: []

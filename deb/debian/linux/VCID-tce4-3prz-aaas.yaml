@@ -1,0 +1,97 @@
+vulnerability_id: VCID-tce4-3prz-aaas
+aliases:
+  - CVE-2017-15126
+summary: A use-after-free flaw was found in fs/userfaultfd.c in the Linux kernel before 4.13.6.
+  The issue is related to the handling of fork failure when dealing with event messages. Failure
+  to fork correctly can lead to a situation where a fork event will be removed from an already
+  freed list of events with userfaultfd_ctx_put().
+severities:
+  - id: 675851
+    reference_id: 1440490
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619536
+    reference_id: 938265
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 675852
+    reference_id: 1440491
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675853
+    reference_id: 1440492
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619535
+    reference_id: 938264
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 266852
+    reference_id: 684980
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 266850
+    reference_id: 684980
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 684974
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=384632e67e0829deb8015ee6ad916b180049d252
+    reference_id:
+  - id: 1440490
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15126.html
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 938265
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15126.json
+    reference_id:
+  - id: 684976
+    url: https://access.redhat.com/security/cve/CVE-2017-15126
+    reference_id:
+  - id: 1440491
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15126
+    reference_id:
+  - id: 684978
+    url: https://github.com/torvalds/linux/commit/384632e67e0829deb8015ee6ad916b180049d252
+    reference_id:
+  - id: 1440492
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=384632e67e0829deb8015ee6ad916b180049d252
+    reference_id:
+  - id: 684979
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.6
+    reference_id:
+  - id: 684975
+    url: http://www.securityfocus.com/bid/102516
+    reference_id:
+  - id: 938264
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1523481
+    reference_id: 1523481
+  - id: 684981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.13.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.13.6:*:*:*:*:*:*:*
+  - id: 684980
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15126
+    reference_id: CVE-2017-15126
+weaknesses: []

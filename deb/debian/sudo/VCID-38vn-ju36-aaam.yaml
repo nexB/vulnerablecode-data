@@ -1,0 +1,277 @@
+vulnerability_id: VCID-38vn-ju36-aaam
+aliases:
+  - CVE-2013-1776
+summary: 'sudo 1.3.5 through 1.7.10 and 1.8.0 through 1.8.5, when the tty_tickets option is
+  enabled, does not properly validate the controlling terminal device, which allows local users
+  with sudo permissions to hijack the authorization of another terminal via vectors related
+  to connecting to the standard input, output, and error file descriptors of another terminal.  NOTE:
+  this is one of three closely-related vulnerabilities that were originally assigned CVE-2013-1776,
+  but they have been SPLIT because of different affected versions.'
+severities:
+  - id: 164105
+    reference_id: 520248
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 62602
+    reference_id: '190645'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 520239
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701839
+    reference_id:
+  - id: 161186
+    url: http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html
+    reference_id:
+  - id: 520189
+    url: http://lists.opensuse.org/opensuse-updates/2013-03/msg00066.html
+    reference_id:
+  - id: 520191
+    url: http://rhn.redhat.com/errata/RHSA-2013-1353.html
+    reference_id:
+  - id: '190649'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-1776.json
+    reference_id:
+  - id: 520245
+    url: https://bugs.launchpad.net/ubuntu/+source/sudo/+bug/87023
+    reference_id:
+  - id: 520246
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=916365
+    reference_id:
+  - id: 520247
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/82453
+    reference_id:
+  - id: 161200
+    url: https://support.apple.com/kb/HT205031
+    reference_id:
+  - id: 520193
+    url: http://www.debian.org/security/2013/dsa-2642
+    reference_id:
+  - id: 520240
+    url: http://www.openwall.com/lists/oss-security/2013/02/27/31
+    reference_id:
+  - id: 159099
+    url: http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
+    reference_id:
+  - id: 520241
+    url: http://www.securityfocus.com/bid/58207
+    reference_id:
+  - id: 520196
+    url: http://www.slackware.com/security/viewer.php?l=slackware-security&y=2013&m=slackware-security.517440
+    reference_id:
+  - id: 520242
+    url: http://www.sudo.ws/repos/sudo/rev/632f8e028191
+    reference_id:
+  - id: 520243
+    url: http://www.sudo.ws/repos/sudo/rev/6b22be4d09f0
+    reference_id:
+  - id: 520244
+    url: http://www.sudo.ws/sudo/alerts/tty_tickets.html
+    reference_id:
+  - id: 130489
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701839
+    reference_id: 701839
+  - id: 520249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.3.5:*:*:*:*:*:*:*
+  - id: 64199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6:*:*:*:*:*:*:*
+  - id: 64189
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.1:*:*:*:*:*:*:*
+  - id: 64190
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.2:*:*:*:*:*:*:*
+  - id: 419884
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.2p3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.2p3:*:*:*:*:*:*:*
+  - id: 64191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.3:*:*:*:*:*:*:*
+  - id: 64198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.3_p7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.3_p7:*:*:*:*:*:*:*
+  - id: 98617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.4:*:*:*:*:*:*:*
+  - id: 131940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.4p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.4p2:*:*:*:*:*:*:*
+  - id: 98620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.5:*:*:*:*:*:*:*
+  - id: 98623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.6:*:*:*:*:*:*:*
+  - id: 98624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.7:*:*:*:*:*:*:*
+  - id: 419889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.7p5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.7p5:*:*:*:*:*:*:*
+  - id: 98625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.8:*:*:*:*:*:*:*
+  - id: 419892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.8p12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.8p12:*:*:*:*:*:*:*
+  - id: 419901
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.9:*:*:*:*:*:*:*
+  - id: 419913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.9p20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.9p20:*:*:*:*:*:*:*
+  - id: 419914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.9p21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.9p21:*:*:*:*:*:*:*
+  - id: 419915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.9p22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.9p22:*:*:*:*:*:*:*
+  - id: 491135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.6.9p23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.6.9p23:*:*:*:*:*:*:*
+  - id: 411606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.0:*:*:*:*:*:*:*
+  - id: 411607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.1:*:*:*:*:*:*:*
+  - id: 520202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.10:*:*:*:*:*:*:*
+  - id: 411608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2:*:*:*:*:*:*:*
+  - id: 411609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p1:*:*:*:*:*:*:*
+  - id: 411610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p2:*:*:*:*:*:*:*
+  - id: 411611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p3:*:*:*:*:*:*:*
+  - id: 416392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p4:*:*:*:*:*:*:*
+  - id: 419924
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p5:*:*:*:*:*:*:*
+  - id: 419925
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p6:*:*:*:*:*:*:*
+  - id: 419926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.2p7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.2p7:*:*:*:*:*:*:*
+  - id: 428237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.3b1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.3b1:*:*:*:*:*:*:*
+  - id: 428238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4:*:*:*:*:*:*:*
+  - id: 428239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p1:*:*:*:*:*:*:*
+  - id: 428240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p2:*:*:*:*:*:*:*
+  - id: 428241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p3:*:*:*:*:*:*:*
+  - id: 444017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p4:*:*:*:*:*:*:*
+  - id: 520209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p5:*:*:*:*:*:*:*
+  - id: 520210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.4p6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.4p6:*:*:*:*:*:*:*
+  - id: 520211
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.5:*:*:*:*:*:*:*
+  - id: 520212
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.6:*:*:*:*:*:*:*
+  - id: 520213
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.6p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.6p1:*:*:*:*:*:*:*
+  - id: 520214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.6p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.6p2:*:*:*:*:*:*:*
+  - id: 520215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.7:*:*:*:*:*:*:*
+  - id: 520216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.8:*:*:*:*:*:*:*
+  - id: 520217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.8p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.8p1:*:*:*:*:*:*:*
+  - id: 520218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.8p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.8p2:*:*:*:*:*:*:*
+  - id: 520219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.9:*:*:*:*:*:*:*
+  - id: 520220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.7.9p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.7.9p1:*:*:*:*:*:*:*
+  - id: 481703
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.0:*:*:*:*:*:*:*
+  - id: 481704
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.1:*:*:*:*:*:*:*
+  - id: 481705
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.1p1:*:*:*:*:*:*:*
+  - id: 481706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.1p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.1p2:*:*:*:*:*:*:*
+  - id: 481707
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.2:*:*:*:*:*:*:*
+  - id: 481708
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.3:*:*:*:*:*:*:*
+  - id: 481709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.3p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.3p1:*:*:*:*:*:*:*
+  - id: 520221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.3p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.3p2:*:*:*:*:*:*:*
+  - id: 520222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4:*:*:*:*:*:*:*
+  - id: 520223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4p1:*:*:*:*:*:*:*
+  - id: 520224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4p2:*:*:*:*:*:*:*
+  - id: 520225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4p3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4p3:*:*:*:*:*:*:*
+  - id: 520226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4p4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4p4:*:*:*:*:*:*:*
+  - id: 520227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.4p5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.4p5:*:*:*:*:*:*:*
+  - id: 520228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:todd_miller:sudo:1.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:todd_miller:sudo:1.8.5:*:*:*:*:*:*:*
+  - id: 44904
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*
+  - id: 520248
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-1776
+    reference_id: CVE-2013-1776
+  - id: '190645'
+    url: https://access.redhat.com/errata/RHSA-2013:1353
+    reference_id: RHSA-2013:1353
+weaknesses: []

@@ -1,0 +1,66 @@
+affected_purls:
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.2-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.3-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.3-0ubuntu2
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.4-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.5-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.3.5-0ubuntu2
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.1-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.1-0ubuntu1.1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.1-0ubuntu1.2
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.1-0ubuntu2
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.1-0ubuntu3
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.2-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.4-0ubuntu0.1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.4-0ubuntu0.2
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.4bzr13.01.29-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.5bzr13.03.25-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.7-0ubuntu0.1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.7-0ubuntu0.2
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.7bzr13.04.04-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.7bzr13.04.15-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@2.4.8%2B13.10.20130920-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140130.1-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140205-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140220-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140411-0ubuntu1
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140416-0ubuntu1
+aliases:
+- CVE-2013-1055
+fixed_purl:
+- pkg:deb/ubuntu/unity-firefox-extension@3.0.0%2B14.04.20140416-0ubuntu1.14.04.1
+references:
+- id: 184883
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1055.html
+- id: 184884
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1055
+- id: 184882
+  reference_id: ''
+  url: https://ubuntu.com/security/notices/USN-2743-3
+severities:
+- id: 32039
+  reference_id: 184883
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+- id: 32040
+  reference_id: 184884
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+- id: 32038
+  reference_id: 184882
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Low
+summary: The unity-firefox-extension package could be tricked into dropping a C callback
+  which was still in use, which Firefox would then free, causing Firefox to crash.
+  This could be achieved by adding an action to the launcher and updating it with
+  new callbacks until the libunity-webapps rate limit was hit. Fixed in 3.0.0+14.04.20140416-0ubuntu1.14.04.1
+  of unity-firefox-extension and in all versions of libunity-webapps by shipping an
+  empty unity-firefox-extension package, thus disabling the extension entirely and
+  invalidating the attack against the libunity-webapps package.
+vulnerability_id: VCID-a775-uqbm-aaaq
+weaknesses: []

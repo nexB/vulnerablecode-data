@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2019-16159
+fixed_purl:
+- pkg:deb/debian/bird@1.6.6-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/bird@1.6.8-1?distro=sid
+- pkg:deb/debian/bird@1.6.8-2.1?distro=sid
+- pkg:deb/debian/bird2@2.0.12-7?distro=sid
+- pkg:deb/debian/bird2@2.0.6-1?distro=sid
+- pkg:deb/debian/bird2@2.0.7-4.1?distro=sid
+references:
+- id: 128707
+  reference_id: '939990'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939990
+severities: []
+summary: BIRD Internet Routing Daemon 1.6.x through 1.6.7 and 2.x through 2.0.5 has
+  a stack-based buffer overflow. The BGP daemon's support for RFC 8203 administrative
+  shutdown communication messages included an incorrect logical expression when checking
+  the validity of an input message. Sending a shutdown communication with a sufficient
+  message length causes a four-byte overflow to occur while processing the message,
+  where two of the overflow bytes are attacker-controlled and two are fixed.
+vulnerability_id: VCID-sypb-143w-aaag
+weaknesses: []

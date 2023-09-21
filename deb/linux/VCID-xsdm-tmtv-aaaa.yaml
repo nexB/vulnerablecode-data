@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2021-20194
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@5.10.19-1?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: There is a vulnerability in the linux kernel versions higher than 5.2 (if
+  kernel compiled with config params CONFIG_BPF_SYSCALL=y , CONFIG_BPF=y , CONFIG_CGROUPS=y
+  , CONFIG_CGROUP_BPF=y , CONFIG_HARDENED_USERCOPY not set, and BPF hook to getsockopt
+  is registered). As result of BPF execution, the local user can trigger bug in __cgroup_bpf_run_filter_getsockopt()
+  function that can lead to heap overflow (because of non-hardened usercopy). The
+  impact of attack could be deny of service or possibly privileges escalation.
+vulnerability_id: VCID-xsdm-tmtv-aaaa
+weaknesses: []

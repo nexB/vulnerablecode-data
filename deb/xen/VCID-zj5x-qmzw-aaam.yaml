@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2020-25601
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B37-g3263f257ca-1?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B80-gd101b417b7-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.14.x. There is a lack of preemption
+  in evtchn_reset() / evtchn_destroy(). In particular, the FIFO event channel model
+  allows guests to have a large number of event channels active at a time. Closing
+  all of these (when resetting all event channels or when cleaning up after the guest)
+  may take extended periods of time. So far, there was no arrangement for preemption
+  at suitable intervals, allowing a CPU to spend an almost unbounded amount of time
+  in the processing of these operations. Malicious or buggy guest kernels can mount
+  a Denial of Service (DoS) attack affecting the entire system. All Xen versions are
+  vulnerable in principle. Whether versions 4.3 and older are vulnerable depends on
+  underlying hardware characteristics.
+vulnerability_id: VCID-zj5x-qmzw-aaam
+weaknesses: []

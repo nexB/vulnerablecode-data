@@ -1,0 +1,157 @@
+vulnerability_id: VCID-f5mk-fn61-aaan
+aliases:
+  - CVE-2017-2671
+summary: The ping_unhash function in net/ipv4/ping.c in the Linux kernel through 4.10.8 is too
+  late in obtaining a certain lock and consequently cannot ensure that disconnect function calls
+  are safe, which allows local users to cause a denial of service (panic) by leveraging access
+  to the protocol value of IPPROTO_ICMP in a socket system call.
+severities:
+  - id: 677931
+    reference_id: 696507
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 677932
+    reference_id: 1441878
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 623738
+    reference_id: 941214
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 677934
+    reference_id: 1441880
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 677935
+    reference_id: 696510
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 677936
+    reference_id: 696512
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 671422
+    reference_id: 1436943
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671423
+    reference_id: 1436944
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672406
+    reference_id: 1437722
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660540
+    reference_id: 1428089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677933
+    reference_id: 1441879
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 623737
+    reference_id: 941213
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 281255
+    reference_id: 696514
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 281253
+    reference_id: 696514
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 696507
+    url: http://openwall.com/lists/oss-security/2017/04/04/8
+    reference_id:
+  - id: 1441878
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2671.html
+    reference_id:
+  - id: 585053
+    url: https://access.redhat.com/errata/RHSA-2017:1842
+    reference_id:
+  - id: 585054
+    url: https://access.redhat.com/errata/RHSA-2017:2077
+    reference_id:
+  - id: 620087
+    url: https://access.redhat.com/errata/RHSA-2017:2669
+    reference_id:
+  - id: 511654
+    url: https://access.redhat.com/errata/RHSA-2018:1854
+    reference_id:
+  - id: 941214
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2671.json
+    reference_id:
+  - id: 1441880
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2671
+    reference_id:
+  - id: 696510
+    url: https://github.com/danieljiang0415/android_kernel_crash_poc
+    reference_id:
+  - id: 696511
+    url: https://github.com/torvalds/linux/commit/43a6684519ab0a6c52024b5e25322476cabad893
+    reference_id:
+  - id: 696509
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/net/ipv4/ping.c?id=43a6684519ab0a6c52024b5e25322476cabad893
+    reference_id:
+  - id: 696512
+    url: https://twitter.com/danieljiang0415/status/845116665184497664
+    reference_id:
+  - id: 1436943
+    url: https://ubuntu.com/security/notices/USN-3312-1
+    reference_id:
+  - id: 1436944
+    url: https://ubuntu.com/security/notices/USN-3312-2
+    reference_id:
+  - id: 1437722
+    url: https://ubuntu.com/security/notices/USN-3314-1
+    reference_id:
+  - id: 1428089
+    url: https://ubuntu.com/security/notices/USN-3361-1
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 696513
+    url: https://www.exploit-db.com/exploits/42135/
+    reference_id:
+  - id: 1441879
+    url: http://www.openwall.com/lists/oss-security/2017/03/24/6
+    reference_id:
+  - id: 696508
+    url: http://www.securityfocus.com/bid/97407
+    reference_id:
+  - id: 941213
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1436649
+    reference_id: 1436649
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 696514
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2671
+    reference_id: CVE-2017-2671
+weaknesses: []

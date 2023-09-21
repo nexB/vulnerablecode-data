@@ -1,0 +1,57 @@
+vulnerability_id: VCID-csun-gvnt-aaak
+aliases:
+  - CVE-2020-14354
+summary: A possible use-after-free and double-free in c-ares lib version 1.16.0 if ares_destroy()
+  is called prior to ares_getaddrinfo() completing. This flaw possibly allows an attacker to
+  crash the service that uses c-ares lib. The highest threat from this vulnerability is to this
+  service availability.
+severities:
+  - id: 610532
+    reference_id: 931737
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 610531
+    reference_id: 931736
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 441951
+    reference_id: 820809
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 441949
+    reference_id: 820809
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+references:
+  - id: 931737
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14354.json
+    reference_id:
+  - id: 820806
+    url: https://c-ares.haxx.se/changelog.html
+    reference_id:
+  - id: 820807
+    url: https://github.com/c-ares/c-ares/commit/1cc7e83c3bdfaafbc5919c95025592d8de3a170e
+    reference_id:
+  - id: 811703
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OOYAMJVLLCLXDTHW3V5UXNULZBBK4O6/
+    reference_id:
+  - id: 820808
+    url: https://packetstormsecurity.com/files/158755/GS20200804145053.txt
+    reference_id:
+  - id: 931736
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1866838
+    reference_id: 1866838
+  - id: 820810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:c-ares_project:c-ares:1.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:c-ares_project:c-ares:1.16.0:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 820809
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14354
+    reference_id: CVE-2020-14354
+weaknesses: []

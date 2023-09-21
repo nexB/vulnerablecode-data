@@ -1,0 +1,21 @@
+affected_purls:
+- pkg:deb/debian/nodejs@10.24.0~dfsg-1~deb10u1
+aliases:
+- CVE-2021-44532
+fixed_purl:
+- pkg:deb/debian/nodejs@12.22.12~dfsg-1~deb11u3
+references:
+- id: 130116
+  reference_id: '1004177'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004177
+severities: []
+summary: Node.js < 12.22.9, < 14.18.3, < 16.13.2, and < 17.3.1 converts SANs (Subject
+  Alternative Names) to a string format. It uses this string to check peer certificates
+  against hostnames when validating connections. The string format was subject to
+  an injection vulnerability when name constraints were used within a certificate
+  chain, allowing the bypass of these name constraints.Versions of Node.js with the
+  fix for this escape SANs containing the problematic characters in order to prevent
+  the injection. This behavior can be reverted through the --security-revert command-line
+  option.
+vulnerability_id: VCID-x3n8-k5us-aaaj
+weaknesses: []

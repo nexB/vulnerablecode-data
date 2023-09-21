@@ -1,0 +1,120 @@
+vulnerability_id: VCID-7qjs-kfmj-aaam
+aliases:
+  - CVE-2020-9391
+summary: An issue was discovered in the Linux kernel 5.4 and 5.5 through 5.5.6 on the AArch64
+  architecture. It ignores the top byte in the address passed to the brk system call, potentially
+  moving the memory break downwards when the application expects it to move upwards, aka CID-dcde237319e6.
+  This has been observed to cause heap corruption with the GNU C Library malloc implementation.
+severities:
+  - id: 700005
+    reference_id: 1459595
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 54465
+    reference_id: 179646
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 700007
+    reference_id: 856882
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700008
+    reference_id: 1459596
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700009
+    reference_id: 1459597
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700010
+    reference_id: 856883
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700006
+    reference_id: 856881
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 54464
+    reference_id: 179645
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 494440
+    reference_id: 856885
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 494438
+    reference_id: 856885
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1459595
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-9391.html
+    reference_id:
+  - id: 179646
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-9391.json
+    reference_id:
+  - id: 856882
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1797052
+    reference_id:
+  - id: 1459596
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9391
+    reference_id:
+  - id: 1459597
+    url: https://git.kernel.org/linus/dcde237319e626d1ec3c9d8b7613032f0fd4663a
+    reference_id:
+  - id: 856883
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dcde237319e626d1ec3c9d8b7613032f0fd4663a
+    reference_id:
+  - id: 856884
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O4LH35HOPBJIKYHYFXMBBM75DN75PZHZ/
+    reference_id:
+  - id: 792350
+    url: https://security.netapp.com/advisory/ntap-20200313-0003/
+    reference_id:
+  - id: 856881
+    url: http://www.openwall.com/lists/oss-security/2020/02/25/6
+    reference_id:
+  - id: 179645
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1814237
+    reference_id: 1814237
+  - id: 766417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 727343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 408940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 856886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.4:*:*:*:*:*:*:*
+  - id: 856885
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-9391
+    reference_id: CVE-2020-9391
+weaknesses: []

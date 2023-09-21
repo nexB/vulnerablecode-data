@@ -1,0 +1,619 @@
+vulnerability_id: VCID-z6ek-p727-aaap
+aliases:
+  - CVE-2010-3069
+summary: Stack-based buffer overflow in the (1) sid_parse and (2) dom_sid_parse functions in
+  Samba before 3.5.5 allows remote attackers to cause a denial of service (crash) and possibly
+  execute arbitrary code via a crafted Windows Security ID (SID) on a file share.
+severities:
+  - id: 69506
+    reference_id: '199252'
+    scoring_system: rhbs
+    value: urgent
+    scoring_elements:
+  - id: 135356
+    reference_id: 428865
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 69508
+    reference_id: '199254'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69507
+    reference_id: '199253'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 69509
+    reference_id: '199255'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+references:
+  - id: 396240
+    url: http://lists.apple.com/archives/security-announce/2011//Jun/msg00000.html
+    reference_id:
+  - id: 270193
+    url: http://lists.apple.com/archives/security-announce/2011/Mar/msg00006.html
+    reference_id:
+  - id: 428849
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-September/047650.html
+    reference_id:
+  - id: 428850
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-September/047697.html
+    reference_id:
+  - id: 428851
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-September/047758.html
+    reference_id:
+  - id: 411361
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-10/msg00000.html
+    reference_id:
+  - id: 397915
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-10/msg00006.html
+    reference_id:
+  - id: 422263
+    url: http://marc.info/?l=bugtraq&m=130835366526620&w=2
+    reference_id:
+  - id: '199256'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-3069.json
+    reference_id:
+  - id: 428852
+    url: http://secunia.com/advisories/41354
+    reference_id:
+  - id: 428853
+    url: http://secunia.com/advisories/41447
+    reference_id:
+  - id: 428854
+    url: http://secunia.com/advisories/42531
+    reference_id:
+  - id: 428855
+    url: http://secunia.com/advisories/42885
+    reference_id:
+  - id: 428864
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/61773
+    reference_id:
+  - id: 270208
+    url: http://support.apple.com/kb/HT4581
+    reference_id:
+  - id: 396251
+    url: http://support.apple.com/kb/HT4723
+    reference_id:
+  - id: 428856
+    url: http://us1.samba.org/samba/history/samba-3.5.5.html
+    reference_id:
+  - id: 428857
+    url: http://us1.samba.org/samba/security/CVE-2010-3069.html
+    reference_id:
+  - id: 428858
+    url: http://www.redhat.com/support/errata/RHSA-2010-0860.html
+    reference_id:
+  - id: 153691
+    url: http://www.securityfocus.com/archive/1/515055/100/0/threaded
+    reference_id:
+  - id: 428859
+    url: http://www.securityfocus.com/bid/43212
+    reference_id:
+  - id: 428860
+    url: http://www.securitytracker.com/id?1024434
+    reference_id:
+  - id: 428861
+    url: http://www.ubuntu.com/usn/USN-987-1
+    reference_id:
+  - id: 153693
+    url: http://www.vmware.com/security/advisories/VMSA-2010-0019.html
+    reference_id:
+  - id: 428862
+    url: http://www.vupen.com/english/advisories/2010/2378
+    reference_id:
+  - id: 153694
+    url: http://www.vupen.com/english/advisories/2010/3126
+    reference_id:
+  - id: 428863
+    url: http://www.vupen.com/english/advisories/2011/0091
+    reference_id:
+  - id: 121669
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=596891
+    reference_id: 596891
+  - id: '199252'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=630869
+    reference_id: 630869
+  - id: 56945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+  - id: 77668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:*:*:*:*:*:*:*
+  - id: 77669
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:p1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:p1:*:*:*:*:*:*
+  - id: 96852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:p2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:p2:*:*:*:*:*:*
+  - id: 77670
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:p3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:p3:*:*:*:*:*:*
+  - id: 77671
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:p4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:p4:*:*:*:*:*:*
+  - id: 77672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.17:p5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.17:p5:*:*:*:*:*:*
+  - id: 47560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:*:*:*:*:*:*:*
+  - id: 77674
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p1:*:*:*:*:*:*
+  - id: 77673
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p10:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p10:*:*:*:*:*:*
+  - id: 77675
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p2:*:*:*:*:*:*
+  - id: 77676
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p3:*:*:*:*:*:*
+  - id: 77677
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p4:*:*:*:*:*:*
+  - id: 77678
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p5:*:*:*:*:*:*
+  - id: 77679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p6:*:*:*:*:*:*
+  - id: 77680
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p7:*:*:*:*:*:*
+  - id: 77681
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:1.9.18:p8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:1.9.18:p8:*:*:*:*:*:*
+  - id: 91638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0:*:*:*:*:*:*:*
+  - id: 77682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.0:*:*:*:*:*:*:*
+  - id: 80080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.1:*:*:*:*:*:*:*
+  - id: 80079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.10:*:*:*:*:*:*:*
+  - id: 80081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.2:*:*:*:*:*:*:*
+  - id: 80082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.3:*:*:*:*:*:*:*
+  - id: 45652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.4:*:*:*:*:*:*:*
+  - id: 45649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.5:*:*:*:*:*:*:*
+  - id: 77683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.5a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.5a:*:*:*:*:*:*:*
+  - id: 61241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.6:*:*:*:*:*:*:*
+  - id: 52995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.7:*:*:*:*:*:*:*
+  - id: 61242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.8:*:*:*:*:*:*:*
+  - id: 61243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.0.9:*:*:*:*:*:*:*
+  - id: 428866
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.18.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.18.3:*:*:*:*:*:*:*
+  - id: 61244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.0:*:*:*:*:*:*:*
+  - id: 80083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.0a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.0a:*:*:*:*:*:*:*
+  - id: 77684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.1:*:*:*:*:*:*:*
+  - id: 96853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.10:*:*:*:*:*:*:*
+  - id: 96701
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.11:*:*:*:*:*:*:*
+  - id: 99406
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.12:*:*:*:*:*:*:*
+  - id: 77685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.1a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.1a:*:*:*:*:*:*:*
+  - id: 72483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.2:*:*:*:*:*:*:*
+  - id: 72484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.3:*:*:*:*:*:*:*
+  - id: 77686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.3a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.3a:*:*:*:*:*:*:*
+  - id: 72485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.4:*:*:*:*:*:*:*
+  - id: 72486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.5:*:*:*:*:*:*:*
+  - id: 72487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.6:*:*:*:*:*:*:*
+  - id: 80084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.7:*:*:*:*:*:*:*
+  - id: 80085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.7a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.7a:*:*:*:*:*:*:*
+  - id: 81029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.8:*:*:*:*:*:*:*
+  - id: 96702
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.8a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.8a:*:*:*:*:*:*:*
+  - id: 96703
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2.9:*:*:*:*:*:*:*
+  - id: 77687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:2.2a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:2.2a:*:*:*:*:*:*:*
+  - id: 90746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.0:*:*:*:*:*:*:*
+  - id: 90747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.1:*:*:*:*:*:*:*
+  - id: 158944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.10:*:*:*:*:*:*:*
+  - id: 158945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.11:*:*:*:*:*:*:*
+  - id: 158946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.12:*:*:*:*:*:*:*
+  - id: 158947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.13:*:*:*:*:*:*:*
+  - id: 158948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.14:*:*:*:*:*:*:*
+  - id: 158950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.14a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.14a:*:*:*:*:*:*:*
+  - id: 158951
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.15:*:*:*:*:*:*:*
+  - id: 158952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.16:*:*:*:*:*:*:*
+  - id: 158953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.17:*:*:*:*:*:*:*
+  - id: 158954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.18:*:*:*:*:*:*:*
+  - id: 158955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.19:*:*:*:*:*:*:*
+  - id: 94925
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.2:*:*:*:*:*:*:*
+  - id: 158956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*
+  - id: 158959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.20a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.20a:*:*:*:*:*:*:*
+  - id: 158960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.20b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.20b:*:*:*:*:*:*:*
+  - id: 158961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.21:*:*:*:*:*:*:*
+  - id: 158965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.21a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.21a:*:*:*:*:*:*:*
+  - id: 158966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.21b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.21b:*:*:*:*:*:*:*
+  - id: 158967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.21c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.21c:*:*:*:*:*:*:*
+  - id: 158968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.22:*:*:*:*:*:*:*
+  - id: 158969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.23:*:*:*:*:*:*:*
+  - id: 158974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.23a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.23a:*:*:*:*:*:*:*
+  - id: 158975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.23b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.23b:*:*:*:*:*:*:*
+  - id: 158976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.23c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.23c:*:*:*:*:*:*:*
+  - id: 158977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.23d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.23d:*:*:*:*:*:*:*
+  - id: 158978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.24:*:*:*:*:*:*:*
+  - id: 158979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:*:*:*:*:*:*:*
+  - id: 158894
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25a:*:*:*:*:*:*:*
+  - id: 158895
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25b:*:*:*:*:*:*:*
+  - id: 158896
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25c:*:*:*:*:*:*:*
+  - id: 158889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:pre1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:pre1:*:*:*:*:*:*
+  - id: 158890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:pre2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:pre2:*:*:*:*:*:*
+  - id: 158891
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:rc1:*:*:*:*:*:*
+  - id: 158892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:rc2:*:*:*:*:*:*
+  - id: 158893
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.25:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.25:rc3:*:*:*:*:*:*
+  - id: 158897
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.26:*:*:*:*:*:*:*
+  - id: 158899
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.26a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.26a:*:*:*:*:*:*:*
+  - id: 158900
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.27:*:*:*:*:*:*:*
+  - id: 158902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.27a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.27a:*:*:*:*:*:*:*
+  - id: 158903
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.28:*:*:*:*:*:*:*
+  - id: 158905
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.28a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.28a:*:*:*:*:*:*:*
+  - id: 158906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.29:*:*:*:*:*:*:*
+  - id: 94926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.2a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.2a:*:*:*:*:*:*:*
+  - id: 94927
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.3:*:*:*:*:*:*:*
+  - id: 158907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.30:*:*:*:*:*:*:*
+  - id: 158908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.31:*:*:*:*:*:*:*
+  - id: 158909
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.32:*:*:*:*:*:*:*
+  - id: 158910
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.33:*:*:*:*:*:*:*
+  - id: 158911
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.34:*:*:*:*:*:*:*
+  - id: 158912
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.35:*:*:*:*:*:*:*
+  - id: 158913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.36:*:*:*:*:*:*:*
+  - id: 158914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.37:*:*:*:*:*:*:*
+  - id: 94928
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.4:*:*:*:*:*:*:*
+  - id: 96609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.4:rc1:*:*:*:*:*:*
+  - id: 96610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.5:*:*:*:*:*:*:*
+  - id: 96611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.6:*:*:*:*:*:*:*
+  - id: 97152
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.7:*:*:*:*:*:*:*
+  - id: 99407
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.8:*:*:*:*:*:*:*
+  - id: 99408
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.0.9:*:*:*:*:*:*:*
+  - id: 158915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.1.0:*:*:*:*:*:*:*
+  - id: 158932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2:*:*:*:*:*:*:*
+  - id: 158916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.0:*:*:*:*:*:*:*
+  - id: 158923
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.1:*:*:*:*:*:*:*
+  - id: 158917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.10:*:*:*:*:*:*:*
+  - id: 158918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.11:*:*:*:*:*:*:*
+  - id: 158919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.12:*:*:*:*:*:*:*
+  - id: 158920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.13:*:*:*:*:*:*:*
+  - id: 158921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.14:*:*:*:*:*:*:*
+  - id: 158922
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.15:*:*:*:*:*:*:*
+  - id: 158924
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.2:*:*:*:*:*:*:*
+  - id: 158925
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.3:*:*:*:*:*:*:*
+  - id: 158926
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.4:*:*:*:*:*:*:*
+  - id: 158927
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.5:*:*:*:*:*:*:*
+  - id: 158928
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.6:*:*:*:*:*:*:*
+  - id: 158929
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.7:*:*:*:*:*:*:*
+  - id: 158930
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.8:*:*:*:*:*:*:*
+  - id: 158931
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.2.9:*:*:*:*:*:*:*
+  - id: 158934
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3:*:*:*:*:*:*:*
+  - id: 158933
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.0:*:*:*:*:*:*:*
+  - id: 158983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.1:*:*:*:*:*:*:*
+  - id: 158982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.10:*:*:*:*:*:*:*
+  - id: 413472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.11:*:*:*:*:*:*:*
+  - id: 428867
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.12:*:*:*:*:*:*:*
+  - id: 394083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.2:*:*:*:*:*:*:*
+  - id: 412252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.3:*:*:*:*:*:*:*
+  - id: 394084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.4:*:*:*:*:*:*:*
+  - id: 394085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.5:*:*:*:*:*:*:*
+  - id: 412253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.6:*:*:*:*:*:*:*
+  - id: 412254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.7:*:*:*:*:*:*:*
+  - id: 412255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.8:*:*:*:*:*:*:*
+  - id: 412256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.3.9:*:*:*:*:*:*:*
+  - id: 394087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4:*:*:*:*:*:*:*
+  - id: 394086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.0:*:*:*:*:*:*:*
+  - id: 412257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.1:*:*:*:*:*:*:*
+  - id: 412258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.2:*:*:*:*:*:*:*
+  - id: 412259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.3:*:*:*:*:*:*:*
+  - id: 412260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.4:*:*:*:*:*:*:*
+  - id: 413995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.5:*:*:*:*:*:*:*
+  - id: 413473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.6:*:*:*:*:*:*:*
+  - id: 428868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.4.7:*:*:*:*:*:*:*
+  - id: 419745
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.5:*:*:*:*:*:*:*
+  - id: 413474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.5.0:*:*:*:*:*:*:*
+  - id: 419744
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.5.1:*:*:*:*:*:*:*
+  - id: 428869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.5.2:*:*:*:*:*:*:*
+  - id: 428870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:3.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:3.5.3:*:*:*:*:*:*:*
+  - id: 332449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+  - id: 148532
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*
+  - id: 148533
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:-:*:*:*
+  - id: 148535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*
+  - id: 155878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*
+  - id: 428865
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-3069
+    reference_id: CVE-2010-3069
+  - id: '199254'
+    url: https://access.redhat.com/errata/RHSA-2010:0697
+    reference_id: RHSA-2010:0697
+  - id: '199253'
+    url: https://access.redhat.com/errata/RHSA-2010:0698
+    reference_id: RHSA-2010:0698
+  - id: '199255'
+    url: https://access.redhat.com/errata/RHSA-2010:0860
+    reference_id: RHSA-2010:0860
+weaknesses: []

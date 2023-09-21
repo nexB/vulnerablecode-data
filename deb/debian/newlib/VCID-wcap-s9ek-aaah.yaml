@@ -1,0 +1,29 @@
+vulnerability_id: VCID-wcap-s9ek-aaah
+aliases:
+  - CVE-2019-14877
+summary: In the __mdiff function of the newlib libc library, all versions prior to 3.3.0 (see
+  newlib/libc/stdlib/mprec.c), Balloc is used to allocate big integers, however no check is
+  performed to verify if the allocation succeeded or not. The access to _wds and _sign will
+  trigger a null pointer dereference bug in case of a memory allocation failure.
+severities:
+  - id: 383261
+    reference_id: 779454
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 383259
+    reference_id: 779454
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 779420
+    url: https://census-labs.com/news/2020/01/31/multiple-null-pointer-dereference-vulnerabilities-in-newlib/
+    reference_id:
+  - id: 779422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:newlib_project:newlib:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:newlib_project:newlib:*:*:*:*:*:*:*:*
+  - id: 779454
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14877
+    reference_id: CVE-2019-14877
+weaknesses: []

@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2018-13405
+fixed_purl:
+- pkg:deb/debian/linux@4.17.6-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: The inode_init_owner function in fs/inode.c in the Linux kernel through 3.16
+  allows local users to create files with an unintended group ownership, in a scenario
+  where a directory is SGID to a certain group and is writable by a user who is not
+  a member of that group. Here, the non-member can trigger creation of a plain file
+  whose group ownership is that group. The intended behavior was that the non-member
+  can trigger creation of a directory (but not a plain file) whose group ownership
+  is that group. The non-member can escalate privileges by making the plain file executable
+  and SGID.
+vulnerability_id: VCID-s3cf-sytw-aaah
+weaknesses: []

@@ -1,0 +1,94 @@
+vulnerability_id: VCID-xm6z-ve9f-aaae
+aliases:
+  - CVE-2021-20291
+summary: A deadlock vulnerability was found in 'github.com/containers/storage' in versions before
+  1.28.1. When a container image is processed, each layer is unpacked using `tar`. If one of
+  those layers is not a valid `tar` archive this causes an error leading to an unexpected situation
+  where the code indefinitely waits for the tar unpacked stream, which never finishes. An attacker
+  could use this vulnerability to craft a malicious image, which when downloaded and stored
+  by an application using containers/storage, would then cause a deadlock leading to a Denial
+  of Service (DoS).
+severities:
+  - id: 606134
+    reference_id: 928504
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 504236
+    reference_id: 861499
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 504234
+    reference_id: 861499
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 606133
+    reference_id: 928502
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 604100
+    reference_id: 927019
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 603664
+    reference_id: 926687
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 928504
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20291.json
+    reference_id:
+  - id: 861494
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R5D7XL7FL24TWFMGQ3K2S72EOUSLZMKL/
+    reference_id:
+  - id: 861495
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPYOHNG2Q7DCAQZMGYLMENLKALGDLG3X/
+    reference_id:
+  - id: 861496
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WX24EITRXVHDM5M223BVTJA2ODF2FSHI/
+    reference_id:
+  - id: 861497
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZNMB7O2UIXE34PGSCSOULGHPX5LIJBMM/
+    reference_id:
+  - id: 861498
+    url: https://unit42.paloaltonetworks.com/cve-2021-20291/
+    reference_id:
+  - id: 41475
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988942
+    reference_id: 988942
+  - id: 766534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.0:*:*:*:*:*:*:*
+  - id: 861500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:storage_project:storage:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:storage_project:storage:*:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 861499
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-20291
+    reference_id: CVE-2021-20291
+  - id: 928503
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1939485
+    reference_id: RHBA-2022:0348
+  - id: 928502
+    url: https://access.redhat.com/errata/RHSA-2021:1150
+    reference_id: RHSA-2021:1150
+  - id: 927019
+    url: https://access.redhat.com/errata/RHSA-2021:2438
+    reference_id: RHSA-2021:2438
+  - id: 926687
+    url: https://access.redhat.com/errata/RHSA-2021:4154
+    reference_id: RHSA-2021:4154
+weaknesses: []

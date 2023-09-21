@@ -1,0 +1,77 @@
+vulnerability_id: VCID-7n93-f75r-aaag
+aliases:
+  - CVE-2022-21668
+  - GHSA-qc9x-gjcv-465w
+  - PYSEC-2022-6
+summary: pipenv is a Python development workflow tool. Starting with version 2018.10.9 and prior
+  to version 2022.1.8, a flaw in pipenv's parsing of requirements files allows an attacker to
+  insert a specially crafted string inside a comment anywhere within a requirements.txt file,
+  which will cause victims who use pipenv to install the requirements file to download dependencies
+  from a package index server controlled by the attacker. By embedding malicious code in packages
+  served from their malicious index server, the attacker can trigger arbitrary remote code execution
+  (RCE) on the victims' systems. If an attacker is able to hide a malicious `--index-url` option
+  in a requirements file that a victim installs with pipenv, the attacker can embed arbitrary
+  malicious code in packages served from their malicious index server that will be executed
+  on the victim's host during installation (remote code execution/RCE). When pip installs from
+  a source distribution, any code in the setup.py is executed by the install process. This issue
+  is patched in version 2022.1.8. The GitHub Security Advisory contains more information about
+  this vulnerability.
+severities:
+  - id: 582741
+    reference_id: 21490
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 582739
+    reference_id: 21490
+    scoring_system: cvssv3
+    value: '8.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H
+  - id: 3643
+    reference_id: 21494
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3642
+    reference_id: 21489
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 9021
+    url: https://github.com/pypa/pipenv/commit/439782a8ae36c4762c88e43d5f0d8e563371b46f
+    reference_id:
+  - id: 9019
+    url: https://github.com/pypa/pipenv/releases/tag/v2022.1.8
+    reference_id:
+  - id: 21493
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/56HBA3EOSLEDNCCBJVHE6DO34P56EOUM/
+    reference_id:
+  - id: 21491
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KCROBYHUS6DKQPCXBRPCZ5CDBNQTYAWT/
+    reference_id:
+  - id: 21492
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QHQRIWKDP3SVJABAPEXBIQPKDI6UP7G4/
+    reference_id:
+  - id: 912856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pypa:pipenv:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pypa:pipenv:*:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 169240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+  - id: 21490
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-21668
+    reference_id: CVE-2022-21668
+  - id: 21494
+    url: https://github.com/advisories/GHSA-qc9x-gjcv-465w
+    reference_id: GHSA-qc9x-gjcv-465w
+  - id: 21489
+    url: https://github.com/pypa/pipenv/security/advisories/GHSA-qc9x-gjcv-465w
+    reference_id: GHSA-qc9x-gjcv-465w
+weaknesses: []

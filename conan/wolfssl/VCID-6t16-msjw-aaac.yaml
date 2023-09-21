@@ -1,0 +1,34 @@
+vulnerability_id: VCID-6t16-msjw-aaac
+aliases:
+  - CVE-2022-23408
+summary: wolfSSL 5.x before 5.1.1 uses non-random IV values in certain situations. This affects
+  connections (without AEAD) using AES-CBC or DES3 with TLS 1.1 or 1.2 or DTLS 1.1 or 1.2. This
+  occurs because of misplaced memory initialization in BuildMessage in internal.c.
+severities:
+  - id: 586785
+    reference_id: 915510
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:N
+  - id: 586783
+    reference_id: 915510
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 915508
+    url: https://github.com/wolfSSL/wolfssl/blob/master/ChangeLog.md#wolfssl-release-511-jan-3rd-2022
+    reference_id:
+  - id: 915509
+    url: https://github.com/wolfSSL/wolfssl/pull/4710
+    reference_id:
+  - id: 147111
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004181
+    reference_id: 1004181
+  - id: 167308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+  - id: 915510
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-23408
+    reference_id: CVE-2022-23408
+weaknesses: []

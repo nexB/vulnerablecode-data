@@ -1,0 +1,58 @@
+affected_purls:
+- pkg:gem/devise-two-factor@1.0.0
+- pkg:gem/devise-two-factor@1.0.1
+- pkg:gem/devise-two-factor@1.0.2
+- pkg:gem/devise-two-factor@1.1.0
+aliases:
+- CVE-2015-7225
+- GHSA-x489-jjwm-52g7
+fixed_purl:
+- pkg:deb/debian/ruby-devise-two-factor@2.0.0-1?distro=sid
+- pkg:deb/debian/ruby-devise-two-factor@3.1.0-2?distro=sid
+- pkg:deb/debian/ruby-devise-two-factor@4.0.2-1?distro=sid
+- pkg:gem/devise-two-factor@2.0.0
+references:
+- id: 137990
+  reference_id: ''
+  url: https://github.com/tinfoil/devise-two-factor/blob/master/UPGRADING.md
+- id: 177482
+  reference_id: ''
+  url: https://github.com/tinfoil/devise-two-factor/issues/30
+- id: 137988
+  reference_id: ''
+  url: https://github.com/tinfoil/devise-two-factor/issues/45#issuecomment-139335608
+- id: 177483
+  reference_id: ''
+  url: https://github.com/tinfoil/devise-two-factor/pull/43
+- id: 137991
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2015/06/20/4
+- id: 137992
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2015/09/17/2
+- id: 137993
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/76789
+- id: 125935
+  reference_id: '798466'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=798466
+- id: 137987
+  reference_id: CVE-2015-7225
+  url: https://nvd.nist.gov/vuln/detail/CVE-2015-7225
+- id: 137989
+  reference_id: GHSA-x489-jjwm-52g7
+  url: https://github.com/advisories/GHSA-x489-jjwm-52g7
+severities:
+- id: 18953
+  reference_id: 137989
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Tinfoil Devise-two-factor before 2.0.0 does not strictly follow section 5.2
+  of RFC 6238 and does not "burn" a successfully validated one-time password (aka
+  OTP), which allows remote or physically proximate attackers with a target user's
+  login credentials to log in as said user by obtaining the OTP through performing
+  a man-in-the-middle attack between the provider and verifier, or shoulder surfing,
+  and replaying the OTP in the current time-step.
+vulnerability_id: VCID-ymdr-22h5-aaaq
+weaknesses: []

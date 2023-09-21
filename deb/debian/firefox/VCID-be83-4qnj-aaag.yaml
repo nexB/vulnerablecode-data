@@ -1,0 +1,116 @@
+vulnerability_id: VCID-be83-4qnj-aaag
+aliases:
+  - CVE-2018-12402
+summary: The internal WebBrowserPersist code does not use correct origin context for a resource
+  being saved. This manifests when sub-resources are loaded as part of "Save Page As..." functionality.
+  For example, a malicious page could recover a visitor's Windows username and NTLM hash by
+  including resources otherwise unreachable to the malicious page, if they can convince the
+  visitor to save the complete web page. Similarly, SameSite cookies are sent on cross-origin
+  requests when the "Save Page As..." menu item is selected to save a page, which can result
+  in saving the wrong version of resources based on those cookies. This vulnerability affects
+  Firefox < 63.
+severities:
+  - id: 683841
+    reference_id: 1446574
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 54723
+    reference_id: 179840
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+  - id: 683842
+    reference_id: 1446575
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683799
+    reference_id: 1446532
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683797
+    reference_id: 1446530
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683843
+    reference_id: 1446576
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 54722
+    reference_id: 179839
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 316991
+    reference_id: 729427
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 316989
+    reference_id: 729427
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N
+references:
+  - id: 1446574
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12402.html
+    reference_id:
+  - id: 179840
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12402.json
+    reference_id:
+  - id: 729425
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1447087
+    reference_id:
+  - id: 729426
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1469916
+    reference_id:
+  - id: 1446575
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12402
+    reference_id:
+  - id: 1446532
+    url: https://ubuntu.com/security/notices/USN-3801-1
+    reference_id:
+  - id: 729356
+    url: https://usn.ubuntu.com/3801-1/
+    reference_id:
+  - id: 1446530
+    url: https://usn.ubuntu.com/usn/usn-3801-1
+    reference_id:
+  - id: 1446576
+    url: https://www.mozilla.org/en-US/security/advisories/mfsa2018-26/#CVE-2018-12402
+    reference_id:
+  - id: 729357
+    url: https://www.mozilla.org/security/advisories/mfsa2018-26/
+    reference_id:
+  - id: 729353
+    url: http://www.securityfocus.com/bid/105721
+    reference_id:
+  - id: 729354
+    url: http://www.securitytracker.com/id/1041944
+    reference_id:
+  - id: 179839
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1696127
+    reference_id: 1696127
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 729427
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12402
+    reference_id: CVE-2018-12402
+weaknesses: []

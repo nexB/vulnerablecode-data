@@ -1,0 +1,47 @@
+vulnerability_id: VCID-j63p-9abc-aaad
+aliases:
+  - CVE-2018-16849
+  - PYSEC-2018-92
+summary: A flaw was found in openstack-mistral. By manipulating the SSH private key filename,
+  the std.ssh action can be used to disclose the presence of arbitrary files within the filesystem
+  of the executor running the action. Since std.ssh private_key_filename can take an absolute
+  path, it can be used to assess whether or not a file exists on the executor's filesystem.
+severities:
+  - id: 613812
+    reference_id: 934153
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 330980
+    reference_id: 739919
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 330978
+    reference_id: 739919
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 934153
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16849.json
+    reference_id:
+  - id: 5919
+    url: https://bugs.launchpad.net/mistral/+bug/1783708
+    reference_id:
+  - id: 5918
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-16849
+    reference_id:
+  - id: 69602
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=912714
+    reference_id: 912714
+  - id: 739918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack-mistral:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack-mistral:*:*:*:*:*:*:*:*
+  - id: 739919
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16849
+    reference_id: CVE-2018-16849
+  - id: 934152
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1645334
+    reference_id: RHBA-2019:0448
+weaknesses: []

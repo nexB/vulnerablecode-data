@@ -1,0 +1,44 @@
+vulnerability_id: VCID-k885-8fv8-aaan
+aliases:
+  - CVE-2019-13628
+summary: wolfSSL and wolfCrypt 4.0.0 and earlier (when configured without --enable-fpecc, --enable-sp,
+  or --enable-sp-math) contain a timing side channel in ECDSA signature generation. This allows
+  a local attacker, able to precisely measure the duration of signature operations, to infer
+  information about the nonces used and potentially mount a lattice attack to recover the private
+  key used. The issue occurs because ecc.c scalar multiplication might leak the bit length.
+severities:
+  - id: 693532
+    reference_id: 20180
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 379532
+    reference_id: 776759
+    scoring_system: cvssv2
+    value: '1.2'
+    scoring_elements: AV:L/AC:H/Au:N/C:P/I:N/A:N
+  - id: 379530
+    reference_id: 776759
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 776757
+    url: https://eprint.iacr.org/2011/232.pdf
+    reference_id:
+  - id: 20180
+    url: https://minerva.crocs.fi.muni.cz/
+    reference_id:
+  - id: 776758
+    url: https://tches.iacr.org/index.php/TCHES/article/view/7337
+    reference_id:
+  - id: 776747
+    url: http://www.openwall.com/lists/oss-security/2019/10/02/2
+    reference_id:
+  - id: 167308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*
+  - id: 776759
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13628
+    reference_id: CVE-2019-13628
+weaknesses: []

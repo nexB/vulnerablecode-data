@@ -1,0 +1,112 @@
+vulnerability_id: VCID-v14r-scda-aaag
+aliases:
+  - CVE-2018-17205
+summary: An issue was discovered in Open vSwitch (OvS) 2.7.x through 2.7.6, affecting ofproto_rule_insert__
+  in ofproto/ofproto.c. During bundle commit, flows that are added in a bundle are applied to
+  ofproto in order. If a flow cannot be added (e.g., the flow action is a go-to for a group
+  id that does not exist), OvS tries to revert back all previous flows that were successfully
+  applied from the same bundle. This is possible since OvS maintains list of old flows that
+  were replaced by flows from the bundle. While reinserting old flows, OvS has an assertion
+  failure due to a check on rule state != RULE_INITIALIZED. This would work for new flows, but
+  for an old flow the rule state is RULE_REMOVED. The assertion failure causes an OvS crash.
+severities:
+  - id: 685287
+    reference_id: 1447697
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614274
+    reference_id: 934495
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H
+  - id: 685288
+    reference_id: 1447698
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685286
+    reference_id: 1447696
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614273
+    reference_id: 934494
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 332060
+    reference_id: 740862
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 332058
+    reference_id: 740862
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 614270
+    reference_id: 934492
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 614268
+    reference_id: 934490
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 614269
+    reference_id: 934491
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1447697
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-17205.html
+    reference_id:
+  - id: 934495
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-17205.json
+    reference_id:
+  - id: 1447698
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17205
+    reference_id:
+  - id: 740861
+    url: https://github.com/openvswitch/ovs/commit/0befd1f3745055c32940f5faf9559be6a14395e6
+    reference_id:
+  - id: 1447696
+    url: https://ubuntu.com/security/notices/USN-3873-1
+    reference_id:
+  - id: 740859
+    url: https://usn.ubuntu.com/3873-1/
+    reference_id:
+  - id: 934494
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1632525
+    reference_id: 1632525
+  - id: 684484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openvswitch:openvswitch:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openvswitch:openvswitch:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 740862
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-17205
+    reference_id: CVE-2018-17205
+  - id: 934492
+    url: https://access.redhat.com/errata/RHSA-2018:3500
+    reference_id: RHSA-2018:3500
+  - id: 934490
+    url: https://access.redhat.com/errata/RHSA-2019:0053
+    reference_id: RHSA-2019:0053
+  - id: 934491
+    url: https://access.redhat.com/errata/RHSA-2019:0081
+    reference_id: RHSA-2019:0081
+weaknesses: []

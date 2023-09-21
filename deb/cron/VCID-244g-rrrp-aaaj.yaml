@@ -1,0 +1,17 @@
+affected_purls: []
+aliases:
+- CVE-2011-1075
+fixed_purl:
+- pkg:deb/debian/cron@0?distro=sid
+- pkg:deb/debian/cron@3.0pl1-134%2Bdeb10u1?distro=sid
+- pkg:deb/debian/cron@3.0pl1-137?distro=sid
+- pkg:deb/debian/cron@3.0pl1-162?distro=sid
+references: []
+severities: []
+summary: FreeBSD's crontab calculates the MD5 sum of the previous and new cronjob
+  to determine if any changes have been made before copying the new version in. In
+  particular, it uses the MD5File() function, which takes a pathname as an argument,
+  and is called with euid 0. A race condition in this process may lead to an arbitrary
+  MD5 comparison regardless of the read permissions.
+vulnerability_id: VCID-244g-rrrp-aaaj
+weaknesses: []

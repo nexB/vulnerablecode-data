@@ -1,0 +1,62 @@
+vulnerability_id: VCID-gk9h-5tgr-aaan
+aliases:
+  - CVE-2013-2128
+summary: The tcp_read_sock function in net/ipv4/tcp.c in the Linux kernel before 2.6.34 does
+  not properly manage skb consumption, which allows local users to cause a denial of service
+  (system crash) via a crafted splice system call for a TCP socket.
+severities:
+  - id: 164895
+    reference_id: 523376
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 164893
+    reference_id: 523376
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 57319
+    reference_id: 183320
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 57320
+    reference_id: 183321
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 456121
+    url: http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.34
+    reference_id:
+  - id: 523372
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=baff42ab1494528907bf4d5870359e31711746ae
+    reference_id:
+  - id: 510862
+    url: http://rhn.redhat.com/errata/RHSA-2013-1051.html
+    reference_id:
+  - id: 200630
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-2128.json
+    reference_id:
+  - id: 523374
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=968484
+    reference_id:
+  - id: 523375
+    url: https://github.com/torvalds/linux/commit/baff42ab1494528907bf4d5870359e31711746ae
+    reference_id:
+  - id: 523373
+    url: http://www.openwall.com/lists/oss-security/2013/05/29/11
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 523376
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-2128
+    reference_id: CVE-2013-2128
+  - id: 183320
+    url: https://access.redhat.com/errata/RHSA-2013:1051
+    reference_id: RHSA-2013:1051
+  - id: 183321
+    url: https://access.redhat.com/errata/RHSA-2013:1080
+    reference_id: RHSA-2013:1080
+weaknesses: []

@@ -1,0 +1,148 @@
+vulnerability_id: VCID-kan2-3fe2-aaan
+aliases:
+  - CVE-2020-15157
+summary: In containerd (an industry-standard container runtime) before version 1.2.14 there
+  is a credential leaking vulnerability. If a container image manifest in the OCI Image format
+  or Docker Image V2 Schema 2 format includes a URL for the location of a specific image layer
+  (otherwise known as a “foreign layer”), the default containerd resolver will follow that URL
+  to attempt to download it. In v1.2.x but not 1.3.0 or later, the default containerd resolver
+  will provide its authentication credentials if the server where the URL is located presents
+  an HTTP 401 status code along with registry-specific HTTP headers. If an attacker publishes
+  a public image with a manifest that directs one of the layers to be fetched from a web server
+  they control and they trick a user or system into pulling the image, they can obtain the credentials
+  used for pulling that image. In some cases, this may be the user's username and password for
+  the registry. In other cases, this may be the credentials attached to the cloud virtual instance
+  which can grant access to other cloud resources in the account. The default containerd resolver
+  is used by the cri-containerd plugin (which can be used by Kubernetes), the ctr development
+  tool, and other client programs that have explicitly linked against it. This vulnerability
+  has been fixed in containerd 1.2.14. containerd 1.3 and later are not affected. If you are
+  using containerd 1.3 or later, you are not affected. If you are using cri-containerd in the
+  1.2 series or prior, you should ensure you only pull images from trusted sources. Other container
+  runtimes built on top of containerd but not using the default resolver (such as Docker) are
+  not affected.
+severities:
+  - id: 696837
+    reference_id: 1456931
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609245
+    reference_id: 930792
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N
+  - id: 696838
+    reference_id: 1456932
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696839
+    reference_id: 1456933
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696840
+    reference_id: 1456934
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609244
+    reference_id: 930791
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 445081
+    reference_id: 822659
+    scoring_system: cvssv2
+    value: '2.6'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:N/A:N
+  - id: 445079
+    reference_id: 822659
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N
+  - id: 66837
+    reference_id: '195977'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1456931
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-15157.html
+    reference_id:
+  - id: 930792
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-15157.json
+    reference_id:
+  - id: 1456932
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15157
+    reference_id:
+  - id: 822654
+    url: https://github.com/containerd/containerd/releases/tag/v1.2.14
+    reference_id:
+  - id: 822655
+    url: https://github.com/containerd/containerd/security/advisories/GHSA-742w-89gc-8m9c
+    reference_id:
+  - id: 1456933
+    url: https://ubuntu.com/security/notices/USN-4589-1
+    reference_id:
+  - id: 1456934
+    url: https://ubuntu.com/security/notices/USN-4589-2
+    reference_id:
+  - id: 822656
+    url: https://usn.ubuntu.com/4589-1/
+    reference_id:
+  - id: 822657
+    url: https://usn.ubuntu.com/4589-2/
+    reference_id:
+  - id: 822658
+    url: https://www.debian.org/security/2021/dsa-4865
+    reference_id:
+  - id: 930791
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1888248
+    reference_id: 1888248
+  - id: 822660
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:*:*:*:*:*:*:*:*
+  - id: 822661
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:-:*:*:*:*:*:*
+  - id: 822662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta0:*:*:*:*:*:*
+  - id: 822663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta1:*:*:*:*:*:*
+  - id: 822664
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:beta2:*:*:*:*:*:*
+  - id: 822665
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc0:*:*:*:*:*:*
+  - id: 822666
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc1:*:*:*:*:*:*
+  - id: 822667
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc2:*:*:*:*:*:*
+  - id: 822668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linuxfoundation:containerd:1.3.0:rc3:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 822659
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-15157
+    reference_id: CVE-2020-15157
+  - id: '195977'
+    url: https://access.redhat.com/errata/RHSA-2020:5634
+    reference_id: RHSA-2020:5634
+weaknesses: []

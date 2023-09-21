@@ -1,0 +1,34 @@
+vulnerability_id: VCID-u8w9-319a-aaac
+aliases:
+  - CVE-2018-11564
+summary: |
+  Cross-site Scripting
+  A Stored XSS in YOOtheme Pagekit allows a user to upload malicious code via the picture upload feature. A user with elevated privileges could upload a photo to the system in an SVG format. This file will be uploaded to the system and it will not be stripped or filtered. The user can create a link on the website pointing to `/storage/poc.svg` that will point to `http://localhost/pagekit/storage/poc.svg.` When a user comes along to click that link, it will trigger a XSS attack.
+severities:
+  - id: 314164
+    reference_id: 24349
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:P/A:N
+  - id: 314162
+    reference_id: 24349
+    scoring_system: cvssv3
+    value: '4.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N
+references:
+  - id: 727280
+    url: http://ruffsecurity.blogspot.com/2018/05/my-first-cve-found.html
+    reference_id:
+  - id: 727281
+    url: https://packetstormsecurity.com/files/148001/PageKit-CMS-1.0.13-Cross-Site-Scripting.html
+    reference_id:
+  - id: 24350
+    url: https://www.exploit-db.com/exploits/44837/
+    reference_id:
+  - id: 702520
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pagekit:pagekit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pagekit:pagekit:*:*:*:*:*:*:*:*
+  - id: 24349
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-11564
+    reference_id: CVE-2018-11564
+weaknesses: []

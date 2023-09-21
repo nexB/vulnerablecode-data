@@ -1,0 +1,686 @@
+vulnerability_id: VCID-4y8d-7cr1-aaaj
+aliases:
+  - CVE-2010-4831
+summary: Untrusted search path vulnerability in gdk/win32/gdkinput-win32.c in GTK+ before 2.21.8
+  allows local users to gain privileges via a Trojan horse Wintab32.dll file in the current
+  working directory.
+severities:
+  - id: 138801
+    reference_id: 441281
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+references:
+  - id: 441277
+    url: http://ftp.gnome.org/pub/gnome/sources/gtk+/2.21/gtk+-2.21.8.changes
+    reference_id:
+  - id: 441278
+    url: http://git.gnome.org/browse/gtk+/commit/gdk/win32/gdkinput-win32.c?h=gtk-2-24&id=88f54ea47d4a55bbbf9e34a7a0502f365eb69ae5&ss=1
+    reference_id:
+  - id: 441280
+    url: http://jvndb.jvn.jp/jvndb/JVNDB-2011-000072
+    reference_id:
+  - id: 441279
+    url: http://jvn.jp/en/jp/JVN58019849/index.html
+    reference_id:
+  - id: 307963
+    url: http://secunia.com/advisories/45815
+    reference_id:
+  - id: 307964
+    url: http://www.securityfocus.com/bid/49449
+    reference_id:
+  - id: 114966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:*:*:*:*:*:*:*:*
+  - id: 132265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.1.12:*:*:*:*:*:*:*
+  - id: 132266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.1.15:*:*:*:*:*:*:*
+  - id: 132267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.0:*:*:*:*:*:*:*
+  - id: 132269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.1:*:*:*:*:*:*:*
+  - id: 132268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.10:*:*:*:*:*:*:*
+  - id: 132270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.2:*:*:*:*:*:*:*
+  - id: 132271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.3:*:*:*:*:*:*:*
+  - id: 132272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.4:*:*:*:*:*:*:*
+  - id: 132273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.5:*:*:*:*:*:*:*
+  - id: 132274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.6:*:*:*:*:*:*:*
+  - id: 132275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.7:*:*:*:*:*:*:*
+  - id: 55382
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.8:*:*:*:*:*:*:*
+  - id: 132276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.2.9:*:*:*:*:*:*:*
+  - id: 132277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.10:*:*:*:*:*:*:*
+  - id: 132278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.11:*:*:*:*:*:*:*
+  - id: 132279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.12:*:*:*:*:*:*:*
+  - id: 132280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.13:*:*:*:*:*:*:*
+  - id: 132281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.14:*:*:*:*:*:*:*
+  - id: 132282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.15:*:*:*:*:*:*:*
+  - id: 132283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:1.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:1.3.9:*:*:*:*:*:*:*
+  - id: 132250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.0:*:*:*:*:*:*:*
+  - id: 114968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.1:*:*:*:*:*:*:*
+  - id: 96097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.2:*:*:*:*:*:*:*
+  - id: 114969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.3:*:*:*:*:*:*:*
+  - id: 114970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.4:*:*:*:*:*:*:*
+  - id: 114971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.5:*:*:*:*:*:*:*
+  - id: 96098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.6:*:*:*:*:*:*:*
+  - id: 114972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.7:*:*:*:*:*:*:*
+  - id: 114973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.8:*:*:*:*:*:*:*
+  - id: 114974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.0.9:*:*:*:*:*:*:*
+  - id: 132284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.0:*:*:*:*:*:*:*
+  - id: 307966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.0:*:*:*:*:*:*:*
+  - id: 307972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.1:*:*:*:*:*:*:*
+  - id: 307967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.10:*:*:*:*:*:*:*
+  - id: 307968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.11:*:*:*:*:*:*:*
+  - id: 307969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.12:*:*:*:*:*:*:*
+  - id: 307970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.13:*:*:*:*:*:*:*
+  - id: 307971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.14:*:*:*:*:*:*:*
+  - id: 307973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.2:*:*:*:*:*:*:*
+  - id: 307974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.3:*:*:*:*:*:*:*
+  - id: 307975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.4:*:*:*:*:*:*:*
+  - id: 307976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.5:*:*:*:*:*:*:*
+  - id: 307977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.6:*:*:*:*:*:*:*
+  - id: 307978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.7:*:*:*:*:*:*:*
+  - id: 307979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.8:*:*:*:*:*:*:*
+  - id: 307980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.10.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.10.9:*:*:*:*:*:*:*
+  - id: 132285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.1:*:*:*:*:*:*:*
+  - id: 307981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.0:*:*:*:*:*:*:*
+  - id: 307982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.1:*:*:*:*:*:*:*
+  - id: 307983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.2:*:*:*:*:*:*:*
+  - id: 307984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.3:*:*:*:*:*:*:*
+  - id: 307985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.4:*:*:*:*:*:*:*
+  - id: 307986
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.5:*:*:*:*:*:*:*
+  - id: 307987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.11.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.11.6:*:*:*:*:*:*:*
+  - id: 132286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.2:*:*:*:*:*:*:*
+  - id: 307988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.0:*:*:*:*:*:*:*
+  - id: 307992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.1:*:*:*:*:*:*:*
+  - id: 307989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.10:*:*:*:*:*:*:*
+  - id: 307990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.11:*:*:*:*:*:*:*
+  - id: 307991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.12:*:*:*:*:*:*:*
+  - id: 307993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.2:*:*:*:*:*:*:*
+  - id: 307994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.3:*:*:*:*:*:*:*
+  - id: 307995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.4:*:*:*:*:*:*:*
+  - id: 307996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.5:*:*:*:*:*:*:*
+  - id: 307997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.6:*:*:*:*:*:*:*
+  - id: 307998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.7:*:*:*:*:*:*:*
+  - id: 307999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.8:*:*:*:*:*:*:*
+  - id: 308000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.12.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.12.9:*:*:*:*:*:*:*
+  - id: 132287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.3:*:*:*:*:*:*:*
+  - id: 308001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.0:*:*:*:*:*:*:*
+  - id: 308002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.1:*:*:*:*:*:*:*
+  - id: 308003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.2:*:*:*:*:*:*:*
+  - id: 308004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.3:*:*:*:*:*:*:*
+  - id: 308005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.4:*:*:*:*:*:*:*
+  - id: 308006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.5:*:*:*:*:*:*:*
+  - id: 308007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.6:*:*:*:*:*:*:*
+  - id: 308008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.13.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.13.7:*:*:*:*:*:*:*
+  - id: 132288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.4:*:*:*:*:*:*:*
+  - id: 308009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.0:*:*:*:*:*:*:*
+  - id: 308010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.1:*:*:*:*:*:*:*
+  - id: 308011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.2:*:*:*:*:*:*:*
+  - id: 308012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.3:*:*:*:*:*:*:*
+  - id: 308013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.4:*:*:*:*:*:*:*
+  - id: 308014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.5:*:*:*:*:*:*:*
+  - id: 308015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.6:*:*:*:*:*:*:*
+  - id: 308016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.14.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.14.7:*:*:*:*:*:*:*
+  - id: 132289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.1.5:*:*:*:*:*:*:*
+  - id: 308017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.0:*:*:*:*:*:*:*
+  - id: 308018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.1:*:*:*:*:*:*:*
+  - id: 308019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.2:*:*:*:*:*:*:*
+  - id: 308020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.3:*:*:*:*:*:*:*
+  - id: 308021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.4:*:*:*:*:*:*:*
+  - id: 308022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.15.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.15.5:*:*:*:*:*:*:*
+  - id: 308023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.0:*:*:*:*:*:*:*
+  - id: 308024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.1:*:*:*:*:*:*:*
+  - id: 308025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.2:*:*:*:*:*:*:*
+  - id: 308026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.3:*:*:*:*:*:*:*
+  - id: 308027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.4:*:*:*:*:*:*:*
+  - id: 308028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.5:*:*:*:*:*:*:*
+  - id: 308029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.16.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.16.6:*:*:*:*:*:*:*
+  - id: 308030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.0:*:*:*:*:*:*:*
+  - id: 308033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.1:*:*:*:*:*:*:*
+  - id: 308031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.10:*:*:*:*:*:*:*
+  - id: 308032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.11:*:*:*:*:*:*:*
+  - id: 308034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.2:*:*:*:*:*:*:*
+  - id: 308035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.3:*:*:*:*:*:*:*
+  - id: 308036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.4:*:*:*:*:*:*:*
+  - id: 308037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.5:*:*:*:*:*:*:*
+  - id: 308038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.6:*:*:*:*:*:*:*
+  - id: 308039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.7:*:*:*:*:*:*:*
+  - id: 308040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.8:*:*:*:*:*:*:*
+  - id: 308041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.17.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.17.9:*:*:*:*:*:*:*
+  - id: 308042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.0:*:*:*:*:*:*:*
+  - id: 308043
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.1:*:*:*:*:*:*:*
+  - id: 308044
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.2:*:*:*:*:*:*:*
+  - id: 308045
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.3:*:*:*:*:*:*:*
+  - id: 308046
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.4:*:*:*:*:*:*:*
+  - id: 308047
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.5:*:*:*:*:*:*:*
+  - id: 308048
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.6:*:*:*:*:*:*:*
+  - id: 308049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.7:*:*:*:*:*:*:*
+  - id: 308050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.8:*:*:*:*:*:*:*
+  - id: 308051
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.18.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.18.9:*:*:*:*:*:*:*
+  - id: 308052
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.0:*:*:*:*:*:*:*
+  - id: 308053
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.1:*:*:*:*:*:*:*
+  - id: 308054
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.2:*:*:*:*:*:*:*
+  - id: 308055
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.3:*:*:*:*:*:*:*
+  - id: 308056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.4:*:*:*:*:*:*:*
+  - id: 308057
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.5:*:*:*:*:*:*:*
+  - id: 308058
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.6:*:*:*:*:*:*:*
+  - id: 308059
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.19.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.19.7:*:*:*:*:*:*:*
+  - id: 132290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.2.0:*:*:*:*:*:*:*
+  - id: 308060
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.20.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.20.0:*:*:*:*:*:*:*
+  - id: 308061
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.20.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.20.1:*:*:*:*:*:*:*
+  - id: 96099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.2.1:*:*:*:*:*:*:*
+  - id: 308062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.0:*:*:*:*:*:*:*
+  - id: 308063
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.1:*:*:*:*:*:*:*
+  - id: 308064
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.2:*:*:*:*:*:*:*
+  - id: 308065
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.3:*:*:*:*:*:*:*
+  - id: 308066
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.4:*:*:*:*:*:*:*
+  - id: 308067
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.5:*:*:*:*:*:*:*
+  - id: 308068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.21.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.21.6:*:*:*:*:*:*:*
+  - id: 132291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.2.2:*:*:*:*:*:*:*
+  - id: 96100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.2.3:*:*:*:*:*:*:*
+  - id: 96101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.2.4:*:*:*:*:*:*:*
+  - id: 132292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.0:*:*:*:*:*:*:*
+  - id: 132293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.1:*:*:*:*:*:*:*
+  - id: 132294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.2:*:*:*:*:*:*:*
+  - id: 132295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.3:*:*:*:*:*:*:*
+  - id: 132296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.4:*:*:*:*:*:*:*
+  - id: 132297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.5:*:*:*:*:*:*:*
+  - id: 132298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.3.6:*:*:*:*:*:*:*
+  - id: 132251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.0:*:*:*:*:*:*:*
+  - id: 132304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.1:*:*:*:*:*:*:*
+  - id: 132299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.10:*:*:*:*:*:*:*
+  - id: 132300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.11:*:*:*:*:*:*:*
+  - id: 132301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.12:*:*:*:*:*:*:*
+  - id: 132302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.13:*:*:*:*:*:*:*
+  - id: 132303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.14:*:*:*:*:*:*:*
+  - id: 132305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.2:*:*:*:*:*:*:*
+  - id: 132306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.3:*:*:*:*:*:*:*
+  - id: 132307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.4:*:*:*:*:*:*:*
+  - id: 132308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.5:*:*:*:*:*:*:*
+  - id: 132309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.6:*:*:*:*:*:*:*
+  - id: 132310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.7:*:*:*:*:*:*:*
+  - id: 132311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.8:*:*:*:*:*:*:*
+  - id: 132312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.4.9:*:*:*:*:*:*:*
+  - id: 132313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.0:*:*:*:*:*:*:*
+  - id: 132314
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.1:*:*:*:*:*:*:*
+  - id: 132315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.2:*:*:*:*:*:*:*
+  - id: 132316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.3:*:*:*:*:*:*:*
+  - id: 132317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.4:*:*:*:*:*:*:*
+  - id: 132318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.5:*:*:*:*:*:*:*
+  - id: 132319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.5.6:*:*:*:*:*:*:*
+  - id: 132320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.0:*:*:*:*:*:*:*
+  - id: 132322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.1:*:*:*:*:*:*:*
+  - id: 132321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.10:*:*:*:*:*:*:*
+  - id: 132323
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.2:*:*:*:*:*:*:*
+  - id: 132324
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.3:*:*:*:*:*:*:*
+  - id: 132325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.4:*:*:*:*:*:*:*
+  - id: 132326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.5:*:*:*:*:*:*:*
+  - id: 132327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.6:*:*:*:*:*:*:*
+  - id: 132328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.7:*:*:*:*:*:*:*
+  - id: 132329
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.8:*:*:*:*:*:*:*
+  - id: 132330
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.6.9:*:*:*:*:*:*:*
+  - id: 132331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.0:*:*:*:*:*:*:*
+  - id: 132332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.1:*:*:*:*:*:*:*
+  - id: 132333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.2:*:*:*:*:*:*:*
+  - id: 132334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.3:*:*:*:*:*:*:*
+  - id: 132335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.4:*:*:*:*:*:*:*
+  - id: 132336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.7.5:*:*:*:*:*:*:*
+  - id: 132337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.0:*:*:*:*:*:*:*
+  - id: 132338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.1:*:*:*:*:*:*:*
+  - id: 308077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.10:*:*:*:*:*:*:*
+  - id: 308078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.11:*:*:*:*:*:*:*
+  - id: 308079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.12:*:*:*:*:*:*:*
+  - id: 308080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.13:*:*:*:*:*:*:*
+  - id: 308081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.14:*:*:*:*:*:*:*
+  - id: 308082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.15:*:*:*:*:*:*:*
+  - id: 308083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.16:*:*:*:*:*:*:*
+  - id: 308084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.17:*:*:*:*:*:*:*
+  - id: 308085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.18:*:*:*:*:*:*:*
+  - id: 308086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.19:*:*:*:*:*:*:*
+  - id: 132339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.2:*:*:*:*:*:*:*
+  - id: 308087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.20:*:*:*:*:*:*:*
+  - id: 132340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.3:*:*:*:*:*:*:*
+  - id: 132341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.4:*:*:*:*:*:*:*
+  - id: 132342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.5:*:*:*:*:*:*:*
+  - id: 308088
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.6:*:*:*:*:*:*:*
+  - id: 308089
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.7:*:*:*:*:*:*:*
+  - id: 308090
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.8:*:*:*:*:*:*:*
+  - id: 308091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.8.9:*:*:*:*:*:*:*
+  - id: 308092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.9.0:*:*:*:*:*:*:*
+  - id: 308093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.9.1:*:*:*:*:*:*:*
+  - id: 308094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.9.2:*:*:*:*:*:*:*
+  - id: 308095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.9.3:*:*:*:*:*:*:*
+  - id: 308096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gtk:gtk\+:2.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gtk:gtk\+:2.9.4:*:*:*:*:*:*:*
+  - id: 441281
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-4831
+    reference_id: CVE-2010-4831
+weaknesses: []

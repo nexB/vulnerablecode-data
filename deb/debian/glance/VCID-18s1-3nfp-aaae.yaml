@@ -1,0 +1,55 @@
+vulnerability_id: VCID-18s1-3nfp-aaae
+aliases:
+  - CVE-2017-7200
+summary: An SSRF issue was discovered in OpenStack Glance before Newton. The 'copy_from' feature
+  in the Image Service API v1 allowed an attacker to perform masked network port scans. With
+  v1, it is possible to create images with a URL such as 'http://localhost:22'. This could then
+  allow an attacker to enumerate internal network details while appearing masked, since the
+  scan would appear to originate from the Glance Image service.
+severities:
+  - id: 623884
+    reference_id: 941316
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 623883
+    reference_id: 941315
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 293157
+    reference_id: 708191
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 293155
+    reference_id: 708191
+    scoring_system: cvssv3
+    value: '5.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
+references:
+  - id: 941316
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7200.json
+    reference_id:
+  - id: 708188
+    url: https://bugs.launchpad.net/ossn/+bug/1153614
+    reference_id:
+  - id: 708189
+    url: https://bugs.launchpad.net/ossn/+bug/1606495
+    reference_id:
+  - id: 708190
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0078
+    reference_id:
+  - id: 708187
+    url: http://www.securityfocus.com/bid/96988
+    reference_id:
+  - id: 941315
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1434244
+    reference_id: 1434244
+  - id: 535155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:glance:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:glance:*:*:*:*:*:*:*:*
+  - id: 708191
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7200
+    reference_id: CVE-2017-7200
+weaknesses: []

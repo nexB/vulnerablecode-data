@@ -1,0 +1,27 @@
+affected_purls: []
+aliases:
+- CVE-2020-25602
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B37-g3263f257ca-1?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B80-gd101b417b7-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: 'An issue was discovered in Xen through 4.14.x. An x86 PV guest can trigger
+  a host OS crash when handling guest access to MSR_MISC_ENABLE. When a guest accesses
+  certain Model Specific Registers, Xen first reads the value from hardware to use
+  as the basis for auditing the guest access. For the MISC_ENABLE MSR, which is an
+  Intel specific MSR, this MSR read is performed without error handling for a #GP
+  fault, which is the consequence of trying to read this MSR on non-Intel hardware.
+  A buggy or malicious PV guest administrator can crash Xen, resulting in a host Denial
+  of Service. Only x86 systems are vulnerable. ARM systems are not vulnerable. Only
+  Xen versions 4.11 and onwards are vulnerable. 4.10 and earlier are not vulnerable.
+  Only x86 systems that do not implement the MISC_ENABLE MSR (0x1a0) are vulnerable.
+  AMD and Hygon systems do not implement this MSR and are vulnerable. Intel systems
+  do implement this MSR and are not vulnerable. Other manufacturers have not been
+  checked. Only x86 PV guests can exploit the vulnerability. x86 HVM/PVH guests cannot
+  exploit the vulnerability.'
+vulnerability_id: VCID-sf6p-25wk-aaak
+weaknesses: []

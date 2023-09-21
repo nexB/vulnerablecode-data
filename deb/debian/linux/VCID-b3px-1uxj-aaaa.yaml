@@ -1,0 +1,72 @@
+vulnerability_id: VCID-b3px-1uxj-aaaa
+aliases:
+  - CVE-2018-7273
+summary: In the Linux kernel through 4.15.4, the floppy driver reveals the addresses of kernel
+  functions and global variables using printk calls within the function show_floppy in drivers/block/floppy.c.
+  An attacker can read this information from dmesg and use the addresses to find the locations
+  of kernel code and data and bypass kernel security protections such as KASLR.
+severities:
+  - id: 688595
+    reference_id: 1450486
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 618277
+    reference_id: 937386
+    scoring_system: cvssv3
+    value: '2.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 688596
+    reference_id: 1450487
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 688597
+    reference_id: 757833
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 618276
+    reference_id: 937385
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 355537
+    reference_id: 757835
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:N/A:N
+  - id: 355535
+    reference_id: 757835
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1450486
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-7273.html
+    reference_id:
+  - id: 937386
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-7273.json
+    reference_id:
+  - id: 1450487
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7273
+    reference_id:
+  - id: 757833
+    url: https://lkml.org/lkml/2018/2/20/669
+    reference_id:
+  - id: 757834
+    url: https://www.exploit-db.com/exploits/44325/
+    reference_id:
+  - id: 757832
+    url: http://www.securityfocus.com/bid/103088
+    reference_id:
+  - id: 937385
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1547384
+    reference_id: 1547384
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 757835
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-7273
+    reference_id: CVE-2018-7273
+weaknesses: []

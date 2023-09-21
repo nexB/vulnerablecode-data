@@ -1,0 +1,161 @@
+vulnerability_id: VCID-zz2m-53en-aaaq
+aliases:
+  - CVE-2021-38199
+summary: fs/nfs/nfs4client.c in the Linux kernel before 5.13.4 has incorrect connection-setup
+  ordering, which allows operators of remote NFSv4 servers to cause a denial of service (hanging
+  of mounts) by arranging for those servers to be unreachable during trunking detection.
+severities:
+  - id: 702520
+    reference_id: 1461741
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604286
+    reference_id: 927149
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 702502
+    reference_id: 886540
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702521
+    reference_id: 1461742
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702522
+    reference_id: 893283
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702361
+    reference_id: 1461612
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702362
+    reference_id: 1461613
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 702363
+    reference_id: 1461614
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702364
+    reference_id: 1461615
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702439
+    reference_id: 1461678
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697960
+    reference_id: 1457864
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 692609
+    reference_id: 1453447
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692610
+    reference_id: 1453448
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604285
+    reference_id: 927148
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 553589
+    reference_id: 893284
+    scoring_system: cvssv2
+    value: '3.3'
+    scoring_elements: AV:A/AC:L/Au:N/C:N/I:N/A:P
+  - id: 553587
+    reference_id: 893284
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1461741
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-38199.html
+    reference_id:
+  - id: 927149
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-38199.json
+    reference_id:
+  - id: 886540
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.13.4
+    reference_id:
+  - id: 1461742
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38199
+    reference_id:
+  - id: 893283
+    url: https://github.com/torvalds/linux/commit/dd99e9f98fbf423ff6d365b37a98e8879170f17c
+    reference_id:
+  - id: 825346
+    url: https://lists.debian.org/debian-lts-announce/2021/10/msg00010.html
+    reference_id:
+  - id: 825347
+    url: https://lists.debian.org/debian-lts-announce/2021/12/msg00012.html
+    reference_id:
+  - id: 893092
+    url: https://security.netapp.com/advisory/ntap-20210902-0010/
+    reference_id:
+  - id: 1461612
+    url: https://ubuntu.com/security/notices/USN-5091-1
+    reference_id:
+  - id: 1461613
+    url: https://ubuntu.com/security/notices/USN-5091-2
+    reference_id:
+  - id: 1461614
+    url: https://ubuntu.com/security/notices/USN-5092-1
+    reference_id:
+  - id: 1461615
+    url: https://ubuntu.com/security/notices/USN-5092-2
+    reference_id:
+  - id: 1461678
+    url: https://ubuntu.com/security/notices/USN-5096-1
+    reference_id:
+  - id: 1457864
+    url: https://ubuntu.com/security/notices/USN-5106-1
+    reference_id:
+  - id: 1453447
+    url: https://ubuntu.com/security/notices/USN-5120-1
+    reference_id:
+  - id: 1453448
+    url: https://ubuntu.com/security/notices/USN-5136-1
+    reference_id:
+  - id: 825355
+    url: https://www.debian.org/security/2021/dsa-4978
+    reference_id:
+  - id: 927148
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1992271
+    reference_id: '1992271'
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 169237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 893284
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-38199
+    reference_id: CVE-2021-38199
+weaknesses: []

@@ -1,0 +1,150 @@
+vulnerability_id: VCID-mg8t-zauz-aaac
+aliases:
+  - CVE-2019-11190
+summary: The Linux kernel before 4.8 allows local users to bypass ASLR on setuid programs (such
+  as /bin/su) because install_exec_creds() is called too late in load_elf_binary() in fs/binfmt_elf.c,
+  and thus the ptrace_may_access() check has a race condition when reading /proc/pid/stat.
+severities:
+  - id: 689919
+    reference_id: 1451419
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 66346
+    reference_id: '195414'
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 689921
+    reference_id: 1451420
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689922
+    reference_id: 769528
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689923
+    reference_id: 769529
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689924
+    reference_id: 1451421
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689925
+    reference_id: 1451422
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689926
+    reference_id: 769533
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 689927
+    reference_id: 769534
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 689920
+    reference_id: 769526
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 66345
+    reference_id: '195413'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 371167
+    reference_id: 769535
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:N/A:N
+  - id: 371165
+    reference_id: 769535
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 50033
+    reference_id: 174506
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50032
+    reference_id: 174505
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 534532
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00039.html
+    reference_id:
+  - id: 1451419
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-11190.html
+    reference_id:
+  - id: '195414'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11190.json
+    reference_id:
+  - id: 1451420
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11190
+    reference_id:
+  - id: 769528
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git/commit/?id=a5b5352558f6808db0589644ea5401b3e3148a0d
+    reference_id:
+  - id: 769529
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git/commit/?id=e1676b55d874a43646e8b2c46d87f2f3e45516ff
+    reference_id:
+  - id: 755060
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00041.html
+    reference_id:
+  - id: 755061
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00042.html
+    reference_id:
+  - id: 1451421
+    url: https://ubuntu.com/security/notices/USN-4008-1
+    reference_id:
+  - id: 1451422
+    url: https://ubuntu.com/security/notices/USN-4008-3
+    reference_id:
+  - id: 769530
+    url: https://usn.ubuntu.com/4008-1/
+    reference_id:
+  - id: 769531
+    url: https://usn.ubuntu.com/4008-2/
+    reference_id:
+  - id: 769532
+    url: https://usn.ubuntu.com/4008-3/
+    reference_id:
+  - id: 769533
+    url: https://www.openwall.com/lists/oss-security/2019/04/03/4
+    reference_id:
+  - id: 769534
+    url: https://www.openwall.com/lists/oss-security/2019/04/03/4/1
+    reference_id:
+  - id: 769526
+    url: http://www.openwall.com/lists/oss-security/2019/04/15/1
+    reference_id:
+  - id: 769527
+    url: http://www.securityfocus.com/bid/107890
+    reference_id:
+  - id: '195413'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1699856
+    reference_id: 1699856
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 769535
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11190
+    reference_id: CVE-2019-11190
+  - id: 174506
+    url: https://access.redhat.com/errata/RHSA-2020:1016
+    reference_id: RHSA-2020:1016
+  - id: 174505
+    url: https://access.redhat.com/errata/RHSA-2020:1070
+    reference_id: RHSA-2020:1070
+weaknesses: []

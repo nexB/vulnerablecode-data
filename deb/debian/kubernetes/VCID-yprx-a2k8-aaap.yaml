@@ -1,0 +1,52 @@
+vulnerability_id: VCID-yprx-a2k8-aaap
+aliases:
+  - CVE-2019-11245
+summary: 'In kubelet v1.13.6 and v1.14.2, containers for pods that do not specify an explicit
+  runAsUser attempt to run as uid 0 (root) on container restart, or if the image was previously
+  pulled to the node. If the pod specified mustRunAsNonRoot: true, the kubelet will refuse to
+  start the container as root. If the pod did not specify mustRunAsNonRoot: true, the kubelet
+  will run the container as uid 0.'
+severities:
+  - id: 75634
+    reference_id: 206560
+    scoring_system: cvssv3
+    value: '4.9'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 75633
+    reference_id: 206559
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 371363
+    reference_id: 769720
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 371361
+    reference_id: 769720
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 206560
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11245.json
+    reference_id:
+  - id: 769718
+    url: https://github.com/kubernetes/kubernetes/issues/78308
+    reference_id:
+  - id: 769719
+    url: https://security.netapp.com/advisory/ntap-20190919-0003/
+    reference_id:
+  - id: 206559
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1715726
+    reference_id: 1715726
+  - id: 769721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.6:*:*:*:*:*:*:*
+  - id: 769722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.2:*:*:*:*:*:*:*
+  - id: 769720
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11245
+    reference_id: CVE-2019-11245
+weaknesses: []

@@ -1,0 +1,163 @@
+vulnerability_id: VCID-csa2-q1p6-aaac
+aliases:
+  - CVE-2012-4461
+summary: The KVM subsystem in the Linux kernel before 3.6.9, when running on hosts that use
+  qemu userspace without XSAVE, allows local users to cause a denial of service (kernel OOPS)
+  by using the KVM_SET_SREGS ioctl to set the X86_CR4_OSXSAVE bit in the guest cr4 register,
+  then calling the KVM_RUN ioctl.
+severities:
+  - id: 650558
+    reference_id: 502086
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650559
+    reference_id: 1420728
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650561
+    reference_id: 1420729
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650562
+    reference_id: 1420730
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 650563
+    reference_id: 1420731
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 650564
+    reference_id: 1420732
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 650565
+    reference_id: 1420733
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 649505
+    reference_id: 1419900
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 650560
+    reference_id: 502091
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 157398
+    reference_id: 502094
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:P
+  - id: 63829
+    reference_id: '192218'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 62619
+    reference_id: '190673'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 502086
+    url: http://article.gmane.org/gmane.comp.emulators.kvm.devel/100742
+    reference_id:
+  - id: 502087
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=6d1068b3a98519247d8ba4ec85cd40ac136dbdf9
+    reference_id:
+  - id: 434174
+    url: http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00005.html
+    reference_id:
+  - id: 1420728
+    url: http://people.canonical.com/~ubuntu-security/cve/2012/CVE-2012-4461.html
+    reference_id:
+  - id: 501500
+    url: http://rhn.redhat.com/errata/RHSA-2013-0223.html
+    reference_id:
+  - id: 502088
+    url: http://rhn.redhat.com/errata/RHSA-2013-0882.html
+    reference_id:
+  - id: '192219'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-4461.json
+    reference_id:
+  - id: 502093
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=862900
+    reference_id:
+  - id: 1420729
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-4461
+    reference_id:
+  - id: 502089
+    url: http://secunia.com/advisories/51160
+    reference_id:
+  - id: 1420730
+    url: https://ubuntu.com/security/notices/USN-1688-1
+    reference_id:
+  - id: 1420731
+    url: https://ubuntu.com/security/notices/USN-1689-1
+    reference_id:
+  - id: 1420732
+    url: https://ubuntu.com/security/notices/USN-1696-1
+    reference_id:
+  - id: 1420733
+    url: https://ubuntu.com/security/notices/USN-1699-1
+    reference_id:
+  - id: 1419900
+    url: https://ubuntu.com/security/notices/USN-1704-1
+    reference_id:
+  - id: 486728
+    url: https://www.suse.com/support/update/announcement/2012/suse-su-20121679-1.html
+    reference_id:
+  - id: 502090
+    url: http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.6.9
+    reference_id:
+  - id: 502091
+    url: http://www.openwall.com/lists/oss-security/2012/11/06/14
+    reference_id:
+  - id: 502092
+    url: http://www.securityfocus.com/bid/56414
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 237018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6:*:*:*:*:*:*:*
+  - id: 237009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.1:*:*:*:*:*:*:*
+  - id: 237010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.2:*:*:*:*:*:*:*
+  - id: 237011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.3:*:*:*:*:*:*:*
+  - id: 237012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.4:*:*:*:*:*:*:*
+  - id: 237013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.5:*:*:*:*:*:*:*
+  - id: 237014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.6:*:*:*:*:*:*:*
+  - id: 237015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.6.7:*:*:*:*:*:*:*
+  - id: 502094
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-4461
+    reference_id: CVE-2012-4461
+  - id: '192218'
+    url: https://access.redhat.com/errata/RHSA-2013:0223
+    reference_id: RHSA-2013:0223
+  - id: '190673'
+    url: https://access.redhat.com/errata/RHSA-2013:0882
+    reference_id: RHSA-2013:0882
+weaknesses: []

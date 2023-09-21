@@ -1,0 +1,23 @@
+affected_purls:
+- pkg:deb/debian/calamares@3.2.4-3
+aliases:
+- CVE-2019-13179
+fixed_purl:
+- pkg:deb/debian/calamares@3.2.36-1~bpo10%2B1
+- pkg:deb/debian/calamares-settings-debian@10.0.20-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/calamares-settings-debian@10.0.20-1%2Bdeb10u4?distro=sid
+- pkg:deb/debian/calamares-settings-debian@10.0.23-1?distro=sid
+- pkg:deb/debian/calamares-settings-debian@11.0.5-2?distro=sid
+- pkg:deb/debian/calamares-settings-debian@12.0.9-1?distro=sid
+references:
+- id: 128572
+  reference_id: '931373'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=931373
+severities: []
+summary: Calamares versions 3.1 through 3.2.10 copies a LUKS encryption keyfile from
+  /crypto_keyfile.bin (mode 0600 owned by root) to /boot within a globally readable
+  initramfs image with insecure permissions, which allows this originally protected
+  file to be read by any user, thereby disclosing decryption keys for LUKS containers
+  created with Full Disk Encryption.
+vulnerability_id: VCID-a8tj-v2ez-aaad
+weaknesses: []

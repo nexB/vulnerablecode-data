@@ -1,0 +1,47 @@
+vulnerability_id: VCID-797y-4g7c-aaar
+aliases:
+  - CVE-2021-20235
+summary: There's a flaw in the zeromq server in versions before 4.3.3 in src/decoder_allocators.hpp.
+  The decoder static allocator could have its sized changed, but the buffer would remain the
+  same as it is a static buffer. A remote, unauthenticated attacker who sends a crafted request
+  to the zeromq server could trigger a buffer overflow WRITE of arbitrary data if CURVE/ZAP
+  authentication is not enabled. The greatest impact of this flaw is to application availability,
+  data integrity, and confidentiality.
+severities:
+  - id: 605148
+    reference_id: 927784
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 605147
+    reference_id: 927783
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 504004
+    reference_id: 861338
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 504002
+    reference_id: 861338
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 927784
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20235.json
+    reference_id:
+  - id: 861337
+    url: https://github.com/zeromq/libzmq/security/advisories/GHSA-fc3w-qxf5-7hp6
+    reference_id:
+  - id: 927783
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1921983
+    reference_id: '1921983'
+  - id: 775328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zeromq:libzmq:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zeromq:libzmq:*:*:*:*:*:*:*:*
+  - id: 861338
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-20235
+    reference_id: CVE-2021-20235
+weaknesses: []

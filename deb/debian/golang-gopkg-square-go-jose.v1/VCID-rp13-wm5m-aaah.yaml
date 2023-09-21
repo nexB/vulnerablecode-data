@@ -1,0 +1,35 @@
+vulnerability_id: VCID-rp13-wm5m-aaah
+aliases:
+  - CVE-2016-9121
+summary: go-jose before 1.0.4 suffers from an invalid curve attack for the ECDH-ES algorithm.
+  When deriving a shared key using ECDH-ES for an encrypted message, go-jose neglected to check
+  that the received public key on a message is on the same curve as the static private key of
+  the receiver, thus making it vulnerable to an invalid curve attack.
+severities:
+  - id: 242844
+    reference_id: 661469
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:N
+  - id: 242842
+    reference_id: 661469
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 661467
+    url: https://github.com/square/go-jose/commit/c7581939a3656bb65e89d64da0a52364a33d2507
+    reference_id:
+  - id: 661468
+    url: https://hackerone.com/reports/164590
+    reference_id:
+  - id: 661466
+    url: http://www.openwall.com/lists/oss-security/2016/11/03/1
+    reference_id:
+  - id: 661470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:go-jose_project:go-jose:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:go-jose_project:go-jose:*:*:*:*:*:*:*:*
+  - id: 661469
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9121
+    reference_id: CVE-2016-9121
+weaknesses: []

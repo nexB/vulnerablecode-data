@@ -1,0 +1,26 @@
+affected_purls: []
+aliases:
+- CVE-2019-1551
+fixed_purl:
+- pkg:deb/debian/openssl@1.1.1d-0%2Bdeb10u5?distro=sid
+- pkg:deb/debian/openssl@1.1.1e-1?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb10u3?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u4?distro=sid
+- pkg:deb/debian/openssl@3.0.8-1?distro=sid
+- pkg:deb/debian/openssl@3.0.9-1?distro=sid
+references:
+- id: 128680
+  reference_id: '947949'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947949
+severities: []
+summary: There is an overflow bug in the x64_64 Montgomery squaring procedure used
+  in exponentiation with 512-bit moduli. No EC algorithms are affected. Analysis suggests
+  that attacks against 2-prime RSA1024, 3-prime RSA1536, and DSA1024 as a result of
+  this defect would be very difficult to perform and are not believed likely. Attacks
+  against DH512 are considered just feasible. However, for an attack the target would
+  have to re-use the DH512 private key, which is not recommended anyway. Also applications
+  directly using the low level API BN_mod_exp may be affected if they use BN_FLG_CONSTTIME.
+  Fixed in OpenSSL 1.1.1e (Affected 1.1.1-1.1.1d). Fixed in OpenSSL 1.0.2u (Affected
+  1.0.2-1.0.2t).
+vulnerability_id: VCID-5gpd-xem9-aaaa
+weaknesses: []

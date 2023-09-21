@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2018-16841
+fixed_purl:
+- pkg:deb/debian/samba@2:4.13.13%2Bdfsg-1~deb11u5?distro=sid
+- pkg:deb/debian/samba@2:4.17.8%2Bdfsg-2?distro=sid
+- pkg:deb/debian/samba@2:4.9.2%2Bdfsg-2?distro=sid
+- pkg:deb/debian/samba@2:4.9.5%2Bdfsg-5%2Bdeb10u3?distro=sid
+references: []
+severities: []
+summary: Samba from version 4.3.0 and before versions 4.7.12, 4.8.7 and 4.9.3 are
+  vulnerable to a denial of service. When configured to accept smart-card authentication,
+  Samba's KDC will call talloc_free() twice on the same memory if the principal in
+  a validly signed certificate does not match the principal in the AS-REQ. This is
+  only possible after authentication with a trusted certificate. talloc is robust
+  against further corruption from a double-free with talloc_free() and directly calls
+  abort(), terminating the KDC process.
+vulnerability_id: VCID-qbv9-mkke-aaam
+weaknesses: []

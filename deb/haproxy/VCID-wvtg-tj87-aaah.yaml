@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2018-20102
+fixed_purl:
+- pkg:deb/debian/haproxy@1.8.15-1?distro=sid
+- pkg:deb/debian/haproxy@1.8.19-1%2Bdeb10u3?distro=sid
+- pkg:deb/debian/haproxy@2.2.9-2%2Bdeb11u5?distro=sid
+- pkg:deb/debian/haproxy@2.6.12-1?distro=sid
+- pkg:deb/debian/haproxy@2.6.13-1?distro=sid
+references:
+- id: 128160
+  reference_id: '916308'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916308
+severities: []
+summary: An out-of-bounds read in dns_validate_dns_response in dns.c was discovered
+  in HAProxy through 1.8.14. Due to a missing check when validating DNS responses,
+  remote attackers might be able read the 16 bytes corresponding to an AAAA record
+  from the non-initialized part of the buffer, possibly accessing anything that was
+  left on the stack, or even past the end of the 8193-byte buffer, depending on the
+  value of accepted_payload_size.
+vulnerability_id: VCID-wvtg-tj87-aaah
+weaknesses: []

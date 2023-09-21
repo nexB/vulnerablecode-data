@@ -1,0 +1,216 @@
+vulnerability_id: VCID-ue1j-p1bn-aaad
+aliases:
+  - CVE-2017-7184
+summary: The xfrm_replay_verify_len function in net/xfrm/xfrm_user.c in the Linux kernel through
+  4.10.6 does not validate certain size data after an XFRM_MSG_NEWAE update, which allows local
+  users to obtain root privileges or cause a denial of service (heap-based out-of-bounds access)
+  by leveraging the CAP_NET_ADMIN capability, as demonstrated during a Pwn2Own competition at
+  CanSecWest 2017 for the Ubuntu 16.10 linux-image-* package 4.8.0.41.52.
+severities:
+  - id: 680103
+    reference_id: 1443760
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 623658
+    reference_id: 941158
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 680105
+    reference_id: 708136
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680106
+    reference_id: 1443761
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680107
+    reference_id: 1443762
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680108
+    reference_id: 1443763
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680109
+    reference_id: 1443764
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 659307
+    reference_id: 593052
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 680110
+    reference_id: 708139
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680111
+    reference_id: 1443765
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680112
+    reference_id: 1443766
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680113
+    reference_id: 1443767
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680114
+    reference_id: 1443768
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680115
+    reference_id: 1443769
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680116
+    reference_id: 1443770
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680117
+    reference_id: 1443771
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 680104
+    reference_id: 708133
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 623657
+    reference_id: 941157
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 293121
+    reference_id: 708140
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 293119
+    reference_id: 708140
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 620891
+    reference_id: 939244
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621081
+    reference_id: 939378
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621082
+    reference_id: 939379
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 708130
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=677e806da4d916052585301785d847c3b3e6186a
+    reference_id:
+  - id: 708131
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f843ee6dd019bcece3e74e76ad9df0155655d0df
+    reference_id:
+  - id: 708132
+    url: http://openwall.com/lists/oss-security/2017/03/29/2
+    reference_id:
+  - id: 1443760
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7184.html
+    reference_id:
+  - id: 668154
+    url: https://access.redhat.com/errata/RHSA-2019:4159
+    reference_id:
+  - id: 941158
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7184.json
+    reference_id:
+  - id: 708136
+    url: https://blog.trendmicro.com/results-pwn2own-2017-day-one/
+    reference_id:
+  - id: 1443761
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7184
+    reference_id:
+  - id: 708137
+    url: https://github.com/torvalds/linux/commit/677e806da4d916052585301785d847c3b3e6186a
+    reference_id:
+  - id: 708138
+    url: https://github.com/torvalds/linux/commit/f843ee6dd019bcece3e74e76ad9df0155655d0df
+    reference_id:
+  - id: 1443762
+    url: https://git.kernel.org/linus/677e806da4d916052585301785d847c3b3e6186a
+    reference_id:
+  - id: 1443763
+    url: https://git.kernel.org/linus/f843ee6dd019bcece3e74e76ad9df0155655d0df
+    reference_id:
+  - id: 1443764
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=52b9c816807abd46c285cd8ab183fe93194bfb3f
+    reference_id:
+  - id: 593052
+    url: https://source.android.com/security/bulletin/2017-05-01
+    reference_id:
+  - id: 708139
+    url: https://twitter.com/thezdi/status/842126074435665920
+    reference_id:
+  - id: 1443765
+    url: https://ubuntu.com/security/notices/USN-3248-1
+    reference_id:
+  - id: 1443766
+    url: https://ubuntu.com/security/notices/USN-3249-1
+    reference_id:
+  - id: 1443767
+    url: https://ubuntu.com/security/notices/USN-3249-2
+    reference_id:
+  - id: 1443768
+    url: https://ubuntu.com/security/notices/USN-3250-1
+    reference_id:
+  - id: 1443769
+    url: https://ubuntu.com/security/notices/USN-3250-2
+    reference_id:
+  - id: 1443770
+    url: https://ubuntu.com/security/notices/USN-3251-1
+    reference_id:
+  - id: 1443771
+    url: https://ubuntu.com/security/notices/USN-3251-2
+    reference_id:
+  - id: 708133
+    url: http://www.eweek.com/security/ubuntu-linux-falls-on-day-1-of-pwn2own-hacking-competition
+    reference_id:
+  - id: 708134
+    url: http://www.securityfocus.com/bid/97018
+    reference_id:
+  - id: 708135
+    url: http://www.securitytracker.com/id/1038166
+    reference_id:
+  - id: 941157
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1435153
+    reference_id: 1435153
+  - id: 708140
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7184
+    reference_id: CVE-2017-7184
+  - id: 939244
+    url: https://access.redhat.com/errata/RHSA-2017:2918
+    reference_id: RHSA-2017:2918
+  - id: 939378
+    url: https://access.redhat.com/errata/RHSA-2017:2930
+    reference_id: RHSA-2017:2930
+  - id: 939379
+    url: https://access.redhat.com/errata/RHSA-2017:2931
+    reference_id: RHSA-2017:2931
+weaknesses: []

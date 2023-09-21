@@ -1,0 +1,199 @@
+vulnerability_id: VCID-gtza-1c24-aaab
+aliases:
+  - CVE-2017-12190
+summary: The bio_map_user_iov and bio_unmap_user functions in block/bio.c in the Linux kernel
+  before 4.13.8 do unbalanced refcounting when a SCSI I/O vector has small consecutive buffers
+  belonging to the same page. The bio_add_pc_page function merges them into one, but the page
+  reference is never dropped. This causes a memory leak and possible system lockup (exploitable
+  against the host OS by a guest OS user, if a SCSI disk is passed through to a virtual machine)
+  due to an out-of-memory condition.
+severities:
+  - id: 674242
+    reference_id: 1439227
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620586
+    reference_id: 938996
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H
+  - id: 674243
+    reference_id: 1439228
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674244
+    reference_id: 1439229
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674245
+    reference_id: 1439230
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673106
+    reference_id: 1438297
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 665405
+    reference_id: 1432017
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665406
+    reference_id: 1432018
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672902
+    reference_id: 1438134
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672903
+    reference_id: 1438135
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674246
+    reference_id: 1439231
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674247
+    reference_id: 1439232
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620585
+    reference_id: 938995
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 257569
+    reference_id: 676062
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 257567
+    reference_id: 676062
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+references:
+  - id: 676053
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2b04e8f6bbb196cab4b232af0f8d48ff2c7a8058
+    reference_id:
+  - id: 676054
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=95d78c28b5a85bacbc29b8dba7c04babb9b0d467
+    reference_id:
+  - id: 1439227
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-12190.html
+    reference_id:
+  - id: 668576
+    url: https://access.redhat.com/errata/RHSA-2018:0654
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 511654
+    url: https://access.redhat.com/errata/RHSA-2018:1854
+    reference_id:
+  - id: 658044
+    url: https://access.redhat.com/errata/RHSA-2019:1170
+    reference_id:
+  - id: 658045
+    url: https://access.redhat.com/errata/RHSA-2019:1190
+    reference_id:
+  - id: 938996
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-12190.json
+    reference_id:
+  - id: 1439228
+    url: https://bugzilla.suse.com/show_bug.cgi?id=1062568
+    reference_id:
+  - id: 1439229
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12190
+    reference_id:
+  - id: 676055
+    url: http://seclists.org/oss-sec/2017/q4/52
+    reference_id:
+  - id: 676059
+    url: https://github.com/torvalds/linux/commit/2b04e8f6bbb196cab4b232af0f8d48ff2c7a8058
+    reference_id:
+  - id: 676060
+    url: https://github.com/torvalds/linux/commit/95d78c28b5a85bacbc29b8dba7c04babb9b0d467
+    reference_id:
+  - id: 627771
+    url: https://lists.debian.org/debian-lts-announce/2017/12/msg00004.html
+    reference_id:
+  - id: 1439230
+    url: https://marc.info/?t=150605752800001&r=1&w=2
+    reference_id:
+  - id: 676061
+    url: https://support.f5.com/csp/article/K93472064?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 1438297
+    url: https://ubuntu.com/security/notices/USN-3487-1
+    reference_id:
+  - id: 1432017
+    url: https://ubuntu.com/security/notices/USN-3582-1
+    reference_id:
+  - id: 1432018
+    url: https://ubuntu.com/security/notices/USN-3582-2
+    reference_id:
+  - id: 1438134
+    url: https://ubuntu.com/security/notices/USN-3583-1
+    reference_id:
+  - id: 1438135
+    url: https://ubuntu.com/security/notices/USN-3583-2
+    reference_id:
+  - id: 620624
+    url: https://usn.ubuntu.com/3582-1/
+    reference_id:
+  - id: 620625
+    url: https://usn.ubuntu.com/3582-2/
+    reference_id:
+  - id: 666591
+    url: https://usn.ubuntu.com/3583-1/
+    reference_id:
+  - id: 666592
+    url: https://usn.ubuntu.com/3583-2/
+    reference_id:
+  - id: 1439231
+    url: https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1495884.html
+    reference_id:
+  - id: 1439232
+    url: https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1495887.html
+    reference_id:
+  - id: 676056
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.8
+    reference_id:
+  - id: 676057
+    url: http://www.securityfocus.com/bid/101911
+    reference_id:
+  - id: 938995
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1495089
+    reference_id: 1495089
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 676062
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-12190
+    reference_id: CVE-2017-12190
+weaknesses: []

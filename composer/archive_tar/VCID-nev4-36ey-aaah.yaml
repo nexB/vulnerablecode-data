@@ -1,0 +1,39 @@
+affected_purls:
+- pkg:composer/pear/archive_tar@1.3.11
+- pkg:composer/pear/archive_tar@1.3.12
+- pkg:composer/pear/archive_tar@1.3.13
+- pkg:composer/pear/archive_tar@1.3.14
+- pkg:composer/pear/archive_tar@1.3.15
+- pkg:composer/pear/archive_tar@1.3.16
+- pkg:composer/pear/archive_tar@1.4.0
+- pkg:composer/pear/archive_tar@1.4.1
+- pkg:composer/pear/archive_tar@1.4.2
+- pkg:composer/pear/archive_tar@1.4.3
+aliases:
+- CVE-2018-1000888
+fixed_purl:
+- pkg:composer/pear/archive_tar@1.4.4
+- pkg:deb/debian/php-pear@1:1.10.12%2Bsubmodules%2Bnotgz%2B20210212-1?distro=sid
+- pkg:deb/debian/php-pear@1:1.10.13%2Bsubmodules%2Bnotgz%2B2022032202-2?distro=sid
+- pkg:deb/debian/php-pear@1:1.10.6%2Bsubmodules%2Bnotgz-1.1?distro=sid
+- pkg:deb/debian/php-pear@1:1.10.6%2Bsubmodules%2Bnotgz-1.1%2Bdeb10u2?distro=sid
+references:
+- id: 181632
+  reference_id: ''
+  url: https://pear.php.net/bugs/bug.php?id=23782
+- id: 127741
+  reference_id: '919147'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=919147
+severities: []
+summary: PEAR Archive_Tar version 1.4.3 and earlier contains a CWE-502, CWE-915 vulnerability
+  in the Archive_Tar class. There are several file operations with `$v_header['filename']`
+  as parameter (such as file_exists, is_file, is_dir, etc). When extract is called
+  without a specific prefix path, we can trigger unserialization by crafting a tar
+  file with `phar://[path_to_malicious_phar_file]` as path. Object injection can be
+  used to trigger destruct in the loaded PHP classes, e.g. the Archive_Tar class itself.
+  With Archive_Tar object injection, arbitrary file deletion can occur because `@unlink($this->_temp_tarname)`
+  is called. If another class with useful gadget is loaded, it may possible to cause
+  remote code execution that can result in files being deleted or possibly modified.
+  This vulnerability appears to have been fixed in 1.4.4.
+vulnerability_id: VCID-nev4-36ey-aaah
+weaknesses: []

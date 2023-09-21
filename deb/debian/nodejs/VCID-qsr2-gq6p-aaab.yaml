@@ -1,0 +1,82 @@
+vulnerability_id: VCID-qsr2-gq6p-aaab
+aliases:
+  - CVE-2019-5739
+summary: Keep-alive HTTP and HTTPS connections can remain open and inactive for up to 2 minutes
+  in Node.js 6.16.0 and earlier. Node.js 8.0.0 introduced a dedicated server.keepAliveTimeout
+  which defaults to 5 seconds. The behavior in Node.js 6.16.0 and earlier is a potential Denial
+  of Service (DoS) attack vector. Node.js 6.17.0 introduces server.keepAliveTimeout and the
+  5-second default.
+severities:
+  - id: 693976
+    reference_id: 1454532
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612811
+    reference_id: 933414
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 693977
+    reference_id: 1454533
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 693975
+    reference_id: 799820
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612810
+    reference_id: 933413
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 411087
+    reference_id: 799823
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 411085
+    reference_id: 799823
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 799817
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-03/msg00041.html
+    reference_id:
+  - id: 799818
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00046.html
+    reference_id:
+  - id: 1454532
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-5739.html
+    reference_id:
+  - id: 933414
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-5739.json
+    reference_id:
+  - id: 1454533
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5739
+    reference_id:
+  - id: 799820
+    url: https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/
+    reference_id:
+  - id: 728654
+    url: https://security.gentoo.org/glsa/202003-48
+    reference_id:
+  - id: 799821
+    url: https://security.netapp.com/advisory/ntap-20190502-0008/
+    reference_id:
+  - id: 933413
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1690798
+    reference_id: 1690798
+  - id: 720251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*
+  - id: 614332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+  - id: 799823
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-5739
+    reference_id: CVE-2019-5739
+weaknesses: []

@@ -1,0 +1,52 @@
+vulnerability_id: VCID-bbrz-yaj5-aaas
+aliases:
+  - CVE-2020-28498
+  - GHSA-r9p9-mrjm-926w
+summary: |
+  Use of a Broken or Risky Cryptographic Algorithm
+  The package elliptic is vulnerable to Cryptographic Issues via the secp256k1 implementation in `elliptic/ec/key.js`. There is no check to confirm that the public key point passed into the derive function actually exists on the secp256k1 curve. This results in the potential for the private key used in this implementation to be revealed after a number of ECDH operations are performed.
+severities:
+  - id: 469330
+    reference_id: 36867
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 469328
+    reference_id: 36867
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N
+  - id: 706260
+    reference_id: 1467800
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 839105
+    url: https://github.com/christianlundkvist/blog/blob/master/2020_05_26_secp256k1_twist_attacks/secp256k1_twist_attacks.md
+    reference_id:
+  - id: 839106
+    url: https://github.com/indutny/elliptic/commit/441b7428b0e8f6636c42118ad2aaa186d3c34c3f
+    reference_id:
+  - id: 1467799
+    url: https://github.com/indutny/elliptic/pull/244/commits
+    reference_id:
+  - id: 839107
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1069836
+    reference_id:
+  - id: 839108
+    url: https://snyk.io/vuln/SNYK-JS-ELLIPTIC-1064899
+    reference_id:
+  - id: 819122
+    url: https://www.npmjs.com/package/elliptic
+    reference_id:
+  - id: 839109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:elliptic_project:elliptic:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:elliptic_project:elliptic:*:*:*:*:*:node.js:*:*
+  - id: 36867
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-28498
+    reference_id: CVE-2020-28498
+  - id: 1467800
+    url: https://github.com/advisories/GHSA-r9p9-mrjm-926w
+    reference_id: GHSA-r9p9-mrjm-926w
+weaknesses: []

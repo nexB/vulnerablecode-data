@@ -1,0 +1,87 @@
+affected_purls:
+- pkg:gem/sanitize@3.0.0
+- pkg:gem/sanitize@3.0.1
+- pkg:gem/sanitize@3.0.2
+- pkg:gem/sanitize@3.0.3
+- pkg:gem/sanitize@3.0.4
+- pkg:gem/sanitize@3.1.0
+- pkg:gem/sanitize@3.1.1
+- pkg:gem/sanitize@3.1.2
+- pkg:gem/sanitize@4.0.0
+- pkg:gem/sanitize@4.0.1
+- pkg:gem/sanitize@4.1.0
+- pkg:gem/sanitize@4.2.0
+- pkg:gem/sanitize@4.3.0
+- pkg:gem/sanitize@4.4.0
+- pkg:gem/sanitize@4.5.0
+- pkg:gem/sanitize@4.6.0
+- pkg:gem/sanitize@4.6.1
+- pkg:gem/sanitize@4.6.2
+- pkg:gem/sanitize@4.6.3
+- pkg:gem/sanitize@4.6.4
+- pkg:gem/sanitize@4.6.5
+- pkg:gem/sanitize@4.6.6
+- pkg:gem/sanitize@5.0.0
+- pkg:gem/sanitize@5.1.0
+- pkg:gem/sanitize@5.2.0
+aliases:
+- CVE-2020-4054
+- GHSA-p4x4-rw2p-8j8m
+fixed_purl:
+- pkg:deb/debian/ruby-sanitize@4.6.6-2.1?distro=sid
+- pkg:deb/debian/ruby-sanitize@4.6.6-2.1~deb10u1?distro=sid
+- pkg:deb/debian/ruby-sanitize@5.2.1-2?distro=sid
+- pkg:deb/debian/ruby-sanitize@6.0.0-1.1?distro=sid
+- pkg:gem/sanitize@5.2.1
+references:
+- id: 154637
+  reference_id: ''
+  url: https://github.com/rgrove/sanitize/commit/a11498de9e283cd457b35ee252983662f7452aa9
+- id: 154638
+  reference_id: ''
+  url: https://github.com/rgrove/sanitize/releases/tag/v5.2.1
+- id: 154641
+  reference_id: ''
+  url: https://usn.ubuntu.com/4543-1/
+- id: 154640
+  reference_id: ''
+  url: https://www.debian.org/security/2020/dsa-4730
+- id: 129458
+  reference_id: '963808'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=963808
+- id: 154639
+  reference_id: CVE-2020-4054
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-4054
+- id: 154642
+  reference_id: CVE-2020-4054.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/sanitize/CVE-2020-4054.yml
+- id: 154643
+  reference_id: GHSA-p4x4-rw2p-8j8m
+  url: https://github.com/advisories/GHSA-p4x4-rw2p-8j8m
+- id: 154636
+  reference_id: GHSA-p4x4-rw2p-8j8m
+  url: https://github.com/rgrove/sanitize/security/advisories/GHSA-p4x4-rw2p-8j8m
+severities:
+- id: 22166
+  reference_id: 154643
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 22165
+  reference_id: 154636
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: 'In Sanitize (RubyGem sanitize) greater than or equal to 3.0.0 and less than
+  5.2.1, there is a cross-site scripting vulnerability. When HTML is sanitized using
+  Sanitize''s "relaxed" config, or a custom config that allows certain elements, some
+  content in a math or svg element may not be sanitized correctly even if math and
+  svg are not in the allowlist. You are likely to be vulnerable to this issue if you
+  use Sanitize''s relaxed config or a custom config that allows one or more of the
+  following HTML elements: iframe, math, noembed, noframes, noscript, plaintext, script,
+  style, svg, xmp. Using carefully crafted input, an attacker may be able to sneak
+  arbitrary HTML through Sanitize, potentially resulting in XSS (cross-site scripting)
+  or other undesired behavior when that HTML is rendered in a browser. This has been
+  fixed in 5.2.1.'
+vulnerability_id: VCID-qv7n-nwah-aaas
+weaknesses: []

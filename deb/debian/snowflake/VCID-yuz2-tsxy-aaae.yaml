@@ -1,0 +1,40 @@
+vulnerability_id: VCID-yuz2-tsxy-aaae
+aliases:
+  - CVE-2022-29222
+summary: Pion DTLS is a Go implementation of Datagram Transport Layer Security. Prior to version
+  2.1.5, a DTLS Client could provide a Certificate that it doesn't posses the private key for
+  and Pion DTLS wouldn't reject it. This issue affects users that are using Client certificates
+  only. The connection itself is still secure. The Certificate provided by clients can't be
+  trusted when using a Pion DTLS server prior to version 2.1.5. Users should upgrade to version
+  2.1.5 to receive a patch. There are currently no known workarounds.
+severities:
+  - id: 598511
+    reference_id: 922879
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 598509
+    reference_id: 922879
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 922876
+    url: https://github.com/pion/dtls/commit/d2f797183a9f044ce976e6df6f362662ca722412
+    reference_id:
+  - id: 922877
+    url: https://github.com/pion/dtls/releases/tag/v2.1.5
+    reference_id:
+  - id: 922878
+    url: https://github.com/pion/dtls/security/advisories/GHSA-w45j-f832-hxvh
+    reference_id:
+  - id: 125363
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1011458
+    reference_id: 1011458
+  - id: 793125
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pion:dtls:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pion:dtls:*:*:*:*:*:*:*:*
+  - id: 922879
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-29222
+    reference_id: CVE-2022-29222
+weaknesses: []

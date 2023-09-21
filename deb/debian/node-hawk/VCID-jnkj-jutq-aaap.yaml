@@ -1,0 +1,67 @@
+vulnerability_id: VCID-jnkj-jutq-aaap
+aliases:
+  - CVE-2022-29167
+  - GHSA-44pw-h2cw-w3vq
+summary: |
+  Regular Expression Denial of Service
+  Hawk is an HTTP authentication scheme providing mechanisms for making authenticated HTTP requests with partial cryptographic verification of the request and response, covering the HTTP method, request URI, host, and optionally the request payload. Hawk used a regular expression to parse `Host` HTTP header (`Hawk.utils.parseHost()`), which was subject to regular expression DoS attack - meaning each added character in the attacker's input increases the computation time exponentially. `parseHost()` was patched in `9.0.1` to use built-in `URL` class to parse hostname instead. `Hawk.authenticate()` accepts `options` argument. If that contains `host` and `port`, those would be used instead of a call to `utils.parseHost()`.
+severities:
+  - id: 25955
+    reference_id: 108245
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 708432
+    reference_id: 32887
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements:
+  - id: 25954
+    reference_id: 108244
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 598299
+    reference_id: 36774
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 598297
+    reference_id: 36774
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 707087
+    reference_id: 1468741
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 108245
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-29167.json
+    reference_id:
+  - id: 1472675
+    url: https://github.com/mozilla/hawk/commit/d10d72ca82db967f6c5fcf866ff78e3ca25ce1ab
+    reference_id:
+  - id: 36775
+    url: https://github.com/mozilla/hawk/pull/286
+    reference_id:
+  - id: 922730
+    url: https://github.com/mozilla/hawk/security/advisories/GHSA-44pw-h2cw-w3vq
+    reference_id:
+  - id: 32887
+    url: https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
+    reference_id:
+  - id: 108244
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2082387
+    reference_id: 2082387
+  - id: 922731
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:hawk:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:mozilla:hawk:*:*:*:*:*:node.js:*:*
+  - id: 36774
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-29167
+    reference_id: CVE-2022-29167
+  - id: 1468741
+    url: https://github.com/advisories/GHSA-44pw-h2cw-w3vq
+    reference_id: GHSA-44pw-h2cw-w3vq
+weaknesses: []

@@ -1,0 +1,73 @@
+vulnerability_id: VCID-y9kw-sgcu-aaaa
+aliases:
+  - CVE-2022-31081
+summary: HTTP::Daemon is a simple http server class written in perl. Versions prior to 6.15
+  are subject to a vulnerability which could potentially be exploited to gain privileged access
+  to APIs or poison intermediate caches. It is uncertain how large the risks are, most Perl
+  based applications are served on top of Nginx or Apache, not on the `HTTP::Daemon`. This library
+  is commonly used for local development and tests. Users are advised to update to resolve this
+  issue. Users unable to upgrade may add additional request handling logic as a mitigation.
+  After calling `my $rqst = $conn->get_request()` one could inspect the returned `HTTP::Request`
+  object. Querying the 'Content-Length' (`my $cl = $rqst->header('Content-Length')`) will show
+  any abnormalities that should be dealt with by a `400` response. Expected strings of 'Content-Length'
+  SHOULD consist of either a single non-negative integer, or, a comma separated repetition of
+  that number. (that is `42` or `42, 42, 42`). Anything else MUST be rejected.
+severities:
+  - id: 644999
+    reference_id: 951905
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 638746
+    reference_id: 951904
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 635021
+    reference_id: 949662
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:N
+  - id: 635019
+    reference_id: 949662
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+references:
+  - id: 949656
+    url: http://metacpan.org/release/HTTP-Daemon/
+    reference_id:
+  - id: 951905
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-31081.json
+    reference_id:
+  - id: 949657
+    url: https://cwe.mitre.org/data/definitions/444.html
+    reference_id:
+  - id: 949658
+    url: https://datatracker.ietf.org/doc/html/rfc7230#section-9.5
+    reference_id:
+  - id: 949659
+    url: https://github.com/libwww-perl/HTTP-Daemon/commit/8dc5269d59e2d5d9eb1647d82c449ccd880f7fd0
+    reference_id:
+  - id: 949660
+    url: https://github.com/libwww-perl/HTTP-Daemon/commit/e84475de51d6fd7b29354a997413472a99db70b2
+    reference_id:
+  - id: 949661
+    url: https://github.com/libwww-perl/HTTP-Daemon/security/advisories/GHSA-cg8c-pxmv-w7cf
+    reference_id:
+  - id: 863762
+    url: https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn
+    reference_id:
+  - id: 945266
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014808
+    reference_id: 1014808
+  - id: 951904
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2105085
+    reference_id: 2105085
+  - id: 949663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:http\:\:daemon_project:http\:\:daemon:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:http\:\:daemon_project:http\:\:daemon:*:*:*:*:*:*:*:*
+  - id: 949662
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-31081
+    reference_id: CVE-2022-31081
+weaknesses: []

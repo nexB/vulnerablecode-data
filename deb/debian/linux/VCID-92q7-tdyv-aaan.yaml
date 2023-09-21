@@ -1,0 +1,123 @@
+vulnerability_id: VCID-92q7-tdyv-aaan
+aliases:
+  - CVE-2020-10781
+summary: A flaw was found in the Linux Kernel before 5.8-rc6 in the ZRAM kernel module, where
+  a user with a local account and the ability to read the /sys/class/zram-control/hot_add file
+  can create ZRAM device nodes in the /dev/ directory. This read allocates kernel memory and
+  is not accounted for a user that triggers the creation of that ZRAM device. With this vulnerability,
+  continually reading the device may consume a large amount of system memory and cause the Out-of-Memory
+  (OOM) killer to activate and terminate random userspace processes, possibly making the system
+  inoperable.
+severities:
+  - id: 695458
+    reference_id: 1455802
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611486
+    reference_id: 932417
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 695459
+    reference_id: 1455803
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695460
+    reference_id: 1455804
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 693143
+    reference_id: 1453802
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686512
+    reference_id: 1448622
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 695461
+    reference_id: 812423
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 611485
+    reference_id: 932416
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 430739
+    reference_id: 812424
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 430737
+    reference_id: 812424
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1455802
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10781.html
+    reference_id:
+  - id: 932417
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10781.json
+    reference_id:
+  - id: 812421
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10781
+    reference_id:
+  - id: 1455803
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10781
+    reference_id:
+  - id: 812422
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=853eab68afc80f59f36bbdeb715e5c88c501e680
+    reference_id:
+  - id: 790142
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html
+    reference_id:
+  - id: 1455804
+    url: https://lore.kernel.org/linux-block/20200617103412.GA2027053@kroah.com/
+    reference_id:
+  - id: 1453802
+    url: https://ubuntu.com/security/notices/USN-4483-1
+    reference_id:
+  - id: 1448622
+    url: https://ubuntu.com/security/notices/USN-4485-1
+    reference_id:
+  - id: 812423
+    url: https://www.openwall.com/lists/oss-security/2020/06/18/1
+    reference_id:
+  - id: 932416
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1847832
+    reference_id: 1847832
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 812425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:-:*:*:*:*:*:*
+  - id: 812426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc1:*:*:*:*:*:*
+  - id: 812427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc2:*:*:*:*:*:*
+  - id: 812428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc3:*:*:*:*:*:*
+  - id: 812429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc4:*:*:*:*:*:*
+  - id: 812430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc5:*:*:*:*:*:*
+  - id: 812424
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10781
+    reference_id: CVE-2020-10781
+weaknesses: []

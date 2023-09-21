@@ -1,0 +1,355 @@
+vulnerability_id: VCID-69fm-9fbg-aaaf
+aliases:
+  - CVE-2014-0196
+summary: The n_tty_write function in drivers/tty/n_tty.c in the Linux kernel through 3.14.3
+  does not properly manage tty driver access in the "LECHO & !OPOST" case, which allows local
+  users to cause a denial of service (memory corruption and system crash) or gain privileges
+  by triggering a race condition involving read and write operations with long strings.
+severities:
+  - id: 654231
+    reference_id: 1423418
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654232
+    reference_id: 1423419
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654233
+    reference_id: 1423420
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654234
+    reference_id: 1423421
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654235
+    reference_id: 1423422
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654236
+    reference_id: 1423423
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654237
+    reference_id: 1423424
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654238
+    reference_id: 1423425
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654239
+    reference_id: 1423426
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654240
+    reference_id: 1423427
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 654241
+    reference_id: 1423428
+    scoring_system: generic_textual
+    value: Critical
+    scoring_elements:
+  - id: 652924
+    reference_id: 1422466
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 654049
+    reference_id: 1423284
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 174365
+    reference_id: 550767
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 59676
+    reference_id: 186414
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59674
+    reference_id: 186412
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59614
+    reference_id: 186324
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59675
+    reference_id: 186413
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 550743
+    url: http://bugzilla.novell.com/show_bug.cgi?id=875690
+    reference_id:
+  - id: 550744
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4291086b1f081b869c6d79e5b7441633dc3ace00
+    reference_id:
+  - id: 537283
+    url: http://linux.oracle.com/errata/ELSA-2014-0771.html
+    reference_id:
+  - id: 550745
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-05/msg00007.html
+    reference_id:
+  - id: 550746
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-05/msg00012.html
+    reference_id:
+  - id: 550747
+    url: http://pastebin.com/raw.php?i=yTSFUBgZ
+    reference_id:
+  - id: 1423418
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-0196.html
+    reference_id:
+  - id: 550748
+    url: http://rhn.redhat.com/errata/RHSA-2014-0512.html
+    reference_id:
+  - id: 186415
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-0196.json
+    reference_id:
+  - id: 550765
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1094232
+    reference_id:
+  - id: 1423419
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0196
+    reference_id:
+  - id: 550749
+    url: http://secunia.com/advisories/59218
+    reference_id:
+  - id: 537285
+    url: http://secunia.com/advisories/59262
+    reference_id:
+  - id: 549733
+    url: http://secunia.com/advisories/59599
+    reference_id:
+  - id: 550766
+    url: https://github.com/torvalds/linux/commit/4291086b1f081b869c6d79e5b7441633dc3ace00
+    reference_id:
+  - id: 37838
+    url: http://source.android.com/security/bulletin/2016-07-01.html
+    reference_id:
+  - id: 1423420
+    url: https://ubuntu.com/security/notices/USN-2196-1
+    reference_id:
+  - id: 1423421
+    url: https://ubuntu.com/security/notices/USN-2197-1
+    reference_id:
+  - id: 1423422
+    url: https://ubuntu.com/security/notices/USN-2198-1
+    reference_id:
+  - id: 1423423
+    url: https://ubuntu.com/security/notices/USN-2199-1
+    reference_id:
+  - id: 1423424
+    url: https://ubuntu.com/security/notices/USN-2200-1
+    reference_id:
+  - id: 1423425
+    url: https://ubuntu.com/security/notices/USN-2201-1
+    reference_id:
+  - id: 1423426
+    url: https://ubuntu.com/security/notices/USN-2202-1
+    reference_id:
+  - id: 1423427
+    url: https://ubuntu.com/security/notices/USN-2203-1
+    reference_id:
+  - id: 1423428
+    url: https://ubuntu.com/security/notices/USN-2204-1
+    reference_id:
+  - id: 1422466
+    url: https://ubuntu.com/security/notices/USN-2227-1
+    reference_id:
+  - id: 1423284
+    url: https://ubuntu.com/security/notices/USN-2260-1
+    reference_id:
+  - id: 550750
+    url: http://support.f5.com/kb/en-us/solutions/public/15000/300/sol15319.html
+    reference_id:
+  - id: 550751
+    url: http://www.debian.org/security/2014/dsa-2926
+    reference_id:
+  - id: 550752
+    url: http://www.debian.org/security/2014/dsa-2928
+    reference_id:
+  - id: 550753
+    url: http://www.exploit-db.com/exploits/33516
+    reference_id:
+  - id: 550754
+    url: http://www.openwall.com/lists/oss-security/2014/05/05/6
+    reference_id:
+  - id: 550755
+    url: http://www.osvdb.org/106646
+    reference_id:
+  - id: 550756
+    url: http://www.ubuntu.com/usn/USN-2196-1
+    reference_id:
+  - id: 550757
+    url: http://www.ubuntu.com/usn/USN-2197-1
+    reference_id:
+  - id: 550758
+    url: http://www.ubuntu.com/usn/USN-2198-1
+    reference_id:
+  - id: 550759
+    url: http://www.ubuntu.com/usn/USN-2199-1
+    reference_id:
+  - id: 550760
+    url: http://www.ubuntu.com/usn/USN-2200-1
+    reference_id:
+  - id: 550761
+    url: http://www.ubuntu.com/usn/USN-2201-1
+    reference_id:
+  - id: 550762
+    url: http://www.ubuntu.com/usn/USN-2202-1
+    reference_id:
+  - id: 550763
+    url: http://www.ubuntu.com/usn/USN-2203-1
+    reference_id:
+  - id: 550764
+    url: http://www.ubuntu.com/usn/USN-2204-1
+    reference_id:
+  - id: 50112
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=747166
+    reference_id: 747166
+  - id: 464777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*
+  - id: 528838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*
+  - id: 464778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_analytics:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_analytics:*:*:*:*:*:*:*:*
+  - id: 528841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_acceleration_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_acceleration_manager:*:*:*:*:*:*:*:*
+  - id: 464779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*
+  - id: 464780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_edge_gateway:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_edge_gateway:*:*:*:*:*:*:*:*
+  - id: 464781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_global_traffic_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_global_traffic_manager:*:*:*:*:*:*:*:*
+  - id: 464782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_link_controller:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_link_controller:*:*:*:*:*:*:*:*
+  - id: 464783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*
+  - id: 528846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*
+  - id: 464784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_protocol_security_module:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_protocol_security_module:*:*:*:*:*:*:*:*
+  - id: 464785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_wan_optimization_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_wan_optimization_manager:*:*:*:*:*:*:*:*
+  - id: 464786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_webaccelerator:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_webaccelerator:*:*:*:*:*:*:*:*
+  - id: 160793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_application_delivery_controller:4.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_application_delivery_controller:4.5.0:*:*:*:*:*:*:*
+  - id: 549887
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_centralized_management:4.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_centralized_management:4.6.0:*:*:*:*:*:*:*
+  - id: 549888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_cloud:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_cloud:*:*:*:*:*:*:*:*
+  - id: 550768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_cloud_and_orchestration:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_cloud_and_orchestration:1.0.0:*:*:*:*:*:*:*
+  - id: 549889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_device:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_device:*:*:*:*:*:*:*:*
+  - id: 549890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-iq_security:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-iq_security:*:*:*:*:*:*:*:*
+  - id: 464787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:enterprise_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:enterprise_manager:*:*:*:*:*:*:*:*
+  - id: 332449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 322397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+  - id: 478391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 158133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:linux:6:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:linux:6:-:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 439141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:6.3:*:*:*:*:*:*:*
+  - id: 79285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:6.4:*:*:*:*:*:*:*
+  - id: 435392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:6.3:*:*:*:*:*:*:*
+  - id: 550769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_desktop:11:sp3:*:*:*:-:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_desktop:11:sp3:*:*:*:-:*:*
+  - id: 550770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_high_availability_extension:11:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_high_availability_extension:11:sp3:*:*:*:*:*:*
+  - id: 540397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp3:*:*:*:-:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp3:*:*:*:-:*:*
+  - id: 161877
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp3:*:*:*:vmware:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp3:*:*:*:vmware:*:*
+  - id: 550767
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-0196
+    reference_id: CVE-2014-0196
+  - id: 186414
+    url: https://access.redhat.com/errata/RHSA-2014:0512
+    reference_id: RHSA-2014:0512
+  - id: 186412
+    url: https://access.redhat.com/errata/RHSA-2014:0520
+    reference_id: RHSA-2014:0520
+  - id: 186324
+    url: https://access.redhat.com/errata/RHSA-2014:0557
+    reference_id: RHSA-2014:0557
+  - id: 186413
+    url: https://access.redhat.com/errata/RHSA-2014:0678
+    reference_id: RHSA-2014:0678
+weaknesses: []

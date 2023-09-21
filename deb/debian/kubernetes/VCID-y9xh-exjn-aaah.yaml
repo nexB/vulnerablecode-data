@@ -1,0 +1,202 @@
+vulnerability_id: VCID-y9xh-exjn-aaah
+aliases:
+  - CVE-2019-11248
+summary: The debugging endpoint /debug/pprof is exposed over the unauthenticated Kubelet healthz
+  port. The go pprof endpoint is exposed over the Kubelet's healthz port. This debugging endpoint
+  can potentially leak sensitive information such as internal Kubelet memory addresses and configuration,
+  or for limited denial of service. Versions prior to 1.15.0, 1.14.4, 1.13.8, and 1.12.10 are
+  affected. The issue is of medium severity, but not exposed by the default configuration.
+severities:
+  - id: 76580
+    reference_id: 207513
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+  - id: 76579
+    reference_id: 207512
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 371375
+    reference_id: 769736
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 371373
+    reference_id: 769736
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L
+references:
+  - id: 207513
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11248.json
+    reference_id:
+  - id: 769734
+    url: https://github.com/kubernetes/kubernetes/issues/81023
+    reference_id:
+  - id: 769735
+    url: https://groups.google.com/d/msg/kubernetes-security-announce/pKELclHIov8/BEDtRELACQAJ
+    reference_id:
+  - id: 769719
+    url: https://security.netapp.com/advisory/ntap-20190919-0003/
+    reference_id:
+  - id: 207512
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1738368
+    reference_id: 1738368
+  - id: 42766
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=934182
+    reference_id: 934182
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 769737
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:-:*:*:*:*:*:*
+  - id: 769738
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha0:*:*:*:*:*:*
+  - id: 769739
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha1:*:*:*:*:*:*
+  - id: 769740
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha2:*:*:*:*:*:*
+  - id: 769741
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:alpha3:*:*:*:*:*:*
+  - id: 769742
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta0:*:*:*:*:*:*
+  - id: 769743
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta1:*:*:*:*:*:*
+  - id: 769744
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:beta2:*:*:*:*:*:*
+  - id: 769745
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:rc1:*:*:*:*:*:*
+  - id: 769746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.0:rc2:*:*:*:*:*:*
+  - id: 769747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.1:-:*:*:*:*:*:*
+  - id: 769748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.1:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.1:beta0:*:*:*:*:*:*
+  - id: 769749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.2:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.2:-:*:*:*:*:*:*
+  - id: 769750
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.2:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.2:beta0:*:*:*:*:*:*
+  - id: 769751
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.3:-:*:*:*:*:*:*
+  - id: 769752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.3:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.3:beta0:*:*:*:*:*:*
+  - id: 769753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.4:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.4:-:*:*:*:*:*:*
+  - id: 769754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.4:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.4:beta0:*:*:*:*:*:*
+  - id: 769755
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.5:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.5:-:*:*:*:*:*:*
+  - id: 769756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.5:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.5:beta0:*:*:*:*:*:*
+  - id: 769757
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.6:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.6:-:*:*:*:*:*:*
+  - id: 769758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.6:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.6:beta0:*:*:*:*:*:*
+  - id: 769759
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.7:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.7:-:*:*:*:*:*:*
+  - id: 769760
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.7:beta.0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.7:beta.0:*:*:*:*:*:*
+  - id: 769761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.13.8:beta.0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.13.8:beta.0:*:*:*:*:*:*
+  - id: 769762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:-:*:*:*:*:*:*
+  - id: 722746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha0:*:*:*:*:*:*
+  - id: 722747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha1:*:*:*:*:*:*
+  - id: 769763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha2:*:*:*:*:*:*
+  - id: 769764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha3:*:*:*:*:*:*
+  - id: 769765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta0:*:*:*:*:*:*
+  - id: 769766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta1:*:*:*:*:*:*
+  - id: 769767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:beta2:*:*:*:*:*:*
+  - id: 769768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:rc1:*:*:*:*:*:*
+  - id: 769769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.1:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.1:-:*:*:*:*:*:*
+  - id: 769770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.1:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.1:beta0:*:*:*:*:*:*
+  - id: 769771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.2:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.2:-:*:*:*:*:*:*
+  - id: 769772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.2:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.2:beta0:*:*:*:*:*:*
+  - id: 769773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.3:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.3:-:*:*:*:*:*:*
+  - id: 769774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.3:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.3:beta0:*:*:*:*:*:*
+  - id: 769775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.4:beta.0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.4:beta.0:*:*:*:*:*:*
+  - id: 769776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha0:*:*:*:*:*:*
+  - id: 769777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha1:*:*:*:*:*:*
+  - id: 769778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha2:*:*:*:*:*:*
+  - id: 769779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:alpha3:*:*:*:*:*:*
+  - id: 769780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta0:*:*:*:*:*:*
+  - id: 769781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta1:*:*:*:*:*:*
+  - id: 769782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:beta2:*:*:*:*:*:*
+  - id: 769783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.15.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.15.0:rc1:*:*:*:*:*:*
+  - id: 769736
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11248
+    reference_id: CVE-2019-11248
+weaknesses: []

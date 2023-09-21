@@ -1,0 +1,17 @@
+affected_purls: []
+aliases:
+- CVE-2019-7628
+fixed_purl:
+- pkg:deb/debian/pagure@0?distro=sid
+- pkg:deb/debian/pagure@5.11.3%2Bdfsg-1?distro=sid
+- pkg:deb/debian/pagure@5.11.3%2Bdfsg-2.1?distro=sid
+references: []
+severities: []
+summary: Pagure 5.2 leaks API keys by e-mailing them to users. Few e-mail servers
+  validate TLS certificates, so it is easy for man-in-the-middle attackers to read
+  these e-mails and gain access to Pagure on behalf of other users. This issue is
+  found in the API token expiration reminder cron job in files/api_key_expire_mail.py;
+  disabling that job is also a viable solution. (E-mailing a substring of the API
+  key was an attempted, but rejected, solution.)
+vulnerability_id: VCID-jnww-qctx-aaah
+weaknesses: []

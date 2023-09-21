@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2017-14604
+fixed_purl:
+- pkg:deb/debian/nautilus@3.25.90-1?distro=sid
+- pkg:deb/debian/nautilus@3.30.5-2?distro=sid
+- pkg:deb/debian/nautilus@3.38.2-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/nautilus@43.2-1?distro=sid
+- pkg:deb/debian/nautilus@43.4-1?distro=sid
+references:
+- id: 126981
+  reference_id: '860268'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860268
+severities: []
+summary: GNOME Nautilus before 3.23.90 allows attackers to spoof a file type by using
+  the .desktop file extension, as demonstrated by an attack in which a .desktop file's
+  Name field ends in .pdf but this file's Exec field launches a malicious "sh -c"
+  command. In other words, Nautilus provides no UI indication that a file actually
+  has the potentially unsafe .desktop extension; instead, the UI only shows the .pdf
+  extension. One (slightly) mitigating factor is that an attack requires the .desktop
+  file to have execute permission. The solution is to ask the user to confirm that
+  the file is supposed to be treated as a .desktop file, and then remember the user's
+  answer in the metadata::trusted field.
+vulnerability_id: VCID-wbkp-xkcp-aaab
+weaknesses: []

@@ -1,0 +1,428 @@
+vulnerability_id: VCID-dqah-vhpy-aaaf
+aliases:
+  - CVE-2013-5745
+summary: The vino_server_client_data_pending function in vino-server.c in GNOME Vino 2.26.1,
+  2.32.1, 3.7.3, and earlier, and 3.8 when encryption is disabled, does not properly clear client
+  data when an error causes the connection to close during authentication, which allows remote
+  attackers to cause a denial of service (infinite loop, CPU and disk consumption) via multiple
+  crafted requests during authentication.
+severities:
+  - id: 70341
+    reference_id: 200423
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 171273
+    reference_id: 541197
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 70342
+    reference_id: 200424
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 541190
+    url: http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00003.html
+    reference_id:
+  - id: 541191
+    url: http://rhn.redhat.com/errata/RHSA-2013-1452.html
+    reference_id:
+  - id: 200425
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-5745.json
+    reference_id:
+  - id: 541194
+    url: https://bugzilla.gnome.org/show_bug.cgi?id=641811
+    reference_id:
+  - id: 541195
+    url: https://bugzilla.gnome.org/show_bug.cgi?id=707905
+    reference_id:
+  - id: 541192
+    url: http://secunia.com/advisories/55090
+    reference_id:
+  - id: 541196
+    url: https://www.trustwave.com/spiderlabs/advisories/TWSL2013-028.txt
+    reference_id:
+  - id: 541193
+    url: http://www.ubuntu.com/usn/USN-1980-1
+    reference_id:
+  - id: 146934
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=724545
+    reference_id: 724545
+  - id: 200423
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=910082
+    reference_id: 910082
+  - id: 451377
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:*:*:*:*:*:*:*:*
+  - id: 451408
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:0.12:*:*:*:*:*:*:*
+  - id: 451409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:0.14:*:*:*:*:*:*:*
+  - id: 449455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.10:*:*:*:*:*:*:*
+  - id: 449456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11:*:*:*:*:*:*:*
+  - id: 451380
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11.1:*:*:*:*:*:*:*
+  - id: 451378
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11.1.1:*:*:*:*:*:*:*
+  - id: 451379
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11.1.2:*:*:*:*:*:*:*
+  - id: 451381
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11.90:*:*:*:*:*:*:*
+  - id: 451382
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.11.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.11.92:*:*:*:*:*:*:*
+  - id: 449457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.12:*:*:*:*:*:*:*
+  - id: 449459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.13:*:*:*:*:*:*:*
+  - id: 449458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.13.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.13.5:*:*:*:*:*:*:*
+  - id: 449460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.14:*:*:*:*:*:*:*
+  - id: 449461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.15:*:*:*:*:*:*:*
+  - id: 449462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.16:*:*:*:*:*:*:*
+  - id: 449467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.17:*:*:*:*:*:*:*
+  - id: 449463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.17.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.17.2:*:*:*:*:*:*:*
+  - id: 449464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.17.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.17.4:*:*:*:*:*:*:*
+  - id: 449465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.17.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.17.5:*:*:*:*:*:*:*
+  - id: 449466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.17.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.17.92:*:*:*:*:*:*:*
+  - id: 449469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.18:*:*:*:*:*:*:*
+  - id: 449468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.18.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.18.1:*:*:*:*:*:*:*
+  - id: 449473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.19:*:*:*:*:*:*:*
+  - id: 449470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.19.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.19.5:*:*:*:*:*:*:*
+  - id: 449471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.19.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.19.90:*:*:*:*:*:*:*
+  - id: 449472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.19.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.19.92:*:*:*:*:*:*:*
+  - id: 449475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.20:*:*:*:*:*:*:*
+  - id: 449474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.20.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.20.1:*:*:*:*:*:*:*
+  - id: 449482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21:*:*:*:*:*:*:*
+  - id: 449476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.1:*:*:*:*:*:*:*
+  - id: 449477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.2:*:*:*:*:*:*:*
+  - id: 449478
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.3:*:*:*:*:*:*:*
+  - id: 449479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.90:*:*:*:*:*:*:*
+  - id: 449480
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.91:*:*:*:*:*:*:*
+  - id: 449481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.21.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.21.92:*:*:*:*:*:*:*
+  - id: 449485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.22:*:*:*:*:*:*:*
+  - id: 449483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.22.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.22.1:*:*:*:*:*:*:*
+  - id: 449484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.22.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.22.2:*:*:*:*:*:*:*
+  - id: 449490
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.23:*:*:*:*:*:*:*
+  - id: 449486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.23.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.23.5:*:*:*:*:*:*:*
+  - id: 449487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.23.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.23.90:*:*:*:*:*:*:*
+  - id: 449488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.23.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.23.91:*:*:*:*:*:*:*
+  - id: 449489
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.23.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.23.92:*:*:*:*:*:*:*
+  - id: 449492
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.24:*:*:*:*:*:*:*
+  - id: 449491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.24.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.24.1:*:*:*:*:*:*:*
+  - id: 449499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25:*:*:*:*:*:*:*
+  - id: 449493
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.3:*:*:*:*:*:*:*
+  - id: 449494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.4:*:*:*:*:*:*:*
+  - id: 449495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.5:*:*:*:*:*:*:*
+  - id: 449496
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.90:*:*:*:*:*:*:*
+  - id: 449497
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.91:*:*:*:*:*:*:*
+  - id: 449498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.25.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.25.92:*:*:*:*:*:*:*
+  - id: 449502
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.26:*:*:*:*:*:*:*
+  - id: 449500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.26.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.26.1:*:*:*:*:*:*:*
+  - id: 449501
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.26.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.26.2:*:*:*:*:*:*:*
+  - id: 449507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.27:*:*:*:*:*:*:*
+  - id: 449503
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.27.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.27.5:*:*:*:*:*:*:*
+  - id: 449504
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.27.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.27.90:*:*:*:*:*:*:*
+  - id: 449505
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.27.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.27.91:*:*:*:*:*:*:*
+  - id: 449506
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.27.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.27.92:*:*:*:*:*:*:*
+  - id: 449510
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.28:*:*:*:*:*:*:*
+  - id: 449508
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.28.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.28.1:*:*:*:*:*:*:*
+  - id: 449509
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.28.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.28.2:*:*:*:*:*:*:*
+  - id: 451383
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.28.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.28.3:*:*:*:*:*:*:*
+  - id: 451384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.31.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.31.4:*:*:*:*:*:*:*
+  - id: 451385
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.31.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.31.91:*:*:*:*:*:*:*
+  - id: 449511
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.32.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.32.0:*:*:*:*:*:*:*
+  - id: 449512
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.32.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.32.1:*:*:*:*:*:*:*
+  - id: 451386
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.32.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.32.2:*:*:*:*:*:*:*
+  - id: 449519
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7:*:*:*:*:*:*:*
+  - id: 449514
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.3:*:*:*:*:*:*:*
+  - id: 449513
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.3.1:*:*:*:*:*:*:*
+  - id: 449517
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.4:*:*:*:*:*:*:*
+  - id: 449515
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.4.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.4.90:*:*:*:*:*:*:*
+  - id: 449516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.4.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.4.91:*:*:*:*:*:*:*
+  - id: 451387
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.90:*:*:*:*:*:*:*
+  - id: 451388
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.91:*:*:*:*:*:*:*
+  - id: 449518
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.7.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.7.92:*:*:*:*:*:*:*
+  - id: 449520
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.8:*:*:*:*:*:*:*
+  - id: 451390
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.8.0:*:*:*:*:*:*:*
+  - id: 451389
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.8.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.8.0.1:*:*:*:*:*:*:*
+  - id: 451391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.8.1:*:*:*:*:*:*:*
+  - id: 449522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.9:*:*:*:*:*:*:*
+  - id: 449521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.9.2:*:*:*:*:*:*:*
+  - id: 451392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.0:*:*:*:*:*:*:*
+  - id: 451393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.1:*:*:*:*:*:*:*
+  - id: 451394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.2:*:*:*:*:*:*:*
+  - id: 451395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.3:*:*:*:*:*:*:*
+  - id: 451410
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.4:*:*:*:*:*:*:*
+  - id: 451411
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:2.99.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:2.99.5:*:*:*:*:*:*:*
+  - id: 449523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.0.0:*:*:*:*:*:*:*
+  - id: 449524
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.0.1:*:*:*:*:*:*:*
+  - id: 451412
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.0.2:*:*:*:*:*:*:*
+  - id: 451413
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.0.3:*:*:*:*:*:*:*
+  - id: 449525
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1:*:*:*:*:*:*:*
+  - id: 451414
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.1:*:*:*:*:*:*:*
+  - id: 451415
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.2:*:*:*:*:*:*:*
+  - id: 451416
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.3:*:*:*:*:*:*:*
+  - id: 451417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.4:*:*:*:*:*:*:*
+  - id: 451418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.5:*:*:*:*:*:*:*
+  - id: 451419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.90:*:*:*:*:*:*:*
+  - id: 451420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.91:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.91:*:*:*:*:*:*:*
+  - id: 501778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.1.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.1.92:*:*:*:*:*:*:*
+  - id: 501779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.2.0:*:*:*:*:*:*:*
+  - id: 501780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.2.1:*:*:*:*:*:*:*
+  - id: 501781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.2.2:*:*:*:*:*:*:*
+  - id: 501782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.3.1:*:*:*:*:*:*:*
+  - id: 501783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.3.3:*:*:*:*:*:*:*
+  - id: 501784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.3.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.3.92:*:*:*:*:*:*:*
+  - id: 501785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.4.0:*:*:*:*:*:*:*
+  - id: 501786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.4.1:*:*:*:*:*:*:*
+  - id: 541198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.4.2:*:*:*:*:*:*:*
+  - id: 541199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.5.2:*:*:*:*:*:*:*
+  - id: 541200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.5.90:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.5.90:*:*:*:*:*:*:*
+  - id: 541201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.5.92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.5.92:*:*:*:*:*:*:*
+  - id: 541202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.6.0:*:*:*:*:*:*:*
+  - id: 541203
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.6.1:*:*:*:*:*:*:*
+  - id: 541204
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:david_king:vino:3.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:david_king:vino:3.6.2:*:*:*:*:*:*:*
+  - id: 322396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:-:lts:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:-:lts:*:*:*:*:*
+  - id: 322397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+  - id: 322398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:13.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:13.04:*:*:*:*:*:*:*
+  - id: 541197
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-5745
+    reference_id: CVE-2013-5745
+  - id: 200424
+    url: https://access.redhat.com/errata/RHSA-2013:1452
+    reference_id: RHSA-2013:1452
+weaknesses: []

@@ -1,0 +1,215 @@
+vulnerability_id: VCID-6jam-jh7a-aaaf
+aliases:
+  - CVE-2017-1000111
+summary: 'Linux kernel: heap out-of-bounds in AF_PACKET sockets. This new issue is analogous
+  to previously disclosed CVE-2016-8655. In both cases, a socket option that changes socket
+  state may race with safety checks in packet_set_ring. Previously with PACKET_VERSION. This
+  time with PACKET_RESERVE. The solution is similar: lock the socket for the update. This issue
+  may be exploitable, we did not investigate further. As this issue affects PF_PACKET sockets,
+  it requires CAP_NET_RAW in the process namespace. But note that with user namespaces enabled,
+  any process can create a namespace in which it has CAP_NET_RAW.'
+severities:
+  - id: 673019
+    reference_id: 1438218
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 621353
+    reference_id: 939567
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 673020
+    reference_id: 1438219
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673021
+    reference_id: 1438220
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673022
+    reference_id: 1438221
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673023
+    reference_id: 1438222
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673024
+    reference_id: 1438223
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673025
+    reference_id: 1438224
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673026
+    reference_id: 1438225
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673027
+    reference_id: 1438226
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 621352
+    reference_id: 939566
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 249404
+    reference_id: 668148
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 249402
+    reference_id: 668148
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 620891
+    reference_id: 939244
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621081
+    reference_id: 939378
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621082
+    reference_id: 939379
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621083
+    reference_id: 939380
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1438218
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000111.html
+    reference_id:
+  - id: 939567
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000111.json
+    reference_id:
+  - id: 668147
+    url: https://access.redhat.com/security/cve/cve-2017-1000111
+    reference_id:
+  - id: 1438219
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000111
+    reference_id:
+  - id: 1438220
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=c27927e372f0785f3303e8fad94b85945e2c97b7
+    reference_id:
+  - id: 1438221
+    url: https://ubuntu.com/security/notices/USN-3384-1
+    reference_id:
+  - id: 1438222
+    url: https://ubuntu.com/security/notices/USN-3384-2
+    reference_id:
+  - id: 1438223
+    url: https://ubuntu.com/security/notices/USN-3385-1
+    reference_id:
+  - id: 1438224
+    url: https://ubuntu.com/security/notices/USN-3385-2
+    reference_id:
+  - id: 1438225
+    url: https://ubuntu.com/security/notices/USN-3386-1
+    reference_id:
+  - id: 1438226
+    url: https://ubuntu.com/security/notices/USN-3386-2
+    reference_id:
+  - id: 668142
+    url: http://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 668143
+    url: http://www.securityfocus.com/bid/100267
+    reference_id:
+  - id: 668144
+    url: http://www.securitytracker.com/id/1039132
+    reference_id:
+  - id: 939566
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1479304
+    reference_id: 1479304
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 166865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 668148
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000111
+    reference_id: CVE-2017-1000111
+  - id: 939244
+    url: https://access.redhat.com/errata/RHSA-2017:2918
+    reference_id: RHSA-2017:2918
+  - id: 939378
+    url: https://access.redhat.com/errata/RHSA-2017:2930
+    reference_id: RHSA-2017:2930
+  - id: 939379
+    url: https://access.redhat.com/errata/RHSA-2017:2931
+    reference_id: RHSA-2017:2931
+  - id: 939380
+    url: https://access.redhat.com/errata/RHSA-2017:3200
+    reference_id: RHSA-2017:3200
+weaknesses: []

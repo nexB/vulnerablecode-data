@@ -1,0 +1,81 @@
+vulnerability_id: VCID-xhtk-kssv-aaad
+aliases:
+  - CVE-2021-3583
+  - GHSA-2pfh-q76x-gwvm
+  - PYSEC-2021-358
+summary: A flaw was found in Ansible, where a user's controller is vulnerable to template injection.
+  This issue can occur through facts used in the template if the user is trying to put templates
+  in multi-line YAML strings and the facts being handled do not routinely include special template
+  characters. This flaw allows attackers to perform command injection, which discloses sensitive
+  information. The highest threat from this vulnerability is to confidentiality and integrity.
+severities:
+  - id: 604419
+    reference_id: 927245
+    scoring_system: cvssv3
+    value: '6.6'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N
+  - id: 604416
+    reference_id: 927242
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 547756
+    reference_id: 22262
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:N
+  - id: 547754
+    reference_id: 22262
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+  - id: 3871
+    reference_id: 22418
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 604418
+    reference_id: 927244
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 604417
+    reference_id: 927243
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 927245
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3583.json
+    reference_id:
+  - id: 22416
+    url: https://github.com/ansible/ansible/pull/74960
+    reference_id:
+  - id: 22417
+    url: https://pypi.org/project/ansible/4.2.0/
+    reference_id:
+  - id: 927242
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1968412
+    reference_id: '1968412'
+  - id: 861303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_automation_platform:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_automation_platform:1.2:*:*:*:*:*:*:*
+  - id: 659828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*
+  - id: 655192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*
+  - id: 22262
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3583
+    reference_id: CVE-2021-3583
+  - id: 22418
+    url: https://github.com/advisories/GHSA-2pfh-q76x-gwvm
+    reference_id: GHSA-2pfh-q76x-gwvm
+  - id: 927244
+    url: https://access.redhat.com/errata/RHSA-2021:2663
+    reference_id: RHSA-2021:2663
+  - id: 927243
+    url: https://access.redhat.com/errata/RHSA-2021:2664
+    reference_id: RHSA-2021:2664
+weaknesses: []

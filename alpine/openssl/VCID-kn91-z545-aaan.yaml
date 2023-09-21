@@ -1,0 +1,70 @@
+vulnerability_id: VCID-kn91-z545-aaan
+aliases:
+  - CVE-2022-2274
+  - VC-OPENSSL-20220622-CVE-2022-2274
+  - VC-OPENSSL-20220705-CVE-2022-2274
+summary: The OpenSSL 3.0.4 release introduced a serious bug in the RSA implementation for X86_64
+  CPUs supporting the AVX512IFMA instructions. This issue makes the RSA implementation with
+  2048 bit private keys incorrect on such machines and memory corruption will happen during
+  the computation. As a consequence of the memory corruption an attacker may be able to trigger
+  a remote code execution on the machine performing the computation. SSL/TLS servers or other
+  servers using 2048 bit RSA private keys running on machines supporting AVX512IFMA instructions
+  of the X86_64 architecture are affected by this issue.
+severities:
+  - id: 638808
+    reference_id: 951950
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 638433
+    reference_id: 945711
+    scoring_system: generic_textual
+    value: Moderate
+    scoring_elements:
+  - id: 638807
+    reference_id: 951949
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 629885
+    reference_id: 945712
+    scoring_system: cvssv2
+    value: '10.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:C/I:C/A:C
+  - id: 629883
+    reference_id: 945712
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 951950
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-2274.json
+    reference_id:
+  - id: 951684
+    url: https://github.com/openssl/openssl/commit/4d8a88c134df634ba610ff8db1eb8478ac5fd345
+    reference_id:
+  - id: 945709
+    url: https://github.com/openssl/openssl/issues/18625
+    reference_id:
+  - id: 945708
+    url: https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=4d8a88c134df634ba610ff8db1eb8478ac5fd345
+    reference_id:
+  - id: 945710
+    url: https://security.netapp.com/advisory/ntap-20220715-0010/
+    reference_id:
+  - id: 945711
+    url: https://www.openssl.org/news/secadv/20220705.txt
+    reference_id:
+  - id: 952103
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1013441
+    reference_id: 1013441
+  - id: 951949
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2102943
+    reference_id: 2102943
+  - id: 945713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.4:*:*:*:*:*:*:*
+  - id: 945712
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-2274
+    reference_id: CVE-2022-2274
+weaknesses: []

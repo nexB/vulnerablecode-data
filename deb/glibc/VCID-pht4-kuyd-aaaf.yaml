@@ -1,0 +1,62 @@
+affected_purls:
+- pkg:deb/debian/glibc@2.0.7.19981211-6
+- pkg:deb/debian/glibc@2.0.7t-1
+- pkg:deb/debian/glibc@2.1.3-20
+- pkg:deb/debian/glibc@2.2.5-11.8
+- pkg:deb/debian/glibc@2.3.2.ds1-22sarge6
+aliases:
+- CVE-2005-3590
+fixed_purl:
+- pkg:deb/debian/glibc@2.28-10%2Bdeb10u1?distro=sid
+- pkg:deb/debian/glibc@2.31-13%2Bdeb11u6?distro=sid
+- pkg:deb/debian/glibc@2.3.5-3?distro=sid
+- pkg:deb/debian/glibc@2.36-9?distro=sid
+- pkg:deb/debian/glibc@2.3.6.ds1-13
+references:
+- id: 96487
+  reference_id: ''
+  url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-3590.json
+- id: 96485
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3590
+- id: 96482
+  reference_id: ''
+  url: https://sourceware.org/bugzilla/show_bug.cgi?id=661
+- id: 96484
+  reference_id: ''
+  url: https://support.f5.com/csp/article/K12740406
+- id: 96483
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/107871
+- id: 96486
+  reference_id: '1706046'
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1706046
+- id: 1156
+  reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+- id: 96481
+  reference_id: CVE-2005-3590
+  url: https://nvd.nist.gov/vuln/detail/CVE-2005-3590
+severities:
+- id: 13817
+  reference_id: 96487
+  scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  scoring_system: cvssv3
+  value: '5.6'
+- id: 13816
+  reference_id: 96481
+  scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  scoring_system: cvssv2
+  value: '7.5'
+- id: 13815
+  reference_id: 96481
+  scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  scoring_system: cvssv3
+  value: '9.8'
+summary: The getgrouplist function in the GNU C library (glibc) before version 2.3.5,
+  when invoked with a zero argument, writes to the passed pointer even if the specified
+  array size is zero, leading to a buffer overflow and potentially allowing attackers
+  to corrupt memory.
+vulnerability_id: VCID-pht4-kuyd-aaaf
+weaknesses:
+- CWE-119

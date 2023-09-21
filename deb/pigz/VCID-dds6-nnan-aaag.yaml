@@ -1,0 +1,52 @@
+affected_purls:
+- pkg:deb/ubuntu/pigz@2.1.4-1
+- pkg:deb/ubuntu/pigz@2.1.5-1
+- pkg:deb/ubuntu/pigz@2.1.6-1
+- pkg:deb/ubuntu/pigz@2.2.3-1
+- pkg:deb/ubuntu/pigz@2.2.4-1
+- pkg:deb/ubuntu/pigz@2.2.4-2
+- pkg:deb/ubuntu/pigz@2.2.4-3
+- pkg:deb/ubuntu/pigz@2.3.1-1
+aliases:
+- CVE-2013-0296
+fixed_purl:
+- pkg:deb/debian/pigz@2.2.4-2?distro=sid
+- pkg:deb/debian/pigz@2.4-1?distro=sid
+- pkg:deb/debian/pigz@2.6-1?distro=sid
+- pkg:deb/ubuntu/pigz@2.3.1-2
+- pkg:deb/ubuntu/pigz@2.3-2
+references:
+- id: 184691
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-0296.html
+- id: 184693
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0296
+- id: 184692
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2013/02/15/4
+- id: 124941
+  reference_id: '700608'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700608
+severities:
+- id: 31847
+  reference_id: 184691
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31849
+  reference_id: 184693
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31848
+  reference_id: 184692
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+summary: Race condition in pigz before 2.2.5 uses permissions derived from the umask
+  when compressing a file before setting that file's permissions to match those of
+  the original file, which might allow local users to bypass intended access permissions
+  while compression is occurring.
+vulnerability_id: VCID-dds6-nnan-aaag
+weaknesses: []

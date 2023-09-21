@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2019-11366
+fixed_purl:
+- pkg:deb/debian/atftp@0.7.git20120829-3.1?distro=sid
+- pkg:deb/debian/atftp@0.7.git20120829-3.2~deb10u3?distro=sid
+- pkg:deb/debian/atftp@0.7.git20120829-3.3%2Bdeb11u2?distro=sid
+- pkg:deb/debian/atftp@0.8.0-3?distro=sid
+references:
+- id: 128465
+  reference_id: '927553'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=927553
+severities: []
+summary: An issue was discovered in atftpd in atftp 0.7.1. It does not lock the thread_list_mutex
+  mutex before assigning the current thread data structure. As a result, the daemon
+  is vulnerable to a denial of service attack due to a NULL pointer dereference. If
+  thread_data is NULL when assigned to current, and modified by another thread before
+  a certain tftpd_list.c check, there is a crash when dereferencing current->next.
+vulnerability_id: VCID-xekw-sh2j-aaan
+weaknesses: []

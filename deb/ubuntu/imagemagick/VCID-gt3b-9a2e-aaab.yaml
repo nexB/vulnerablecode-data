@@ -1,0 +1,79 @@
+vulnerability_id: VCID-gt3b-9a2e-aaab
+aliases:
+  - CVE-2020-27771
+summary: In RestoreMSCWarning() of /coders/pdf.c there are several areas where calls to GetPixelIndex()
+  could result in values outside the range of representable for the unsigned char type. The
+  patch casts the return value of GetPixelIndex() to ssize_t type to avoid this bug. This undefined
+  behavior could be triggered when ImageMagick processes a crafted pdf file. Red Hat Product
+  Security marked this as Low severity because although it could potentially lead to an impact
+  to application availability, no specific impact was demonstrated in this case. This flaw affects
+  ImageMagick versions prior to 7.0.9-0.
+severities:
+  - id: 698293
+    reference_id: 1458172
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 69914
+    reference_id: '199811'
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 698294
+    reference_id: 1458173
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675474
+    reference_id: 1440222
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 467430
+    reference_id: 837784
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 467428
+    reference_id: 837784
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+references:
+  - id: 1458172
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27771.html
+    reference_id:
+  - id: '199811'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27771.json
+    reference_id:
+  - id: 837783
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1898290
+    reference_id:
+  - id: 1458173
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27771
+    reference_id:
+  - id: 834108
+    url: https://lists.debian.org/debian-lts-announce/2021/03/msg00030.html
+    reference_id:
+  - id: 1440222
+    url: https://ubuntu.com/security/notices/USN-4988-1
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 166865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 837784
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27771
+    reference_id: CVE-2020-27771
+weaknesses: []

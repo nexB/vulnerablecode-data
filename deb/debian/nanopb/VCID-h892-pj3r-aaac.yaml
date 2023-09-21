@@ -1,0 +1,65 @@
+vulnerability_id: VCID-h892-pj3r-aaac
+aliases:
+  - CVE-2020-26243
+  - GHSA-85rr-4rh9-hhwh
+summary: |
+  Improper Input Validation
+  Nanopb is a small code-size Protocol Buffers implementation. The following workarounds are available: 1) Set the option `no_unions` for the oneof field. This will generate fields as separate instead of C union, and avoids triggering the problematic code. 2) Set the type of the submessage field inside oneof to `FT_POINTER`. This way the whole submessage will be dynamically allocated and the problematic code is not executed. 3) Use an arena allocator for nanopb, to make sure all memory can be released afterwards.
+severities:
+  - id: 608315
+    reference_id: 930109
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 608314
+    reference_id: 930108
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 463792
+    reference_id: 22576
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 463790
+    reference_id: 22576
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 4497
+    reference_id: 22577
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 930109
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-26243.json
+    reference_id:
+  - id: 22575
+    url: https://github.com/nanopb/nanopb/blob/2b48a361786dfb1f63d229840217a93aae064667/CHANGELOG.txt
+    reference_id:
+  - id: 22574
+    url: https://github.com/nanopb/nanopb/commit/4fe23595732b6f1254cfc11a9b8d6da900b55b0c
+    reference_id:
+  - id: 22573
+    url: https://github.com/nanopb/nanopb/issues/615
+    reference_id:
+  - id: 835280
+    url: https://github.com/nanopb/nanopb/security/advisories/GHSA-85rr-4rh9-hhwh
+    reference_id:
+  - id: 930108
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1902065
+    reference_id: '1902065'
+  - id: 75191
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=975838
+    reference_id: 975838
+  - id: 835281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nanopb_project:nanopb:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nanopb_project:nanopb:*:*:*:*:*:*:*:*
+  - id: 22576
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-26243
+    reference_id: CVE-2020-26243
+  - id: 22577
+    url: https://github.com/advisories/GHSA-85rr-4rh9-hhwh
+    reference_id: GHSA-85rr-4rh9-hhwh
+weaknesses: []

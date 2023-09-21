@@ -1,0 +1,105 @@
+vulnerability_id: VCID-bcty-b275-aaag
+aliases:
+  - CVE-2021-28951
+summary: An issue was discovered in fs/io_uring.c in the Linux kernel through 5.11.8. It allows
+  attackers to cause a denial of service (deadlock) because exit may be waiting to park a SQPOLL
+  thread, but concurrently that SQPOLL thread is waiting for a signal to start, aka CID-3ebba796fa25.
+severities:
+  - id: 701516
+    reference_id: 1460911
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606680
+    reference_id: 928910
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 701517
+    reference_id: 1460912
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701518
+    reference_id: 1460913
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701519
+    reference_id: 878245
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697765
+    reference_id: 1457695
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 606679
+    reference_id: 928909
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 530409
+    reference_id: 878249
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 530407
+    reference_id: 878249
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1460911
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-28951.html
+    reference_id:
+  - id: 928910
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-28951.json
+    reference_id:
+  - id: 1460912
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28951
+    reference_id:
+  - id: 1460913
+    url: https://git.kernel.org/linus/3ebba796fa251d042be42b929a2d916ee5c34a49
+    reference_id:
+  - id: 878245
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3ebba796fa251d042be42b929a2d916ee5c34a49
+    reference_id:
+  - id: 878246
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4VCKIOXCOZGXBEZMO5LGGV5MWCHO6FT3/
+    reference_id:
+  - id: 878247
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PTRNPQTZ4GVS46SZ4OBXY5YDOGVPSTGQ/
+    reference_id:
+  - id: 836736
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T2S3I4SLRNRUQDOFYUS6IUAZMQNMPNLG/
+    reference_id:
+  - id: 878248
+    url: https://security.netapp.com/advisory/ntap-20210430-0003/
+    reference_id:
+  - id: 1457695
+    url: https://ubuntu.com/security/notices/USN-4948-1
+    reference_id:
+  - id: 928909
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1941769
+    reference_id: '1941769'
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 878249
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-28951
+    reference_id: CVE-2021-28951
+weaknesses: []

@@ -1,0 +1,167 @@
+vulnerability_id: VCID-d9vr-pfdr-aaar
+aliases:
+  - CVE-2006-2193
+summary: Buffer overflow in the t2p_write_pdf_string function in tiff2pdf in libtiff 3.8.2 and
+  earlier allows attackers to cause a denial of service (crash) and possibly execute arbitrary
+  code via a TIFF file with a DocumentName tag that contains UTF-8 characters, which triggers
+  the overflow when a character is sign extended to an integer that produces more digits than
+  expected in an sprintf call.
+severities:
+  - id: 78135
+    reference_id: 209560
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 85048
+    reference_id: 232463
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 74272
+    reference_id: 205118
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 232437
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=370355
+    reference_id:
+  - id: 232438
+    url: http://bugzilla.remotesensing.org/show_bug.cgi?id=1196
+    reference_id:
+  - id: 232439
+    url: http://lists.suse.com/archive/suse-security-announce/2006-Jun/0008.html
+    reference_id:
+  - id: 209561
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2006-2193.json
+    reference_id:
+  - id: 1464459
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2193
+    reference_id:
+  - id: 232440
+    url: http://secunia.com/advisories/20488
+    reference_id:
+  - id: 232441
+    url: http://secunia.com/advisories/20501
+    reference_id:
+  - id: 232442
+    url: http://secunia.com/advisories/20520
+    reference_id:
+  - id: 232443
+    url: http://secunia.com/advisories/20693
+    reference_id:
+  - id: 232444
+    url: http://secunia.com/advisories/20766
+    reference_id:
+  - id: 232445
+    url: http://secunia.com/advisories/21002
+    reference_id:
+  - id: 232446
+    url: http://secunia.com/advisories/27181
+    reference_id:
+  - id: 232447
+    url: http://secunia.com/advisories/27222
+    reference_id:
+  - id: 232448
+    url: http://secunia.com/advisories/27832
+    reference_id:
+  - id: 232449
+    url: http://secunia.com/advisories/31670
+    reference_id:
+  - id: 232450
+    url: http://security.gentoo.org/glsa/glsa-200607-03.xml
+    reference_id:
+  - id: 232460
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/26991
+    reference_id:
+  - id: 232461
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9788
+    reference_id:
+  - id: 232451
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-103160-1
+    reference_id:
+  - id: 232452
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-201331-1
+    reference_id:
+  - id: 232462
+    url: https://usn.ubuntu.com/289-1/
+    reference_id:
+  - id: 232453
+    url: http://www.debian.org/security/2006/dsa-1091
+    reference_id:
+  - id: 232454
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:102
+    reference_id:
+  - id: 232455
+    url: http://www.redhat.com/support/errata/RHSA-2008-0848.html
+    reference_id:
+  - id: 232456
+    url: http://www.securityfocus.com/bid/18331
+    reference_id:
+  - id: 232457
+    url: http://www.vupen.com/english/advisories/2006/2197
+    reference_id:
+  - id: 232458
+    url: http://www.vupen.com/english/advisories/2007/3486
+    reference_id:
+  - id: 232459
+    url: http://www.vupen.com/english/advisories/2007/4034
+    reference_id:
+  - id: 209560
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=194362
+    reference_id: '194362'
+  - id: 141080
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=370355
+    reference_id: 370355
+  - id: 96575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*
+  - id: 96549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.4:*:*:*:*:*:*:*
+  - id: 96550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.1:*:*:*:*:*:*:*
+  - id: 96551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.2:*:*:*:*:*:*:*
+  - id: 96552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.3:*:*:*:*:*:*:*
+  - id: 96553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.4:*:*:*:*:*:*:*
+  - id: 96554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.5:*:*:*:*:*:*:*
+  - id: 99613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.6:*:*:*:*:*:*:*
+  - id: 96555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.7:*:*:*:*:*:*:*
+  - id: 96556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.6.0:*:*:*:*:*:*:*
+  - id: 96557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.6.1:*:*:*:*:*:*:*
+  - id: 99614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.7.0:*:*:*:*:*:*:*
+  - id: 99615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.7.1:*:*:*:*:*:*:*
+  - id: 153030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.8.0:*:*:*:*:*:*:*
+  - id: 153031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.8.1:*:*:*:*:*:*:*
+  - id: 232463
+    url: https://nvd.nist.gov/vuln/detail/CVE-2006-2193
+    reference_id: CVE-2006-2193
+  - id: 205118
+    url: https://access.redhat.com/errata/RHSA-2008:0848
+    reference_id: RHSA-2008:0848
+weaknesses: []

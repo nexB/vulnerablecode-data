@@ -1,0 +1,81 @@
+vulnerability_id: VCID-1q9r-2ng6-aaar
+aliases:
+  - CVE-2019-3815
+summary: A memory leak was discovered in the backport of fixes for CVE-2018-16864 in Red Hat
+  Enterprise Linux. Function dispatch_message_real() in journald-server.c does not free the
+  memory allocated by set_iovec_field_free() to store the `_CMDLINE=` entry. A local attacker
+  may use this flaw to make systemd-journald crash. This issue only affects versions shipped
+  with Red Hat Enterprise since v219-62.2.
+severities:
+  - id: 613211
+    reference_id: 933705
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 613209
+    reference_id: 933703
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 406150
+    reference_id: 796013
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 406148
+    reference_id: 796013
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 613210
+    reference_id: 933704
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 689882
+    url: https://access.redhat.com/errata/RHBA-2019:0327
+    reference_id:
+  - id: 933705
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-3815.json
+    reference_id:
+  - id: 796011
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3815
+    reference_id:
+  - id: 796012
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00013.html
+    reference_id:
+  - id: 796009
+    url: http://www.securityfocus.com/bid/106632
+    reference_id:
+  - id: 933703
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1666690
+    reference_id: 1666690
+  - id: 625785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 796013
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-3815
+    reference_id: CVE-2019-3815
+  - id: 933704
+    url: https://access.redhat.com/errata/RHSA-2019:0201
+    reference_id: RHSA-2019:0201
+weaknesses: []

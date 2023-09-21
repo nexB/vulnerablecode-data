@@ -1,0 +1,53 @@
+affected_purls:
+- pkg:conan/openssl@1.1.1c
+- pkg:conan/openssl@1.1.1d
+- pkg:conan/openssl@1.1.1e
+- pkg:conan/openssl@1.1.1f
+- pkg:conan/openssl@1.1.1g
+- pkg:conan/openssl@1.1.1h
+- pkg:conan/openssl@1.1.1i
+- pkg:conan/openssl@1.1.1j
+- pkg:pypi/mysql-connector-python@8.0.11
+- pkg:pypi/mysql-connector-python@8.0.12
+- pkg:pypi/mysql-connector-python@8.0.13
+- pkg:pypi/mysql-connector-python@8.0.14
+- pkg:pypi/mysql-connector-python@8.0.15
+- pkg:pypi/mysql-connector-python@8.0.16
+- pkg:pypi/mysql-connector-python@8.0.17
+- pkg:pypi/mysql-connector-python@8.0.18
+- pkg:pypi/mysql-connector-python@8.0.19
+- pkg:pypi/mysql-connector-python@8.0.20
+- pkg:pypi/mysql-connector-python@8.0.21
+- pkg:pypi/mysql-connector-python@8.0.22
+- pkg:pypi/mysql-connector-python@8.0.23
+- pkg:pypi/mysql-connector-python@8.0.5
+- pkg:pypi/mysql-connector-python@8.0.6
+aliases:
+- CVE-2021-3449
+fixed_purl:
+- pkg:conan/openssl@1.1.1k
+- pkg:deb/debian/openssl@1.1.1d-0%2Bdeb10u6?distro=sid
+- pkg:deb/debian/openssl@1.1.1k-1?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb10u3?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u4?distro=sid
+- pkg:deb/debian/openssl@3.0.8-1?distro=sid
+- pkg:deb/debian/openssl@3.0.9-1?distro=sid
+references:
+- id: 183547
+  reference_id: ''
+  url: https://www.openssl.org/news/secadv/20210325.txt
+- id: 183546
+  reference_id: CVE-2021-3449
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-3449
+severities: []
+summary: An OpenSSL TLS server may crash if sent a maliciously crafted renegotiation
+  ClientHello message from a client. If a TLSv1.2 renegotiation ClientHello omits
+  the signature_algorithms extension (where it was present in the initial ClientHello),
+  but includes a signature_algorithms_cert extension then a NULL pointer dereference
+  will result, leading to a crash and a denial of service attack. A server is only
+  vulnerable if it has TLSv1.2 and renegotiation enabled (which is the default configuration).
+  OpenSSL TLS clients are not impacted by this issue. All OpenSSL 1.1.1 versions are
+  affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k.
+  OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1-1.1.1j).
+vulnerability_id: VCID-3xq7-5ztq-aaak
+weaknesses: []

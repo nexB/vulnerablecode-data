@@ -1,0 +1,287 @@
+vulnerability_id: VCID-zgpm-27h5-aaaa
+aliases:
+  - CVE-2016-9132
+summary: In Botan 1.8.0 through 1.11.33, when decoding BER data an integer overflow could occur,
+  which would cause an incorrect length field to be computed. Some API callers may use the returned
+  (incorrect and attacker controlled) length field in a way which later causes memory corruption
+  or other failure.
+severities:
+  - id: 242888
+    reference_id: 661520
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 242886
+    reference_id: 661520
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 661517
+    url: https://github.com/randombit/botan/commit/987ad747db6d0d7e36f840398f3cf02e2fbfd90f
+    reference_id:
+  - id: 661518
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OUDGVRQYQUL7F5MRP3LAV7EHRJG4BBE/
+    reference_id:
+  - id: 661519
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z2Y3JLMTE3VIV4X5X6SXVZTJBDDLCS3D/
+    reference_id:
+  - id: 661516
+    url: http://www.securityfocus.com/bid/95879
+    reference_id:
+  - id: 162017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.0:*:*:*:*:*:*:*
+  - id: 162018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.1:*:*:*:*:*:*:*
+  - id: 661521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.10:*:*:*:*:*:*:*
+  - id: 661522
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.11:*:*:*:*:*:*:*
+  - id: 640025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.12:*:*:*:*:*:*:*
+  - id: 661523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.13:*:*:*:*:*:*:*
+  - id: 661524
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.14:*:*:*:*:*:*:*
+  - id: 661525
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.15:*:*:*:*:*:*:*
+  - id: 162019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.2:*:*:*:*:*:*:*
+  - id: 162020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.3:*:*:*:*:*:*:*
+  - id: 162021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.4:*:*:*:*:*:*:*
+  - id: 162022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.5:*:*:*:*:*:*:*
+  - id: 162023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.6:*:*:*:*:*:*:*
+  - id: 162024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.7:*:*:*:*:*:*:*
+  - id: 162025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.8:*:*:*:*:*:*:*
+  - id: 162026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.10.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.10.9:*:*:*:*:*:*:*
+  - id: 162027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.0:*:*:*:*:*:*:*
+  - id: 162037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.1:*:*:*:*:*:*:*
+  - id: 162028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.10:*:*:*:*:*:*:*
+  - id: 162029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.11:*:*:*:*:*:*:*
+  - id: 162030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.12:*:*:*:*:*:*:*
+  - id: 162031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.13:*:*:*:*:*:*:*
+  - id: 162032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.14:*:*:*:*:*:*:*
+  - id: 162033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.15:*:*:*:*:*:*:*
+  - id: 162034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.16:*:*:*:*:*:*:*
+  - id: 162035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.17:*:*:*:*:*:*:*
+  - id: 162036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.18:*:*:*:*:*:*:*
+  - id: 615545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.19:*:*:*:*:*:*:*
+  - id: 162038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.2:*:*:*:*:*:*:*
+  - id: 615546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.20:*:*:*:*:*:*:*
+  - id: 615547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.21:*:*:*:*:*:*:*
+  - id: 638301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.23:*:*:*:*:*:*:*
+  - id: 638302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.24:*:*:*:*:*:*:*
+  - id: 638303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.25:*:*:*:*:*:*:*
+  - id: 638304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.26:*:*:*:*:*:*:*
+  - id: 640026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.27:*:*:*:*:*:*:*
+  - id: 640027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.28:*:*:*:*:*:*:*
+  - id: 654384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.29:*:*:*:*:*:*:*
+  - id: 162039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.3:*:*:*:*:*:*:*
+  - id: 654385
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.30:*:*:*:*:*:*:*
+  - id: 660625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.31:*:*:*:*:*:*:*
+  - id: 660626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.32:*:*:*:*:*:*:*
+  - id: 661526
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.33:*:*:*:*:*:*:*
+  - id: 162040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.4:*:*:*:*:*:*:*
+  - id: 162041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.5:*:*:*:*:*:*:*
+  - id: 162042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.6:*:*:*:*:*:*:*
+  - id: 162043
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.7:*:*:*:*:*:*:*
+  - id: 162044
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.8:*:*:*:*:*:*:*
+  - id: 162045
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.11.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.11.9:*:*:*:*:*:*:*
+  - id: 661527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.0:*:*:*:*:*:*:*
+  - id: 661534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.1:*:*:*:*:*:*:*
+  - id: 661528
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.10:*:*:*:*:*:*:*
+  - id: 661529
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.11:*:*:*:*:*:*:*
+  - id: 661530
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.12:*:*:*:*:*:*:*
+  - id: 661531
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.13:*:*:*:*:*:*:*
+  - id: 661532
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.14:*:*:*:*:*:*:*
+  - id: 661533
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.15:*:*:*:*:*:*:*
+  - id: 661535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.2:*:*:*:*:*:*:*
+  - id: 661536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.3:*:*:*:*:*:*:*
+  - id: 661537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.4:*:*:*:*:*:*:*
+  - id: 661538
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.5:*:*:*:*:*:*:*
+  - id: 661539
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.6:*:*:*:*:*:*:*
+  - id: 661540
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.7:*:*:*:*:*:*:*
+  - id: 661541
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.8:*:*:*:*:*:*:*
+  - id: 661542
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.8.9:*:*:*:*:*:*:*
+  - id: 661543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.0:*:*:*:*:*:*:*
+  - id: 661553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.1:*:*:*:*:*:*:*
+  - id: 661544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.10:*:*:*:*:*:*:*
+  - id: 661545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.11:*:*:*:*:*:*:*
+  - id: 661546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.12:*:*:*:*:*:*:*
+  - id: 661547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.13:*:*:*:*:*:*:*
+  - id: 661548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.14:*:*:*:*:*:*:*
+  - id: 661549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.15:*:*:*:*:*:*:*
+  - id: 661550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.16:*:*:*:*:*:*:*
+  - id: 661551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.17:*:*:*:*:*:*:*
+  - id: 661552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.18:*:*:*:*:*:*:*
+  - id: 661554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.2:*:*:*:*:*:*:*
+  - id: 661555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.3:*:*:*:*:*:*:*
+  - id: 661556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.4:*:*:*:*:*:*:*
+  - id: 661557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.5:*:*:*:*:*:*:*
+  - id: 661558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.6:*:*:*:*:*:*:*
+  - id: 661559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.7:*:*:*:*:*:*:*
+  - id: 661560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.8:*:*:*:*:*:*:*
+  - id: 661561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:botan_project:botan:1.9.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:botan_project:botan:1.9.9:*:*:*:*:*:*:*
+  - id: 661520
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9132
+    reference_id: CVE-2016-9132
+weaknesses: []

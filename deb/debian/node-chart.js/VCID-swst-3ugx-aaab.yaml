@@ -1,0 +1,65 @@
+vulnerability_id: VCID-swst-3ugx-aaab
+aliases:
+  - CVE-2020-7746
+  - GHSA-h68q-55jf-x68w
+summary: |
+  Improper Input Validation
+  The options parameter in `chart.js` is not properly sanitized when it is processed. When the options are processed, the existing options (or the defaults options) are deeply merged with provided options. However, during this operation, the keys of the object being set are not checked, leading to prototype pollution.
+severities:
+  - id: 609220
+    reference_id: 930775
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 609219
+    reference_id: 930774
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 489573
+    reference_id: 32190
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 489571
+    reference_id: 32190
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 706415
+    reference_id: 1468001
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 930775
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-7746.json
+    reference_id:
+  - id: 852970
+    url: https://github.com/chartjs/Chart.js/pull/7920
+    reference_id:
+  - id: 852971
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1019375
+    reference_id:
+  - id: 852972
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBCHARTJS-1019376
+    reference_id:
+  - id: 852973
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1019374
+    reference_id:
+  - id: 852974
+    url: https://snyk.io/vuln/SNYK-JS-CHARTJS-1018716
+    reference_id:
+  - id: 930774
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2096966
+    reference_id: 2096966
+  - id: 852975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:chartjs:chart.js:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:chartjs:chart.js:*:*:*:*:*:node.js:*:*
+  - id: 32190
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-7746
+    reference_id: CVE-2020-7746
+  - id: 1468001
+    url: https://github.com/advisories/GHSA-h68q-55jf-x68w
+    reference_id: GHSA-h68q-55jf-x68w
+weaknesses: []

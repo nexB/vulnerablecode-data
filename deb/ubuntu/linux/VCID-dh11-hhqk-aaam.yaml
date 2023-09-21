@@ -1,0 +1,683 @@
+vulnerability_id: VCID-dh11-hhqk-aaam
+aliases:
+  - CVE-2016-5195
+summary: Race condition in mm/gup.c in the Linux kernel 2.x through 4.x before 4.8.3 allows
+  local users to gain privileges by leveraging incorrect handling of a copy-on-write (COW) feature
+  to write to a read-only memory mapping, as exploited in the wild in October 2016, aka "Dirty
+  COW."
+severities:
+  - id: 669679
+    reference_id: 1435488
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 626358
+    reference_id: 943006
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 669680
+    reference_id: 1435489
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 670712
+    reference_id: 570342
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 669681
+    reference_id: 1435490
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669682
+    reference_id: 1435491
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669683
+    reference_id: 1435492
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669684
+    reference_id: 1435493
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669685
+    reference_id: 1435494
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669686
+    reference_id: 1435495
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669687
+    reference_id: 1435496
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669688
+    reference_id: 1435497
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669689
+    reference_id: 1435498
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 669690
+    reference_id: 1435499
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 686822
+    reference_id: 2751
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 626346
+    reference_id: 942994
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 230941
+    reference_id: 648081
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 230939
+    reference_id: 648081
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 626350
+    reference_id: 942998
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626353
+    reference_id: 943001
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626357
+    reference_id: 943005
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626356
+    reference_id: 943004
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626348
+    reference_id: 942996
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626355
+    reference_id: 943003
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626349
+    reference_id: 942997
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49307
+    reference_id: 173601
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626354
+    reference_id: 943002
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626352
+    reference_id: 943000
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49152
+    reference_id: 173427
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626347
+    reference_id: 942995
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49146
+    reference_id: 173421
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 626351
+    reference_id: 942999
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 647969
+    url: http://fortiguard.com/advisory/FG-IR-16-063
+    reference_id:
+  - id: 647970
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619
+    reference_id:
+  - id: 647971
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10770
+    reference_id:
+  - id: 647972
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10774
+    reference_id:
+  - id: 647973
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10807
+    reference_id:
+  - id: 647974
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00034.html
+    reference_id:
+  - id: 647975
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00035.html
+    reference_id:
+  - id: 647976
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00036.html
+    reference_id:
+  - id: 647977
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00038.html
+    reference_id:
+  - id: 647978
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00039.html
+    reference_id:
+  - id: 647979
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00040.html
+    reference_id:
+  - id: 647980
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00045.html
+    reference_id:
+  - id: 647981
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00048.html
+    reference_id:
+  - id: 647982
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00049.html
+    reference_id:
+  - id: 647983
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00050.html
+    reference_id:
+  - id: 647984
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00051.html
+    reference_id:
+  - id: 647985
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00052.html
+    reference_id:
+  - id: 647986
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00053.html
+    reference_id:
+  - id: 647987
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00054.html
+    reference_id:
+  - id: 647988
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00055.html
+    reference_id:
+  - id: 647989
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00056.html
+    reference_id:
+  - id: 647990
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00057.html
+    reference_id:
+  - id: 647991
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00058.html
+    reference_id:
+  - id: 647992
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00063.html
+    reference_id:
+  - id: 647993
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00064.html
+    reference_id:
+  - id: 647994
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00065.html
+    reference_id:
+  - id: 647995
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00066.html
+    reference_id:
+  - id: 647996
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00067.html
+    reference_id:
+  - id: 647997
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-10/msg00072.html
+    reference_id:
+  - id: 647998
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00033.html
+    reference_id:
+  - id: 647999
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00100.html
+    reference_id:
+  - id: 648000
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00041.html
+    reference_id:
+  - id: 648001
+    url: http://packetstormsecurity.com/files/139277/Kernel-Live-Patch-Security-Notice-LSN-0012-1.html
+    reference_id:
+  - id: 648002
+    url: http://packetstormsecurity.com/files/139286/DirtyCow-Linux-Kernel-Race-Condition.html
+    reference_id:
+  - id: 648003
+    url: http://packetstormsecurity.com/files/139287/DirtyCow-Local-Root-Proof-Of-Concept.html
+    reference_id:
+  - id: 648004
+    url: http://packetstormsecurity.com/files/139922/Linux-Kernel-Dirty-COW-PTRACE_POKEDATA-Privilege-Escalation.html
+    reference_id:
+  - id: 648005
+    url: http://packetstormsecurity.com/files/139923/Linux-Kernel-Dirty-COW-PTRACE_POKEDATA-Privilege-Escalation.html
+    reference_id:
+  - id: 648006
+    url: http://packetstormsecurity.com/files/142151/Kernel-Live-Patch-Security-Notice-LSN-0021-1.html
+    reference_id:
+  - id: 1435488
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5195.html
+    reference_id:
+  - id: 648007
+    url: http://rhn.redhat.com/errata/RHSA-2016-2098.html
+    reference_id:
+  - id: 648008
+    url: http://rhn.redhat.com/errata/RHSA-2016-2105.html
+    reference_id:
+  - id: 648009
+    url: http://rhn.redhat.com/errata/RHSA-2016-2106.html
+    reference_id:
+  - id: 648010
+    url: http://rhn.redhat.com/errata/RHSA-2016-2107.html
+    reference_id:
+  - id: 648011
+    url: http://rhn.redhat.com/errata/RHSA-2016-2110.html
+    reference_id:
+  - id: 648012
+    url: http://rhn.redhat.com/errata/RHSA-2016-2118.html
+    reference_id:
+  - id: 648013
+    url: http://rhn.redhat.com/errata/RHSA-2016-2120.html
+    reference_id:
+  - id: 635624
+    url: http://rhn.redhat.com/errata/RHSA-2016-2124.html
+    reference_id:
+  - id: 648014
+    url: http://rhn.redhat.com/errata/RHSA-2016-2126.html
+    reference_id:
+  - id: 648015
+    url: http://rhn.redhat.com/errata/RHSA-2016-2127.html
+    reference_id:
+  - id: 645414
+    url: http://rhn.redhat.com/errata/RHSA-2016-2128.html
+    reference_id:
+  - id: 648016
+    url: http://rhn.redhat.com/errata/RHSA-2016-2132.html
+    reference_id:
+  - id: 645415
+    url: http://rhn.redhat.com/errata/RHSA-2016-2133.html
+    reference_id:
+  - id: 943006
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-5195.json
+    reference_id:
+  - id: 648048
+    url: https://access.redhat.com/security/cve/cve-2016-5195
+    reference_id:
+  - id: 648049
+    url: https://access.redhat.com/security/vulnerabilities/2706661
+    reference_id:
+  - id: 648050
+    url: https://bto.bluecoat.com/security-advisory/sa134
+    reference_id:
+  - id: 648052
+    url: https://bugzilla.suse.com/show_bug.cgi?id=1004418
+    reference_id:
+  - id: 1435489
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5195
+    reference_id:
+  - id: 648053
+    url: https://dirtycow.ninja
+    reference_id:
+  - id: 648054
+    url: https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs
+    reference_id:
+  - id: 648055
+    url: https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails
+    reference_id:
+  - id: 648056
+    url: https://github.com/torvalds/linux/commit/19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619
+    reference_id:
+  - id: 648057
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-c05352241
+    reference_id:
+  - id: 648058
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03707en_us
+    reference_id:
+  - id: 648059
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03722en_us
+    reference_id:
+  - id: 648060
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03742en_us
+    reference_id:
+  - id: 648061
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03761en_us
+    reference_id:
+  - id: 648062
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05341463
+    reference_id:
+  - id: 636039
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05347541
+    reference_id:
+  - id: 648063
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05352241
+    reference_id:
+  - id: 579325
+    url: https://help.ecostruxureit.com/display/public/UADCO8x/StruxureWare+Data+Center+Operation+Software+Vulnerability+Fixes
+    reference_id:
+  - id: 648064
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10176
+    reference_id:
+  - id: 648065
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10177
+    reference_id:
+  - id: 648066
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10222
+    reference_id:
+  - id: 648067
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E7M62SRP6CZLJ4ZXCRZKV4WPLQBSR7DT/
+    reference_id:
+  - id: 648068
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NWMDLBWMGZKFHMRJ7QUQVCERP5QHDB6W/
+    reference_id:
+  - id: 648069
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W3APRVDVPDBXLH4DC5UKZVCR742MJIM3/
+    reference_id:
+  - id: 648070
+    url: https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5195.html
+    reference_id:
+  - id: 648072
+    url: https://security.netapp.com/advisory/ntap-20161025-0001/
+    reference_id:
+  - id: 648073
+    url: https://security.paloaltonetworks.com/CVE-2016-5195
+    reference_id:
+  - id: 648071
+    url: https://security-tracker.debian.org/tracker/CVE-2016-5195
+    reference_id:
+  - id: 511664
+    url: https://source.android.com/security/bulletin/2016-11-01.html
+    reference_id:
+  - id: 570342
+    url: https://source.android.com/security/bulletin/2016-12-01.html
+    reference_id:
+  - id: 648074
+    url: https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20181107-vcsd
+    reference_id:
+  - id: 1435490
+    url: https://ubuntu.com/security/notices/USN-3104-1
+    reference_id:
+  - id: 1435491
+    url: https://ubuntu.com/security/notices/USN-3104-2
+    reference_id:
+  - id: 1435492
+    url: https://ubuntu.com/security/notices/USN-3105-1
+    reference_id:
+  - id: 1435493
+    url: https://ubuntu.com/security/notices/USN-3105-2
+    reference_id:
+  - id: 1435494
+    url: https://ubuntu.com/security/notices/USN-3106-1
+    reference_id:
+  - id: 1435495
+    url: https://ubuntu.com/security/notices/USN-3106-2
+    reference_id:
+  - id: 1435496
+    url: https://ubuntu.com/security/notices/USN-3106-3
+    reference_id:
+  - id: 1435497
+    url: https://ubuntu.com/security/notices/USN-3106-4
+    reference_id:
+  - id: 1435498
+    url: https://ubuntu.com/security/notices/USN-3107-1
+    reference_id:
+  - id: 1435499
+    url: https://ubuntu.com/security/notices/USN-3107-2
+    reference_id:
+  - id: 648075
+    url: https://www.arista.com/en/support/advisories-notices/security-advisories/1753-security-advisory-0026
+    reference_id:
+  - id: 648076
+    url: https://www.exploit-db.com/exploits/40611/
+    reference_id:
+  - id: 648077
+    url: https://www.exploit-db.com/exploits/40616/
+    reference_id:
+  - id: 648078
+    url: https://www.exploit-db.com/exploits/40839/
+    reference_id:
+  - id: 648079
+    url: https://www.exploit-db.com/exploits/40847/
+    reference_id:
+  - id: 648080
+    url: https://www.kb.cert.org/vuls/id/243144
+    reference_id:
+  - id: 648017
+    url: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-linux
+    reference_id:
+  - id: 648018
+    url: http://www.debian.org/security/2016/dsa-3696
+    reference_id:
+  - id: 648019
+    url: http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20161207-01-dirtycow-en
+    reference_id:
+  - id: 648020
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3
+    reference_id:
+  - id: 648021
+    url: http://www.openwall.com/lists/oss-security/2016/10/21/1
+    reference_id:
+  - id: 648022
+    url: http://www.openwall.com/lists/oss-security/2016/10/26/7
+    reference_id:
+  - id: 648023
+    url: http://www.openwall.com/lists/oss-security/2016/10/27/13
+    reference_id:
+  - id: 648024
+    url: http://www.openwall.com/lists/oss-security/2016/10/30/1
+    reference_id:
+  - id: 648025
+    url: http://www.openwall.com/lists/oss-security/2016/11/03/7
+    reference_id:
+  - id: 648026
+    url: http://www.openwall.com/lists/oss-security/2022/03/07/1
+    reference_id:
+  - id: 1182631
+    url: http://www.openwall.com/lists/oss-security/2022/08/08/1
+    reference_id:
+  - id: 1182632
+    url: http://www.openwall.com/lists/oss-security/2022/08/08/2
+    reference_id:
+  - id: 1182633
+    url: http://www.openwall.com/lists/oss-security/2022/08/08/7
+    reference_id:
+  - id: 1182634
+    url: http://www.openwall.com/lists/oss-security/2022/08/08/8
+    reference_id:
+  - id: 1183269
+    url: http://www.openwall.com/lists/oss-security/2022/08/09/4
+    reference_id:
+  - id: 1340212
+    url: http://www.openwall.com/lists/oss-security/2022/08/15/1
+    reference_id:
+  - id: 2751
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    reference_id:
+  - id: 648027
+    url: http://www.securityfocus.com/archive/1/539611/100/0/threaded
+    reference_id:
+  - id: 648028
+    url: http://www.securityfocus.com/archive/1/540252/100/0/threaded
+    reference_id:
+  - id: 648029
+    url: http://www.securityfocus.com/archive/1/540344/100/0/threaded
+    reference_id:
+  - id: 648030
+    url: http://www.securityfocus.com/archive/1/540736/100/0/threaded
+    reference_id:
+  - id: 648031
+    url: http://www.securityfocus.com/archive/1/archive/1/539611/100/0/threaded
+    reference_id:
+  - id: 648032
+    url: http://www.securityfocus.com/archive/1/archive/1/540252/100/0/threaded
+    reference_id:
+  - id: 648033
+    url: http://www.securityfocus.com/archive/1/archive/1/540344/100/0/threaded
+    reference_id:
+  - id: 648034
+    url: http://www.securityfocus.com/archive/1/archive/1/540736/100/0/threaded
+    reference_id:
+  - id: 648035
+    url: http://www.securityfocus.com/bid/93793
+    reference_id:
+  - id: 648036
+    url: http://www.securitytracker.com/id/1037078
+    reference_id:
+  - id: 648037
+    url: http://www.ubuntu.com/usn/USN-3104-1
+    reference_id:
+  - id: 648038
+    url: http://www.ubuntu.com/usn/USN-3104-2
+    reference_id:
+  - id: 648039
+    url: http://www.ubuntu.com/usn/USN-3105-1
+    reference_id:
+  - id: 648040
+    url: http://www.ubuntu.com/usn/USN-3105-2
+    reference_id:
+  - id: 648041
+    url: http://www.ubuntu.com/usn/USN-3106-1
+    reference_id:
+  - id: 648042
+    url: http://www.ubuntu.com/usn/USN-3106-2
+    reference_id:
+  - id: 648043
+    url: http://www.ubuntu.com/usn/USN-3106-3
+    reference_id:
+  - id: 648044
+    url: http://www.ubuntu.com/usn/USN-3106-4
+    reference_id:
+  - id: 648045
+    url: http://www.ubuntu.com/usn/USN-3107-1
+    reference_id:
+  - id: 648046
+    url: http://www.ubuntu.com/usn/USN-3107-2
+    reference_id:
+  - id: 942994
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1384344
+    reference_id: 1384344
+  - id: 617965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_core:15.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_core:15.04:*:*:*:*:*:*:*
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 146776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:5:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 478392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:6.2:*:*:*:*:*:*:*
+  - id: 648082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:6.4:*:*:*:*:*:*:*
+  - id: 648083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:6.5:*:*:*:*:*:*:*
+  - id: 572912
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:6.6:*:*:*:*:*:*:*
+  - id: 613032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:6.7:*:*:*:*:*:*:*
+  - id: 596788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.1:*:*:*:*:*:*:*
+  - id: 648084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_long_life:5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_long_life:5.6:*:*:*:*:*:*:*
+  - id: 648085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_long_life:5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_long_life:5.9:*:*:*:*:*:*:*
+  - id: 648086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_tus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_tus:6.5:*:*:*:*:*:*:*
+  - id: 648081
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-5195
+    reference_id: CVE-2016-5195
+  - id: 942998
+    url: https://access.redhat.com/errata/RHSA-2016:2098
+    reference_id: RHSA-2016:2098
+  - id: 943001
+    url: https://access.redhat.com/errata/RHSA-2016:2105
+    reference_id: RHSA-2016:2105
+  - id: 943005
+    url: https://access.redhat.com/errata/RHSA-2016:2106
+    reference_id: RHSA-2016:2106
+  - id: 943004
+    url: https://access.redhat.com/errata/RHSA-2016:2107
+    reference_id: RHSA-2016:2107
+  - id: 942996
+    url: https://access.redhat.com/errata/RHSA-2016:2110
+    reference_id: RHSA-2016:2110
+  - id: 943003
+    url: https://access.redhat.com/errata/RHSA-2016:2118
+    reference_id: RHSA-2016:2118
+  - id: 942997
+    url: https://access.redhat.com/errata/RHSA-2016:2120
+    reference_id: RHSA-2016:2120
+  - id: 173601
+    url: https://access.redhat.com/errata/RHSA-2016:2124
+    reference_id: RHSA-2016:2124
+  - id: 943002
+    url: https://access.redhat.com/errata/RHSA-2016:2126
+    reference_id: RHSA-2016:2126
+  - id: 943000
+    url: https://access.redhat.com/errata/RHSA-2016:2127
+    reference_id: RHSA-2016:2127
+  - id: 173427
+    url: https://access.redhat.com/errata/RHSA-2016:2128
+    reference_id: RHSA-2016:2128
+  - id: 942995
+    url: https://access.redhat.com/errata/RHSA-2016:2132
+    reference_id: RHSA-2016:2132
+  - id: 173421
+    url: https://access.redhat.com/errata/RHSA-2016:2133
+    reference_id: RHSA-2016:2133
+  - id: 942999
+    url: https://access.redhat.com/errata/RHSA-2017:0372
+    reference_id: RHSA-2017:0372
+weaknesses: []

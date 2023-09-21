@@ -1,0 +1,94 @@
+vulnerability_id: VCID-9va9-dntd-aaaa
+aliases:
+  - CVE-2017-17053
+summary: The init_new_context function in arch/x86/include/asm/mmu_context.h in the Linux kernel
+  before 4.12.10 does not correctly handle errors from LDT table allocation when forking a new
+  process, allowing a local attacker to achieve a use-after-free or possibly have unspecified
+  other impact by running a specially crafted program. This vulnerability only affected kernels
+  built with CONFIG_MODIFY_LDT_SYSCALL=y.
+severities:
+  - id: 676822
+    reference_id: 689970
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676823
+    reference_id: 1441102
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 621177
+    reference_id: 939444
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 676824
+    reference_id: 1441103
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676825
+    reference_id: 689972
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676821
+    reference_id: 689968
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 621176
+    reference_id: 939443
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 272732
+    reference_id: 689973
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 272730
+    reference_id: 689973
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 689970
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ccd5b3235180eef3cfec337df1c8554ab151b5cc
+    reference_id:
+  - id: 1441102
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17053.html
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 939444
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17053.json
+    reference_id:
+  - id: 1441103
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17053
+    reference_id:
+  - id: 689972
+    url: https://github.com/torvalds/linux/commit/ccd5b3235180eef3cfec337df1c8554ab151b5cc
+    reference_id:
+  - id: 689968
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.12.10
+    reference_id:
+  - id: 689971
+    url: http://www.securityfocus.com/bid/102010
+    reference_id:
+  - id: 939443
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1518638
+    reference_id: 1518638
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 689973
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17053
+    reference_id: CVE-2017-17053
+weaknesses: []

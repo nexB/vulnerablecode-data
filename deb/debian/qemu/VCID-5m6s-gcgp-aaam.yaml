@@ -1,0 +1,133 @@
+vulnerability_id: VCID-5m6s-gcgp-aaam
+aliases:
+  - CVE-2017-5987
+summary: The sdhci_sdma_transfer_multi_blocks function in hw/sd/sdhci.c in QEMU (aka Quick Emulator)
+  allows local OS guest privileged users to cause a denial of service (infinite loop and QEMU
+  process crash) via vectors involving the transfer mode register during multi block transfer.
+severities:
+  - id: 679478
+    reference_id: 1443280
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 624586
+    reference_id: 941790
+    scoring_system: cvssv3
+    value: '3.0'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:L
+  - id: 679479
+    reference_id: 1443281
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 679480
+    reference_id: 704326
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666124
+    reference_id: 1432635
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666125
+    reference_id: 1432636
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666349
+    reference_id: 1432807
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 671757
+    reference_id: 1437212
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 624585
+    reference_id: 941789
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 289180
+    reference_id: 704327
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 289178
+    reference_id: 704327
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 704322
+    url: http://git.qemu-project.org/?p=qemu.git;a=commit;h=6e86d90352adf6cb08295255220295cf23c4286e
+    reference_id:
+  - id: 1443280
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-5987.html
+    reference_id:
+  - id: 941790
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-5987.json
+    reference_id:
+  - id: 1443281
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5987
+    reference_id:
+  - id: 619344
+    url: https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html
+    reference_id:
+  - id: 704326
+    url: https://lists.gnu.org/archive/html/qemu-devel/2017-02/msg02776.html
+    reference_id:
+  - id: 663165
+    url: https://security.gentoo.org/glsa/201704-01
+    reference_id:
+  - id: 1432635
+    url: https://ubuntu.com/security/notices/USN-3261-1
+    reference_id:
+  - id: 1432636
+    url: https://ubuntu.com/security/notices/USN-3268-1
+    reference_id:
+  - id: 1432807
+    url: https://usn.ubuntu.com/usn/usn-3261-1
+    reference_id:
+  - id: 1437212
+    url: https://usn.ubuntu.com/usn/usn-3268-1
+    reference_id:
+  - id: 704323
+    url: http://www.openwall.com/lists/oss-security/2017/02/14/8
+    reference_id:
+  - id: 704324
+    url: http://www.securityfocus.com/bid/96263
+    reference_id:
+  - id: 941789
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1421995
+    reference_id: 1421995
+  - id: 112040
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=855159
+    reference_id: 855159
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 658006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.9.0:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.9.0:rc0:*:*:*:*:*:*
+  - id: 658007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.9.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.9.0:rc1:*:*:*:*:*:*
+  - id: 658008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.9.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.9.0:rc2:*:*:*:*:*:*
+  - id: 658009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.9.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.9.0:rc3:*:*:*:*:*:*
+  - id: 658010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:2.9.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:2.9.0:rc4:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 704327
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-5987
+    reference_id: CVE-2017-5987
+weaknesses: []

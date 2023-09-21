@@ -1,0 +1,78 @@
+vulnerability_id: VCID-938d-94kw-aaae
+aliases:
+  - CVE-2022-31151
+  - GHSA-q768-x9m6-m9qp
+summary: 'Authorization headers are cleared on cross-origin redirect. However, cookie headers
+  which are sensitive headers and are official headers found in the spec, remain uncleared.
+  There are active users using cookie headers in undici. This may lead to accidental leakage
+  of cookie to a 3rd-party site or a malicious attacker who can control the redirection target
+  (ie. an open redirector) to leak the cookie to the 3rd party site. This was patched in v5.7.1.
+  By default, this vulnerability is not exploitable. Do not enable redirections, i.e. `maxRedirections:
+  0` (the default).'
+severities:
+  - id: 645296
+    reference_id: 1413025
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 645295
+    reference_id: 1413024
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 640974
+    reference_id: 1178657
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 707138
+    reference_id: 1378788
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 707137
+    reference_id: 1378784
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 1413025
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-31151.json
+    reference_id:
+  - id: 1378787
+    url: https://github.com/nodejs/undici/blob/main/lib/handler/redirect.js#L189
+    reference_id:
+  - id: 1378786
+    url: https://github.com/nodejs/undici/commit/0a5bee9465e627be36bac88edf7d9bbc9626126d
+    reference_id:
+  - id: 1178654
+    url: https://github.com/nodejs/undici/issues/872
+    reference_id:
+  - id: 1378785
+    url: https://github.com/nodejs/undici/pull/1441
+    reference_id:
+  - id: 949844
+    url: https://github.com/nodejs/undici/releases/tag/v5.8.0
+    reference_id:
+  - id: 1178656
+    url: https://hackerone.com/reports/1635514
+    reference_id:
+  - id: 1468751
+    url: https://security.netapp.com/advisory/ntap-20220909-0006/
+    reference_id:
+  - id: 1413024
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2121396
+    reference_id: 2121396
+  - id: 1179409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:undici:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:nodejs:undici:*:*:*:*:*:node.js:*:*
+  - id: 1178657
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-31151
+    reference_id: CVE-2022-31151
+  - id: 1378788
+    url: https://github.com/advisories/GHSA-q768-x9m6-m9qp
+    reference_id: GHSA-q768-x9m6-m9qp
+  - id: 1378784
+    url: https://github.com/nodejs/undici/security/advisories/GHSA-q768-x9m6-m9qp
+    reference_id: GHSA-q768-x9m6-m9qp
+weaknesses: []

@@ -1,0 +1,78 @@
+affected_purls:
+- pkg:deb/debian/python-httplib2@0.11.3-2
+- pkg:deb/debian/python-httplib2@0.18.1-3
+- pkg:pypi/httplib2@0.10.3
+- pkg:pypi/httplib2@0.11.0
+- pkg:pypi/httplib2@0.11.1
+- pkg:pypi/httplib2@0.11.3
+- pkg:pypi/httplib2@0.12.0
+- pkg:pypi/httplib2@0.12.1
+- pkg:pypi/httplib2@0.12.3
+- pkg:pypi/httplib2@0.13.0
+- pkg:pypi/httplib2@0.13.1
+- pkg:pypi/httplib2@0.14.0
+- pkg:pypi/httplib2@0.15.0
+- pkg:pypi/httplib2@0.16.0
+- pkg:pypi/httplib2@0.17.0
+- pkg:pypi/httplib2@0.17.1
+- pkg:pypi/httplib2@0.17.2
+- pkg:pypi/httplib2@0.17.3
+- pkg:pypi/httplib2@0.17.4
+- pkg:pypi/httplib2@0.18.0
+- pkg:pypi/httplib2@0.18.1
+- pkg:pypi/httplib2@0.7.3
+- pkg:pypi/httplib2@0.7.4
+- pkg:pypi/httplib2@0.7.5
+- pkg:pypi/httplib2@0.7.6
+- pkg:pypi/httplib2@0.7.7
+- pkg:pypi/httplib2@0.8
+- pkg:pypi/httplib2@0.9
+- pkg:pypi/httplib2@0.9.1
+- pkg:pypi/httplib2@0.9.2
+aliases:
+- CVE-2021-21240
+- GHSA-93xj-8mrv-444m
+fixed_purl:
+- pkg:deb/debian/python-httplib2@0.20.4-3
+- pkg:pypi/httplib2@0.19.0
+references:
+- id: 156779
+  reference_id: ''
+  url: https://github.com/httplib2/httplib2/commit/bd9ee252c8f099608019709e22c0d705e98d26bc
+- id: 156778
+  reference_id: ''
+  url: https://github.com/httplib2/httplib2/pull/182
+- id: 156781
+  reference_id: ''
+  url: https://pypi.org/project/httplib2
+- id: 129608
+  reference_id: '982738'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982738
+- id: 156780
+  reference_id: CVE-2021-21240
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-21240
+- id: 156782
+  reference_id: GHSA-93xj-8mrv-444m
+  url: https://github.com/advisories/GHSA-93xj-8mrv-444m
+- id: 156777
+  reference_id: GHSA-93xj-8mrv-444m
+  url: https://github.com/httplib2/httplib2/security/advisories/GHSA-93xj-8mrv-444m
+severities:
+- id: 22637
+  reference_id: 156782
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+- id: 22636
+  reference_id: 156777
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+summary: httplib2 is a comprehensive HTTP client library for Python. In httplib2 before
+  version 0.19.0, a malicious server which responds with long series of "\xa0" characters
+  in the "www-authenticate" header may cause Denial of Service (CPU burn while parsing
+  header) of the httplib2 client accessing said server. This is fixed in version 0.19.0
+  which contains a new implementation of auth headers parsing using the pyparsing
+  library.
+vulnerability_id: VCID-1ejr-5z6a-aaas
+weaknesses: []

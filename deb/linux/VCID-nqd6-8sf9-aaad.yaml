@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-15793
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: In shiftfs, a non-upstream patch to the Linux kernel included in the Ubuntu
+  5.0 and 5.3 kernel series, several locations which shift ids translate user/group
+  ids before performing operations in the lower filesystem were translating them into
+  init_user_ns, whereas they should have been translated into the s_user_ns for the
+  lower filesystem. This resulted in using ids other than the intended ones in the
+  lower fs, which likely did not map into the shifts s_user_ns. A local attacker could
+  use this to possibly bypass discretionary access control permissions.
+vulnerability_id: VCID-nqd6-8sf9-aaad
+weaknesses: []

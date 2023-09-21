@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2019-6454
+fixed_purl:
+- pkg:deb/debian/systemd@240-6?distro=sid
+- pkg:deb/debian/systemd@241-7~deb10u8?distro=sid
+- pkg:deb/debian/systemd@247.3-7%2Bdeb11u2?distro=sid
+- pkg:deb/debian/systemd@252.6-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in sd-bus in systemd 239. bus_process_object() in
+  libsystemd/sd-bus/bus-objects.c allocates a variable-length stack buffer for temporarily
+  storing the object path of incoming D-Bus messages. An unprivileged local user can
+  exploit this by sending a specially crafted message to PID1, causing the stack pointer
+  to jump over the stack guard pages into an unmapped memory region and trigger a
+  denial of service (systemd PID1 crash and kernel panic).
+vulnerability_id: VCID-p667-zpwz-aaan
+weaknesses: []

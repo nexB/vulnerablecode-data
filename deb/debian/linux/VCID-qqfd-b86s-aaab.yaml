@@ -1,0 +1,146 @@
+vulnerability_id: VCID-qqfd-b86s-aaab
+aliases:
+  - CVE-2017-7558
+summary: A kernel data leak due to an out-of-bound read was found in the Linux kernel in inet_diag_msg_sctp{,l}addr_fill()
+  and sctp_get_sctp_info() functions present since version 4.7-rc1 through version 4.13. A data
+  leak happens when these functions fill in sockaddr data structures used to export socket's
+  diagnostic information. As a result, up to 100 bytes of the slab data could be leaked to a
+  userspace.
+severities:
+  - id: 680455
+    reference_id: 1444029
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 621183
+    reference_id: 939448
+    scoring_system: cvssv3
+    value: '5.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 680457
+    reference_id: 1444030
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 680456
+    reference_id: 709768
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 680458
+    reference_id: 1444031
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 680459
+    reference_id: 709772
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 621182
+    reference_id: 939447
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 294371
+    reference_id: 709773
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 294369
+    reference_id: 709773
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 620891
+    reference_id: 939244
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621081
+    reference_id: 939378
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 621082
+    reference_id: 939379
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1444029
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7558.html
+    reference_id:
+  - id: 939448
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7558.json
+    reference_id:
+  - id: 709771
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7558
+    reference_id:
+  - id: 1444030
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7558
+    reference_id:
+  - id: 709768
+    url: http://seclists.org/oss-sec/2017/q3/338
+    reference_id:
+  - id: 1444031
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/net/sctp/socket.c?id=ee6c88bb754e3d363e568da78086adfedb692447
+    reference_id:
+  - id: 709772
+    url: https://marc.info/?l=linux-netdev&m=150348777122761&w=2
+    reference_id:
+  - id: 709579
+    url: https://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 709769
+    url: http://www.securityfocus.com/bid/100466
+    reference_id:
+  - id: 709770
+    url: http://www.securitytracker.com/id/1039221
+    reference_id:
+  - id: 939447
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1480266
+    reference_id: 1480266
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 709774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc1:*:*:*:*:*:*
+  - id: 709775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc2:*:*:*:*:*:*
+  - id: 709776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc3:*:*:*:*:*:*
+  - id: 709777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc4:*:*:*:*:*:*
+  - id: 709778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc5:*:*:*:*:*:*
+  - id: 651668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc6:*:*:*:*:*:*
+  - id: 709779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc7:*:*:*:*:*:*
+  - id: 709773
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7558
+    reference_id: CVE-2017-7558
+  - id: 939244
+    url: https://access.redhat.com/errata/RHSA-2017:2918
+    reference_id: RHSA-2017:2918
+  - id: 939378
+    url: https://access.redhat.com/errata/RHSA-2017:2930
+    reference_id: RHSA-2017:2930
+  - id: 939379
+    url: https://access.redhat.com/errata/RHSA-2017:2931
+    reference_id: RHSA-2017:2931
+weaknesses: []

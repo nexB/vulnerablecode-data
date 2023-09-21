@@ -1,0 +1,79 @@
+affected_purls:
+- pkg:maven/org.apache.qpid/proton-j@0.10
+- pkg:maven/org.apache.qpid/proton-j@0.11.0
+- pkg:maven/org.apache.qpid/proton-j@0.11.1
+- pkg:maven/org.apache.qpid/proton-j@0.12.0
+- pkg:maven/org.apache.qpid/proton-j@0.12.1
+- pkg:maven/org.apache.qpid/proton-j@0.12.2
+- pkg:maven/org.apache.qpid/proton-j@0.13.0
+- pkg:maven/org.apache.qpid/proton-j@0.13.1
+- pkg:maven/org.apache.qpid/proton-j@0.14.0
+- pkg:maven/org.apache.qpid/proton-j@0.15.0
+- pkg:maven/org.apache.qpid/proton-j@0.16.0
+- pkg:maven/org.apache.qpid/proton-j@0.17.0
+- pkg:maven/org.apache.qpid/proton-j@0.18.0
+- pkg:maven/org.apache.qpid/proton-j@0.19.0
+- pkg:maven/org.apache.qpid/proton-j@0.20.0
+- pkg:maven/org.apache.qpid/proton-j@0.21.0
+- pkg:maven/org.apache.qpid/proton-j@0.22.0
+- pkg:maven/org.apache.qpid/proton-j@0.23.0
+- pkg:maven/org.apache.qpid/proton-j@0.24.0
+- pkg:maven/org.apache.qpid/proton-j@0.25.0
+- pkg:maven/org.apache.qpid/proton-j@0.26.0
+- pkg:maven/org.apache.qpid/proton-j@0.27.0
+- pkg:maven/org.apache.qpid/proton-j@0.9
+- pkg:maven/org.apache.qpid/proton-j@0.9.1
+aliases:
+- CVE-2019-0223
+- GHSA-5h6x-m52p-23ph
+fixed_purl:
+- pkg:deb/debian/qpid-proton@0.22.0-1?distro=sid
+- pkg:deb/debian/qpid-proton@0.22.0-3?distro=sid
+- pkg:deb/debian/qpid-proton@0.22.0-5.1?distro=sid
+- pkg:deb/debian/qpid-proton@0.37.0-2?distro=sid
+- pkg:maven/org.apache.qpid/proton-j@0.27.1
+references:
+- id: 146144
+  reference_id: ''
+  url: https://issues.apache.org/jira/browse/PROTON-2014?page=com.atlassian.jira.plugin.system.issuetabpanels%3Aall-tabpanel
+- id: 146145
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/008ee5e78e5a090e1fcc5f6617f425e4e51d59f03d3eda2dd006df9f@%3Cusers.qpid.apache.org%3E
+- id: 146146
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/3adb2f020f705b4fd453982992a68cd10f9d5ac728b699efdb73c1f5@%3Cdev.qpid.apache.org%3E
+- id: 146147
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/49c83f0acce5ceaeffca51714ec2ba0f0199bcb8f99167181bba441b@%3Cdev.qpid.apache.org%3E
+- id: 139527
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/914424e4d798a340f523b6169aaf39b626971d9bb00fcdeb1d5d6c0d@%3Ccommits.qpid.apache.org%3E
+- id: 146148
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/d9c9a882a292e2defaed1f954528c916fb64497ce57db652727e39b0@%3Cannounce.apache.org%3E
+- id: 146149
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2019/04/23/4
+- id: 146150
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/108044
+- id: 146143
+  reference_id: CVE-2019-0223
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-0223
+- id: 146151
+  reference_id: GHSA-5h6x-m52p-23ph
+  url: https://github.com/advisories/GHSA-5h6x-m52p-23ph
+severities:
+- id: 20511
+  reference_id: 146151
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: While investigating bug PROTON-2014, we discovered that under some circumstances
+  Apache Qpid Proton versions 0.9 to 0.27.0 (C library and its language bindings)
+  can connect to a peer anonymously using TLS *even when configured to verify the
+  peer certificate* while used with OpenSSL versions before 1.1.0. This means that
+  an undetected man in the middle attack could be constructed if an attacker can arrange
+  to intercept TLS traffic.
+vulnerability_id: VCID-favq-bqcw-aaac
+weaknesses: []

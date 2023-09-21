@@ -1,0 +1,17 @@
+affected_purls:
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1
+aliases:
+- CVE-2020-27755
+fixed_purl:
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1
+references: []
+severities: []
+summary: in SetImageExtent() of /MagickCore/image.c, an incorrect image depth size
+  can cause a memory leak because the code which checks for the proper image depth
+  size does not reset the size in the event there is an invalid size. The patch resets
+  the depth to a proper size before throwing an exception. The memory leak can be
+  triggered by a crafted input file that is processed by ImageMagick and could cause
+  an impact to application reliability, such as denial of service. This flaw affects
+  ImageMagick versions prior to 7.0.9-0.
+vulnerability_id: VCID-37mz-muf8-aaae
+weaknesses: []

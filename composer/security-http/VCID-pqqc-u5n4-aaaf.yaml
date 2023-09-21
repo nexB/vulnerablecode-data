@@ -1,0 +1,53 @@
+affected_purls:
+- pkg:composer/symfony/security-http@5.3.0
+- pkg:composer/symfony/security-http@5.3.1
+aliases:
+- CVE-2021-32693
+- GHSA-rfcf-m67m-jcrq
+fixed_purl:
+- pkg:composer/symfony/security-http@5.3.2
+- pkg:deb/debian/symfony@0?distro=sid
+- pkg:deb/debian/symfony@3.4.22%2Bdfsg-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/symfony@4.4.19%2Bdfsg-2%2Bdeb11u3?distro=sid
+- pkg:deb/debian/symfony@5.4.23%2Bdfsg-1?distro=sid
+references:
+- id: 160959
+  reference_id: ''
+  url: https://github.com/symfony/security-http/commit/6bf4c31219773a558b019ee12e54572174ff8129
+- id: 160957
+  reference_id: ''
+  url: https://github.com/symfony/symfony/commit/3084764ad82f29dbb025df19978b9cbc3ab34728
+- id: 160958
+  reference_id: CVE-2021-32693
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-32693
+- id: 160960
+  reference_id: CVE-2021-32693-AUTHENTICATION-GRANTED-TO-ALL-FIREWALLS-INSTEAD-OF-JUST-ONE
+  url: https://symfony.com/blog/cve-2021-32693-authentication-granted-to-all-firewalls-instead-of-just-one
+- id: 160961
+  reference_id: GHSA-rfcf-m67m-jcrq
+  url: https://github.com/advisories/GHSA-rfcf-m67m-jcrq
+- id: 160956
+  reference_id: GHSA-rfcf-m67m-jcrq
+  url: https://github.com/symfony/symfony/security/advisories/GHSA-rfcf-m67m-jcrq
+severities:
+- id: 23677
+  reference_id: 160961
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 23676
+  reference_id: 160956
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Symfony is a PHP framework for web and console applications and a set of
+  reusable PHP components. A vulnerability related to firewall authentication is in
+  Symfony starting with version 5.3.0 and prior to 5.3.2. When an application defines
+  multiple firewalls, the token authenticated by one of the firewalls was available
+  for all other firewalls. This could be abused when the application defines different
+  providers for each part of the application, in such a situation, a user authenticated
+  on a part of the application could be considered authenticated on the rest of the
+  application. Starting in version 5.3.2, a patch ensures that the authenticated token
+  is only available for the firewall that generates it.
+vulnerability_id: VCID-pqqc-u5n4-aaaf
+weaknesses: []

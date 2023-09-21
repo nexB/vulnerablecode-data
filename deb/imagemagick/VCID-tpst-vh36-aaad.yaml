@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2020-25665
+fixed_purl:
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.24%2Bdfsg-1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.6?distro=sid
+references: []
+severities: []
+summary: The PALM image coder at coders/palm.c makes an improper call to AcquireQuantumMemory()
+  in routine WritePALMImage() because it needs to be offset by 256. This can cause
+  a out-of-bounds read later on in the routine. The patch adds 256 to bytes_per_row
+  in the call to AcquireQuantumMemory(). This could cause impact to reliability. This
+  flaw affects ImageMagick versions prior to 7.0.8-68.
+vulnerability_id: VCID-tpst-vh36-aaad
+weaknesses: []

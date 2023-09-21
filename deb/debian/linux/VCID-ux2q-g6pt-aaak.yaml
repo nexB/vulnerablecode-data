@@ -1,0 +1,45 @@
+vulnerability_id: VCID-ux2q-g6pt-aaak
+aliases:
+  - CVE-2022-1419
+summary: The root cause of this vulnerability is that the ioctl$DRM_IOCTL_MODE_DESTROY_DUMB
+  can decrease refcount of *drm_vgem_gem_object *(created in *vgem_gem_dumb_create*) concurrently,
+  and *vgem_gem_dumb_create *will access the freed drm_vgem_gem_object.
+severities:
+  - id: 84631
+    reference_id: 230731
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 579210
+    reference_id: 910773
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 579208
+    reference_id: 910773
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 230731
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-1419.json
+    reference_id:
+  - id: 910772
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2077560
+    reference_id:
+  - id: 948102
+    url: https://www.debian.org/security/2022/dsa-5173
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 820920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.6:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.6:-:*:*:*:*:*:*
+  - id: 820921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.6:rc1:*:*:*:*:*:*
+  - id: 910773
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-1419
+    reference_id: CVE-2022-1419
+weaknesses: []

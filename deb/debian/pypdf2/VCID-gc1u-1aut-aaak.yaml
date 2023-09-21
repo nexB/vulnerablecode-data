@@ -1,0 +1,84 @@
+vulnerability_id: VCID-gc1u-1aut-aaak
+aliases:
+  - CVE-2022-24859
+  - GHSA-xcjx-m2pj-8g79
+  - PYSEC-2022-194
+summary: PyPDF2 is an open source python PDF library capable of splitting, merging, cropping,
+  and transforming the pages of PDF files. In versions prior to 1.27.5 an attacker who uses
+  this vulnerability can craft a PDF which leads to an infinite loop if the PyPDF2 if the code
+  attempts to get the content stream. The reason is that the last while-loop in `ContentStream._readInlineImage`
+  only terminates when it finds the `EI` token, but never actually checks if the stream has
+  already ended. This issue has been resolved in version `1.27.5`. Users unable to upgrade should
+  validate and PDFs prior to iterating over their content stream.
+severities:
+  - id: 103561
+    reference_id: 304978
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 103560
+    reference_id: 304977
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 590335
+    reference_id: 20699
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 590333
+    reference_id: 20699
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 3298
+    reference_id: 20702
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 3297
+    reference_id: 20698
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 304978
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-24859.json
+    reference_id:
+  - id: 20700
+    url: https://github.com/pypa/advisory-database/tree/main/vulns/pypdf2/PYSEC-2022-194.yaml
+    reference_id:
+  - id: 8933
+    url: https://github.com/py-pdf/PyPDF2/issues/329
+    reference_id:
+  - id: 8932
+    url: https://github.com/py-pdf/PyPDF2/pull/740
+    reference_id:
+  - id: 8934
+    url: https://github.com/py-pdf/PyPDF2/releases/tag/1.27.5
+    reference_id:
+  - id: 20701
+    url: https://lists.debian.org/debian-lts-announce/2022/06/msg00001.html
+    reference_id:
+  - id: 106407
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1009879
+    reference_id: 1009879
+  - id: 304977
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2076488
+    reference_id: 2076488
+  - id: 917871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pypdf2_project:pypdf2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pypdf2_project:pypdf2:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 20699
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24859
+    reference_id: CVE-2022-24859
+  - id: 20702
+    url: https://github.com/advisories/GHSA-xcjx-m2pj-8g79
+    reference_id: GHSA-xcjx-m2pj-8g79
+  - id: 20698
+    url: https://github.com/py-pdf/PyPDF2/security/advisories/GHSA-xcjx-m2pj-8g79
+    reference_id: GHSA-xcjx-m2pj-8g79
+weaknesses: []

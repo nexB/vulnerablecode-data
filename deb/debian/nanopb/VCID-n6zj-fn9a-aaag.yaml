@@ -1,0 +1,47 @@
+vulnerability_id: VCID-n6zj-fn9a-aaag
+aliases:
+  - CVE-2021-21401
+  - GHSA-7mv5-5mxh-qg88
+  - PYSEC-2021-432
+summary: Nanopb is a small code-size Protocol Buffers implementation in ansi C. In Nanopb before
+  versions 0.3.9.8 and 0.4.5, decoding a specifically formed message can cause invalid `free()`
+  or `realloc()` calls if the message type contains an `oneof` field, and the `oneof` directly
+  contains both a pointer field and a non-pointer field. If the message data first contains
+  the non-pointer field and then the pointer field, the data of the non-pointer field is incorrectly
+  treated as if it was a pointer value. Such message data rarely occurs in normal messages,
+  but it is a concern when untrusted data is parsed. This has been fixed in versions 0.3.9.8
+  and 0.4.5. See referenced GitHub Security Advisory for more information including workarounds.
+severities:
+  - id: 508396
+    reference_id: 864320
+    scoring_system: cvssv2
+    value: '5.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:P/A:P
+  - id: 508394
+    reference_id: 864320
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L
+references:
+  - id: 8257
+    url: https://github.com/nanopb/nanopb/blob/c9124132a604047d0ef97a09c0e99cd9bed2c818/CHANGELOG.txt#L1
+    reference_id:
+  - id: 8255
+    url: https://github.com/nanopb/nanopb/commit/e2f0ccf939d9f82931d085acb6df8e9a182a4261
+    reference_id:
+  - id: 8256
+    url: https://github.com/nanopb/nanopb/issues/647
+    reference_id:
+  - id: 8254
+    url: https://github.com/nanopb/nanopb/security/advisories/GHSA-7mv5-5mxh-qg88
+    reference_id:
+  - id: 75224
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=985844
+    reference_id: 985844
+  - id: 835281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nanopb_project:nanopb:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nanopb_project:nanopb:*:*:*:*:*:*:*:*
+  - id: 864320
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-21401
+    reference_id: CVE-2021-21401
+weaknesses: []

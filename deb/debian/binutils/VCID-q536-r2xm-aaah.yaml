@@ -1,0 +1,76 @@
+vulnerability_id: VCID-q536-r2xm-aaah
+aliases:
+  - CVE-2017-12448
+summary: The bfd_cache_close function in bfd/cache.c in the Binary File Descriptor (BFD) library
+  (aka libbfd), as distributed in GNU Binutils 2.29 and earlier, allows remote attackers to
+  cause a heap use after free and possibly achieve code execution via a crafted nested archive
+  file. This issue occurs because incorrect functions are called during an attempt to release
+  memory. The issue can be addressed by better input validation in the bfd_generic_archive_p
+  function in bfd/archive.c.
+severities:
+  - id: 674309
+    reference_id: 1439288
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 621885
+    reference_id: 939930
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 674310
+    reference_id: 1439289
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674311
+    reference_id: 677271
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 667765
+    reference_id: 1433952
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 621884
+    reference_id: 939929
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 258477
+    reference_id: 677272
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 258475
+    reference_id: 677272
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1439288
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-12448.html
+    reference_id:
+  - id: 939930
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-12448.json
+    reference_id:
+  - id: 1439289
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12448
+    reference_id:
+  - id: 677271
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=21787
+    reference_id:
+  - id: 1433952
+    url: https://ubuntu.com/security/notices/USN-4336-2
+    reference_id:
+  - id: 939929
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1483581
+    reference_id: 1483581
+  - id: 146116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:binutils:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:binutils:*:*:*:*:*:*:*:*
+  - id: 677272
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-12448
+    reference_id: CVE-2017-12448
+weaknesses: []

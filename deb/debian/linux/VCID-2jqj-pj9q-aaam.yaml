@@ -1,0 +1,162 @@
+vulnerability_id: VCID-2jqj-pj9q-aaam
+aliases:
+  - CVE-2018-12233
+summary: In the ea_get function in fs/jfs/xattr.c in the Linux kernel through 4.17.1, a memory
+  corruption bug in JFS can be triggered by calling setxattr twice with two different extended
+  attribute names on the same file. This vulnerability can be triggered by an unprivileged user
+  with the ability to create files and execute programs. A kmalloc call is incorrect, leading
+  to slab-out-of-bounds in jfs_xattr.
+severities:
+  - id: 683663
+    reference_id: 1446403
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615879
+    reference_id: 935659
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L
+  - id: 683664
+    reference_id: 1446404
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683665
+    reference_id: 728974
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683666
+    reference_id: 728975
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682370
+    reference_id: 1445436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682371
+    reference_id: 1445437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682372
+    reference_id: 1445438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674913
+    reference_id: 1439809
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674914
+    reference_id: 1439810
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615878
+    reference_id: 935658
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 316444
+    reference_id: 728976
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 316442
+    reference_id: 728976
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1446403
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12233.html
+    reference_id:
+  - id: 935659
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12233.json
+    reference_id:
+  - id: 1446404
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12233
+    reference_id:
+  - id: 721722
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00015.html
+    reference_id:
+  - id: 721723
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00016.html
+    reference_id:
+  - id: 693387
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00020.html
+    reference_id:
+  - id: 728974
+    url: https://lkml.org/lkml/2018/6/2/2
+    reference_id:
+  - id: 728975
+    url: https://marc.info/?l=linux-kernel&m=152814391530549&w=2
+    reference_id:
+  - id: 1445436
+    url: https://ubuntu.com/security/notices/USN-3752-1
+    reference_id:
+  - id: 1445437
+    url: https://ubuntu.com/security/notices/USN-3752-2
+    reference_id:
+  - id: 1445438
+    url: https://ubuntu.com/security/notices/USN-3752-3
+    reference_id:
+  - id: 1439809
+    url: https://ubuntu.com/security/notices/USN-3753-1
+    reference_id:
+  - id: 1439810
+    url: https://ubuntu.com/security/notices/USN-3753-2
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 721706
+    url: https://usn.ubuntu.com/3752-1/
+    reference_id:
+  - id: 721707
+    url: https://usn.ubuntu.com/3752-2/
+    reference_id:
+  - id: 721708
+    url: https://usn.ubuntu.com/3752-3/
+    reference_id:
+  - id: 679659
+    url: https://usn.ubuntu.com/3753-1/
+    reference_id:
+  - id: 679660
+    url: https://usn.ubuntu.com/3753-2/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 728973
+    url: http://www.securityfocus.com/bid/104452
+    reference_id:
+  - id: 935658
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1590205
+    reference_id: 1590205
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 728976
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12233
+    reference_id: CVE-2018-12233
+weaknesses: []

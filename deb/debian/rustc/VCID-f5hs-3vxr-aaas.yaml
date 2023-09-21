@@ -1,0 +1,63 @@
+vulnerability_id: VCID-f5hs-3vxr-aaas
+aliases:
+  - CVE-2021-28877
+summary: In the standard library in Rust before 1.51.0, the Zip implementation calls __iterator_get_unchecked()
+  for the same index more than once when nested. This bug can lead to a memory safety violation
+  due to an unmet safety requirement for the TrustedRandomAccess trait.
+severities:
+  - id: 607680
+    reference_id: 929639
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 607679
+    reference_id: 929638
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 530297
+    reference_id: 878173
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 530295
+    reference_id: 878173
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 606198
+    reference_id: 928549
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606199
+    reference_id: 928550
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 929639
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-28877.json
+    reference_id:
+  - id: 878172
+    url: https://github.com/rust-lang/rust/pull/80670
+    reference_id:
+  - id: 929638
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1949204
+    reference_id: '1949204'
+  - id: 120815
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986803
+    reference_id: 986803
+  - id: 169110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+  - id: 878173
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-28877
+    reference_id: CVE-2021-28877
+  - id: 928549
+    url: https://access.redhat.com/errata/RHSA-2021:3042
+    reference_id: RHSA-2021:3042
+  - id: 928550
+    url: https://access.redhat.com/errata/RHSA-2021:3063
+    reference_id: RHSA-2021:3063
+weaknesses: []

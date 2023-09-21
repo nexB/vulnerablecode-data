@@ -1,0 +1,284 @@
+vulnerability_id: VCID-8ukk-t776-aaap
+aliases:
+  - CVE-2005-2088
+summary: 'The Apache HTTP server before 1.3.34, and 2.0.x before 2.0.55, when acting as an HTTP
+  proxy, allows remote attackers to poison the web cache, bypass web application firewall protection,
+  and conduct XSS attacks via an HTTP request with both a "Transfer-Encoding: chunked" header
+  and a Content-Length header, which causes Apache to incorrectly handle and forward the body
+  of the request in a way that causes the receiving server to process it as a separate HTTP
+  request, aka "HTTP Request Smuggling."'
+severities:
+  - id: 78676
+    reference_id: 210464
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 707376
+    reference_id: 1469294
+    scoring_system: apache_httpd
+    value: moderate
+    scoring_elements:
+  - id: 30634
+    reference_id: 125533
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 78677
+    reference_id: 210465
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 124966
+    url: http://docs.info.apple.com/article.html?artnum=302847
+    reference_id:
+  - id: 120640
+    url: http://lists.trustix.org/pipermail/tsl-announce/2005-October/000354.html
+    reference_id:
+  - id: 125505
+    url: http://marc.info/?l=apache-httpd-announce&m=112931556417329&w=3
+    reference_id:
+  - id: 210466
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-2088.json
+    reference_id:
+  - id: 1469293
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2088
+    reference_id:
+  - id: 125506
+    url: http://seclists.org/lists/bugtraq/2005/Jun/0025.html
+    reference_id:
+  - id: 125507
+    url: http://secunia.com/advisories/14530
+    reference_id:
+  - id: 125508
+    url: http://secunia.com/advisories/17319
+    reference_id:
+  - id: 125509
+    url: http://secunia.com/advisories/17487
+    reference_id:
+  - id: 124968
+    url: http://secunia.com/advisories/17813
+    reference_id:
+  - id: 97198
+    url: http://secunia.com/advisories/19072
+    reference_id:
+  - id: 97698
+    url: http://secunia.com/advisories/19073
+    reference_id:
+  - id: 120587
+    url: http://secunia.com/advisories/19185
+    reference_id:
+  - id: 125510
+    url: http://secunia.com/advisories/19317
+    reference_id:
+  - id: 125511
+    url: http://secunia.com/advisories/23074
+    reference_id:
+  - id: 120642
+    url: http://securityreason.com/securityalert/604
+    reference_id:
+  - id: 125512
+    url: http://securitytracker.com/id?1014323
+    reference_id:
+  - id: 125513
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2005&m=slackware-security.600000
+    reference_id:
+  - id: 66728
+    url: https://lists.apache.org/thread.html/54a42d4b01968df1117cea77fc53d6beb931c0e05936ad02af93e9ac@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66729
+    url: https://lists.apache.org/thread.html/5df9bfb86a3b054bb985a45ff9250b0332c9ecc181eec232489e7f79@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66730
+    url: https://lists.apache.org/thread.html/r0276683d8e1e07153fc8642618830ac0ade85b9ae0dc7b07f63bb8fc@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66731
+    url: https://lists.apache.org/thread.html/r2cb985de917e7da0848c440535f65a247754db8b2154a10089e4247b@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66732
+    url: https://lists.apache.org/thread.html/r5001ecf3d6b2bdd0b732e527654248abb264f08390045d30709a92f6@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 94070
+    url: https://lists.apache.org/thread.html/r734a07156abf332d5ab27fb91d9d962cacfef4f3681e44056f064fa8@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66733
+    url: https://lists.apache.org/thread.html/r8828e649175df56f1f9e3919938ac7826128525426e2748f0ab62feb@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 66734
+    url: https://lists.apache.org/thread.html/r9e8622254184645bc963a1d47c5d47f6d5a36d6f080d8d2c43b2b142@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 47177
+    url: https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 91468
+    url: https://lists.apache.org/thread.html/rd65d8ba68ba17e7deedafbf5bb4899f2ae4dad781d21b931c2941ac3@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 91469
+    url: https://lists.apache.org/thread.html/re895fc1736d25c8cf57e102c871613b8aeec9ea26fd8a44e7942b5ab@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 47179
+    url: https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 125527
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11452
+    reference_id:
+  - id: 125528
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1237
+    reference_id:
+  - id: 125529
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1526
+    reference_id:
+  - id: 125530
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1629
+    reference_id:
+  - id: 125531
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A840
+    reference_id:
+  - id: 125532
+    url: https://secure-support.novell.com/KanisaPlatform/Publishing/741/3222109_f.SAL_Public.html
+    reference_id:
+  - id: 97700
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102197-1
+    reference_id:
+  - id: 97199
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102198-1
+    reference_id:
+  - id: 97200
+    url: http://support.avaya.com/elmodocs2/security/ASA-2006-081.htm
+    reference_id:
+  - id: 125514
+    url: http://www-1.ibm.com/support/search.wss?rs=0&q=PK13959&apar=only
+    reference_id:
+  - id: 125515
+    url: http://www-1.ibm.com/support/search.wss?rs=0&q=PK16139&apar=only
+    reference_id:
+  - id: 125526
+    url: http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00612828
+    reference_id:
+  - id: 77212
+    url: http://www.apache.org/dist/httpd/CHANGES_1.3
+    reference_id:
+  - id: 68311
+    url: http://www.apache.org/dist/httpd/CHANGES_2.0
+    reference_id:
+  - id: 125516
+    url: http://www.debian.org/security/2005/dsa-803
+    reference_id:
+  - id: 120643
+    url: http://www.debian.org/security/2005/dsa-805
+    reference_id:
+  - id: 125517
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2005:130
+    reference_id:
+  - id: 106724
+    url: http://www.novell.com/linux/security/advisories/2005_18_sr.html
+    reference_id:
+  - id: 120645
+    url: http://www.novell.com/linux/security/advisories/2005_46_apache.html
+    reference_id:
+  - id: 125518
+    url: http://www.redhat.com/support/errata/RHSA-2005-582.html
+    reference_id:
+  - id: 125519
+    url: http://www.securiteam.com/securityreviews/5GP0220G0U.html
+    reference_id:
+  - id: 120646
+    url: http://www.securityfocus.com/archive/1/428138/100/0/threaded
+    reference_id:
+  - id: 125520
+    url: http://www.securityfocus.com/bid/14106
+    reference_id:
+  - id: 124975
+    url: http://www.securityfocus.com/bid/15647
+    reference_id:
+  - id: 125521
+    url: http://www.ubuntu.com/usn/usn-160-2
+    reference_id:
+  - id: 125522
+    url: http://www.vupen.com/english/advisories/2005/2140
+    reference_id:
+  - id: 124978
+    url: http://www.vupen.com/english/advisories/2005/2659
+    reference_id:
+  - id: 97204
+    url: http://www.vupen.com/english/advisories/2006/0789
+    reference_id:
+  - id: 125523
+    url: http://www.vupen.com/english/advisories/2006/1018
+    reference_id:
+  - id: 125524
+    url: http://www.vupen.com/english/advisories/2006/4680
+    reference_id:
+  - id: 125525
+    url: http://www.watchfire.com/resources/HTTP-Request-Smuggling.pdf
+    reference_id:
+  - id: 210464
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617682
+    reference_id: 1617682
+  - id: 39470
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316173
+    reference_id: 316173
+  - id: 43733
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
+  - id: 85973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.29:*:*:*:*:*:*:*
+  - id: 125534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.30:*:*:*:*:*:*:*
+  - id: 94020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.31:*:*:*:*:*:*:*
+  - id: 97706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.32:*:*:*:*:*:*:*
+  - id: 125535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.33:*:*:*:*:*:*:*
+  - id: 80590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.45:*:*:*:*:*:*:*
+  - id: 81075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.46:*:*:*:*:*:*:*
+  - id: 83231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.47:*:*:*:*:*:*:*
+  - id: 88333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.48:*:*:*:*:*:*:*
+  - id: 94021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.49:*:*:*:*:*:*:*
+  - id: 96037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.50:*:*:*:*:*:*:*
+  - id: 96655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.51:*:*:*:*:*:*:*
+  - id: 97209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.52:*:*:*:*:*:*:*
+  - id: 125536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.53:*:*:*:*:*:*:*
+  - id: 125537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.54:*:*:*:*:*:*:*
+  - id: 48838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:3.0:*:*:*:*:*:*:*
+  - id: 120566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:3.1:*:*:*:*:*:*:*
+  - id: 1469294
+    url: https://httpd.apache.org/security/json/CVE-2005-2088.json
+    reference_id: CVE-2005-2088
+  - id: 125533
+    url: https://nvd.nist.gov/vuln/detail/CVE-2005-2088
+    reference_id: CVE-2005-2088
+  - id: 210465
+    url: https://access.redhat.com/errata/RHSA-2005:582
+    reference_id: RHSA-2005:582
+weaknesses: []

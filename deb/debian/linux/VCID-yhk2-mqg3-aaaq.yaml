@@ -1,0 +1,49 @@
+vulnerability_id: VCID-yhk2-mqg3-aaaq
+aliases:
+  - CVE-2021-4090
+summary: An out-of-bounds (OOB) memory write flaw was found in the NFSD in the Linux kernel.
+  Missing sanity may lead to a write beyond bmval[bmlen-1] in nfsd4_decode_bitmap4 in fs/nfsd/nfs4xdr.c.
+  In this flaw, a local attacker with user privilege may gain access to out-of-bounds memory,
+  leading to a system integrity and confidentiality threat.
+severities:
+  - id: 45227
+    reference_id: 170428
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 561268
+    reference_id: 898206
+    scoring_system: cvssv2
+    value: '6.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:N
+  - id: 561266
+    reference_id: 898206
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 170428
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4090.json
+    reference_id:
+  - id: 898203
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2025101
+    reference_id:
+  - id: 898204
+    url: https://lore.kernel.org/linux-nfs/163692036074.16710.5678362976688977923.stgit@klimt.1015granger.net/
+    reference_id:
+  - id: 898205
+    url: https://security.netapp.com/advisory/ntap-20220318-0010/
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 866860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:-:*:*:*:*:*:*
+  - id: 866861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+  - id: 898206
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4090
+    reference_id: CVE-2021-4090
+weaknesses: []

@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2017-8246
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: In function msm_pcm_playback_close() in all Android releases from CAF using
+  the Linux kernel, prtd is assigned substream->runtime->private_data. Later, prtd
+  is freed. However, prtd is not sanitized and set to NULL, resulting in a dangling
+  pointer. There are other functions that access the same memory (substream->runtime->private_data)
+  with a NULL check, such as msm_pcm_volume_ctl_put(), which means this freed memory
+  could be used.
+vulnerability_id: VCID-zdua-dakv-aaaa
+weaknesses: []

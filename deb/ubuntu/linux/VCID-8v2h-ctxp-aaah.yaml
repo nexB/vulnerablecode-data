@@ -1,0 +1,139 @@
+vulnerability_id: VCID-8v2h-ctxp-aaah
+aliases:
+  - CVE-2021-29155
+summary: An issue was discovered in the Linux kernel through 5.11.x. kernel/bpf/verifier.c performs
+  undesirable out-of-bounds speculation on pointer arithmetic, leading to side-channel attacks
+  that defeat Spectre mitigations and obtain sensitive information from kernel memory. Specifically,
+  for sequences of pointer arithmetic operations, the pointer modification performed by the
+  first operation is not correctly accounted for when restricting subsequent operations.
+severities:
+  - id: 701565
+    reference_id: 1460942
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605974
+    reference_id: 928389
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+  - id: 701566
+    reference_id: 1460943
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697766
+    reference_id: 1457696
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701567
+    reference_id: 1460944
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697600
+    reference_id: 1457570
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701568
+    reference_id: 878605
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701569
+    reference_id: 878606
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605973
+    reference_id: 928388
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 530977
+    reference_id: 878607
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 530975
+    reference_id: 878607
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1460942
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-29155.html
+    reference_id:
+  - id: 928389
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-29155.json
+    reference_id:
+  - id: 1460943
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29155
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 867959
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CUX2CA63453G34C6KYVBLJXJXEARZI2X/
+    reference_id:
+  - id: 867960
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PAEQ3H6HKNO6KUCGRZVYSFSAGEUX23JL/
+    reference_id:
+  - id: 867961
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XZASHZVCOFJ4VU2I3BN5W5EPHWJQ7QWX/
+    reference_id:
+  - id: 1457696
+    url: https://ubuntu.com/security/notices/USN-4977-1
+    reference_id:
+  - id: 1460944
+    url: https://ubuntu.com/security/notices/USN-4983-1
+    reference_id:
+  - id: 1457570
+    url: https://ubuntu.com/security/notices/USN-4999-1
+    reference_id:
+  - id: 878605
+    url: https://www.kernel.org
+    reference_id:
+  - id: 878606
+    url: https://www.openwall.com/lists/oss-security/2021/04/18/4
+    reference_id:
+  - id: 928388
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1951595
+    reference_id: '1951595'
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 878607
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29155
+    reference_id: CVE-2021-29155
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

@@ -1,0 +1,89 @@
+vulnerability_id: VCID-ffzd-ws2u-aaaa
+aliases:
+  - CVE-2021-35039
+summary: kernel/module.c in the Linux kernel before 5.12.14 mishandles Signature Verification,
+  aka CID-0c18f29aae7c. Without CONFIG_MODULE_SIG, verification that a kernel module is signed,
+  for loading via init_module, does not occur for a module.sig_enforce=1 command-line argument.
+severities:
+  - id: 703888
+    reference_id: 1465422
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 603845
+    reference_id: 926831
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 703889
+    reference_id: 1465423
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 703890
+    reference_id: 1465424
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 603844
+    reference_id: 926830
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 546208
+    reference_id: 888642
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 546206
+    reference_id: 888642
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1465422
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-35039.html
+    reference_id:
+  - id: 926831
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-35039.json
+    reference_id:
+  - id: 888637
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.12.14
+    reference_id:
+  - id: 1465423
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-35039
+    reference_id:
+  - id: 888639
+    url: https://github.com/torvalds/linux/commit/0c18f29aae7ce3dadd26d8ee3505d07cc982df75
+    reference_id:
+  - id: 888638
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0c18f29aae7ce3dadd26d8ee3505d07cc982df75
+    reference_id:
+  - id: 825346
+    url: https://lists.debian.org/debian-lts-announce/2021/10/msg00010.html
+    reference_id:
+  - id: 1465424
+    url: https://seclists.org/oss-sec/2021/q3/6
+    reference_id:
+  - id: 888640
+    url: https://security.netapp.com/advisory/ntap-20210813-0004/
+    reference_id:
+  - id: 888641
+    url: https://www.openwall.com/lists/oss-security/2021/07/06/3
+    reference_id:
+  - id: 888636
+    url: http://www.openwall.com/lists/oss-security/2021/07/06/3
+    reference_id:
+  - id: 926830
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1980069
+    reference_id: '1980069'
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 888642
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-35039
+    reference_id: CVE-2021-35039
+weaknesses: []

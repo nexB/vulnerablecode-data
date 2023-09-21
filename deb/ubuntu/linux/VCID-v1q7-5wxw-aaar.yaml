@@ -1,0 +1,154 @@
+vulnerability_id: VCID-v1q7-5wxw-aaar
+aliases:
+  - CVE-2018-18955
+summary: In the Linux kernel 4.15.x through 4.19.x before 4.19.2, map_write() in kernel/user_namespace.c
+  allows privilege escalation because it mishandles nested user namespaces with more than 5
+  UID or GID ranges. A user who has CAP_SYS_ADMIN in an affected user namespace can bypass access
+  controls on resources outside the namespace, as demonstrated by reading /etc/shadow. This
+  occurs because an ID transformation takes place properly for the namespaced-to-kernel direction
+  but not for the kernel-to-namespaced direction.
+severities:
+  - id: 685807
+    reference_id: 1448131
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 65206
+    reference_id: '194015'
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 685808
+    reference_id: 1448132
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685436
+    reference_id: 1447818
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685809
+    reference_id: 1448133
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685437
+    reference_id: 1447819
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685810
+    reference_id: 1448134
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685811
+    reference_id: 1448135
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 65205
+    reference_id: '194014'
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 337025
+    reference_id: 744974
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 337023
+    reference_id: 744974
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 744961
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d2f007dbe7e4c9583eea6eb04d60001e85c6f1bd
+    reference_id:
+  - id: 1448131
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-18955.html
+    reference_id:
+  - id: '194015'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-18955.json
+    reference_id:
+  - id: 744963
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1712
+    reference_id:
+  - id: 744964
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.18.19
+    reference_id:
+  - id: 744965
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.2
+    reference_id:
+  - id: 1448132
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-18955
+    reference_id:
+  - id: 744966
+    url: https://github.com/torvalds/linux/commit/d2f007dbe7e4c9583eea6eb04d60001e85c6f1bd
+    reference_id:
+  - id: 744967
+    url: https://security.netapp.com/advisory/ntap-20190416-0003/
+    reference_id:
+  - id: 744968
+    url: https://support.f5.com/csp/article/K39103040
+    reference_id:
+  - id: 1447818
+    url: https://ubuntu.com/security/notices/USN-3832-1
+    reference_id:
+  - id: 1448133
+    url: https://ubuntu.com/security/notices/USN-3833-1
+    reference_id:
+  - id: 1447819
+    url: https://ubuntu.com/security/notices/USN-3835-1
+    reference_id:
+  - id: 1448134
+    url: https://ubuntu.com/security/notices/USN-3836-1
+    reference_id:
+  - id: 1448135
+    url: https://ubuntu.com/security/notices/USN-3836-2
+    reference_id:
+  - id: 742501
+    url: https://usn.ubuntu.com/3832-1/
+    reference_id:
+  - id: 744969
+    url: https://usn.ubuntu.com/3833-1/
+    reference_id:
+  - id: 742502
+    url: https://usn.ubuntu.com/3835-1/
+    reference_id:
+  - id: 744970
+    url: https://usn.ubuntu.com/3836-1/
+    reference_id:
+  - id: 744971
+    url: https://usn.ubuntu.com/3836-2/
+    reference_id:
+  - id: 744972
+    url: https://www.exploit-db.com/exploits/45886/
+    reference_id:
+  - id: 744973
+    url: https://www.exploit-db.com/exploits/45915/
+    reference_id:
+  - id: 744962
+    url: http://www.securityfocus.com/bid/105941
+    reference_id:
+  - id: '194014'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1651384
+    reference_id: 1651384
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 744974
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-18955
+    reference_id: CVE-2018-18955
+weaknesses: []

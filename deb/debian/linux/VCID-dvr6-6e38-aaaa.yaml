@@ -1,0 +1,114 @@
+vulnerability_id: VCID-dvr6-6e38-aaaa
+aliases:
+  - CVE-2014-7145
+summary: The SMB2_tcon function in fs/cifs/smb2pdu.c in the Linux kernel before 3.16.3 allows
+  remote CIFS servers to cause a denial of service (NULL pointer dereference and client system
+  crash) or possibly have unspecified other impact by deleting the IPC$ share during resolution
+  of DFS referrals.
+severities:
+  - id: 657716
+    reference_id: 1425920
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657717
+    reference_id: 1425921
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 655933
+    reference_id: 1424639
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 655934
+    reference_id: 1424640
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 58782
+    reference_id: 185200
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 187371
+    reference_id: 582181
+    scoring_system: cvssv2
+    value: '7.8'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:C
+  - id: 56672
+    reference_id: 182417
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 582177
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=18f39e7be0121317550d03e267e3ebd4dbfbb3ce
+    reference_id:
+  - id: 1425920
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-7145.html
+    reference_id:
+  - id: 570929
+    url: http://rhn.redhat.com/errata/RHSA-2015-0102.html
+    reference_id:
+  - id: 185201
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-7145.json
+    reference_id:
+  - id: 1425921
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7145
+    reference_id:
+  - id: 582180
+    url: https://github.com/torvalds/linux/commit/18f39e7be0121317550d03e267e3ebd4dbfbb3ce
+    reference_id:
+  - id: 1424639
+    url: https://ubuntu.com/security/notices/USN-2394-1
+    reference_id:
+  - id: 1424640
+    url: https://ubuntu.com/security/notices/USN-2395-1
+    reference_id:
+  - id: 567999
+    url: http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.16.3
+    reference_id:
+  - id: 582178
+    url: http://www.openwall.com/lists/oss-security/2014/09/22/4
+    reference_id:
+  - id: 582179
+    url: http://www.securityfocus.com/bid/69867
+    reference_id:
+  - id: 567839
+    url: http://www.ubuntu.com/usn/USN-2394-1
+    reference_id:
+  - id: 185200
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1147522
+    reference_id: 1147522
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 564901
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.16.0:*:*:*:*:*:*:*
+  - id: 564902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:3.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:3.16.1:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 582181
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-7145
+    reference_id: CVE-2014-7145
+  - id: 182417
+    url: https://access.redhat.com/errata/RHSA-2015:0102
+    reference_id: RHSA-2015:0102
+weaknesses: []

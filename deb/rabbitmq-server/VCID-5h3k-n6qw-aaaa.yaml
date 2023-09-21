@@ -1,0 +1,22 @@
+affected_purls:
+- pkg:deb/debian/rabbitmq-server@3.7.8-4
+- pkg:deb/debian/rabbitmq-server@3.8.9-3
+aliases:
+- CVE-2021-32718
+fixed_purl:
+- pkg:deb/debian/rabbitmq-server@3.10.8-1.1
+references:
+- id: 129806
+  reference_id: '990524'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990524
+severities: []
+summary: RabbitMQ is a multi-protocol messaging broker. In rabbitmq-server prior to
+  version 3.8.17, a new user being added via management UI could lead to the user's
+  bane being rendered in a confirmation message without proper `<script>` tag sanitization,
+  potentially allowing for JavaScript code execution in the context of the page. In
+  order for this to occur, the user must be signed in and have elevated permissions
+  (other user management). The vulnerability is patched in RabbitMQ 3.8.17. As a workaround,
+  disable `rabbitmq_management` plugin and use CLI tools for management operations
+  and Prometheus and Grafana for metrics and monitoring.
+vulnerability_id: VCID-5h3k-n6qw-aaaa
+weaknesses: []

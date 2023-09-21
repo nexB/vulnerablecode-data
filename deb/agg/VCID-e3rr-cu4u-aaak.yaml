@@ -1,0 +1,21 @@
+affected_purls:
+- pkg:deb/debian/svgpp@1.3.0%2Bdfsg1-4
+- pkg:deb/debian/svgpp@1.3.0%2Bdfsg1-6
+aliases:
+- CVE-2019-6245
+fixed_purl:
+- pkg:deb/debian/agg@1:2.4-r127%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/agg@1:2.6.0-r132%2Bdfsg1-3?distro=sid
+- pkg:deb/debian/agg@1:2.6.1-r134%2Bdfsg1-2?distro=sid
+references:
+- id: 128930
+  reference_id: '919321'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=919321
+severities: []
+summary: An issue was discovered in Anti-Grain Geometry (AGG) 2.4 as used in SVG++
+  (aka svgpp) 1.2.3. In the function agg::cell_aa::not_equal, dx is assigned to (x2
+  - x1). If dx >= dx_limit, which is (16384 << poly_subpixel_shift), this function
+  will call itself recursively. There can be a situation where (x2 - x1) is always
+  bigger than dx_limit during the recursion, leading to continual stack consumption.
+vulnerability_id: VCID-e3rr-cu4u-aaak
+weaknesses: []

@@ -1,0 +1,77 @@
+vulnerability_id: VCID-h4wr-szxq-aaar
+aliases:
+  - CVE-2021-29478
+summary: Redis is an open source (BSD licensed), in-memory data structure store, used as a database,
+  cache, and message broker. An integer overflow bug in Redis 6.2 before 6.2.3 could be exploited
+  to corrupt the heap and potentially result with remote code execution. Redis 6.0 and earlier
+  are not directly affected by this issue. The problem is fixed in version 6.2.3. An additional
+  workaround to mitigate the problem without patching the `redis-server` executable is to prevent
+  users from modifying the `set-max-intset-entries` configuration parameter. This can be done
+  using ACL to restrict unprivileged users from using the `CONFIG SET` command.
+severities:
+  - id: 605657
+    reference_id: 928147
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 605656
+    reference_id: 928146
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 531637
+    reference_id: 879068
+    scoring_system: cvssv2
+    value: '6.0'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:P/A:P
+  - id: 531635
+    reference_id: 879068
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 604166
+    reference_id: 927064
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 928147
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-29478.json
+    reference_id:
+  - id: 879067
+    url: https://github.com/redis/redis/security/advisories/GHSA-qh52-crrg-44g3
+    reference_id:
+  - id: 879061
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BPWBIZXA67JFIB63W2CNVVILCGIC2ME5/
+    reference_id:
+  - id: 879062
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EZJ6JGQ2ETZB2DWTQSGCOGG7EF3ILV4V/
+    reference_id:
+  - id: 879064
+    url: https://redis.io/
+    reference_id:
+  - id: 879065
+    url: https://security.gentoo.org/glsa/202107-20
+    reference_id:
+  - id: 928146
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1957414
+    reference_id: '1957414'
+  - id: 115721
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988045
+    reference_id: 988045
+  - id: 512254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redislabs:redis:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redislabs:redis:*:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 879068
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29478
+    reference_id: CVE-2021-29478
+  - id: 927064
+    url: https://access.redhat.com/errata/RHSA-2021:3016
+    reference_id: RHSA-2021:3016
+weaknesses: []

@@ -1,0 +1,58 @@
+vulnerability_id: VCID-usnr-xysw-aaae
+aliases:
+  - CVE-2017-9502
+summary: 'In curl before 7.54.1 on Windows and DOS, libcurl''s default protocol function, which
+  is the logic that allows an application to set which protocol libcurl should attempt to use
+  when given a URL without a scheme part, had a flaw that could lead to it overwriting a heap
+  based memory buffer with seven bytes. If the default protocol is specified to be FILE or a
+  file: URL lacks two slashes, the given "URL" starts with a drive letter, and libcurl is built
+  for Windows or DOS, then libcurl would copy the path 7 bytes off, so that the end of the given
+  path would write beyond the malloc buffer (7 bytes being the length in bytes of the ascii
+  string "file://").'
+severities:
+  - id: 622534
+    reference_id: 940379
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 622533
+    reference_id: 940378
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 301317
+    reference_id: 715875
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 301315
+    reference_id: 715875
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+references:
+  - id: 715871
+    url: http://openwall.com/lists/oss-security/2017/06/14/1
+    reference_id:
+  - id: 940379
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9502.json
+    reference_id:
+  - id: 715874
+    url: https://curl.haxx.se/docs/adv_20170614.html
+    reference_id:
+  - id: 715872
+    url: http://www.securityfocus.com/bid/99120
+    reference_id:
+  - id: 715873
+    url: http://www.securitytracker.com/id/1038697
+    reference_id:
+  - id: 940378
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1461321
+    reference_id: 1461321
+  - id: 90121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*
+  - id: 715875
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9502
+    reference_id: CVE-2017-9502
+weaknesses: []

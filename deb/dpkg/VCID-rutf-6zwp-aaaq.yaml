@@ -1,0 +1,51 @@
+affected_purls:
+- pkg:deb/debian/dpkg@1.4.0.23.2
+- pkg:deb/debian/dpkg@1.4.0.35
+- pkg:deb/debian/dpkg@1.6.15
+- pkg:deb/debian/dpkg@1.9.21
+aliases:
+- CVE-2004-2768
+fixed_purl:
+- pkg:deb/debian/dpkg@1.10.19?distro=sid
+- pkg:deb/debian/dpkg@1.10.28
+- pkg:deb/debian/dpkg@1.19.8?distro=sid
+- pkg:deb/debian/dpkg@1.20.12?distro=sid
+- pkg:deb/debian/dpkg@1.21.22?distro=sid
+references:
+- id: 70535
+  reference_id: ''
+  url: http://lists.jammed.com/ISN/2003/12/0056.html
+- id: 70536
+  reference_id: ''
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=225692
+- id: 70537
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=598775
+- id: 70539
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2768
+- id: 70538
+  reference_id: ''
+  url: https://exchange.xforce.ibmcloud.com/vulnerabilities/59428
+- id: 70534
+  reference_id: ''
+  url: http://www.hackinglinuxexposed.com/articles/20031214.html
+- id: 70532
+  reference_id: cpe:2.3:a:debian:dpkg:1.9.21:*:*:*:*:*:*:*
+  url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:dpkg:1.9.21:*:*:*:*:*:*:*
+- id: 70533
+  reference_id: CVE-2004-2768
+  url: https://nvd.nist.gov/vuln/detail/CVE-2004-2768
+severities:
+- id: 10454
+  reference_id: 70533
+  scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  scoring_system: cvssv2
+  value: '7.2'
+summary: dpkg 1.9.21 does not properly reset the metadata of a file during replacement
+  of the file in a package upgrade, which might allow local users to gain privileges
+  by creating a hard link to a vulnerable (1) setuid file, (2) setgid file, or (3)
+  device, a related issue to CVE-2010-2059.
+vulnerability_id: VCID-rutf-6zwp-aaaq
+weaknesses:
+- CWE-264

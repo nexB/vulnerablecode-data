@@ -1,0 +1,46 @@
+vulnerability_id: VCID-wup1-g5kb-aaab
+aliases:
+  - CVE-2020-10701
+summary: A missing authorization flaw was found in the libvirt API responsible for changing
+  the QEMU agent response timeout. This flaw allows read-only connections to adjust the time
+  that libvirt waits for the QEMU guest agent to respond to agent commands. Depending on the
+  timeout value that is set, this flaw can make guest agent commands fail because the agent
+  cannot respond in time. Unprivileged users with a read-only connection could abuse this flaw
+  to set the response timeout for all guest agent messages to zero, potentially leading to a
+  denial of service. This flaw affects libvirt versions before 6.2.0.
+severities:
+  - id: 53309
+    reference_id: 178341
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 430407
+    reference_id: 812126
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 430405
+    reference_id: 812126
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 178341
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10701.json
+    reference_id:
+  - id: 812124
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1819163
+    reference_id:
+  - id: 812125
+    url: https://security.netapp.com/advisory/ntap-20210708-0001/
+    reference_id:
+  - id: 46287
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=955841
+    reference_id: 955841
+  - id: 453779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+  - id: 812126
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10701
+    reference_id: CVE-2020-10701
+weaknesses: []

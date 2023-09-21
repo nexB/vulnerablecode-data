@@ -1,0 +1,106 @@
+vulnerability_id: VCID-j229-3ppm-aaar
+aliases:
+  - CVE-2022-0322
+summary: A flaw was found in the sctp_make_strreset_req function in net/sctp/sm_make_chunk.c
+  in the SCTP network protocol in the Linux kernel with a local user privilege access. In this
+  flaw, an attempt to use more buffer than is allocated triggers a BUG_ON issue, leading to
+  a denial of service (DOS).
+severities:
+  - id: 602216
+    reference_id: 925625
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 602215
+    reference_id: 925624
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 575694
+    reference_id: 908500
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 575692
+    reference_id: 908500
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 53305
+    reference_id: 178338
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53304
+    reference_id: 178337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 925625
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-0322.json
+    reference_id:
+  - id: 908499
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a2d859e3fc97e79d907761550dbc03ff1b36479c
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 925624
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2042822
+    reference_id: 2042822
+  - id: 890042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 899485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+  - id: 899486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+  - id: 899487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+  - id: 899488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+  - id: 899489
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+  - id: 899490
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 861606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+  - id: 861607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+  - id: 861608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+  - id: 861612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+  - id: 861613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+  - id: 897104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+  - id: 908500
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-0322
+    reference_id: CVE-2022-0322
+  - id: 178338
+    url: https://access.redhat.com/errata/RHSA-2022:1975
+    reference_id: RHSA-2022:1975
+  - id: 178337
+    url: https://access.redhat.com/errata/RHSA-2022:1988
+    reference_id: RHSA-2022:1988
+weaknesses: []

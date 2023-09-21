@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2021-28702
+fixed_purl:
+- pkg:deb/debian/xen@0?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.3%2B32-g9de3671772-1?distro=sid
+- pkg:deb/debian/xen@4.14.3%2B32-g9de3671772-1~deb11u1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: PCI devices with RMRRs not deassigned correctly Certain PCI devices in a
+  system might be assigned Reserved Memory Regions (specified via Reserved Memory
+  Region Reporting, "RMRR"). These are typically used for platform tasks such as legacy
+  USB emulation. If such a device is passed through to a guest, then on guest shutdown
+  the device is not properly deassigned. The IOMMU configuration for these devices
+  which are not properly deassigned ends up pointing to a freed data structure, including
+  the IO Pagetables. Subsequent DMA or interrupts from the device will have unpredictable
+  behaviour, ranging from IOMMU faults to memory corruption.
+vulnerability_id: VCID-1nq8-s8ay-aaah
+weaknesses: []

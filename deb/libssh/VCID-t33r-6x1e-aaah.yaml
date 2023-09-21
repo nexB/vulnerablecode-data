@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2019-14889
+fixed_purl:
+- pkg:deb/debian/libssh@0.10.5-2?distro=sid
+- pkg:deb/debian/libssh@0.8.7-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libssh@0.8.7-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/libssh@0.9.3-1?distro=sid
+- pkg:deb/debian/libssh@0.9.5-1%2Bdeb11u1?distro=sid
+references:
+- id: 128667
+  reference_id: '946548'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=946548
+severities: []
+summary: A flaw was found with the libssh API function ssh_scp_new() in versions before
+  0.9.3 and before 0.8.8. When the libssh SCP client connects to a server, the scp
+  command, which includes a user-provided path, is executed on the server-side. In
+  case the library is used in a way where users can influence the third parameter
+  of the function, it would become possible for an attacker to inject arbitrary commands,
+  leading to a compromise of the remote target.
+vulnerability_id: VCID-t33r-6x1e-aaah
+weaknesses: []

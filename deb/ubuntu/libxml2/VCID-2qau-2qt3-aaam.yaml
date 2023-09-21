@@ -1,0 +1,107 @@
+vulnerability_id: VCID-2qau-2qt3-aaam
+aliases:
+  - CVE-2017-9048
+summary: |
+  Improper Restriction of Operations within the Bounds of a Memory Buffer
+  libxml2 is vulnerable to a stack-based buffer overflow. The function xmlSnprintfElementContent in valid.c is supposed to recursively dump the element content definition into a char buffer 'buf' of size 'size'. At the end of the routine, the function may strcat two more characters without checking whether the current strlen(buf) + 2 < size. This vulnerability causes programs that use libxml2, such as PHP, to crash.
+severities:
+  - id: 681360
+    reference_id: 1444713
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622949
+    reference_id: 940665
+    scoring_system: cvssv3
+    value: '4.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L
+  - id: 681361
+    reference_id: 1444714
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672896
+    reference_id: 1438129
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672897
+    reference_id: 1438130
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681358
+    reference_id: 29655
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622948
+    reference_id: 940664
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 299706
+    reference_id: 38580
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 299704
+    reference_id: 38580
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 48142
+    reference_id: 172668
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1444713
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-9048.html
+    reference_id:
+  - id: 940665
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9048.json
+    reference_id:
+  - id: 1444714
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9048
+    reference_id:
+  - id: 29651
+    url: https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 29652
+    url: https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 29653
+    url: https://security.gentoo.org/glsa/201711-01
+    reference_id:
+  - id: 1438129
+    url: https://ubuntu.com/security/notices/USN-3424-1
+    reference_id:
+  - id: 1438130
+    url: https://ubuntu.com/security/notices/USN-3424-2
+    reference_id:
+  - id: 29654
+    url: http://www.debian.org/security/2017/dsa-3952
+    reference_id:
+  - id: 29655
+    url: http://www.openwall.com/lists/oss-security/2017/05/15/1
+    reference_id:
+  - id: 714431
+    url: http://www.securityfocus.com/bid/98556
+    reference_id:
+  - id: 940664
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1452549
+    reference_id: 1452549
+  - id: 47712
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863021
+    reference_id: 863021
+  - id: 704178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:xmlsoft:libxml2:2.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:xmlsoft:libxml2:2.9.4:*:*:*:*:*:*:*
+  - id: 38580
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9048
+    reference_id: CVE-2017-9048
+  - id: 172668
+    url: https://access.redhat.com/errata/RHSA-2018:2486
+    reference_id: RHSA-2018:2486
+weaknesses: []

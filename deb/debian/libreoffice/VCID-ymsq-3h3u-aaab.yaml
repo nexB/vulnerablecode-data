@@ -1,0 +1,55 @@
+vulnerability_id: VCID-ymsq-3h3u-aaab
+aliases:
+  - CVE-2021-25636
+summary: 'LibreOffice supports digital signatures of ODF documents and macros within documents,
+  presenting visual aids that no alteration of the document occurred since the last signing
+  and that the signature is valid. An Improper Certificate Validation vulnerability in LibreOffice
+  allowed an attacker to create a digitally signed ODF document, by manipulating the documentsignatures.xml
+  or macrosignatures.xml stream within the document to contain both "X509Data" and "KeyValue"
+  children of the "KeyInfo" tag, which when opened caused LibreOffice to verify using the "KeyValue"
+  but to report verification with the unrelated "X509Data" value. This issue affects: The Document
+  Foundation LibreOffice 7.2 versions prior to 7.2.5.'
+severities:
+  - id: 181819
+    reference_id: 570990
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 181818
+    reference_id: 570989
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 522495
+    reference_id: 873133
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 522493
+    reference_id: 873133
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 570990
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-25636.json
+    reference_id:
+  - id: 873131
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NE6UIBCPZWRBWPSEGJOPNWPPT3CCMVH2/
+    reference_id:
+  - id: 873132
+    url: https://www.libreoffice.org/about-us/security/advisories/CVE-2021-25636/
+    reference_id:
+  - id: 570989
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2056955
+    reference_id: 2056955
+  - id: 158086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libreoffice:libreoffice:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libreoffice:libreoffice:*:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 873133
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-25636
+    reference_id: CVE-2021-25636
+weaknesses: []

@@ -1,0 +1,67 @@
+vulnerability_id: VCID-7r9p-9p5v-aaad
+aliases:
+  - CVE-2021-3941
+summary: In ImfChromaticities.cpp routine RGBtoXYZ(), there are some division operations such
+  as `float Z = (1 - chroma.white.x - chroma.white.y) * Y / chroma.white.y;` and `chroma.green.y
+  * (X + Z))) / d;` but the divisor is not checked for a 0 value. A specially crafted file could
+  trigger a divide-by-zero condition which could affect the availability of programs linked
+  with OpenEXR.
+severities:
+  - id: 602458
+    reference_id: 925804
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 602457
+    reference_id: 925803
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 557121
+    reference_id: 895864
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 557119
+    reference_id: 895864
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+references:
+  - id: 925804
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3941.json
+    reference_id:
+  - id: 895655
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I2JSMJ7HLWFPYYV7IAQZD5ZUUUN7RWBN/
+    reference_id:
+  - id: 945255
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014828
+    reference_id: 1014828
+  - id: 925803
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2019789
+    reference_id: 2019789
+  - id: 895865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openexr:openexr:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openexr:openexr:3.1.2:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 169240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 895864
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3941
+    reference_id: CVE-2021-3941
+weaknesses: []

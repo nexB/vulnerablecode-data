@@ -1,0 +1,118 @@
+vulnerability_id: VCID-8q4e-fq65-aaah
+aliases:
+  - CVE-2021-3444
+summary: 'The bpf verifier in the Linux kernel did not properly handle mod32 destination register
+  truncation when the source register was known to be 0. A local attacker with the ability to
+  load bpf programs could use this gain out-of-bounds reads in kernel memory leading to information
+  disclosure (kernel memory), and possibly out-of-bounds writes that could potentially lead
+  to code execution. This issue was addressed in the upstream kernel in commit 9b00f1b78809
+  ("bpf: Fix truncation handling for mod32 dst reg wrt zero") and in Linux stable kernels 5.11.2,
+  5.10.19, and 5.4.101.'
+severities:
+  - id: 702421
+    reference_id: 1461663
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 607049
+    reference_id: 929176
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702422
+    reference_id: 1461664
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702423
+    reference_id: 1461665
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 698127
+    reference_id: 1458022
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702424
+    reference_id: 887152
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 607048
+    reference_id: 929175
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 544124
+    reference_id: 887153
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 544122
+    reference_id: 887153
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 836729
+    url: http://packetstormsecurity.com/files/162117/Kernel-Live-Patch-Security-Notice-LSN-0075-1.html
+    reference_id:
+  - id: 840776
+    url: http://packetstormsecurity.com/files/164950/Kernel-Live-Patch-Security-Notice-LSN-0082-1.html
+    reference_id:
+  - id: 1461663
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3444.html
+    reference_id:
+  - id: 929176
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3444.json
+    reference_id:
+  - id: 1461664
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3444
+    reference_id:
+  - id: 887150
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9b00f1b78809
+    reference_id:
+  - id: 1461665
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9b00f1b78809309163dda2d044d9e94a3c0248a3
+    reference_id:
+  - id: 825346
+    url: https://lists.debian.org/debian-lts-announce/2021/10/msg00010.html
+    reference_id:
+  - id: 887151
+    url: https://security.netapp.com/advisory/ntap-20210416-0006/
+    reference_id:
+  - id: 1458022
+    url: https://ubuntu.com/security/notices/USN-4887-1
+    reference_id:
+  - id: 887152
+    url: https://www.openwall.com/lists/oss-security/2021/03/23/2
+    reference_id:
+  - id: 887149
+    url: http://www.openwall.com/lists/oss-security/2021/03/23/2
+    reference_id:
+  - id: 929175
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1942667
+    reference_id: '1942667'
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 887153
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3444
+    reference_id: CVE-2021-3444
+weaknesses: []

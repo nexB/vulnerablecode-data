@@ -1,0 +1,67 @@
+affected_purls:
+- pkg:pypi/keystone@12.0.2
+- pkg:pypi/keystone@12.0.3
+- pkg:pypi/keystone@13.0.2
+- pkg:pypi/keystone@13.0.3
+- pkg:pypi/keystone@13.0.4
+- pkg:pypi/keystone@14.0.0
+- pkg:pypi/keystone@14.0.1
+- pkg:pypi/keystone@14.1.0
+- pkg:pypi/keystone@14.2.0
+- pkg:pypi/keystone@15.0.0
+- pkg:pypi/keystone@15.0.0.0rc1
+- pkg:pypi/keystone@15.0.0.0rc2
+- pkg:pypi/keystone@16.0.0.0rc1
+- pkg:pypi/keystone@16.0.0.0rc2
+aliases:
+- CVE-2020-12690
+- GHSA-6m8p-x4qw-gh5j
+fixed_purl:
+- pkg:deb/debian/keystone@2:14.2.0-0%2Bdeb10u1?distro=sid
+- pkg:deb/debian/keystone@2:17.0.0~rc2-1?distro=sid
+- pkg:deb/debian/keystone@2:18.0.0-3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/keystone@2:22.0.0-2?distro=sid
+- pkg:pypi/keystone@15.0.1
+- pkg:pypi/keystone@16.0.0
+references:
+- id: 150684
+  reference_id: ''
+  url: https://bugs.launchpad.net/keystone/+bug/1873290
+- id: 150685
+  reference_id: ''
+  url: https://lists.apache.org/thread.html/re4ffc55cd2f1b55a26e07c83b3c22c3fe4bae6054d000a57fb48d8c2@%3Ccommits.druid.apache.org%3E
+- id: 150686
+  reference_id: ''
+  url: https://security.openstack.org/ossa/OSSA-2020-005.html
+- id: 150687
+  reference_id: ''
+  url: https://usn.ubuntu.com/4480-1/
+- id: 150688
+  reference_id: ''
+  url: https://www.openwall.com/lists/oss-security/2020/05/06/6
+- id: 150689
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2020/05/07/3
+- id: 129108
+  reference_id: '959900'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=959900
+- id: 150683
+  reference_id: CVE-2020-12690
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-12690
+- id: 150690
+  reference_id: GHSA-6m8p-x4qw-gh5j
+  url: https://github.com/advisories/GHSA-6m8p-x4qw-gh5j
+severities:
+- id: 21355
+  reference_id: 150690
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: An issue was discovered in OpenStack Keystone before 15.0.1, and 16.0.0.
+  The list of roles provided for an OAuth1 access token is silently ignored. Thus,
+  when an access token is used to request a keystone token, the keystone token contains
+  every role assignment the creator had for the project. This results in the provided
+  keystone token having more role assignments than the creator intended, possibly
+  giving unintended escalated access.
+vulnerability_id: VCID-my5p-vzav-aaam
+weaknesses: []

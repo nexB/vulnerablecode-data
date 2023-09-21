@@ -1,0 +1,93 @@
+vulnerability_id: VCID-y9xr-nysx-aaac
+aliases:
+  - CVE-2022-24724
+summary: cmark-gfm is GitHub's extended version of the C reference implementation of CommonMark.
+  Prior to versions 0.29.0.gfm.3 and 0.28.3.gfm.21, an integer overflow in cmark-gfm's table
+  row parsing `table.c:row_from_string` may lead to heap memory corruption when parsing tables
+  who's marker rows contain more than UINT16_MAX columns. The impact of this heap corruption
+  ranges from Information Leak to Arbitrary Code Execution depending on how and where `cmark-gfm`
+  is used. If `cmark-gfm` is used for rendering remote user controlled markdown, this vulnerability
+  may lead to Remote Code Execution (RCE) in applications employing affected versions of the
+  `cmark-gfm` library. This vulnerability has been patched in the following cmark-gfm versions
+  0.29.0.gfm.3 and 0.28.3.gfm.21. A workaround is available. The vulnerability exists in the
+  table markdown extensions of cmark-gfm. Disabling the table extension will prevent this vulnerability
+  from being triggered.
+severities:
+  - id: 168261
+    reference_id: 532194
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 168260
+    reference_id: 532193
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 589823
+    reference_id: 917444
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 589821
+    reference_id: 917444
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 638913
+    reference_id: 952036
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 917436
+    url: http://packetstormsecurity.com/files/166599/cmark-gfm-Integer-overflow.html
+    reference_id:
+  - id: 532194
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-24724.json
+    reference_id:
+  - id: 917437
+    url: https://github.com/github/cmark-gfm/security/advisories/GHSA-mc3g-88wq-6f4x
+    reference_id:
+  - id: 917438
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5CYUU662VO6CCXQKVZVOHXX3RGIF2DLQ/
+    reference_id:
+  - id: 917439
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F7V3HAM5H6YFJG2QFEXACZR3XVWFTXTC/
+    reference_id:
+  - id: 917440
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KH4UQA6VWVZU5EW3HNEAB7D7BTCNJSJ2/
+    reference_id:
+  - id: 917441
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RSKUOJ2VAYGTJXPDE2RRPMNLVVMKCI77/
+    reference_id:
+  - id: 917442
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TJBFIJEHJZEEDG6MO4MQHZYKUXELH77O/
+    reference_id:
+  - id: 917443
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z55K6VNVKO2G5SNKRCQ2KDG5SKTX5PVV/
+    reference_id:
+  - id: 40256
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1006756
+    reference_id: 1006756
+  - id: 532193
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2060662
+    reference_id: 2060662
+  - id: 917445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:github:cmark-gfm:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:github:cmark-gfm:*:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 169240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+  - id: 917444
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24724
+    reference_id: CVE-2022-24724
+  - id: 952036
+    url: https://access.redhat.com/errata/RHSA-2022:5597
+    reference_id: RHSA-2022:5597
+weaknesses: []

@@ -1,0 +1,99 @@
+vulnerability_id: VCID-efdf-dkpb-aaac
+aliases:
+  - CVE-2003-0540
+summary: The address parser code in Postfix 1.1.12 and earlier allows remote attackers to cause
+  a denial of service (lock) via (1) a malformed envelope address to a local host that would
+  generate a bounce and contains the ".!" string in the MAIL FROM or Errors-To headers, which
+  causes nqmgr to lock up, or (2) via a valid MAIL FROM with a RCPT TO containing a ".!" string,
+  which causes an instance of the SMTP listener to lock up.
+severities:
+  - id: 79717
+    reference_id: 212177
+    scoring_system: rhbs
+    value: unspecified
+    scoring_elements:
+  - id: '19691'
+    reference_id: 83186
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+references:
+  - id: 82754
+    url: http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000717
+    reference_id:
+  - id: 83181
+    url: http://lists.grok.org.uk/pipermail/full-disclosure/2003-August/007693.html
+    reference_id:
+  - id: 82755
+    url: http://marc.info/?l=bugtraq&m=106001525130257&w=2
+    reference_id:
+  - id: 83182
+    url: http://marc.info/?l=bugtraq&m=106029188614704&w=2
+    reference_id:
+  - id: 212178
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2003-0540.json
+    reference_id:
+  - id: 1463718
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0540
+    reference_id:
+  - id: 82756
+    url: http://secunia.com/advisories/9433
+    reference_id:
+  - id: 83185
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A544
+    reference_id:
+  - id: 82757
+    url: http://www.debian.org/security/2003/dsa-363
+    reference_id:
+  - id: 83183
+    url: http://www.kb.cert.org/vuls/id/895508
+    reference_id:
+  - id: 83184
+    url: http://www.linuxsecurity.com/advisories/engarde_advisory-3517.html
+    reference_id:
+  - id: 82758
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2003:081
+    reference_id:
+  - id: 82759
+    url: http://www.novell.com/linux/security/advisories/2003_033_postfix.html
+    reference_id:
+  - id: 82760
+    url: http://www.redhat.com/support/errata/RHSA-2003-251.html
+    reference_id:
+  - id: 82761
+    url: http://www.securityfocus.com/bid/8333
+    reference_id:
+  - id: 212177
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617046
+    reference_id: 1617046
+  - id: 82764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:1.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:1.0.21:*:*:*:*:*:*:*
+  - id: 82765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:1.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:1.1.11:*:*:*:*:*:*:*
+  - id: 83187
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:1.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:1.1.12:*:*:*:*:*:*:*
+  - id: 59629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:1999-09-06:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:1999-09-06:*:*:*:*:*:*:*
+  - id: 59630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:1999-12-31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:1999-12-31:*:*:*:*:*:*:*
+  - id: 59631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:2000-02-28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:2000-02-28:*:*:*:*:*:*:*
+  - id: 82766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wietse_venema:postfix:2001-11-15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wietse_venema:postfix:2001-11-15:*:*:*:*:*:*:*
+  - id: 59288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:conectiva:linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:conectiva:linux:7.0:*:*:*:*:*:*:*
+  - id: 82767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:conectiva:linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:conectiva:linux:8.0:*:*:*:*:*:*:*
+  - id: 83186
+    url: https://nvd.nist.gov/vuln/detail/CVE-2003-0540
+    reference_id: CVE-2003-0540
+weaknesses: []

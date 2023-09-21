@@ -1,0 +1,26 @@
+affected_purls: []
+aliases:
+- CVE-2021-32625
+fixed_purl:
+- pkg:deb/debian/redis@0?distro=sid
+- pkg:deb/debian/redis@5:5.0.14-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/redis@5:6.0.14-1?distro=sid
+- pkg:deb/debian/redis@5:6.0.16-1%2Bdeb11u2?distro=sid
+- pkg:deb/debian/redis@5:7.0.11-1?distro=sid
+references:
+- id: 129802
+  reference_id: '989351'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989351
+severities: []
+summary: Redis is an open source (BSD licensed), in-memory data structure store, used
+  as a database, cache, and message broker. An integer overflow bug in Redis version
+  6.0 or newer, could be exploited using the STRALGO LCS command to corrupt the heap
+  and potentially result with remote code execution. This is a result of an incomplete
+  fix by CVE-2021-29477. The problem is fixed in version 6.2.4 and 6.0.14. An additional
+  workaround to mitigate the problem without patching the redis-server executable
+  is to use ACL configuration to prevent clients from using the STRALGO LCS command.
+  On 64 bit systems which have the fixes of CVE-2021-29477 (6.2.3 or 6.0.13), it is
+  sufficient to make sure that the proto-max-bulk-len config parameter is smaller
+  than 2GB (default is 512MB).
+vulnerability_id: VCID-u6fc-9p69-aaam
+weaknesses: []

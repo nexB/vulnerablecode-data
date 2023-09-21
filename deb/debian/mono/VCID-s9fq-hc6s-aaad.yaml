@@ -1,0 +1,638 @@
+vulnerability_id: VCID-s9fq-hc6s-aaad
+aliases:
+  - CVE-2009-0217
+summary: |
+  XML signature HMAC truncation authentication bypass
+  This package uses a parameter that defines an HMAC truncation length (`HMACOutputLength`) but does not require a minimum for this length, which allows attackers to spoof HMAC-based signatures and bypass authentication by specifying a truncation length with a small number of bits.
+severities:
+  - id: 122195
+    reference_id: 380353
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 71823
+    reference_id: 202290
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 71881
+    reference_id: 202361
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 72311
+    reference_id: 202783
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71010
+    reference_id: 201324
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71012
+    reference_id: 201326
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71011
+    reference_id: 201325
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71013
+    reference_id: 201327
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 71180
+    reference_id: 201531
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 71201
+    reference_id: 201563
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 380303
+    url: http://blogs.sun.com/security/entry/cert_vulnerability_note_vu_466161
+    reference_id:
+  - id: 380304
+    url: http://git.gnome.org/cgit/xmlsec/commit/?id=34b349675af9f72eb822837a8772cc1ead7115c7
+    reference_id:
+  - id: 380305
+    url: http://git.gnome.org/cgit/xmlsec/patch/?id=34b349675af9f72eb822837a8772cc1ead7115c7
+    reference_id:
+  - id: 1355
+    url: http://lists.apple.com/archives/security-announce/2009/Sep/msg00000.html
+    reference_id:
+  - id: 1358
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-11/msg00002.html
+    reference_id:
+  - id: 380306
+    url: http://lists.opensuse.org/opensuse-security-announce/2010-03/msg00005.html
+    reference_id:
+  - id: 1360
+    url: http://marc.info/?l=bugtraq&m=125787273209737&w=2
+    reference_id:
+  - id: 380307
+    url: http://osvdb.org/55895
+    reference_id:
+  - id: 380308
+    url: http://osvdb.org/55907
+    reference_id:
+  - id: 202784
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-0217.json
+    reference_id:
+  - id: 380343
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=511915
+    reference_id:
+  - id: 380344
+    url: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-041
+    reference_id:
+  - id: 150464
+    url: http://secunia.com/advisories/34461
+    reference_id:
+  - id: 148749
+    url: http://secunia.com/advisories/35776
+    reference_id:
+  - id: 380309
+    url: http://secunia.com/advisories/35852
+    reference_id:
+  - id: 380310
+    url: http://secunia.com/advisories/35853
+    reference_id:
+  - id: 380311
+    url: http://secunia.com/advisories/35854
+    reference_id:
+  - id: 380312
+    url: http://secunia.com/advisories/35855
+    reference_id:
+  - id: 380313
+    url: http://secunia.com/advisories/35858
+    reference_id:
+  - id: 1363
+    url: http://secunia.com/advisories/36162
+    reference_id:
+  - id: 1364
+    url: http://secunia.com/advisories/36176
+    reference_id:
+  - id: 1365
+    url: http://secunia.com/advisories/36180
+    reference_id:
+  - id: 350151
+    url: http://secunia.com/advisories/36494
+    reference_id:
+  - id: 1367
+    url: http://secunia.com/advisories/37300
+    reference_id:
+  - id: 1369
+    url: http://secunia.com/advisories/37671
+    reference_id:
+  - id: 380314
+    url: http://secunia.com/advisories/37841
+    reference_id:
+  - id: 250229
+    url: http://secunia.com/advisories/38567
+    reference_id:
+  - id: 154930
+    url: http://secunia.com/advisories/38568
+    reference_id:
+  - id: 380315
+    url: http://secunia.com/advisories/38695
+    reference_id:
+  - id: 380316
+    url: http://secunia.com/advisories/38921
+    reference_id:
+  - id: 154931
+    url: http://secunia.com/advisories/41818
+    reference_id:
+  - id: 250230
+    url: http://secunia.com/advisories/60799
+    reference_id:
+  - id: 380345
+    url: https://issues.apache.org/bugzilla/show_bug.cgi?id=47526
+    reference_id:
+  - id: 380346
+    url: https://issues.apache.org/bugzilla/show_bug.cgi?id=47527
+    reference_id:
+  - id: 380347
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10186
+    reference_id:
+  - id: 380348
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7158
+    reference_id:
+  - id: 380349
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A8717
+    reference_id:
+  - id: 1346
+    url: https://rhn.redhat.com/errata/RHSA-2009-1200.html
+    reference_id:
+  - id: 1347
+    url: https://rhn.redhat.com/errata/RHSA-2009-1201.html
+    reference_id:
+  - id: 380350
+    url: https://rhn.redhat.com/errata/RHSA-2009-1428.html
+    reference_id:
+  - id: 1348
+    url: https://rhn.redhat.com/errata/RHSA-2009-1636.html
+    reference_id:
+  - id: 1349
+    url: https://rhn.redhat.com/errata/RHSA-2009-1637.html
+    reference_id:
+  - id: 1350
+    url: https://rhn.redhat.com/errata/RHSA-2009-1649.html
+    reference_id:
+  - id: 1351
+    url: https://rhn.redhat.com/errata/RHSA-2009-1650.html
+    reference_id:
+  - id: 1376
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-21-125136-16-1
+    reference_id:
+  - id: 380317
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-263429-1
+    reference_id:
+  - id: 380318
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-269208-1
+    reference_id:
+  - id: 380319
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020710.1-1
+    reference_id:
+  - id: 350155
+    url: https://usn.ubuntu.com/826-1/
+    reference_id:
+  - id: 380320
+    url: http://svn.apache.org/viewvc?revision=794013&view=revision
+    reference_id:
+  - id: 26336
+    url: http://svn.apache.org/viewvc?view=revision&revision=794013
+    reference_id:
+  - id: 1353
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-August/msg00310.html
+    reference_id:
+  - id: 1354
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-August/msg00325.html
+    reference_id:
+  - id: 380351
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-August/msg00494.html
+    reference_id:
+  - id: 380352
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-August/msg00505.html
+    reference_id:
+  - id: 380321
+    url: http://www-01.ibm.com/support/docview.wss?rs=180&context=SSEQTP&dc=D400&uid=swg24023545&loc=en_US&cs=UTF-8&lang=en&rss=ct180websphere
+    reference_id:
+  - id: 380322
+    url: http://www-01.ibm.com/support/docview.wss?rs=180&context=SSEQTP&dc=D400&uid=swg24023723&loc=en_US&cs=UTF-8&lang=en&rss=ct180websphere
+    reference_id:
+  - id: 380323
+    url: http://www-01.ibm.com/support/docview.wss?rs=180&uid=swg21384925
+    reference_id:
+  - id: 380324
+    url: http://www.aleksey.com/xmlsec/
+    reference_id:
+  - id: 380325
+    url: http://www.debian.org/security/2010/dsa-1995
+    reference_id:
+  - id: 250256
+    url: http://www.gentoo.org/security/en/glsa/glsa-201408-19.xml
+    reference_id:
+  - id: 380326
+    url: http://www.kb.cert.org/vuls/id/466161
+    reference_id:
+  - id: 380327
+    url: http://www.kb.cert.org/vuls/id/MAPG-7TSKXQ
+    reference_id:
+  - id: 380328
+    url: http://www.kb.cert.org/vuls/id/WDON-7TY529
+    reference_id:
+  - id: 1384
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2009:209
+    reference_id:
+  - id: 380329
+    url: http://www.mono-project.com/Vulnerabilities
+    reference_id:
+  - id: 380330
+    url: http://www.openoffice.org/security/cves/CVE-2009-0217.html
+    reference_id:
+  - id: 148750
+    url: http://www.oracle.com/technetwork/topics/security/cpujul2009-091332.html
+    reference_id:
+  - id: 1392
+    url: http://www.oracle.com/technetwork/topics/security/cpuoct2009-096303.html
+    reference_id:
+  - id: 348802
+    url: http://www.oracle.com/technetwork/topics/security/cpuoct2010-175626.html
+    reference_id:
+  - id: 380331
+    url: http://www.redhat.com/support/errata/RHSA-2009-1694.html
+    reference_id:
+  - id: 380332
+    url: http://www.securityfocus.com/bid/35671
+    reference_id:
+  - id: 148833
+    url: http://www.securitytracker.com/id?1022561
+    reference_id:
+  - id: 148906
+    url: http://www.securitytracker.com/id?1022567
+    reference_id:
+  - id: 380333
+    url: http://www.securitytracker.com/id?1022661
+    reference_id:
+  - id: 380334
+    url: http://www.ubuntu.com/usn/USN-903-1
+    reference_id:
+  - id: 1399
+    url: http://www.us-cert.gov/cas/techalerts/TA09-294A.html
+    reference_id:
+  - id: 380335
+    url: http://www.us-cert.gov/cas/techalerts/TA10-159B.html
+    reference_id:
+  - id: 148753
+    url: http://www.vupen.com/english/advisories/2009/1900
+    reference_id:
+  - id: 380336
+    url: http://www.vupen.com/english/advisories/2009/1908
+    reference_id:
+  - id: 380337
+    url: http://www.vupen.com/english/advisories/2009/1909
+    reference_id:
+  - id: 380338
+    url: http://www.vupen.com/english/advisories/2009/1911
+    reference_id:
+  - id: 1402
+    url: http://www.vupen.com/english/advisories/2009/2543
+    reference_id:
+  - id: 380339
+    url: http://www.vupen.com/english/advisories/2009/3122
+    reference_id:
+  - id: 154945
+    url: http://www.vupen.com/english/advisories/2010/0366
+    reference_id:
+  - id: 380340
+    url: http://www.vupen.com/english/advisories/2010/0635
+    reference_id:
+  - id: 380341
+    url: http://www.w3.org/2008/06/xmldsigcore-errata.html#e03
+    reference_id:
+  - id: 380342
+    url: http://www.w3.org/QA/2009/07/hmac_truncation_in_xml_signatu.html
+    reference_id:
+  - id: 47067
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=542210
+    reference_id: 542210
+  - id: 115316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0:*:*:*:*:*:*:*
+  - id: 157136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.0.1:*:*:*:*:*:*:*
+  - id: 157137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.0.2:*:*:*:*:*:*:*
+  - id: 157138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.0.3:*:*:*:*:*:*:*
+  - id: 157149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1:*:*:*:*:*:*:*
+  - id: 157143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.1:*:*:*:*:*:*:*
+  - id: 157139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.11:*:*:*:*:*:*:*
+  - id: 157140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.13:*:*:*:*:*:*:*
+  - id: 157141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.15:*:*:*:*:*:*:*
+  - id: 157142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.17:*:*:*:*:*:*:*
+  - id: 157144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.2:*:*:*:*:*:*:*
+  - id: 157145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.3:*:*:*:*:*:*:*
+  - id: 157146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.5:*:*:*:*:*:*:*
+  - id: 157147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.7:*:*:*:*:*:*:*
+  - id: 157148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.1.9:*:*:*:*:*:*:*
+  - id: 157130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2:*:*:*:*:*:*:*
+  - id: 157106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.1:*:*:*:*:*:*:*
+  - id: 157096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.10:*:*:*:*:*:*:*
+  - id: 157097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.11:*:*:*:*:*:*:*
+  - id: 157098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.12:*:*:*:*:*:*:*
+  - id: 157099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.13:*:*:*:*:*:*:*
+  - id: 157100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.14:*:*:*:*:*:*:*
+  - id: 157101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.15:*:*:*:*:*:*:*
+  - id: 157102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.16:*:*:*:*:*:*:*
+  - id: 157103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.17:*:*:*:*:*:*:*
+  - id: 157104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.18:*:*:*:*:*:*:*
+  - id: 157105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.19:*:*:*:*:*:*:*
+  - id: 157116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.2:*:*:*:*:*:*:*
+  - id: 157107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.20:*:*:*:*:*:*:*
+  - id: 157108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.21:*:*:*:*:*:*:*
+  - id: 157109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.22:*:*:*:*:*:*:*
+  - id: 157110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.23:*:*:*:*:*:*:*
+  - id: 157111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.24:*:*:*:*:*:*:*
+  - id: 157112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.25:*:*:*:*:*:*:*
+  - id: 157114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.28:*:*:*:*:*:*:*
+  - id: 157115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.29:*:*:*:*:*:*:*
+  - id: 157123
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.3:*:*:*:*:*:*:*
+  - id: 157117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.30:*:*:*:*:*:*:*
+  - id: 157118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.31:*:*:*:*:*:*:*
+  - id: 157119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.32:*:*:*:*:*:*:*
+  - id: 157120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2.33:*:*:*:*:*:*:*
+  - id: 325658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.0.2:*:fp17:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.0.2:*:fp17:*:*:*:*:*
+  - id: 150458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1:*:*:*:*:*:*:*
+  - id: 150457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0:*:*:*:*:*:*:*
+  - id: 150432
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.0:*:*:*:*:*:*:*
+  - id: 150443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.1:*:*:*:*:*:*:*
+  - id: 150433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.10:*:*:*:*:*:*:*
+  - id: 150434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.11:*:*:*:*:*:*:*
+  - id: 150435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.12:*:*:*:*:*:*:*
+  - id: 150436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.13:*:*:*:*:*:*:*
+  - id: 150437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.14:*:*:*:*:*:*:*
+  - id: 150438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.15:*:*:*:*:*:*:*
+  - id: 150439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.16:*:*:*:*:*:*:*
+  - id: 150440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.17:*:*:*:*:*:*:*
+  - id: 150441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.18:*:*:*:*:*:*:*
+  - id: 150442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.19:*:*:*:*:*:*:*
+  - id: 150449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.2:*:*:*:*:*:*:*
+  - id: 150444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.20:*:*:*:*:*:*:*
+  - id: 150445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.21:*:*:*:*:*:*:*
+  - id: 150446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.22:*:*:*:*:*:*:*
+  - id: 150447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.23:*:*:*:*:*:*:*
+  - id: 150450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.3:*:*:*:*:*:*:*
+  - id: 150451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.4:*:*:*:*:*:*:*
+  - id: 150452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.5:*:*:*:*:*:*:*
+  - id: 150453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.6:*:*:*:*:*:*:*
+  - id: 150454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.7:*:*:*:*:*:*:*
+  - id: 150455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.8:*:*:*:*:*:*:*
+  - id: 150456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:6.1.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:6.1.0.9:*:*:*:*:*:*:*
+  - id: 150462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:7.0:*:*:*:*:*:*:*
+  - id: 150459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ibm:websphere_application_server:7.0.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ibm:websphere_application_server:7.0.0.1:*:*:*:*:*:*:*
+  - id: 350168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.1:*:*:*:*:*:*:*
+  - id: 350169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.2:*:*:*:*:*:*:*
+  - id: 350170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.3:*:*:*:*:*:*:*
+  - id: 350171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.4:*:*:*:*:*:*:*
+  - id: 350172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.5:*:*:*:*:*:*:*
+  - id: 350173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.2.6:*:*:*:*:*:*:*
+  - id: 350174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:1.9:*:*:*:*:*:*:*
+  - id: 380354
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mono_project:mono:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mono_project:mono:2.0:*:*:*:*:*:*:*
+  - id: 148909
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:application_server:10.1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:application_server:10.1.2.3:*:*:*:*:*:*:*
+  - id: 380355
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:application_server:10.1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:application_server:10.1.3.4:*:*:*:*:*:*:*
+  - id: 380356
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:application_server:10.1.4.3im:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:application_server:10.1.4.3im:*:*:*:*:*:*:*
+  - id: 148836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:10.0:mp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:10.0:mp1:*:*:*:*:*:*
+  - id: 148837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:10.3:*:*:*:*:*:*:*
+  - id: 148839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:8.1:sp6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:8.1:sp6:*:*:*:*:*:*
+  - id: 148840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:9.0:*:*:*:*:*:*:*
+  - id: 148841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:9.1:*:*:*:*:*:*:*
+  - id: 148842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:bea_product_suite:9.2:mp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:bea_product_suite:9.2:mp3:*:*:*:*:*:*
+  - id: 343820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:10.0:mp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:10.0:mp1:*:*:*:*:*:*
+  - id: 380357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:10.3:*:*:*:*:*:*:*
+  - id: 343822
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:8.1:sp6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:8.1:sp6:*:*:*:*:*:*
+  - id: 343823
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:9.0:*:*:*:*:*:*:*
+  - id: 343824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:9.1:*:*:*:*:*:*:*
+  - id: 343825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server_component:9.2:mp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server_component:9.2:mp3:*:*:*:*:*:*
+  - id: 26337
+    url: https://bugzilla.redhat.com/CVE-2009-0217
+    reference_id: CVE-2009-0217
+  - id: 380353
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-0217
+    reference_id: CVE-2009-0217
+  - id: 202290
+    url: https://access.redhat.com/errata/RHSA-2009:1200
+    reference_id: RHSA-2009:1200
+  - id: 202361
+    url: https://access.redhat.com/errata/RHSA-2009:1201
+    reference_id: RHSA-2009:1201
+  - id: 202783
+    url: https://access.redhat.com/errata/RHSA-2009:1428
+    reference_id: RHSA-2009:1428
+  - id: 201324
+    url: https://access.redhat.com/errata/RHSA-2009:1636
+    reference_id: RHSA-2009:1636
+  - id: 201326
+    url: https://access.redhat.com/errata/RHSA-2009:1637
+    reference_id: RHSA-2009:1637
+  - id: 201325
+    url: https://access.redhat.com/errata/RHSA-2009:1649
+    reference_id: RHSA-2009:1649
+  - id: 201327
+    url: https://access.redhat.com/errata/RHSA-2009:1650
+    reference_id: RHSA-2009:1650
+  - id: 201531
+    url: https://access.redhat.com/errata/RHSA-2009:1694
+    reference_id: RHSA-2009:1694
+  - id: 201563
+    url: https://access.redhat.com/errata/RHSA-2010:0043
+    reference_id: RHSA-2010:0043
+weaknesses: []

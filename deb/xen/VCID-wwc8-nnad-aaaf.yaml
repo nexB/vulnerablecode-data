@@ -1,0 +1,33 @@
+affected_purls: []
+aliases:
+- CVE-2019-18421
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: 'An issue was discovered in Xen through 4.12.x allowing x86 PV guest OS users
+  to gain host OS privileges by leveraging race conditions in pagetable promotion
+  and demotion operations. There are issues with restartable PV type change operations.
+  To avoid using shadow pagetables for PV guests, Xen exposes the actual hardware
+  pagetables to the guest. In order to prevent the guest from modifying these page
+  tables directly, Xen keeps track of how pages are used using a type system; pages
+  must be "promoted" before being used as a pagetable, and "demoted" before being
+  used for any other type. Xen also allows for "recursive" promotions: i.e., an operating
+  system promoting a page to an L4 pagetable may end up causing pages to be promoted
+  to L3s, which may in turn cause pages to be promoted to L2s, and so on. These operations
+  may take an arbitrarily large amount of time, and so must be re-startable. Unfortunately,
+  making recursive pagetable promotion and demotion operations restartable is incredibly
+  complicated, and the code contains several races which, if triggered, can cause
+  Xen to drop or retain extra type counts, potentially allowing guests to get write
+  access to in-use pagetables. A malicious PV guest administrator may be able to escalate
+  their privilege to that of the host. All x86 systems with untrusted PV guests are
+  vulnerable. HVM and PVH guests cannot exercise this vulnerability.'
+vulnerability_id: VCID-wwc8-nnad-aaaf
+weaknesses: []

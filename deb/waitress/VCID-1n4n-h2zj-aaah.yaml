@@ -1,0 +1,103 @@
+affected_purls:
+- pkg:pypi/waitress@0.1
+- pkg:pypi/waitress@0.2
+- pkg:pypi/waitress@0.3
+- pkg:pypi/waitress@0.4
+- pkg:pypi/waitress@0.5
+- pkg:pypi/waitress@0.6
+- pkg:pypi/waitress@0.6.1
+- pkg:pypi/waitress@0.7
+- pkg:pypi/waitress@0.8
+- pkg:pypi/waitress@0.8.1
+- pkg:pypi/waitress@0.8.10
+- pkg:pypi/waitress@0.8.11b0
+- pkg:pypi/waitress@0.8.2
+- pkg:pypi/waitress@0.8.3
+- pkg:pypi/waitress@0.8.4
+- pkg:pypi/waitress@0.8.5
+- pkg:pypi/waitress@0.8.6
+- pkg:pypi/waitress@0.8.7
+- pkg:pypi/waitress@0.8.8
+- pkg:pypi/waitress@0.8.9
+- pkg:pypi/waitress@0.9.0
+- pkg:pypi/waitress@0.9.0b0
+- pkg:pypi/waitress@0.9.0b1
+- pkg:pypi/waitress@1.0.0
+- pkg:pypi/waitress@1.0.1
+- pkg:pypi/waitress@1.0.2
+- pkg:pypi/waitress@1.0a1
+- pkg:pypi/waitress@1.0a2
+- pkg:pypi/waitress@1.1.0
+- pkg:pypi/waitress@1.2.0
+- pkg:pypi/waitress@1.2.0b1
+- pkg:pypi/waitress@1.2.0b2
+- pkg:pypi/waitress@1.2.0b3
+- pkg:pypi/waitress@1.2.1
+- pkg:pypi/waitress@1.3.0
+- pkg:pypi/waitress@1.3.0b0
+- pkg:pypi/waitress@1.3.1
+aliases:
+- CVE-2019-16786
+- GHSA-g2xc-35jw-c63p
+fixed_purl:
+- pkg:deb/debian/waitress@1.2.0~b2-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/waitress@1.4.1-1?distro=sid
+- pkg:deb/debian/waitress@1.4.4-1.1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/waitress@2.1.2-2?distro=sid
+- pkg:pypi/waitress@1.4.0
+references:
+- id: 148436
+  reference_id: ''
+  url: https://access.redhat.com/errata/RHSA-2020:0720
+- id: 130535
+  reference_id: ''
+  url: https://docs.pylonsproject.org/projects/waitress/en/latest/#security-fixes
+- id: 148441
+  reference_id: ''
+  url: https://github.com/Pylons/waitress/commit/f11093a6b3240fc26830b6111e826128af7771c3
+- id: 148437
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2022/05/msg00011.html
+- id: 148434
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GVDHR2DNKCNQ7YQXISJ45NT4IQDX3LJ7/
+- id: 148435
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LYEOTGWJZVKPRXX2HBNVIYWCX73QYPM5/
+- id: 134611
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuapr2022.html
+- id: 128728
+  reference_id: '947306'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947306
+- id: 148440
+  reference_id: CVE-2019-16786
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-16786
+- id: 148442
+  reference_id: GHSA-g2xc-35jw-c63p
+  url: https://github.com/advisories/GHSA-g2xc-35jw-c63p
+- id: 148439
+  reference_id: GHSA-g2xc-35jw-c63p
+  url: https://github.com/Pylons/waitress/security/advisories/GHSA-g2xc-35jw-c63p
+severities:
+- id: 20954
+  reference_id: 148442
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 20953
+  reference_id: 148439
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: 'Waitress through version 1.3.1 would parse the Transfer-Encoding header
+  and only look for a single string value, if that value was not chunked it would
+  fall through and use the Content-Length header instead. According to the HTTP standard
+  Transfer-Encoding should be a comma separated list, with the inner-most encoding
+  first, followed by any further transfer codings, ending with chunked. Requests sent
+  with: "Transfer-Encoding: gzip, chunked" would incorrectly get ignored, and the
+  request would use a Content-Length header instead to determine the body size of
+  the HTTP message. This could allow for Waitress to treat a single request as multiple
+  requests in the case of HTTP pipelining. This issue is fixed in Waitress 1.4.0.'
+vulnerability_id: VCID-1n4n-h2zj-aaah
+weaknesses: []

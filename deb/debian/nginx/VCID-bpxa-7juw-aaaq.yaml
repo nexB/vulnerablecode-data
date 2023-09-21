@@ -1,0 +1,918 @@
+vulnerability_id: VCID-bpxa-7juw-aaaq
+aliases:
+  - CVE-2009-3896
+summary: Null pointer dereference vulnerability
+severities:
+  - id: 109643
+    reference_id: 77
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+references:
+  - id: 329940
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=552035
+    reference_id:
+  - id: 329941
+    url: http://marc.info/?l=nginx&m=125692080328141&w=2
+    reference_id:
+  - id: 214400
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-3896.json
+    reference_id:
+  - id: 329951
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=539565
+    reference_id:
+  - id: 329942
+    url: http://secunia.com/advisories/48577
+    reference_id:
+  - id: 329943
+    url: http://security.debian.org/pool/updates/main/n/nginx/nginx_0.4.13-2+etch3.diff.gz
+    reference_id:
+  - id: 329944
+    url: http://security.gentoo.org/glsa/glsa-201203-22.xml
+    reference_id:
+  - id: 78
+    url: https://nginx.org/download/patch.null.pointer.txt
+    reference_id:
+  - id: 79
+    url: https://nginx.org/download/patch.null.pointer.txt.asc
+    reference_id:
+  - id: 155945
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-December/msg00428.html
+    reference_id:
+  - id: 155946
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-December/msg00442.html
+    reference_id:
+  - id: 155947
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-December/msg00449.html
+    reference_id:
+  - id: 329945
+    url: http://sysoev.ru/nginx/patch.null.pointer.txt
+    reference_id:
+  - id: 329946
+    url: http://www.debian.org/security/2009/dsa-1920
+    reference_id:
+  - id: 329947
+    url: http://www.openwall.com/lists/oss-security/2009/11/20/1
+    reference_id:
+  - id: 329948
+    url: http://www.openwall.com/lists/oss-security/2009/11/20/6
+    reference_id:
+  - id: 329949
+    url: http://www.openwall.com/lists/oss-security/2009/11/23/10
+    reference_id:
+  - id: 329950
+    url: http://www.securityfocus.com/bid/36839
+    reference_id:
+  - id: 329952
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.0:*:*:*:*:*:*:*
+  - id: 329963
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.1:*:*:*:*:*:*:*
+  - id: 329953
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.10:*:*:*:*:*:*:*
+  - id: 329954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.11:*:*:*:*:*:*:*
+  - id: 329955
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.12:*:*:*:*:*:*:*
+  - id: 329956
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.13:*:*:*:*:*:*:*
+  - id: 329957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.14:*:*:*:*:*:*:*
+  - id: 329958
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.15:*:*:*:*:*:*:*
+  - id: 329959
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.16:*:*:*:*:*:*:*
+  - id: 329960
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.17:*:*:*:*:*:*:*
+  - id: 329961
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.18:*:*:*:*:*:*:*
+  - id: 329962
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.19:*:*:*:*:*:*:*
+  - id: 329974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.2:*:*:*:*:*:*:*
+  - id: 329964
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.20:*:*:*:*:*:*:*
+  - id: 329965
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.21:*:*:*:*:*:*:*
+  - id: 329966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.22:*:*:*:*:*:*:*
+  - id: 329967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.23:*:*:*:*:*:*:*
+  - id: 329968
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.24:*:*:*:*:*:*:*
+  - id: 329969
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.25:*:*:*:*:*:*:*
+  - id: 329970
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.26:*:*:*:*:*:*:*
+  - id: 329971
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.27:*:*:*:*:*:*:*
+  - id: 329972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.28:*:*:*:*:*:*:*
+  - id: 329973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.29:*:*:*:*:*:*:*
+  - id: 329985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.3:*:*:*:*:*:*:*
+  - id: 329975
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.30:*:*:*:*:*:*:*
+  - id: 329976
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.31:*:*:*:*:*:*:*
+  - id: 329977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.32:*:*:*:*:*:*:*
+  - id: 329978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.33:*:*:*:*:*:*:*
+  - id: 329979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.34:*:*:*:*:*:*:*
+  - id: 329980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.35:*:*:*:*:*:*:*
+  - id: 329981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.36:*:*:*:*:*:*:*
+  - id: 329982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.37:*:*:*:*:*:*:*
+  - id: 329983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.38:*:*:*:*:*:*:*
+  - id: 329984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.39:*:*:*:*:*:*:*
+  - id: 329992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.4:*:*:*:*:*:*:*
+  - id: 329986
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.40:*:*:*:*:*:*:*
+  - id: 329987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.41:*:*:*:*:*:*:*
+  - id: 329988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.42:*:*:*:*:*:*:*
+  - id: 329989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.43:*:*:*:*:*:*:*
+  - id: 329990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.44:*:*:*:*:*:*:*
+  - id: 329991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.45:*:*:*:*:*:*:*
+  - id: 329993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.5:*:*:*:*:*:*:*
+  - id: 329994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.6:*:*:*:*:*:*:*
+  - id: 329995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.7:*:*:*:*:*:*:*
+  - id: 329996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.8:*:*:*:*:*:*:*
+  - id: 329997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.1.9:*:*:*:*:*:*:*
+  - id: 329998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.0:*:*:*:*:*:*:*
+  - id: 329999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.1:*:*:*:*:*:*:*
+  - id: 330000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.2:*:*:*:*:*:*:*
+  - id: 330001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.3:*:*:*:*:*:*:*
+  - id: 330002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.4:*:*:*:*:*:*:*
+  - id: 330003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.5:*:*:*:*:*:*:*
+  - id: 330004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.2.6:*:*:*:*:*:*:*
+  - id: 330005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.0:*:*:*:*:*:*:*
+  - id: 330016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.1:*:*:*:*:*:*:*
+  - id: 330006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.10:*:*:*:*:*:*:*
+  - id: 330007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.11:*:*:*:*:*:*:*
+  - id: 330008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.12:*:*:*:*:*:*:*
+  - id: 330009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.13:*:*:*:*:*:*:*
+  - id: 330010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.14:*:*:*:*:*:*:*
+  - id: 330011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.15:*:*:*:*:*:*:*
+  - id: 330012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.16:*:*:*:*:*:*:*
+  - id: 330013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.17:*:*:*:*:*:*:*
+  - id: 330014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.18:*:*:*:*:*:*:*
+  - id: 330015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.19:*:*:*:*:*:*:*
+  - id: 330027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.2:*:*:*:*:*:*:*
+  - id: 330017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.20:*:*:*:*:*:*:*
+  - id: 330018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.21:*:*:*:*:*:*:*
+  - id: 330019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.22:*:*:*:*:*:*:*
+  - id: 330020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.23:*:*:*:*:*:*:*
+  - id: 330021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.24:*:*:*:*:*:*:*
+  - id: 330022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.25:*:*:*:*:*:*:*
+  - id: 330023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.26:*:*:*:*:*:*:*
+  - id: 330024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.27:*:*:*:*:*:*:*
+  - id: 330025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.28:*:*:*:*:*:*:*
+  - id: 330026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.29:*:*:*:*:*:*:*
+  - id: 330038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.3:*:*:*:*:*:*:*
+  - id: 330028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.30:*:*:*:*:*:*:*
+  - id: 330029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.31:*:*:*:*:*:*:*
+  - id: 330030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.32:*:*:*:*:*:*:*
+  - id: 330031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.33:*:*:*:*:*:*:*
+  - id: 330032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.34:*:*:*:*:*:*:*
+  - id: 330033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.35:*:*:*:*:*:*:*
+  - id: 330034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.36:*:*:*:*:*:*:*
+  - id: 330035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.37:*:*:*:*:*:*:*
+  - id: 330036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.38:*:*:*:*:*:*:*
+  - id: 330037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.39:*:*:*:*:*:*:*
+  - id: 330049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.4:*:*:*:*:*:*:*
+  - id: 330039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.40:*:*:*:*:*:*:*
+  - id: 330040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.41:*:*:*:*:*:*:*
+  - id: 330041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.42:*:*:*:*:*:*:*
+  - id: 330042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.43:*:*:*:*:*:*:*
+  - id: 330043
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.44:*:*:*:*:*:*:*
+  - id: 330044
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.45:*:*:*:*:*:*:*
+  - id: 330045
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.46:*:*:*:*:*:*:*
+  - id: 330046
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.47:*:*:*:*:*:*:*
+  - id: 330047
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.48:*:*:*:*:*:*:*
+  - id: 330048
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.49:*:*:*:*:*:*:*
+  - id: 330060
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.5:*:*:*:*:*:*:*
+  - id: 330050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.50:*:*:*:*:*:*:*
+  - id: 330051
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.51:*:*:*:*:*:*:*
+  - id: 330052
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.52:*:*:*:*:*:*:*
+  - id: 330053
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.53:*:*:*:*:*:*:*
+  - id: 330054
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.54:*:*:*:*:*:*:*
+  - id: 330055
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.55:*:*:*:*:*:*:*
+  - id: 330056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.56:*:*:*:*:*:*:*
+  - id: 330057
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.57:*:*:*:*:*:*:*
+  - id: 330058
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.58:*:*:*:*:*:*:*
+  - id: 330059
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.59:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.59:*:*:*:*:*:*:*
+  - id: 330063
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.6:*:*:*:*:*:*:*
+  - id: 330061
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.60:*:*:*:*:*:*:*
+  - id: 330062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.61:*:*:*:*:*:*:*
+  - id: 330064
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.7:*:*:*:*:*:*:*
+  - id: 330065
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.8:*:*:*:*:*:*:*
+  - id: 330066
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.3.9:*:*:*:*:*:*:*
+  - id: 330067
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.0:*:*:*:*:*:*:*
+  - id: 330072
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.1:*:*:*:*:*:*:*
+  - id: 330068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.10:*:*:*:*:*:*:*
+  - id: 330069
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.11:*:*:*:*:*:*:*
+  - id: 330070
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.12:*:*:*:*:*:*:*
+  - id: 330071
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.13:*:*:*:*:*:*:*
+  - id: 330073
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.2:*:*:*:*:*:*:*
+  - id: 330074
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.3:*:*:*:*:*:*:*
+  - id: 330075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.4:*:*:*:*:*:*:*
+  - id: 330076
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.5:*:*:*:*:*:*:*
+  - id: 330077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.6:*:*:*:*:*:*:*
+  - id: 330078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.7:*:*:*:*:*:*:*
+  - id: 330079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.8:*:*:*:*:*:*:*
+  - id: 330080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.4.9:*:*:*:*:*:*:*
+  - id: 330081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.0:*:*:*:*:*:*:*
+  - id: 330092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.1:*:*:*:*:*:*:*
+  - id: 330082
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.10:*:*:*:*:*:*:*
+  - id: 330083
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.11:*:*:*:*:*:*:*
+  - id: 330084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.12:*:*:*:*:*:*:*
+  - id: 330085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.13:*:*:*:*:*:*:*
+  - id: 330086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.14:*:*:*:*:*:*:*
+  - id: 330087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.15:*:*:*:*:*:*:*
+  - id: 330088
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.16:*:*:*:*:*:*:*
+  - id: 330089
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.17:*:*:*:*:*:*:*
+  - id: 330090
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.18:*:*:*:*:*:*:*
+  - id: 330091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.19:*:*:*:*:*:*:*
+  - id: 330103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.2:*:*:*:*:*:*:*
+  - id: 330093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.20:*:*:*:*:*:*:*
+  - id: 330094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.21:*:*:*:*:*:*:*
+  - id: 330095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.22:*:*:*:*:*:*:*
+  - id: 330096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.23:*:*:*:*:*:*:*
+  - id: 330097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.24:*:*:*:*:*:*:*
+  - id: 330098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.25:*:*:*:*:*:*:*
+  - id: 330099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.26:*:*:*:*:*:*:*
+  - id: 330100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.27:*:*:*:*:*:*:*
+  - id: 330101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.28:*:*:*:*:*:*:*
+  - id: 330102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.29:*:*:*:*:*:*:*
+  - id: 330112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.3:*:*:*:*:*:*:*
+  - id: 330104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.30:*:*:*:*:*:*:*
+  - id: 330105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.31:*:*:*:*:*:*:*
+  - id: 330106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.32:*:*:*:*:*:*:*
+  - id: 330107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.33:*:*:*:*:*:*:*
+  - id: 330108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.34:*:*:*:*:*:*:*
+  - id: 330109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.35:*:*:*:*:*:*:*
+  - id: 330110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.36:*:*:*:*:*:*:*
+  - id: 330111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.37:*:*:*:*:*:*:*
+  - id: 330113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.4:*:*:*:*:*:*:*
+  - id: 330114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.5:*:*:*:*:*:*:*
+  - id: 330115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.6:*:*:*:*:*:*:*
+  - id: 330116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.7:*:*:*:*:*:*:*
+  - id: 330117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.8:*:*:*:*:*:*:*
+  - id: 330118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.5.9:*:*:*:*:*:*:*
+  - id: 330119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.0:*:*:*:*:*:*:*
+  - id: 330129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.1:*:*:*:*:*:*:*
+  - id: 330120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.10:*:*:*:*:*:*:*
+  - id: 330121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.11:*:*:*:*:*:*:*
+  - id: 330122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.12:*:*:*:*:*:*:*
+  - id: 330123
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.13:*:*:*:*:*:*:*
+  - id: 330124
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.14:*:*:*:*:*:*:*
+  - id: 330125
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.15:*:*:*:*:*:*:*
+  - id: 330126
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.17:*:*:*:*:*:*:*
+  - id: 330127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.18:*:*:*:*:*:*:*
+  - id: 330128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.19:*:*:*:*:*:*:*
+  - id: 330140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.2:*:*:*:*:*:*:*
+  - id: 330130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.20:*:*:*:*:*:*:*
+  - id: 330131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.21:*:*:*:*:*:*:*
+  - id: 330132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.22:*:*:*:*:*:*:*
+  - id: 330133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.23:*:*:*:*:*:*:*
+  - id: 330134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.24:*:*:*:*:*:*:*
+  - id: 330135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.25:*:*:*:*:*:*:*
+  - id: 330136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.26:*:*:*:*:*:*:*
+  - id: 330137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.27:*:*:*:*:*:*:*
+  - id: 330138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.28:*:*:*:*:*:*:*
+  - id: 330139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.29:*:*:*:*:*:*:*
+  - id: 330150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.3:*:*:*:*:*:*:*
+  - id: 330141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.30:*:*:*:*:*:*:*
+  - id: 330142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.31:*:*:*:*:*:*:*
+  - id: 330143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.32:*:*:*:*:*:*:*
+  - id: 330144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.33:*:*:*:*:*:*:*
+  - id: 330145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.34:*:*:*:*:*:*:*
+  - id: 330146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.35:*:*:*:*:*:*:*
+  - id: 330147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.36:*:*:*:*:*:*:*
+  - id: 330148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.37:*:*:*:*:*:*:*
+  - id: 330149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.38:*:*:*:*:*:*:*
+  - id: 330151
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.4:*:*:*:*:*:*:*
+  - id: 330152
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.5:*:*:*:*:*:*:*
+  - id: 330153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.6:*:*:*:*:*:*:*
+  - id: 330154
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.7:*:*:*:*:*:*:*
+  - id: 330155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.8:*:*:*:*:*:*:*
+  - id: 330156
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.6.9:*:*:*:*:*:*:*
+  - id: 330157
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.0:*:*:*:*:*:*:*
+  - id: 330168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.1:*:*:*:*:*:*:*
+  - id: 330158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.10:*:*:*:*:*:*:*
+  - id: 330159
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.11:*:*:*:*:*:*:*
+  - id: 330160
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.12:*:*:*:*:*:*:*
+  - id: 330161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.13:*:*:*:*:*:*:*
+  - id: 330162
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.14:*:*:*:*:*:*:*
+  - id: 330163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.15:*:*:*:*:*:*:*
+  - id: 330164
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.16:*:*:*:*:*:*:*
+  - id: 330165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.17:*:*:*:*:*:*:*
+  - id: 330166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.18:*:*:*:*:*:*:*
+  - id: 330167
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.19:*:*:*:*:*:*:*
+  - id: 330179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.2:*:*:*:*:*:*:*
+  - id: 330169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.20:*:*:*:*:*:*:*
+  - id: 330170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.21:*:*:*:*:*:*:*
+  - id: 330171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.22:*:*:*:*:*:*:*
+  - id: 330172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.23:*:*:*:*:*:*:*
+  - id: 330173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.24:*:*:*:*:*:*:*
+  - id: 330174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.25:*:*:*:*:*:*:*
+  - id: 330175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.26:*:*:*:*:*:*:*
+  - id: 330176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.27:*:*:*:*:*:*:*
+  - id: 330177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.28:*:*:*:*:*:*:*
+  - id: 330178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.29:*:*:*:*:*:*:*
+  - id: 330190
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.3:*:*:*:*:*:*:*
+  - id: 330180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.30:*:*:*:*:*:*:*
+  - id: 330181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.31:*:*:*:*:*:*:*
+  - id: 330182
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.32:*:*:*:*:*:*:*
+  - id: 330183
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.33:*:*:*:*:*:*:*
+  - id: 330184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.34:*:*:*:*:*:*:*
+  - id: 330185
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.35:*:*:*:*:*:*:*
+  - id: 330186
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.36:*:*:*:*:*:*:*
+  - id: 330187
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.37:*:*:*:*:*:*:*
+  - id: 330188
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.38:*:*:*:*:*:*:*
+  - id: 330189
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.39:*:*:*:*:*:*:*
+  - id: 330201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.4:*:*:*:*:*:*:*
+  - id: 330191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.40:*:*:*:*:*:*:*
+  - id: 330192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.41:*:*:*:*:*:*:*
+  - id: 330193
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.42:*:*:*:*:*:*:*
+  - id: 330194
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.43:*:*:*:*:*:*:*
+  - id: 330195
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.44:*:*:*:*:*:*:*
+  - id: 330196
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.45:*:*:*:*:*:*:*
+  - id: 330197
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.46:*:*:*:*:*:*:*
+  - id: 330198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.47:*:*:*:*:*:*:*
+  - id: 330199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.48:*:*:*:*:*:*:*
+  - id: 330200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.49:*:*:*:*:*:*:*
+  - id: 330212
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.5:*:*:*:*:*:*:*
+  - id: 330202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.50:*:*:*:*:*:*:*
+  - id: 330203
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.51:*:*:*:*:*:*:*
+  - id: 330204
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.52:*:*:*:*:*:*:*
+  - id: 330205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.53:*:*:*:*:*:*:*
+  - id: 330206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.54:*:*:*:*:*:*:*
+  - id: 330207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.55:*:*:*:*:*:*:*
+  - id: 330208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.56:*:*:*:*:*:*:*
+  - id: 330209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.57:*:*:*:*:*:*:*
+  - id: 330210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.58:*:*:*:*:*:*:*
+  - id: 330211
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.59:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.59:*:*:*:*:*:*:*
+  - id: 330215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.6:*:*:*:*:*:*:*
+  - id: 330213
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.60:*:*:*:*:*:*:*
+  - id: 330214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.61:*:*:*:*:*:*:*
+  - id: 330216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.7:*:*:*:*:*:*:*
+  - id: 330217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.8:*:*:*:*:*:*:*
+  - id: 330218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.7.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.7.9:*:*:*:*:*:*:*
+  - id: 330219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.0:*:*:*:*:*:*:*
+  - id: 330225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.1:*:*:*:*:*:*:*
+  - id: 330220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.10:*:*:*:*:*:*:*
+  - id: 330221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.11:*:*:*:*:*:*:*
+  - id: 330222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.12:*:*:*:*:*:*:*
+  - id: 330223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.13:*:*:*:*:*:*:*
+  - id: 330224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.14:*:*:*:*:*:*:*
+  - id: 330226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.2:*:*:*:*:*:*:*
+  - id: 330227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.3:*:*:*:*:*:*:*
+  - id: 330228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.4:*:*:*:*:*:*:*
+  - id: 330229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.5:*:*:*:*:*:*:*
+  - id: 330230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.6:*:*:*:*:*:*:*
+  - id: 330231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.7:*:*:*:*:*:*:*
+  - id: 330232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.8:*:*:*:*:*:*:*
+  - id: 330233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:nginx:0.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:nginx:0.8.9:*:*:*:*:*:*:*
+  - id: 330234
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nginx:nginx:0.6.1516:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nginx:nginx:0.6.1516:*:*:*:*:*:*:*
+  - id: 77
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-3896
+    reference_id: CVE-2009-3896
+weaknesses: []

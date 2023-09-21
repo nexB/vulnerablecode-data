@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-1000371
+fixed_purl:
+- pkg:deb/debian/linux@4.11.11-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: The offset2lib patch as used by the Linux Kernel contains a vulnerability,
+  if RLIMIT_STACK is set to RLIM_INFINITY and 1 Gigabyte of memory is allocated (the
+  maximum under the 1/4 restriction) then the stack will be grown down to 0x80000000,
+  and as the PIE binary is mapped above 0x80000000 the minimum distance between the
+  end of the PIE binary's read-write segment and the start of the stack becomes small
+  enough that the stack guard page can be jumped over by an attacker. This affects
+  Linux Kernel version 4.11.5. This is a different issue than CVE-2017-1000370 and
+  CVE-2017-1000365. This issue appears to be limited to i386 based systems.
+vulnerability_id: VCID-ppbe-84mt-aaag
+weaknesses: []

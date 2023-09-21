@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2021-41072
+fixed_purl:
+- pkg:deb/debian/squashfs-tools@1:4.3-12%2Bdeb10u2?distro=sid
+- pkg:deb/debian/squashfs-tools@1:4.4-2%2Bdeb11u2?distro=sid
+- pkg:deb/debian/squashfs-tools@1:4.5.1-1?distro=sid
+- pkg:deb/debian/squashfs-tools@1:4.5-3?distro=sid
+references:
+- id: 130063
+  reference_id: '994262'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=994262
+severities: []
+summary: squashfs_opendir in unsquash-2.c in Squashfs-Tools 4.5 allows Directory Traversal,
+  a different vulnerability than CVE-2021-40153. A squashfs filesystem that has been
+  crafted to include a symbolic link and then contents under the same filename in
+  a filesystem can cause unsquashfs to first create the symbolic link pointing outside
+  the expected directory, and then the subsequent write operation will cause the unsquashfs
+  process to write through the symbolic link elsewhere in the filesystem.
+vulnerability_id: VCID-qtbj-5cwe-aaap
+weaknesses: []

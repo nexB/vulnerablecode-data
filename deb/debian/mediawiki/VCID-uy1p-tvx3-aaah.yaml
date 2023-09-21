@@ -1,0 +1,62 @@
+vulnerability_id: VCID-uy1p-tvx3-aaah
+aliases:
+  - CVE-2020-35479
+summary: MediaWiki before 1.35.1 allows XSS via BlockLogFormatter.php. Language::translateBlockExpiry
+  itself does not escape in all code paths. For example, the return of Language::userTimeAndDate
+  is is always unsafe for HTML in a month value. This affects MediaWiki 1.12.0 and later.
+severities:
+  - id: 605475
+    reference_id: 928020
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 605474
+    reference_id: 928019
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 474185
+    reference_id: 842403
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 474183
+    reference_id: 842403
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+references:
+  - id: 928020
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-35479.json
+    reference_id:
+  - id: 822242
+    url: https://lists.debian.org/debian-lts-announce/2020/12/msg00034.html
+    reference_id:
+  - id: 842391
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STT5Z4A3BCXVH3WIPICWU2FP4IPIMUPC/
+    reference_id:
+  - id: 842392
+    url: https://lists.wikimedia.org/pipermail/mediawiki-announce/2020-December/000268.html
+    reference_id:
+  - id: 842401
+    url: https://phabricator.wikimedia.org/T268938
+    reference_id:
+  - id: 842396
+    url: https://www.debian.org/security/2020/dsa-4816
+    reference_id:
+  - id: 928019
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1909237
+    reference_id: '1909237'
+  - id: 143908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 842403
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-35479
+    reference_id: CVE-2020-35479
+weaknesses: []

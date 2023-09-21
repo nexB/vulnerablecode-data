@@ -1,0 +1,35 @@
+vulnerability_id: VCID-nk6x-ncpw-aaac
+aliases:
+  - CVE-2021-43532
+summary: The 'Copy Image Link' context menu action would copy the final image URL after redirects.
+  By embedding an image that triggered authentication flows - in conjunction with a Content
+  Security Policy that stopped a redirection chain in the middle - the final image URL could
+  be one that contained an authentication token used to takeover a user account. If a website
+  tricked a user into copy and pasting the image link back to the page, the page would be able
+  to steal the authentication tokens. This was fixed by making the action return the original
+  URL, before any redirects. This vulnerability affects Firefox < 94.
+severities:
+  - id: 567231
+    reference_id: 902775
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+  - id: 567229
+    reference_id: 902775
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+references:
+  - id: 902774
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=1719203
+    reference_id:
+  - id: 893966
+    url: https://www.mozilla.org/security/advisories/mfsa2021-48/
+    reference_id:
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 902775
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-43532
+    reference_id: CVE-2021-43532
+weaknesses: []

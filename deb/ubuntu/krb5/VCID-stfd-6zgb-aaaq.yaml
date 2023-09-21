@@ -1,0 +1,283 @@
+vulnerability_id: VCID-stfd-6zgb-aaaq
+aliases:
+  - CVE-2014-5355
+summary: MIT Kerberos 5 (aka krb5) through 1.13.1 incorrectly expects that a krb5_read_message
+  data field is represented as a string ending with a '\0' character, which allows remote attackers
+  to (1) cause a denial of service (NULL pointer dereference) via a zero-byte version string
+  or (2) cause a denial of service (out-of-bounds read) by omitting the '\0' character, related
+  to appl/user_user/server.c and lib/krb5/krb/recvauth.c.
+severities:
+  - id: 657425
+    reference_id: 1425658
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 657426
+    reference_id: 1425659
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 647930
+    reference_id: 1418083
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57471
+    reference_id: 183518
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 183964
+    reference_id: 575849
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 56656
+    reference_id: 182391
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 55654
+    reference_id: 180994
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 575846
+    url: http://krbdev.mit.edu/rt/Ticket/Display.html?id=8050
+    reference_id:
+  - id: 575835
+    url: http://lists.opensuse.org/opensuse-updates/2015-03/msg00061.html
+    reference_id:
+  - id: 1425658
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-5355.html
+    reference_id:
+  - id: 575824
+    url: http://rhn.redhat.com/errata/RHSA-2015-0794.html
+    reference_id:
+  - id: 183519
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-5355.json
+    reference_id:
+  - id: 1425659
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5355
+    reference_id:
+  - id: 575848
+    url: https://github.com/krb5/krb5/commit/102bb6ebf20f9174130c85c3b052ae104e5073ec
+    reference_id:
+  - id: 518230
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00040.html
+    reference_id:
+  - id: 1418083
+    url: https://ubuntu.com/security/notices/USN-2810-1
+    reference_id:
+  - id: 575828
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:069
+    reference_id:
+  - id: 98394
+    url: http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html
+    reference_id:
+  - id: 27563
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    reference_id:
+  - id: 575847
+    url: http://www.securityfocus.com/bid/74042
+    reference_id:
+  - id: 79265
+    url: http://www.ubuntu.com/usn/USN-2810-1
+    reference_id:
+  - id: 183518
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1193939
+    reference_id: 1193939
+  - id: 42731
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=778647
+    reference_id: 778647
+  - id: 51146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.1:*:*:*:*:*:*:*
+  - id: 483363
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.10:*:*:*:*:*:*:*
+  - id: 483362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.10.1:*:*:*:*:*:*:*
+  - id: 483381
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.10.2:*:*:*:*:*:*:*
+  - id: 545717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.10.3:*:*:*:*:*:*:*
+  - id: 545718
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.10.4:*:*:*:*:*:*:*
+  - id: 518203
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*
+  - id: 518219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*
+  - id: 518220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*
+  - id: 518221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*
+  - id: 571572
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*
+  - id: 571584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*
+  - id: 571574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*
+  - id: 571573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*
+  - id: 575821
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.12.2:*:*:*:*:*:*:*
+  - id: 575832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.13:*:*:*:*:*:*:*
+  - id: 575850
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.13.1:*:*:*:*:*:*:*
+  - id: 56244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2:*:*:*:*:*:*:*
+  - id: 56242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.1:*:*:*:*:*:*:*
+  - id: 56243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.2:*:*:*:*:*:*:*
+  - id: 64137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.3:*:*:*:*:*:*:*
+  - id: 64138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.4:*:*:*:*:*:*:*
+  - id: 79652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.5:*:*:*:*:*:*:*
+  - id: 79653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.6:*:*:*:*:*:*:*
+  - id: 79654
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.7:*:*:*:*:*:*:*
+  - id: 95225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.2.8:*:*:*:*:*:*:*
+  - id: 94336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3:*:*:*:*:*:*:*
+  - id: 95226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.1:*:*:*:*:*:*:*
+  - id: 95227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.2:*:*:*:*:*:*:*
+  - id: 94335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.3:*:*:*:*:*:*:*
+  - id: 95228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.4:*:*:*:*:*:*:*
+  - id: 120014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.5:*:*:*:*:*:*:*
+  - id: 120015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3.6:*:*:*:*:*:*:*
+  - id: 79937
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.3:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.3:alpha1:*:*:*:*:*:*
+  - id: 120017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.4:*:*:*:*:*:*:*
+  - id: 120016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.4.1:*:*:*:*:*:*:*
+  - id: 240104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.4.2:*:*:*:*:*:*:*
+  - id: 240105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.4.3:*:*:*:*:*:*:*
+  - id: 263389
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.4.4:*:*:*:*:*:*:*
+  - id: 240106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.5:*:*:*:*:*:*:*
+  - id: 263390
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.5.1:*:*:*:*:*:*:*
+  - id: 47546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.5.2:*:*:*:*:*:*:*
+  - id: 301181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.5.3:*:*:*:*:*:*:*
+  - id: 301184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.6:*:*:*:*:*:*:*
+  - id: 301182
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.6.1:*:*:*:*:*:*:*
+  - id: 301183
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.6.2:*:*:*:*:*:*:*
+  - id: 396544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.7:*:*:*:*:*:*:*
+  - id: 410502
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.7.1:*:*:*:*:*:*:*
+  - id: 412688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8:*:*:*:*:*:*:*
+  - id: 417442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.1:*:*:*:*:*:*:*
+  - id: 417491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.2:*:*:*:*:*:*:*
+  - id: 417492
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.3:*:*:*:*:*:*:*
+  - id: 454421
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.4:*:*:*:*:*:*:*
+  - id: 483373
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.5:*:*:*:*:*:*:*
+  - id: 483374
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.8.6:*:*:*:*:*:*:*
+  - id: 435491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.9:*:*:*:*:*:*:*
+  - id: 454417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.9.1:*:*:*:*:*:*:*
+  - id: 483375
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.9.2:*:*:*:*:*:*:*
+  - id: 483376
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.9.3:*:*:*:*:*:*:*
+  - id: 483384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mit:kerberos_5:1.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mit:kerberos_5:1.9.4:*:*:*:*:*:*:*
+  - id: 575849
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-5355
+    reference_id: CVE-2014-5355
+  - id: 182391
+    url: https://access.redhat.com/errata/RHSA-2015:0794
+    reference_id: RHSA-2015:0794
+  - id: 180994
+    url: https://access.redhat.com/errata/RHSA-2015:2154
+    reference_id: RHSA-2015:2154
+weaknesses: []

@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2020-25596
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B37-g3263f257ca-1?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B80-gd101b417b7-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: 'An issue was discovered in Xen through 4.14.x. x86 PV guest kernels can
+  experience denial of service via SYSENTER. The SYSENTER instruction leaves various
+  state sanitization activities to software. One of Xen''s sanitization paths injects
+  a #GP fault, and incorrectly delivers it twice to the guest. This causes the guest
+  kernel to observe a kernel-privilege #GP fault (typically fatal) rather than a user-privilege
+  #GP fault (usually converted into SIGSEGV/etc.). Malicious or buggy userspace can
+  crash the guest kernel, resulting in a VM Denial of Service. All versions of Xen
+  from 3.2 onwards are vulnerable. Only x86 systems are vulnerable. ARM platforms
+  are not vulnerable. Only x86 systems that support the SYSENTER instruction in 64bit
+  mode are vulnerable. This is believed to be Intel, Centaur, and Shanghai CPUs. AMD
+  and Hygon CPUs are not believed to be vulnerable. Only x86 PV guests can exploit
+  the vulnerability. x86 PVH / HVM guests cannot exploit the vulnerability.'
+vulnerability_id: VCID-1se6-uwpu-aaaj
+weaknesses: []

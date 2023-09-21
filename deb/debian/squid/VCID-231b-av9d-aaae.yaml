@@ -1,0 +1,116 @@
+vulnerability_id: VCID-231b-av9d-aaae
+aliases:
+  - CVE-2019-12524
+summary: An issue was discovered in Squid through 4.7. When handling requests from users, Squid
+  checks its rules to see if the request should be denied. Squid by default comes with rules
+  to block access to the Cache Manager, which serves detailed server information meant for the
+  maintainer. This rule is implemented via url_regex. The handler for url_regex rules URL decodes
+  an incoming request. This allows an attacker to encode their URL to bypass the url_regex check,
+  and gain access to the blocked resource.
+severities:
+  - id: 690699
+    reference_id: 1452032
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 50874
+    reference_id: 175484
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 690700
+    reference_id: 1452033
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690701
+    reference_id: 773551
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690690
+    reference_id: 1452025
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690684
+    reference_id: 1452023
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 50873
+    reference_id: 175483
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 375574
+    reference_id: 773552
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 375572
+    reference_id: 773552
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 50852
+    reference_id: 175444
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1452032
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-12524.html
+    reference_id:
+  - id: 175484
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-12524.json
+    reference_id:
+  - id: 1452033
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12524
+    reference_id:
+  - id: 773551
+    url: https://gitlab.com/jeriko.one/security/-/blob/master/squid/CVEs/CVE-2019-12524.txt
+    reference_id:
+  - id: 745356
+    url: https://lists.debian.org/debian-lts-announce/2020/07/msg00009.html
+    reference_id:
+  - id: 773525
+    url: https://security.netapp.com/advisory/ntap-20210205-0006/
+    reference_id:
+  - id: 1452025
+    url: https://ubuntu.com/security/notices/USN-4446-1
+    reference_id:
+  - id: 773538
+    url: https://usn.ubuntu.com/4446-1/
+    reference_id:
+  - id: 773527
+    url: https://www.debian.org/security/2020/dsa-4682
+    reference_id:
+  - id: 1452023
+    url: http://www.squid-cache.org/Advisories/SQUID-2019_4.txt
+    reference_id:
+  - id: 175483
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1827570
+    reference_id: 1827570
+  - id: 159878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:*:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 773552
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-12524
+    reference_id: CVE-2019-12524
+  - id: 175444
+    url: https://access.redhat.com/errata/RHSA-2020:4743
+    reference_id: RHSA-2020:4743
+weaknesses: []

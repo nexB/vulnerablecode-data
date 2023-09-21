@@ -1,0 +1,79 @@
+vulnerability_id: VCID-fkes-ajcs-aaac
+aliases:
+  - CVE-2022-31015
+  - GHSA-f5x9-8jwc-25rw
+  - PYSEC-2022-205
+summary: Waitress is a Web Server Gateway Interface server for Python 2 and 3. Waitress versions
+  2.1.0 and 2.1.1 may terminate early due to a thread closing a socket while the main thread
+  is about to call select(). This will lead to the main thread raising an exception that is
+  not handled and then causing the entire application to be killed. This issue has been fixed
+  in Waitress 2.1.2 by no longer allowing the WSGI thread to close the socket. Instead, that
+  is always delegated to the main thread. There is no work-around for this issue. However, users
+  using waitress behind a reverse proxy server are less likely to have issues if the reverse
+  proxy always reads the full response.
+severities:
+  - id: 5535
+    reference_id: 39320
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 5534
+    reference_id: 39319
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 601407
+    reference_id: 20354
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 601405
+    reference_id: 20354
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 3173
+    reference_id: 20356
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 3172
+    reference_id: 20353
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 39320
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-31015.json
+    reference_id:
+  - id: 8959
+    url: https://github.com/Pylons/waitress/commit/4f6789b035610e0552738cdc4b35ca809a592d48
+    reference_id:
+  - id: 8957
+    url: https://github.com/Pylons/waitress/issues/374
+    reference_id:
+  - id: 8956
+    url: https://github.com/Pylons/waitress/pull/377
+    reference_id:
+  - id: 20355
+    url: https://github.com/pypa/advisory-database/tree/main/vulns/waitress/PYSEC-2022-205.yaml
+    reference_id:
+  - id: 219071
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012315
+    reference_id: 1012315
+  - id: 39319
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2092246
+    reference_id: 2092246
+  - id: 784250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:agendaless:waitress:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:agendaless:waitress:*:*:*:*:*:*:*:*
+  - id: 20354
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-31015
+    reference_id: CVE-2022-31015
+  - id: 20356
+    url: https://github.com/advisories/GHSA-f5x9-8jwc-25rw
+    reference_id: GHSA-f5x9-8jwc-25rw
+  - id: 20353
+    url: https://github.com/Pylons/waitress/security/advisories/GHSA-f5x9-8jwc-25rw
+    reference_id: GHSA-f5x9-8jwc-25rw
+weaknesses: []

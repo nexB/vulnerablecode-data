@@ -1,0 +1,62 @@
+vulnerability_id: VCID-cnxn-7fzn-aaap
+aliases:
+  - CVE-2017-1000472
+summary: The ZipCommon::isValidPath() function in Zip/src/ZipCommon.cpp in POCO C++ Libraries
+  before 1.8 does not properly restrict the filename value in the ZIP header, which allows attackers
+  to conduct absolute path traversal attacks during the ZIP decompression, and possibly create
+  or overwrite arbitrary files, via a crafted ZIP file, related to a "file path injection vulnerability".
+severities:
+  - id: 673246
+    reference_id: 1438414
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673247
+    reference_id: 1438415
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673248
+    reference_id: 669077
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 250312
+    reference_id: 669080
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:P
+  - id: 250310
+    reference_id: 669080
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+references:
+  - id: 1438414
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000472.html
+    reference_id:
+  - id: 1438415
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000472
+    reference_id:
+  - id: 669077
+    url: https://github.com/pocoproject/poco/issues/1968
+    reference_id:
+  - id: 669078
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00013.html
+    reference_id:
+  - id: 669079
+    url: https://www.debian.org/security/2018/dsa-4083
+    reference_id:
+  - id: 669081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pocoproject:poco:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pocoproject:poco:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 669080
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000472
+    reference_id: CVE-2017-1000472
+weaknesses: []

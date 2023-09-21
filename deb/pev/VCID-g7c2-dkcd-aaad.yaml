@@ -1,0 +1,19 @@
+affected_purls:
+- pkg:deb/debian/pev@0.81-3
+aliases:
+- CVE-2021-45423
+fixed_purl:
+- pkg:deb/debian/pev@0.81-3%2Bdeb11u1
+references:
+- id: 130131
+  reference_id: '1034725'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1034725
+severities: []
+summary: A Buffer Overflow vulnerabilityexists in Pev 0.81 via the pe_exports function
+  from exports.c.. The array offsets_to_Names is dynamically allocated on the stack
+  using exp->NumberOfFunctions as its size. However, the loop uses exp->NumberOfNames
+  to iterate over it and set its components value. Therefore, the loop code assumes
+  that exp->NumberOfFunctions is greater than ordinal at each iteration. This can
+  lead to arbitrary code execution.
+vulnerability_id: VCID-g7c2-dkcd-aaad
+weaknesses: []

@@ -1,0 +1,199 @@
+vulnerability_id: VCID-bpfw-s5tn-aaag
+aliases:
+  - CVE-2017-17807
+summary: The KEYS subsystem in the Linux kernel before 4.14.6 omitted an access-control check
+  when adding a key to the current task's "default request-key keyring" via the request_key()
+  system call, allowing a local user to use a sequence of crafted system calls to add keys to
+  a keyring with only Search permission (not Write permission) to that keyring, related to construct_get_dest_keyring()
+  in security/keys/request_key.c.
+severities:
+  - id: 677130
+    reference_id: 692148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677131
+    reference_id: 1441300
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619449
+    reference_id: 938201
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+  - id: 677132
+    reference_id: 1441301
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677133
+    reference_id: 692150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672917
+    reference_id: 1438146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672918
+    reference_id: 1438147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672919
+    reference_id: 1438148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673644
+    reference_id: 1438765
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673645
+    reference_id: 1438766
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672922
+    reference_id: 1438151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677134
+    reference_id: 692151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619448
+    reference_id: 938200
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 275056
+    reference_id: 692152
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:N
+  - id: 275054
+    reference_id: 692152
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+  - id: 50033
+    reference_id: 174506
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50032
+    reference_id: 174505
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 692148
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4dca6ea1d9432052afb06baf2e3ae78188a4410b
+    reference_id:
+  - id: 1441300
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17807.html
+    reference_id:
+  - id: 938201
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17807.json
+    reference_id:
+  - id: 1441301
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17807
+    reference_id:
+  - id: 692150
+    url: https://github.com/torvalds/linux/commit/4dca6ea1d9432052afb06baf2e3ae78188a4410b
+    reference_id:
+  - id: 691264
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00004.html
+    reference_id:
+  - id: 1438146
+    url: https://ubuntu.com/security/notices/USN-3617-1
+    reference_id:
+  - id: 1438147
+    url: https://ubuntu.com/security/notices/USN-3617-2
+    reference_id:
+  - id: 1438148
+    url: https://ubuntu.com/security/notices/USN-3617-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1438765
+    url: https://ubuntu.com/security/notices/USN-3620-1
+    reference_id:
+  - id: 1438766
+    url: https://ubuntu.com/security/notices/USN-3620-2
+    reference_id:
+  - id: 1438151
+    url: https://ubuntu.com/security/notices/USN-3632-1
+    reference_id:
+  - id: 666768
+    url: https://usn.ubuntu.com/3617-1/
+    reference_id:
+  - id: 666769
+    url: https://usn.ubuntu.com/3617-2/
+    reference_id:
+  - id: 666770
+    url: https://usn.ubuntu.com/3617-3/
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 671937
+    url: https://usn.ubuntu.com/3620-1/
+    reference_id:
+  - id: 671938
+    url: https://usn.ubuntu.com/3620-2/
+    reference_id:
+  - id: 666773
+    url: https://usn.ubuntu.com/3632-1/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 668886
+    url: https://www.debian.org/security/2018/dsa-4082
+    reference_id:
+  - id: 692151
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.6
+    reference_id:
+  - id: 692149
+    url: http://www.securityfocus.com/bid/102301
+    reference_id:
+  - id: 938200
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1528335
+    reference_id: 1528335
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 692152
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17807
+    reference_id: CVE-2017-17807
+  - id: 174506
+    url: https://access.redhat.com/errata/RHSA-2020:1016
+    reference_id: RHSA-2020:1016
+  - id: 174505
+    url: https://access.redhat.com/errata/RHSA-2020:1070
+    reference_id: RHSA-2020:1070
+weaknesses: []

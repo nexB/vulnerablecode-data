@@ -1,0 +1,115 @@
+vulnerability_id: VCID-jhdh-xc59-aaab
+aliases:
+  - CVE-2017-12173
+summary: It was found that sssd's sysdb_search_user_by_upn_res() function before 1.16.0 did
+  not sanitize requests when querying its local cache and was vulnerable to injection. In a
+  centralized login environment, if a password hash was locally cached for a given user, an
+  authenticated attacker could use this flaw to retrieve it.
+severities:
+  - id: 674205
+    reference_id: 1439192
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620327
+    reference_id: 938812
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 674206
+    reference_id: 1439193
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674207
+    reference_id: 1439194
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620324
+    reference_id: 938809
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 257485
+    reference_id: 675983
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 257483
+    reference_id: 675983
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 620326
+    reference_id: 938811
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 620325
+    reference_id: 938810
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1439192
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-12173.html
+    reference_id:
+  - id: 938812
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-12173.json
+    reference_id:
+  - id: 675982
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12173
+    reference_id:
+  - id: 1439193
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12173
+    reference_id:
+  - id: 1439194
+    url: https://ubuntu.com/security/notices/USN-3526-1
+    reference_id:
+  - id: 938809
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1498173
+    reference_id: 1498173
+  - id: 129052
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=877885
+    reference_id: 877885
+  - id: 409137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fedoraproject:sssd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fedoraproject:sssd:*:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 675983
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-12173
+    reference_id: CVE-2017-12173
+  - id: 938811
+    url: https://access.redhat.com/errata/RHSA-2017:3379
+    reference_id: RHSA-2017:3379
+  - id: 938810
+    url: https://access.redhat.com/errata/RHSA-2018:1877
+    reference_id: RHSA-2018:1877
+weaknesses: []

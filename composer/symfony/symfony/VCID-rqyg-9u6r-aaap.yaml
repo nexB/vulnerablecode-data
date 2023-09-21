@@ -1,0 +1,69 @@
+vulnerability_id: VCID-rqyg-9u6r-aaap
+aliases:
+  - CVE-2017-16790
+summary: |
+  Attacker can read all files content on the server
+  When a form is submitted by the user, the request handler classes of the Form component merge POST data (known as the `$_POST` array in plain PHP) and uploaded files data (known as the `$_FILES` array in plain PHP) into one array. This big array forms the data that are then bound to the form. At this stage there is no difference anymore between submitted POST data and uploaded files. A user can send a crafted HTTP request where the value of a `FileType` is sent as normal `POST` data that could be interpreted as a locale file path on the server-side (for example, `file:///etc/passwd`). If the application did not perform any additional checks about the value submitted to the `FileType`, the contents of the given file on the server could have been exposed to the attacker.
+severities:
+  - id: 676617
+    reference_id: 1440972
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676618
+    reference_id: 1440973
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676619
+    reference_id: 24399
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676620
+    reference_id: 689231
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 271956
+    reference_id: 689232
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 271954
+    reference_id: 689232
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 24397
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16790
+    reference_id:
+  - id: 1440972
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16790.html
+    reference_id:
+  - id: 1440973
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16790
+    reference_id:
+  - id: 24399
+    url: https://github.com/symfony/symfony/pull/24993
+    reference_id:
+  - id: 689231
+    url: https://symfony.com/blog/cve-2017-16790-ensure-that-submitted-data-are-uploaded-files
+    reference_id:
+  - id: 639051
+    url: https://www.debian.org/security/2018/dsa-4262
+    reference_id:
+  - id: 492761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 689232
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16790
+    reference_id: CVE-2017-16790
+  - id: 24398
+    url: http://symfony.com/blog/cve-2017-16790-ensure-that-submitted-data-are-uploaded-files
+    reference_id: CVE-2017-16790-ENSURE-THAT-SUBMITTED-DATA-ARE-UPLOADED-FILES
+weaknesses: []

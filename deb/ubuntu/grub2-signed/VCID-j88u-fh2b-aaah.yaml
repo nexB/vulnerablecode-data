@@ -1,0 +1,245 @@
+vulnerability_id: VCID-j88u-fh2b-aaah
+aliases:
+  - CVE-2020-14372
+summary: A flaw was found in grub2 in versions prior to 2.06, where it incorrectly enables the
+  usage of the ACPI command when Secure Boot is enabled. This flaw allows an attacker with privileged
+  access to craft a Secondary System Description Table (SSDT) containing code to overwrite the
+  Linux kernel lockdown variable content directly into memory. The table is further loaded and
+  executed by the kernel, defeating its Secure Boot lockdown and allowing the attacker to load
+  unsigned code. The highest threat from this vulnerability is to data confidentiality and integrity,
+  as well as system availability.
+severities:
+  - id: 696454
+    reference_id: 1456566
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606711
+    reference_id: 928935
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 696455
+    reference_id: 1456567
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696456
+    reference_id: 1456568
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606697
+    reference_id: 928921
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 442023
+    reference_id: 820886
+    scoring_system: cvssv2
+    value: '6.2'
+    scoring_elements: AV:L/AC:H/Au:N/C:C/I:C/A:C
+  - id: 442021
+    reference_id: 820886
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 606707
+    reference_id: 928931
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606709
+    reference_id: 928933
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606702
+    reference_id: 928926
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606703
+    reference_id: 928927
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606699
+    reference_id: 928923
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606701
+    reference_id: 928925
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606705
+    reference_id: 928929
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606706
+    reference_id: 928930
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606704
+    reference_id: 928928
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606700
+    reference_id: 928924
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606708
+    reference_id: 928932
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606698
+    reference_id: 928922
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606710
+    reference_id: 928934
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1456566
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-14372.html
+    reference_id:
+  - id: 928935
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14372.json
+    reference_id:
+  - id: 820882
+    url: https://access.redhat.com/security/vulnerabilities/RHSB-2021-003
+    reference_id:
+  - id: 1456567
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14372
+    reference_id:
+  - id: 820884
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZWZ36QK4IKU6MWDWNOOWKPH3WXZBHT2R/
+    reference_id:
+  - id: 812170
+    url: https://security.gentoo.org/glsa/202104-05
+    reference_id:
+  - id: 820885
+    url: https://security.netapp.com/advisory/ntap-20210416-0004/
+    reference_id:
+  - id: 1456568
+    url: https://ubuntu.com/security/notices/USN-4992-1
+    reference_id:
+  - id: 928921
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1873150
+    reference_id: 1873150
+  - id: 812177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:grub2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:grub2:*:*:*:*:*:*:*:*
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 169117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 540946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+  - id: 637859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:8.2:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 571564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.7:*:*:*:*:*:*:*
+  - id: 728888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:8.1:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 540947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+  - id: 723722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:8.2:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 820886
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14372
+    reference_id: CVE-2020-14372
+  - id: 928931
+    url: https://access.redhat.com/errata/RHSA-2021:0696
+    reference_id: RHSA-2021:0696
+  - id: 928933
+    url: https://access.redhat.com/errata/RHSA-2021:0697
+    reference_id: RHSA-2021:0697
+  - id: 928926
+    url: https://access.redhat.com/errata/RHSA-2021:0698
+    reference_id: RHSA-2021:0698
+  - id: 928927
+    url: https://access.redhat.com/errata/RHSA-2021:0699
+    reference_id: RHSA-2021:0699
+  - id: 928923
+    url: https://access.redhat.com/errata/RHSA-2021:0700
+    reference_id: RHSA-2021:0700
+  - id: 928925
+    url: https://access.redhat.com/errata/RHSA-2021:0701
+    reference_id: RHSA-2021:0701
+  - id: 928929
+    url: https://access.redhat.com/errata/RHSA-2021:0702
+    reference_id: RHSA-2021:0702
+  - id: 928930
+    url: https://access.redhat.com/errata/RHSA-2021:0703
+    reference_id: RHSA-2021:0703
+  - id: 928928
+    url: https://access.redhat.com/errata/RHSA-2021:0704
+    reference_id: RHSA-2021:0704
+  - id: 928924
+    url: https://access.redhat.com/errata/RHSA-2021:1734
+    reference_id: RHSA-2021:1734
+  - id: 928932
+    url: https://access.redhat.com/errata/RHSA-2021:2566
+    reference_id: RHSA-2021:2566
+  - id: 928922
+    url: https://access.redhat.com/errata/RHSA-2021:2790
+    reference_id: RHSA-2021:2790
+  - id: 928934
+    url: https://access.redhat.com/errata/RHSA-2021:3675
+    reference_id: RHSA-2021:3675
+weaknesses: []

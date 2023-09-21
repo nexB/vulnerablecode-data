@@ -1,0 +1,171 @@
+vulnerability_id: VCID-nfmv-2ahr-aaaa
+aliases:
+  - CVE-2019-19065
+summary: '** DISPUTED ** A memory leak in the sdma_init() function in drivers/infiniband/hw/hfi1/sdma.c
+  in the Linux kernel before 5.3.9 allows attackers to cause a denial of service (memory consumption)
+  by triggering rhashtable_init() failures, aka CID-34b3be18a04e. NOTE: This has been disputed
+  as not a vulnerability because "rhashtable_init() can only fail if it is passed invalid values
+  in the second parameter''s struct, but when invoked from sdma_init() that is a pointer to
+  a static const struct, so an attacker could only trigger failure if they could corrupt kernel
+  memory (in which case a small memory leak is not a significant problem)."'
+severities:
+  - id: 692449
+    reference_id: 1453340
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 65304
+    reference_id: '194147'
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 692393
+    reference_id: 789173
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692450
+    reference_id: 1453341
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692451
+    reference_id: 789223
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691934
+    reference_id: 1452991
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691935
+    reference_id: 1452992
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689614
+    reference_id: 1451207
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691932
+    reference_id: 781814
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691933
+    reference_id: 1452990
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689613
+    reference_id: 1451206
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 65303
+    reference_id: '194146'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 395240
+    reference_id: 789224
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:C
+  - id: 395238
+    reference_id: 789224
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 53852
+    reference_id: 178976
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53851
+    reference_id: 178975
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 779500
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00029.html
+    reference_id:
+  - id: 1453340
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19065.html
+    reference_id:
+  - id: '194147'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19065.json
+    reference_id:
+  - id: 789173
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.3.9
+    reference_id:
+  - id: 1453341
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19065
+    reference_id:
+  - id: 789223
+    url: https://github.com/torvalds/linux/commit/34b3be18a04ecdc610aae4c48e5d1b799d8689f6
+    reference_id:
+  - id: 788265
+    url: https://security.netapp.com/advisory/ntap-20191205-0001/
+    reference_id:
+  - id: 1452991
+    url: https://ubuntu.com/security/notices/USN-4208-1
+    reference_id:
+  - id: 1452992
+    url: https://ubuntu.com/security/notices/USN-4210-1
+    reference_id:
+  - id: 1451207
+    url: https://ubuntu.com/security/notices/USN-4226-1
+    reference_id:
+  - id: 785017
+    url: https://usn.ubuntu.com/4208-1/
+    reference_id:
+  - id: 784132
+    url: https://usn.ubuntu.com/4210-1/
+    reference_id:
+  - id: 767145
+    url: https://usn.ubuntu.com/4226-1/
+    reference_id:
+  - id: 781814
+    url: https://usn.ubuntu.com/usn/usn-4208-1
+    reference_id:
+  - id: 1452990
+    url: https://usn.ubuntu.com/usn/usn-4210-1
+    reference_id:
+  - id: 1451206
+    url: https://usn.ubuntu.com/usn/usn-4226-1
+    reference_id:
+  - id: '194146'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1775000
+    reference_id: 1775000
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 789224
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19065
+    reference_id: CVE-2019-19065
+  - id: 178976
+    url: https://access.redhat.com/errata/RHSA-2020:1567
+    reference_id: RHSA-2020:1567
+  - id: 178975
+    url: https://access.redhat.com/errata/RHSA-2020:1769
+    reference_id: RHSA-2020:1769
+weaknesses: []

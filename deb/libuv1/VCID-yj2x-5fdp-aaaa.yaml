@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2021-22918
+fixed_purl:
+- pkg:deb/debian/libuv1@1.24.1-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libuv1@1.40.0-2?distro=sid
+- pkg:deb/debian/libuv1@1.44.2-1?distro=sid
+references:
+- id: 129650
+  reference_id: '990561'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990561
+severities: []
+summary: Node.js before 16.4.1, 14.17.2, 12.22.2 is vulnerable to an out-of-bounds
+  read when uv__idna_toascii() is used to convert strings to ASCII. The pointer p
+  is read and increased without checking whether it is beyond pe, with the latter
+  holding a pointer to the end of the buffer. This can lead to information disclosures
+  or crashes. This function can be triggered via uv_getaddrinfo().
+vulnerability_id: VCID-yj2x-5fdp-aaaa
+weaknesses: []

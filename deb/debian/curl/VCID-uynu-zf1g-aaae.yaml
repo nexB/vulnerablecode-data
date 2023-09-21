@@ -1,0 +1,374 @@
+vulnerability_id: VCID-uynu-zf1g-aaae
+aliases:
+  - CVE-2011-3389
+summary: The SSL protocol, as used in certain configurations in Microsoft Windows and Microsoft
+  Internet Explorer, Mozilla Firefox, Google Chrome, Opera, and other products, encrypts data
+  by using CBC mode with chained initialization vectors, which allows man-in-the-middle attackers
+  to obtain plaintext HTTP headers via a blockwise chosen-boundary attack (BCBA) on an HTTPS
+  session, in conjunction with JavaScript code that uses (1) the HTML5 WebSocket API, (2) the
+  Java URLConnection API, or (3) the Silverlight WebClient API, aka a "BEAST" attack.
+severities:
+  - id: 657671
+    reference_id: 13680
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 661008
+    reference_id: 417507
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 146142
+    reference_id: 466208
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 66593
+    reference_id: '195670'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 66592
+    reference_id: '195669'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 66596
+    reference_id: '195673'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 66594
+    reference_id: '195671'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 66595
+    reference_id: '195672'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 65751
+    reference_id: '194675'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 61999
+    reference_id: 189793
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 466150
+    url: http://blog.mozilla.com/security/2011/09/27/attack-against-tls-protected-communications/
+    reference_id:
+  - id: 466151
+    url: http://blogs.technet.com/b/msrc/archive/2011/09/26/microsoft-releases-security-advisory-2588513.aspx
+    reference_id:
+  - id: 466152
+    url: http://blogs.technet.com/b/srd/archive/2011/09/26/is-ssl-broken-more-about-security-advisory-2588513.aspx
+    reference_id:
+  - id: 466153
+    url: http://curl.haxx.se/docs/adv_20120124B.html
+    reference_id:
+  - id: 466154
+    url: http://downloads.asterisk.org/pub/security/AST-2016-001.html
+    reference_id:
+  - id: 466155
+    url: http://ekoparty.org/2011/juliano-rizzo.php
+    reference_id:
+  - id: 466156
+    url: http://eprint.iacr.org/2004/111
+    reference_id:
+  - id: 466157
+    url: http://eprint.iacr.org/2006/136
+    reference_id:
+  - id: 462485
+    url: http://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html
+    reference_id:
+  - id: 466158
+    url: http://isc.sans.edu/diary/SSL+TLS+part+3+/11635
+    reference_id:
+  - id: 444900
+    url: http://lists.apple.com/archives/Security-announce/2011//Oct/msg00001.html
+    reference_id:
+  - id: 444956
+    url: http://lists.apple.com/archives/Security-announce/2011//Oct/msg00002.html
+    reference_id:
+  - id: 356464
+    url: http://lists.apple.com/archives/security-announce/2012/Feb/msg00000.html
+    reference_id:
+  - id: 466159
+    url: http://lists.apple.com/archives/security-announce/2012/Jul/msg00001.html
+    reference_id:
+  - id: 445082
+    url: http://lists.apple.com/archives/security-announce/2012/May/msg00001.html
+    reference_id:
+  - id: 341391
+    url: http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html
+    reference_id:
+  - id: 459564
+    url: http://lists.apple.com/archives/security-announce/2013/Oct/msg00004.html
+    reference_id:
+  - id: 466160
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00049.html
+    reference_id:
+  - id: 466161
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-01/msg00051.html
+    reference_id:
+  - id: 466162
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-05/msg00009.html
+    reference_id:
+  - id: 466163
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html
+    reference_id:
+  - id: 466164
+    url: http://marc.info/?l=bugtraq&m=132750579901589&w=2
+    reference_id:
+  - id: 466165
+    url: http://marc.info/?l=bugtraq&m=132872385320240&w=2
+    reference_id:
+  - id: 466166
+    url: http://marc.info/?l=bugtraq&m=133365109612558&w=2
+    reference_id:
+  - id: 438856
+    url: http://marc.info/?l=bugtraq&m=133728004526190&w=2
+    reference_id:
+  - id: 348795
+    url: http://marc.info/?l=bugtraq&m=134254866602253&w=2
+    reference_id:
+  - id: 438696
+    url: http://marc.info/?l=bugtraq&m=134254957702612&w=2
+    reference_id:
+  - id: 466167
+    url: http://my.opera.com/securitygroup/blog/2011/09/28/the-beast-ssl-tls-issue
+    reference_id:
+  - id: 466168
+    url: http://osvdb.org/74829
+    reference_id:
+  - id: 466169
+    url: http://rhn.redhat.com/errata/RHSA-2012-0508.html
+    reference_id:
+  - id: 449109
+    url: http://rhn.redhat.com/errata/RHSA-2013-1455.html
+    reference_id:
+  - id: '196002'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-3389.json
+    reference_id:
+  - id: 466199
+    url: https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail
+    reference_id:
+  - id: 466200
+    url: https://bugzilla.novell.com/show_bug.cgi?id=719047
+    reference_id:
+  - id: 466201
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=737506
+    reference_id:
+  - id: 466202
+    url: https://cert-portal.siemens.com/productcert/pdf/ssa-556833.pdf
+    reference_id:
+  - id: 466203
+    url: https://docs.microsoft.com/en-us/security-updates/securitybulletins/2012/ms12-006
+    reference_id:
+  - id: 466140
+    url: http://secunia.com/advisories/45791
+    reference_id:
+  - id: 466170
+    url: http://secunia.com/advisories/47998
+    reference_id:
+  - id: 413538
+    url: http://secunia.com/advisories/48256
+    reference_id:
+  - id: 466171
+    url: http://secunia.com/advisories/48692
+    reference_id:
+  - id: 466172
+    url: http://secunia.com/advisories/48915
+    reference_id:
+  - id: 466173
+    url: http://secunia.com/advisories/48948
+    reference_id:
+  - id: 438857
+    url: http://secunia.com/advisories/49198
+    reference_id:
+  - id: 466174
+    url: http://secunia.com/advisories/55322
+    reference_id:
+  - id: 466175
+    url: http://secunia.com/advisories/55350
+    reference_id:
+  - id: 466176
+    url: http://secunia.com/advisories/55351
+    reference_id:
+  - id: 413539
+    url: http://security.gentoo.org/glsa/glsa-201203-02.xml
+    reference_id:
+  - id: 397964
+    url: http://security.gentoo.org/glsa/glsa-201406-32.xml
+    reference_id:
+  - id: 466204
+    url: https://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03839862
+    reference_id:
+  - id: 466205
+    url: https://hermes.opensuse.org/messages/13154861
+    reference_id:
+  - id: 466206
+    url: https://hermes.opensuse.org/messages/13155432
+    reference_id:
+  - id: 111652
+    url: https://ics-cert.us-cert.gov/advisories/ICSMA-18-058-02
+    reference_id:
+  - id: 466207
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14752
+    reference_id:
+  - id: 444901
+    url: http://support.apple.com/kb/HT4999
+    reference_id:
+  - id: 444967
+    url: http://support.apple.com/kb/HT5001
+    reference_id:
+  - id: 356470
+    url: http://support.apple.com/kb/HT5130
+    reference_id:
+  - id: 445083
+    url: http://support.apple.com/kb/HT5281
+    reference_id:
+  - id: 341406
+    url: http://support.apple.com/kb/HT5501
+    reference_id:
+  - id: 466177
+    url: http://support.apple.com/kb/HT6150
+    reference_id:
+  - id: 466178
+    url: http://technet.microsoft.com/security/advisory/2588513
+    reference_id:
+  - id: 466179
+    url: http://vnhacker.blogspot.com/2011/09/beast.html
+    reference_id:
+  - id: 466180
+    url: http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf
+    reference_id:
+  - id: 466181
+    url: http://www.debian.org/security/2012/dsa-2398
+    reference_id:
+  - id: 466182
+    url: http://www.educatedguesswork.org/2011/09/security_impact_of_the_rizzodu.html
+    reference_id:
+  - id: 449079
+    url: http://www.ibm.com/developerworks/java/jdk/alerts/
+    reference_id:
+  - id: 466183
+    url: http://www.imperialviolet.org/2011/09/23/chromeandbeast.html
+    reference_id:
+  - id: 466184
+    url: http://www.insecure.cl/Beast-SSL.rar
+    reference_id:
+  - id: 466185
+    url: http://www.kb.cert.org/vuls/id/864643
+    reference_id:
+  - id: 466186
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2012:058
+    reference_id:
+  - id: 466141
+    url: http://www.opera.com/docs/changelogs/mac/1151/
+    reference_id:
+  - id: 466187
+    url: http://www.opera.com/docs/changelogs/mac/1160/
+    reference_id:
+  - id: 466142
+    url: http://www.opera.com/docs/changelogs/unix/1151/
+    reference_id:
+  - id: 466188
+    url: http://www.opera.com/docs/changelogs/unix/1160/
+    reference_id:
+  - id: 466143
+    url: http://www.opera.com/docs/changelogs/windows/1151/
+    reference_id:
+  - id: 466189
+    url: http://www.opera.com/docs/changelogs/windows/1160/
+    reference_id:
+  - id: 466190
+    url: http://www.opera.com/support/kb/view/1004/
+    reference_id:
+  - id: 13680
+    url: http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html
+    reference_id:
+  - id: 417507
+    url: http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html
+    reference_id:
+  - id: 466191
+    url: http://www.oracle.com/technetwork/topics/security/javacpuoct2011-443431.html
+    reference_id:
+  - id: 466192
+    url: http://www.redhat.com/support/errata/RHSA-2011-1384.html
+    reference_id:
+  - id: 466193
+    url: http://www.redhat.com/support/errata/RHSA-2012-0006.html
+    reference_id:
+  - id: 466145
+    url: http://www.securityfocus.com/bid/49388
+    reference_id:
+  - id: 466194
+    url: http://www.securityfocus.com/bid/49778
+    reference_id:
+  - id: 466146
+    url: http://www.securitytracker.com/id?1025997
+    reference_id:
+  - id: 466196
+    url: http://www.securitytracker.com/id?1026103
+    reference_id:
+  - id: 466197
+    url: http://www.securitytracker.com/id?1026704
+    reference_id:
+  - id: 466195
+    url: http://www.securitytracker.com/id/1029190
+    reference_id:
+  - id: 466077
+    url: http://www.ubuntu.com/usn/USN-1263-1
+    reference_id:
+  - id: 466198
+    url: http://www.us-cert.gov/cas/techalerts/TA12-010A.html
+    reference_id:
+  - id: 39589
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=645881
+    reference_id: 645881
+  - id: 146802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*
+  - id: 46205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:microsoft:internet_explorer:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:microsoft:internet_explorer:*:*:*:*:*:*:*:*
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 88852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:opera:opera_browser:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:opera:opera_browser:*:*:*:*:*:*:*:*
+  - id: 372027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*
+  - id: 466208
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-3389
+    reference_id: CVE-2011-3389
+  - id: '195670'
+    url: https://access.redhat.com/errata/RHSA-2011:1380
+    reference_id: RHSA-2011:1380
+  - id: '195669'
+    url: https://access.redhat.com/errata/RHSA-2011:1384
+    reference_id: RHSA-2011:1384
+  - id: '195673'
+    url: https://access.redhat.com/errata/RHSA-2012:0006
+    reference_id: RHSA-2012:0006
+  - id: '195671'
+    url: https://access.redhat.com/errata/RHSA-2012:0034
+    reference_id: RHSA-2012:0034
+  - id: '195672'
+    url: https://access.redhat.com/errata/RHSA-2012:0343
+    reference_id: RHSA-2012:0343
+  - id: '194675'
+    url: https://access.redhat.com/errata/RHSA-2012:0508
+    reference_id: RHSA-2012:0508
+  - id: 189793
+    url: https://access.redhat.com/errata/RHSA-2013:1455
+    reference_id: RHSA-2013:1455
+weaknesses: []

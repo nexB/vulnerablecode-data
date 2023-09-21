@@ -1,0 +1,152 @@
+vulnerability_id: VCID-rnzz-25ar-aaac
+aliases:
+  - CVE-2012-2668
+summary: libraries/libldap/tls_m.c in OpenLDAP, possibly 2.4.31 and earlier, when using the
+  Mozilla NSS backend, always uses the default cipher suite even when TLSCipherSuite is set,
+  which might cause OpenLDAP to use weaker ciphers than intended and make it easier for remote
+  attackers to obtain sensitive information.
+severities:
+  - id: 154324
+    reference_id: 492792
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 65085
+    reference_id: '193846'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 492781
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=676309
+    reference_id:
+  - id: 492782
+    url: http://rhn.redhat.com/errata/RHSA-2012-1151.html
+    reference_id:
+  - id: '193847'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-2668.json
+    reference_id:
+  - id: 492790
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=825875
+    reference_id:
+  - id: 484382
+    url: http://seclists.org/fulldisclosure/2019/Dec/26
+    reference_id:
+  - id: 399721
+    url: http://security.gentoo.org/glsa/glsa-201406-36.xml
+    reference_id:
+  - id: 492791
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/76099
+    reference_id:
+  - id: 484388
+    url: https://seclists.org/bugtraq/2019/Dec/23
+    reference_id:
+  - id: 484389
+    url: https://support.apple.com/kb/HT210788
+    reference_id:
+  - id: 492783
+    url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commitdiff;h=2c2bb2e
+    reference_id:
+  - id: 492784
+    url: http://www.openldap.org/its/index.cgi?findid=7285
+    reference_id:
+  - id: 492785
+    url: http://www.openwall.com/lists/oss-security/2012/06/05/4
+    reference_id:
+  - id: 492786
+    url: http://www.openwall.com/lists/oss-security/2012/06/06/1
+    reference_id:
+  - id: 492787
+    url: http://www.openwall.com/lists/oss-security/2012/06/06/2
+    reference_id:
+  - id: 492788
+    url: http://www.securityfocus.com/bid/53823
+    reference_id:
+  - id: 492789
+    url: http://www.securitytracker.com/id?1027127
+    reference_id:
+  - id: 64218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*
+  - id: 346349
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.10:*:*:*:*:*:*:*
+  - id: 450358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.11:*:*:*:*:*:*:*
+  - id: 450359
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.12:*:*:*:*:*:*:*
+  - id: 450360
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.13:*:*:*:*:*:*:*
+  - id: 450361
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.14:*:*:*:*:*:*:*
+  - id: 450362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.15:*:*:*:*:*:*:*
+  - id: 450363
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.16:*:*:*:*:*:*:*
+  - id: 450364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.17:*:*:*:*:*:*:*
+  - id: 450365
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.18:*:*:*:*:*:*:*
+  - id: 450366
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.19:*:*:*:*:*:*:*
+  - id: 450367
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.20:*:*:*:*:*:*:*
+  - id: 450368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.21:*:*:*:*:*:*:*
+  - id: 410165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+  - id: 450369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.23:*:*:*:*:*:*:*
+  - id: 469783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.24:*:*:*:*:*:*:*
+  - id: 469784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.25:*:*:*:*:*:*:*
+  - id: 484391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.26:*:*:*:*:*:*:*
+  - id: 484392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.27:*:*:*:*:*:*:*
+  - id: 484393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.28:*:*:*:*:*:*:*
+  - id: 492793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.29:*:*:*:*:*:*:*
+  - id: 492794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.30:*:*:*:*:*:*:*
+  - id: 450370
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.6:*:*:*:*:*:*:*
+  - id: 450371
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.7:*:*:*:*:*:*:*
+  - id: 450372
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.8:*:*:*:*:*:*:*
+  - id: 450373
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.9:*:*:*:*:*:*:*
+  - id: 492792
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-2668
+    reference_id: CVE-2012-2668
+  - id: '193846'
+    url: https://access.redhat.com/errata/RHSA-2012:1151
+    reference_id: RHSA-2012:1151
+weaknesses: []

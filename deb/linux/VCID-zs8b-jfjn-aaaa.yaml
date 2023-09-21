@@ -1,0 +1,20 @@
+affected_purls:
+- pkg:deb/debian/linux@4.19.249-2
+- pkg:deb/debian/linux@5.10.178-3
+aliases:
+- CVE-2019-15794
+fixed_purl:
+- pkg:deb/debian/linux@5.10.13-1
+- pkg:deb/debian/linux@5.10.179-1
+references: []
+severities: []
+summary: Overlayfs in the Linux kernel and shiftfs, a non-upstream patch to the Linux
+  kernel included in the Ubuntu 5.0 and 5.3 kernel series, both replace vma->vm_file
+  in their mmap handlers. On error the original value is not restored, and the reference
+  is put for the file to which vm_file points. On upstream kernels this is not an
+  issue, as no callers dereference vm_file following after call_mmap() returns an
+  error. However, the aufs patchs change mmap_region() to replace the fput() using
+  a local variable with vma_fput(), which will fput() vm_file, leading to a refcount
+  underflow.
+vulnerability_id: VCID-zs8b-jfjn-aaaa
+weaknesses: []

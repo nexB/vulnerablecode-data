@@ -1,0 +1,45 @@
+vulnerability_id: VCID-5nxe-63ck-aaae
+aliases:
+  - CVE-2020-25663
+summary: A call to ConformPixelInfo() in the SetImageAlphaChannel() routine of /MagickCore/channel.c
+  caused a subsequent heap-use-after-free or heap-buffer-overflow READ when GetPixelRed() or
+  GetPixelBlue() was called. This could occur if an attacker is able to submit a malicious image
+  file to be processed by ImageMagick and could lead to denial of service. It likely would not
+  lead to anything further because the memory is used as pixel data and not e.g. a function
+  pointer. This flaw affects ImageMagick versions prior to 7.0.9-0.
+severities:
+  - id: 70707
+    reference_id: 200925
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 462062
+    reference_id: 834101
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 462060
+    reference_id: 834101
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 200925
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25663.json
+    reference_id:
+  - id: 834098
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1891601
+    reference_id:
+  - id: 834099
+    url: https://github.com/ImageMagick/ImageMagick/issues/1723
+    reference_id:
+  - id: 834100
+    url: https://github.com/ImageMagick/ImageMagick/issues/1723#issuecomment-718275153
+    reference_id:
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 834101
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25663
+    reference_id: CVE-2020-25663
+weaknesses: []

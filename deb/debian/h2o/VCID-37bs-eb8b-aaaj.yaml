@@ -1,0 +1,39 @@
+vulnerability_id: VCID-37bs-eb8b-aaaj
+aliases:
+  - CVE-2021-43848
+summary: h2o is an open source http server. In code prior to the `8c0eca3` commit h2o may attempt
+  to access uninitialized memory. When receiving QUIC frames in certain order, HTTP/3 server-side
+  implementation of h2o can be misguided to treat uninitialized memory as HTTP/3 frames that
+  have been received. When h2o is used as a reverse proxy, an attacker can abuse this vulnerability
+  to send internal state of h2o to backend servers controlled by the attacker or third party.
+  Also, if there is an HTTP endpoint that reflects the traffic sent from the client, an attacker
+  can use that reflector to obtain internal state of h2o. This internal state includes traffic
+  of other connections in unencrypted form and TLS session tickets. This vulnerability exists
+  in h2o server with HTTP/3 support, between commit 93af138 and d1f0f65. None of the released
+  versions of h2o are affected by this vulnerability. There are no known workarounds. Users
+  of unreleased versions of h2o using HTTP/3 are advised to upgrade immediately.
+severities:
+  - id: 568081
+    reference_id: 903355
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 568079
+    reference_id: 903355
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 903353
+    url: https://github.com/h2o/h2o/commit/8c0eca3
+    reference_id:
+  - id: 903354
+    url: https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4
+    reference_id:
+  - id: 629916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dena:h2o:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dena:h2o:*:*:*:*:*:*:*:*
+  - id: 903355
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-43848
+    reference_id: CVE-2021-43848
+weaknesses: []

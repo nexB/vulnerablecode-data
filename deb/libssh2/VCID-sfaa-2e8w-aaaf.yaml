@@ -1,0 +1,23 @@
+affected_purls:
+- pkg:deb/debian/libssh2@1.8.0-2.1
+- pkg:nuget/libssh2-vc141_xp@1.8.2
+aliases:
+- CVE-2019-13115
+fixed_purl:
+- pkg:deb/debian/libssh2@1.9.0-2
+references:
+- id: 128562
+  reference_id: '932329'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=932329
+- id: 182378
+  reference_id: CVE-2019-13115
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-13115
+severities: []
+summary: In libssh2 before 1.9.0, kex_method_diffie_hellman_group_exchange_sha256_key_exchange
+  in kex.c has an integer overflow that could lead to an out-of-bounds read in the
+  way packets are read from the server. A remote attacker who compromises a SSH server
+  may be able to disclose sensitive information or cause a denial of service condition
+  on the client system when a user connects to the server. This is related to an _libssh2_check_length
+  mistake, and is different from the various issues fixed in 1.8.1, such as CVE-2019-3855.
+vulnerability_id: VCID-sfaa-2e8w-aaaf
+weaknesses: []

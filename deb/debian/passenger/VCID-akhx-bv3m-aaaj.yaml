@@ -1,0 +1,101 @@
+vulnerability_id: VCID-akhx-bv3m-aaaj
+aliases:
+  - CVE-2018-12029
+summary: |
+  Concurrent Execution using Shared Resource with Improper Synchronization (Race Condition)
+  A race condition in the nginx module in Phusion Passenger allows local escalation of privileges when a non-standard `passenger_instance_registry_dir` with insufficiently strict permissions is configured. Replacing a file with a symlink after the file was created, but before it was chowned, leads to the target of the link being chowned via the path. Targeting sensitive files such as root's crontab file allows privilege escalation.
+severities:
+  - id: 683518
+    reference_id: 1446283
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615806
+    reference_id: 935608
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 683519
+    reference_id: 1446284
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683520
+    reference_id: 39195
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683521
+    reference_id: 1446285
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683522
+    reference_id: 1446286
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683523
+    reference_id: 728436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615805
+    reference_id: 935607
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 315756
+    reference_id: 39214
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 315754
+    reference_id: 39214
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1446283
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12029.html
+    reference_id:
+  - id: 935608
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12029.json
+    reference_id:
+  - id: 1446284
+    url: https://blog.phusion.nl/2018/06/12/passenger-5-3-2-various-security-fixes/
+    reference_id:
+  - id: 39195
+    url: https://blog.phusion.nl/passenger-5-3-2
+    reference_id:
+  - id: 1446285
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12029
+    reference_id:
+  - id: 1446286
+    url: https://github.com/phusion/passenger/commit/207870f5b7f5cc240587ab0977d6046782ae1d86
+    reference_id:
+  - id: 29308
+    url: https://lists.debian.org/debian-lts-announce/2018/06/msg00007.html
+    reference_id:
+  - id: 728436
+    url: https://pulsesecurity.co.nz/advisories/phusion-passenger-priv-esc
+    reference_id:
+  - id: 728435
+    url: https://security.gentoo.org/glsa/201807-02
+    reference_id:
+  - id: 935607
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1592612
+    reference_id: 1592612
+  - id: 91171
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=921767
+    reference_id: 921767
+  - id: 558311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:phusion:passenger:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:phusion:passenger:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 39214
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12029
+    reference_id: CVE-2018-12029
+weaknesses: []

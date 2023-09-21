@@ -1,0 +1,130 @@
+vulnerability_id: VCID-bpkn-65xz-aaaj
+aliases:
+  - CVE-2019-19241
+summary: In the Linux kernel before 5.4.2, the io_uring feature leads to requests that inadvertently
+  have UID 0 and full capabilities, aka CID-181e448d8709. This is related to fs/io-wq.c, fs/io_uring.c,
+  and net/socket.c. For example, an attacker can bypass intended restrictions on adding an IPv4
+  address to the loopback interface. This occurs because IORING_OP_SENDMSG operations, although
+  requested in the context of an unprivileged user, are sometimes performed by a kernel worker
+  thread without considering that context.
+severities:
+  - id: 692531
+    reference_id: 1453395
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64926
+    reference_id: '193667'
+    scoring_system: cvssv3
+    value: '3.9'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:L
+  - id: 692532
+    reference_id: 789594
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692533
+    reference_id: 789595
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692534
+    reference_id: 1453396
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692535
+    reference_id: 1453397
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692536
+    reference_id: 1453398
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692537
+    reference_id: 789596
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692538
+    reference_id: 789597
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691581
+    reference_id: 1452720
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691569
+    reference_id: 1452708
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64925
+    reference_id: '193666'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 395730
+    reference_id: 789598
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 395728
+    reference_id: 789598
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1453395
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19241.html
+    reference_id:
+  - id: '193667'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19241.json
+    reference_id:
+  - id: 789594
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1975
+    reference_id:
+  - id: 789595
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.2
+    reference_id:
+  - id: 1453396
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19241
+    reference_id:
+  - id: 1453397
+    url: https://git.kernel.org/linus/181e448d8709e517c9c7b523fcd209f24eb38ca7
+    reference_id:
+  - id: 1453398
+    url: https://git.kernel.org/linus/d69e07793f891524c6bbf1e75b9ae69db4450953
+    reference_id:
+  - id: 789596
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=181e448d8709e517c9c7b523fcd209f24eb38ca7
+    reference_id:
+  - id: 789597
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d69e07793f891524c6bbf1e75b9ae69db4450953
+    reference_id:
+  - id: 766629
+    url: https://security.netapp.com/advisory/ntap-20200103-0001/
+    reference_id:
+  - id: 1452720
+    url: https://ubuntu.com/security/notices/USN-4284-1
+    reference_id:
+  - id: 780073
+    url: https://usn.ubuntu.com/4284-1/
+    reference_id:
+  - id: 1452708
+    url: https://usn.ubuntu.com/usn/usn-4284-1
+    reference_id:
+  - id: '193666'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1784942
+    reference_id: 1784942
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 789598
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19241
+    reference_id: CVE-2019-19241
+weaknesses: []

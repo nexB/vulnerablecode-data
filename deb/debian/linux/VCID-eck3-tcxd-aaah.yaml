@@ -1,0 +1,113 @@
+vulnerability_id: VCID-eck3-tcxd-aaah
+aliases:
+  - CVE-2017-8071
+summary: drivers/hid/hid-cp2112.c in the Linux kernel 4.9.x before 4.9.9 uses a spinlock without
+  considering that sleeping is possible in a USB HID request callback, which allows local users
+  to cause a denial of service (deadlock) via unspecified vectors.
+severities:
+  - id: 680972
+    reference_id: 1444431
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 66219
+    reference_id: '195259'
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 680974
+    reference_id: 1444432
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680976
+    reference_id: 711628
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680975
+    reference_id: 711627
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680973
+    reference_id: 711625
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680880
+    reference_id: 710831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 66218
+    reference_id: '195258'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 296283
+    reference_id: 711629
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 296281
+    reference_id: 711629
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1444431
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-8071.html
+    reference_id:
+  - id: '195259'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-8071.json
+    reference_id:
+  - id: 1444432
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8071
+    reference_id:
+  - id: 711628
+    url: https://github.com/torvalds/linux/commit/7a7b5df84b6b4e5d599c7289526eed96541a0654
+    reference_id:
+  - id: 711627
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7a7b5df84b6b4e5d599c7289526eed96541a0654
+    reference_id:
+  - id: 711625
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.9
+    reference_id:
+  - id: 710831
+    url: http://www.openwall.com/lists/oss-security/2017/04/16/4
+    reference_id:
+  - id: 711626
+    url: http://www.securityfocus.com/bid/97991
+    reference_id:
+  - id: '195258'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1445331
+    reference_id: 1445331
+  - id: 627475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+  - id: 627470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+  - id: 627471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+  - id: 627472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+  - id: 627473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+  - id: 627474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+  - id: 678345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+  - id: 678347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+  - id: 711629
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8071
+    reference_id: CVE-2017-8071
+weaknesses: []

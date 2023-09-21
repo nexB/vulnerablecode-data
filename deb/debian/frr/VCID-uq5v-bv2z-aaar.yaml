@@ -1,0 +1,52 @@
+vulnerability_id: VCID-uq5v-bv2z-aaar
+aliases:
+  - CVE-2019-5892
+summary: bgpd in FRRouting FRR (aka Free Range Routing) 2.x and 3.x before 3.0.4, 4.x before
+  4.0.1, 5.x before 5.0.2, and 6.x before 6.0.2 (not affecting Cumulus Linux or VyOS), when
+  ENABLE_BGP_VNC is used for Virtual Network Control, allows remote attackers to cause a denial
+  of service (peering session flap) via attribute 255 in a BGP UPDATE packet. This occurred
+  during Disco in January 2019 because FRR does not implement RFC 7606, and therefore the packets
+  with 255 were considered invalid VNC data and the BGP session was closed.
+severities:
+  - id: 411663
+    reference_id: 800154
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 411661
+    reference_id: 800154
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 800147
+    url: https://frrouting.org/community/security/cve-2019-5892.html
+    reference_id:
+  - id: 800148
+    url: https://github.com/FRRouting/frr/commit/943d595a018e69b550db08cccba1d0778a86705a
+    reference_id:
+  - id: 800149
+    url: https://github.com/FRRouting/frr/releases/tag/frr-3.0.4
+    reference_id:
+  - id: 800150
+    url: https://github.com/FRRouting/frr/releases/tag/frr-4.0.1
+    reference_id:
+  - id: 800151
+    url: https://github.com/FRRouting/frr/releases/tag/frr-5.0.2
+    reference_id:
+  - id: 800152
+    url: https://github.com/FRRouting/frr/releases/tag/frr-6.0.2
+    reference_id:
+  - id: 800153
+    url: https://lists.frrouting.org/pipermail/frog/2019-January/000404.html
+    reference_id:
+  - id: 800155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:frrouting:frrouting:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:frrouting:frrouting:*:*:*:*:*:*:*:*
+  - id: 800156
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:frrouting:frrouting:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:frrouting:frrouting:4.0:*:*:*:*:*:*:*
+  - id: 800154
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-5892
+    reference_id: CVE-2019-5892
+weaknesses: []

@@ -1,0 +1,58 @@
+vulnerability_id: VCID-xcqv-m2tw-aaap
+aliases:
+  - CVE-2012-2652
+summary: The bdrv_open function in Qemu 1.0 does not properly handle the failure of the mkstemp
+  function, when in snapshot node, which allows local users to overwrite or read arbitrary files
+  via a symlink attack on an unspecified temporary file.
+severities:
+  - id: 65112
+    reference_id: '193889'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 154290
+    reference_id: 492659
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+references:
+  - id: 492652
+    url: http://git.kernel.org/?p=virt/kvm/qemu-kvm.git;a=commit;h=eba25057b9a5e19d10ace2bc7716667a31297169
+    reference_id:
+  - id: 465685
+    url: http://git.qemu.org/?p=qemu-stable-0.15.git;a=log
+    reference_id:
+  - id: 492653
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-09/msg00024.html
+    reference_id:
+  - id: '193890'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-2652.json
+    reference_id:
+  - id: 492654
+    url: http://secunia.com/advisories/50132
+    reference_id:
+  - id: 492655
+    url: http://secunia.com/advisories/50689
+    reference_id:
+  - id: 492656
+    url: http://www.debian.org/security/2012/dsa-2545
+    reference_id:
+  - id: 492657
+    url: http://www.securityfocus.com/bid/53725
+    reference_id:
+  - id: 492658
+    url: http://www.ubuntu.com/usn/USN-1522-1
+    reference_id:
+  - id: 110781
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678280
+    reference_id: 678280
+  - id: '193889'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=824919
+    reference_id: 824919
+  - id: 455888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:1.0:*:*:*:*:*:*:*
+  - id: 492659
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-2652
+    reference_id: CVE-2012-2652
+weaknesses: []

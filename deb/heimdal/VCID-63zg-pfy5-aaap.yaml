@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-17439
+fixed_purl:
+- pkg:deb/debian/heimdal@7.5.0%2Bdfsg-1?distro=sid
+- pkg:deb/debian/heimdal@7.5.0%2Bdfsg-3?distro=sid
+- pkg:deb/debian/heimdal@7.7.0%2Bdfsg-2%2Bdeb11u3?distro=sid
+- pkg:deb/debian/heimdal@7.8.git20221117.28daf24%2Bdfsg-2?distro=sid
+references:
+- id: 127134
+  reference_id: '878144'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=878144
+severities: []
+summary: In Heimdal through 7.4, remote unauthenticated attackers are able to crash
+  the KDC by sending a crafted UDP packet containing empty data fields for client
+  name or realm. The parser would unconditionally dereference NULL pointers in that
+  case, leading to a segmentation fault. This is related to the _kdc_as_rep function
+  in kdc/kerberos5.c and the der_length_visible_string function in lib/asn1/der_length.c.
+vulnerability_id: VCID-63zg-pfy5-aaap
+weaknesses: []

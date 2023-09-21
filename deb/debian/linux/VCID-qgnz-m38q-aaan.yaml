@@ -1,0 +1,115 @@
+vulnerability_id: VCID-qgnz-m38q-aaan
+aliases:
+  - CVE-2017-11472
+summary: The acpi_ns_terminate() function in drivers/acpi/acpica/nsutils.c in the Linux kernel
+  before 4.12 does not flush the operand cache and causes a kernel stack dump, which allows
+  local users to obtain sensitive information from kernel memory and bypass the KASLR protection
+  mechanism (in the kernel through 4.9) via a crafted ACPI table.
+severities:
+  - id: 673864
+    reference_id: 673656
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673865
+    reference_id: 1438927
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 76592
+    reference_id: 207521
+    scoring_system: cvssv3
+    value: '2.9'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 673866
+    reference_id: 1438928
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673867
+    reference_id: 673657
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673868
+    reference_id: 673658
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 76591
+    reference_id: 207520
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 255343
+    reference_id: 673659
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:N
+  - id: 255341
+    reference_id: 673659
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 673656
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=3b2d69114fefa474fca542e51119036dceb4aa6f
+    reference_id:
+  - id: 1438927
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11472.html
+    reference_id:
+  - id: 207521
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-11472.json
+    reference_id:
+  - id: 1438928
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11472
+    reference_id:
+  - id: 673657
+    url: https://github.com/acpica/acpica/commit/a23325b2e583556eae88ed3f764e457786bf4df6
+    reference_id:
+  - id: 673658
+    url: https://github.com/torvalds/linux/commit/3b2d69114fefa474fca542e51119036dceb4aa6f
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 207520
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1473214
+    reference_id: 1473214
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 673659
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11472
+    reference_id: CVE-2017-11472
+weaknesses: []

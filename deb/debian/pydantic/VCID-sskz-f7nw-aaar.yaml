@@ -1,0 +1,74 @@
+vulnerability_id: VCID-sskz-f7nw-aaar
+aliases:
+  - CVE-2021-29510
+  - GHSA-5jqp-qgf6-3pvh
+  - PYSEC-2021-47
+summary: 'Pydantic is a data validation and settings management using Python type hinting. In
+  affected versions passing either `''infinity''`, `''inf''` or `float(''inf'')` (or their negatives)
+  to `datetime` or `date` fields causes validation to run forever with 100% CPU usage (on one
+  CPU). Pydantic has been patched with fixes available in the following versions: v1.8.2, v1.7.4,
+  v1.6.2. All these versions are available on pypi(https://pypi.org/project/pydantic/#history),
+  and will be available on conda-forge(https://anaconda.org/conda-forge/pydantic) soon. See
+  the changelog(https://pydantic-docs.helpmanual.io/) for details. If you absolutely can''t
+  upgrade, you can work around this risk using a validator(https://pydantic-docs.helpmanual.io/usage/validators/)
+  to catch these values. This is not an ideal solution (in particular you''ll need a slightly
+  different function for datetimes), instead of a hack like this you should upgrade pydantic.
+  If you are not using v1.8.x, v1.7.x or v1.6.x and are unable to upgrade to a fixed version
+  of pydantic, please create an issue at https://github.com/samuelcolvin/pydantic/issues requesting
+  a back-port, and we will endeavour to release a patch for earlier versions of pydantic.'
+severities:
+  - id: 531749
+    reference_id: 22347
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 531747
+    reference_id: 22347
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 3851
+    reference_id: 22351
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 3850
+    reference_id: 22346
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 8280
+    url: https://github.com/samuelcolvin/pydantic/commit/7e83fdd2563ffac081db7ecdf1affa65ef38c468
+    reference_id:
+  - id: 22348
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S2HT266L6Q7H6ICP7DFGXOGBJHNNKMKB/
+    reference_id:
+  - id: 22349
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UEFWM7DYKD2ZHE7R5YT5EQWJPV4ZKYRB/
+    reference_id:
+  - id: 22350
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UMKAJX4O6IGBBCE32CO2G7PZQCCQSBLV/
+    reference_id:
+  - id: 106236
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988480
+    reference_id: 988480
+  - id: 879133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pydantic_project:pydantic:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pydantic_project:pydantic:*:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 22347
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29510
+    reference_id: CVE-2021-29510
+  - id: 22351
+    url: https://github.com/advisories/GHSA-5jqp-qgf6-3pvh
+    reference_id: GHSA-5jqp-qgf6-3pvh
+  - id: 22346
+    url: https://github.com/samuelcolvin/pydantic/security/advisories/GHSA-5jqp-qgf6-3pvh
+    reference_id: GHSA-5jqp-qgf6-3pvh
+weaknesses: []

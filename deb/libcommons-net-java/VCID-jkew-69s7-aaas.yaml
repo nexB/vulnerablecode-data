@@ -1,0 +1,73 @@
+affected_purls:
+- pkg:maven/commons-net/commons-net@1.0.0
+- pkg:maven/commons-net/commons-net@1.1.0
+- pkg:maven/commons-net/commons-net@1.2.1
+- pkg:maven/commons-net/commons-net@1.2.2
+- pkg:maven/commons-net/commons-net@1.3.0
+- pkg:maven/commons-net/commons-net@1.4.0
+- pkg:maven/commons-net/commons-net@1.4.1
+- pkg:maven/commons-net/commons-net@2.0
+- pkg:maven/commons-net/commons-net@2.2
+- pkg:maven/commons-net/commons-net@3.0
+- pkg:maven/commons-net/commons-net@3.0.1
+- pkg:maven/commons-net/commons-net@3.1
+- pkg:maven/commons-net/commons-net@3.2
+- pkg:maven/commons-net/commons-net@3.3
+- pkg:maven/commons-net/commons-net@3.4
+- pkg:maven/commons-net/commons-net@3.5
+- pkg:maven/commons-net/commons-net@3.6
+- pkg:maven/commons-net/commons-net@3.7
+- pkg:maven/commons-net/commons-net@3.7.1
+- pkg:maven/commons-net/commons-net@3.7.2
+- pkg:maven/commons-net/commons-net@3.8.0
+aliases:
+- CVE-2021-37533
+- GHSA-cgp8-4m63-fhh5
+fixed_purl:
+- pkg:deb/debian/libcommons-net-java@3.6-1?distro=sid
+- pkg:deb/debian/libcommons-net-java@3.6-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/libcommons-net-java@3.6-1%2Bdeb11u1?distro=sid
+- pkg:deb/debian/libcommons-net-java@3.9.0-1?distro=sid
+- pkg:maven/commons-net/commons-net@3.9.0
+references:
+- id: 162151
+  reference_id: ''
+  url: https://github.com/apache/commons-net/commit/4fe1bae56e53f32756b1ca3296f3dd2c45e3e060
+- id: 162152
+  reference_id: ''
+  url: https://issues.apache.org/jira/browse/NET-711
+- id: 162150
+  reference_id: ''
+  url: https://lists.apache.org/thread/o6yn9r9x6s94v97264hmgol1sf48mvx7
+- id: 162154
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2022/12/msg00038.html
+- id: 162155
+  reference_id: ''
+  url: https://www.debian.org/security/2022/dsa-5307
+- id: 162153
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2022/12/03/1
+- id: 129984
+  reference_id: '1025910'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1025910
+- id: 162149
+  reference_id: CVE-2021-37533
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-37533
+- id: 162156
+  reference_id: GHSA-cgp8-4m63-fhh5
+  url: https://github.com/advisories/GHSA-cgp8-4m63-fhh5
+severities:
+- id: 23959
+  reference_id: 162156
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Prior to Apache Commons Net 3.9.0, Net's FTP client trusts the host from
+  PASV response by default. A malicious server can redirect the Commons Net code to
+  use a different host, but the user has to connect to the malicious server in the
+  first place. This may lead to leakage of information about services running on the
+  private network of the client. The default in version 3.9.0 is now false to ignore
+  such hosts, as cURL does. See https://issues.apache.org/jira/browse/NET-711.
+vulnerability_id: VCID-jkew-69s7-aaas
+weaknesses: []

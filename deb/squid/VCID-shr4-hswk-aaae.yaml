@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2020-24606
+fixed_purl:
+- pkg:deb/debian/squid@4.13-1?distro=sid
+- pkg:deb/debian/squid@4.13-10%2Bdeb11u2?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u4?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u7?distro=sid
+- pkg:deb/debian/squid@5.7-2?distro=sid
+references:
+- id: 129288
+  reference_id: '968933'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968933
+severities: []
+summary: Squid before 4.13 and 5.x before 5.0.4 allows a trusted peer to perform Denial
+  of Service by consuming all available CPU cycles during handling of a crafted Cache
+  Digest response message. This only occurs when cache_peer is used with the cache
+  digests feature. The problem exists because peerDigestHandleReply() livelocking
+  in peer_digest.cc mishandles EOF.
+vulnerability_id: VCID-shr4-hswk-aaae
+weaknesses: []

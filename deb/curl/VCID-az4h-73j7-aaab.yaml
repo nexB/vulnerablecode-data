@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2021-22898
+fixed_purl:
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u3?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u2?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u7?distro=sid
+- pkg:deb/debian/curl@7.79.1-1?distro=sid
+- pkg:deb/debian/curl@7.88.1-10?distro=sid
+references:
+- id: 129649
+  reference_id: '989228'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989228
+severities: []
+summary: curl 7.7 through 7.76.1 suffers from an information disclosure when the `-t`
+  command line option, known as `CURLOPT_TELNETOPTIONS` in libcurl, is used to send
+  variable=content pairs to TELNET servers. Due to a flaw in the option parser for
+  sending NEW_ENV variables, libcurl could be made to pass on uninitialized data from
+  a stack based buffer to the server, resulting in potentially revealing sensitive
+  internal information to the server using a clear-text network protocol.
+vulnerability_id: VCID-az4h-73j7-aaab
+weaknesses: []

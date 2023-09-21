@@ -1,0 +1,85 @@
+vulnerability_id: VCID-ftyt-9y1b-aaan
+aliases:
+  - CVE-2021-28876
+summary: In the standard library in Rust before 1.52.0, the Zip implementation has a panic safety
+  issue. It calls __iterator_get_unchecked() more than once for the same index when the underlying
+  iterator panics (in certain conditions). This bug could lead to a memory safety violation
+  due to an unmet safety requirement for the TrustedRandomAccess trait.
+severities:
+  - id: 607208
+    reference_id: 929300
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 607207
+    reference_id: 929299
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 530293
+    reference_id: 878171
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 530291
+    reference_id: 878171
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+  - id: 606198
+    reference_id: 928549
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 606199
+    reference_id: 928550
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 929300
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-28876.json
+    reference_id:
+  - id: 878169
+    url: https://github.com/rust-lang/rust/issues/81740
+    reference_id:
+  - id: 878170
+    url: https://github.com/rust-lang/rust/pull/81741
+    reference_id:
+  - id: 844016
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CZ337CM4GFJLRDFVQCGC7J25V65JXOG5/
+    reference_id:
+  - id: 844017
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TFUO3URYCO73D2Q4WYJBWAMJWGGVXQO4/
+    reference_id:
+  - id: 844018
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VZG65GUW6Z2CYOQHF7T3TB5CZKIX6ZJE/
+    reference_id:
+  - id: 929299
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1949198
+    reference_id: '1949198'
+  - id: 120815
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986803
+    reference_id: 986803
+  - id: 169110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 878171
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-28876
+    reference_id: CVE-2021-28876
+  - id: 928549
+    url: https://access.redhat.com/errata/RHSA-2021:3042
+    reference_id: RHSA-2021:3042
+  - id: 928550
+    url: https://access.redhat.com/errata/RHSA-2021:3063
+    reference_id: RHSA-2021:3063
+weaknesses: []

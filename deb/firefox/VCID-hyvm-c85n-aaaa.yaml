@@ -1,0 +1,31 @@
+affected_purls:
+- pkg:deb/debian/rust-crossbeam-deque@0.6.3-1
+- pkg:deb/debian/rust-crossbeam-deque@0.7.3-1
+aliases:
+- CVE-2021-32810
+fixed_purl:
+- pkg:deb/debian/firefox@113.0.2-1?distro=sid
+- pkg:deb/debian/firefox@93.0-1?distro=sid
+- pkg:deb/debian/firefox-esr@0?distro=sid
+- pkg:deb/debian/firefox-esr@102.10.0esr-1~deb11u1?distro=sid
+- pkg:deb/debian/firefox-esr@102.11.0esr-1?distro=sid
+- pkg:deb/debian/firefox-esr@91.12.0esr-1~deb10u1?distro=sid
+- pkg:deb/debian/rust-crossbeam-deque@0.8.1-1
+- pkg:deb/debian/thunderbird@0?distro=sid
+- pkg:deb/debian/thunderbird@1:102.10.0-1~deb11u1?distro=sid
+- pkg:deb/debian/thunderbird@1:102.11.0-1?distro=sid
+- pkg:deb/debian/thunderbird@1:91.12.0-1~deb10u1?distro=sid
+references:
+- id: 129823
+  reference_id: '993146'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=993146
+severities: []
+summary: crossbeam-deque is a package of work-stealing deques for building task schedulers
+  when programming in Rust. In versions prior to 0.7.4 and 0.8.0, the result of the
+  race condition is that one or more tasks in the worker queue can be popped twice
+  instead of other tasks that are forgotten and never popped. If tasks are allocated
+  on the heap, this can cause double free and a memory leak. If not, this still can
+  cause a logical bug. Crates using `Stealer::steal`, `Stealer::steal_batch`, or `Stealer::steal_batch_and_pop`
+  are affected by this issue. This has been fixed in crossbeam-deque 0.8.1 and 0.7.4.
+vulnerability_id: VCID-hyvm-c85n-aaaa
+weaknesses: []

@@ -1,0 +1,102 @@
+vulnerability_id: VCID-a6xe-py95-aaab
+aliases:
+  - CVE-2013-6044
+  - PYSEC-2013-21
+summary: 'The is_safe_url function in utils/http.py in Django 1.4.x before 1.4.6, 1.5.x before
+  1.5.2, and 1.6 before beta 2 treats a URL''s scheme as safe even if it is not HTTP or HTTPS,
+  which might introduce cross-site scripting (XSS) or other vulnerabilities into Django applications
+  that use this function, as demonstrated by "the login view in django.contrib.auth.views" and
+  the javascript: scheme.'
+severities:
+  - id: 61626
+    reference_id: 189279
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 171763
+    reference_id: 542548
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 61472
+    reference_id: 189068
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 4334
+    url: http://lists.opensuse.org/opensuse-updates/2013-10/msg00015.html
+    reference_id:
+  - id: 4355
+    url: http://rhn.redhat.com/errata/RHSA-2013-1521.html
+    reference_id:
+  - id: 189280
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-6044.json
+    reference_id:
+  - id: 4343
+    url: http://seclists.org/oss-sec/2013/q3/369
+    reference_id:
+  - id: 4345
+    url: http://seclists.org/oss-sec/2013/q3/411
+    reference_id:
+  - id: 4347
+    url: http://secunia.com/advisories/54476
+    reference_id:
+  - id: 4360
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/86437
+    reference_id:
+  - id: 4358
+    url: https://github.com/django/django/commit/1a274ccd6bc1afbdac80344c9b6e5810c1162b5f
+    reference_id:
+  - id: 4357
+    url: https://github.com/django/django/commit/ae3535169af804352517b7fea94a42a1c9c4b762
+    reference_id:
+  - id: 4356
+    url: https://github.com/django/django/commit/ec67af0bd609c412b76eaa4cc89968a2a8e5ad6a
+    reference_id:
+  - id: 4344
+    url: https://www.djangoproject.com/weblog/2013/aug/13/security-releases-issued
+    reference_id:
+  - id: 4361
+    url: http://www.debian.org/security/2013/dsa-2740
+    reference_id:
+  - id: 4359
+    url: http://www.securityfocus.com/bid/61777
+    reference_id:
+  - id: 4342
+    url: http://www.securitytracker.com/id/1028915
+    reference_id:
+  - id: 189279
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1016394
+    reference_id: 1016394
+  - id: 162809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.4:*:*:*:*:*:*:*
+  - id: 162799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.4.1:*:*:*:*:*:*:*
+  - id: 162802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.4.2:*:*:*:*:*:*:*
+  - id: 162803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.4.4:*:*:*:*:*:*:*
+  - id: 162804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.4.5:*:*:*:*:*:*:*
+  - id: 518494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.5:*:*:*:*:*:*:*
+  - id: 518491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.5.1:*:*:*:*:*:*:*
+  - id: 518495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:1.6:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:1.6:beta1:*:*:*:*:*:*
+  - id: 542548
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-6044
+    reference_id: CVE-2013-6044
+  - id: 189068
+    url: https://access.redhat.com/errata/RHSA-2013:1521
+    reference_id: RHSA-2013:1521
+weaknesses: []

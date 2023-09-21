@@ -1,0 +1,76 @@
+vulnerability_id: VCID-fzqg-jd2x-aaah
+aliases:
+  - CVE-2017-18078
+summary: systemd-tmpfiles in systemd before 237 attempts to support ownership/permission changes
+  on hardlinked files even if the fs.protected_hardlinks sysctl is turned off, which allows
+  local users to bypass intended access restrictions via vectors involving a hard link to a
+  file for which the user lacks write access, as demonstrated by changing the ownership of the
+  /etc/passwd file.
+severities:
+  - id: 619230
+    reference_id: 938050
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H
+  - id: 619229
+    reference_id: 938049
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 276064
+    reference_id: 692900
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 276062
+    reference_id: 692900
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 692893
+    url: http://lists.opensuse.org/opensuse-updates/2018-02/msg00109.html
+    reference_id:
+  - id: 692894
+    url: http://packetstormsecurity.com/files/146184/systemd-Local-Privilege-Escalation.html
+    reference_id:
+  - id: 938050
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18078.json
+    reference_id:
+  - id: 692896
+    url: https://github.com/systemd/systemd/issues/7736
+    reference_id:
+  - id: 29651
+    url: https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 29652
+    url: https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 692897
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00022.html
+    reference_id:
+  - id: 692898
+    url: https://www.exploit-db.com/exploits/43935/
+    reference_id:
+  - id: 692899
+    url: https://www.openwall.com/lists/oss-security/2018/01/29/4
+    reference_id:
+  - id: 692895
+    url: http://www.openwall.com/lists/oss-security/2018/01/29/3
+    reference_id:
+  - id: 938049
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1539758
+    reference_id: 1539758
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 614332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+  - id: 692900
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18078
+    reference_id: CVE-2017-18078
+weaknesses: []

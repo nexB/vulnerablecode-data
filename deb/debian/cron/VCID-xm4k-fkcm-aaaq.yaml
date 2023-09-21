@@ -1,0 +1,35 @@
+vulnerability_id: VCID-xm4k-fkcm-aaaq
+aliases:
+  - CVE-2011-1075
+summary: FreeBSD's crontab calculates the MD5 sum of the previous and new cronjob to determine
+  if any changes have been made before copying the new version in. In particular, it uses the
+  MD5File() function, which takes a pathname as an argument, and is called with euid 0. A race
+  condition in this process may lead to an arbitrary MD5 comparison regardless of the read permissions.
+severities:
+  - id: 141711
+    reference_id: 450715
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 141709
+    reference_id: 450715
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 450712
+    url: https://marc.info/?l=full-disclosure&m=129891323028897&w=2
+    reference_id:
+  - id: 450713
+    url: https://security.netapp.com/advisory/ntap-20211125-0004/
+    reference_id:
+  - id: 450714
+    url: https://www.openwall.com/lists/oss-security/2011/02/28/14
+    reference_id:
+  - id: 450716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:-:*:*:*:*:*:*:*
+  - id: 450715
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-1075
+    reference_id: CVE-2011-1075
+weaknesses: []

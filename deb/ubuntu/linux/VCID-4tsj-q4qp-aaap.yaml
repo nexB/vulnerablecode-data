@@ -1,0 +1,156 @@
+vulnerability_id: VCID-4tsj-q4qp-aaap
+aliases:
+  - CVE-2020-27170
+summary: An issue was discovered in the Linux kernel before 5.11.8. kernel/bpf/verifier.c performs
+  undesirable out-of-bounds speculation on pointer arithmetic, leading to side-channel attacks
+  that defeat Spectre mitigations and obtain sensitive information from kernel memory, aka CID-f232326f6966.
+  This affects pointer types that do not define a ptr_limit.
+severities:
+  - id: 698125
+    reference_id: 1458020
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 606326
+    reference_id: 928649
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 701511
+    reference_id: 836731
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698126
+    reference_id: 1458021
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701515
+    reference_id: 836735
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698127
+    reference_id: 1458022
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 698128
+    reference_id: 1458023
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 698129
+    reference_id: 836737
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 606325
+    reference_id: 928648
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 465861
+    reference_id: 836738
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 465859
+    reference_id: 836738
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 57279
+    reference_id: 183275
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 57277
+    reference_id: 183273
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 836729
+    url: http://packetstormsecurity.com/files/162117/Kernel-Live-Patch-Security-Notice-LSN-0075-1.html
+    reference_id:
+  - id: 1458020
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27170.html
+    reference_id:
+  - id: 928649
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27170.json
+    reference_id:
+  - id: 836731
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.8
+    reference_id:
+  - id: 1458021
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27170
+    reference_id:
+  - id: 836732
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f232326f6966cf2a1d1db7bc917a4ce5f9f55f76
+    reference_id:
+  - id: 836733
+    url: https://lists.debian.org/debian-lts-announce/2021/03/msg00035.html
+    reference_id:
+  - id: 836734
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FB6LUXPEIRLZH32YXWZVEZAD4ZL6SDK2/
+    reference_id:
+  - id: 836735
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QRTPQE73ANG7D6M4L4PK5ZQDPO4Y2FVD/
+    reference_id:
+  - id: 836736
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T2S3I4SLRNRUQDOFYUS6IUAZMQNMPNLG/
+    reference_id:
+  - id: 1458022
+    url: https://ubuntu.com/security/notices/USN-4887-1
+    reference_id:
+  - id: 1458023
+    url: https://ubuntu.com/security/notices/USN-4890-1
+    reference_id:
+  - id: 836737
+    url: https://www.openwall.com/lists/oss-security/2021/03/19/2
+    reference_id:
+  - id: 836730
+    url: http://www.openwall.com/lists/oss-security/2021/03/24/4
+    reference_id:
+  - id: 928648
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1940627
+    reference_id: '1940627'
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 836738
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27170
+    reference_id: CVE-2020-27170
+  - id: 183275
+    url: https://access.redhat.com/errata/RHSA-2021:2314
+    reference_id: RHSA-2021:2314
+  - id: 183273
+    url: https://access.redhat.com/errata/RHSA-2021:2316
+    reference_id: RHSA-2021:2316
+weaknesses: []

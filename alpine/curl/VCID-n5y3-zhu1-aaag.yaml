@@ -1,0 +1,59 @@
+vulnerability_id: VCID-n5y3-zhu1-aaag
+aliases:
+  - CVE-2022-32205
+summary: A malicious server can serve excessive amounts of `Set-Cookie:` headers in a HTTP response
+  to curl and curl < 7.84.0 stores all of them. A sufficiently large amount of (big) cookies
+  make subsequent HTTP requests to this, or other servers to which the cookies match, create
+  requests that become larger than the threshold that curl uses internally to avoid sending
+  crazy large requests (1048576 bytes) and instead returns an error.This denial state might
+  remain for as long as the same cookies are kept, match and haven't expired. Due to cookie
+  matching rules, a server on `foo.example.com` can set cookies that also would match for `bar.example.com`,
+  making it it possible for a "sister server" to effectively cause a denial of service for a
+  sibling site on the same second level domain using this method.
+severities:
+  - id: 638717
+    reference_id: 951885
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 638716
+    reference_id: 951884
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 636285
+    reference_id: 950349
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 636283
+    reference_id: 950349
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+references:
+  - id: 951885
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-32205.json
+    reference_id:
+  - id: 950347
+    url: https://hackerone.com/reports/1569946
+    reference_id:
+  - id: 950348
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEV6BR4MTI3CEWK2YU2HQZUW5FAS3FEY/
+    reference_id:
+  - id: 1181176
+    url: https://www.debian.org/security/2022/dsa-5197
+    reference_id:
+  - id: 951884
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2099296
+    reference_id: 2099296
+  - id: 90121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 950349
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-32205
+    reference_id: CVE-2022-32205
+weaknesses: []

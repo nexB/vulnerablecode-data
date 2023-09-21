@@ -1,0 +1,21 @@
+affected_purls: []
+aliases:
+- CVE-2019-15718
+fixed_purl:
+- pkg:deb/debian/systemd@241-7~deb10u2?distro=sid
+- pkg:deb/debian/systemd@241-7~deb10u8?distro=sid
+- pkg:deb/debian/systemd@242-7?distro=sid
+- pkg:deb/debian/systemd@247.3-7%2Bdeb11u2?distro=sid
+- pkg:deb/debian/systemd@252.6-1?distro=sid
+references:
+- id: 128692
+  reference_id: '939353'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=939353
+severities: []
+summary: In systemd 240, bus_open_system_watch_bind_with_description in shared/bus-util.c
+  (as used by systemd-resolved to connect to the system D-Bus instance), calls sd_bus_set_trusted,
+  which disables access controls for incoming D-Bus messages. An unprivileged user
+  can exploit this by executing D-Bus methods that should be restricted to privileged
+  users, in order to change the system's DNS resolver settings.
+vulnerability_id: VCID-p9py-7qcs-aaam
+weaknesses: []

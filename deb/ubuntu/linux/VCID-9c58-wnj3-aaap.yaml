@@ -1,0 +1,172 @@
+vulnerability_id: VCID-9c58-wnj3-aaap
+aliases:
+  - CVE-2017-7518
+summary: A flaw was found in the Linux kernel before version 4.12 in the way the KVM module
+  processed the trap flag(TF) bit in EFLAGS during emulation of the syscall instruction, which
+  leads to a debug exception(#DB) being raised in the guest stack. A user/process inside a guest
+  could use this flaw to potentially escalate their privileges inside the guest. Linux guests
+  are not affected by this.
+severities:
+  - id: 680384
+    reference_id: 1443977
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622355
+    reference_id: 940258
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 680386
+    reference_id: 1443978
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680387
+    reference_id: 709580
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680385
+    reference_id: 709574
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622354
+    reference_id: 940257
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 294219
+    reference_id: 709581
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 294217
+    reference_id: 709581
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 620288
+    reference_id: 938785
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620287
+    reference_id: 938784
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1443977
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7518.html
+    reference_id:
+  - id: 709577
+    url: https://access.redhat.com/articles/3290921
+    reference_id:
+  - id: 940258
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-7518.json
+    reference_id:
+  - id: 709578
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7518
+    reference_id:
+  - id: 1443978
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7518
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 709579
+    url: https://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 709580
+    url: https://www.spinics.net/lists/kvm/msg151817.html
+    reference_id:
+  - id: 709574
+    url: http://www.openwall.com/lists/oss-security/2017/06/23/5
+    reference_id:
+  - id: 709575
+    url: http://www.securityfocus.com/bid/99263
+    reference_id:
+  - id: 709576
+    url: http://www.securitytracker.com/id/1038782
+    reference_id:
+  - id: 940257
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1464473
+    reference_id: 1464473
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 709581
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7518
+    reference_id: CVE-2017-7518
+  - id: 938785
+    url: https://access.redhat.com/errata/RHSA-2018:0395
+    reference_id: RHSA-2018:0395
+  - id: 938784
+    url: https://access.redhat.com/errata/RHSA-2018:0412
+    reference_id: RHSA-2018:0412
+weaknesses: []

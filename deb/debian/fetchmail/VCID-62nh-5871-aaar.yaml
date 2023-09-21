@@ -1,0 +1,351 @@
+vulnerability_id: VCID-62nh-5871-aaar
+aliases:
+  - CVE-2012-3482
+summary: Fetchmail 5.0.8 through 6.3.21, when using NTLM authentication in debug mode, allows
+  remote NTLM servers to (1) cause a denial of service (crash and delayed delivery of inbound
+  mail) via a crafted NTLM response that triggers an out-of-bounds read in the base64 decoder,
+  or (2) obtain sensitive information from memory via an NTLM Type 2 message with a crafted
+  Target Name structure, which triggers an out-of-bounds read.
+severities:
+  - id: 650110
+    reference_id: 1420379
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 650112
+    reference_id: 1420380
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 650111
+    reference_id: 497461
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 64606
+    reference_id: '193261'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 155803
+    reference_id: 497463
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:P
+references:
+  - id: 497457
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2012-October/088836.html
+    reference_id:
+  - id: 497458
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2012-October/088871.html
+    reference_id:
+  - id: 1420379
+    url: http://people.canonical.com/~ubuntu-security/cve/2012/CVE-2012-3482.html
+    reference_id:
+  - id: '193262'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-3482.json
+    reference_id:
+  - id: 466199
+    url: https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail
+    reference_id:
+  - id: 1420380
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3482
+    reference_id:
+  - id: 497459
+    url: http://seclists.org/oss-sec/2012/q3/230
+    reference_id:
+  - id: 497460
+    url: http://seclists.org/oss-sec/2012/q3/232
+    reference_id:
+  - id: 497461
+    url: http://www.fetchmail.info/fetchmail-SA-2012-02.txt
+    reference_id:
+  - id: 497462
+    url: http://www.securityfocus.com/bid/54987
+    reference_id:
+  - id: '193261'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=847988
+    reference_id: 847988
+  - id: 55485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.0.8:*:*:*:*:*:*:*
+  - id: 55486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.1.0:*:*:*:*:*:*:*
+  - id: 55487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.1.4:*:*:*:*:*:*:*
+  - id: 55488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.0:*:*:*:*:*:*:*
+  - id: 55489
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.1:*:*:*:*:*:*:*
+  - id: 55490
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.3:*:*:*:*:*:*:*
+  - id: 55491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.4:*:*:*:*:*:*:*
+  - id: 55492
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.7:*:*:*:*:*:*:*
+  - id: 55493
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.2.8:*:*:*:*:*:*:*
+  - id: 55494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.3.0:*:*:*:*:*:*:*
+  - id: 55495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.3.1:*:*:*:*:*:*:*
+  - id: 55496
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.3.3:*:*:*:*:*:*:*
+  - id: 55497
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.3.8:*:*:*:*:*:*:*
+  - id: 55498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.4.0:*:*:*:*:*:*:*
+  - id: 55499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.4.3:*:*:*:*:*:*:*
+  - id: 55500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.4.4:*:*:*:*:*:*:*
+  - id: 55501
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.4.5:*:*:*:*:*:*:*
+  - id: 59168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.5.0:*:*:*:*:*:*:*
+  - id: 59169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.5.2:*:*:*:*:*:*:*
+  - id: 59170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.5.3:*:*:*:*:*:*:*
+  - id: 59171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.5.5:*:*:*:*:*:*:*
+  - id: 59172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.5.6:*:*:*:*:*:*:*
+  - id: 59173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.6.0:*:*:*:*:*:*:*
+  - id: 59174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.7.0:*:*:*:*:*:*:*
+  - id: 59175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.7.2:*:*:*:*:*:*:*
+  - id: 59176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.7.4:*:*:*:*:*:*:*
+  - id: 59181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8:*:*:*:*:*:*:*
+  - id: 59177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.1:*:*:*:*:*:*:*
+  - id: 60337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.11:*:*:*:*:*:*:*
+  - id: 60338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.13:*:*:*:*:*:*:*
+  - id: 65043
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.14:*:*:*:*:*:*:*
+  - id: 65044
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.17:*:*:*:*:*:*:*
+  - id: 59178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.2:*:*:*:*:*:*:*
+  - id: 59179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.3:*:*:*:*:*:*:*
+  - id: 59180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.4:*:*:*:*:*:*:*
+  - id: 60339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.5:*:*:*:*:*:*:*
+  - id: 60340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.8.6:*:*:*:*:*:*:*
+  - id: 60341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.0:*:*:*:*:*:*:*
+  - id: 71637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.10:*:*:*:*:*:*:*
+  - id: 71638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.11:*:*:*:*:*:*:*
+  - id: 71639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.13:*:*:*:*:*:*:*
+  - id: 65045
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.4:*:*:*:*:*:*:*
+  - id: 65046
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.5:*:*:*:*:*:*:*
+  - id: 71640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:5.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:5.9.8:*:*:*:*:*:*:*
+  - id: 72870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.0.0:*:*:*:*:*:*:*
+  - id: 72871
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.1.0:*:*:*:*:*:*:*
+  - id: 84608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.1.3:*:*:*:*:*:*:*
+  - id: 84609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.0:*:*:*:*:*:*:*
+  - id: 84610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.1:*:*:*:*:*:*:*
+  - id: 84611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.2:*:*:*:*:*:*:*
+  - id: 84612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.3:*:*:*:*:*:*:*
+  - id: 127142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.4:*:*:*:*:*:*:*
+  - id: 127143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.5:*:*:*:*:*:*:*
+  - id: 156258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.5.1:*:*:*:*:*:*:*
+  - id: 133120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.5.2:*:*:*:*:*:*:*
+  - id: 156259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.5.4:*:*:*:*:*:*:*
+  - id: 156260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre4:*:*:*:*:*:*
+  - id: 156261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre8:*:*:*:*:*:*
+  - id: 156262
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre9:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.6:pre9:*:*:*:*:*:*
+  - id: 156263
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc10:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc10:*:*:*:*:*:*
+  - id: 156264
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc3:*:*:*:*:*:*
+  - id: 156265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc4:*:*:*:*:*:*
+  - id: 156266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc5:*:*:*:*:*:*
+  - id: 156267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc7:*:*:*:*:*:*
+  - id: 156268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc8:*:*:*:*:*:*
+  - id: 156269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc9:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.2.9:rc9:*:*:*:*:*:*
+  - id: 156270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.0:*:*:*:*:*:*:*
+  - id: 156271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.1:*:*:*:*:*:*:*
+  - id: 416434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.10:*:*:*:*:*:*:*
+  - id: 412333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.11:*:*:*:*:*:*:*
+  - id: 412334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.12:*:*:*:*:*:*:*
+  - id: 412335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.13:*:*:*:*:*:*:*
+  - id: 416435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.14:*:*:*:*:*:*:*
+  - id: 416436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.15:*:*:*:*:*:*:*
+  - id: 416437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.16:*:*:*:*:*:*:*
+  - id: 457597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.17:*:*:*:*:*:*:*
+  - id: 457598
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.18:*:*:*:*:*:*:*
+  - id: 457599
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.19:*:*:*:*:*:*:*
+  - id: 156272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.2:*:*:*:*:*:*:*
+  - id: 497464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.21:*:*:*:*:*:*:*
+  - id: 156273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.3:*:*:*:*:*:*:*
+  - id: 127144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.4:*:*:*:*:*:*:*
+  - id: 156274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.5:*:*:*:*:*:*:*
+  - id: 156275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:*:*:*:*:*:*:*
+  - id: 156276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc1:*:*:*:*:*:*
+  - id: 156277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc2:*:*:*:*:*:*
+  - id: 156278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc3:*:*:*:*:*:*
+  - id: 156279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc4:*:*:*:*:*:*
+  - id: 156280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.6:rc5:*:*:*:*:*:*
+  - id: 156281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.7:*:*:*:*:*:*:*
+  - id: 156282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.8:*:*:*:*:*:*:*
+  - id: 156283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.9:*:*:*:*:*:*:*
+  - id: 156284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fetchmail:fetchmail:6.3.9:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fetchmail:fetchmail:6.3.9:rc2:*:*:*:*:*:*
+  - id: 497463
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-3482
+    reference_id: CVE-2012-3482
+weaknesses: []

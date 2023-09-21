@@ -1,0 +1,74 @@
+vulnerability_id: VCID-dsd6-r3q1-aaaf
+aliases:
+  - CVE-2017-18261
+summary: The arch_timer_reg_read_stable macro in arch/arm64/include/asm/arch_timer.h in the
+  Linux kernel before 4.13 allows local users to cause a denial of service (infinite recursion)
+  by writing to a file under /sys/kernel/debug in certain circumstances, as demonstrated by
+  a scenario involving debugfs, ftrace, PREEMPT_TRACER, and FUNCTION_GRAPH_TRACER.
+severities:
+  - id: 677533
+    reference_id: 693400
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677534
+    reference_id: 1441565
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 621411
+    reference_id: 939608
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 677535
+    reference_id: 1441566
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677536
+    reference_id: 693401
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 621410
+    reference_id: 939607
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 276700
+    reference_id: 693402
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 276698
+    reference_id: 693402
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 693400
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=adb4f11e0a8f4e29900adb2b7af28b6bbd5c1fa4
+    reference_id:
+  - id: 1441565
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-18261.html
+    reference_id:
+  - id: 939608
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18261.json
+    reference_id:
+  - id: 1441566
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18261
+    reference_id:
+  - id: 693401
+    url: https://github.com/torvalds/linux/commit/adb4f11e0a8f4e29900adb2b7af28b6bbd5c1fa4
+    reference_id:
+  - id: 939607
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1569560
+    reference_id: 1569560
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 693402
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18261
+    reference_id: CVE-2017-18261
+weaknesses: []

@@ -1,0 +1,56 @@
+vulnerability_id: VCID-rzgx-jfdn-aaar
+aliases:
+  - CVE-2022-21688
+  - GHSA-x7wr-283h-5h2v
+  - PYSEC-2022-39
+summary: OnionShare is an open source tool that lets you securely and anonymously share files,
+  host websites, and chat with friends using the Tor network. Affected versions of the desktop
+  application were found to be vulnerable to denial of service via an undisclosed vulnerability
+  in the QT image parsing. Roughly 20 bytes lead to 2GB memory consumption and this can be triggered
+  multiple times. To be abused, this vulnerability requires rendering in the history tab, so
+  some user interaction is required. An adversary with knowledge of the Onion service address
+  in public mode or with authentication in private mode can perform a Denial of Service attack,
+  which quickly results in out-of-memory for the server. This requires the desktop application
+  with rendered history, therefore the impact is only elevated. This issue has been patched
+  in version 2.5.
+severities:
+  - id: 582817
+    reference_id: 21459
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 582815
+    reference_id: 21459
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 3630
+    reference_id: 21460
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3629
+    reference_id: 21458
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 659
+    url: https://github.com/onionshare/onionshare/releases/tag/v2.5
+    reference_id:
+  - id: 952094
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014966
+    reference_id: 1014966
+  - id: 647359
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:onionshare:onionshare:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:onionshare:onionshare:*:*:*:*:*:*:*:*
+  - id: 21459
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-21688
+    reference_id: CVE-2022-21688
+  - id: 21460
+    url: https://github.com/advisories/GHSA-x7wr-283h-5h2v
+    reference_id: GHSA-x7wr-283h-5h2v
+  - id: 21458
+    url: https://github.com/onionshare/onionshare/security/advisories/GHSA-x7wr-283h-5h2v
+    reference_id: GHSA-x7wr-283h-5h2v
+weaknesses: []

@@ -1,0 +1,39 @@
+vulnerability_id: VCID-d93a-qvwf-aaan
+aliases:
+  - CVE-2022-31003
+summary: Sofia-SIP is an open-source Session Initiation Protocol (SIP) User-Agent library. Prior
+  to version 1.13.8, when parsing each line of a sdp message, `rest = record + 2` will access
+  the memory behind `\0` and cause an out-of-bounds write. An attacker can send a message with
+  evil sdp to FreeSWITCH, causing a crash or more serious consequence, such as remote code execution.
+  Version 1.13.8 contains a patch for this issue.
+severities:
+  - id: 601383
+    reference_id: 924824
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 601381
+    reference_id: 924824
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 924822
+    url: https://github.com/freeswitch/sofia-sip/commit/907f2ac0ee504c93ebfefd676b4632a3575908c9
+    reference_id:
+  - id: 924823
+    url: https://github.com/freeswitch/sofia-sip/security/advisories/GHSA-8w5j-6g2j-pxcp
+    reference_id:
+  - id: 1415643
+    url: https://lists.debian.org/debian-lts-announce/2022/09/msg00001.html
+    reference_id:
+  - id: 1183642
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1016974
+    reference_id: 1016974
+  - id: 924818
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:signalwire:sofia-sip:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:signalwire:sofia-sip:*:*:*:*:*:*:*:*
+  - id: 924824
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-31003
+    reference_id: CVE-2022-31003
+weaknesses: []

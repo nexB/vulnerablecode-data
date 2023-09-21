@@ -1,0 +1,99 @@
+vulnerability_id: VCID-fkun-4q43-aaan
+aliases:
+  - CVE-2017-2669
+summary: Dovecot before version 2.2.29 is vulnerable to a denial of service. When 'dict' passdb
+  and userdb were used for user authentication, the username sent by the IMAP/POP3 client was
+  sent through var_expand() to perform %variable expansion. Sending specially crafted %variable
+  fields could result in excessive memory usage causing the process to crash (and restart),
+  or excessive CPU usage causing all authentications to hang.
+severities:
+  - id: 677927
+    reference_id: 1441874
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 62747
+    reference_id: '190816'
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 677928
+    reference_id: 1441875
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677929
+    reference_id: 1441876
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677930
+    reference_id: 1441877
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 62746
+    reference_id: '190815'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 281247
+    reference_id: 696506
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 281245
+    reference_id: 696506
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1441874
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2669.html
+    reference_id:
+  - id: '190816'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2669.json
+    reference_id:
+  - id: 696502
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2669
+    reference_id:
+  - id: 1441875
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2669
+    reference_id:
+  - id: 696503
+    url: https://dovecot.org/pipermail/dovecot-news/2017-April/000341.html
+    reference_id:
+  - id: 696504
+    url: https://github.com/dovecot/core/commit/000030feb7a30f193197f1aab8a7b04a26b42735.patch
+    reference_id:
+  - id: 1441876
+    url: https://ubuntu.com/security/notices/USN-3258-1
+    reference_id:
+  - id: 1441877
+    url: https://ubuntu.com/security/notices/USN-3258-2
+    reference_id:
+  - id: 696505
+    url: https://www.debian.org/security/2017/dsa-3828
+    reference_id:
+  - id: 696500
+    url: http://www.openwall.com/lists/oss-security/2017/04/11/1
+    reference_id:
+  - id: 696501
+    url: http://www.securityfocus.com/bid/97536
+    reference_id:
+  - id: '190815'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1438676
+    reference_id: 1438676
+  - id: 40599
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860049
+    reference_id: 860049
+  - id: 302795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dovecot:dovecot:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dovecot:dovecot:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 696506
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2669
+    reference_id: CVE-2017-2669
+weaknesses: []

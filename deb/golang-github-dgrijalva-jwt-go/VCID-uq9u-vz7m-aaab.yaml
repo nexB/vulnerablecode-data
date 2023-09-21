@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2020-26160
+fixed_purl:
+- pkg:deb/debian/golang-github-dgrijalva-jwt-go@0?distro=sid
+- pkg:deb/debian/golang-github-dgrijalva-jwt-go@3.0.0.1%2BREALLY.2.6.0-3?distro=sid
+- pkg:deb/debian/golang-github-dgrijalva-jwt-go@3.2.0-3?distro=sid
+- pkg:deb/debian/golang-github-dgrijalva-jwt-go@3.2.0-4?distro=sid
+references:
+- id: 129328
+  reference_id: '971556'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=971556
+severities: []
+summary: jwt-go before 4.0.0-preview1 allows attackers to bypass intended access restrictions
+  in situations with []string{} for m["aud"] (which is allowed by the specification).
+  Because the type assertion fails, "" is the value of aud. This is a security problem
+  if the JWT token is presented to a service that lacks its own audience check.
+vulnerability_id: VCID-uq9u-vz7m-aaab
+weaknesses: []

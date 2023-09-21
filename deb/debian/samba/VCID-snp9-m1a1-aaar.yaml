@@ -1,0 +1,87 @@
+vulnerability_id: VCID-snp9-m1a1-aaar
+aliases:
+  - CVE-2019-3870
+summary: A vulnerability was found in Samba from version (including) 4.9 to versions before
+  4.9.6 and 4.10.2. During the creation of a new Samba AD DC, files are created in a private
+  subdirectory of the install location. This directory is typically mode 0700, that is owner
+  (root) only access. However in some upgraded installations it will have other permissions,
+  such as 0755, because this was the default before Samba 4.8. Within this directory, files
+  are created with mode 0666, which is world-writable, including a sample krb5.conf, and the
+  list of DNS names and servicePrincipalName values to update.
+severities:
+  - id: 606124
+    reference_id: 928496
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H
+  - id: 606123
+    reference_id: 928495
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 406388
+    reference_id: 796257
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:P
+  - id: 406386
+    reference_id: 796257
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H
+references:
+  - id: 928496
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-3870.json
+    reference_id:
+  - id: 796250
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3870
+    reference_id:
+  - id: 796251
+    url: https://bugzilla.samba.org/show_bug.cgi?id=13834
+    reference_id:
+  - id: 796252
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6354GALK73CZWQKFUG7AWB6EIEGFMF62/
+    reference_id:
+  - id: 796253
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JTJVFA3RZ6G2IZDTVKLHRMX6QBYA4GPA/
+    reference_id:
+  - id: 796254
+    url: https://support.f5.com/csp/article/K20804356
+    reference_id:
+  - id: 796255
+    url: https://www.samba.org/samba/security/CVE-2019-3870.html
+    reference_id:
+  - id: 796256
+    url: https://www.synology.com/security/advisory/Synology_SA_19_15
+    reference_id:
+  - id: 928495
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1689010
+    reference_id: 1689010
+  - id: 56945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+  - id: 779563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:synology:directory_server:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:synology:directory_server:-:*:*:*:*:*:*:*
+  - id: 682650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:synology:diskstation_manager:5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:synology:diskstation_manager:5.2:*:*:*:*:*:*:*
+  - id: 682652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:synology:diskstation_manager:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:synology:diskstation_manager:6.1:*:*:*:*:*:*:*
+  - id: 779564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:synology:diskstation_manager:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:synology:diskstation_manager:6.2:*:*:*:*:*:*:*
+  - id: 779565
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:synology:router_manager:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:synology:router_manager:1.2:*:*:*:*:*:*:*
+  - id: 641049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 796257
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-3870
+    reference_id: CVE-2019-3870
+weaknesses: []

@@ -1,0 +1,81 @@
+vulnerability_id: VCID-gz7h-cyx8-aaaa
+aliases:
+  - CVE-2016-10154
+summary: The smbhash function in fs/cifs/smbencrypt.c in the Linux kernel 4.9.x before 4.9.1
+  interacts incorrectly with the CONFIG_VMAP_STACK option, which allows local users to cause
+  a denial of service (system crash or memory corruption) or possibly have unspecified other
+  impact by leveraging use of more than one virtual page for a scatterlist.
+severities:
+  - id: 666345
+    reference_id: 1432803
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625250
+    reference_id: 942245
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 666346
+    reference_id: 1432804
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666343
+    reference_id: 1432801
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 625249
+    reference_id: 942244
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 213119
+    reference_id: 627481
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 213117
+    reference_id: 627481
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 627476
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=06deeec77a5a689cc94b21a8a91a76e42176685d
+    reference_id:
+  - id: 1432803
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-10154.html
+    reference_id:
+  - id: 942245
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-10154.json
+    reference_id:
+  - id: 1432804
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10154
+    reference_id:
+  - id: 1432801
+    url: http://seclists.org/oss-sec/2017/q1/161
+    reference_id:
+  - id: 627480
+    url: https://github.com/torvalds/linux/commit/06deeec77a5a689cc94b21a8a91a76e42176685d
+    reference_id:
+  - id: 627477
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.1
+    reference_id:
+  - id: 627465
+    url: http://www.openwall.com/lists/oss-security/2017/01/21/3
+    reference_id:
+  - id: 627478
+    url: http://www.securityfocus.com/bid/95714
+    reference_id:
+  - id: 942244
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1416104
+    reference_id: 1416104
+  - id: 627475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+  - id: 627481
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-10154
+    reference_id: CVE-2016-10154
+weaknesses: []

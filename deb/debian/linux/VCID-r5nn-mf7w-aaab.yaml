@@ -1,0 +1,104 @@
+vulnerability_id: VCID-r5nn-mf7w-aaab
+aliases:
+  - CVE-2020-27825
+summary: A use-after-free flaw was found in kernel/trace/ring_buffer.c in Linux kernel (before
+  5.10-rc1). There was a race problem in trace_open and resize of cpu buffer running parallely
+  on different cpus, may cause a denial of service problem (DOS). This flaw could even allow
+  a local attacker with special user privilege to a kernel information leak threat.
+severities:
+  - id: 698344
+    reference_id: 1458223
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609360
+    reference_id: 930880
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 698345
+    reference_id: 1458224
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698346
+    reference_id: 1458225
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698347
+    reference_id: 1458226
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609359
+    reference_id: 930879
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 467550
+    reference_id: 837885
+    scoring_system: cvssv2
+    value: '5.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:C
+  - id: 467548
+    reference_id: 837885
+    scoring_system: cvssv3
+    value: '5.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 1458223
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27825.html
+    reference_id:
+  - id: 930880
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27825.json
+    reference_id:
+  - id: 1458224
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27825
+    reference_id:
+  - id: 1458225
+    url: https://github.com/torvalds/linux/commit/bbeb97464eefc65f506084fd9f18f21653e01137#diff-446a57a3a8781d7d3fb410eb7162dd2002dd363bf1ea936c4fd10397660033e0
+    reference_id:
+  - id: 837822
+    url: https://lists.debian.org/debian-lts-announce/2021/02/msg00018.html
+    reference_id:
+  - id: 789828
+    url: https://lists.debian.org/debian-lts-announce/2021/03/msg00010.html
+    reference_id:
+  - id: 837884
+    url: https://security.netapp.com/advisory/ntap-20210521-0008/
+    reference_id:
+  - id: 837824
+    url: https://www.debian.org/security/2021/dsa-4843
+    reference_id:
+  - id: 1458226
+    url: https://www.openwall.com/lists/oss-security/2020/12/11/1
+    reference_id:
+  - id: 930879
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1905155
+    reference_id: '1905155'
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 834078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.10:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.10:rc1:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 458549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*
+  - id: 837885
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27825
+    reference_id: CVE-2020-27825
+weaknesses: []

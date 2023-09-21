@@ -1,0 +1,65 @@
+vulnerability_id: VCID-zdbd-xweh-aaap
+aliases:
+  - CVE-2021-45402
+summary: The check_alu_op() function in kernel/bpf/verifier.c in the Linux kernel through v5.16-rc5
+  did not properly update bounds while handling the mov32 instruction, which allows local users
+  to obtain potentially sensitive address information, aka a "pointer leak."
+severities:
+  - id: 209531
+    reference_id: 622704
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 209530
+    reference_id: 622703
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 571217
+    reference_id: 905622
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 571215
+    reference_id: 905622
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 622704
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-45402.json
+    reference_id:
+  - id: 905619
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=3cf2b61eb06765e27fec6799292d9fb46d0b7e60
+    reference_id:
+  - id: 905620
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=b1a7288dedc6caf9023f2676b4f5ed34cf0d4029
+    reference_id:
+  - id: 905621
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=e572ff80f05c33cd0cb4860f864f5c9c044280b6
+    reference_id:
+  - id: 622703
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2054865
+    reference_id: 2054865
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 866861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+  - id: 866862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc2:*:*:*:*:*:*
+  - id: 866863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc3:*:*:*:*:*:*
+  - id: 866864
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc4:*:*:*:*:*:*
+  - id: 866865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc5:*:*:*:*:*:*
+  - id: 905622
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-45402
+    reference_id: CVE-2021-45402
+weaknesses: []

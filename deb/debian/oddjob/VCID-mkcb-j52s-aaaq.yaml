@@ -1,0 +1,61 @@
+vulnerability_id: VCID-mkcb-j52s-aaaq
+aliases:
+  - CVE-2020-10737
+summary: A race condition was found in the mkhomedir tool shipped with the oddjob package in
+  versions before 0.34.5 and 0.34.6 wherein, during the home creation, mkhomedir copies the
+  /etc/skel directory into the newly created home and changes its ownership to the home's user
+  without properly checking the homedir path. This flaw allows an attacker to leverage this
+  issue by creating a symlink point to a target folder, which then has its ownership transferred
+  to the new home directory's unprivileged user.
+severities:
+  - id: 49762
+    reference_id: 174186
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H
+  - id: 49760
+    reference_id: 174184
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 430551
+    reference_id: 812266
+    scoring_system: cvssv2
+    value: '3.7'
+    scoring_elements: AV:L/AC:H/Au:N/C:P/I:P/A:P
+  - id: 430549
+    reference_id: 812266
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H
+  - id: 49761
+    reference_id: 174185
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 174186
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10737.json
+    reference_id:
+  - id: 812264
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10737
+    reference_id:
+  - id: 812265
+    url: https://pagure.io/oddjob/c/10b8aaa1564b723a005b53acc069df71313f4cac?branch
+    reference_id:
+  - id: 174184
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1833042
+    reference_id: 1833042
+  - id: 81975
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=960089
+    reference_id: 960089
+  - id: 812267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:oddjob:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:oddjob:*:*:*:*:*:*:*:*
+  - id: 812266
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10737
+    reference_id: CVE-2020-10737
+  - id: 174185
+    url: https://access.redhat.com/errata/RHSA-2020:4687
+    reference_id: RHSA-2020:4687
+weaknesses: []

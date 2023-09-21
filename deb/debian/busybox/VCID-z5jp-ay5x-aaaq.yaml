@@ -1,0 +1,396 @@
+vulnerability_id: VCID-z5jp-ay5x-aaaq
+aliases:
+  - CVE-2013-1813
+summary: util-linux/mdev.c in BusyBox before 1.21.0 uses 0777 permissions for parent directories
+  when creating nested directories under /dev/, which allows local users to have unknown impact
+  and attack vectors.
+severities:
+  - id: 651741
+    reference_id: 1421650
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 651743
+    reference_id: 1421652
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 651742
+    reference_id: 1421651
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 62597
+    reference_id: '190638'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 164183
+    reference_id: 520575
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 62598
+    reference_id: '190639'
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 520570
+    url: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701965
+    reference_id:
+  - id: 520571
+    url: http://git.busybox.net/busybox/commit/?id=4609f477c7e043a4f6147dfe6e86b775da2ef784
+    reference_id:
+  - id: 520572
+    url: http://lists.busybox.net/pipermail/busybox/2013-January/078864.html
+    reference_id:
+  - id: 410683
+    url: http://packetstormsecurity.com/files/153278/WAGO-852-Industrial-Managed-Switch-Series-Code-Execution-Hardcoded-Credentials.html
+    reference_id:
+  - id: 1421650
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1813.html
+    reference_id:
+  - id: 520573
+    url: http://rhn.redhat.com/errata/RHSA-2013-1732.html
+    reference_id:
+  - id: '190640'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-1813.json
+    reference_id:
+  - id: 1421652
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1813
+    reference_id:
+  - id: 410684
+    url: http://seclists.org/fulldisclosure/2019/Jun/18
+    reference_id:
+  - id: 461520
+    url: http://seclists.org/fulldisclosure/2020/Aug/20
+    reference_id:
+  - id: 520574
+    url: http://seclists.org/fulldisclosure/2020/Mar/15
+    reference_id:
+  - id: 410692
+    url: https://seclists.org/bugtraq/2019/Jun/14
+    reference_id:
+  - id: 461525
+    url: https://support.t-mobile.com/docs/DOC-21994
+    reference_id:
+  - id: 1421651
+    url: http://www.openwall.com/lists/oss-security/2013/03/03/9
+    reference_id:
+  - id: 39900
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701965
+    reference_id: 701965
+  - id: '190638'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=919608
+    reference_id: 919608
+  - id: 461527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:*
+  - id: 520576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.38:*:*:*:*:*:*:*
+  - id: 520577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.39:*:*:*:*:*:*:*
+  - id: 520578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.40:*:*:*:*:*:*:*
+  - id: 520579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.41:*:*:*:*:*:*:*
+  - id: 520580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.42:*:*:*:*:*:*:*
+  - id: 520581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.43:*:*:*:*:*:*:*
+  - id: 520582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.45:*:*:*:*:*:*:*
+  - id: 520583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.46:*:*:*:*:*:*:*
+  - id: 520584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.47:*:*:*:*:*:*:*
+  - id: 520585
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.48:*:*:*:*:*:*:*
+  - id: 520586
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.49:*:*:*:*:*:*:*
+  - id: 520587
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.50:*:*:*:*:*:*:*
+  - id: 520588
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.51:*:*:*:*:*:*:*
+  - id: 520589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.52:*:*:*:*:*:*:*
+  - id: 520590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.0:*:*:*:*:*:*:*
+  - id: 520591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.1:*:*:*:*:*:*:*
+  - id: 520592
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.2:*:*:*:*:*:*:*
+  - id: 520593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.3:*:*:*:*:*:*:*
+  - id: 520594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.4:*:*:*:*:*:*:*
+  - id: 461528
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:0.60.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:0.60.5:*:*:*:*:*:*:*
+  - id: 461542
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.00:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.00:*:*:*:*:*:*:*
+  - id: 461543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.01:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.01:*:*:*:*:*:*:*
+  - id: 461544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.1.0:*:*:*:*:*:*:*
+  - id: 461548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.10.0:*:*:*:*:*:*:*
+  - id: 461549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.10.1:*:*:*:*:*:*:*
+  - id: 461550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.10.2:*:*:*:*:*:*:*
+  - id: 461551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.10.3:*:*:*:*:*:*:*
+  - id: 461552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.10.4:*:*:*:*:*:*:*
+  - id: 223873
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.1.1:*:*:*:*:*:*:*
+  - id: 461553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.11.0:*:*:*:*:*:*:*
+  - id: 461554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.11.1:*:*:*:*:*:*:*
+  - id: 461555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.11.2:*:*:*:*:*:*:*
+  - id: 461556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.11.3:*:*:*:*:*:*:*
+  - id: 461546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.1.2:*:*:*:*:*:*:*
+  - id: 461557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.12.0:*:*:*:*:*:*:*
+  - id: 461558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.12.1:*:*:*:*:*:*:*
+  - id: 461559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.12.2:*:*:*:*:*:*:*
+  - id: 461560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.12.3:*:*:*:*:*:*:*
+  - id: 461561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.12.4:*:*:*:*:*:*:*
+  - id: 461547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.1.3:*:*:*:*:*:*:*
+  - id: 461562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.13.0:*:*:*:*:*:*:*
+  - id: 461563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.13.1:*:*:*:*:*:*:*
+  - id: 461564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.13.2:*:*:*:*:*:*:*
+  - id: 461565
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.13.3:*:*:*:*:*:*:*
+  - id: 461566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.13.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.13.4:*:*:*:*:*:*:*
+  - id: 461567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.14.0:*:*:*:*:*:*:*
+  - id: 461568
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.14.1:*:*:*:*:*:*:*
+  - id: 461569
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.14.2:*:*:*:*:*:*:*
+  - id: 461570
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.14.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.14.3:*:*:*:*:*:*:*
+  - id: 461571
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.14.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.14.4:*:*:*:*:*:*:*
+  - id: 461572
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.15.0:*:*:*:*:*:*:*
+  - id: 461573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.15.1:*:*:*:*:*:*:*
+  - id: 461574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.15.2:*:*:*:*:*:*:*
+  - id: 461575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.15.3:*:*:*:*:*:*:*
+  - id: 461576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.16.0:*:*:*:*:*:*:*
+  - id: 461577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.16.1:*:*:*:*:*:*:*
+  - id: 461578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.16.2:*:*:*:*:*:*:*
+  - id: 461579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.17.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.17.0:*:*:*:*:*:*:*
+  - id: 461580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.17.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.17.1:*:*:*:*:*:*:*
+  - id: 461581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.17.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.17.2:*:*:*:*:*:*:*
+  - id: 461582
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.17.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.17.3:*:*:*:*:*:*:*
+  - id: 461583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.17.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.17.4:*:*:*:*:*:*:*
+  - id: 461584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.0:*:*:*:*:*:*:*
+  - id: 461585
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.1:*:*:*:*:*:*:*
+  - id: 461586
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.2:*:*:*:*:*:*:*
+  - id: 461587
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.3:*:*:*:*:*:*:*
+  - id: 461588
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.4:*:*:*:*:*:*:*
+  - id: 461589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.18.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.18.5:*:*:*:*:*:*:*
+  - id: 461590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.19.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.19.0:*:*:*:*:*:*:*
+  - id: 461591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.19.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.19.2:*:*:*:*:*:*:*
+  - id: 461592
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.19.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.19.3:*:*:*:*:*:*:*
+  - id: 520595
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.19.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.19.4:*:*:*:*:*:*:*
+  - id: 461593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.2.0:*:*:*:*:*:*:*
+  - id: 520596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.20.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.20.0:*:*:*:*:*:*:*
+  - id: 520597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.20.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.20.1:*:*:*:*:*:*:*
+  - id: 461594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.2.1:*:*:*:*:*:*:*
+  - id: 461596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.2.2:*:*:*:*:*:*:*
+  - id: 461595
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.2.2.1:*:*:*:*:*:*:*
+  - id: 461597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.3.0:*:*:*:*:*:*:*
+  - id: 461598
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.3.1:*:*:*:*:*:*:*
+  - id: 461599
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.3.2:*:*:*:*:*:*:*
+  - id: 461600
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.4.0:*:*:*:*:*:*:*
+  - id: 461601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.4.1:*:*:*:*:*:*:*
+  - id: 461602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.4.2:*:*:*:*:*:*:*
+  - id: 461603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.5.0:*:*:*:*:*:*:*
+  - id: 461604
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.5.1:*:*:*:*:*:*:*
+  - id: 461605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.6.0:*:*:*:*:*:*:*
+  - id: 461606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.6.1:*:*:*:*:*:*:*
+  - id: 461607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.7.0:*:*:*:*:*:*:*
+  - id: 461608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.7.1:*:*:*:*:*:*:*
+  - id: 461609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.7.2:*:*:*:*:*:*:*
+  - id: 461610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.7.3:*:*:*:*:*:*:*
+  - id: 461611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.8.0:*:*:*:*:*:*:*
+  - id: 461612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.8.1:*:*:*:*:*:*:*
+  - id: 461613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.8.2:*:*:*:*:*:*:*
+  - id: 461614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.9.0:*:*:*:*:*:*:*
+  - id: 461615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.9.1:*:*:*:*:*:*:*
+  - id: 461616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:busybox:busybox:1.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:busybox:busybox:1.9.2:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 461617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:t-mobile:tm-ac1900:3.0.0.4.376_3169:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:t-mobile:tm-ac1900:3.0.0.4.376_3169:*:*:*:*:*:*:*
+  - id: 520575
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-1813
+    reference_id: CVE-2013-1813
+  - id: '190639'
+    url: https://access.redhat.com/errata/RHSA-2013:1732
+    reference_id: RHSA-2013:1732
+weaknesses: []

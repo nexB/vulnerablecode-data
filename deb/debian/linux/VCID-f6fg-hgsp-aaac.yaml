@@ -1,0 +1,159 @@
+vulnerability_id: VCID-f6fg-hgsp-aaac
+aliases:
+  - CVE-2017-8062
+summary: drivers/media/usb/dvb-usb/dw2102.c in the Linux kernel 4.9.x and 4.10.x before 4.10.4
+  interacts incorrectly with the CONFIG_VMAP_STACK option, which allows local users to cause
+  a denial of service (system crash or memory corruption) or possibly have unspecified other
+  impact by leveraging use of more than one virtual page for a DMA scatterlist.
+severities:
+  - id: 680950
+    reference_id: 1444421
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624270
+    reference_id: 941591
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 680952
+    reference_id: 1444422
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680954
+    reference_id: 711582
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680953
+    reference_id: 711581
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680951
+    reference_id: 711579
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680880
+    reference_id: 710831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624269
+    reference_id: 941590
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 296247
+    reference_id: 711583
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 296245
+    reference_id: 711583
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1444421
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-8062.html
+    reference_id:
+  - id: 941591
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-8062.json
+    reference_id:
+  - id: 1444422
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8062
+    reference_id:
+  - id: 711582
+    url: https://github.com/torvalds/linux/commit/606142af57dad981b78707234cfbd15f9f7b7125
+    reference_id:
+  - id: 711581
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=606142af57dad981b78707234cfbd15f9f7b7125
+    reference_id:
+  - id: 711579
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.4
+    reference_id:
+  - id: 710831
+    url: http://www.openwall.com/lists/oss-security/2017/04/16/4
+    reference_id:
+  - id: 711580
+    url: http://www.securityfocus.com/bid/97973
+    reference_id:
+  - id: 941590
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1445332
+    reference_id: 1445332
+  - id: 708479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:*:*:*:*:*:*:*
+  - id: 708476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10.1:*:*:*:*:*:*:*
+  - id: 708477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10.2:*:*:*:*:*:*:*
+  - id: 711584
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10.3:*:*:*:*:*:*:*
+  - id: 627475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+  - id: 627470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+  - id: 678310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.10:*:*:*:*:*:*:*
+  - id: 678311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:*
+  - id: 678312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.12:*:*:*:*:*:*:*
+  - id: 678313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.13:*:*:*:*:*:*:*
+  - id: 678314
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.14:*:*:*:*:*:*:*
+  - id: 678315
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.15:*:*:*:*:*:*:*
+  - id: 678316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.16:*:*:*:*:*:*:*
+  - id: 678317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.17:*:*:*:*:*:*:*
+  - id: 678318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.18:*:*:*:*:*:*:*
+  - id: 678319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.19:*:*:*:*:*:*:*
+  - id: 627471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+  - id: 627472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+  - id: 627473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+  - id: 627474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+  - id: 678345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+  - id: 678347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+  - id: 678348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.9:*:*:*:*:*:*:*
+  - id: 711583
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8062
+    reference_id: CVE-2017-8062
+weaknesses: []

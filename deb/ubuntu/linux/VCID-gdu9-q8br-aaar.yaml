@@ -1,0 +1,163 @@
+vulnerability_id: VCID-gdu9-q8br-aaar
+aliases:
+  - CVE-2021-33200
+summary: kernel/bpf/verifier.c in the Linux kernel through 5.12.7 enforces incorrect limits
+  for pointer arithmetic operations, aka CID-bb01a1bba579. This can be abused to perform out-of-bounds
+  reads and writes in kernel memory, leading to local privilege escalation to root. In particular,
+  there is a corner case where the off reg causes a masking direction change, which then results
+  in an incorrect final aux->alu_limit.
+severities:
+  - id: 702299
+    reference_id: 1461567
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 604804
+    reference_id: 927534
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702300
+    reference_id: 1461568
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701567
+    reference_id: 1460944
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697598
+    reference_id: 1457568
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697599
+    reference_id: 1457569
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697600
+    reference_id: 1457570
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697601
+    reference_id: 1457571
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697602
+    reference_id: 1457572
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697604
+    reference_id: 1457574
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702301
+    reference_id: 172252
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 604803
+    reference_id: 927533
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 47595
+    reference_id: 172253
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 47593
+    reference_id: 172253
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1461567
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-33200.html
+    reference_id:
+  - id: 927534
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33200.json
+    reference_id:
+  - id: 1461568
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33200
+    reference_id:
+  - id: 172249
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7LR3OKKPHIBGOMHN476CMLW2T7UG53QX/
+    reference_id:
+  - id: 172250
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JJCABL43FT3FKRX5DBPZG25FNKR6CEK4/
+    reference_id:
+  - id: 172251
+    url: https://security.netapp.com/advisory/ntap-20210706-0004/
+    reference_id:
+  - id: 1460944
+    url: https://ubuntu.com/security/notices/USN-4983-1
+    reference_id:
+  - id: 1457568
+    url: https://ubuntu.com/security/notices/USN-4997-1
+    reference_id:
+  - id: 1457569
+    url: https://ubuntu.com/security/notices/USN-4997-2
+    reference_id:
+  - id: 1457570
+    url: https://ubuntu.com/security/notices/USN-4999-1
+    reference_id:
+  - id: 1457571
+    url: https://ubuntu.com/security/notices/USN-5000-1
+    reference_id:
+  - id: 1457572
+    url: https://ubuntu.com/security/notices/USN-5000-2
+    reference_id:
+  - id: 1457574
+    url: https://ubuntu.com/security/notices/USN-5018-1
+    reference_id:
+  - id: 172252
+    url: https://www.openwall.com/lists/oss-security/2021/05/27/1
+    reference_id:
+  - id: 927533
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1965458
+    reference_id: '1965458'
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 172255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+  - id: 172254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 172253
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-33200
+    reference_id: CVE-2021-33200
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

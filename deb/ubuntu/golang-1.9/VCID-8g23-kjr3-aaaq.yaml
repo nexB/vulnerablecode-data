@@ -1,0 +1,90 @@
+vulnerability_id: VCID-8g23-kjr3-aaaq
+aliases:
+  - CVE-2017-1000098
+summary: The net/http package's Request.ParseMultipartForm method starts writing to temporary
+  files once the request body size surpasses the given "maxMemory" limit. It was possible for
+  an attacker to generate a multipart request crafted such that the server ran out of file descriptors.
+severities:
+  - id: 673009
+    reference_id: 1438212
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625624
+    reference_id: 942500
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 673010
+    reference_id: 1438213
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673011
+    reference_id: 668009
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673012
+    reference_id: 668005
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625623
+    reference_id: 942499
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 249344
+    reference_id: 668011
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 249342
+    reference_id: 668011
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 622849
+    reference_id: 940596
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1438212
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000098.html
+    reference_id:
+  - id: 942500
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000098.json
+    reference_id:
+  - id: 1438213
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000098
+    reference_id:
+  - id: 668009
+    url: https://golang.org/cl/30410
+    reference_id:
+  - id: 668010
+    url: https://golang.org/issue/17965
+    reference_id:
+  - id: 668005
+    url: https://groups.google.com/forum/#!msg/golang-dev/4NdLzS8sls8/uIz8QlnIBQAJ
+    reference_id:
+  - id: 942499
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1401985
+    reference_id: 1401985
+  - id: 162127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
+  - id: 668007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:1.6.3:*:*:*:*:*:*:*
+  - id: 668008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:golang:go:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:golang:go:1.7.3:*:*:*:*:*:*:*
+  - id: 668011
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000098
+    reference_id: CVE-2017-1000098
+  - id: 940596
+    url: https://access.redhat.com/errata/RHSA-2017:1859
+    reference_id: RHSA-2017:1859
+weaknesses: []

@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2018-7285
+fixed_purl:
+- pkg:deb/debian/asterisk@0?distro=sid
+- pkg:deb/debian/asterisk@1:16.2.1~dfsg-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/asterisk@1:16.28.0~dfsg-0%2Bdeb11u2?distro=sid
+- pkg:deb/debian/asterisk@1:20.2.1~dfsg%2B~cs6.13.40431413-1?distro=sid
+references: []
+severities: []
+summary: A NULL pointer access issue was discovered in Asterisk 15.x through 15.2.1.
+  The RTP support in Asterisk maintains its own registry of dynamic codecs and desired
+  payload numbers. While an SDP negotiation may result in a codec using a different
+  payload number, these desired ones are still stored internally. When an RTP packet
+  was received, this registry would be consulted if the payload number was not found
+  in the negotiated SDP. This registry was incorrectly consulted for all packets,
+  even those which are dynamic. If the payload number resulted in a codec of a different
+  type than the RTP stream (for example, the payload number resulted in a video codec
+  but the stream carried audio), a crash could occur if no stream of that type had
+  been negotiated. This was due to the code incorrectly assuming that a stream of
+  that type would always exist.
+vulnerability_id: VCID-2gnd-gyna-aaar
+weaknesses: []

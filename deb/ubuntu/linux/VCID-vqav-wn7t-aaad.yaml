@@ -1,0 +1,131 @@
+vulnerability_id: VCID-vqav-wn7t-aaad
+aliases:
+  - CVE-2021-20194
+summary: There is a vulnerability in the linux kernel versions higher than 5.2 (if kernel compiled
+  with config params CONFIG_BPF_SYSCALL=y , CONFIG_BPF=y , CONFIG_CGROUPS=y , CONFIG_CGROUP_BPF=y
+  , CONFIG_HARDENED_USERCOPY not set, and BPF hook to getsockopt is registered). As result of
+  BPF execution, the local user can trigger bug in __cgroup_bpf_run_filter_getsockopt() function
+  that can lead to heap overflow (because of non-hardened usercopy). The impact of attack could
+  be deny of service or possibly privileges escalation.
+severities:
+  - id: 700230
+    reference_id: 1459789
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 607426
+    reference_id: 929459
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 700231
+    reference_id: 1459790
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 700232
+    reference_id: 1459791
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 698805
+    reference_id: 1458606
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 700233
+    reference_id: 1459792
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 700234
+    reference_id: 1459793
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696426
+    reference_id: 1456543
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 607425
+    reference_id: 929458
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 503840
+    reference_id: 861205
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 503838
+    reference_id: 861205
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1459789
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-20194.html
+    reference_id:
+  - id: 929459
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20194.json
+    reference_id:
+  - id: 1459790
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20194
+    reference_id:
+  - id: 1459791
+    url: https://patchwork.kernel.org/project/netdevbpf/patch/20210122164232.61770-1-loris.reiff@liblor.ch/#23921223
+    reference_id:
+  - id: 861204
+    url: https://security.netapp.com/advisory/ntap-20210326-0003/
+    reference_id:
+  - id: 1458606
+    url: https://ubuntu.com/security/notices/USN-4879-1
+    reference_id:
+  - id: 1459792
+    url: https://ubuntu.com/security/notices/USN-4884-1
+    reference_id:
+  - id: 1459793
+    url: https://ubuntu.com/security/notices/USN-4909-1
+    reference_id:
+  - id: 1456543
+    url: https://ubuntu.com/security/notices/USN-4912-1
+    reference_id:
+  - id: 929458
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1912683
+    reference_id: '1912683'
+  - id: 834008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+  - id: 834009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+  - id: 820709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 861205
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-20194
+    reference_id: CVE-2021-20194
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

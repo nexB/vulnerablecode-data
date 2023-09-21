@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-1000257
+fixed_purl:
+- pkg:deb/debian/curl@7.56.1-1?distro=sid
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u7?distro=sid
+- pkg:deb/debian/curl@7.88.1-10?distro=sid
+references: []
+severities: []
+summary: An IMAP FETCH response line indicates the size of the returned data, in number
+  of bytes. When that response says the data is zero bytes, libcurl would pass on
+  that (non-existing) data with a pointer and the size (zero) to the deliver-data
+  function. libcurl's deliver-data function treats zero as a magic number and invokes
+  strlen() on the data to figure out the length. The strlen() is called on a heap
+  based buffer that might not be zero terminated so libcurl might read beyond the
+  end of it into whatever memory lies after (or just crash) and then deliver that
+  to the application as if it was actually downloaded.
+vulnerability_id: VCID-qr7u-bpc7-aaac
+weaknesses: []

@@ -1,0 +1,96 @@
+vulnerability_id: VCID-3khf-v6wa-aaab
+aliases:
+  - CVE-2016-7170
+summary: The vmsvga_fifo_run function in hw/display/vmware_vga.c in QEMU (aka Quick Emulator)
+  allows local guest OS administrators to cause a denial of service (out-of-bounds write and
+  QEMU process crash) via vectors related to cursor.mask[] and cursor.image[] array sizes when
+  processing a DEFINE_CURSOR svga command.
+severities:
+  - id: 671025
+    reference_id: 1436619
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 627054
+    reference_id: 943481
+    scoring_system: cvssv3
+    value: '3.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L
+  - id: 671026
+    reference_id: 1436620
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 670019
+    reference_id: 1435771
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 627053
+    reference_id: 943480
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 237613
+    reference_id: 655670
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 237611
+    reference_id: 655670
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 655665
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=167d97a3def77ee2dbf6e908b0ecbfe2103977db
+    reference_id:
+  - id: 655542
+    url: http://lists.opensuse.org/opensuse-updates/2016-12/msg00140.html
+    reference_id:
+  - id: 1436619
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7170.html
+    reference_id:
+  - id: 943481
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-7170.json
+    reference_id:
+  - id: 1436620
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7170
+    reference_id:
+  - id: 638999
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00038.html
+    reference_id:
+  - id: 655669
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-09/msg01764.html
+    reference_id:
+  - id: 1435771
+    url: https://ubuntu.com/security/notices/USN-3125-1
+    reference_id:
+  - id: 655666
+    url: http://www.openwall.com/lists/oss-security/2016/09/09/4
+    reference_id:
+  - id: 655667
+    url: http://www.openwall.com/lists/oss-security/2016/09/09/7
+    reference_id:
+  - id: 655668
+    url: http://www.securityfocus.com/bid/92904
+    reference_id:
+  - id: 943480
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1374702
+    reference_id: 1374702
+  - id: 111946
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837316
+    reference_id: 837316
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+  - id: 655670
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-7170
+    reference_id: CVE-2016-7170
+weaknesses: []

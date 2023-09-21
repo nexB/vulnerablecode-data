@@ -1,0 +1,71 @@
+vulnerability_id: VCID-fxa6-sbgd-aaab
+aliases:
+  - CVE-2016-9937
+summary: An issue was discovered in Asterisk Open Source 13.12.x and 13.13.x before 13.13.1
+  and 14.x before 14.2.1. If an SDP offer or answer is received with the Opus codec and with
+  the format parameters separated using a space the code responsible for parsing will recursively
+  call itself until it crashes. This occurs as the code does not properly handle spaces separating
+  the parameters. This does NOT require the endpoint to have Opus configured in Asterisk. This
+  also does not require the endpoint to be authenticated. If guest is enabled for chan_sip or
+  anonymous in chan_pjsip an SDP offer or answer is still processed and the crash occurs.
+severities:
+  - id: 245177
+    reference_id: 664241
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 245175
+    reference_id: 664241
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 664235
+    url: http://downloads.asterisk.org/pub/security/AST-2016-008-13.diff
+    reference_id:
+  - id: 664236
+    url: http://downloads.asterisk.org/pub/security/AST-2016-008-14.diff
+    reference_id:
+  - id: 664237
+    url: http://downloads.asterisk.org/pub/security/AST-2016-008.html
+    reference_id:
+  - id: 664240
+    url: https://issues.asterisk.org/jira/browse/ASTERISK-26579
+    reference_id:
+  - id: 664238
+    url: http://www.securityfocus.com/bid/94792
+    reference_id:
+  - id: 664239
+    url: http://www.securitytracker.com/id/1037407
+    reference_id:
+  - id: 664242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:13.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:13.12:*:*:*:*:*:*:*
+  - id: 664243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:13.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:13.13:*:*:*:*:*:*:*
+  - id: 664246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.0:*:*:*:*:*:*:*
+  - id: 664244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.01:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.01:*:*:*:*:*:*:*
+  - id: 664245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.02:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.02:*:*:*:*:*:*:*
+  - id: 664249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.1:*:*:*:*:*:*:*
+  - id: 664247
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.1.1:*:*:*:*:*:*:*
+  - id: 664248
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.1.2:*:*:*:*:*:*:*
+  - id: 664250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:14.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:14.2:*:*:*:*:*:*:*
+  - id: 664241
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9937
+    reference_id: CVE-2016-9937
+weaknesses: []

@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2019-3701
+fixed_purl:
+- pkg:deb/debian/linux@4.19.20-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in can_can_gw_rcv in net/can/gw.c in the Linux kernel
+  through 4.19.13. The CAN frame modification rules allow bitwise logical operations
+  that can be also applied to the can_dlc field. The privileged user "root" with CAP_NET_ADMIN
+  can create a CAN frame modification rule that makes the data length code a higher
+  value than the available CAN frame data size. In combination with a configured checksum
+  calculation where the result is stored relatively to the end of the data (e.g. cgw_csum_xor_rel)
+  the tail of the skb (e.g. frag_list pointer in skb_shared_info) can be rewritten
+  which finally can cause a system crash. Because of a missing check, the CAN drivers
+  may write arbitrary content beyond the data registers in the CAN controller's I/O
+  memory when processing can-gw manipulated outgoing frames.
+vulnerability_id: VCID-cbp2-78bd-aaac
+weaknesses: []

@@ -1,0 +1,115 @@
+vulnerability_id: VCID-hjmf-t312-aaaq
+aliases:
+  - CVE-2020-14331
+summary: A flaw was found in the Linux kernel’s implementation of the invert video code on VGA
+  consoles when a local attacker attempts to resize the console, calling an ioctl VT_RESIZE,
+  which causes an out-of-bounds write to occur. This flaw allows a local user with access to
+  the VGA console to crash the system, potentially escalating their privileges on the system.
+  The highest threat from this vulnerability is to data confidentiality and integrity as well
+  as system availability.
+severities:
+  - id: 610645
+    reference_id: 931820
+    scoring_system: cvssv3
+    value: '6.6'
+    scoring_elements: CVSS:3.1/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 610642
+    reference_id: 931817
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 441851
+    reference_id: 820697
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 441849
+    reference_id: 820697
+    scoring_system: cvssv3
+    value: '6.6'
+    scoring_elements: CVSS:3.1/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 609255
+    reference_id: 930801
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 609250
+    reference_id: 930796
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 610644
+    reference_id: 931819
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610643
+    reference_id: 931818
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 931820
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14331.json
+    reference_id:
+  - id: 790142
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html
+    reference_id:
+  - id: 789248
+    url: https://lists.debian.org/debian-lts-announce/2020/10/msg00032.html
+    reference_id:
+  - id: 789249
+    url: https://lists.debian.org/debian-lts-announce/2020/10/msg00034.html
+    reference_id:
+  - id: 820695
+    url: https://lists.openwall.net/linux-kernel/2020/07/29/234
+    reference_id:
+  - id: 820696
+    url: https://www.openwall.com/lists/oss-security/2020/07/28/2
+    reference_id:
+  - id: 931817
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1858679
+    reference_id: 1858679
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 812426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc1:*:*:*:*:*:*
+  - id: 812427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc2:*:*:*:*:*:*
+  - id: 812428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc3:*:*:*:*:*:*
+  - id: 812429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc4:*:*:*:*:*:*
+  - id: 812430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc5:*:*:*:*:*:*
+  - id: 820698
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.8.0:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.8.0:rc6:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 820697
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14331
+    reference_id: CVE-2020-14331
+  - id: 930801
+    url: https://access.redhat.com/errata/RHSA-2020:4286
+    reference_id: RHSA-2020:4286
+  - id: 930796
+    url: https://access.redhat.com/errata/RHSA-2020:4289
+    reference_id: RHSA-2020:4289
+  - id: 931819
+    url: https://access.redhat.com/errata/RHSA-2020:5023
+    reference_id: RHSA-2020:5023
+  - id: 931818
+    url: https://access.redhat.com/errata/RHSA-2020:5026
+    reference_id: RHSA-2020:5026
+weaknesses: []

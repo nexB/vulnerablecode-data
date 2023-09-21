@@ -1,0 +1,80 @@
+vulnerability_id: VCID-djm3-r7hr-aaaa
+aliases:
+  - CVE-2017-10686
+summary: |
+  Use After Free
+  In Netwide Assembler (NASM) rc0, there are multiple heap use after free vulnerabilities in the tool nasm. The related heap is allocated in the token() function and freed in the detoken() function (called by pp_getline()) - it is used again at multiple positions later that could cause multiple damages. For example, it causes a corrupted double-linked list in detoken(), a double free or corruption in delete_Token(), and an out-of-bounds write in detoken(). It has a high possibility to lead to a remote code execution attack.
+severities:
+  - id: 673477
+    reference_id: 1438635
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 75199
+    reference_id: 206124
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L
+  - id: 673478
+    reference_id: 1438636
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673479
+    reference_id: 1438637
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 75198
+    reference_id: 206123
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 252559
+    reference_id: 37686
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 252557
+    reference_id: 37686
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1438635
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-10686.html
+    reference_id:
+  - id: 206124
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-10686.json
+    reference_id:
+  - id: 37687
+    url: https://bugzilla.nasm.us/show_bug.cgi?id=3392414
+    reference_id:
+  - id: 1438636
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10686
+    reference_id:
+  - id: 37674
+    url: https://security.gentoo.org/glsa/201903-19
+    reference_id:
+  - id: 1438637
+    url: https://ubuntu.com/security/notices/USN-3694-1
+    reference_id:
+  - id: 37631
+    url: https://usn.ubuntu.com/3694-1/
+    reference_id:
+  - id: 206123
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1472882
+    reference_id: 1472882
+  - id: 75323
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=867988
+    reference_id: 867988
+  - id: 670907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nasm:netwide_assembler:2.14:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nasm:netwide_assembler:2.14:rc0:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 37686
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-10686
+    reference_id: CVE-2017-10686
+weaknesses: []

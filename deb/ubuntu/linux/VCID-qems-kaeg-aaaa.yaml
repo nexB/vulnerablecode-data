@@ -1,0 +1,103 @@
+vulnerability_id: VCID-qems-kaeg-aaaa
+aliases:
+  - CVE-2019-15791
+summary: In shiftfs, a non-upstream patch to the Linux kernel included in the Ubuntu 5.0 and
+  5.3 kernel series, shiftfs_btrfs_ioctl_fd_replace() installs an fd referencing a file from
+  the lower filesystem without taking an additional reference to that file. After the btrfs
+  ioctl completes this fd is closed, which then puts a reference to that file, leading to a
+  refcount underflow.
+severities:
+  - id: 703264
+    reference_id: 1464931
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 67406
+    reference_id: '196737'
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 703265
+    reference_id: 1464932
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683647
+    reference_id: 1446393
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683648
+    reference_id: 1446394
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683638
+    reference_id: 781802
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683639
+    reference_id: 781803
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 67405
+    reference_id: '196736'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 386477
+    reference_id: 781804
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 386475
+    reference_id: 781804
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1464931
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-15791.html
+    reference_id:
+  - id: '196737'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-15791.json
+    reference_id:
+  - id: 1464932
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15791
+    reference_id:
+  - id: 781801
+    url: https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/eoan/commit/?id=601a64857b3d7040ca15c39c929e6b9db3373ec1
+    reference_id:
+  - id: 1446393
+    url: https://ubuntu.com/security/notices/USN-4183-1
+    reference_id:
+  - id: 1446394
+    url: https://ubuntu.com/security/notices/USN-4184-1
+    reference_id:
+  - id: 781802
+    url: https://usn.ubuntu.com/usn/usn-4183-1
+    reference_id:
+  - id: 781803
+    url: https://usn.ubuntu.com/usn/usn-4184-1
+    reference_id:
+  - id: '196736'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1801616
+    reference_id: 1801616
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 781805
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.0:*:*:*:*:*:*:*
+  - id: 779302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.3:*:*:*:*:*:*:*
+  - id: 781804
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-15791
+    reference_id: CVE-2019-15791
+weaknesses: []

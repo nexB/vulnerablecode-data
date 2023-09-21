@@ -1,0 +1,205 @@
+vulnerability_id: VCID-vctw-pw1s-aaaj
+aliases:
+  - CVE-2018-1120
+summary: A flaw was found affecting the Linux kernel before version 4.17. By mmap()ing a FUSE-backed
+  file onto a process's memory containing command line arguments (or environment strings), an
+  attacker can cause utilities from psutils or procps (such as ps, w) or any other program which
+  makes a read() call to the /proc/<pid>/cmdline (or /proc/<pid>/environ) files to block indefinitely
+  (denial of service) or for some controlled time (as a synchronization primitive for other
+  attacks).
+severities:
+  - id: 683150
+    reference_id: 1446024
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 616398
+    reference_id: 936042
+    scoring_system: cvssv3
+    value: '2.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:L
+  - id: 683152
+    reference_id: 1446026
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682370
+    reference_id: 1445436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682371
+    reference_id: 1445437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682372
+    reference_id: 1445438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677504
+    reference_id: 1441544
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677505
+    reference_id: 1441545
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683151
+    reference_id: 1446025
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616395
+    reference_id: 936039
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 312824
+    reference_id: 726261
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:N/A:P
+  - id: 312822
+    reference_id: 726261
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 616396
+    reference_id: 936040
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 616397
+    reference_id: 936041
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1446024
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1120.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 936042
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1120.json
+    reference_id:
+  - id: 726257
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-1120
+    reference_id:
+  - id: 1446026
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1120
+    reference_id:
+  - id: 726255
+    url: http://seclists.org/oss-sec/2018/q2/122
+    reference_id:
+  - id: 726258
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7f7ccc2ccc2e70c6054685f5e3522efa81556830
+    reference_id:
+  - id: 693387
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00020.html
+    reference_id:
+  - id: 726259
+    url: https://security.gentoo.org/glsa/201805-14
+    reference_id:
+  - id: 1445436
+    url: https://ubuntu.com/security/notices/USN-3752-1
+    reference_id:
+  - id: 1445437
+    url: https://ubuntu.com/security/notices/USN-3752-2
+    reference_id:
+  - id: 1445438
+    url: https://ubuntu.com/security/notices/USN-3752-3
+    reference_id:
+  - id: 1441544
+    url: https://ubuntu.com/security/notices/USN-3910-1
+    reference_id:
+  - id: 1441545
+    url: https://ubuntu.com/security/notices/USN-3910-2
+    reference_id:
+  - id: 721706
+    url: https://usn.ubuntu.com/3752-1/
+    reference_id:
+  - id: 721707
+    url: https://usn.ubuntu.com/3752-2/
+    reference_id:
+  - id: 721708
+    url: https://usn.ubuntu.com/3752-3/
+    reference_id:
+  - id: 693342
+    url: https://usn.ubuntu.com/3910-1/
+    reference_id:
+  - id: 693343
+    url: https://usn.ubuntu.com/3910-2/
+    reference_id:
+  - id: 726260
+    url: https://www.exploit-db.com/exploits/44806/
+    reference_id:
+  - id: 1446025
+    url: http://www.openwall.com/lists/oss-security/2018/05/17/1
+    reference_id:
+  - id: 726256
+    url: http://www.securityfocus.com/bid/104229
+    reference_id:
+  - id: 936039
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1575472
+    reference_id: 1575472
+  - id: 637845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 726261
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1120
+    reference_id: CVE-2018-1120
+  - id: 936040
+    url: https://access.redhat.com/errata/RHSA-2020:3804
+    reference_id: RHSA-2020:3804
+  - id: 936041
+    url: https://access.redhat.com/errata/RHSA-2020:3810
+    reference_id: RHSA-2020:3810
+weaknesses: []

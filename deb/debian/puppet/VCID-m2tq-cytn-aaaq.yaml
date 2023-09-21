@@ -1,0 +1,184 @@
+vulnerability_id: VCID-m2tq-cytn-aaaq
+aliases:
+  - CVE-2012-1053
+summary: The change_user method in the SUIDManager (lib/puppet/util/suidmanager.rb) in Puppet
+  2.6.x before 2.6.14 and 2.7.x before 2.7.11, and Puppet Enterprise (PE) Users 1.0, 1.1, 1.2.x,
+  2.0.x before 2.0.3 does not properly manage group privileges, which allows local users to
+  gain privileges via vectors related to (1) the change_user not dropping supplementary groups
+  in certain conditions, (2) changes to the eguid without associated changes to the egid, or
+  (3) the addition of the real gid to supplementary groups.
+severities:
+  - id: 65681
+    reference_id: '194596'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 151562
+    reference_id: 483619
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+references:
+  - id: 483604
+    url: http://lists.opensuse.org/opensuse-security-announce/2012-03/msg00003.html
+    reference_id:
+  - id: 483605
+    url: http://projects.puppetlabs.com/issues/12457
+    reference_id:
+  - id: 483606
+    url: http://projects.puppetlabs.com/issues/12458
+    reference_id:
+  - id: 483607
+    url: http://projects.puppetlabs.com/issues/12459
+    reference_id:
+  - id: 483608
+    url: http://projects.puppetlabs.com/projects/1/wiki/Release_Notes#2.6.14
+    reference_id:
+  - id: 483609
+    url: http://puppetlabs.com/security/cve/cve-2012-1053/
+    reference_id:
+  - id: '194597'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-1053.json
+    reference_id:
+  - id: 483610
+    url: http://secunia.com/advisories/48157
+    reference_id:
+  - id: 483611
+    url: http://secunia.com/advisories/48161
+    reference_id:
+  - id: 483612
+    url: http://secunia.com/advisories/48166
+    reference_id:
+  - id: 483613
+    url: http://secunia.com/advisories/48290
+    reference_id:
+  - id: 483618
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/73445
+    reference_id:
+  - id: 30034
+    url: https://hermes.opensuse.org/messages/15087408
+    reference_id:
+  - id: 483614
+    url: http://ubuntu.com/usn/usn-1372-1
+    reference_id:
+  - id: 483615
+    url: http://www.debian.org/security/2012/dsa-2419
+    reference_id:
+  - id: 483616
+    url: http://www.osvdb.org/79495
+    reference_id:
+  - id: 483617
+    url: http://www.securityfocus.com/bid/52158
+    reference_id:
+  - id: '194596'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=791001
+    reference_id: 791001
+  - id: 468503
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*
+  - id: 468504
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*
+  - id: 468580
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.0:*:*:*:*:*:*:*
+  - id: 468581
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.1:*:*:*:*:*:*:*
+  - id: 447047
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*
+  - id: 447048
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*
+  - id: 468556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*
+  - id: 468574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.11:*:*:*:*:*:*:*
+  - id: 483620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.12:*:*:*:*:*:*:*
+  - id: 483621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.13:*:*:*:*:*:*:*
+  - id: 447049
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*
+  - id: 447050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*
+  - id: 468495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*
+  - id: 468496
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*
+  - id: 468497
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*
+  - id: 468498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*
+  - id: 468499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*
+  - id: 468500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*
+  - id: 483622
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.10:*:*:*:*:*:*:*
+  - id: 468501
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*
+  - id: 468502
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*
+  - id: 468557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*
+  - id: 468575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.5:*:*:*:*:*:*:*
+  - id: 483623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.6:*:*:*:*:*:*:*
+  - id: 483624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.7:*:*:*:*:*:*:*
+  - id: 483625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.8:*:*:*:*:*:*:*
+  - id: 483626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet:2.7.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet:2.7.9:*:*:*:*:*:*:*
+  - id: 468576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:1.2.0:*:*:*:*:*:*:*
+  - id: 468577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:1.2.1:*:*:*:*:*:*:*
+  - id: 468578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:1.2.2:*:*:*:*:*:*:*
+  - id: 468579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:1.2.3:*:*:*:*:*:*:*
+  - id: 483627
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:1.2.4:*:*:*:*:*:*:*
+  - id: 482514
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:2.0.0:*:*:*:*:*:*:*
+  - id: 483628
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:2.0.1:*:*:*:*:*:*:*
+  - id: 483629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:puppet:puppet_enterprise:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:puppet:puppet_enterprise:2.0.2:*:*:*:*:*:*:*
+  - id: 483619
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-1053
+    reference_id: CVE-2012-1053
+weaknesses: []

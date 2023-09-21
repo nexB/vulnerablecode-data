@@ -1,0 +1,79 @@
+vulnerability_id: VCID-3789-kuuf-aaaf
+aliases:
+  - CVE-2020-26237
+  - GHSA-vfrc-7r7c-w9mx
+summary: |
+  Modification of Assumed-Immutable Data (MAID)
+  `highlight.js` is vulnerable to Prototype Pollution. A malicious HTML code block can be crafted that will result in prototype pollution of the base object's prototype during highlighting. If you allow users to insert custom HTML code blocks into your `page/app` via parsing Markdown code blocks (or similar) and do not filter the language names the user can provide you may be vulnerable. The pollution should just be harmless data but this can cause problems for applications not expecting these properties to exist and can result in strange behavior or application crashes, i.e., a potential DoS vector. If your website or application does not render user provided data it should be unaffected. and newer include fixes for this vulnerability.
+severities:
+  - id: 605285
+    reference_id: 927888
+    scoring_system: cvssv3
+    value: '5.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:N/I:H/A:N
+  - id: 605284
+    reference_id: 927887
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 463760
+    reference_id: 33048
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:P/A:P
+  - id: 463758
+    reference_id: 33048
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:N
+  - id: 706179
+    reference_id: 1467708
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+  - id: 48767
+    reference_id: 173113
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 927888
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-26237.json
+    reference_id:
+  - id: 835256
+    url: https://github.com/highlightjs/highlight.js/commit/7241013ae011a585983e176ddc0489a7a52f6bb0
+    reference_id:
+  - id: 835257
+    url: https://github.com/highlightjs/highlight.js/pull/2636
+    reference_id:
+  - id: 835258
+    url: https://github.com/highlightjs/highlight.js/security/advisories/GHSA-vfrc-7r7c-w9mx
+    reference_id:
+  - id: 835259
+    url: https://lists.debian.org/debian-lts-announce/2020/12/msg00041.html
+    reference_id:
+  - id: 33046
+    url: https://www.npmjs.com/package/highlight.js
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 927887
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1901662
+    reference_id: '1901662'
+  - id: 41709
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=976446
+    reference_id: 976446
+  - id: 835260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:highlightjs:highlight.js:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:highlightjs:highlight.js:*:*:*:*:*:node.js:*:*
+  - id: 33048
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-26237
+    reference_id: CVE-2020-26237
+  - id: 1467708
+    url: https://github.com/advisories/GHSA-vfrc-7r7c-w9mx
+    reference_id: GHSA-vfrc-7r7c-w9mx
+  - id: 173113
+    url: https://access.redhat.com/errata/RHSA-2021:3917
+    reference_id: RHSA-2021:3917
+weaknesses: []

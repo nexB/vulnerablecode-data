@@ -1,0 +1,166 @@
+vulnerability_id: VCID-rtj4-b7zw-aaap
+aliases:
+  - CVE-2019-18609
+summary: An issue was discovered in amqp_handle_input in amqp_connection.c in rabbitmq-c 0.9.0.
+  There is an integer overflow that leads to heap memory corruption in the handling of CONNECTION_STATE_HEADER.
+  A rogue server could return a malicious frame header that leads to a smaller target_size value
+  than needed. This condition is then carried on to a memcpy function that copies too much data
+  into a heap buffer.
+severities:
+  - id: 692206
+    reference_id: 1453168
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64135
+    reference_id: '192587'
+    scoring_system: cvssv3
+    value: '8.6'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H
+  - id: 692207
+    reference_id: 1453169
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692208
+    reference_id: 788065
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692211
+    reference_id: 1453172
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692212
+    reference_id: 1453173
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692209
+    reference_id: 1453170
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692210
+    reference_id: 1453171
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64132
+    reference_id: '192584'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 393910
+    reference_id: 788074
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 393908
+    reference_id: 788074
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 64134
+    reference_id: '192586'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 64133
+    reference_id: '192585'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1453168
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-18609.html
+    reference_id:
+  - id: '192587'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-18609.json
+    reference_id:
+  - id: 1453169
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18609
+    reference_id:
+  - id: 788065
+    url: https://github.com/alanxz/rabbitmq-c/blob/master/ChangeLog.md
+    reference_id:
+  - id: 788066
+    url: https://github.com/alanxz/rabbitmq-c/commit/fc85be7123050b91b054e45b91c78d3241a5047a
+    reference_id:
+  - id: 788067
+    url: https://lists.debian.org/debian-lts-announce/2019/12/msg00004.html
+    reference_id:
+  - id: 788068
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WA7CPNVYMF6OQNIYNLWUY6U2GTKFOKH3/
+    reference_id:
+  - id: 788069
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XQER6XTKYMHNQR7QTHW7DJAH645WQROU/
+    reference_id:
+  - id: 788070
+    url: https://news.ycombinator.com/item?id=21681976
+    reference_id:
+  - id: 788071
+    url: https://security.gentoo.org/glsa/202003-07
+    reference_id:
+  - id: 1453172
+    url: https://ubuntu.com/security/notices/USN-4214-1
+    reference_id:
+  - id: 1453173
+    url: https://ubuntu.com/security/notices/USN-4214-2
+    reference_id:
+  - id: 788072
+    url: https://usn.ubuntu.com/4214-1/
+    reference_id:
+  - id: 788073
+    url: https://usn.ubuntu.com/4214-2/
+    reference_id:
+  - id: 1453170
+    url: https://usn.ubuntu.com/usn/usn-4214-1
+    reference_id:
+  - id: 1453171
+    url: https://usn.ubuntu.com/usn/usn-4214-2
+    reference_id:
+  - id: '192584'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1786646
+    reference_id: 1786646
+  - id: 44277
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=946005
+    reference_id: 946005
+  - id: 788075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:rabbitmq-c_project:rabbitmq-c:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:rabbitmq-c_project:rabbitmq-c:*:*:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 788074
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18609
+    reference_id: CVE-2019-18609
+  - id: '192586'
+    url: https://access.redhat.com/errata/RHSA-2020:3949
+    reference_id: RHSA-2020:3949
+  - id: '192585'
+    url: https://access.redhat.com/errata/RHSA-2020:4445
+    reference_id: RHSA-2020:4445
+weaknesses: []

@@ -1,0 +1,58 @@
+vulnerability_id: VCID-h8yg-rw4j-aaad
+aliases:
+  - CVE-2005-0403
+summary: init_dev in tty_io.c in the Red Hat backport of NPTL to Red Hat Enterprise Linux 3
+  does not properly clear controlling tty's in multi-threaded applications, which allows local
+  users to cause a denial of service (crash) and possibly gain tty access via unknown attack
+  vectors that trigger an access of a pointer to a freed structure.
+severities:
+  - id: 78891
+    reference_id: 210812
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 27492
+    reference_id: 115194
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 78847
+    reference_id: 210739
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 210813
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-0403.json
+    reference_id:
+  - id: 115192
+    url: https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=144059
+    reference_id:
+  - id: 115193
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9435
+    reference_id:
+  - id: 90664
+    url: http://www.redhat.com/support/errata/RHSA-2005-293.html
+    reference_id:
+  - id: 210812
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617522
+    reference_id: 1617522
+  - id: 77650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:3.0:*:advanced_servers:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:3.0:*:advanced_servers:*:*:*:*:*
+  - id: 77651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:3.0:*:enterprise_server:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:3.0:*:enterprise_server:*:*:*:*:*
+  - id: 77652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:3.0:*:workstation:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:3.0:*:workstation:*:*:*:*:*
+  - id: 77653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:3.0:*:*:*:*:*:*:*
+  - id: 115194
+    url: https://nvd.nist.gov/vuln/detail/CVE-2005-0403
+    reference_id: CVE-2005-0403
+  - id: 210739
+    url: https://access.redhat.com/errata/RHSA-2005:293
+    reference_id: RHSA-2005:293
+weaknesses: []

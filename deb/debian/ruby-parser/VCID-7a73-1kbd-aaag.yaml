@@ -1,0 +1,166 @@
+vulnerability_id: VCID-7a73-1kbd-aaag
+aliases:
+  - CVE-2013-0162
+  - GHSA-8mvw-22r7-w6fq
+summary: |
+  Incorrect temporary file usage
+  The ruby_parser Gem does not create temporary files securely. In the `diff_pp` function contained in `lib/gauntlet_rubyparser.rb` function, it creates files as `/tmp/a.[pid]` and `/tmp/b.[pid]` which can be predicted and used for either a denial of service (file cannot be overwritten), or to change the contents of files that are writable.
+severities:
+  - id: 63263
+    reference_id: '191449'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 160988
+    reference_id: 512092
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:N
+  - id: 708164
+    reference_id: 1472391
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 63264
+    reference_id: '191450'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 62985
+    reference_id: '191081'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 62938
+    reference_id: '191028'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 30159
+    url: http://rhn.redhat.com/errata/RHSA-2013-0544.html
+    reference_id:
+  - id: 30160
+    url: http://rhn.redhat.com/errata/RHSA-2013-0548.html
+    reference_id:
+  - id: '191451'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-0162.json
+    reference_id:
+  - id: 1472388
+    url: https://github.com/seattlerb/ruby_parser/commit/506c7e13cff6f8715385fa8488b621028b4ad280
+    reference_id:
+  - id: 1472389
+    url: https://github.com/seattlerb/ruby_parser/commit/c35acd878d50a8e4ea35933e3fbdc493421d422c
+    reference_id:
+  - id: 118653
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701637
+    reference_id: 701637
+  - id: '191449'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=892806
+    reference_id: 892806
+  - id: 512093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:*:*:*:*:*:*:*:*
+  - id: 512094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:1.0.0:*:*:*:*:*:*:*
+  - id: 512095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.0:*:*:*:*:*:*:*
+  - id: 512096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.1:*:*:*:*:*:*:*
+  - id: 512097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.2:*:*:*:*:*:*:*
+  - id: 512098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.3:*:*:*:*:*:*:*
+  - id: 512099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.4:*:*:*:*:*:*:*
+  - id: 512100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.5:*:*:*:*:*:*:*
+  - id: 512101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.0.6:*:*:*:*:*:*:*
+  - id: 512102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.1.0:*:*:*:*:*:*:*
+  - id: 512103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.2.0:*:*:*:*:*:*:*
+  - id: 512104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.3.0:*:*:*:*:*:*:*
+  - id: 512105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:2.3.1:*:*:*:*:*:*:*
+  - id: 512116
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0:*:*:*:*:*:*:*
+  - id: 512107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a1:*:*:*:*:*:*:*
+  - id: 512106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a10:*:*:*:*:*:*:*
+  - id: 512108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a2:*:*:*:*:*:*:*
+  - id: 512109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a3:*:*:*:*:*:*:*
+  - id: 512110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a4:*:*:*:*:*:*:*
+  - id: 512111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a5:*:*:*:*:*:*:*
+  - id: 512112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a6:*:*:*:*:*:*:*
+  - id: 512113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a7:*:*:*:*:*:*:*
+  - id: 512114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a8:*:*:*:*:*:*:*
+  - id: 512115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.0.a9:*:*:*:*:*:*:*
+  - id: 512117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.1:*:*:*:*:*:*:*
+  - id: 512118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.2:*:*:*:*:*:*:*
+  - id: 512119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.3:*:*:*:*:*:*:*
+  - id: 512120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.0.4:*:*:*:*:*:*:*
+  - id: 512121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ryan_davis:ruby_parser:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ryan_davis:ruby_parser:3.1.0:*:*:*:*:*:*:*
+  - id: 1472390
+    url: https://access.redhat.com/security/cve/CVE-2013-0162
+    reference_id: CVE-2013-0162
+  - id: 512092
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-0162
+    reference_id: CVE-2013-0162
+  - id: 1472391
+    url: https://github.com/advisories/GHSA-8mvw-22r7-w6fq
+    reference_id: GHSA-8mvw-22r7-w6fq
+  - id: '191450'
+    url: https://access.redhat.com/errata/RHSA-2013:0544
+    reference_id: RHSA-2013:0544
+  - id: '191081'
+    url: https://access.redhat.com/errata/RHSA-2013:0548
+    reference_id: RHSA-2013:0548
+  - id: '191028'
+    url: https://access.redhat.com/errata/RHSA-2013:0582
+    reference_id: RHSA-2013:0582
+weaknesses: []

@@ -1,0 +1,29 @@
+vulnerability_id: VCID-mfv3-s2kq-aaaq
+aliases:
+  - CVE-2017-14609
+summary: The server daemons in Kannel 1.5.0 and earlier create a PID file after dropping privileges
+  to a non-root account, which might allow local users to kill arbitrary processes by leveraging
+  access to this non-root account for PID file modification before a root script executes a
+  "kill `cat /pathname`" command, as demonstrated by bearerbox.
+severities:
+  - id: 265176
+    reference_id: 683080
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 265174
+    reference_id: 683080
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 683079
+    url: https://redmine.kannel.org/issues/771
+    reference_id:
+  - id: 683081
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kannel:kannel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kannel:kannel:*:*:*:*:*:*:*:*
+  - id: 683080
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14609
+    reference_id: CVE-2017-14609
+weaknesses: []

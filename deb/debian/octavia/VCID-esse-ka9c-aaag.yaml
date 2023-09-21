@@ -1,0 +1,85 @@
+vulnerability_id: VCID-esse-ka9c-aaag
+aliases:
+  - CVE-2019-17134
+summary: Amphora Images in OpenStack Octavia >=0.10.0 <2.1.2, >=3.0.0 <3.2.0, >=4.0.0 <4.1.0
+  allows anyone with access to the management network to bypass client-certificate based authentication
+  and retrieve information or issue configuration commands via simple HTTP requests to the Agent
+  on port https/9443, because the cmd/agent.py gunicorn cert_reqs option is True but is supposed
+  to be ssl.CERT_REQUIRED.
+severities:
+  - id: 70375
+    reference_id: 200470
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:L
+  - id: 70371
+    reference_id: 200466
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 390640
+    reference_id: 785260
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:N
+  - id: 390638
+    reference_id: 785260
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+references:
+  - id: 785248
+    url: https://access.redhat.com/errata/RHSA-2019:3743
+    reference_id:
+  - id: 785249
+    url: https://access.redhat.com/errata/RHSA-2019:3788
+    reference_id:
+  - id: 785250
+    url: https://access.redhat.com/errata/RHSA-2020:0721
+    reference_id:
+  - id: 200470
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17134.json
+    reference_id:
+  - id: 785251
+    url: https://review.opendev.org/686541
+    reference_id:
+  - id: 785252
+    url: https://review.opendev.org/686543
+    reference_id:
+  - id: 785253
+    url: https://review.opendev.org/686544
+    reference_id:
+  - id: 785254
+    url: https://review.opendev.org/686545
+    reference_id:
+  - id: 785255
+    url: https://review.opendev.org/686546
+    reference_id:
+  - id: 785256
+    url: https://review.opendev.org/686547
+    reference_id:
+  - id: 785257
+    url: https://security.openstack.org/ossa/OSSA-2019-005.html
+    reference_id:
+  - id: 785258
+    url: https://storyboard.openstack.org/#!/story/2006660
+    reference_id:
+  - id: 785259
+    url: https://usn.ubuntu.com/4153-1/
+    reference_id:
+  - id: 200466
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1761307
+    reference_id: 1761307
+  - id: 81976
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=941897
+    reference_id: 941897
+  - id: 785261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:opendev:octavia:*:*:*:*:*:openstack:*:*
+    reference_id: cpe:2.3:a:opendev:octavia:*:*:*:*:*:openstack:*:*
+  - id: 637679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*
+  - id: 785260
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17134
+    reference_id: CVE-2019-17134
+weaknesses: []

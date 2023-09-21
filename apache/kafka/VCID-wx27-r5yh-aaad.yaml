@@ -1,0 +1,37 @@
+affected_purls:
+- pkg:apache/kafka@2.0.0
+- pkg:apache/kafka@2.0.1
+- pkg:apache/kafka@2.1.0
+- pkg:apache/kafka@2.1.1
+- pkg:apache/kafka@2.2.0
+- pkg:apache/kafka@2.2.1
+- pkg:apache/kafka@2.3.0
+aliases:
+- CVE-2019-12399
+fixed_purl:
+- pkg:apache/kafka@2.0.1-rc0
+- pkg:apache/kafka@2.1.0-rc0
+- pkg:apache/kafka@2.1.1-rc0
+- pkg:apache/kafka@2.2.0-rc0
+- pkg:apache/kafka@2.2.1-rc0
+- pkg:apache/kafka@2.2.2-rc1
+- pkg:apache/kafka@2.3.1-rc0
+references:
+- id: 179407
+  reference_id: CVE-2019-12399
+  url: https://kafka.apache.org/cve-list#CVE-2019-12399
+- id: 179408
+  reference_id: CVE-2019-12399
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-12399
+severities: []
+summary: When Connect workers in Apache Kafka 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.2.0, 2.2.1,
+  or 2.3.0 are configured with one or more config providers, and a connector is created/updated
+  on that Connect cluster to use an externalized secret variable in a substring of
+  a connector configuration property value (the externalized secret variable is not
+  the whole configuration property value), then any client can issue a request to
+  the same Connect cluster to obtain the connector's task configurations and the response
+  will contain the plaintext secret rather than the externalized secrets variable.
+  Users should upgrade to 2.2.2 or higher, or 2.3.1 or higher where this vulnerability
+  has been fixed.
+vulnerability_id: VCID-wx27-r5yh-aaad
+weaknesses: []

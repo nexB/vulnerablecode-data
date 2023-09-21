@@ -1,0 +1,148 @@
+vulnerability_id: VCID-wkwx-8hjy-aaar
+aliases:
+  - CVE-2017-12154
+summary: The prepare_vmcs02 function in arch/x86/kvm/vmx.c in the Linux kernel through 4.13.3
+  does not ensure that the "CR8-load exiting" and "CR8-store exiting" L0 vmcs02 controls exist
+  in cases where L1 omits the "use TPR shadow" vmcs12 control, which allows KVM L2 guest OS
+  users to obtain read and write access to the hardware CR8 register.
+severities:
+  - id: 674188
+    reference_id: 1439181
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620961
+    reference_id: 939295
+    scoring_system: cvssv3
+    value: '5.8'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 674189
+    reference_id: 1439182
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673555
+    reference_id: 1438693
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673556
+    reference_id: 1438694
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673106
+    reference_id: 1438297
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674190
+    reference_id: 1439183
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674191
+    reference_id: 1439184
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674192
+    reference_id: 675849
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 620960
+    reference_id: 939294
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 257409
+    reference_id: 675850
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:N
+  - id: 257407
+    reference_id: 675850
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N
+  - id: 614297
+    reference_id: 934511
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 675842
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=51aa68e7d57e3217192d88ce90fd5b8ef29ec94f
+    reference_id:
+  - id: 1439181
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-12154.html
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 939295
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-12154.json
+    reference_id:
+  - id: 1439182
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12154
+    reference_id:
+  - id: 675846
+    url: https://github.com/torvalds/linux/commit/51aa68e7d57e3217192d88ce90fd5b8ef29ec94f
+    reference_id:
+  - id: 1438693
+    url: https://ubuntu.com/security/notices/USN-3469-1
+    reference_id:
+  - id: 1438694
+    url: https://ubuntu.com/security/notices/USN-3469-2
+    reference_id:
+  - id: 1438297
+    url: https://ubuntu.com/security/notices/USN-3487-1
+    reference_id:
+  - id: 1439183
+    url: https://ubuntu.com/security/notices/USN-3698-1
+    reference_id:
+  - id: 1439184
+    url: https://ubuntu.com/security/notices/USN-3698-2
+    reference_id:
+  - id: 675847
+    url: https://usn.ubuntu.com/3698-1/
+    reference_id:
+  - id: 675848
+    url: https://usn.ubuntu.com/3698-2/
+    reference_id:
+  - id: 675849
+    url: https://www.spinics.net/lists/kvm/msg155414.html
+    reference_id:
+  - id: 668142
+    url: http://www.debian.org/security/2017/dsa-3981
+    reference_id:
+  - id: 675843
+    url: http://www.securityfocus.com/bid/100856
+    reference_id:
+  - id: 939294
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1491224
+    reference_id: 1491224
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 675850
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-12154
+    reference_id: CVE-2017-12154
+  - id: 934511
+    url: https://access.redhat.com/errata/RHSA-2019:1946
+    reference_id: RHSA-2019:1946
+weaknesses: []

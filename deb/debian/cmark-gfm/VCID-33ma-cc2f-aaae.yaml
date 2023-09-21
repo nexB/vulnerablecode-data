@@ -1,0 +1,16 @@
+vulnerability_id: VCID-33ma-cc2f-aaae
+aliases:
+  - CVE-2022-39209
+summary: cmark-gfm is GitHub's fork of cmark, a CommonMark parsing and rendering library and
+  program in C. In versions prior to 0.29.0.gfm.6 a polynomial time complexity issue in cmark-gfm's
+  autolink extension may lead to unbounded resource exhaustion and subsequent denial of service.
+  Users may verify the patch by running `python3 -c 'print("![l"* 100000 + "\n")' | ./cmark-gfm
+  -e autolink`, which will resource exhaust on unpatched cmark-gfm but render correctly on patched
+  cmark-gfm. This vulnerability has been patched in 0.29.0.gfm.6. Users are advised to upgrade.
+  Users unable to upgrade should disable the use of the autolink extension.
+severities: []
+references:
+  - id: 1418228
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1020588
+    reference_id: 1020588
+weaknesses: []

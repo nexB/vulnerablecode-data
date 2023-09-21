@@ -1,0 +1,75 @@
+vulnerability_id: VCID-man8-5z52-aaan
+aliases:
+  - CVE-2018-6552
+summary: Apport does not properly handle crashes originating from a PID namespace allowing local
+  users to create certain files as root which an attacker could leverage to perform a denial
+  of service via resource exhaustion, possibly gain root privileges, or escape from containers.
+  The is_same_ns() function returns True when /proc/<global pid>/ does not exist in order to
+  indicate that the crash should be handled in the global namespace rather than inside of a
+  container. However, the portion of the data/apport code that decides whether or not to forward
+  a crash to a container does not always replace sys.argv[1] with the value stored in the host_pid
+  variable when /proc/<global pid>/ does not exist which results in the container pid being
+  used in the global namespace. This flaw affects versions 2.20.8-0ubuntu4 through 2.20.9-0ubuntu7,
+  2.20.7-0ubuntu3.7, 2.20.7-0ubuntu3.8, 2.20.1-0ubuntu2.15 through 2.20.1-0ubuntu2.17, and 2.14.1-0ubuntu3.28.
+severities:
+  - id: 688389
+    reference_id: 1450335
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 688390
+    reference_id: 1450336
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 688391
+    reference_id: 1450337
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 688392
+    reference_id: 1450338
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 675323
+    reference_id: 1440103
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 353802
+    reference_id: 756389
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 353800
+    reference_id: 756389
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1450335
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-6552.html
+    reference_id:
+  - id: 1450336
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6552
+    reference_id:
+  - id: 1450337
+    url: https://ubuntu.com/security/notices/USN-3664-1
+    reference_id:
+  - id: 1450338
+    url: https://ubuntu.com/security/notices/USN-3664-2
+    reference_id:
+  - id: 756387
+    url: https://usn.ubuntu.com/3664-2/
+    reference_id:
+  - id: 756388
+    url: https://usn.ubuntu.com/usn/usn-3664-1
+    reference_id:
+  - id: 1440103
+    url: http://www.sbosnet.nl/
+    reference_id:
+  - id: 756389
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-6552
+    reference_id: CVE-2018-6552
+weaknesses: []

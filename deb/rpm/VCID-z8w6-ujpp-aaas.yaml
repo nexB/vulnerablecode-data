@@ -1,0 +1,22 @@
+affected_purls:
+- pkg:deb/debian/rpm@4.14.2.1%2Bdfsg1-1
+- pkg:deb/debian/rpm@4.16.1.2%2Bdfsg1-3
+aliases:
+- CVE-2021-3521
+fixed_purl:
+- pkg:deb/debian/rpm@4.18.0%2Bdfsg-1
+references:
+- id: 129904
+  reference_id: '1014723'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014723
+severities: []
+summary: There is a flaw in RPM's signature functionality. OpenPGP subkeys are associated
+  with a primary key via a "binding signature." RPM does not check the binding signature
+  of subkeys prior to importing them. If an attacker is able to add or socially engineer
+  another party to add a malicious subkey to a legitimate public key, RPM could wrongly
+  trust a malicious signature. The greatest impact of this flaw is to data integrity.
+  To exploit this flaw, an attacker must either compromise an RPM repository or convince
+  an administrator to install an untrusted RPM or public key. It is strongly recommended
+  to only use RPMs and public keys from trusted sources.
+vulnerability_id: VCID-z8w6-ujpp-aaas
+weaknesses: []

@@ -1,0 +1,45 @@
+vulnerability_id: VCID-h57f-a7r6-aaab
+aliases:
+  - CVE-2018-17233
+summary: A SIGFPE signal is raised in the function H5D__create_chunk_file_map_hyper() of H5Dchunk.c
+  in the HDF HDF5 through 1.10.3 library during an attempted parse of a crafted HDF file, because
+  of incorrect protection against division by zero. It could allow a remote denial of service
+  attack.
+severities:
+  - id: 609007
+    reference_id: 930626
+    scoring_system: cvssv3
+    value: '4.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 609006
+    reference_id: 930625
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 332128
+    reference_id: 740912
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 332126
+    reference_id: 740912
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 930626
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-17233.json
+    reference_id:
+  - id: 740911
+    url: https://github.com/SegfaultMasters/covering360/tree/master/HDF5/vuln2#divided-by-zero---h5d__create_chunk_file_map_hyper_div_zero
+    reference_id:
+  - id: 930625
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1633853
+    reference_id: 1633853
+  - id: 740913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hdfgroup:hdf5:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hdfgroup:hdf5:*:*:*:*:*:*:*:*
+  - id: 740912
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-17233
+    reference_id: CVE-2018-17233
+weaknesses: []

@@ -1,0 +1,105 @@
+vulnerability_id: VCID-vgyc-ghr1-aaab
+aliases:
+  - CVE-2020-6096
+summary: An exploitable signed comparison vulnerability exists in the ARMv7 memcpy() implementation
+  of GNU glibc 2.30.9000. Calling memcpy() (on ARMv7 targets that utilize the GNU glibc implementation)
+  with a negative value for the 'num' parameter results in a signed comparison vulnerability.
+  If an attacker underflows the 'num' parameter to memcpy(), this vulnerability could lead to
+  undefined behavior such as writing to out-of-bounds memory and potentially remote code execution.
+  Furthermore, this memcpy() implementation allows for program execution to continue in scenarios
+  where a segmentation fault or crash should have occurred. The dangers occur in that subsequent
+  execution and iterations of this code will be executed with this corrupted data.
+severities:
+  - id: 699063
+    reference_id: 1458803
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 54019
+    reference_id: 179188
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 699064
+    reference_id: 1458804
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 699065
+    reference_id: 1458805
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 648328
+    reference_id: 1418830
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 54018
+    reference_id: 179187
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 484402
+    reference_id: 849476
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 484400
+    reference_id: 849476
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1458803
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-6096.html
+    reference_id:
+  - id: 179188
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-6096.json
+    reference_id:
+  - id: 1458804
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-6096
+    reference_id:
+  - id: 2688
+    url: https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E
+    reference_id:
+  - id: 849472
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPYXTDOOB4PQGTYAMZAZNJIB3FF6YQXI/
+    reference_id:
+  - id: 849473
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/URXOIA2LDUKHQXK4BE55BQBRI6ZZG3Y6/
+    reference_id:
+  - id: 627851
+    url: https://security.gentoo.org/glsa/202101-20
+    reference_id:
+  - id: 849474
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=25620
+    reference_id:
+  - id: 1458805
+    url: https://talosintelligence.com/vulnerability_reports/TALOS-2020-1019
+    reference_id:
+  - id: 1418830
+    url: https://ubuntu.com/security/notices/USN-4954-1
+    reference_id:
+  - id: 849475
+    url: https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1019
+    reference_id:
+  - id: 179187
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1820331
+    reference_id: 1820331
+  - id: 41377
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=961452
+    reference_id: 961452
+  - id: 44112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 849476
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-6096
+    reference_id: CVE-2020-6096
+weaknesses: []

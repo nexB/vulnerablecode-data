@@ -1,0 +1,185 @@
+vulnerability_id: VCID-az1b-d1vn-aaah
+aliases:
+  - CVE-2005-4077
+summary: Multiple off-by-one errors in the cURL library (libcurl) 7.11.2 through 7.15.0 allow
+  local users to trigger a buffer overflow and cause a denial of service or bypass PHP security
+  restrictions via certain URLs that (1) are malformed in a way that prevents a terminating
+  null byte from being added to either a hostname or path buffer, or (2) contain a "?"  separator
+  in the hostname portion, which causes a "/" to be prepended to the resulting string.
+severities:
+  - id: 78384
+    reference_id: 209985
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 34289
+    reference_id: 140912
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 78385
+    reference_id: 209986
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 140889
+    url: ftp://ftp.sco.com/pub/updates/UnixWare/SCOSA-2006.16/SCOSA-2006.16.txt
+    reference_id:
+  - id: 140890
+    url: http://curl.haxx.se/docs/adv_20051207.html
+    reference_id:
+  - id: 135156
+    url: http://docs.info.apple.com/article.html?artnum=307562
+    reference_id:
+  - id: 127165
+    url: http://lists.apple.com/archives/security-announce/2006/May/msg00003.html
+    reference_id:
+  - id: 135160
+    url: http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+    reference_id:
+  - id: 140891
+    url: http://qa.openoffice.org/issues/show_bug.cgi?id=59032
+    reference_id:
+  - id: 209987
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2005-4077.json
+    reference_id:
+  - id: 1464327
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4077
+    reference_id:
+  - id: 140892
+    url: http://secunia.com/advisories/17907
+    reference_id:
+  - id: 140893
+    url: http://secunia.com/advisories/17960
+    reference_id:
+  - id: 140894
+    url: http://secunia.com/advisories/17961
+    reference_id:
+  - id: 133820
+    url: http://secunia.com/advisories/17965
+    reference_id:
+  - id: 140895
+    url: http://secunia.com/advisories/17977
+    reference_id:
+  - id: 140896
+    url: http://secunia.com/advisories/18105
+    reference_id:
+  - id: 140897
+    url: http://secunia.com/advisories/18188
+    reference_id:
+  - id: 133918
+    url: http://secunia.com/advisories/18336
+    reference_id:
+  - id: 140898
+    url: http://secunia.com/advisories/19261
+    reference_id:
+  - id: 140899
+    url: http://secunia.com/advisories/19433
+    reference_id:
+  - id: 140900
+    url: http://secunia.com/advisories/19457
+    reference_id:
+  - id: 127172
+    url: http://secunia.com/advisories/20077
+    reference_id:
+  - id: 140910
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10855
+    reference_id:
+  - id: 140911
+    url: https://usn.ubuntu.com/228-1/
+    reference_id:
+  - id: 133825
+    url: http://www.debian.org/security/2005/dsa-919
+    reference_id:
+  - id: 140901
+    url: http://www.gentoo.org/security/en/glsa/glsa-200512-09.xml
+    reference_id:
+  - id: 140902
+    url: http://www.gentoo.org/security/en/glsa/glsa-200603-25.xml
+    reference_id:
+  - id: 140903
+    url: http://www.hardened-php.net/advisory_242005.109.html
+    reference_id:
+  - id: 140904
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2005:224
+    reference_id:
+  - id: 133831
+    url: http://www.redhat.com/archives/fedora-announce-list/2005-December/msg00020.html
+    reference_id:
+  - id: 140905
+    url: http://www.redhat.com/support/errata/RHSA-2005-875.html
+    reference_id:
+  - id: 140906
+    url: http://www.securityfocus.com/archive/1/418849/100/0/threaded
+    reference_id:
+  - id: 140907
+    url: http://www.securityfocus.com/bid/15756
+    reference_id:
+  - id: 127183
+    url: http://www.securityfocus.com/bid/17951
+    reference_id:
+  - id: 133981
+    url: http://www.trustix.org/errata/2005/0072/
+    reference_id:
+  - id: 127186
+    url: http://www.us-cert.gov/cas/techalerts/TA06-132A.html
+    reference_id:
+  - id: 140908
+    url: http://www.vupen.com/english/advisories/2005/2791
+    reference_id:
+  - id: 140909
+    url: http://www.vupen.com/english/advisories/2006/0960
+    reference_id:
+  - id: 127187
+    url: http://www.vupen.com/english/advisories/2006/1779
+    reference_id:
+  - id: 135208
+    url: http://www.vupen.com/english/advisories/2008/0924/references
+    reference_id:
+  - id: 209985
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617850
+    reference_id: 1617850
+  - id: 40388
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=342339
+    reference_id: 342339
+  - id: 140913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.11.2:*:*:*:*:*:*:*
+  - id: 140917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.12:*:*:*:*:*:*:*
+  - id: 140914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.12.1:*:*:*:*:*:*:*
+  - id: 140915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.12.2:*:*:*:*:*:*:*
+  - id: 140916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.12.3:*:*:*:*:*:*:*
+  - id: 140920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.13:*:*:*:*:*:*:*
+  - id: 140918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.13.1:*:*:*:*:*:*:*
+  - id: 140919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.13.2:*:*:*:*:*:*:*
+  - id: 140922
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.14:*:*:*:*:*:*:*
+  - id: 140921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.14.1:*:*:*:*:*:*:*
+  - id: 140923
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:daniel_stenberg:curl:7.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:daniel_stenberg:curl:7.15:*:*:*:*:*:*:*
+  - id: 140912
+    url: https://nvd.nist.gov/vuln/detail/CVE-2005-4077
+    reference_id: CVE-2005-4077
+  - id: 209986
+    url: https://access.redhat.com/errata/RHSA-2005:875
+    reference_id: RHSA-2005:875
+weaknesses: []

@@ -1,0 +1,86 @@
+affected_purls:
+- pkg:deb/debian/jinja2@2.10-2
+- pkg:pypi/jinja2@2.0
+- pkg:pypi/jinja2@2.0rc1
+- pkg:pypi/jinja2@2.1
+- pkg:pypi/jinja2@2.10
+- pkg:pypi/jinja2@2.10.1
+- pkg:pypi/jinja2@2.10.2
+- pkg:pypi/jinja2@2.10.3
+- pkg:pypi/jinja2@2.1.1
+- pkg:pypi/jinja2@2.11.0
+- pkg:pypi/jinja2@2.11.1
+- pkg:pypi/jinja2@2.11.2
+- pkg:pypi/jinja2@2.2
+- pkg:pypi/jinja2@2.2.1
+- pkg:pypi/jinja2@2.3
+- pkg:pypi/jinja2@2.3.1
+- pkg:pypi/jinja2@2.4
+- pkg:pypi/jinja2@2.4.1
+- pkg:pypi/jinja2@2.5
+- pkg:pypi/jinja2@2.5.1
+- pkg:pypi/jinja2@2.5.2
+- pkg:pypi/jinja2@2.5.3
+- pkg:pypi/jinja2@2.5.4
+- pkg:pypi/jinja2@2.5.5
+- pkg:pypi/jinja2@2.6
+- pkg:pypi/jinja2@2.7
+- pkg:pypi/jinja2@2.7.1
+- pkg:pypi/jinja2@2.7.2
+- pkg:pypi/jinja2@2.7.3
+- pkg:pypi/jinja2@2.8
+- pkg:pypi/jinja2@2.8.1
+- pkg:pypi/jinja2@2.9
+- pkg:pypi/jinja2@2.9.1
+- pkg:pypi/jinja2@2.9.2
+- pkg:pypi/jinja2@2.9.3
+- pkg:pypi/jinja2@2.9.4
+- pkg:pypi/jinja2@2.9.5
+- pkg:pypi/jinja2@2.9.6
+aliases:
+- CVE-2020-28493
+- GHSA-g3rq-g295-4j3m
+fixed_purl:
+- pkg:deb/debian/jinja2@2.11.3-1
+- pkg:pypi/jinja2@2.11.3
+references:
+- id: 154106
+  reference_id: ''
+  url: https://github.com/pallets/jinja/blob/ab81fd9c277900c85da0c322a2ff9d68a235b2e6/src/jinja2/utils.py%23L20
+- id: 154110
+  reference_id: ''
+  url: https://github.com/pallets/jinja/commit/15ef8f09b659f9100610583938005a7a10472d4d
+- id: 154105
+  reference_id: ''
+  url: https://github.com/pallets/jinja/pull/1343
+- id: 154108
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVAKCOO7VBVUBM3Q6CBBTPBFNP5NDXF4/
+- id: 154109
+  reference_id: ''
+  url: https://security.gentoo.org/glsa/202107-19
+- id: 154107
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994
+- id: 129383
+  reference_id: '982736'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982736
+- id: 154104
+  reference_id: CVE-2020-28493
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-28493
+- id: 154111
+  reference_id: GHSA-g3rq-g295-4j3m
+  url: https://github.com/advisories/GHSA-g3rq-g295-4j3m
+severities:
+- id: 22044
+  reference_id: 154111
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: This affects the package jinja2 from 0.0.0 and before 2.11.3. The ReDoS vulnerability
+  is mainly due to the `_punctuation_re regex` operator and its use of multiple wildcards.
+  The last wildcard is the most exploitable as it searches for trailing punctuation.
+  This issue can be mitigated by Markdown to format user content instead of the urlize
+  filter, or by implementing request timeouts and limiting process memory.
+vulnerability_id: VCID-urqy-k22a-aaac
+weaknesses: []

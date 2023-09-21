@@ -1,0 +1,86 @@
+vulnerability_id: VCID-wc1q-ztqr-aaam
+aliases:
+  - CVE-2019-19269
+summary: An issue was discovered in tls_verify_crl in ProFTPD through 1.3.6b. A dereference
+  of a NULL pointer may occur. This pointer is returned by the OpenSSL sk_X509_REVOKED_value()
+  function when encountering an empty CRL installed by a system administrator. The dereference
+  occurs when validating the certificate of a client connecting to the server in a TLS client/server
+  mutual-authentication setup.
+severities:
+  - id: 697874
+    reference_id: 495
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 395830
+    reference_id: 789690
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 395828
+    reference_id: 789690
+    scoring_system: cvssv3
+    value: '4.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 709031
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00009.html
+    reference_id:
+  - id: 789686
+    url: https://github.com/proftpd/proftpd/issues/861
+    reference_id:
+  - id: 789687
+    url: https://lists.debian.org/debian-lts-announce/2019/11/msg00039.html
+    reference_id:
+  - id: 789688
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OGBBCPLJSDPFG5EI5P5G7P4KEX7YSD5G/
+    reference_id:
+  - id: 789689
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QR65XUHPCRU3NXTSFVF2J4GWRIHC7AHW/
+    reference_id:
+  - id: 787301
+    url: https://security.gentoo.org/glsa/202003-35
+    reference_id:
+  - id: 495
+    url: https://www.oracle.com/security-alerts/cpuapr2020.html
+    reference_id:
+  - id: 104407
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=946345
+    reference_id: 946345
+  - id: 509608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:*:*:*:*:*:*:*:*
+  - id: 787304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:-:*:*:*:*:*:*
+  - id: 789691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:alpha:*:*:*:*:*:*
+  - id: 789692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:beta:*:*:*:*:*:*
+  - id: 641145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc1:*:*:*:*:*:*
+  - id: 709038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc2:*:*:*:*:*:*
+  - id: 709039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc3:*:*:*:*:*:*
+  - id: 709040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc4:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 789690
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19269
+    reference_id: CVE-2019-19269
+weaknesses: []

@@ -1,0 +1,132 @@
+vulnerability_id: VCID-32gs-8qjc-aaap
+aliases:
+  - CVE-2019-3901
+summary: A race condition in perf_event_open() allows local attackers to leak sensitive data
+  from setuid programs. As no relevant locks (in particular the cred_guard_mutex) are held during
+  the ptrace_may_access() call, it is possible for the specified target task to perform an execve()
+  syscall with setuid execution before perf_event_alloc() actually attaches to it, allowing
+  an attacker to bypass the ptrace_may_access() check and the perf_event_exit_task(current)
+  call that is performed in install_exec_creds() during privileged execve() calls. This issue
+  affects kernel versions before 4.8.
+severities:
+  - id: 693840
+    reference_id: 1454434
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 50034
+    reference_id: 174507
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:N/A:N
+  - id: 693841
+    reference_id: 1454435
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 50031
+    reference_id: 174504
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 406504
+    reference_id: 796377
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 406502
+    reference_id: 796377
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 50033
+    reference_id: 174506
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50032
+    reference_id: 174505
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 49212
+    reference_id: 173509
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 48948
+    reference_id: 173258
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1454434
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-3901.html
+    reference_id:
+  - id: 174507
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-3901.json
+    reference_id:
+  - id: 796376
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3901
+    reference_id:
+  - id: 1454435
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3901
+    reference_id:
+  - id: 755060
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00041.html
+    reference_id:
+  - id: 755061
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00042.html
+    reference_id:
+  - id: 770627
+    url: https://security.netapp.com/advisory/ntap-20190517-0005/
+    reference_id:
+  - id: 796375
+    url: http://www.securityfocus.com/bid/89937
+    reference_id:
+  - id: 174504
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1701245
+    reference_id: 1701245
+  - id: 793538
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager_for_vmware_vsphere:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager_for_vmware_vsphere:*:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 749890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:snapprotect:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:snapprotect:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 793539
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:storage_replication_adapter_for_clustered_data_ontap_for_vmware_vsphere:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:storage_replication_adapter_for_clustered_data_ontap_for_vmware_vsphere:*:*:*:*:*:*:*:*
+  - id: 766843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:vasa_provider_for_clustered_data_ontap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:vasa_provider_for_clustered_data_ontap:*:*:*:*:*:*:*:*
+  - id: 650034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:virtual_storage_console_for_vmware_vsphere:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:virtual_storage_console_for_vmware_vsphere:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 796377
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-3901
+    reference_id: CVE-2019-3901
+  - id: 174506
+    url: https://access.redhat.com/errata/RHSA-2020:1016
+    reference_id: RHSA-2020:1016
+  - id: 174505
+    url: https://access.redhat.com/errata/RHSA-2020:1070
+    reference_id: RHSA-2020:1070
+  - id: 173509
+    url: https://access.redhat.com/errata/RHSA-2020:2522
+    reference_id: RHSA-2020:2522
+  - id: 173258
+    url: https://access.redhat.com/errata/RHSA-2020:2851
+    reference_id: RHSA-2020:2851
+weaknesses: []

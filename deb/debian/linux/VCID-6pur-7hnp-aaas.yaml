@@ -1,0 +1,150 @@
+vulnerability_id: VCID-6pur-7hnp-aaas
+aliases:
+  - CVE-2017-2618
+summary: A flaw was found in the Linux kernel's handling of clearing SELinux attributes on /proc/pid/attr
+  files before 4.9.10. An empty (null) write to this file can crash the system by causing the
+  system to attempt to access unmapped kernel memory.
+severities:
+  - id: 677871
+    reference_id: 1441823
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 624239
+    reference_id: 941569
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 677872
+    reference_id: 1441824
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660540
+    reference_id: 1428089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671605
+    reference_id: 1437096
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 671606
+    reference_id: 1437097
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624238
+    reference_id: 941568
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 281067
+    reference_id: 696292
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 281065
+    reference_id: 696292
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 624025
+    reference_id: 941412
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 624027
+    reference_id: 941414
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 624026
+    reference_id: 941413
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1441823
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2618.html
+    reference_id:
+  - id: 941569
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2618.json
+    reference_id:
+  - id: 696288
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2618
+    reference_id:
+  - id: 1441824
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2618
+    reference_id:
+  - id: 696289
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=0c461cb727d146c9ef2d3e86214f498b78b7d125
+    reference_id:
+  - id: 696290
+    url: https://marc.info/?l=selinux&m=148588165923772&w=2
+    reference_id:
+  - id: 1428089
+    url: https://ubuntu.com/security/notices/USN-3361-1
+    reference_id:
+  - id: 1437096
+    url: https://ubuntu.com/security/notices/USN-3381-1
+    reference_id:
+  - id: 1437097
+    url: https://ubuntu.com/security/notices/USN-3381-2
+    reference_id:
+  - id: 696291
+    url: https://www.debian.org/security/2017/dsa-3791
+    reference_id:
+  - id: 696287
+    url: http://www.securityfocus.com/bid/96272
+    reference_id:
+  - id: 941568
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1419916
+    reference_id: 1419916
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 696292
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2618
+    reference_id: CVE-2017-2618
+  - id: 941412
+    url: https://access.redhat.com/errata/RHSA-2017:0931
+    reference_id: RHSA-2017:0931
+  - id: 941414
+    url: https://access.redhat.com/errata/RHSA-2017:0932
+    reference_id: RHSA-2017:0932
+  - id: 941413
+    url: https://access.redhat.com/errata/RHSA-2017:0933
+    reference_id: RHSA-2017:0933
+weaknesses: []

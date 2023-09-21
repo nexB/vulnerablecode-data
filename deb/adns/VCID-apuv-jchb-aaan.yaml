@@ -1,0 +1,17 @@
+affected_purls:
+- pkg:deb/debian/adns@1.5.0~rc1-1.1
+aliases:
+- CVE-2017-9109
+fixed_purl:
+- pkg:deb/debian/adns@1.6.0-2
+references: []
+severities: []
+summary: An issue was discovered in adns before 1.5.2. It fails to ignore apparent
+  answers before the first RR that was found the first time. when this is fixed, the
+  second answer scan finds the same RRs at the first. Otherwise, adns can be confused
+  by interleaving answers for the CNAME target, with the CNAME itself. In that case
+  the answer data structure (on the heap) can be overrun. With this fixed, it prefers
+  to look only at the answer RRs which come after the CNAME, which is at least arguably
+  correct.
+vulnerability_id: VCID-apuv-jchb-aaan
+weaknesses: []

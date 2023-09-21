@@ -1,0 +1,469 @@
+vulnerability_id: VCID-nygw-dxcv-aaah
+aliases:
+  - CVE-2011-1766
+summary: includes/User.php in MediaWiki before 1.16.5, when wgBlockDisablesLogin is enabled,
+  does not clear certain cached data after verification of an auth token fails, which allows
+  remote attackers to bypass authentication by creating crafted wikiUserID and wikiUserName
+  cookies, or by leveraging an unattended workstation.
+severities:
+  - id: 648858
+    reference_id: 1419324
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 648859
+    reference_id: 1419325
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 142999
+    reference_id: 456118
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+references:
+  - id: 456104
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060435.html
+    reference_id:
+  - id: 456105
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060496.html
+    reference_id:
+  - id: 456106
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060507.html
+    reference_id:
+  - id: 456107
+    url: http://lists.wikimedia.org/pipermail/mediawiki-announce/2011-May/000098.html
+    reference_id:
+  - id: 1419324
+    url: http://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-1766.html
+    reference_id:
+  - id: 456110
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=702512
+    reference_id:
+  - id: 456117
+    url: https://bugzilla.wikimedia.org/show_bug.cgi?id=28639
+    reference_id:
+  - id: 1419325
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1766
+    reference_id:
+  - id: 456108
+    url: http://secunia.com/advisories/44684
+    reference_id:
+  - id: 456109
+    url: http://www.securityfocus.com/bid/47722
+    reference_id:
+  - id: 143908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*
+  - id: 106708
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.1.0:*:*:*:*:*:*:*
+  - id: 307689
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.0:*:*:*:*:*:*:*
+  - id: 368201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.0:rc1:*:*:*:*:*:*
+  - id: 368202
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.0:rc2:*:*:*:*:*:*
+  - id: 307690
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.1:*:*:*:*:*:*:*
+  - id: 326237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.2:*:*:*:*:*:*:*
+  - id: 368203
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.3:*:*:*:*:*:*:*
+  - id: 368204
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.10.4:*:*:*:*:*:*:*
+  - id: 326239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.11:*:*:*:*:*:*:*
+  - id: 416092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.11.0:*:*:*:*:*:*:*
+  - id: 416093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.11.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.11.0:rc1:*:*:*:*:*:*
+  - id: 332791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.11.1:*:*:*:*:*:*:*
+  - id: 368205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.11.2:*:*:*:*:*:*:*
+  - id: 358400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.0:*:*:*:*:*:*:*
+  - id: 368207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.0:rc1:*:*:*:*:*:*
+  - id: 365001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.1:*:*:*:*:*:*:*
+  - id: 368208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.2:*:*:*:*:*:*:*
+  - id: 368209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.3:*:*:*:*:*:*:*
+  - id: 416094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.12.4:*:*:*:*:*:*:*
+  - id: 364998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.0:*:*:*:*:*:*:*
+  - id: 368210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.0:rc1:*:*:*:*:*:*
+  - id: 368211
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.0:rc2:*:*:*:*:*:*
+  - id: 358401
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.1:*:*:*:*:*:*:*
+  - id: 364999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.2:*:*:*:*:*:*:*
+  - id: 384377
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.3:*:*:*:*:*:*:*
+  - id: 416095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.13.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.13.4:*:*:*:*:*:*:*
+  - id: 405238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.14.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.14.0:*:*:*:*:*:*:*
+  - id: 416096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.14.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.14.0:rc1:*:*:*:*:*:*
+  - id: 416097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.14.1:*:*:*:*:*:*:*
+  - id: 416098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.0:*:*:*:*:*:*:*
+  - id: 416099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.0:rc1:*:*:*:*:*:*
+  - id: 416100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.1:*:*:*:*:*:*:*
+  - id: 419436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.2:*:*:*:*:*:*:*
+  - id: 419437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.3:*:*:*:*:*:*:*
+  - id: 454824
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.4:*:*:*:*:*:*:*
+  - id: 454825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.15.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.15.5:*:*:*:*:*:*:*
+  - id: 416101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.0:*:*:*:*:*:*:*
+  - id: 416102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.0:beta1:*:*:*:*:*:*
+  - id: 419438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.0:beta2:*:*:*:*:*:*
+  - id: 454826
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.1:*:*:*:*:*:*:*
+  - id: 456119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.2:*:*:*:*:*:*:*
+  - id: 456120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.16.3:*:*:*:*:*:*:*
+  - id: 106709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.0:*:*:*:*:*:*:*
+  - id: 106710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.1:*:*:*:*:*:*:*
+  - id: 106711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.2:*:*:*:*:*:*:*
+  - id: 106712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.3:*:*:*:*:*:*:*
+  - id: 106713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.4:*:*:*:*:*:*:*
+  - id: 106714
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.5:*:*:*:*:*:*:*
+  - id: 106715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.2.6:*:*:*:*:*:*:*
+  - id: 101025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3:*:*:*:*:*:*:*
+  - id: 101014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.0:*:*:*:*:*:*:*
+  - id: 101017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.1:*:*:*:*:*:*:*
+  - id: 101015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.10:*:*:*:*:*:*:*
+  - id: 101016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.11:*:*:*:*:*:*:*
+  - id: 133691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.12:*:*:*:*:*:*:*
+  - id: 133692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.13:*:*:*:*:*:*:*
+  - id: 133693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.14:*:*:*:*:*:*:*
+  - id: 133694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.15:*:*:*:*:*:*:*
+  - id: 101018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.2:*:*:*:*:*:*:*
+  - id: 101019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.3:*:*:*:*:*:*:*
+  - id: 101020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.4:*:*:*:*:*:*:*
+  - id: 101021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.5:*:*:*:*:*:*:*
+  - id: 101022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.6:*:*:*:*:*:*:*
+  - id: 101023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.7:*:*:*:*:*:*:*
+  - id: 101024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.8:*:*:*:*:*:*:*
+  - id: 114105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.3.9:*:*:*:*:*:*:*
+  - id: 365005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.0:*:*:*:*:*:*:*
+  - id: 126396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.1:*:*:*:*:*:*:*
+  - id: 133700
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.10:*:*:*:*:*:*:*
+  - id: 217762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.11:*:*:*:*:*:*:*
+  - id: 217763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.12:*:*:*:*:*:*:*
+  - id: 217764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.13:*:*:*:*:*:*:*
+  - id: 217765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.14:*:*:*:*:*:*:*
+  - id: 126397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.2:*:*:*:*:*:*:*
+  - id: 126398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.3:*:*:*:*:*:*:*
+  - id: 217766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.4:*:*:*:*:*:*:*
+  - id: 126399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.5:*:*:*:*:*:*:*
+  - id: 133685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.6:*:*:*:*:*:*:*
+  - id: 133686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.7:*:*:*:*:*:*:*
+  - id: 133687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.8:*:*:*:*:*:*:*
+  - id: 133695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4.9:*:*:*:*:*:*:*
+  - id: 416573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta1:*:*:*:*:*:*
+  - id: 416574
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta2:*:*:*:*:*:*
+  - id: 416575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta3:*:*:*:*:*:*
+  - id: 416576
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta4:*:*:*:*:*:*
+  - id: 416577
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta5:*:*:*:*:*:*
+  - id: 416578
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.4:beta6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.4:beta6:*:*:*:*:*:*
+  - id: 140551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.0:*:*:*:*:*:*:*
+  - id: 140552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.1:*:*:*:*:*:*:*
+  - id: 140553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.2:*:*:*:*:*:*:*
+  - id: 217767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.3:*:*:*:*:*:*:*
+  - id: 217768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.4:*:*:*:*:*:*:*
+  - id: 217769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.5:*:*:*:*:*:*:*
+  - id: 227285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.6:*:*:*:*:*:*:*
+  - id: 227286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.7:*:*:*:*:*:*:*
+  - id: 365006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5.8:*:*:*:*:*:*:*
+  - id: 365007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:alpha1:*:*:*:*:*:*
+  - id: 365008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:alpha2:*:*:*:*:*:*
+  - id: 365009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:beta1:*:*:*:*:*:*
+  - id: 365010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:beta2:*:*:*:*:*:*
+  - id: 416579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:beta3:*:*:*:*:*:*
+  - id: 365011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:beta4:*:*:*:*:*:*
+  - id: 365012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:rc2:*:*:*:*:*:*
+  - id: 365013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:rc3:*:*:*:*:*:*
+  - id: 365014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.5:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.5:rc4:*:*:*:*:*:*
+  - id: 238433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.0:*:*:*:*:*:*:*
+  - id: 238434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.1:*:*:*:*:*:*:*
+  - id: 365015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.10:*:*:*:*:*:*:*
+  - id: 365002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.11:*:*:*:*:*:*:*
+  - id: 416103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.12:*:*:*:*:*:*:*
+  - id: 238435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.2:*:*:*:*:*:*:*
+  - id: 238436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.3:*:*:*:*:*:*:*
+  - id: 238437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.4:*:*:*:*:*:*:*
+  - id: 235403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.5:*:*:*:*:*:*:*
+  - id: 238439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.6:*:*:*:*:*:*:*
+  - id: 365016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.7:*:*:*:*:*:*:*
+  - id: 365017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.8:*:*:*:*:*:*:*
+  - id: 365018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.6.9:*:*:*:*:*:*:*
+  - id: 272176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.7.0:*:*:*:*:*:*:*
+  - id: 272177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.7.1:*:*:*:*:*:*:*
+  - id: 307881
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.7.2:*:*:*:*:*:*:*
+  - id: 307882
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.7.3:*:*:*:*:*:*:*
+  - id: 272178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.0:*:*:*:*:*:*:*
+  - id: 272179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.1:*:*:*:*:*:*:*
+  - id: 272180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.2:*:*:*:*:*:*:*
+  - id: 307692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.3:*:*:*:*:*:*:*
+  - id: 307693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.4:*:*:*:*:*:*:*
+  - id: 368212
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.8.5:*:*:*:*:*:*:*
+  - id: 307694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.0:*:*:*:*:*:*:*
+  - id: 272181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.0:rc2:*:*:*:*:*:*
+  - id: 276446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.1:*:*:*:*:*:*:*
+  - id: 307695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.2:*:*:*:*:*:*:*
+  - id: 307696
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.3:*:*:*:*:*:*:*
+  - id: 326240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.4:*:*:*:*:*:*:*
+  - id: 368213
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.5:*:*:*:*:*:*:*
+  - id: 368214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mediawiki:mediawiki:1.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mediawiki:mediawiki:1.9.6:*:*:*:*:*:*:*
+  - id: 456118
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-1766
+    reference_id: CVE-2011-1766
+weaknesses: []

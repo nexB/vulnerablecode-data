@@ -1,0 +1,80 @@
+vulnerability_id: VCID-qda5-brq3-aaab
+aliases:
+  - CVE-2015-8953
+summary: fs/overlayfs/copy_up.c in the Linux kernel before 4.2.6 uses an incorrect cleanup code
+  path, which allows local users to cause a denial of service (dentry reference leak) via filesystem
+  operations on a large file in a lower overlayfs layer.
+severities:
+  - id: 665407
+    reference_id: 1432019
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 627528
+    reference_id: 943801
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H
+  - id: 665409
+    reference_id: 1432021
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665408
+    reference_id: 1432020
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 627527
+    reference_id: 943800
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 207013
+    reference_id: 620633
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 207011
+    reference_id: 620633
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 620627
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ab79efab0a0ba01a74df782eb7fa44b044dae8b5
+    reference_id:
+  - id: 1432019
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8953.html
+    reference_id:
+  - id: 943801
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-8953.json
+    reference_id:
+  - id: 1432021
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8953
+    reference_id:
+  - id: 1432020
+    url: http://seclists.org/oss-sec/2016/q3/371
+    reference_id:
+  - id: 620632
+    url: https://github.com/torvalds/linux/commit/ab79efab0a0ba01a74df782eb7fa44b044dae8b5
+    reference_id:
+  - id: 620628
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.2.6
+    reference_id:
+  - id: 620629
+    url: http://www.openwall.com/lists/oss-security/2016/08/23/9
+    reference_id:
+  - id: 620630
+    url: http://www.securityfocus.com/bid/92611
+    reference_id:
+  - id: 943800
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1367814
+    reference_id: 1367814
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 620633
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-8953
+    reference_id: CVE-2015-8953
+weaknesses: []

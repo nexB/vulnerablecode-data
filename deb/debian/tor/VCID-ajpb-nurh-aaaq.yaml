@@ -1,0 +1,67 @@
+vulnerability_id: VCID-ajpb-nurh-aaaq
+aliases:
+  - CVE-2017-11565
+summary: 'debian/tor.init in the Debian tor_0.2.9.11-1~deb9u1 package for Tor was designed to
+  execute aa-exec from the standard system pathname if the apparmor package is installed, but
+  implements this incorrectly (with a wrong assumption that the specific pathname would remain
+  the same forever), which allows attackers to bypass intended AppArmor restrictions by leveraging
+  the silent loss of this protection mechanism. NOTE: this does not affect systems, such as
+  default Debian stretch installations, on which Tor startup relies on a systemd unit file (instead
+  of this tor.init script).'
+severities:
+  - id: 673930
+    reference_id: 1438983
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673931
+    reference_id: 674111
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673932
+    reference_id: 1438984
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673933
+    reference_id: 1438985
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 255651
+    reference_id: 674112
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 255649
+    reference_id: 674112
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 1438983
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11565.html
+    reference_id:
+  - id: 674111
+    url: https://bugs.debian.org/869153
+    reference_id:
+  - id: 1438984
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11565
+    reference_id:
+  - id: 1438985
+    url: https://twitter.com/pissquark/status/888142796414226432
+    reference_id:
+  - id: 674110
+    url: http://www.securityfocus.com/bid/99933
+    reference_id:
+  - id: 145652
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=869153
+    reference_id: 869153
+  - id: 674113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:debian:tor:0.2.9.11-1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:debian:tor:0.2.9.11-1:*:*:*:*:*:*:*
+  - id: 674112
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11565
+    reference_id: CVE-2017-11565
+weaknesses: []

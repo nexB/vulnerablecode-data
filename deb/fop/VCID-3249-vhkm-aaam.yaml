@@ -1,0 +1,66 @@
+affected_purls:
+- pkg:maven/org.apache.xmlgraphics/fop@0.93
+- pkg:maven/org.apache.xmlgraphics/fop@0.94
+- pkg:maven/org.apache.xmlgraphics/fop@0.95
+- pkg:maven/org.apache.xmlgraphics/fop@0.95-1
+- pkg:maven/org.apache.xmlgraphics/fop@0.95beta
+- pkg:maven/org.apache.xmlgraphics/fop@0.95beta-1
+- pkg:maven/org.apache.xmlgraphics/fop@1.0
+- pkg:maven/org.apache.xmlgraphics/fop@1.1
+- pkg:maven/org.apache.xmlgraphics/fop@2.0
+- pkg:maven/org.apache.xmlgraphics/fop@2.1
+aliases:
+- CVE-2017-5661
+- GHSA-5hg8-r9vq-gjqp
+fixed_purl:
+- pkg:deb/debian/fop@1:2.1-6?distro=sid
+- pkg:deb/debian/fop@1:2.3-2?distro=sid
+- pkg:deb/debian/fop@1:2.5-3?distro=sid
+- pkg:deb/debian/fop@1:2.8-2?distro=sid
+- pkg:maven/org.apache.xmlgraphics/fop@2.2
+references:
+- id: 181362
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5661
+- id: 181363
+  reference_id: ''
+  url: https://vuldb.com/?id.99936
+- id: 142691
+  reference_id: ''
+  url: https://www.tenable.com/security/tns-2021-14
+- id: 142692
+  reference_id: ''
+  url: https://xmlgraphics.apache.org/security.html
+- id: 142693
+  reference_id: ''
+  url: http://www.debian.org/security/2017/dsa-3864
+- id: 142694
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/97947
+- id: 127291
+  reference_id: '860567'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860567
+- id: 181361
+  reference_id: CVE-2017-5661
+  url: https://access.redhat.com/security/cve/cve-2017-5661
+- id: 142690
+  reference_id: CVE-2017-5661
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-5661
+- id: 142695
+  reference_id: GHSA-5hg8-r9vq-gjqp
+  url: https://github.com/advisories/GHSA-5hg8-r9vq-gjqp
+severities:
+- id: 19876
+  reference_id: 142695
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: In Apache FOP before 2.2, files lying on the filesystem of the server which
+  uses FOP can be revealed to arbitrary users who send maliciously formed SVG files.
+  The file types that can be shown depend on the user context in which the exploitable
+  application is running. If the user is root a full compromise of the server - including
+  confidential or sensitive files - would be possible. XXE can also be used to attack
+  the availability of the server via denial of service as the references within a
+  xml document can trivially trigger an amplification attack.
+vulnerability_id: VCID-3249-vhkm-aaam
+weaknesses: []

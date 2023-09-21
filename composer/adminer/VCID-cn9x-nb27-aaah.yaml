@@ -1,0 +1,56 @@
+affected_purls:
+- pkg:composer/vrana/adminer@4.7.8
+- pkg:composer/vrana/adminer@4.7.9
+- pkg:composer/vrana/adminer@4.8.0
+aliases:
+- CVE-2021-29625
+- GHSA-2v82-5746-vwqc
+fixed_purl:
+- pkg:composer/vrana/adminer@4.8.1
+- pkg:deb/debian/adminer@4.7.1-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/adminer@4.7.9-2?distro=sid
+- pkg:deb/debian/adminer@4.8.1-1?distro=sid
+references:
+- id: 160436
+  reference_id: ''
+  url: https://github.com/vrana/adminer/commit/4043092ec2c0de2258d60a99d0c5958637d051a7
+- id: 145599
+  reference_id: ''
+  url: https://packagist.org/packages/vrana/adminer
+- id: 160437
+  reference_id: ''
+  url: https://sourceforge.net/p/adminer/bugs-and-features/797/
+- id: 129755
+  reference_id: '988886'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988886
+- id: 160435
+  reference_id: CVE-2021-29625
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-29625
+- id: 160438
+  reference_id: GHSA-2v82-5746-vwqc
+  url: https://github.com/advisories/GHSA-2v82-5746-vwqc
+- id: 160434
+  reference_id: GHSA-2v82-5746-vwqc
+  url: https://github.com/vrana/adminer/security/advisories/GHSA-2v82-5746-vwqc
+severities:
+- id: 23535
+  reference_id: 160438
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 23534
+  reference_id: 160434
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Adminer is open-source database management software. A cross-site scripting
+  vulnerability in Adminer versions 4.6.1 to 4.8.0 affects users of MySQL, MariaDB,
+  PgSQL and SQLite. XSS is in most cases prevented by strict CSP in all modern browsers.
+  The only exception is when Adminer is using a `pdo_` extension to communicate with
+  the database (it is used if the native extensions are not enabled). In browsers
+  without CSP, Adminer versions 4.6.1 to 4.8.0 are affected. The vulnerability is
+  patched in version 4.8.1. As workarounds, one can use a browser supporting strict
+  CSP or enable the native PHP extensions (e.g. `mysqli`) or disable displaying PHP
+  errors (`display_errors`).
+vulnerability_id: VCID-cn9x-nb27-aaah
+weaknesses: []

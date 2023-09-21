@@ -1,0 +1,207 @@
+vulnerability_id: VCID-ke4r-us2e-aaab
+aliases:
+  - CVE-2018-1092
+summary: The ext4_iget function in fs/ext4/inode.c in the Linux kernel through 4.15.15 mishandles
+  the case of a root directory with a zero i_links_count, which allows attackers to cause a
+  denial of service (ext4_process_freed_data NULL pointer dereference and OOPS) via a crafted
+  ext4 image.
+severities:
+  - id: 683017
+    reference_id: 1445918
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617636
+    reference_id: 936928
+    scoring_system: cvssv3
+    value: '4.6'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 683018
+    reference_id: 725344
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683019
+    reference_id: 1445919
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683020
+    reference_id: 1445920
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683021
+    reference_id: 1445921
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682766
+    reference_id: 1445719
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682767
+    reference_id: 1445720
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682532
+    reference_id: 1445550
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682533
+    reference_id: 1445551
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682534
+    reference_id: 1445552
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682535
+    reference_id: 1445553
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666474
+    reference_id: 1432900
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617635
+    reference_id: 936927
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 311769
+    reference_id: 725350
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 311767
+    reference_id: 725350
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 725343
+    url: http://openwall.com/lists/oss-security/2018/03/29/1
+    reference_id:
+  - id: 1445918
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1092.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 936928
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1092.json
+    reference_id:
+  - id: 725344
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=199179
+    reference_id:
+  - id: 725345
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=199275
+    reference_id:
+  - id: 1445919
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1092
+    reference_id:
+  - id: 725347
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/tytso/ext4.git/commit/?id=8e4b5eae5decd9dfe5a4ee369c22028f90ab4c44
+    reference_id:
+  - id: 666766
+    url: https://lists.debian.org/debian-lts-announce/2018/05/msg00000.html
+    reference_id:
+  - id: 1445920
+    url: https://ubuntu.com/security/notices/USN-3676-1
+    reference_id:
+  - id: 1445921
+    url: https://ubuntu.com/security/notices/USN-3676-2
+    reference_id:
+  - id: 1445719
+    url: https://ubuntu.com/security/notices/USN-3677-1
+    reference_id:
+  - id: 1445720
+    url: https://ubuntu.com/security/notices/USN-3677-2
+    reference_id:
+  - id: 1445550
+    url: https://ubuntu.com/security/notices/USN-3678-1
+    reference_id:
+  - id: 1445551
+    url: https://ubuntu.com/security/notices/USN-3678-2
+    reference_id:
+  - id: 1445552
+    url: https://ubuntu.com/security/notices/USN-3678-3
+    reference_id:
+  - id: 1445553
+    url: https://ubuntu.com/security/notices/USN-3678-4
+    reference_id:
+  - id: 1432900
+    url: https://ubuntu.com/security/notices/USN-3754-1
+    reference_id:
+  - id: 725348
+    url: https://usn.ubuntu.com/3676-1/
+    reference_id:
+  - id: 725349
+    url: https://usn.ubuntu.com/3676-2/
+    reference_id:
+  - id: 724474
+    url: https://usn.ubuntu.com/3677-1/
+    reference_id:
+  - id: 724475
+    url: https://usn.ubuntu.com/3677-2/
+    reference_id:
+  - id: 722730
+    url: https://usn.ubuntu.com/3678-1/
+    reference_id:
+  - id: 722731
+    url: https://usn.ubuntu.com/3678-2/
+    reference_id:
+  - id: 722732
+    url: https://usn.ubuntu.com/3678-3/
+    reference_id:
+  - id: 722733
+    url: https://usn.ubuntu.com/3678-4/
+    reference_id:
+  - id: 627772
+    url: https://usn.ubuntu.com/3754-1/
+    reference_id:
+  - id: 620876
+    url: https://www.debian.org/security/2018/dsa-4187
+    reference_id:
+  - id: 692589
+    url: https://www.debian.org/security/2018/dsa-4188
+    reference_id:
+  - id: 936927
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1560777
+    reference_id: 1560777
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 725350
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1092
+    reference_id: CVE-2018-1092
+weaknesses: []

@@ -1,0 +1,101 @@
+vulnerability_id: VCID-8zau-2sk6-aaan
+aliases:
+  - CVE-2020-25221
+summary: get_gate_page in mm/gup.c in the Linux kernel 5.7.x and 5.8.x before 5.8.7 allows privilege
+  escalation because of incorrect reference counting (caused by gate page mishandling) of the
+  struct page that backs the vsyscall page. The result is a refcount underflow. This can be
+  triggered by any 64-bit process that can use ptrace() or process_vm_readv(), aka CID-9fa2dd946743.
+severities:
+  - id: 697670
+    reference_id: 1457619
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609833
+    reference_id: 931222
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 697672
+    reference_id: 833453
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697673
+    reference_id: 1457620
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697674
+    reference_id: 833454
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697675
+    reference_id: 833455
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697676
+    reference_id: 833457
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697671
+    reference_id: 833452
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609832
+    reference_id: 931221
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 461025
+    reference_id: 833458
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 461023
+    reference_id: 833458
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1457619
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-25221.html
+    reference_id:
+  - id: 931222
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25221.json
+    reference_id:
+  - id: 833453
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.8.7
+    reference_id:
+  - id: 1457620
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25221
+    reference_id:
+  - id: 833454
+    url: https://git.kernel.org/linus/8891adc61dce2a8a41fc0c23262b681c3ec4b73a
+    reference_id:
+  - id: 833455
+    url: https://git.kernel.org/linus/9fa2dd946743ae6f30dc4830da19147bf100a7f2
+    reference_id:
+  - id: 833456
+    url: https://security.netapp.com/advisory/ntap-20201001-0003/
+    reference_id:
+  - id: 833457
+    url: https://www.openwall.com/lists/oss-security/2020/09/08/4
+    reference_id:
+  - id: 833452
+    url: http://www.openwall.com/lists/oss-security/2020/09/10/4
+    reference_id:
+  - id: 931221
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1884341
+    reference_id: 1884341
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 833458
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25221
+    reference_id: CVE-2020-25221
+weaknesses: []

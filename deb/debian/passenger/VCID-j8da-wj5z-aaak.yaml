@@ -1,0 +1,52 @@
+vulnerability_id: VCID-j8da-wj5z-aaak
+aliases:
+  - CVE-2018-12027
+summary: |
+  Information Exposure
+  Given a Passenger-spawned application process that reports that it listens on a certain Unix domain socket, if any of the parent directories of said socket are writable by a normal user that is not the application's user, then that non-application user can swap that directory with something else, resulting in traffic being redirected to a non-application user's process through an alternative Unix domain socket.
+severities:
+  - id: 609765
+    reference_id: 931171
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N
+  - id: 683520
+    reference_id: 39195
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609764
+    reference_id: 931170
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 315748
+    reference_id: 39215
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+  - id: 315746
+    reference_id: 39215
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 931171
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12027.json
+    reference_id:
+  - id: 39195
+    url: https://blog.phusion.nl/passenger-5-3-2
+    reference_id:
+  - id: 728435
+    url: https://security.gentoo.org/glsa/201807-02
+    reference_id:
+  - id: 931170
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1592619
+    reference_id: 1592619
+  - id: 558311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:phusion:passenger:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:phusion:passenger:*:*:*:*:*:*:*:*
+  - id: 39215
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12027
+    reference_id: CVE-2018-12027
+weaknesses: []

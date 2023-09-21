@@ -1,0 +1,78 @@
+vulnerability_id: VCID-bx24-vv65-aaae
+aliases:
+  - CVE-2020-15112
+summary: In etcd before versions 3.3.23 and 3.4.10, it is possible to have an entry index greater
+  then the number of entries in the ReadAll method in wal/wal.go. This could cause issues when
+  WAL entries are being read during consensus as an arbitrary etcd consensus participant could
+  go down from a runtime panic when reading the entry.
+severities:
+  - id: 610471
+    reference_id: 931695
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 610468
+    reference_id: 931692
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 444885
+    reference_id: 822520
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+  - id: 444883
+    reference_id: 822520
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 610470
+    reference_id: 931694
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 610469
+    reference_id: 931693
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 604100
+    reference_id: 927019
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 931695
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-15112.json
+    reference_id:
+  - id: 822519
+    url: https://github.com/etcd-io/etcd/security/advisories/GHSA-m332-53r6-2w93
+    reference_id:
+  - id: 822499
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L6B6R43Y7M3DCHWK3L3UVGE2K6WWECMP/
+    reference_id:
+  - id: 931692
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1868872
+    reference_id: 1868872
+  - id: 40763
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968740
+    reference_id: 968740
+  - id: 740149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:etcd:etcd:*:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 822520
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-15112
+    reference_id: CVE-2020-15112
+  - id: 931694
+    url: https://access.redhat.com/errata/RHSA-2021:0916
+    reference_id: RHSA-2021:0916
+  - id: 931693
+    url: https://access.redhat.com/errata/RHSA-2021:1407
+    reference_id: RHSA-2021:1407
+  - id: 927019
+    url: https://access.redhat.com/errata/RHSA-2021:2438
+    reference_id: RHSA-2021:2438
+weaknesses: []

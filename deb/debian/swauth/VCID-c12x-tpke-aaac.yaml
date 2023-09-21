@@ -1,0 +1,71 @@
+vulnerability_id: VCID-c12x-tpke-aaac
+aliases:
+  - CVE-2017-16613
+  - PYSEC-2017-84
+summary: 'An issue was discovered in middleware.py in OpenStack Swauth through 1.2.0 when used
+  with OpenStack Swift through 2.15.1. The Swift object store and proxy server are saving (unhashed)
+  tokens retrieved from the Swauth middleware authentication mechanism to a log file as part
+  of a GET URI. This allows attackers to bypass authentication by inserting a token into an
+  X-Auth-Token header of a new request. NOTE: github.com/openstack/swauth URLs do not mean that
+  Swauth is maintained by an official OpenStack project team.'
+severities:
+  - id: 676515
+    reference_id: 1440917
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676516
+    reference_id: 5379
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676517
+    reference_id: 1440918
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 271388
+    reference_id: 688711
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 271386
+    reference_id: 688711
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1440917
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16613.html
+    reference_id:
+  - id: 5379
+    url: https://bugs.launchpad.net/swift/+bug/1655781
+    reference_id:
+  - id: 1440918
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16613
+    reference_id:
+  - id: 5378
+    url: https://github.com/openstack/swauth/commit/70af7986265a3defea054c46efc82d0698917298
+    reference_id:
+  - id: 5381
+    url: https://www.debian.org/security/2017/dsa-4044
+    reference_id:
+  - id: 5382
+    url: http://www.securityfocus.com/bid/101926
+    reference_id:
+  - id: 131065
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=882314
+    reference_id: 882314
+  - id: 688712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:swauth:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:swauth:*:*:*:*:*:*:*:*
+  - id: 158154
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:swift:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:swift:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 688711
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16613
+    reference_id: CVE-2017-16613
+weaknesses: []

@@ -1,0 +1,189 @@
+vulnerability_id: VCID-mkk4-1u5g-aaac
+aliases:
+  - CVE-2016-9793
+summary: The sock_setsockopt function in net/core/sock.c in the Linux kernel before 4.8.14 mishandles
+  negative values of sk_sndbuf and sk_rcvbuf, which allows local users to cause a denial of
+  service (memory corruption and system crash) or possibly have unspecified other impact by
+  leveraging the CAP_NET_ADMIN capability for a crafted setsockopt system call with the (1)
+  SO_SNDBUFFORCE or (2) SO_RCVBUFFORCE option.
+severities:
+  - id: 672522
+    reference_id: 1437809
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625505
+    reference_id: 942420
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 672523
+    reference_id: 1437810
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672524
+    reference_id: 663670
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672501
+    reference_id: 1437793
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672502
+    reference_id: 1437794
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672503
+    reference_id: 1437795
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672504
+    reference_id: 1437796
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672525
+    reference_id: 1437811
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672526
+    reference_id: 1437812
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672505
+    reference_id: 1437797
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672527
+    reference_id: 1437813
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666444
+    reference_id: 627728
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651168
+    reference_id: 1421163
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625504
+    reference_id: 942419
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 244660
+    reference_id: 663672
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 244658
+    reference_id: 663672
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 624025
+    reference_id: 941412
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 624027
+    reference_id: 941414
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 624026
+    reference_id: 941413
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 663667
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b98b0bc8c431e3ceb4b26b0dfc8db509518fb290
+    reference_id:
+  - id: 1437809
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-9793.html
+    reference_id:
+  - id: 942420
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-9793.json
+    reference_id:
+  - id: 1437810
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9793
+    reference_id:
+  - id: 663670
+    url: https://github.com/torvalds/linux/commit/b98b0bc8c431e3ceb4b26b0dfc8db509518fb290
+    reference_id:
+  - id: 663671
+    url: https://github.com/xairy/kernel-exploits/tree/master/CVE-2016-9793
+    reference_id:
+  - id: 588282
+    url: https://source.android.com/security/bulletin/2017-03-01.html
+    reference_id:
+  - id: 1437793
+    url: https://ubuntu.com/security/notices/USN-3168-1
+    reference_id:
+  - id: 1437794
+    url: https://ubuntu.com/security/notices/USN-3168-2
+    reference_id:
+  - id: 1437795
+    url: https://ubuntu.com/security/notices/USN-3169-1
+    reference_id:
+  - id: 1437796
+    url: https://ubuntu.com/security/notices/USN-3169-2
+    reference_id:
+  - id: 1437811
+    url: https://ubuntu.com/security/notices/USN-3169-3
+    reference_id:
+  - id: 1437812
+    url: https://ubuntu.com/security/notices/USN-3169-4
+    reference_id:
+  - id: 1437797
+    url: https://ubuntu.com/security/notices/USN-3170-1
+    reference_id:
+  - id: 1437813
+    url: https://ubuntu.com/security/notices/USN-3170-2
+    reference_id:
+  - id: 627728
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14
+    reference_id:
+  - id: 1421163
+    url: http://www.openwall.com/lists/oss-security/2016/12/02
+    reference_id:
+  - id: 511675
+    url: http://www.openwall.com/lists/oss-security/2016/12/03/1
+    reference_id:
+  - id: 663668
+    url: http://www.securityfocus.com/bid/94655
+    reference_id:
+  - id: 588279
+    url: http://www.securitytracker.com/id/1037968
+    reference_id:
+  - id: 942419
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1402013
+    reference_id: 1402013
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 663672
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9793
+    reference_id: CVE-2016-9793
+  - id: 941412
+    url: https://access.redhat.com/errata/RHSA-2017:0931
+    reference_id: RHSA-2017:0931
+  - id: 941414
+    url: https://access.redhat.com/errata/RHSA-2017:0932
+    reference_id: RHSA-2017:0932
+  - id: 941413
+    url: https://access.redhat.com/errata/RHSA-2017:0933
+    reference_id: RHSA-2017:0933
+weaknesses: []

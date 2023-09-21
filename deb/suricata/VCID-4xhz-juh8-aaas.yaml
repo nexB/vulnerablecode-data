@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2018-6794
+fixed_purl:
+- pkg:deb/debian/suricata@1:4.0.4-1?distro=sid
+- pkg:deb/debian/suricata@1:4.1.2-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/suricata@1:6.0.10-1?distro=sid
+- pkg:deb/debian/suricata@1:6.0.1-3?distro=sid
+references:
+- id: 128302
+  reference_id: '889842'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=889842
+severities: []
+summary: Suricata before 4.0.4 is prone to an HTTP detection bypass vulnerability
+  in detect.c and stream-tcp.c. If a malicious server breaks a normal TCP flow and
+  sends data before the 3-way handshake is complete, then the data sent by the malicious
+  server will be accepted by web clients such as a web browser or Linux CLI utilities,
+  but ignored by Suricata IDS signatures. This mostly affects IDS signatures for the
+  HTTP protocol and TCP stream content; signatures for TCP packets will inspect such
+  network traffic as usual.
+vulnerability_id: VCID-4xhz-juh8-aaas
+weaknesses: []

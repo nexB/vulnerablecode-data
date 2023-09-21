@@ -1,0 +1,579 @@
+vulnerability_id: VCID-u69d-g5qk-aaag
+aliases:
+  - CVE-2011-4079
+summary: Off-by-one error in the UTF8StringNormalize function in OpenLDAP 2.4.26 and earlier
+  allows remote attackers to cause a denial of service (slapd crash) via a zero-length string
+  that triggers a heap-based buffer overflow, as demonstrated using an empty postalAddressAttribute
+  value in an LDIF entry.
+severities:
+  - id: 147406
+    reference_id: 469782
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:P
+references:
+  - id: '195766'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-4079.json
+    reference_id:
+  - id: 469780
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=749324
+    reference_id:
+  - id: 469773
+    url: http://secunia.com/advisories/46599
+    reference_id:
+  - id: 399721
+    url: http://security.gentoo.org/glsa/glsa-201406-36.xml
+    reference_id:
+  - id: 469781
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/70991
+    reference_id:
+  - id: 469774
+    url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commitdiff;h=507238713b71208ec4f262f312cb495a302df9e9
+    reference_id:
+  - id: 469775
+    url: http://www.openldap.org/its/index.cgi/Software%20Bugs?id=7059;selectid=7059
+    reference_id:
+  - id: 469776
+    url: http://www.openwall.com/lists/oss-security/2011/10/26/5
+    reference_id:
+  - id: 469777
+    url: http://www.openwall.com/lists/oss-security/2011/10/26/9
+    reference_id:
+  - id: 469778
+    url: http://www.securityfocus.com/bid/50384
+    reference_id:
+  - id: 469779
+    url: http://www.ubuntu.com/usn/USN-1266-1
+    reference_id:
+  - id: 87902
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=647610
+    reference_id: 647610
+  - id: 64218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*
+  - id: 60146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.0:*:*:*:*:*:*:*
+  - id: 60143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.0.1:*:*:*:*:*:*:*
+  - id: 60144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.0.2:*:*:*:*:*:*:*
+  - id: 60145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.0.3:*:*:*:*:*:*:*
+  - id: 60151
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1:*:*:*:*:*:*:*
+  - id: 104831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1.0:*:*:*:*:*:*:*
+  - id: 60147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1.1:*:*:*:*:*:*:*
+  - id: 60148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1.2:*:*:*:*:*:*:*
+  - id: 60149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1.3:*:*:*:*:*:*:*
+  - id: 60150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.1.4:*:*:*:*:*:*:*
+  - id: 60159
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2:*:*:*:*:*:*:*
+  - id: 104832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.0:*:*:*:*:*:*:*
+  - id: 60153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.1:*:*:*:*:*:*:*
+  - id: 50289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.10:*:*:*:*:*:*:*
+  - id: 52388
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.11:*:*:*:*:*:*:*
+  - id: 60152
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.12:*:*:*:*:*:*:*
+  - id: 96752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.13:*:*:*:*:*:*:*
+  - id: 60154
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.2:*:*:*:*:*:*:*
+  - id: 60155
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.3:*:*:*:*:*:*:*
+  - id: 60156
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.4:*:*:*:*:*:*:*
+  - id: 60157
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.5:*:*:*:*:*:*:*
+  - id: 60158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.6:*:*:*:*:*:*:*
+  - id: 50290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.7:*:*:*:*:*:*:*
+  - id: 50291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.8:*:*:*:*:*:*:*
+  - id: 50292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:1.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:1.2.9:*:*:*:*:*:*:*
+  - id: 60167
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0:*:*:*:*:*:*:*
+  - id: 104833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.0:*:*:*:*:*:*:*
+  - id: 60160
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.1:*:*:*:*:*:*:*
+  - id: 87545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.10:*:*:*:*:*:*:*
+  - id: 87546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.11:*:*:*:*:*:*:*
+  - id: 87547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.11_11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.11_11:*:*:*:*:*:*:*
+  - id: 87548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.11_11s:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.11_11s:*:*:*:*:*:*:*
+  - id: 87549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.11_9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.11_9:*:*:*:*:*:*:*
+  - id: 87550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.12:*:*:*:*:*:*:*
+  - id: 87551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.13:*:*:*:*:*:*:*
+  - id: 87552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.14:*:*:*:*:*:*:*
+  - id: 87553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.15:*:*:*:*:*:*:*
+  - id: 87554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.16:*:*:*:*:*:*:*
+  - id: 87555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.17:*:*:*:*:*:*:*
+  - id: 87556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.18:*:*:*:*:*:*:*
+  - id: 87557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.19:*:*:*:*:*:*:*
+  - id: 60161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.2:*:*:*:*:*:*:*
+  - id: 87558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.20:*:*:*:*:*:*:*
+  - id: 87559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.21:*:*:*:*:*:*:*
+  - id: 87560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.22:*:*:*:*:*:*:*
+  - id: 87561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.23:*:*:*:*:*:*:*
+  - id: 104834
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.24:*:*:*:*:*:*:*
+  - id: 87562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.25:*:*:*:*:*:*:*
+  - id: 104835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.26:*:*:*:*:*:*:*
+  - id: 87563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.27:*:*:*:*:*:*:*
+  - id: 60162
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.3:*:*:*:*:*:*:*
+  - id: 60163
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.4:*:*:*:*:*:*:*
+  - id: 60164
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.5:*:*:*:*:*:*:*
+  - id: 60165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.6:*:*:*:*:*:*:*
+  - id: 60166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.7:*:*:*:*:*:*:*
+  - id: 87564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.8:*:*:*:*:*:*:*
+  - id: 87565
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.0.9:*:*:*:*:*:*:*
+  - id: 87566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.10:*:*:*:*:*:*:*
+  - id: 87567
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.11:*:*:*:*:*:*:*
+  - id: 87568
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.12:*:*:*:*:*:*:*
+  - id: 87569
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.13:*:*:*:*:*:*:*
+  - id: 87570
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.14:*:*:*:*:*:*:*
+  - id: 87571
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.15:*:*:*:*:*:*:*
+  - id: 87572
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.16:*:*:*:*:*:*:*
+  - id: 96753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.17:*:*:*:*:*:*:*
+  - id: 96754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.18:*:*:*:*:*:*:*
+  - id: 96755
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.19:*:*:*:*:*:*:*
+  - id: 104836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.2:*:*:*:*:*:*:*
+  - id: 143439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.20:*:*:*:*:*:*:*
+  - id: 96756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1_.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1_.20:*:*:*:*:*:*:*
+  - id: 143440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.21:*:*:*:*:*:*:*
+  - id: 143441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.22:*:*:*:*:*:*:*
+  - id: 143442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.23:*:*:*:*:*:*:*
+  - id: 143443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.24:*:*:*:*:*:*:*
+  - id: 143444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.25:*:*:*:*:*:*:*
+  - id: 143445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.26:*:*:*:*:*:*:*
+  - id: 143446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.27:*:*:*:*:*:*:*
+  - id: 143447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.28:*:*:*:*:*:*:*
+  - id: 143448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.29:*:*:*:*:*:*:*
+  - id: 104837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.3:*:*:*:*:*:*:*
+  - id: 143449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.30:*:*:*:*:*:*:*
+  - id: 87573
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.4:*:*:*:*:*:*:*
+  - id: 104838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.5:*:*:*:*:*:*:*
+  - id: 104839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.6:*:*:*:*:*:*:*
+  - id: 104840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.7:*:*:*:*:*:*:*
+  - id: 104841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.8:*:*:*:*:*:*:*
+  - id: 104842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.1.9:*:*:*:*:*:*:*
+  - id: 260544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.0:*:*:*:*:*:*:*
+  - id: 237296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.1:*:*:*:*:*:*:*
+  - id: 143450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.10:*:*:*:*:*:*:*
+  - id: 143451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.11:*:*:*:*:*:*:*
+  - id: 143452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.12:*:*:*:*:*:*:*
+  - id: 143453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.13:*:*:*:*:*:*:*
+  - id: 143454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.14:*:*:*:*:*:*:*
+  - id: 143455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.15:*:*:*:*:*:*:*
+  - id: 143456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.16:*:*:*:*:*:*:*
+  - id: 143457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.17:*:*:*:*:*:*:*
+  - id: 143458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.18:*:*:*:*:*:*:*
+  - id: 143459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.19:*:*:*:*:*:*:*
+  - id: 143460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.20:*:*:*:*:*:*:*
+  - id: 143461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.21:*:*:*:*:*:*:*
+  - id: 143462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.22:*:*:*:*:*:*:*
+  - id: 143463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.23:*:*:*:*:*:*:*
+  - id: 143464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.24:*:*:*:*:*:*:*
+  - id: 143465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.25:*:*:*:*:*:*:*
+  - id: 143466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.26:*:*:*:*:*:*:*
+  - id: 143467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.27:*:*:*:*:*:*:*
+  - id: 143468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.4:*:*:*:*:*:*:*
+  - id: 143469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.5:*:*:*:*:*:*:*
+  - id: 143470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.6:*:*:*:*:*:*:*
+  - id: 143471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.7:*:*:*:*:*:*:*
+  - id: 143472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.8:*:*:*:*:*:*:*
+  - id: 143473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.2.9:*:*:*:*:*:*:*
+  - id: 260545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.10:*:*:*:*:*:*:*
+  - id: 260546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.11:*:*:*:*:*:*:*
+  - id: 260547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.12:*:*:*:*:*:*:*
+  - id: 260548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.13:*:*:*:*:*:*:*
+  - id: 260549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.14:*:*:*:*:*:*:*
+  - id: 260550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.15:*:*:*:*:*:*:*
+  - id: 260551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.16:*:*:*:*:*:*:*
+  - id: 260552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.17:*:*:*:*:*:*:*
+  - id: 260553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.18:*:*:*:*:*:*:*
+  - id: 260554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.19:*:*:*:*:*:*:*
+  - id: 260555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.20:*:*:*:*:*:*:*
+  - id: 260556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.21:*:*:*:*:*:*:*
+  - id: 260557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.22:*:*:*:*:*:*:*
+  - id: 260558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.23:*:*:*:*:*:*:*
+  - id: 260559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.24:*:*:*:*:*:*:*
+  - id: 260560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.25:*:*:*:*:*:*:*
+  - id: 260561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.26:*:*:*:*:*:*:*
+  - id: 260562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.27:*:*:*:*:*:*:*
+  - id: 346328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.28:*:*:*:*:*:*:*
+  - id: 346329
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.29:*:*:*:*:*:*:*
+  - id: 346330
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.30:*:*:*:*:*:*:*
+  - id: 346331
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.31:*:*:*:*:*:*:*
+  - id: 346332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.32:*:*:*:*:*:*:*
+  - id: 346333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.33:*:*:*:*:*:*:*
+  - id: 346334
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.34:*:*:*:*:*:*:*
+  - id: 346335
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.35:*:*:*:*:*:*:*
+  - id: 346336
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.36:*:*:*:*:*:*:*
+  - id: 346337
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.37:*:*:*:*:*:*:*
+  - id: 346338
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.38:*:*:*:*:*:*:*
+  - id: 327776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.39:*:*:*:*:*:*:*
+  - id: 346343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.4:*:*:*:*:*:*:*
+  - id: 346339
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.40:*:*:*:*:*:*:*
+  - id: 346340
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.41:*:*:*:*:*:*:*
+  - id: 346341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.42:*:*:*:*:*:*:*
+  - id: 346342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.43:*:*:*:*:*:*:*
+  - id: 346344
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.5:*:*:*:*:*:*:*
+  - id: 346345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.6:*:*:*:*:*:*:*
+  - id: 346346
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.7:*:*:*:*:*:*:*
+  - id: 346347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.8:*:*:*:*:*:*:*
+  - id: 346348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.3.9:*:*:*:*:*:*:*
+  - id: 346349
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.10:*:*:*:*:*:*:*
+  - id: 450358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.11:*:*:*:*:*:*:*
+  - id: 450359
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.12:*:*:*:*:*:*:*
+  - id: 450360
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.13:*:*:*:*:*:*:*
+  - id: 450361
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.14:*:*:*:*:*:*:*
+  - id: 450362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.15:*:*:*:*:*:*:*
+  - id: 450363
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.16:*:*:*:*:*:*:*
+  - id: 450364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.17:*:*:*:*:*:*:*
+  - id: 450365
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.18:*:*:*:*:*:*:*
+  - id: 450366
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.19:*:*:*:*:*:*:*
+  - id: 450367
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.20:*:*:*:*:*:*:*
+  - id: 450368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.21:*:*:*:*:*:*:*
+  - id: 410165
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.22:*:*:*:*:*:*:*
+  - id: 450369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.23:*:*:*:*:*:*:*
+  - id: 469783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.24:*:*:*:*:*:*:*
+  - id: 469784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.25:*:*:*:*:*:*:*
+  - id: 469785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.3:*:*:*:*:*:*:*
+  - id: 450370
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.6:*:*:*:*:*:*:*
+  - id: 450371
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.7:*:*:*:*:*:*:*
+  - id: 450372
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.8:*:*:*:*:*:*:*
+  - id: 450373
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openldap:openldap:2.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openldap:openldap:2.4.9:*:*:*:*:*:*:*
+  - id: 469782
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-4079
+    reference_id: CVE-2011-4079
+weaknesses: []

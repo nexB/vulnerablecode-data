@@ -1,0 +1,16 @@
+affected_purls:
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1
+aliases:
+- CVE-2020-25664
+fixed_purl:
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1
+references: []
+severities: []
+summary: In WriteOnePNGImage() of the PNG coder at coders/png.c, an improper call
+  to AcquireVirtualMemory() and memset() allows for an out-of-bounds write later when
+  PopShortPixel() from MagickCore/quantum-private.h is called. The patch fixes the
+  calls by adding 256 to rowbytes. An attacker who is able to supply a specially crafted
+  image could affect availability with a low impact to data integrity. This flaw affects
+  ImageMagick versions prior to 6.9.10-68 and 7.0.8-68.
+vulnerability_id: VCID-dwzu-ku12-aaab
+weaknesses: []

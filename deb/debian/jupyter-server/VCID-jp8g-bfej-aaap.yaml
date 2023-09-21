@@ -1,0 +1,56 @@
+vulnerability_id: VCID-jp8g-bfej-aaap
+aliases:
+  - CVE-2022-24757
+  - GHSA-p737-p57g-4cpr
+  - PYSEC-2022-179
+summary: The Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints)
+  for Jupyter web applications. Prior to version 1.15.4, unauthorized actors can access sensitive
+  information from server logs. Anytime a 5xx error is triggered, the auth cookie and other
+  header values are recorded in Jupyter Server logs by default. Considering these logs do not
+  require root access, an attacker can monitor these logs, steal sensitive auth/cookie information,
+  and gain access to the Jupyter server. Jupyter Server version 1.15.4 contains a patch for
+  this issue. There are currently no known workarounds.
+severities:
+  - id: 589959
+    reference_id: 20755
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 589957
+    reference_id: 20755
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 3319
+    reference_id: 20757
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3318
+    reference_id: 20754
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 8887
+    url: https://github.com/jupyter-server/jupyter_server/commit/a5683aca0b0e412672ac6218d09f74d44ca0de5a
+    reference_id:
+  - id: 20756
+    url: https://github.com/pypa/advisory-database/tree/main/vulns/jupyter-server/PYSEC-2022-179.yaml
+    reference_id:
+  - id: 42375
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1008319
+    reference_id: 1008319
+  - id: 835238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jupyter:jupyter_server:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jupyter:jupyter_server:*:*:*:*:*:*:*:*
+  - id: 20755
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-24757
+    reference_id: CVE-2022-24757
+  - id: 20757
+    url: https://github.com/advisories/GHSA-p737-p57g-4cpr
+    reference_id: GHSA-p737-p57g-4cpr
+  - id: 20754
+    url: https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-p737-p57g-4cpr
+    reference_id: GHSA-p737-p57g-4cpr
+weaknesses: []

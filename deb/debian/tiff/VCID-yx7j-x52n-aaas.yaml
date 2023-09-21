@@ -1,0 +1,273 @@
+vulnerability_id: VCID-yx7j-x52n-aaas
+aliases:
+  - CVE-2004-1307
+summary: Integer overflow in the TIFFFetchStripThing function in tif_dirread.c for libtiff 3.6.1
+  allows remote attackers to execute arbitrary code via a TIFF file with the STRIPOFFSETS flag
+  and a large number of strips, which causes a zero byte buffer to be allocated and leads to
+  a heap-based buffer overflow.
+severities:
+  - id: 79125
+    reference_id: 211189
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 23938
+    reference_id: 100244
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 79127
+    reference_id: 211191
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 79126
+    reference_id: 211190
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 95554
+    url: http://lists.apple.com/archives/security-announce/2005/May/msg00001.html
+    reference_id:
+  - id: 211192
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2004-1307.json
+    reference_id:
+  - id: 1463967
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1307
+    reference_id:
+  - id: 100243
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11175
+    reference_id:
+  - id: 96532
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-101677-1
+    reference_id:
+  - id: 96533
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-201072-1
+    reference_id:
+  - id: 100241
+    url: http://www.idefense.com/application/poi/display?id=173&type=vulnerabilities&flashstatus=true
+    reference_id:
+  - id: 100242
+    url: http://www.kb.cert.org/vuls/id/539110
+    reference_id:
+  - id: 95570
+    url: http://www.us-cert.gov/cas/techalerts/TA05-136A.html
+    reference_id:
+  - id: 211189
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1617405
+    reference_id: 1617405
+  - id: 96474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:call_management_system_server:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:call_management_system_server:11.0:*:*:*:*:*:*:*
+  - id: 96475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:call_management_system_server:12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:call_management_system_server:12.0:*:*:*:*:*:*:*
+  - id: 100245
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:call_management_system_server:13.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:call_management_system_server:13.0:*:*:*:*:*:*:*
+  - id: 100246
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:call_management_system_server:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:call_management_system_server:8.0:*:*:*:*:*:*:*
+  - id: 96476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:call_management_system_server:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:call_management_system_server:9.0:*:*:*:*:*:*:*
+  - id: 94087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:cvlan:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:cvlan:*:*:*:*:*:*:*:*
+  - id: 100247
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:integrated_management:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:integrated_management:*:*:*:*:*:*:*:*
+  - id: 100248
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:interactive_response:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:interactive_response:*:*:*:*:*:*:*:*
+  - id: 100249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:interactive_response:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:interactive_response:1.2.1:*:*:*:*:*:*:*
+  - id: 100250
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:interactive_response:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:interactive_response:1.3:*:*:*:*:*:*:*
+  - id: 98880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:intuity_audix_lx:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:intuity_audix_lx:*:*:*:*:*:*:*:*
+  - id: 98881
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:avaya:mn100:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:avaya:mn100:*:*:*:*:*:*:*:*
+  - id: 100254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:icontrol_service_manager:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:icontrol_service_manager:1.3:*:*:*:*:*:*:*
+  - id: 100251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:icontrol_service_manager:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:icontrol_service_manager:1.3.4:*:*:*:*:*:*:*
+  - id: 100252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:icontrol_service_manager:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:icontrol_service_manager:1.3.5:*:*:*:*:*:*:*
+  - id: 100253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:icontrol_service_manager:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:icontrol_service_manager:1.3.6:*:*:*:*:*:*:*
+  - id: 96549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.4:*:*:*:*:*:*:*
+  - id: 96550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.1:*:*:*:*:*:*:*
+  - id: 96551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.2:*:*:*:*:*:*:*
+  - id: 96552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.3:*:*:*:*:*:*:*
+  - id: 96553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.4:*:*:*:*:*:*:*
+  - id: 96554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.5:*:*:*:*:*:*:*
+  - id: 96555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.5.7:*:*:*:*:*:*:*
+  - id: 96556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.6.0:*:*:*:*:*:*:*
+  - id: 96557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.6.1:*:*:*:*:*:*:*
+  - id: 99614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:3.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:3.7.0:*:*:*:*:*:*:*
+  - id: 91912
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sgi:propack:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sgi:propack:3.0:*:*:*:*:*:*:*
+  - id: 85208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3:*:*:*:*:*:*:*
+  - id: 85773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.1:*:*:*:*:*:*:*
+  - id: 86056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.2:*:*:*:*:*:*:*
+  - id: 93110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.3:*:*:*:*:*:*:*
+  - id: 94471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.4:*:*:*:*:*:*:*
+  - id: 96560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.5:*:*:*:*:*:*:*
+  - id: 96561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.6:*:*:*:*:*:*:*
+  - id: 100255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.7:*:*:*:*:*:*:*
+  - id: 100256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.8:*:*:*:*:*:*:*
+  - id: 90800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:10.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:10.3.9:*:*:*:*:*:*:*
+  - id: 85209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3:*:*:*:*:*:*:*
+  - id: 85774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.1:*:*:*:*:*:*:*
+  - id: 86057
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.2:*:*:*:*:*:*:*
+  - id: 93640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.3:*:*:*:*:*:*:*
+  - id: 94472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.4:*:*:*:*:*:*:*
+  - id: 96562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.5:*:*:*:*:*:*:*
+  - id: 96563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.6:*:*:*:*:*:*:*
+  - id: 100257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.7:*:*:*:*:*:*:*
+  - id: 100258
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.8:*:*:*:*:*:*:*
+  - id: 100259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x_server:10.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x_server:10.3.9:*:*:*:*:*:*:*
+  - id: 98886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:avaya:modular_messaging_message_storage_server:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:avaya:modular_messaging_message_storage_server:1.1:*:*:*:*:*:*:*
+  - id: 98887
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:avaya:modular_messaging_message_storage_server:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:avaya:modular_messaging_message_storage_server:2.0:*:*:*:*:*:*:*
+  - id: 94559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:conectiva:linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:conectiva:linux:10.0:*:*:*:*:*:*:*
+  - id: 84537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:conectiva:linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:conectiva:linux:9.0:*:*:*:*:*:*:*
+  - id: 94097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:gentoo:linux:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:gentoo:linux:*:*:*:*:*:*:*:*
+  - id: 48839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux:10.0:*:*:*:*:*:*:*
+  - id: 93303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux:10.0:*:amd64:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux:10.0:*:amd64:*:*:*:*:*
+  - id: 48840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux:10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux:10.1:*:*:*:*:*:*:*
+  - id: 96892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux:10.1:*:x86_64:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux:10.1:*:x86_64:*:*:*:*:*
+  - id: 100260
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux_corporate_server:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux_corporate_server:3.0:*:*:*:*:*:*:*
+  - id: 100261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:mandrakesoft:mandrake_linux_corporate_server:3.0:*:x86_64:*:*:*:*:*
+    reference_id: cpe:2.3:o:mandrakesoft:mandrake_linux_corporate_server:3.0:*:x86_64:*:*:*:*:*
+  - id: 98218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sco:unixware:7.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:sco:unixware:7.1.4:*:*:*:*:*:*:*
+  - id: 96354
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:10.0:*:sparc:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:10.0:*:sparc:*:*:*:*:*
+  - id: 100262
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:10.0:*:x86:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:10.0:*:x86:*:*:*:*:*
+  - id: 43915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:7.0:*:x86:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:7.0:*:x86:*:*:*:*:*
+  - id: 50296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:8.0:*:x86:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:8.0:*:x86:*:*:*:*:*
+  - id: 48945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:9.0:*:sparc:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:9.0:*:sparc:*:*:*:*:*
+  - id: 72572
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:9.0:*:x86:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:9.0:*:x86:*:*:*:*:*
+  - id: 72462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:solaris:9.0:x86_update_2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:solaris:9.0:x86_update_2:*:*:*:*:*:*
+  - id: 44389
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*
+  - id: 44396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:sun:sunos:5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:sun:sunos:5.8:*:*:*:*:*:*:*
+  - id: 100244
+    url: https://nvd.nist.gov/vuln/detail/CVE-2004-1307
+    reference_id: CVE-2004-1307
+  - id: 211191
+    url: https://access.redhat.com/errata/RHSA-2004:577
+    reference_id: RHSA-2004:577
+  - id: 211190
+    url: https://access.redhat.com/errata/RHSA-2005:021
+    reference_id: RHSA-2005:021
+weaknesses: []

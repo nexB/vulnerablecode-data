@@ -1,0 +1,99 @@
+affected_purls:
+- pkg:deb/ubuntu/ruby-rack@1.3.1-1
+- pkg:deb/ubuntu/ruby-rack@1.3.5-1
+- pkg:deb/ubuntu/ruby-rack@1.4.0-1
+- pkg:deb/ubuntu/ruby-rack@1.4.1-1
+- pkg:deb/ubuntu/ruby-rack@1.4.1-2
+- pkg:deb/ubuntu/ruby-rack@1.4.1-2.1
+- pkg:gem/rack@1.4.0
+- pkg:gem/rack@1.4.1
+- pkg:gem/rack@1.4.2
+- pkg:gem/rack@1.4.3
+- pkg:gem/rack@1.4.4
+- pkg:gem/rack@1.5.0
+- pkg:gem/rack@1.5.1
+aliases:
+- CVE-2013-0262
+- GHSA-85r7-w5mv-c849
+fixed_purl:
+- pkg:deb/debian/ruby-rack@1.4.1-2.1?distro=sid
+- pkg:deb/debian/ruby-rack@2.0.6-3?distro=sid
+- pkg:deb/debian/ruby-rack@2.1.4-3?distro=sid
+- pkg:deb/debian/ruby-rack@2.2.6.4-1?distro=sid
+- pkg:deb/ubuntu/ruby-rack@1.5.2-1
+- pkg:gem/rack@1.4.5
+- pkg:gem/rack@1.5.0.beta.1
+- pkg:gem/rack@1.5.2
+references:
+- id: 134913
+  reference_id: ''
+  url: http://lists.opensuse.org/opensuse-updates/2013-03/msg00048.html
+- id: 184653
+  reference_id: ''
+  url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-0262.html
+- id: 134914
+  reference_id: ''
+  url: http://rack.github.com/
+- id: 134960
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=909071
+- id: 134961
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=909072
+- id: 184654
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0262
+- id: 134962
+  reference_id: ''
+  url: https://gist.github.com/rentzsch/4736940
+- id: 134963
+  reference_id: ''
+  url: https://github.com/rack/rack/blob/master/lib/rack/file.rb#L56
+- id: 134959
+  reference_id: ''
+  url: https://github.com/rack/rack/commit/6f237e4c9fab649d3750482514f0fde76c56ab30
+- id: 134964
+  reference_id: ''
+  url: https://groups.google.com/forum/#!msg/rack-devel/bf937jPZxJM/1s6x95vIhmAJ
+- id: 134965
+  reference_id: ''
+  url: https://groups.google.com/forum/#!msg/rack-devel/mZsuRonD7G8/DpZIOmMLbOgJ
+- id: 184371
+  reference_id: ''
+  url: http://www.openwall.com/lists/oss-security/2013/02/07
+- id: 124931
+  reference_id: '700173'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700173
+- id: 134958
+  reference_id: CVE-2013-0262
+  url: https://nvd.nist.gov/vuln/detail/CVE-2013-0262
+- id: 134966
+  reference_id: GHSA-85r7-w5mv-c849
+  url: https://github.com/advisories/GHSA-85r7-w5mv-c849
+severities:
+- id: 31808
+  reference_id: 184653
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31809
+  reference_id: 184654
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 31521
+  reference_id: 184371
+  scoring_elements: ''
+  scoring_system: generic_textual
+  value: Medium
+- id: 18555
+  reference_id: 134966
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: rack/file.rb (Rack::File) in Rack 1.5.x before 1.5.2 and 1.4.x before 1.4.5
+  allows attackers to access arbitrary files outside the intended root directory via
+  a crafted PATH_INFO environment variable, probably a directory traversal vulnerability
+  that is remotely exploitable, aka "symlink path traversals."
+vulnerability_id: VCID-2e3y-are4-aaaa
+weaknesses: []

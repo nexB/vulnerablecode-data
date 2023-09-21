@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2018-15468
+fixed_purl:
+- pkg:deb/debian/xen@4.11.1~pre.20180911.5acdd26fdc%2Bdfsg-2?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.11.x. The DEBUGCTL MSR contains
+  several debugging features, some of which virtualise cleanly, but some do not. In
+  particular, Branch Trace Store is not virtualised by the processor, and software
+  has to be careful to configure it suitably not to lock up the core. As a result,
+  it must only be available to fully trusted guests. Unfortunately, in the case that
+  vPMU is disabled, all value checking was skipped, allowing the guest to choose any
+  MSR_DEBUGCTL setting it likes. A malicious or buggy guest administrator (on Intel
+  x86 HVM or PVH) can lock up the entire host, causing a Denial of Service.
+vulnerability_id: VCID-ayda-f3fj-aaag
+weaknesses: []

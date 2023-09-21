@@ -1,0 +1,45 @@
+vulnerability_id: VCID-vdjw-fb51-aaab
+aliases:
+  - CVE-2022-29242
+summary: GOST engine is a reference implementation of the Russian GOST crypto algorithms for
+  OpenSSL. TLS clients using GOST engine when ciphersuite `TLS_GOSTR341112_256_WITH_KUZNYECHIK_CTR_OMAC`
+  is agreed and the server uses 512 bit GOST secret keys are vulnerable to buffer overflow.
+  GOST engine version 3.0.1 contains a patch for this issue. Disabling ciphersuite `TLS_GOSTR341112_256_WITH_KUZNYECHIK_CTR_OMAC`
+  is a possible workaround.
+severities:
+  - id: 598555
+    reference_id: 922947
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 598553
+    reference_id: 922947
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 922942
+    url: https://github.com/gost-engine/engine/commit/7df766124f87768b43b9e8947c5a01e17545772c
+    reference_id:
+  - id: 922943
+    url: https://github.com/gost-engine/engine/commit/b2b4d629f100eaee9f5942a106b1ccefe85b8808
+    reference_id:
+  - id: 922944
+    url: https://github.com/gost-engine/engine/commit/c6655a0b620a3e31f085cc906f8073fe81b2fad3
+    reference_id:
+  - id: 922945
+    url: https://github.com/gost-engine/engine/releases/tag/v3.0.1
+    reference_id:
+  - id: 922946
+    url: https://github.com/gost-engine/engine/security/advisories/GHSA-2rmw-8wpg-vgw5
+    reference_id:
+  - id: 42958
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1012512
+    reference_id: 1012512
+  - id: 922948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gost_engine_project:gost_engine:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gost_engine_project:gost_engine:*:*:*:*:*:*:*:*
+  - id: 922947
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-29242
+    reference_id: CVE-2022-29242
+weaknesses: []

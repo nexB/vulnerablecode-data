@@ -1,0 +1,201 @@
+vulnerability_id: VCID-azyz-5w17-aaad
+aliases:
+  - CVE-2018-12896
+summary: An issue was discovered in the Linux kernel through 4.17.3. An Integer Overflow in
+  kernel/time/posix-timers.c in the POSIX timer code is caused by the way the overrun accounting
+  works. Depending on interval and expiry time values, the overrun can be larger than INT_MAX,
+  but the accounting is int based. This basically makes the accounting values, which are visible
+  to user space via timer_getoverrun(2) and siginfo::si_overrun, random. For example, a local
+  user can cause a denial of service (signed integer overflow) via crafted mmap, futex, timer_create,
+  and timer_settime system calls.
+severities:
+  - id: 683997
+    reference_id: 1446696
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615598
+    reference_id: 935452
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 683998
+    reference_id: 730647
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683999
+    reference_id: 1446697
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684000
+    reference_id: 730648
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684001
+    reference_id: 730649
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687970
+    reference_id: 693368
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687971
+    reference_id: 629035
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687972
+    reference_id: 629036
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 682960
+    reference_id: 1445878
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682961
+    reference_id: 1445879
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682962
+    reference_id: 1445880
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677362
+    reference_id: 1441456
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677363
+    reference_id: 1441457
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677916
+    reference_id: 1441864
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677917
+    reference_id: 1441865
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615597
+    reference_id: 935451
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 318665
+    reference_id: 730650
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 318663
+    reference_id: 730650
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1446696
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12896.html
+    reference_id:
+  - id: 935452
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12896.json
+    reference_id:
+  - id: 730647
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=200189
+    reference_id:
+  - id: 1446697
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12896
+    reference_id:
+  - id: 730648
+    url: https://github.com/lcytxw/bug_repro/tree/master/bug_200189
+    reference_id:
+  - id: 730649
+    url: https://github.com/torvalds/linux/commit/78c9c4dfbf8c04883941445a195276bb4bb92c76
+    reference_id:
+  - id: 693368
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html
+    reference_id:
+  - id: 629035
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00034.html
+    reference_id:
+  - id: 629036
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00004.html
+    reference_id:
+  - id: 1445878
+    url: https://ubuntu.com/security/notices/USN-3847-1
+    reference_id:
+  - id: 1445879
+    url: https://ubuntu.com/security/notices/USN-3847-2
+    reference_id:
+  - id: 1445880
+    url: https://ubuntu.com/security/notices/USN-3847-3
+    reference_id:
+  - id: 1441456
+    url: https://ubuntu.com/security/notices/USN-3848-1
+    reference_id:
+  - id: 1441457
+    url: https://ubuntu.com/security/notices/USN-3848-2
+    reference_id:
+  - id: 1441864
+    url: https://ubuntu.com/security/notices/USN-3849-1
+    reference_id:
+  - id: 1441865
+    url: https://ubuntu.com/security/notices/USN-3849-2
+    reference_id:
+  - id: 725217
+    url: https://usn.ubuntu.com/3847-1/
+    reference_id:
+  - id: 725218
+    url: https://usn.ubuntu.com/3847-2/
+    reference_id:
+  - id: 725219
+    url: https://usn.ubuntu.com/3847-3/
+    reference_id:
+  - id: 693074
+    url: https://usn.ubuntu.com/3848-1/
+    reference_id:
+  - id: 693075
+    url: https://usn.ubuntu.com/3848-2/
+    reference_id:
+  - id: 696439
+    url: https://usn.ubuntu.com/3849-1/
+    reference_id:
+  - id: 696440
+    url: https://usn.ubuntu.com/3849-2/
+    reference_id:
+  - id: 935451
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1597759
+    reference_id: 1597759
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 730650
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12896
+    reference_id: CVE-2018-12896
+weaknesses: []

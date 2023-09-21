@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2016-8605
+fixed_purl:
+- pkg:deb/debian/guile-2.0@2.0.13%2B1-1?distro=buster
+- pkg:deb/debian/guile-2.0@2.0.13%2B1-5.1?distro=buster
+references:
+- id: 126511
+  reference_id: '840556'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=840556
+severities: []
+summary: The mkdir procedure of GNU Guile temporarily changed the process' umask to
+  zero. During that time window, in a multithreaded application, other threads could
+  end up creating files with insecure permissions. For example, mkdir without the
+  optional mode argument would create directories as 0777. This is fixed in Guile
+  2.0.13. Prior versions are affected.
+vulnerability_id: VCID-g2ar-39yf-aaac
+weaknesses: []

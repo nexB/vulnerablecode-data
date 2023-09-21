@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-12519
+fixed_purl:
+- pkg:deb/debian/squid@4.11-1?distro=sid
+- pkg:deb/debian/squid@4.13-10%2Bdeb11u2?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u7?distro=sid
+- pkg:deb/debian/squid@5.7-2?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Squid through 4.7. When handling the tag esi:when
+  when ESI is enabled, Squid calls ESIExpression::Evaluate. This function uses a fixed
+  stack buffer to hold the expression while it's being evaluated. When processing
+  the expression, it could either evaluate the top of the stack, or add a new member
+  to the stack. When adding a new member, there is no check to ensure that the stack
+  won't overflow.
+vulnerability_id: VCID-b2z7-e1r8-aaaj
+weaknesses: []

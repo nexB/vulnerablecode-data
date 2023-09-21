@@ -1,0 +1,17 @@
+affected_purls: []
+aliases:
+- CVE-2019-3823
+fixed_purl:
+- pkg:deb/debian/curl@7.64.0-1?distro=sid
+- pkg:deb/debian/curl@7.64.0-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/curl@7.74.0-1.3%2Bdeb11u7?distro=sid
+- pkg:deb/debian/curl@7.88.1-10?distro=sid
+references: []
+severities: []
+summary: libcurl versions from 7.34.0 to before 7.64.0 are vulnerable to a heap out-of-bounds
+  read in the code handling the end-of-response for SMTP. If the buffer passed to
+  `smtp_endofresp()` isn't NUL terminated and contains no character ending the parsed
+  number, and `len` is set to 5, then the `strtol()` call reads beyond the allocated
+  buffer. The read contents will not be returned to the caller.
+vulnerability_id: VCID-b5rb-dydf-aaab
+weaknesses: []

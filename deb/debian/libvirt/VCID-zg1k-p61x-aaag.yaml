@@ -1,0 +1,55 @@
+vulnerability_id: VCID-zg1k-p61x-aaag
+aliases:
+  - CVE-2014-8135
+summary: The storageVolUpload function in storage/storage_driver.c in libvirt before 1.2.11
+  does not check a certain return value, which allows local users to cause a denial of service
+  (NULL pointer dereference and daemon crash) via a crafted offset value in a "virsh vol-upload"
+  command.
+severities:
+  - id: 658159
+    reference_id: 586058
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 57343
+    reference_id: 183358
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 189034
+    reference_id: 586061
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+references:
+  - id: 586057
+    url: http://libvirt.org/git/?p=libvirt.git;a=commit;h=87b9437f8951f9d24f9a85c6bbfff0e54df8c984
+    reference_id:
+  - id: 586011
+    url: http://lists.opensuse.org/opensuse-updates/2015-01/msg00005.html
+    reference_id:
+  - id: 183359
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-8135.json
+    reference_id:
+  - id: 586060
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1087104
+    reference_id:
+  - id: 586058
+    url: http://secunia.com/advisories/61111
+    reference_id:
+  - id: 586059
+    url: http://security.libvirt.org/2014/0009.html
+    reference_id:
+  - id: 183358
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1176182
+    reference_id: 1176182
+  - id: 46189
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=773855
+    reference_id: 773855
+  - id: 159189
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:-:*:*:*:*:*:*:*
+  - id: 586061
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-8135
+    reference_id: CVE-2014-8135
+weaknesses: []

@@ -1,0 +1,606 @@
+vulnerability_id: VCID-hh72-ne73-aaak
+aliases:
+  - CVE-2019-17571
+  - GHSA-2qrg-x229-3v8q
+summary: Deserialization of Untrusted Data in Log4j
+severities:
+  - id: 60572
+    reference_id: 187770
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 697874
+    reference_id: 495
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696536
+    reference_id: 406
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60560
+    reference_id: 187758
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 391992
+    reference_id: 2610
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 391990
+    reference_id: 2610
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 461
+    reference_id: 2715
+    scoring_system: cvssv3.1_qr
+    value: CRITICAL
+    scoring_elements:
+  - id: 60570
+    reference_id: 187768
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60569
+    reference_id: 187767
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60563
+    reference_id: 187761
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60568
+    reference_id: 187766
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60571
+    reference_id: 187769
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51942
+    reference_id: 176644
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51940
+    reference_id: 176642
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60566
+    reference_id: 187764
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60567
+    reference_id: 187765
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60561
+    reference_id: 187759
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60564
+    reference_id: 187762
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60565
+    reference_id: 187763
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 51147
+    reference_id: 175802
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 50838
+    reference_id: 175432
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 50834
+    reference_id: 175428
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60562
+    reference_id: 187760
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 2639
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00022.html
+    reference_id:
+  - id: 187770
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17571.json
+    reference_id:
+  - id: 2611
+    url: https://lists.apache.org/thread.html/277b4b5c2b0e06a825ccec565fa65bd671f35a4d58e3e2ec5d0618e1@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2612
+    url: https://lists.apache.org/thread.html/44491fb9cc19acc901f7cff34acb7376619f15638439416e3e14761c@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2615
+    url: https://lists.apache.org/thread.html/479471e6debd608c837b9815b76eab24676657d4444fcfd5ef96d6e6@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2616
+    url: https://lists.apache.org/thread.html/564f03b4e9511fcba29c68fc0299372dadbdb002718fa8edcc4325e4@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2617
+    url: https://lists.apache.org/thread.html/6114ce566200d76e3cc45c521a62c2c5a4eac15738248f58a99f622c@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2618
+    url: https://lists.apache.org/thread.html/752ec92cd1e334a639e79bfbd689a4ec2c6579ec5bb41b53ffdf358d@%3Cdev.kafka.apache.org%3E
+    reference_id:
+  - id: 2613
+    url: https://lists.apache.org/thread.html/8ab32b4c9f1826f20add7c40be08909de9f58a89dc1de9c09953f5ac@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2614
+    url: https://lists.apache.org/thread.html/eea03d504b36e8f870e8321d908e1def1addda16adda04327fe7c125%40%3Cdev.logging.apache.org%3E
+    reference_id:
+  - id: 2619
+    url: https://lists.apache.org/thread.html/r05755112a8c164abc1004bb44f198b1e3d8ca3d546a8f13ebd3aa05f@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 470
+    url: https://lists.apache.org/thread.html/r107c8737db39ec9ec4f4e7147b249e29be79170b9ef4b80528105a2d@%3Cdev.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2672
+    url: https://lists.apache.org/thread.html/r13d4b5c60ff63f3c4fab51d6ff266655be503b8a1884e2f2fab67c3a@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2620
+    url: https://lists.apache.org/thread.html/r189aaeaad897f7d6b96f7c43a8ef2dfb9f6e9f8c1cc9ad182ce9b9ae@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2640
+    url: https://lists.apache.org/thread.html/r18f1c010b554a3a2d761e8ffffd8674fd4747bcbcf16c643d708318c@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 496
+    url: https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2673
+    url: https://lists.apache.org/thread.html/r1b7734dfdfd938640f2f5fb6f4231a267145c71ed60cc7faa1cbac07@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2674
+    url: https://lists.apache.org/thread.html/r26244f9f7d9a8a27a092eb0b2a0ca9395e88fcde8b5edaeca7ce569c@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 992
+    url: https://lists.apache.org/thread.html/r2721aba31a8562639c4b937150897e24f78f747cdbda8641c0f659fe@%3Cusers.kafka.apache.org%3E
+    reference_id:
+  - id: 2621
+    url: https://lists.apache.org/thread.html/r2756fd570b6709d55a61831ca028405bcb3e312175a60bc5d911c81f@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2641
+    url: https://lists.apache.org/thread.html/r2ce8d26154bea939536e6cf27ed02d3192bf5c5d04df885a80fe89b3@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2642
+    url: https://lists.apache.org/thread.html/r2ff63f210842a3c5e42f03a35d8f3a345134d073c80a04077341c211@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2689
+    url: https://lists.apache.org/thread.html/r3543ead2317dcd3306f69ee37b07dd383dbba6e2f47ff11eb55879ad@%3Cusers.activemq.apache.org%3E
+    reference_id:
+  - id: 2622
+    url: https://lists.apache.org/thread.html/r356d57d6225f91fdc30f8b0a2bed229d1ece55e16e552878c5fa809a@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2671
+    url: https://lists.apache.org/thread.html/r3784834e80df2f284577a5596340fb84346c91a2dea6a073e65e3397@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2623
+    url: https://lists.apache.org/thread.html/r3a85514a518f3080ab1fc2652cfe122c2ccf67cfb32356acb1b08fe8@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2691
+    url: https://lists.apache.org/thread.html/r3bf7b982dfa0779f8a71f843d2aa6b4184a53e6be7f149ee079387fd@%3Cdev.kafka.apache.org%3E
+    reference_id:
+  - id: 2624
+    url: https://lists.apache.org/thread.html/r3c575cabc7386e646fb12cb82b0b38ae5a6ade8a800f827107824495@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2675
+    url: https://lists.apache.org/thread.html/r3cf50d05ce8cec8c09392624b7bae750e7643dae60ef2438641ee015@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2643
+    url: https://lists.apache.org/thread.html/r3d666e4e8905157f3c046d31398b04f2bfd4519e31f266de108c6919@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2644
+    url: https://lists.apache.org/thread.html/r48d5019bd42e0770f7e5351e420a63a41ff1f16924942442c6aff6a8@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2661
+    url: https://lists.apache.org/thread.html/r48efc7cb5aeb4e1f67aaa06fb4b5479a5635d12f07d0b93fc2d08809@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2645
+    url: https://lists.apache.org/thread.html/r4ac89cbecd9e298ae9fafb5afda6fa77ac75c78d1ac957837e066c4e@%3Cuser.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2646
+    url: https://lists.apache.org/thread.html/r4b25538be50126194cc646836c718b1a4d8f71bd9c912af5b59134ad@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2692
+    url: https://lists.apache.org/thread.html/r52a5129df402352adc34d052bab9234c8ef63596306506a89fdc7328@%3Cusers.activemq.apache.org%3E
+    reference_id:
+  - id: 2702
+    url: https://lists.apache.org/thread.html/r594411f4bddebaf48a4c70266d0b7849e0d82bb72826f61b3a35bba7@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2685
+    url: https://lists.apache.org/thread.html/r5c084578b3e3b40bd903c9d9e525097421bcd88178e672f612102eb2@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2647
+    url: https://lists.apache.org/thread.html/r61590890edcc64140e0c606954b29a063c3d08a2b41d447256d51a78@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2698
+    url: https://lists.apache.org/thread.html/r61db8e7dcb56dc000a5387a88f7a473bacec5ee01b9ff3f55308aacc@%3Cdev.kafka.apache.org%3E
+    reference_id:
+  - id: 2699
+    url: https://lists.apache.org/thread.html/r61db8e7dcb56dc000a5387a88f7a473bacec5ee01b9ff3f55308aacc@%3Cusers.kafka.apache.org%3E
+    reference_id:
+  - id: 2648
+    url: https://lists.apache.org/thread.html/r6236b5f8646d48af8b66d5050f288304016840788e508c883356fe0e@%3Clog4j-user.logging.apache.org%3E
+    reference_id:
+  - id: 2625
+    url: https://lists.apache.org/thread.html/r681b4432d0605f327b68b9f8a42662993e699d04614de4851c35ffd1@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2662
+    url: https://lists.apache.org/thread.html/r696507338dd5f44efc23d98cafe30f217cf3ba78e77ed1324c7a5179@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2626
+    url: https://lists.apache.org/thread.html/r6aec6b8f70167fa325fb98b3b5c9ce0ffaed026e697b69b85ac24628@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2676
+    url: https://lists.apache.org/thread.html/r6b45a2fcc8e98ac93a179183dbb7f340027bdb8e3ab393418076b153@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2705
+    url: https://lists.apache.org/thread.html/r6d34da5a0ca17ab08179a30c971446c7421af0e96f6d60867eabfc52@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2668
+    url: https://lists.apache.org/thread.html/r71e26f9c2d5826c6f95ad60f7d052d75e1e70b0d2dd853db6fc26d5f@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2627
+    url: https://lists.apache.org/thread.html/r746fbc3fc13aee292ae6851f7a5080f592fa3a67b983c6887cdb1fc5@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2669
+    url: https://lists.apache.org/thread.html/r7a1acc95373105169bd44df710c2f462cad31fb805364d2958a5ee03@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2649
+    url: https://lists.apache.org/thread.html/r7bcdc710857725c311b856c0b82cee6207178af5dcde1bd43d289826@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2670
+    url: https://lists.apache.org/thread.html/r7f462c69d5ded4c0223e014d95a3496690423c5f6f05c09e2f2a407a@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2690
+    url: https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E
+    reference_id:
+  - id: 2710
+    url: https://lists.apache.org/thread.html/r8418a0dff1729f19cf1024937e23a2db4c0f94f2794a423f5c10e8e7@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2663
+    url: https://lists.apache.org/thread.html/r8890b8f18f1de821595792b58b968a89692a255bc20d86d395270740@%3Ccommits.druid.apache.org%3E
+    reference_id:
+  - id: 2628
+    url: https://lists.apache.org/thread.html/r8a1cfd4705258c106e488091fcec85f194c82f2bbde6bd151e201870@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2677
+    url: https://lists.apache.org/thread.html/r8c392ca48bb7e50754e4bc05865e9731b23d568d18a520fe3d8c1f75@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2678
+    url: https://lists.apache.org/thread.html/r8c6300245c0bcef095e9f07b48157e2c6471df0816db3408fcf1d748@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2650
+    url: https://lists.apache.org/thread.html/r8d78a0fbb56d505461e29868d1026e98c402e6a568c13a6da67896a2@%3Cdev.jena.apache.org%3E
+    reference_id:
+  - id: 2651
+    url: https://lists.apache.org/thread.html/r8e3f7da12bf5750b0a02e69a78a61073a2ac950eed7451ce70a65177@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2652
+    url: https://lists.apache.org/thread.html/r909b8e3a36913944d3b7bafe9635d4ca84f8f0e2cd146a1784f667c2@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2709
+    url: https://lists.apache.org/thread.html/r90c23eb8c82835fa82df85ae5e88c81fd9241e20a22971b0fb8f2c34@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2629
+    url: https://lists.apache.org/thread.html/r944183c871594fe9a555b8519a7c945bbcf6714d72461aa6c929028f@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2693
+    url: https://lists.apache.org/thread.html/r9a9e3b42cd5d1c4536a14ef04f75048dec8e2740ac6a138ea912177f@%3Cpluto-dev.portals.apache.org%3E
+    reference_id:
+  - id: 2679
+    url: https://lists.apache.org/thread.html/r9d0d03f2e7d9e13c68b530f81d02b0fec33133edcf27330d8089fcfb@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2703
+    url: https://lists.apache.org/thread.html/r9d2e28e71f91ba0b6f4114c8ecd96e2b1f7e0d06bdf8eb768c183aa9@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2694
+    url: https://lists.apache.org/thread.html/r9dc2505651788ac668299774d9e7af4dc616be2f56fdc684d1170882@%3Cusers.activemq.apache.org%3E
+    reference_id:
+  - id: 2680
+    url: https://lists.apache.org/thread.html/r9fb3238cfc3222f2392ca6517353aadae18f76866157318ac562e706@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2706
+    url: https://lists.apache.org/thread.html/ra18a903f785aed9403aea38bc6f36844a056283c00dcfc6936b6318c@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2630
+    url: https://lists.apache.org/thread.html/ra38785cfc0e7f17f8e24bebf775dd032c033fadcaea29e5bc9fffc60@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2681
+    url: https://lists.apache.org/thread.html/ra54fa49be3e773d99ccc9c2a422311cf77e3ecd3b8594ee93043a6b1@%3Cdev.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2711
+    url: https://lists.apache.org/thread.html/ra9611a8431cb62369bce8909d7645597e1dd45c24b448836b1e54940@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2653
+    url: https://lists.apache.org/thread.html/raedd12dc24412b3780432bf202a2618a21a727788543e5337a458ead@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2654
+    url: https://lists.apache.org/thread.html/rb1b29aee737e1c37fe1d48528cb0febac4f5deed51f5412e6fdfe2bf@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2712
+    url: https://lists.apache.org/thread.html/rb3c94619728c8f8c176d8e175e0a1086ca737ecdfcd5a2214bb768bc@%3Ccommits.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2664
+    url: https://lists.apache.org/thread.html/rbc45eb0f53fd6242af3e666c2189464f848a851d408289840cecc6e3@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2682
+    url: https://lists.apache.org/thread.html/rbd19de368abf0764e4383ec44d527bc9870176f488a494f09a40500d@%3Ccommon-dev.hadoop.apache.org%3E
+    reference_id:
+  - id: 2631
+    url: https://lists.apache.org/thread.html/rbdf18e39428b5c80fc35113470198b1fe53b287a76a46b0f8780b5fd@%3Cdev.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2700
+    url: https://lists.apache.org/thread.html/rbf4ce74b0d1fa9810dec50ba3ace0caeea677af7c27a97111c06ccb7@%3Cdev.kafka.apache.org%3E
+    reference_id:
+  - id: 2701
+    url: https://lists.apache.org/thread.html/rbf4ce74b0d1fa9810dec50ba3ace0caeea677af7c27a97111c06ccb7@%3Cusers.kafka.apache.org%3E
+    reference_id:
+  - id: 2655
+    url: https://lists.apache.org/thread.html/rc17d8491beee51607693019857e41e769795366b85be00aa2f4b3159@%3Cnotifications.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2632
+    url: https://lists.apache.org/thread.html/rc1eaed7f7d774d5d02f66e49baced31e04827a1293d61a70bd003ca7@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2633
+    url: https://lists.apache.org/thread.html/rc628307962ae1b8cc2d21b8e4b7dd6d7755b2dd52fa56a151a27e4fd@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2656
+    url: https://lists.apache.org/thread.html/rca24a281000fb681d7e26e5c031a21eb4b0593a7735f781b53dae4e2@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2713
+    url: https://lists.apache.org/thread.html/rcd71280585425dad7e232f239c5709e425efdd0d3de4a92f808a4767@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: '1909'
+    url: https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    reference_id:
+  - id: 2686
+    url: https://lists.apache.org/thread.html/rd3a9511eebab60e23f224841390a3f8cd5358cff605c5f7042171e47@%3Cdev.tinkerpop.apache.org%3E
+    reference_id:
+  - id: 2657
+    url: https://lists.apache.org/thread.html/rd5dbeee4808c0f2b9b51479b50de3cc6adb1072c332a200d9107f13e@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2658
+    url: https://lists.apache.org/thread.html/rd6254837403e8cbfc7018baa9be29705f3f06bd007c83708f9a97679@%3Cissues.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2683
+    url: https://lists.apache.org/thread.html/rd7805c1bf9388968508c6c8f84588773216e560055ddcc813d19f347@%3Ccommon-issues.hadoop.apache.org%3E
+    reference_id:
+  - id: 2695
+    url: https://lists.apache.org/thread.html/rd882ab6b642fe59cbbe94dc02bd197342058208f482e57b537940a4b@%3Cpluto-dev.portals.apache.org%3E
+    reference_id:
+  - id: 2687
+    url: https://lists.apache.org/thread.html/rda4849c6823dd3e83c7a356eb883180811d5c28359fe46865fd151c3@%3Cusers.kafka.apache.org%3E
+    reference_id:
+  - id: 2707
+    url: https://lists.apache.org/thread.html/rdb7ddf28807e27c7801f6e56a0dfb31092d34c61bdd4fa2de9182119@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2634
+    url: https://lists.apache.org/thread.html/rdec0d8ac1f03e6905b0de2df1d5fcdb98b94556e4f6cccf7519fdb26@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2659
+    url: https://lists.apache.org/thread.html/rdf2a0d94c3b5b523aeff7741ae71347415276062811b687f30ea6573@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2704
+    url: https://lists.apache.org/thread.html/re36da78e4f3955ba6c1c373a2ab85a4deb215ca74b85fcd66142fea1@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2660
+    url: https://lists.apache.org/thread.html/re8c21ed9dd218c217d242ffa90778428e446b082b5e1c29f567e8374@%3Cissues.activemq.apache.org%3E
+    reference_id:
+  - id: 2696
+    url: https://lists.apache.org/thread.html/reaf6b996f74f12b4557bc221abe88f58270ac583942fa41293c61f94@%3Cpluto-scm.portals.apache.org%3E
+    reference_id:
+  - id: 2665
+    url: https://lists.apache.org/thread.html/rec34b1cccf907898e7cb36051ffac3ccf1ea89d0b261a2a3b3fb267f@%3Ccommits.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2635
+    url: https://lists.apache.org/thread.html/rf1b434e11834a4449cd7addb69ed0aef0923112b5938182b363a968c@%3Cnotifications.zookeeper.apache.org%3E
+    reference_id:
+  - id: 2636
+    url: https://lists.apache.org/thread.html/rf2567488cfc9212b42e34c6393cfa1c14e30e4838b98dda84d71041f@%3Cdev.tika.apache.org%3E
+    reference_id:
+  - id: 2708
+    url: https://lists.apache.org/thread.html/rf53eeefb7e7e524deaacb9f8671cbf01b8a253e865fb94e7656722c0@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2697
+    url: https://lists.apache.org/thread.html/rf77f79699c8d7e430c14cf480f12ed1297e6e8cf2ed379a425941e80@%3Cpluto-dev.portals.apache.org%3E
+    reference_id:
+  - id: 2667
+    url: https://lists.apache.org/thread.html/rf9c19bcc2f7a98a880fa3e3456c003d331812b55836b34ef648063c9@%3Cjira.kafka.apache.org%3E
+    reference_id:
+  - id: 2688
+    url: https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E
+    reference_id:
+  - id: 2714
+    url: https://lists.apache.org/thread.html/rfdf65fa675c64a64459817344e0e6c44d51ee264beea6e5851fb60dc@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 2637
+    url: https://lists.debian.org/debian-lts-announce/2020/01/msg00008.html
+    reference_id:
+  - id: 2638
+    url: https://security.netapp.com/advisory/ntap-20200110-0001/
+    reference_id:
+  - id: 2684
+    url: https://usn.ubuntu.com/4495-1/
+    reference_id:
+  - id: 2666
+    url: https://www.debian.org/security/2020/dsa-4686
+    reference_id:
+  - id: 495
+    url: https://www.oracle.com/security-alerts/cpuapr2020.html
+    reference_id:
+  - id: 420
+    url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_id:
+  - id: 389
+    url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_id:
+  - id: 406
+    url: https://www.oracle.com/security-alerts/cpujul2020.html
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 187758
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1785616
+    reference_id: 1785616
+  - id: 39426
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947124
+    reference_id: 947124
+  - id: 786417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:bookkeeper:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:bookkeeper:*:*:*:*:*:*:*:*
+  - id: 702720
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:*
+  - id: 529482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_system_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_system_manager:*:*:*:*:*:*:*:*
+  - id: 169590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*
+  - id: 702723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:application_testing_suite:13.3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:application_testing_suite:13.3.0.1:*:*:*:*:*:*:*
+  - id: 702734
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:communications_network_integrity:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:communications_network_integrity:*:*:*:*:*:*:*:*
+  - id: 621351
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:endeca_information_discovery_studio:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:endeca_information_discovery_studio:3.2.0:*:*:*:*:*:*:*
+  - id: 702752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:financial_services_lending_and_leasing:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:financial_services_lending_and_leasing:*:*:*:*:*:*:*:*
+  - id: 702753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:financial_services_lending_and_leasing:12.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:financial_services_lending_and_leasing:12.5.0:*:*:*:*:*:*:*
+  - id: 171291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:mysql_enterprise_monitor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:mysql_enterprise_monitor:*:*:*:*:*:*:*:*
+  - id: 702811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:primavera_gateway:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:primavera_gateway:*:*:*:*:*:*:*:*
+  - id: 702812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:rapid_planning:12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:rapid_planning:12.1:*:*:*:*:*:*:*
+  - id: 702813
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:rapid_planning:12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:rapid_planning:12.2:*:*:*:*:*:*:*
+  - id: 702820
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_extract_transform_and_load:19.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_extract_transform_and_load:19.0:*:*:*:*:*:*:*
+  - id: 606808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_service_backbone:14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_service_backbone:14.1:*:*:*:*:*:*:*
+  - id: 606809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_service_backbone:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_service_backbone:15.0:*:*:*:*:*:*:*
+  - id: 702828
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:retail_service_backbone:16.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:retail_service_backbone:16.0:*:*:*:*:*:*:*
+  - id: 169619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*
+  - id: 169605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*
+  - id: 169607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:12.2.1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:12.2.1.3.0:*:*:*:*:*:*:*
+  - id: 702835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:12.2.1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:12.2.1.4.0:*:*:*:*:*:*:*
+  - id: 702836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:weblogic_server:14.1.1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:weblogic_server:14.1.1.0.0:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 2610
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17571
+    reference_id: CVE-2019-17571
+  - id: 2715
+    url: https://github.com/advisories/GHSA-2qrg-x229-3v8q
+    reference_id: GHSA-2qrg-x229-3v8q
+  - id: 187768
+    url: https://access.redhat.com/errata/RHSA-2017:1801
+    reference_id: RHSA-2017:1801
+  - id: 187767
+    url: https://access.redhat.com/errata/RHSA-2017:1802
+    reference_id: RHSA-2017:1802
+  - id: 187761
+    url: https://access.redhat.com/errata/RHSA-2017:2423
+    reference_id: RHSA-2017:2423
+  - id: 187766
+    url: https://access.redhat.com/errata/RHSA-2017:2633
+    reference_id: RHSA-2017:2633
+  - id: 187769
+    url: https://access.redhat.com/errata/RHSA-2017:2638
+    reference_id: RHSA-2017:2638
+  - id: 176644
+    url: https://access.redhat.com/errata/RHSA-2017:2810
+    reference_id: RHSA-2017:2810
+  - id: 176642
+    url: https://access.redhat.com/errata/RHSA-2017:2811
+    reference_id: RHSA-2017:2811
+  - id: 187764
+    url: https://access.redhat.com/errata/RHSA-2017:2888
+    reference_id: RHSA-2017:2888
+  - id: 187765
+    url: https://access.redhat.com/errata/RHSA-2017:2889
+    reference_id: RHSA-2017:2889
+  - id: 187759
+    url: https://access.redhat.com/errata/RHSA-2017:3244
+    reference_id: RHSA-2017:3244
+  - id: 187762
+    url: https://access.redhat.com/errata/RHSA-2017:3399
+    reference_id: RHSA-2017:3399
+  - id: 187763
+    url: https://access.redhat.com/errata/RHSA-2017:3400
+    reference_id: RHSA-2017:3400
+  - id: 175802
+    url: https://access.redhat.com/errata/RHSA-2019:1545
+    reference_id: RHSA-2019:1545
+  - id: 175432
+    url: https://access.redhat.com/errata/RHSA-2022:0497
+    reference_id: RHSA-2022:0497
+  - id: 175428
+    url: https://access.redhat.com/errata/RHSA-2022:0507
+    reference_id: RHSA-2022:0507
+  - id: 187760
+    url: https://access.redhat.com/errata/RHSA-2022:5053
+    reference_id: RHSA-2022:5053
+weaknesses: []

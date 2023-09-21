@@ -1,0 +1,152 @@
+vulnerability_id: VCID-d1hf-3gnk-aaaa
+aliases:
+  - CVE-2020-27777
+summary: A flaw was found in the way RTAS handled memory accesses in userspace to kernel communication.
+  On a locked down (usually due to Secure Boot) guest system running on top of PowerVM or KVM
+  hypervisors (pseries platform) a root like local user could use this flaw to further increase
+  their privileges to that of a running kernel.
+severities:
+  - id: 698305
+    reference_id: 1458184
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609344
+    reference_id: 930868
+    scoring_system: cvssv3
+    value: '6.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 698306
+    reference_id: 1458185
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698307
+    reference_id: 1458186
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698308
+    reference_id: 1458187
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697742
+    reference_id: 1457672
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692825
+    reference_id: 1453592
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684067
+    reference_id: 1446747
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697743
+    reference_id: 1457673
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 609343
+    reference_id: 930867
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 467454
+    reference_id: 837799
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 467452
+    reference_id: 837799
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 603810
+    reference_id: 926803
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1458184
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-27777.html
+    reference_id:
+  - id: 930868
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-27777.json
+    reference_id:
+  - id: 1458185
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27777
+    reference_id:
+  - id: 1458186
+    url: https://git.kernel.org/linus/bd59380c5ba4147dcbaad3e582b55ccfd120b764
+    reference_id:
+  - id: 837796
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/powerpc/linux.git/commit/?h=next&id=bd59380c5ba4147dcbaad3e582b55ccfd120b764
+    reference_id:
+  - id: 1458187
+    url: https://lkml.org/lkml/2020/12/8/950
+    reference_id:
+  - id: 1457672
+    url: https://ubuntu.com/security/notices/USN-4679-1
+    reference_id:
+  - id: 1453592
+    url: https://ubuntu.com/security/notices/USN-4680-1
+    reference_id:
+  - id: 1446747
+    url: https://ubuntu.com/security/notices/USN-4708-1
+    reference_id:
+  - id: 1457673
+    url: https://ubuntu.com/security/notices/USN-4751-1
+    reference_id:
+  - id: 837797
+    url: https://www.openwall.com/lists/oss-security/2020/10/09/1
+    reference_id:
+  - id: 837798
+    url: https://www.openwall.com/lists/oss-security/2020/11/23/2
+    reference_id:
+  - id: 930867
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1900844
+    reference_id: '1900844'
+  - id: 834008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.4:*:*:*:*:*:*:*
+  - id: 834009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.5:*:*:*:*:*:*:*
+  - id: 820709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:4.6:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 166865
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 837799
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-27777
+    reference_id: CVE-2020-27777
+  - id: 926803
+    url: https://access.redhat.com/errata/RHSA-2021:3327
+    reference_id: RHSA-2021:3327
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

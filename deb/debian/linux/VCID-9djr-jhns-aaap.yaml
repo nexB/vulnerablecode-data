@@ -1,0 +1,184 @@
+vulnerability_id: VCID-9djr-jhns-aaap
+aliases:
+  - CVE-2020-11884
+summary: In the Linux kernel 4.19 through 5.6.7 on the s390 platform, code execution may occur
+  because of a race condition, as demonstrated by code in enable_sacf_uaccess in arch/s390/lib/uaccess.c
+  that fails to protect against a concurrent page table upgrade, aka CID-3f777e19d171. A crash
+  could also occur.
+severities:
+  - id: 695737
+    reference_id: 1455994
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 50639
+    reference_id: 175229
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 695738
+    reference_id: 1455995
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 692811
+    reference_id: 1453580
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695740
+    reference_id: 1455997
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 692812
+    reference_id: 1453581
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 692808
+    reference_id: 1453577
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695739
+    reference_id: 1455996
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 692809
+    reference_id: 1453578
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 50638
+    reference_id: 175228
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 434451
+    reference_id: 814838
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 434449
+    reference_id: 814838
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 49216
+    reference_id: 173513
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49218
+    reference_id: 173515
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49221
+    reference_id: 173518
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1455994
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-11884.html
+    reference_id:
+  - id: 175229
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-11884.json
+    reference_id:
+  - id: 1455995
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11884
+    reference_id:
+  - id: 814832
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/commit/?id=215d1f3928713d6eaec67244bcda72105b898000
+    reference_id:
+  - id: 814833
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f777e19d171670ab558a6d5e6b1ac7f9b6c574f
+    reference_id:
+  - id: 814834
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3TZBP2HINNAX7HKHCOUMIFVQPV6GWMCZ/
+    reference_id:
+  - id: 814835
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AQUVKC3IPUC5B374VVAZV4J5P3GAUGSW/
+    reference_id:
+  - id: 814836
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZKVJMS4GQRH5SO35WM5GINCFAGXQ3ZW6/
+    reference_id:
+  - id: 771150
+    url: https://security.netapp.com/advisory/ntap-20200608-0001/
+    reference_id:
+  - id: 1453580
+    url: https://ubuntu.com/security/notices/USN-4342-1
+    reference_id:
+  - id: 1455997
+    url: https://ubuntu.com/security/notices/USN-4343-1
+    reference_id:
+  - id: 1453581
+    url: https://ubuntu.com/security/notices/USN-4345-1
+    reference_id:
+  - id: 783059
+    url: https://usn.ubuntu.com/4342-1/
+    reference_id:
+  - id: 814837
+    url: https://usn.ubuntu.com/4343-1/
+    reference_id:
+  - id: 783061
+    url: https://usn.ubuntu.com/4345-1/
+    reference_id:
+  - id: 1453577
+    url: https://usn.ubuntu.com/usn/usn-4342-1
+    reference_id:
+  - id: 1455996
+    url: https://usn.ubuntu.com/usn/usn-4343-1
+    reference_id:
+  - id: 1453578
+    url: https://usn.ubuntu.com/usn/usn-4345-1
+    reference_id:
+  - id: 812786
+    url: https://www.debian.org/security/2020/dsa-4667
+    reference_id:
+  - id: 175228
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1828149
+    reference_id: 1828149
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 814838
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-11884
+    reference_id: CVE-2020-11884
+  - id: 173513
+    url: https://access.redhat.com/errata/RHSA-2020:2102
+    reference_id: RHSA-2020:2102
+  - id: 173515
+    url: https://access.redhat.com/errata/RHSA-2020:2199
+    reference_id: RHSA-2020:2199
+  - id: 173518
+    url: https://access.redhat.com/errata/RHSA-2020:2429
+    reference_id: RHSA-2020:2429
+weaknesses: []

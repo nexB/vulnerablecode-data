@@ -1,0 +1,157 @@
+vulnerability_id: VCID-qtbw-vpbp-aaaj
+aliases:
+  - CVE-2021-4160
+  - VC-OPENSSL-20220128-CVE-2021-4160
+summary: There is a carry propagation bug in the MIPS32 and MIPS64 squaring procedure. Many
+  EC algorithms are affected, including some of the TLS 1.3 default curves. Impact was not analyzed
+  in detail, because the pre-requisites for attack are considered unlikely and include reusing
+  private keys. Analysis suggests that attacks against RSA and DSA as a result of this defect
+  would be very difficult to perform and are not believed likely. Attacks against DH are considered
+  just feasible (although very difficult) because most of the work necessary to deduce information
+  about a private key may be performed offline. The amount of resources required for such an
+  attack would be significant. However, for an attack on TLS to be meaningful, the server would
+  have to share the DH private key among multiple clients, which is no longer an option since
+  CVE-2016-0701. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0.0. It was addressed
+  in the releases of 1.1.1m and 3.0.1 on the 15th of December 2021. For the 1.0.2 release it
+  is addressed in git commit 6fc1aaaf3 that is available to premium support customers only.
+  It will be made available in 1.0.2zc when it is released. The issue only affects OpenSSL on
+  MIPS platforms.
+severities:
+  - id: 264807
+    reference_id: 682788
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 596
+    reference_id: 3498
+    scoring_system: generic_textual
+    value: Moderate
+    scoring_elements:
+  - id: 264806
+    reference_id: 682787
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 563315
+    reference_id: 899716
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 563313
+    reference_id: 899716
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 682788
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4160.json
+    reference_id:
+  - id: 3495
+    url: https://github.com/openssl/openssl/commit/3bf7b73ea7123045b8f972badc67ed6878e6c37f
+    reference_id:
+  - id: 3497
+    url: https://github.com/openssl/openssl/commit/6fc1aaaf303185aa5e483e06bdfae16daa9193a7
+    reference_id:
+  - id: 3496
+    url: https://github.com/openssl/openssl/commit/e9e726506cd2a3fd9c0f12daf8cc1fe934c7dddb
+    reference_id:
+  - id: 899712
+    url: https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3bf7b73ea7123045b8f972badc67ed6878e6c37f
+    reference_id:
+  - id: 899713
+    url: https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6fc1aaaf303185aa5e483e06bdfae16daa9193a7
+    reference_id:
+  - id: 899714
+    url: https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e9e726506cd2a3fd9c0f12daf8cc1fe934c7dddb
+    reference_id:
+  - id: 899715
+    url: https://www.debian.org/security/2022/dsa-5103
+    reference_id:
+  - id: 3498
+    url: https://www.openssl.org/news/secadv/20220128.txt
+    reference_id:
+  - id: 389
+    url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 682787
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2048651
+    reference_id: 2048651
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 899717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:-:*:*:*:*:*:*
+  - id: 899726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha1:*:*:*:*:*:*
+  - id: 899718
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha10:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha10:*:*:*:*:*:*
+  - id: 899719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha11:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha11:*:*:*:*:*:*
+  - id: 899720
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha12:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha12:*:*:*:*:*:*
+  - id: 899721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha13:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha13:*:*:*:*:*:*
+  - id: 899722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha14:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha14:*:*:*:*:*:*
+  - id: 899723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha15:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha15:*:*:*:*:*:*
+  - id: 899724
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha16:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha16:*:*:*:*:*:*
+  - id: 899725
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha17:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha17:*:*:*:*:*:*
+  - id: 899727
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha2:*:*:*:*:*:*
+  - id: 899728
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha3:*:*:*:*:*:*
+  - id: 899729
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha4:*:*:*:*:*:*
+  - id: 899730
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha5:*:*:*:*:*:*
+  - id: 899731
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha6:*:*:*:*:*:*
+  - id: 899732
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha7:*:*:*:*:*:*
+  - id: 899733
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha8:*:*:*:*:*:*
+  - id: 899734
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:alpha9:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:alpha9:*:*:*:*:*:*
+  - id: 899735
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:beta1:*:*:*:*:*:*
+  - id: 899736
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:3.0.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:3.0.0:beta2:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 169237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 899716
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4160
+    reference_id: CVE-2021-4160
+weaknesses: []

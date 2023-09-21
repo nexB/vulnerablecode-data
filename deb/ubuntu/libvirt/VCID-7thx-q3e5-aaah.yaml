@@ -1,0 +1,162 @@
+vulnerability_id: VCID-7thx-q3e5-aaah
+aliases:
+  - CVE-2013-6456
+summary: The LXC driver (lxc/lxc_driver.c) in libvirt 1.0.1 through 1.2.1 allows local users
+  to (1) delete arbitrary host devices via the virDomainDeviceDettach API and a symlink attack
+  on /dev in the container; (2) create arbitrary nodes (mknod) via the virDomainDeviceAttach
+  API and a symlink attack on /dev in the container; and cause a denial of service (shutdown
+  or reboot host OS) via the (3) virDomainShutdown or (4) virDomainReboot API and a symlink
+  attack on /dev/initctl in the container, related to "paths under /proc/$PID/root" and the
+  virInitctlSetRunLevel function.
+severities:
+  - id: 657293
+    reference_id: 423322
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 653560
+    reference_id: 1422921
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653562
+    reference_id: 1422922
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653561
+    reference_id: 544379
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653563
+    reference_id: 1422923
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60708
+    reference_id: 187986
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 172291
+    reference_id: 544383
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:A/AC:M/Au:S/C:N/I:P/A:C
+references:
+  - id: 544374
+    url: http://libvirt.org/git/?p=libvirt.git;a=commit;h=5fc590ad9f4
+    reference_id:
+  - id: 423322
+    url: http://libvirt.org/news.html
+    reference_id:
+  - id: 544375
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-February/129199.html
+    reference_id:
+  - id: 544376
+    url: http://lists.opensuse.org/opensuse-updates/2014-05/msg00004.html
+    reference_id:
+  - id: 1422921
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-6456.html
+    reference_id:
+  - id: 187987
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-6456.json
+    reference_id:
+  - id: 544381
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=732394
+    reference_id:
+  - id: 544382
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1045643
+    reference_id:
+  - id: 1422922
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6456
+    reference_id:
+  - id: 544377
+    url: http://secunia.com/advisories/56187
+    reference_id:
+  - id: 544378
+    url: http://secunia.com/advisories/56215
+    reference_id:
+  - id: 534095
+    url: http://secunia.com/advisories/60895
+    reference_id:
+  - id: 534096
+    url: http://security.gentoo.org/glsa/glsa-201412-04.xml
+    reference_id:
+  - id: 544379
+    url: http://security.libvirt.org/2013/0018.html
+    reference_id:
+  - id: 1422923
+    url: https://ubuntu.com/security/notices/USN-2209-1
+    reference_id:
+  - id: 544380
+    url: http://www.securityfocus.com/bid/65743
+    reference_id:
+  - id: 187986
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1048627
+    reference_id: 1048627
+  - id: 520113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.1:*:*:*:*:*:*:*
+  - id: 524237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.2:*:*:*:*:*:*:*
+  - id: 524238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.3:*:*:*:*:*:*:*
+  - id: 524239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.4:*:*:*:*:*:*:*
+  - id: 521997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5:*:*:*:*:*:*:*
+  - id: 534131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.1:*:*:*:*:*:*:*
+  - id: 534132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.2:*:*:*:*:*:*:*
+  - id: 534133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.3:*:*:*:*:*:*:*
+  - id: 534134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.4:*:*:*:*:*:*:*
+  - id: 534091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.5:*:*:*:*:*:*:*
+  - id: 534919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.6:*:*:*:*:*:*:*
+  - id: 524158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.6:*:*:*:*:*:*:*
+  - id: 533166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.0:*:*:*:*:*:*:*
+  - id: 533705
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.1:*:*:*:*:*:*:*
+  - id: 534920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.2:*:*:*:*:*:*:*
+  - id: 534927
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.3:*:*:*:*:*:*:*
+  - id: 544229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.4:*:*:*:*:*:*:*
+  - id: 544230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.2.0:*:*:*:*:*:*:*
+  - id: 544384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.2.1:*:*:*:*:*:*:*
+  - id: 443591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+  - id: 544383
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-6456
+    reference_id: CVE-2013-6456
+weaknesses: []

@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2020-27761
+fixed_purl:
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.24%2Bdfsg-1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.6?distro=sid
+references: []
+severities: []
+summary: WritePALMImage() in /coders/palm.c used size_t casts in several areas of
+  a calculation which could lead to values outside the range of representable type
+  `unsigned long` undefined behavior when a crafted input file was processed by ImageMagick.
+  The patch casts to `ssize_t` instead to avoid this issue. Red Hat Product Security
+  marked the Severity as Low because although it could potentially lead to an impact
+  to application availability, no specific impact was shown in this case. This flaw
+  affects ImageMagick versions prior to ImageMagick 7.0.9-0.
+vulnerability_id: VCID-rukh-t562-aaak
+weaknesses: []

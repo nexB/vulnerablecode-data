@@ -1,0 +1,66 @@
+vulnerability_id: VCID-szs3-95th-aaah
+aliases:
+  - CVE-2018-20834
+  - GHSA-j44m-qm6p-hp7m
+summary: |
+  Improper Link Resolution Before File Access ('Link Following')
+  A vulnerability was found in node-tar before version 4.4.2 (excluding version 2.2.2). An Arbitrary File Overwrite issue exists when extracting a tarball containing a hardlink to a file that already exists on the system, in conjunction with a later plain file with the same name as the hardlink. This plain file content replaces the existing file content. A patch has been applied to node-tar v2.2.2).
+severities:
+  - id: 616511
+    reference_id: 936122
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 616510
+    reference_id: 936121
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 705887
+    reference_id: 36275
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 612847
+    reference_id: 933440
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 936122
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-20834.json
+    reference_id:
+  - id: 36272
+    url: https://github.com/npm/node-tar/commit/7ecef07da6a9e72cc0c4d0c9c6a8e85b6b52395d
+    reference_id:
+  - id: 36268
+    url: https://github.com/npm/node-tar/commit/b0c58433c22f5e7fe8b1c76373f27e3f81dcd4c8
+    reference_id:
+  - id: 36274
+    url: https://github.com/npm/node-tar/commits/v2.2.2
+    reference_id:
+  - id: 36270
+    url: https://github.com/npm/node-tar/compare/58a8d43...a5f7779
+    reference_id:
+  - id: 36269
+    url: https://hackerone.com/reports/344595
+    reference_id:
+  - id: 749859
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-20834
+    reference_id:
+  - id: 36271
+    url: https://www.npmjs.com/advisories/803
+    reference_id:
+  - id: 936121
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1702338
+    reference_id: 1702338
+  - id: 749860
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:node-tar_project:node-tar:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:node-tar_project:node-tar:*:*:*:*:*:*:*:*
+  - id: 36275
+    url: https://github.com/advisories/GHSA-j44m-qm6p-hp7m
+    reference_id: GHSA-j44m-qm6p-hp7m
+  - id: 933440
+    url: https://access.redhat.com/errata/RHSA-2019:1821
+    reference_id: RHSA-2019:1821
+weaknesses: []

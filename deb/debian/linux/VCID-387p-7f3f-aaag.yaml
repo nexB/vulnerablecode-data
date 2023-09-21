@@ -1,0 +1,226 @@
+vulnerability_id: VCID-387p-7f3f-aaag
+aliases:
+  - CVE-2019-14284
+summary: 'In the Linux kernel before 5.2.3, drivers/block/floppy.c allows a denial of service
+  by setup_format_params division-by-zero. Two consecutive ioctls can trigger the bug: the first
+  one should set the drive geometry with .sect and .rate values that make F_SECT_PER_TRACK be
+  zero. Next, the floppy format operation should be called. It can be triggered by an unprivileged
+  local user even when a floppy disk has not been inserted. NOTE: QEMU creates the floppy device
+  by default.'
+severities:
+  - id: 691431
+    reference_id: 1452600
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77282
+    reference_id: 208208
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H
+  - id: 691876
+    reference_id: 777844
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691432
+    reference_id: 1452601
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691433
+    reference_id: 1452602
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677596
+    reference_id: 693840
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689645
+    reference_id: 1451230
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686146
+    reference_id: 1448379
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686636
+    reference_id: 1448702
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689496
+    reference_id: 1451108
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684054
+    reference_id: 1446739
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689643
+    reference_id: 1451228
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686145
+    reference_id: 1448378
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689644
+    reference_id: 1451229
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689494
+    reference_id: 1451106
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684066
+    reference_id: 1446746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677600
+    reference_id: 618848
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 77281
+    reference_id: 208207
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 381368
+    reference_id: 777850
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 381366
+    reference_id: 777850
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 749961
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00055.html
+    reference_id:
+  - id: 749962
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00056.html
+    reference_id:
+  - id: 693837
+    url: http://packetstormsecurity.com/files/154059/Slackware-Security-Advisory-Slackware-14.2-kernel-Updates.html
+    reference_id:
+  - id: 749967
+    url: http://packetstormsecurity.com/files/154408/Kernel-Live-Patch-Security-Notice-LSN-0055-1.html
+    reference_id:
+  - id: 629312
+    url: http://packetstormsecurity.com/files/154951/Kernel-Live-Patch-Security-Notice-LSN-0058-1.html
+    reference_id:
+  - id: 1452600
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-14284.html
+    reference_id:
+  - id: 208208
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-14284.json
+    reference_id:
+  - id: 777844
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.2.3
+    reference_id:
+  - id: 1452601
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14284
+    reference_id:
+  - id: 777849
+    url: https://github.com/torvalds/linux/commit/f3554aeb991214cbfafd17d55e2bfddb50282e32
+    reference_id:
+  - id: 777848
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f3554aeb991214cbfafd17d55e2bfddb50282e32
+    reference_id:
+  - id: 1452602
+    url: https://git.kernel.org/linus/f3554aeb991214cbfafd17d55e2bfddb50282e32
+    reference_id:
+  - id: 693840
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00016.html
+    reference_id:
+  - id: 693841
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00017.html
+    reference_id:
+  - id: 749869
+    url: https://seclists.org/bugtraq/2019/Aug/13
+    reference_id:
+  - id: 602465
+    url: https://seclists.org/bugtraq/2019/Aug/18
+    reference_id:
+  - id: 693845
+    url: https://seclists.org/bugtraq/2019/Aug/26
+    reference_id:
+  - id: 749957
+    url: https://security.netapp.com/advisory/ntap-20190905-0002/
+    reference_id:
+  - id: 1451230
+    url: https://ubuntu.com/security/notices/USN-4114-1
+    reference_id:
+  - id: 1448379
+    url: https://ubuntu.com/security/notices/USN-4115-1
+    reference_id:
+  - id: 1448702
+    url: https://ubuntu.com/security/notices/USN-4116-1
+    reference_id:
+  - id: 1451108
+    url: https://ubuntu.com/security/notices/USN-4117-1
+    reference_id:
+  - id: 1446739
+    url: https://ubuntu.com/security/notices/USN-4118-1
+    reference_id:
+  - id: 767975
+    url: https://usn.ubuntu.com/4114-1/
+    reference_id:
+  - id: 747344
+    url: https://usn.ubuntu.com/4115-1/
+    reference_id:
+  - id: 749977
+    url: https://usn.ubuntu.com/4116-1/
+    reference_id:
+  - id: 766179
+    url: https://usn.ubuntu.com/4117-1/
+    reference_id:
+  - id: 730976
+    url: https://usn.ubuntu.com/4118-1/
+    reference_id:
+  - id: 1451228
+    url: https://usn.ubuntu.com/usn/usn-4114-1
+    reference_id:
+  - id: 1448378
+    url: https://usn.ubuntu.com/usn/usn-4115-1
+    reference_id:
+  - id: 1451229
+    url: https://usn.ubuntu.com/usn/usn-4116-1
+    reference_id:
+  - id: 1451106
+    url: https://usn.ubuntu.com/usn/usn-4117-1
+    reference_id:
+  - id: 1446746
+    url: https://usn.ubuntu.com/usn/usn-4118-1
+    reference_id:
+  - id: 749873
+    url: https://www.debian.org/security/2019/dsa-4495
+    reference_id:
+  - id: 618848
+    url: https://www.debian.org/security/2019/dsa-4497
+    reference_id:
+  - id: 208207
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1734246
+    reference_id: 1734246
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 777850
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14284
+    reference_id: CVE-2019-14284
+weaknesses: []

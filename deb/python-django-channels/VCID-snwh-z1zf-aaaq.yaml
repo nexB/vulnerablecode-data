@@ -1,0 +1,49 @@
+affected_purls:
+- pkg:deb/debian/python-django-channels@2.1.7-1
+- pkg:pypi/channels@3.0.0
+- pkg:pypi/channels@3.0.1
+- pkg:pypi/channels@3.0.2
+aliases:
+- CVE-2020-35681
+- GHSA-v542-8q9x-cffc
+fixed_purl:
+- pkg:deb/debian/python-django-channels@3.0.3-1
+- pkg:pypi/channels@3.0.3
+references:
+- id: 154357
+  reference_id: ''
+  url: https://channels.readthedocs.io/en/stable/releases/3.0.3.html
+- id: 154358
+  reference_id: ''
+  url: https://channels.readthedocs.io/en/stable/releases/index.html
+- id: 154356
+  reference_id: ''
+  url: https://github.com/django/channels/commit/e85874d9630474986a6937430eac52db79a2a022
+- id: 154359
+  reference_id: ''
+  url: https://github.com/django/channels/releases
+- id: 129429
+  reference_id: '979376'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=979376
+- id: 154355
+  reference_id: CVE-2020-35681
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-35681
+- id: 154360
+  reference_id: GHSA-v542-8q9x-cffc
+  url: https://github.com/advisories/GHSA-v542-8q9x-cffc
+severities:
+- id: 22095
+  reference_id: 154360
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Django Channels 3.x before 3.0.3 allows remote attackers to obtain sensitive
+  information from a different request scope. The legacy channels.http.AsgiHandler
+  class, used for handling HTTP type requests in an ASGI environment prior to Django
+  3.0, did not correctly separate request scopes in Channels 3.0. In many cases this
+  would result in a crash but, with correct timing, responses could be sent to the
+  wrong client, resulting in potential leakage of session identifiers and other sensitive
+  data. Note that this affects only the legacy Channels provided class, and not Django's
+  similar ASGIHandler, available from Django 3.0.
+vulnerability_id: VCID-snwh-z1zf-aaaq
+weaknesses: []

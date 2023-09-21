@@ -1,0 +1,21 @@
+affected_purls:
+- pkg:deb/debian/samba@2:4.9.5%2Bdfsg-5%2Bdeb10u3
+aliases:
+- CVE-2022-0336
+fixed_purl:
+- pkg:deb/debian/samba@2:4.13.13%2Bdfsg-1~deb11u5
+references:
+- id: 181186
+  reference_id: '1004694'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004694
+severities: []
+summary: The Samba AD DC includes checks when adding service principals names (SPNs)
+  to an account to ensure that SPNs do not alias with those already in the database.
+  Some of these checks are able to be bypassed if an account modification re-adds
+  an SPN that was previously present on that account, such as one added when a computer
+  is joined to a domain. An attacker who has the ability to write to an account can
+  exploit this to perform a denial-of-service attack by adding an SPN that matches
+  an existing service. Additionally, an attacker who can intercept traffic can impersonate
+  existing services, resulting in a loss of confidentiality and integrity.
+vulnerability_id: VCID-26qk-su3g-aaab
+weaknesses: []

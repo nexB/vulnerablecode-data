@@ -1,0 +1,55 @@
+affected_purls:
+- pkg:deb/debian/glibc@2.0.7.19981211-6
+- pkg:deb/debian/glibc@2.0.7t-1
+- pkg:deb/debian/glibc@2.1.3-20
+aliases:
+- CVE-1999-0199
+fixed_purl:
+- pkg:deb/debian/glibc@2.2-1?distro=sid
+- pkg:deb/debian/glibc@2.2.5-11.8
+- pkg:deb/debian/glibc@2.28-10%2Bdeb10u1?distro=sid
+- pkg:deb/debian/glibc@2.31-13%2Bdeb11u6?distro=sid
+- pkg:deb/debian/glibc@2.36-9?distro=sid
+references:
+- id: 1163
+  reference_id: ''
+  url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-1999-0199.json
+- id: 1161
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0199
+- id: 1158
+  reference_id: ''
+  url: https://ftp.gnu.org/gnu/glibc/glibc-2.2.tar.gz
+- id: 1160
+  reference_id: ''
+  url: https://github.com/bminor/glibc/commit/2864e767053317538feafa815046fff89e5a16be#diff-94e8c502f255fdfc346df0e29fd4ef40
+- id: 1159
+  reference_id: ''
+  url: https://www.cee.studio/tdelete.html
+- id: 1162
+  reference_id: '1885775'
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1885775
+- id: 1156
+  reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+- id: 1157
+  reference_id: CVE-1999-0199
+  url: https://nvd.nist.gov/vuln/detail/CVE-1999-0199
+severities:
+- id: 193
+  reference_id: 1157
+  scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  scoring_system: cvssv2
+  value: '7.5'
+- id: 192
+  reference_id: 1157
+  scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  scoring_system: cvssv3
+  value: '9.8'
+summary: manual/search.texi in the GNU C Library (aka glibc) before 2.2 lacks a statement
+  about the unspecified tdelete return value upon deletion of a tree's root, which
+  might allow attackers to access a dangling pointer in an application whose developer
+  was unaware of a documentation update from 1999.
+vulnerability_id: VCID-9xk1-hq1g-aaas
+weaknesses:
+- CWE-252

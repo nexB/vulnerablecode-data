@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2019-15792
+fixed_purl:
+- pkg:deb/debian/linux@0?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: In shiftfs, a non-upstream patch to the Linux kernel included in the Ubuntu
+  5.0 and 5.3 kernel series, shiftfs_btrfs_ioctl_fd_replace() calls fdget(oldfd),
+  then without further checks passes the resulting file* into shiftfs_real_fdget(),
+  which casts file->private_data, a void* that points to a filesystem-dependent type,
+  to a "struct shiftfs_file_info *". As the private_data is not required to be a pointer,
+  an attacker can use this to cause a denial of service or possibly execute arbitrary
+  code.
+vulnerability_id: VCID-5qxf-nc9y-aaac
+weaknesses: []

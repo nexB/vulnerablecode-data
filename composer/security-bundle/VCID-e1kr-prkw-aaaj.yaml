@@ -1,0 +1,57 @@
+affected_purls:
+- pkg:composer/symfony/security-bundle@5.3.0
+- pkg:composer/symfony/security-bundle@5.3.11
+- pkg:composer/symfony/security-bundle@5.3.2
+- pkg:composer/symfony/security-bundle@5.3.3
+- pkg:composer/symfony/security-bundle@5.3.4
+- pkg:composer/symfony/security-bundle@5.3.7
+- pkg:composer/symfony/security-bundle@5.3.8
+aliases:
+- CVE-2021-41268
+- GHSA-qw36-p97w-vcqr
+fixed_purl:
+- pkg:composer/symfony/security-bundle@5.3.12
+- pkg:deb/debian/symfony@0?distro=sid
+- pkg:deb/debian/symfony@3.4.22%2Bdfsg-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/symfony@4.4.19%2Bdfsg-2%2Bdeb11u3?distro=sid
+- pkg:deb/debian/symfony@5.4.23%2Bdfsg-1?distro=sid
+references:
+- id: 163859
+  reference_id: ''
+  url: https://github.com/symfony/symfony/commit/36a808b857cd3240244f4b224452fb1e70dc6dfc
+- id: 163853
+  reference_id: ''
+  url: https://github.com/symfony/symfony/pull/44243
+- id: 163855
+  reference_id: ''
+  url: https://github.com/symfony/symfony/releases/tag/v5.3.12
+- id: 163858
+  reference_id: CVE-2021-41268
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-41268
+- id: 163860
+  reference_id: GHSA-qw36-p97w-vcqr
+  url: https://github.com/advisories/GHSA-qw36-p97w-vcqr
+- id: 163857
+  reference_id: GHSA-qw36-p97w-vcqr
+  url: https://github.com/symfony/symfony/security/advisories/GHSA-qw36-p97w-vcqr
+severities:
+- id: 24541
+  reference_id: 163860
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 24540
+  reference_id: 163857
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: Symfony/SecurityBundle is the security system for Symfony, a PHP framework
+  for web and console applications and a set of reusable PHP components. Since the
+  rework of the Remember me cookie in version 5.3.0, the cookie is not invalidated
+  when the user changes their password. Attackers can therefore maintain their access
+  to the account even if the password is changed as long as they have had the chance
+  to login once and get a valid remember me cookie. Starting with version 5.3.12,
+  Symfony makes the password part of the signature by default. In that way, when the
+  password changes, then the cookie is not valid anymore.
+vulnerability_id: VCID-e1kr-prkw-aaaj
+weaknesses: []

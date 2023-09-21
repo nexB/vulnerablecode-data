@@ -1,0 +1,124 @@
+vulnerability_id: VCID-hws3-uyw6-aaam
+aliases:
+  - CVE-2019-19783
+summary: An issue was discovered in Cyrus IMAP before 2.5.15, 3.0.x before 3.0.13, and 3.1.x
+  through 3.1.8. If sieve script uploading is allowed (3.x) or certain non-default sieve options
+  are enabled (2.x), a user with a mail account on the service can use a sieve script containing
+  a fileinto directive to create any mailbox with administrator privileges, because of folder
+  mishandling in autosieve_createfolder() in imap/lmtp_sieve.c.
+severities:
+  - id: 692826
+    reference_id: 1453593
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61057
+    reference_id: 188531
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 692827
+    reference_id: 1453594
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692828
+    reference_id: 791002
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692829
+    reference_id: 791003
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692830
+    reference_id: 1453595
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61055
+    reference_id: 188529
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 397490
+    reference_id: 791005
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:P/A:N
+  - id: 397488
+    reference_id: 791005
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 61056
+    reference_id: 188530
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1453593
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19783.html
+    reference_id:
+  - id: 188531
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-19783.json
+    reference_id:
+  - id: 1453594
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19783
+    reference_id:
+  - id: 790998
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DIV4HQ6LG5GPRO4B5Z2NHCZUPBUVVVF/
+    reference_id:
+  - id: 790999
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6IGOO5UGEBBDPN7B2YXLK7I7L3Y35EBA/
+    reference_id:
+  - id: 791000
+    url: https://seclists.org/bugtraq/2019/Dec/38
+    reference_id:
+  - id: 791001
+    url: https://security.gentoo.org/glsa/202006-23
+    reference_id:
+  - id: 770105
+    url: https://usn.ubuntu.com/4566-1/
+    reference_id:
+  - id: 791002
+    url: https://www.cyrusimap.org/imap/download/release-notes/2.5/x/2.5.15.html
+    reference_id:
+  - id: 791003
+    url: https://www.cyrusimap.org/imap/download/release-notes/3.0/x/3.0.13.html
+    reference_id:
+  - id: 1453595
+    url: https://www.cyrusimap.org/imap/download/release-notes/3.0/x/3.0.13.html#security-fixes
+    reference_id:
+  - id: 791004
+    url: https://www.debian.org/security/2019/dsa-4590
+    reference_id:
+  - id: 188529
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1786756
+    reference_id: 1786756
+  - id: 681769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cyrus:imap:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cyrus:imap:*:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 791005
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19783
+    reference_id: CVE-2019-19783
+  - id: 188530
+    url: https://access.redhat.com/errata/RHSA-2020:4655
+    reference_id: RHSA-2020:4655
+weaknesses: []

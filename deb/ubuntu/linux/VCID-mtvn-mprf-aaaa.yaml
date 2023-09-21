@@ -1,0 +1,127 @@
+vulnerability_id: VCID-mtvn-mprf-aaaa
+aliases:
+  - CVE-2019-9162
+summary: In the Linux kernel before 4.20.12, net/ipv4/netfilter/nf_nat_snmp_basic_main.c in
+  the SNMP NAT module has insufficient ASN.1 length checks (aka an array index error), making
+  out-of-bounds read and write operations possible, leading to an OOPS or local privilege escalation.
+  This affects snmp_version and snmp_helper.
+severities:
+  - id: 694884
+    reference_id: 806504
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 694885
+    reference_id: 1455333
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612975
+    reference_id: 933533
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 694886
+    reference_id: 1455334
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686074
+    reference_id: 1448323
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686075
+    reference_id: 1448324
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612974
+    reference_id: 933532
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 421242
+    reference_id: 806512
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 421240
+    reference_id: 806512
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 806504
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c4c07b4d6fa1f11880eab8e076d3d060ef3f55fc
+    reference_id:
+  - id: 1455333
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-9162.html
+    reference_id:
+  - id: 933533
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-9162.json
+    reference_id:
+  - id: 806506
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1776
+    reference_id:
+  - id: 806507
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.25
+    reference_id:
+  - id: 806508
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.20.12
+    reference_id:
+  - id: 1455334
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9162
+    reference_id:
+  - id: 806509
+    url: https://github.com/torvalds/linux/commit/c4c07b4d6fa1f11880eab8e076d3d060ef3f55fc
+    reference_id:
+  - id: 806124
+    url: https://security.netapp.com/advisory/ntap-20190327-0002/
+    reference_id:
+  - id: 806510
+    url: https://support.f5.com/csp/article/K31864522
+    reference_id:
+  - id: 1448323
+    url: https://ubuntu.com/security/notices/USN-3930-1
+    reference_id:
+  - id: 1448324
+    url: https://ubuntu.com/security/notices/USN-3930-2
+    reference_id:
+  - id: 746833
+    url: https://usn.ubuntu.com/3930-1/
+    reference_id:
+  - id: 746834
+    url: https://usn.ubuntu.com/3930-2/
+    reference_id:
+  - id: 806511
+    url: https://www.exploit-db.com/exploits/46477/
+    reference_id:
+  - id: 806505
+    url: http://www.securityfocus.com/bid/107159
+    reference_id:
+  - id: 933532
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1683191
+    reference_id: 1683191
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 749890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:snapprotect:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:snapprotect:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 806512
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-9162
+    reference_id: CVE-2019-9162
+weaknesses: []

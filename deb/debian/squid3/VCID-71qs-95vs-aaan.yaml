@@ -1,0 +1,85 @@
+vulnerability_id: VCID-71qs-95vs-aaan
+aliases:
+  - CVE-2019-12527
+summary: An issue was discovered in Squid 4.0.23 through 4.7. When checking Basic Authentication
+  with HttpHeader::getAuth, Squid uses a global buffer to store the decoded data. Squid does
+  not check that the decoded length isn't greater than the buffer, leading to a heap-based buffer
+  overflow with user controlled data.
+severities:
+  - id: 62050
+    reference_id: 189852
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 690688
+    reference_id: 773536
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 690686
+    reference_id: 773535
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 62048
+    reference_id: 189850
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 375586
+    reference_id: 773569
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 375584
+    reference_id: 773569
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 773553
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00053.html
+    reference_id:
+  - id: 773544
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00056.html
+    reference_id:
+  - id: 773568
+    url: https://access.redhat.com/errata/RHSA-2019:2593
+    reference_id:
+  - id: 189852
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-12527.json
+    reference_id:
+  - id: 773536
+    url: https://github.com/squid-cache/squid/commits/v4
+    reference_id:
+  - id: 773556
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPXN2CLAGN5QSQBTOV5IGVLDOQSRFNTZ/
+    reference_id:
+  - id: 773557
+    url: https://seclists.org/bugtraq/2019/Aug/42
+    reference_id:
+  - id: 773558
+    url: https://usn.ubuntu.com/4065-1/
+    reference_id:
+  - id: 773560
+    url: https://www.debian.org/security/2019/dsa-4507
+    reference_id:
+  - id: 773567
+    url: http://www.securityfocus.com/bid/109143
+    reference_id:
+  - id: 773535
+    url: http://www.squid-cache.org/Versions/v4/changesets/
+    reference_id:
+  - id: 773554
+    url: http://www.squid-cache.org/Versions/v4/changesets/squid-4-7f73e9c5d17664b882ed32590e6af310c247f320.patch
+    reference_id:
+  - id: 189850
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1730533
+    reference_id: 1730533
+  - id: 159878
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:squid-cache:squid:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:squid-cache:squid:*:*:*:*:*:*:*:*
+  - id: 773569
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-12527
+    reference_id: CVE-2019-12527
+weaknesses: []

@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2020-15810
+fixed_purl:
+- pkg:deb/debian/squid@4.13-1?distro=sid
+- pkg:deb/debian/squid@4.13-10%2Bdeb11u2?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u4?distro=sid
+- pkg:deb/debian/squid@4.6-1%2Bdeb10u7?distro=sid
+- pkg:deb/debian/squid@5.7-2?distro=sid
+references:
+- id: 129212
+  reference_id: '968934'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=968934
+severities: []
+summary: An issue was discovered in Squid before 4.13 and 5.x before 5.0.4. Due to
+  incorrect data validation, HTTP Request Smuggling attacks may succeed against HTTP
+  and HTTPS traffic. This leads to cache poisoning. This allows any client, including
+  browser scripts, to bypass local security and poison the proxy cache and any downstream
+  caches with content from an arbitrary source. When configured for relaxed header
+  parsing (the default), Squid relays headers containing whitespace characters to
+  upstream servers. When this occurs as a prefix to a Content-Length header, the frame
+  length specified will be ignored by Squid (allowing for a conflicting length to
+  be used from another Content-Length header) but relayed upstream.
+vulnerability_id: VCID-pfas-pbz3-aaap
+weaknesses: []

@@ -1,0 +1,62 @@
+vulnerability_id: VCID-gf9n-m5vc-aaah
+aliases:
+  - CVE-2009-0036
+summary: Buffer overflow in the proxyReadClientSocket function in proxy/libvirt_proxy.c in libvirt_proxy
+  0.5.1 might allow local users to gain privileges by sending a portion of the header of a virProxyPacket
+  packet, and then sending the remainder of the packet with crafted values in the header, related
+  to use of uninitialized memory in a validation check.
+severities:
+  - id: 121867
+    reference_id: 378954
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 73393
+    reference_id: 204038
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 378946
+    url: http://git.et.redhat.com/?p=libvirt.git;a=commitdiff;h=2bb0657e28
+    reference_id:
+  - id: 378947
+    url: http://openwall.com/lists/oss-security/2009/02/10/8
+    reference_id:
+  - id: 204039
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-0036.json
+    reference_id:
+  - id: 378949
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=484947
+    reference_id:
+  - id: 363634
+    url: http://secunia.com/advisories/34397
+    reference_id:
+  - id: 378950
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10127
+    reference_id:
+  - id: 378951
+    url: https://www.redhat.com/archives/libvir-list/2009-January/msg00699.html
+    reference_id:
+  - id: 378952
+    url: https://www.redhat.com/archives/libvir-list/2009-January/msg00726.html
+    reference_id:
+  - id: 378953
+    url: https://www.redhat.com/archives/libvir-list/2009-January/msg00728.html
+    reference_id:
+  - id: 363636
+    url: http://www.redhat.com/support/errata/RHSA-2009-0382.html
+    reference_id:
+  - id: 378948
+    url: http://www.securityfocus.com/bid/33724
+    reference_id:
+  - id: 363649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libvirt:libvirt:0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libvirt:libvirt:0.5.1:*:*:*:*:*:*:*
+  - id: 378954
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-0036
+    reference_id: CVE-2009-0036
+  - id: 204038
+    url: https://access.redhat.com/errata/RHSA-2009:0382
+    reference_id: RHSA-2009:0382
+weaknesses: []

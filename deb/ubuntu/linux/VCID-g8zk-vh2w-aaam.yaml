@@ -1,0 +1,121 @@
+vulnerability_id: VCID-g8zk-vh2w-aaam
+aliases:
+  - CVE-2017-13695
+summary: The acpi_ns_evaluate() function in drivers/acpi/acpica/nseval.c in the Linux kernel
+  through 4.12.9 does not flush the operand cache and causes a kernel stack dump, which allows
+  local users to obtain sensitive information from kernel memory and bypass the KASLR protection
+  mechanism (in the kernel through 4.9) via a crafted ACPI table.
+severities:
+  - id: 674958
+    reference_id: 1439847
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 621894
+    reference_id: 939936
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 674959
+    reference_id: 1439848
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 674960
+    reference_id: 680250
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 674961
+    reference_id: 680251
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 674962
+    reference_id: 1439849
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674963
+    reference_id: 1439850
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674964
+    reference_id: 1439851
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674965
+    reference_id: 1439852
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 621893
+    reference_id: 939935
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 262005
+    reference_id: 680256
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 262003
+    reference_id: 680256
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1439847
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-13695.html
+    reference_id:
+  - id: 939936
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-13695.json
+    reference_id:
+  - id: 1439848
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13695
+    reference_id:
+  - id: 680250
+    url: https://github.com/acpica/acpica/pull/296/commits/37f2c716f2c6ab14c3ba557a539c3ee3224931b5
+    reference_id:
+  - id: 680251
+    url: https://patchwork.kernel.org/patch/9850567/
+    reference_id:
+  - id: 1439849
+    url: https://ubuntu.com/security/notices/USN-3696-1
+    reference_id:
+  - id: 1439850
+    url: https://ubuntu.com/security/notices/USN-3696-2
+    reference_id:
+  - id: 1439851
+    url: https://ubuntu.com/security/notices/USN-3762-1
+    reference_id:
+  - id: 1439852
+    url: https://ubuntu.com/security/notices/USN-3762-2
+    reference_id:
+  - id: 680252
+    url: https://usn.ubuntu.com/3696-1/
+    reference_id:
+  - id: 680253
+    url: https://usn.ubuntu.com/3696-2/
+    reference_id:
+  - id: 680254
+    url: https://usn.ubuntu.com/3762-1/
+    reference_id:
+  - id: 680255
+    url: https://usn.ubuntu.com/3762-2/
+    reference_id:
+  - id: 680249
+    url: http://www.securityfocus.com/bid/100497
+    reference_id:
+  - id: 939935
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1485349
+    reference_id: 1485349
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 680256
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-13695
+    reference_id: CVE-2017-13695
+weaknesses: []

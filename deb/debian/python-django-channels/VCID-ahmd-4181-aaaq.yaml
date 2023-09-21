@@ -1,0 +1,70 @@
+vulnerability_id: VCID-ahmd-4181-aaaq
+aliases:
+  - CVE-2020-35681
+  - GHSA-v542-8q9x-cffc
+  - PYSEC-2021-113
+summary: Django Channels 3.x before 3.0.3 allows remote attackers to obtain sensitive information
+  from a different request scope. The legacy channels.http.AsgiHandler class, used for handling
+  HTTP type requests in an ASGI environment prior to Django 3.0, did not correctly separate
+  request scopes in Channels 3.0. In many cases this would result in a crash but, with correct
+  timing, responses could be sent to the wrong client, resulting in potential leakage of session
+  identifiers and other sensitive data. Note that this affects only the legacy Channels provided
+  class, and not Django's similar ASGIHandler, available from Django 3.0.
+severities:
+  - id: 604996
+    reference_id: 927671
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H
+  - id: 604995
+    reference_id: 927670
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 474777
+    reference_id: 23228
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:P
+  - id: 474775
+    reference_id: 23228
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H
+  - id: 4427
+    reference_id: 25128
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 927671
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-35681.json
+    reference_id:
+  - id: 7453
+    url: https://channels.readthedocs.io/en/stable/releases/3.0.3.html
+    reference_id:
+  - id: 7454
+    url: https://channels.readthedocs.io/en/stable/releases/index.html
+    reference_id:
+  - id: 25127
+    url: https://github.com/django/channels/commit/e85874d9630474986a6937430eac52db79a2a022
+    reference_id:
+  - id: 7452
+    url: https://github.com/django/channels/releases
+    reference_id:
+  - id: 927670
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1911637
+    reference_id: '1911637'
+  - id: 107728
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=979376
+    reference_id: 979376
+  - id: 842801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:channels:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:channels:*:*:*:*:*:*:*:*
+  - id: 23228
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-35681
+    reference_id: CVE-2020-35681
+  - id: 25128
+    url: https://github.com/advisories/GHSA-v542-8q9x-cffc
+    reference_id: GHSA-v542-8q9x-cffc
+weaknesses: []

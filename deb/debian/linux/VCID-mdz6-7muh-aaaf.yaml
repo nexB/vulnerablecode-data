@@ -1,0 +1,234 @@
+vulnerability_id: VCID-mdz6-7muh-aaaf
+aliases:
+  - CVE-2017-1000253
+summary: Linux distributions that have not patched their long-term kernels with https://git.kernel.org/linus/a87938b2e246b81b4fb713edb371a9fa3c5c3c86
+  (committed on April 14, 2015). This kernel vulnerability was fixed in April 2015 by commit
+  a87938b2e246b81b4fb713edb371a9fa3c5c3c86 (backported to Linux 3.10.77 in May 2015), but it
+  was not recognized as a security threat. With CONFIG_ARCH_BINFMT_ELF_RANDOMIZE_PIE enabled,
+  and a normal top-down address allocation strategy, load_elf_binary() will attempt to map a
+  PIE binary into an address range immediately below mm->mmap_base. Unfortunately, load_elf_
+  binary() does not take account of the need to allocate sufficient space for the entire binary
+  which means that, while the first PT_LOAD segment is mapped below mm->mmap_base, the subsequent
+  PT_LOAD segment(s) end up being mapped above mm->mmap_base into the are that is supposed to
+  be the "gap" between the stack and the binary.
+severities:
+  - id: 673097
+    reference_id: 1438289
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 620521
+    reference_id: 938952
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 673098
+    reference_id: 1438290
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 620510
+    reference_id: 938941
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 249860
+    reference_id: 668628
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 249858
+    reference_id: 668628
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 620516
+    reference_id: 938947
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620519
+    reference_id: 938950
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620520
+    reference_id: 938951
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620517
+    reference_id: 938948
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620518
+    reference_id: 938949
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620513
+    reference_id: 938944
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620514
+    reference_id: 938945
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620511
+    reference_id: 938942
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620512
+    reference_id: 938943
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 620515
+    reference_id: 938946
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1438289
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000253.html
+    reference_id:
+  - id: 938952
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000253.json
+    reference_id:
+  - id: 1438290
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000253
+    reference_id:
+  - id: 668627
+    url: https://www.qualys.com/2017/09/26/cve-2017-1000253/cve-2017-1000253.txt
+    reference_id:
+  - id: 668615
+    url: http://www.securityfocus.com/bid/101010
+    reference_id:
+  - id: 668616
+    url: http://www.securitytracker.com/id/1039434
+    reference_id:
+  - id: 938941
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1492212
+    reference_id: 1492212
+  - id: 668629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.0:*:*:*:*:*:*:*
+  - id: 668630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.1:*:*:*:*:*:*:*
+  - id: 668631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.2:*:*:*:*:*:*:*
+  - id: 668632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.3:*:*:*:*:*:*:*
+  - id: 668633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.4:*:*:*:*:*:*:*
+  - id: 668634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.5:*:*:*:*:*:*:*
+  - id: 668635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.6:*:*:*:*:*:*:*
+  - id: 668636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.7:*:*:*:*:*:*:*
+  - id: 668637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.8:*:*:*:*:*:*:*
+  - id: 668638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:6.9:*:*:*:*:*:*:*
+  - id: 668639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:7.1406:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:7.1406:*:*:*:*:*:*:*
+  - id: 668640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:7.1503:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:7.1503:*:*:*:*:*:*:*
+  - id: 668641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:7.1511:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:7.1511:*:*:*:*:*:*:*
+  - id: 668642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:centos:centos:7.1611:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:centos:centos:7.1611:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 668643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.1:*:*:*:*:*:*:*
+  - id: 668644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.2:*:*:*:*:*:*:*
+  - id: 668645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.3:*:*:*:*:*:*:*
+  - id: 668646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.4:*:*:*:*:*:*:*
+  - id: 668647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.5:*:*:*:*:*:*:*
+  - id: 668648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.6:*:*:*:*:*:*:*
+  - id: 158197
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.7:*:*:*:*:*:*:*
+  - id: 668649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.8:*:*:*:*:*:*:*
+  - id: 668650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.9:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 615579
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.1:*:*:*:*:*:*:*
+  - id: 158198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.2:*:*:*:*:*:*:*
+  - id: 462175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.3:*:*:*:*:*:*:*
+  - id: 668628
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000253
+    reference_id: CVE-2017-1000253
+  - id: 938947
+    url: https://access.redhat.com/errata/RHSA-2017:2793
+    reference_id: RHSA-2017:2793
+  - id: 938950
+    url: https://access.redhat.com/errata/RHSA-2017:2794
+    reference_id: RHSA-2017:2794
+  - id: 938951
+    url: https://access.redhat.com/errata/RHSA-2017:2795
+    reference_id: RHSA-2017:2795
+  - id: 938948
+    url: https://access.redhat.com/errata/RHSA-2017:2796
+    reference_id: RHSA-2017:2796
+  - id: 938949
+    url: https://access.redhat.com/errata/RHSA-2017:2797
+    reference_id: RHSA-2017:2797
+  - id: 938944
+    url: https://access.redhat.com/errata/RHSA-2017:2798
+    reference_id: RHSA-2017:2798
+  - id: 938945
+    url: https://access.redhat.com/errata/RHSA-2017:2799
+    reference_id: RHSA-2017:2799
+  - id: 938942
+    url: https://access.redhat.com/errata/RHSA-2017:2800
+    reference_id: RHSA-2017:2800
+  - id: 938943
+    url: https://access.redhat.com/errata/RHSA-2017:2801
+    reference_id: RHSA-2017:2801
+  - id: 938946
+    url: https://access.redhat.com/errata/RHSA-2017:2802
+    reference_id: RHSA-2017:2802
+weaknesses: []

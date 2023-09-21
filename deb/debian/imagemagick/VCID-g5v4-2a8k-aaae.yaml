@@ -1,0 +1,46 @@
+vulnerability_id: VCID-g5v4-2a8k-aaae
+aliases:
+  - CVE-2021-20224
+summary: An integer overflow issue was discovered in ImageMagick's ExportIndexQuantum() function
+  in MagickCore/quantum-export.c. Function calls to GetPixelIndex() could result in values outside
+  the range of representable for the 'unsigned char'. When ImageMagick processes a crafted pdf
+  file, this could lead to an undefined behaviour or a crash.
+severities:
+  - id: 647068
+    reference_id: 1415811
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  - id: 647067
+    reference_id: 1415810
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 646048
+    reference_id: 1413331
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1415811
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-20224.json
+    reference_id:
+  - id: 1413330
+    url: https://github.com/ImageMagick/ImageMagick6/commit/553054c1cb1e4e05ec86237afef76a32cd7c464d
+    reference_id:
+  - id: 1413328
+    url: https://github.com/ImageMagick/ImageMagick/commit/5af1dffa4b6ab984b5f13d1e91c95760d75f12a6
+    reference_id:
+  - id: 1413329
+    url: https://github.com/ImageMagick/ImageMagick/pull/3083
+    reference_id:
+  - id: 1415810
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2124173
+    reference_id: 2124173
+  - id: 245295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*
+  - id: 1413331
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-20224
+    reference_id: CVE-2021-20224
+weaknesses: []

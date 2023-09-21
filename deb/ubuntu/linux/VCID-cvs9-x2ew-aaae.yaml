@@ -1,0 +1,159 @@
+vulnerability_id: VCID-cvs9-x2ew-aaae
+aliases:
+  - CVE-2021-33033
+summary: The Linux kernel before 5.11.14 has a use-after-free in cipso_v4_genopt in net/ipv4/cipso_ipv4.c
+  because the CIPSO and CALIPSO refcounting for the DOI definitions is mishandled, aka CID-ad5d07f4a9cd.
+  This leads to writing an arbitrary value.
+severities:
+  - id: 702275
+    reference_id: 1461553
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606683
+    reference_id: 928912
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 702276
+    reference_id: 171238
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701574
+    reference_id: 171239
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702277
+    reference_id: 1461554
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702278
+    reference_id: 1461555
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702279
+    reference_id: 1461556
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702280
+    reference_id: 171242
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702281
+    reference_id: 171243
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697767
+    reference_id: 1457697
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701430
+    reference_id: 1460846
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 606682
+    reference_id: 928911
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 46207
+    reference_id: 171244
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 46205
+    reference_id: 171244
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 59968
+    reference_id: 186845
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59969
+    reference_id: 186846
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1461553
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-33033.html
+    reference_id:
+  - id: 928912
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33033.json
+    reference_id:
+  - id: 171238
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.14
+    reference_id:
+  - id: 171239
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.7
+    reference_id:
+  - id: 1461554
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33033
+    reference_id:
+  - id: 1461555
+    url: https://git.kernel.org/linus/1165affd484889d4986cf3b724318935a0b120d8
+    reference_id:
+  - id: 1461556
+    url: https://git.kernel.org/linus/ad5d07f4a9cd671233ae20983848874731102c08
+    reference_id:
+  - id: 171240
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1165affd484889d4986cf3b724318935a0b120d8
+    reference_id:
+  - id: 171241
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ad5d07f4a9cd671233ae20983848874731102c08
+    reference_id:
+  - id: 171242
+    url: https://sites.google.com/view/syzscope/kasan-use-after-free-read-in-cipso_v4_genopt
+    reference_id:
+  - id: 171243
+    url: https://syzkaller.appspot.com/bug?id=96e7d345748d8814901c91cd92084ed04b46701e
+    reference_id:
+  - id: 1457697
+    url: https://ubuntu.com/security/notices/USN-4979-1
+    reference_id:
+  - id: 1460846
+    url: https://ubuntu.com/security/notices/USN-4984-1
+    reference_id:
+  - id: 928911
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1961300
+    reference_id: '1961300'
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 171244
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-33033
+    reference_id: CVE-2021-33033
+  - id: 186845
+    url: https://access.redhat.com/errata/RHSA-2021:2725
+    reference_id: RHSA-2021:2725
+  - id: 186846
+    url: https://access.redhat.com/errata/RHSA-2021:2726
+    reference_id: RHSA-2021:2726
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

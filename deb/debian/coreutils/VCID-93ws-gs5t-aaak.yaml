@@ -1,0 +1,46 @@
+vulnerability_id: VCID-93ws-gs5t-aaak
+aliases:
+  - CVE-2015-4041
+summary: The keycompare_mb function in sort.c in sort in GNU Coreutils through 8.23 on 64-bit
+  platforms performs a size calculation without considering the number of bytes occupied by
+  multibyte characters, which allows attackers to cause a denial of service (heap-based buffer
+  overflow and application crash) or possibly have unspecified other impact via long UTF-8 strings.
+severities:
+  - id: 55655
+    reference_id: 180996
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 200471
+    reference_id: 609068
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 200469
+    reference_id: 609068
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 609065
+    url: http://openwall.com/lists/oss-security/2015/05/15/1
+    reference_id:
+  - id: 180997
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-4041.json
+    reference_id:
+  - id: 609066
+    url: https://bugzilla.suse.com/show_bug.cgi?id=928749
+    reference_id:
+  - id: 609067
+    url: https://github.com/pixelb/coreutils/commit/bea5e36cc876ed627bb5e0eca36fdfaa6465e940
+    reference_id:
+  - id: 180996
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1223813
+    reference_id: 1223813
+  - id: 609069
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:coreutils:*:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:a:gnu:coreutils:*:*:*:*:*:*:x64:*
+  - id: 609068
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-4041
+    reference_id: CVE-2015-4041
+weaknesses: []

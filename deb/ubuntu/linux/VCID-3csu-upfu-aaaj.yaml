@@ -1,0 +1,135 @@
+vulnerability_id: VCID-3csu-upfu-aaaj
+aliases:
+  - CVE-2018-12232
+summary: In net/socket.c in the Linux kernel through 4.17.1, there is a race condition between
+  fchownat and close in cases where they target the same socket file descriptor, related to
+  the sock_close and sockfs_setattr functions. fchownat does not increment the file descriptor
+  reference count, which allows close to set the socket to NULL during fchownat's execution,
+  leading to a NULL pointer dereference and system crash.
+severities:
+  - id: 683657
+    reference_id: 728967
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683658
+    reference_id: 1446401
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615854
+    reference_id: 935642
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 683659
+    reference_id: 1446402
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683660
+    reference_id: 728969
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683661
+    reference_id: 728970
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683662
+    reference_id: 728971
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682370
+    reference_id: 1445436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682371
+    reference_id: 1445437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682372
+    reference_id: 1445438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615853
+    reference_id: 935641
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 316440
+    reference_id: 728972
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 316438
+    reference_id: 728972
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 728967
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6d8c50dcb029872b298eea68cc6209c866fd3e14
+    reference_id:
+  - id: 1446401
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12232.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 935642
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-12232.json
+    reference_id:
+  - id: 1446402
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12232
+    reference_id:
+  - id: 728969
+    url: https://github.com/torvalds/linux/commit/6d8c50dcb029872b298eea68cc6209c866fd3e14
+    reference_id:
+  - id: 728970
+    url: https://lkml.org/lkml/2018/6/5/14
+    reference_id:
+  - id: 728971
+    url: https://patchwork.ozlabs.org/patch/926519/
+    reference_id:
+  - id: 1445436
+    url: https://ubuntu.com/security/notices/USN-3752-1
+    reference_id:
+  - id: 1445437
+    url: https://ubuntu.com/security/notices/USN-3752-2
+    reference_id:
+  - id: 1445438
+    url: https://ubuntu.com/security/notices/USN-3752-3
+    reference_id:
+  - id: 721706
+    url: https://usn.ubuntu.com/3752-1/
+    reference_id:
+  - id: 721707
+    url: https://usn.ubuntu.com/3752-2/
+    reference_id:
+  - id: 721708
+    url: https://usn.ubuntu.com/3752-3/
+    reference_id:
+  - id: 728968
+    url: http://www.securityfocus.com/bid/104453
+    reference_id:
+  - id: 935641
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1590215
+    reference_id: 1590215
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 728972
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12232
+    reference_id: CVE-2018-12232
+weaknesses: []

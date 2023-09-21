@@ -1,0 +1,42 @@
+vulnerability_id: VCID-g78j-2s59-aaaj
+aliases:
+  - CVE-2014-4157
+summary: arch/mips/include/asm/thread_info.h in the Linux kernel before 3.14.8 on the MIPS platform
+  does not configure _TIF_SECCOMP checks on the fast system-call path, which allows local users
+  to bypass intended PR_SET_SECCOMP restrictions by executing a crafted application without
+  invoking a trace or audit subsystem.
+severities:
+  - id: 181751
+    reference_id: 570847
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+references:
+  - id: 570842
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=137f7df8cead00688524c82360930845396b8a21
+    reference_id:
+  - id: 570843
+    url: http://openwall.com/lists/oss-security/2014/06/16/1
+    reference_id:
+  - id: 213930
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-4157.json
+    reference_id:
+  - id: 570845
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=751417
+    reference_id:
+  - id: 570846
+    url: https://github.com/torvalds/linux/commit/137f7df8cead00688524c82360930845396b8a21
+    reference_id:
+  - id: 570336
+    url: http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.14.8
+    reference_id:
+  - id: 570844
+    url: http://www.openwall.com/lists/oss-security/2014/06/17/17
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 570847
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-4157
+    reference_id: CVE-2014-4157
+weaknesses: []

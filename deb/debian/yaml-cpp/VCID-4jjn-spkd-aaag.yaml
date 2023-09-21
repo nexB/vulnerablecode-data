@@ -1,0 +1,49 @@
+vulnerability_id: VCID-4jjn-spkd-aaag
+aliases:
+  - CVE-2019-6292
+summary: 'An issue was discovered in singledocparser.cpp in yaml-cpp (aka LibYaml-C++) 0.6.2.
+  Stack Exhaustion occurs in YAML::SingleDocParser, and there is a stack consumption problem
+  caused by recursive stack frames: HandleCompactMap, HandleMap, HandleFlowSequence, HandleSequence,
+  HandleNode. Remote attackers could leverage this vulnerability to cause a denial-of-service
+  via a cpp file.'
+severities:
+  - id: 65672
+    reference_id: '194581'
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 65671
+    reference_id: '194580'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 412746
+    reference_id: 800971
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 412744
+    reference_id: 800971
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: '194581'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-6292.json
+    reference_id:
+  - id: 800970
+    url: https://github.com/jbeder/yaml-cpp/issues/657
+    reference_id:
+  - id: '194580'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1668108
+    reference_id: 1668108
+  - id: 147337
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=919430
+    reference_id: 919430
+  - id: 749018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yaml-cpp_project:yaml-cpp:0.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yaml-cpp_project:yaml-cpp:0.6.2:*:*:*:*:*:*:*
+  - id: 800971
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-6292
+    reference_id: CVE-2019-6292
+weaknesses: []

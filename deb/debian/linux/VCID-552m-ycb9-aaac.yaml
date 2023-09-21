@@ -1,0 +1,93 @@
+vulnerability_id: VCID-552m-ycb9-aaac
+aliases:
+  - CVE-2017-1000255
+summary: 'On Linux running on PowerPC hardware (Power8 or later) a user process can craft a
+  signal frame and then do a sigreturn so that the kernel will take an exception (interrupt),
+  and use the r1 value *from the signal frame* as the kernel stack pointer. As part of the exception
+  entry the content of the signal frame is written to the kernel stack, allowing an attacker
+  to overwrite arbitrary locations with arbitrary values. The exception handling does produce
+  an oops, and a panic if panic_on_oops=1, but only after kernel memory has been over written.
+  This flaw was introduced in commit: "5d176f751ee3 (powerpc: tm: Enable transactional memory
+  (TM) lazily for userspace)" which was merged upstream into v4.9-rc1. Please note that kernels
+  built with CONFIG_PPC_TRANSACTIONAL_MEM=n are not vulnerable.'
+severities:
+  - id: 673102
+    reference_id: 1438293
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 620301
+    reference_id: 938794
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H
+  - id: 673103
+    reference_id: 1438294
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673104
+    reference_id: 1438295
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673105
+    reference_id: 1438296
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673106
+    reference_id: 1438297
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 620300
+    reference_id: 938793
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 249844
+    reference_id: 668578
+    scoring_system: cvssv2
+    value: '6.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:C/A:C
+  - id: 249842
+    reference_id: 668578
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 1438293
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-1000255.html
+    reference_id:
+  - id: 668576
+    url: https://access.redhat.com/errata/RHSA-2018:0654
+    reference_id:
+  - id: 938794
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-1000255.json
+    reference_id:
+  - id: 668577
+    url: https://access.redhat.com/security/cve/CVE-2017-1000255
+    reference_id:
+  - id: 1438294
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000255
+    reference_id:
+  - id: 1438295
+    url: https://ubuntu.com/security/notices/USN-3443-1
+    reference_id:
+  - id: 1438296
+    url: https://ubuntu.com/security/notices/USN-3443-2
+    reference_id:
+  - id: 1438297
+    url: https://ubuntu.com/security/notices/USN-3487-1
+    reference_id:
+  - id: 668575
+    url: http://www.securityfocus.com/bid/101264
+    reference_id:
+  - id: 938793
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1498067
+    reference_id: 1498067
+  - id: 668578
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000255
+    reference_id: CVE-2017-1000255
+weaknesses: []

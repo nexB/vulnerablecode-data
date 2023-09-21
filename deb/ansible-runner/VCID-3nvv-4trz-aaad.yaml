@@ -1,0 +1,51 @@
+affected_purls:
+- pkg:pypi/ansible-runner@2.0.0
+- pkg:pypi/ansible-runner@2.0.1
+- pkg:pypi/ansible-runner@2.0.2
+- pkg:pypi/ansible-runner@2.0.3
+- pkg:pypi/ansible-runner@2.0.4
+- pkg:pypi/ansible-runner@2.1.0.0a1
+- pkg:pypi/ansible-runner@2.1.0.0a2
+- pkg:pypi/ansible-runner@2.1.0.0b1
+aliases:
+- CVE-2021-3701
+- GHSA-wwch-cmqr-hhrm
+fixed_purl:
+- pkg:deb/debian/ansible-runner@2.1.1-1?distro=sid
+- pkg:deb/debian/ansible-runner@2.3.1-2?distro=sid
+- pkg:pypi/ansible-runner@2.1.0
+references:
+- id: 162073
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1977959
+- id: 162070
+  reference_id: ''
+  url: https://github.com/ansible/ansible-runner/issues/738
+- id: 162074
+  reference_id: ''
+  url: https://github.com/ansible/ansible-runner/pull/742
+- id: 162071
+  reference_id: ''
+  url: https://github.com/ansible/ansible-runner/pull/742/commits
+- id: 162072
+  reference_id: CVE-2021-3701
+  url: https://access.redhat.com/security/cve/CVE-2021-3701
+- id: 162069
+  reference_id: CVE-2021-3701
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-3701
+- id: 162075
+  reference_id: GHSA-wwch-cmqr-hhrm
+  url: https://github.com/advisories/GHSA-wwch-cmqr-hhrm
+severities:
+- id: 23944
+  reference_id: 162075
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: A flaw was found in ansible-runner where the default temporary files configuration
+  in ansible-2.0.0 are written to world R/W locations. This flaw allows an attacker
+  to pre-create the directory, resulting in reading private information or forcing
+  ansible-runner to write files as the legitimate user in a place they did not expect.
+  The highest threat from this vulnerability is to confidentiality and integrity.
+vulnerability_id: VCID-3nvv-4trz-aaad
+weaknesses: []

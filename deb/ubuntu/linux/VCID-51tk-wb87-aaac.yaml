@@ -1,0 +1,102 @@
+vulnerability_id: VCID-51tk-wb87-aaac
+aliases:
+  - CVE-2018-1095
+summary: The ext4_xattr_check_entries function in fs/ext4/xattr.c in the Linux kernel through
+  4.15.15 does not properly validate xattr sizes, which causes misinterpretation of a size as
+  an error code, and consequently allows attackers to cause a denial of service (get_acl NULL
+  pointer dereference and system crash) via a crafted ext4 image.
+severities:
+  - id: 683077
+    reference_id: 1445965
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617645
+    reference_id: 936934
+    scoring_system: cvssv3
+    value: '5.2'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
+  - id: 683078
+    reference_id: 725528
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683079
+    reference_id: 1445966
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683070
+    reference_id: 1445959
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 683071
+    reference_id: 1445960
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617644
+    reference_id: 936933
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 311889
+    reference_id: 725531
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 311887
+    reference_id: 725531
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 725343
+    url: http://openwall.com/lists/oss-security/2018/03/29/1
+    reference_id:
+  - id: 1445965
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1095.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 936934
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1095.json
+    reference_id:
+  - id: 725528
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=199185
+    reference_id:
+  - id: 1445966
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1095
+    reference_id:
+  - id: 725530
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/tytso/ext4.git/commit/?id=ce3fd194fcc6fbdc00ce095a852f22df97baa401
+    reference_id:
+  - id: 1445959
+    url: https://ubuntu.com/security/notices/USN-3695-1
+    reference_id:
+  - id: 1445960
+    url: https://ubuntu.com/security/notices/USN-3695-2
+    reference_id:
+  - id: 725502
+    url: https://usn.ubuntu.com/3695-1/
+    reference_id:
+  - id: 725503
+    url: https://usn.ubuntu.com/3695-2/
+    reference_id:
+  - id: 936933
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1560793
+    reference_id: 1560793
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 725531
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1095
+    reference_id: CVE-2018-1095
+weaknesses: []

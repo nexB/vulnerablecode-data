@@ -1,0 +1,154 @@
+vulnerability_id: VCID-9jug-jdcb-aaas
+aliases:
+  - CVE-2016-9576
+summary: The blk_rq_map_user_iov function in block/blk-map.c in the Linux kernel before 4.8.14
+  does not properly restrict the type of iterator, which allows local users to read or write
+  to arbitrary kernel memory locations or cause a denial of service (use-after-free) by leveraging
+  access to a /dev/sg device.
+severities:
+  - id: 672344
+    reference_id: 1437670
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625708
+    reference_id: 942557
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 672346
+    reference_id: 1437671
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672347
+    reference_id: 1437672
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672348
+    reference_id: 1437673
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 672349
+    reference_id: 1437674
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 666444
+    reference_id: 627728
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672345
+    reference_id: 663046
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 625707
+    reference_id: 942556
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 244156
+    reference_id: 663050
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 244154
+    reference_id: 663050
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 47798
+    reference_id: 172407
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 663036
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a0ac402cfcdc904f9772e1762b3fda112dcc56a0
+    reference_id:
+  - id: 663037
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00040.html
+    reference_id:
+  - id: 663038
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00041.html
+    reference_id:
+  - id: 663039
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00057.html
+    reference_id:
+  - id: 663040
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00062.html
+    reference_id:
+  - id: 663041
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00072.html
+    reference_id:
+  - id: 663042
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00075.html
+    reference_id:
+  - id: 663043
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00081.html
+    reference_id:
+  - id: 663044
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00088.html
+    reference_id:
+  - id: 663045
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00091.html
+    reference_id:
+  - id: 1437670
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-9576.html
+    reference_id:
+  - id: 163495
+    url: http://rhn.redhat.com/errata/RHSA-2017-0817.html
+    reference_id:
+  - id: 585053
+    url: https://access.redhat.com/errata/RHSA-2017:1842
+    reference_id:
+  - id: 585054
+    url: https://access.redhat.com/errata/RHSA-2017:2077
+    reference_id:
+  - id: 620087
+    url: https://access.redhat.com/errata/RHSA-2017:2669
+    reference_id:
+  - id: 942557
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-9576.json
+    reference_id:
+  - id: 1437671
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9576
+    reference_id:
+  - id: 1437672
+    url: https://gist.githubusercontent.com/dvyukov/80cd94b4e4c288f16ee4c787d404118b/raw/10536069562444da51b758bb39655b514ff93b45/gistfile1.txt
+    reference_id:
+  - id: 1437673
+    url: https://github.com/torvalds/linux/commit/86db1e29772372155db08ff48a9ceb76e11a2ad1
+    reference_id:
+  - id: 663049
+    url: https://github.com/torvalds/linux/commit/a0ac402cfcdc904f9772e1762b3fda112dcc56a0
+    reference_id:
+  - id: 1437674
+    url: https://marc.info/?l=linux-scsi&m=148010092224801&w=2
+    reference_id:
+  - id: 627728
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14
+    reference_id:
+  - id: 663046
+    url: http://www.openwall.com/lists/oss-security/2016/12/08/19
+    reference_id:
+  - id: 663047
+    url: http://www.securityfocus.com/bid/94821
+    reference_id:
+  - id: 942556
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1403145
+    reference_id: 1403145
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 663050
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-9576
+    reference_id: CVE-2016-9576
+  - id: 172407
+    url: https://access.redhat.com/errata/RHSA-2017:0817
+    reference_id: RHSA-2017:0817
+weaknesses: []

@@ -1,0 +1,85 @@
+vulnerability_id: VCID-r5p9-apdc-aaac
+aliases:
+  - CVE-2020-5202
+summary: apt-cacher-ng through 3.3 allows local users to obtain sensitive information by hijacking
+  the hardcoded TCP port. The /usr/lib/apt-cacher-ng/acngtool program attempts to connect to
+  apt-cacher-ng via TCP on localhost port 3142, even if the explicit SocketPath=/var/run/apt-cacher-ng/socket
+  command-line option is passed. The cron job /etc/cron.daily/apt-cacher-ng (which is active
+  by default) attempts this periodically. Because 3142 is an unprivileged port, any local user
+  can try to bind to this port and will receive requests from acngtool. There can be sensitive
+  data in these requests, e.g., if AdminAuth is enabled in /etc/apt-cacher-ng/security.conf.
+  This sensitive data can leak to unprivileged local users that manage to bind to this port
+  before the apt-cacher-ng daemon can.
+severities:
+  - id: 698991
+    reference_id: 1458750
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698992
+    reference_id: 1458751
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 698993
+    reference_id: 1458752
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 481588
+    reference_id: 847564
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 481586
+    reference_id: 847564
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 788826
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00057.html
+    reference_id:
+  - id: 788827
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00065.html
+    reference_id:
+  - id: 1458750
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-5202.html
+    reference_id:
+  - id: 1458751
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5202
+    reference_id:
+  - id: 847562
+    url: https://seclists.org/oss-sec/2020/q1/21
+    reference_id:
+  - id: 847563
+    url: https://security-tracker.debian.org/tracker/CVE-2020-5202
+    reference_id:
+  - id: 1458752
+    url: https://www.openwall.com/lists/oss-security/2020/01/20/4
+    reference_id:
+  - id: 847561
+    url: http://www.openwall.com/lists/oss-security/2020/01/20/4
+    reference_id:
+  - id: 709175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apt-cacher-ng_project:apt-cacher-ng:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apt-cacher-ng_project:apt-cacher-ng:*:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 776957
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:backports:sle-15:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:backports:sle-15:sp1:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 847564
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-5202
+    reference_id: CVE-2020-5202
+weaknesses: []

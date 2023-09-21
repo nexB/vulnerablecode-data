@@ -1,0 +1,174 @@
+vulnerability_id: VCID-kzwt-vwbx-aaaq
+aliases:
+  - CVE-2019-17075
+summary: An issue was discovered in write_tpt_entry in drivers/infiniband/hw/cxgb4/mem.c in
+  the Linux kernel through 5.3.2. The cxgb4 driver is directly calling dma_map_single (a DMA
+  function) from a stack variable. This could allow an attacker to trigger a Denial of Service,
+  exploitable if this driver is used on an architecture for which this stack/DMA interaction
+  has security relevance.
+severities:
+  - id: 691929
+    reference_id: 1452988
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 71910
+    reference_id: 202395
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 691930
+    reference_id: 1452989
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 691931
+    reference_id: 785016
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 691934
+    reference_id: 1452991
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691935
+    reference_id: 1452992
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686588
+    reference_id: 1448671
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686589
+    reference_id: 1448672
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689614
+    reference_id: 1451207
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691932
+    reference_id: 781814
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 691933
+    reference_id: 1452990
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686586
+    reference_id: 1448669
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686587
+    reference_id: 1448670
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689613
+    reference_id: 1451206
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 71909
+    reference_id: 202394
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 390445
+    reference_id: 785018
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 390443
+    reference_id: 785018
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 629313
+    url: http://packetstormsecurity.com/files/155212/Slackware-Security-Advisory-Slackware-14.2-kernel-Updates.html
+    reference_id:
+  - id: 1452988
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-17075.html
+    reference_id:
+  - id: 202395
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-17075.json
+    reference_id:
+  - id: 1452989
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17075
+    reference_id:
+  - id: 731089
+    url: https://lists.debian.org/debian-lts-announce/2020/03/msg00001.html
+    reference_id:
+  - id: 785016
+    url: https://lore.kernel.org/lkml/20191001165611.GA3542072@kroah.com
+    reference_id:
+  - id: 629316
+    url: https://seclists.org/bugtraq/2019/Nov/11
+    reference_id:
+  - id: 1452991
+    url: https://ubuntu.com/security/notices/USN-4208-1
+    reference_id:
+  - id: 1452992
+    url: https://ubuntu.com/security/notices/USN-4210-1
+    reference_id:
+  - id: 1448671
+    url: https://ubuntu.com/security/notices/USN-4211-1
+    reference_id:
+  - id: 1448672
+    url: https://ubuntu.com/security/notices/USN-4211-2
+    reference_id:
+  - id: 1451207
+    url: https://ubuntu.com/security/notices/USN-4226-1
+    reference_id:
+  - id: 785017
+    url: https://usn.ubuntu.com/4208-1/
+    reference_id:
+  - id: 784132
+    url: https://usn.ubuntu.com/4210-1/
+    reference_id:
+  - id: 749558
+    url: https://usn.ubuntu.com/4211-1/
+    reference_id:
+  - id: 749559
+    url: https://usn.ubuntu.com/4211-2/
+    reference_id:
+  - id: 767145
+    url: https://usn.ubuntu.com/4226-1/
+    reference_id:
+  - id: 781814
+    url: https://usn.ubuntu.com/usn/usn-4208-1
+    reference_id:
+  - id: 1452990
+    url: https://usn.ubuntu.com/usn/usn-4210-1
+    reference_id:
+  - id: 1448669
+    url: https://usn.ubuntu.com/usn/usn-4211-1
+    reference_id:
+  - id: 1448670
+    url: https://usn.ubuntu.com/usn/usn-4211-2
+    reference_id:
+  - id: 1451206
+    url: https://usn.ubuntu.com/usn/usn-4226-1
+    reference_id:
+  - id: 420
+    url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_id:
+  - id: 202394
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1759767
+    reference_id: 1759767
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 785018
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17075
+    reference_id: CVE-2019-17075
+weaknesses: []

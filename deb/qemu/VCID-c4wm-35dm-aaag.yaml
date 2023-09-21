@@ -1,0 +1,16 @@
+affected_purls:
+- pkg:deb/debian/qemu@1:5.2%2Bdfsg-11%2Bdeb11u2
+aliases:
+- CVE-2021-3929
+fixed_purl:
+- pkg:deb/debian/qemu@1:7.2%2Bdfsg-7~bpo11%2B1
+references: []
+severities: []
+summary: A DMA reentrancy issue was found in the NVM Express Controller (NVME) emulation
+  in QEMU. This CVE is similar to CVE-2021-3750 and, just like it, when the reentrancy
+  write triggers the reset function nvme_ctrl_reset(), data structs will be freed
+  leading to a use-after-free issue. A malicious guest could use this flaw to crash
+  the QEMU process on the host, resulting in a denial of service condition or, potentially,
+  executing arbitrary code within the context of the QEMU process on the host.
+vulnerability_id: VCID-c4wm-35dm-aaag
+weaknesses: []

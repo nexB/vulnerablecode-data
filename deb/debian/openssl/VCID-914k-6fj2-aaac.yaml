@@ -1,0 +1,374 @@
+vulnerability_id: VCID-914k-6fj2-aaac
+aliases:
+  - CVE-2015-0286
+  - VC-OPENSSL-20150319-CVE-2015-0286
+summary: Segmentation fault in ASN1_TYPE_cmp. The function ASN1_TYPE_cmp will crash with an
+  invalid read if an attempt is made to compare ASN.1 boolean types. Since ASN1_TYPE_cmp is
+  used to check certificate signature algorithm consistency this can be used to crash any certificate
+  verification operation and exploited in a DoS attack. Any application which performs certificate
+  verification is vulnerable including OpenSSL clients and servers which enable client authentication.
+severities:
+  - id: 663097
+    reference_id: 160829
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659457
+    reference_id: 1427318
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659458
+    reference_id: 1427319
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663100
+    reference_id: 160840
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659326
+    reference_id: 1427199
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622
+    reference_id: 3664
+    scoring_system: generic_textual
+    value: Moderate
+    scoring_elements:
+  - id: 678340
+    reference_id: 11089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673335
+    reference_id: 13679
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 665595
+    reference_id: 14836
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 661008
+    reference_id: 417507
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 662461
+    reference_id: 14837
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: '193242'
+    reference_id: 594632
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 51002
+    reference_id: 175630
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 51001
+    reference_id: 175629
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 51000
+    reference_id: 175628
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 49550
+    reference_id: 173911
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 594099
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10680
+    reference_id:
+  - id: 519982
+    url: http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html
+    reference_id:
+  - id: 160829
+    url: http://lists.apple.com/archives/security-announce/2015/Sep/msg00001.html
+    reference_id:
+  - id: 160831
+    url: http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html
+    reference_id:
+  - id: 594100
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-March/152733.html
+    reference_id:
+  - id: 594101
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-March/152734.html
+    reference_id:
+  - id: 594102
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-March/152844.html
+    reference_id:
+  - id: 594103
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-May/156823.html
+    reference_id:
+  - id: 594104
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157177.html
+    reference_id:
+  - id: 594105
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00022.html
+    reference_id:
+  - id: 512135
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00027.html
+    reference_id:
+  - id: 566812
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00037.html
+    reference_id:
+  - id: 512136
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00011.html
+    reference_id:
+  - id: 594106
+    url: http://lists.opensuse.org/opensuse-updates/2015-03/msg00062.html
+    reference_id:
+  - id: 594107
+    url: http://marc.info/?l=bugtraq&m=142841429220765&w=2
+    reference_id:
+  - id: 566605
+    url: http://marc.info/?l=bugtraq&m=143213830203296&w=2
+    reference_id:
+  - id: 550029
+    url: http://marc.info/?l=bugtraq&m=143748090628601&w=2
+    reference_id:
+  - id: 442862
+    url: http://marc.info/?l=bugtraq&m=144050155601375&w=2
+    reference_id:
+  - id: 566608
+    url: http://marc.info/?l=bugtraq&m=144050254401665&w=2
+    reference_id:
+  - id: 566609
+    url: http://marc.info/?l=bugtraq&m=144050297101809&w=2
+    reference_id:
+  - id: 1427318
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-0286.html
+    reference_id:
+  - id: 594108
+    url: http://rhn.redhat.com/errata/RHSA-2015-0715.html
+    reference_id:
+  - id: 594109
+    url: http://rhn.redhat.com/errata/RHSA-2015-0716.html
+    reference_id:
+  - id: 594110
+    url: http://rhn.redhat.com/errata/RHSA-2015-0752.html
+    reference_id:
+  - id: 482338
+    url: http://rhn.redhat.com/errata/RHSA-2016-2957.html
+    reference_id:
+  - id: 594114
+    url: https://access.redhat.com/articles/1384453
+    reference_id:
+  - id: 181615
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-0286.json
+    reference_id:
+  - id: 594087
+    url: https://bto.bluecoat.com/security-advisory/sa92
+    reference_id:
+  - id: 594630
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1202366
+    reference_id:
+  - id: 1427319
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0286
+    reference_id:
+  - id: 594631
+    url: https://git.openssl.org/?p=openssl.git;a=commit;h=c3c7fb07dc975dc3c9de0eddb7d8fd79fc9c67c1
+    reference_id:
+  - id: 566629
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10110
+    reference_id:
+  - id: 160840
+    url: https://support.apple.com/HT205212
+    reference_id:
+  - id: 160842
+    url: https://support.apple.com/HT205267
+    reference_id:
+  - id: 530665
+    url: https://support.citrix.com/article/CTX216642
+    reference_id:
+  - id: 1427199
+    url: https://ubuntu.com/security/notices/USN-2537-1
+    reference_id:
+  - id: 167666
+    url: http://support.apple.com/kb/HT204942
+    reference_id:
+  - id: 594117
+    url: https://www.freebsd.org/security/advisories/FreeBSD-SA-15%3A06.openssl.asc
+    reference_id:
+  - id: 3664
+    url: https://www.openssl.org/news/secadv/20150319.txt
+    reference_id:
+  - id: 566632
+    url: https://www.openssl.org/news/secadv_20150319.txt
+    reference_id:
+  - id: 594111
+    url: http://www.debian.org/security/2015/dsa-3197
+    reference_id:
+  - id: 594623
+    url: http://www.fortiguard.com/advisory/2015-03-24-openssl-vulnerabilities-march-2015
+    reference_id:
+  - id: 443528
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:062
+    reference_id:
+  - id: 566619
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:063
+    reference_id:
+  - id: 11089
+    url: http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html
+    reference_id:
+  - id: 13678
+    url: http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html
+    reference_id:
+  - id: 13679
+    url: http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    reference_id:
+  - id: 4777
+    url: http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html
+    reference_id:
+  - id: 98394
+    url: http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html
+    reference_id:
+  - id: 14836
+    url: http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+    reference_id:
+  - id: 417507
+    url: http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html
+    reference_id:
+  - id: 14837
+    url: http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html
+    reference_id:
+  - id: 594628
+    url: http://www.securityfocus.com/bid/73225
+    reference_id:
+  - id: 594086
+    url: http://www.securitytracker.com/id/1031929
+    reference_id:
+  - id: 594629
+    url: http://www.securitytracker.com/id/1032917
+    reference_id:
+  - id: 594113
+    url: http://www.ubuntu.com/usn/USN-2537-1
+    reference_id:
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 413638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0:*:*:*:*:*:*:*
+  - id: 428065
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0a:*:*:*:*:*:*:*
+  - id: 436916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0b:*:*:*:*:*:*:*
+  - id: 443542
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0c:*:*:*:*:*:*:*
+  - id: 443543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0d:*:*:*:*:*:*:*
+  - id: 443544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0e:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0e:*:*:*:*:*:*:*
+  - id: 443545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0f:*:*:*:*:*:*:*
+  - id: 443546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0g:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0g:*:*:*:*:*:*:*
+  - id: 443547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0h:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0h:*:*:*:*:*:*:*
+  - id: 443548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0i:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0i:*:*:*:*:*:*:*
+  - id: 443549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0j:*:*:*:*:*:*:*
+  - id: 443550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0k:*:*:*:*:*:*:*
+  - id: 443551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0l:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0l:*:*:*:*:*:*:*
+  - id: 566634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0m:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0m:*:*:*:*:*:*:*
+  - id: 566635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0n:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0n:*:*:*:*:*:*:*
+  - id: 566636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0o:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0o:*:*:*:*:*:*:*
+  - id: 594119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0p:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0p:*:*:*:*:*:*:*
+  - id: 594120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.0q:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.0q:*:*:*:*:*:*:*
+  - id: 443552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1:*:*:*:*:*:*:*
+  - id: 443556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1a:*:*:*:*:*:*:*
+  - id: 443557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1b:*:*:*:*:*:*:*
+  - id: 443558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1c:*:*:*:*:*:*:*
+  - id: 443559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1d:*:*:*:*:*:*:*
+  - id: 443560
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1e:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1e:*:*:*:*:*:*:*
+  - id: 443561
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*
+  - id: 550742
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1g:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1g:*:*:*:*:*:*:*
+  - id: 566637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1h:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1h:*:*:*:*:*:*:*
+  - id: 566638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1i:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1i:*:*:*:*:*:*:*
+  - id: 566639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1j:*:*:*:*:*:*:*
+  - id: 594121
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1k:*:*:*:*:*:*:*
+  - id: 594122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.1l:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.1l:*:*:*:*:*:*:*
+  - id: 594091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*
+  - id: 594632
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-0286
+    reference_id: CVE-2015-0286
+  - id: 175630
+    url: https://access.redhat.com/errata/RHSA-2015:0715
+    reference_id: RHSA-2015:0715
+  - id: 175629
+    url: https://access.redhat.com/errata/RHSA-2015:0716
+    reference_id: RHSA-2015:0716
+  - id: 175628
+    url: https://access.redhat.com/errata/RHSA-2015:0752
+    reference_id: RHSA-2015:0752
+  - id: 173911
+    url: https://access.redhat.com/errata/RHSA-2016:2957
+    reference_id: RHSA-2016:2957
+weaknesses: []

@@ -1,0 +1,538 @@
+vulnerability_id: VCID-evhs-yhuh-aaac
+aliases:
+  - CVE-2015-7547
+summary: Multiple stack-based buffer overflows in the (1) send_dg and (2) send_vc functions
+  in the libresolv library in the GNU C Library (aka glibc or libc6) before 2.23 allow remote
+  attackers to cause a denial of service (crash) or possibly execute arbitrary code via a crafted
+  DNS response that triggers a call to the getaddrinfo function with the AF_UNSPEC or AF_INET6
+  address family, related to performing "dual A/AAAA DNS queries" and the libnss_dns.so.2 NSS
+  module.
+severities:
+  - id: 663708
+    reference_id: 1430709
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 663709
+    reference_id: 1430710
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 663710
+    reference_id: 614412
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 663711
+    reference_id: 614429
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 663712
+    reference_id: 1430711
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 665670
+    reference_id: 471715
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686788
+    reference_id: 2750
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 652243
+    reference_id: 158190
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 203583
+    reference_id: 614437
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 203581
+    reference_id: 614437
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 51242
+    reference_id: 175890
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 51243
+    reference_id: 175891
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 51245
+    reference_id: 175893
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 51244
+    reference_id: 175892
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+references:
+  - id: 614386
+    url: http://fortiguard.com/advisory/glibc-getaddrinfo-stack-overflow
+    reference_id:
+  - id: 600674
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177404.html
+    reference_id:
+  - id: 614387
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177412.html
+    reference_id:
+  - id: 524078
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00036.html
+    reference_id:
+  - id: 592668
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00037.html
+    reference_id:
+  - id: 592669
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00038.html
+    reference_id:
+  - id: 592670
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00039.html
+    reference_id:
+  - id: 592671
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00042.html
+    reference_id:
+  - id: 614388
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00043.html
+    reference_id:
+  - id: 614389
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-02/msg00044.html
+    reference_id:
+  - id: 614390
+    url: http://marc.info/?l=bugtraq&m=145596041017029&w=2
+    reference_id:
+  - id: 614391
+    url: http://marc.info/?l=bugtraq&m=145672440608228&w=2
+    reference_id:
+  - id: 614392
+    url: http://marc.info/?l=bugtraq&m=145690841819314&w=2
+    reference_id:
+  - id: 614393
+    url: http://marc.info/?l=bugtraq&m=145857691004892&w=2
+    reference_id:
+  - id: 614394
+    url: http://marc.info/?l=bugtraq&m=146161017210491&w=2
+    reference_id:
+  - id: 614395
+    url: http://packetstormsecurity.com/files/135802/glibc-getaddrinfo-Stack-Based-Buffer-Overflow.html
+    reference_id:
+  - id: 158627
+    url: http://packetstormsecurity.com/files/154361/Cisco-Device-Hardcoded-Credentials-GNU-glibc-BusyBox.html
+    reference_id:
+  - id: 521382
+    url: http://packetstormsecurity.com/files/164014/Moxa-Command-Injection-Cross-Site-Scripting-Vulnerable-Software.html
+    reference_id:
+  - id: 944392
+    url: http://packetstormsecurity.com/files/167552/Nexans-FTTO-GigaSwitch-Outdated-Components-Hardcoded-Backdoor.html
+    reference_id:
+  - id: 1430709
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-7547.html
+    reference_id:
+  - id: 614396
+    url: http://rhn.redhat.com/errata/RHSA-2016-0175.html
+    reference_id:
+  - id: 158189
+    url: http://rhn.redhat.com/errata/RHSA-2016-0176.html
+    reference_id:
+  - id: 614397
+    url: http://rhn.redhat.com/errata/RHSA-2016-0225.html
+    reference_id:
+  - id: 614398
+    url: http://rhn.redhat.com/errata/RHSA-2016-0277.html
+    reference_id:
+  - id: 614407
+    url: https://access.redhat.com/articles/2161461
+    reference_id:
+  - id: 175894
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-7547.json
+    reference_id:
+  - id: 614408
+    url: https://blogs.sophos.com/2016/02/24/utm-up2date-9-355-released/
+    reference_id:
+  - id: 614409
+    url: https://blogs.sophos.com/2016/02/29/utm-up2date-9-319-released/
+    reference_id:
+  - id: 614410
+    url: https://bto.bluecoat.com/security-advisory/sa114
+    reference_id:
+  - id: 614411
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1293532
+    reference_id:
+  - id: 1430710
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7547
+    reference_id:
+  - id: 158629
+    url: http://seclists.org/fulldisclosure/2019/Sep/7
+    reference_id:
+  - id: 521383
+    url: http://seclists.org/fulldisclosure/2021/Sep/0
+    reference_id:
+  - id: 944215
+    url: http://seclists.org/fulldisclosure/2022/Jun/36
+    reference_id:
+  - id: 614412
+    url: https://googleonlinesecurity.blogspot.com/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html
+    reference_id:
+  - id: 614413
+    url: https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05028479
+    reference_id:
+  - id: 614414
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04989404
+    reference_id:
+  - id: 614415
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05008367
+    reference_id:
+  - id: 614416
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05053211
+    reference_id:
+  - id: 614417
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05073516
+    reference_id:
+  - id: 614418
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05098877
+    reference_id:
+  - id: 614419
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05125672
+    reference_id:
+  - id: 614420
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05128937
+    reference_id:
+  - id: 614421
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05130958
+    reference_id:
+  - id: 614422
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05140858
+    reference_id:
+  - id: 165926
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05158380
+    reference_id:
+  - id: 614423
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05176716
+    reference_id:
+  - id: 614424
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05212266
+    reference_id:
+  - id: 13534
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05376917
+    reference_id:
+  - id: 13535
+    url: https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05390722
+    reference_id:
+  - id: 579325
+    url: https://help.ecostruxureit.com/display/public/UADCO8x/StruxureWare+Data+Center+Operation+Software+Vulnerability+Fixes
+    reference_id:
+  - id: 614425
+    url: https://ics-cert.us-cert.gov/advisories/ICSA-16-103-01
+    reference_id:
+  - id: 614426
+    url: https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40161
+    reference_id:
+  - id: 158195
+    url: https://kc.mcafee.com/corporate/index?page=content&id=SB10150
+    reference_id:
+  - id: 158635
+    url: https://seclists.org/bugtraq/2019/Sep/7
+    reference_id:
+  - id: 548677
+    url: https://security.gentoo.org/glsa/201602-02
+    reference_id:
+  - id: 614427
+    url: https://security.netapp.com/advisory/ntap-20160217-0002/
+    reference_id:
+  - id: 614428
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=18665
+    reference_id:
+  - id: 614429
+    url: https://sourceware.org/ml/libc-alpha/2016-02/msg00416.html
+    reference_id:
+  - id: 614430
+    url: https://support.f5.com/kb/en-us/solutions/public/k/47/sol47098834.html
+    reference_id:
+  - id: 614431
+    url: https://support.lenovo.com/us/en/product_security/len_5450
+    reference_id:
+  - id: 1430711
+    url: https://ubuntu.com/security/notices/USN-2900-1
+    reference_id:
+  - id: 614399
+    url: http://support.citrix.com/article/CTX206991
+    reference_id:
+  - id: 614432
+    url: https://www.arista.com/en/support/advisories-notices/security-advisories/1255-security-advisory-17
+    reference_id:
+  - id: 614433
+    url: https://www.exploit-db.com/exploits/39454/
+    reference_id:
+  - id: 614434
+    url: https://www.exploit-db.com/exploits/40339/
+    reference_id:
+  - id: 614435
+    url: https://www.kb.cert.org/vuls/id/457759
+    reference_id:
+  - id: 614436
+    url: https://www.tenable.com/security/research/tra-2017-08
+    reference_id:
+  - id: 614400
+    url: http://ubuntu.com/usn/usn-2900-1
+    reference_id:
+  - id: 585938
+    url: http://www.debian.org/security/2016/dsa-3480
+    reference_id:
+  - id: 614401
+    url: http://www.debian.org/security/2016/dsa-3481
+    reference_id:
+  - id: 614402
+    url: http://www.fortiguard.com/advisory/glibc-getaddrinfo-stack-overflow
+    reference_id:
+  - id: 614403
+    url: http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20160304-01-glibc-en
+    reference_id:
+  - id: 471715
+    url: http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html
+    reference_id:
+  - id: 2750
+    url: http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html
+    reference_id:
+  - id: 158190
+    url: http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html
+    reference_id:
+  - id: 614404
+    url: http://www.securityfocus.com/bid/83265
+    reference_id:
+  - id: 614405
+    url: http://www.securitytracker.com/id/1035020
+    reference_id:
+  - id: 614406
+    url: http://www.vmware.com/security/advisories/VMSA-2016-0002.html
+    reference_id:
+  - id: 570384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_access_policy_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_access_policy_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 570385
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_advanced_firewall_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_advanced_firewall_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 570386
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_analytics:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_analytics:12.0.0:*:*:*:*:*:*:*
+  - id: 570387
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_acceleration_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_acceleration_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 570388
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_application_security_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_application_security_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 570389
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_domain_name_system:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_domain_name_system:12.0.0:*:*:*:*:*:*:*
+  - id: 570390
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_link_controller:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_link_controller:12.0.0:*:*:*:*:*:*:*
+  - id: 570391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_local_traffic_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_local_traffic_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 570392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:f5:big-ip_policy_enforcement_manager:12.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:f5:big-ip_policy_enforcement_manager:12.0.0:*:*:*:*:*:*:*
+  - id: 407311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.10:*:*:*:*:*:*:*
+  - id: 410694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.10.1:*:*:*:*:*:*:*
+  - id: 410695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.11:*:*:*:*:*:*:*
+  - id: 414277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.11.1:*:*:*:*:*:*:*
+  - id: 435812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.11.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.11.2:*:*:*:*:*:*:*
+  - id: 435813
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.11.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.11.3:*:*:*:*:*:*:*
+  - id: 461368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.12:*:*:*:*:*:*:*
+  - id: 433889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.12.1:*:*:*:*:*:*:*
+  - id: 435814
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.12.2:*:*:*:*:*:*:*
+  - id: 408161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.13:*:*:*:*:*:*:*
+  - id: 482129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.14:*:*:*:*:*:*:*
+  - id: 501640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.14.1:*:*:*:*:*:*:*
+  - id: 501641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.15:*:*:*:*:*:*:*
+  - id: 497451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.16:*:*:*:*:*:*:*
+  - id: 512888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.17:*:*:*:*:*:*:*
+  - id: 552386
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.18:*:*:*:*:*:*:*
+  - id: 614438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.19:*:*:*:*:*:*:*
+  - id: 614439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.20:*:*:*:*:*:*:*
+  - id: 584378
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.21:*:*:*:*:*:*:*
+  - id: 614440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.22:*:*:*:*:*:*:*
+  - id: 407321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.9:*:*:*:*:*:*:*
+  - id: 614441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hp:helion_openstack:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hp:helion_openstack:1.1.1:*:*:*:*:*:*:*
+  - id: 614442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hp:helion_openstack:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hp:helion_openstack:2.0.0:*:*:*:*:*:*:*
+  - id: 614443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hp:helion_openstack:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hp:helion_openstack:2.1.0:*:*:*:*:*:*:*
+  - id: 614444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:hp:server_migration_pack:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:hp:server_migration_pack:7.5:*:*:*:*:*:*:*
+  - id: 594341
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:exalogic_infrastructure:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:exalogic_infrastructure:1.0:*:*:*:*:*:*:*
+  - id: 594342
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:exalogic_infrastructure:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:exalogic_infrastructure:2.0:*:*:*:*:*:*:*
+  - id: 614445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sophos:unified_threat_management_software:9.319:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sophos:unified_threat_management_software:9.319:*:*:*:*:*:*:*
+  - id: 614446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sophos:unified_threat_management_software:9.355:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sophos:unified_threat_management_software:9.355:*:*:*:*:*:*:*
+  - id: 592680
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp2:*:*:*:*:*:*
+  - id: 592681
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp3:*:*:*:*:*:*
+  - id: 592682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suse:linux_enterprise_debuginfo:11.0:sp4:*:*:*:*:*:*
+  - id: 147842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*
+  - id: 537306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:oracle:fujitsu_m10_firmware:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:oracle:fujitsu_m10_firmware:*:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157856
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*
+  - id: 158199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_hpc_node_eus:7.2:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 158201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.2:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 561249
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:11.0:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:11.0:sp3:*:*:*:*:*:*
+  - id: 592683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:11.0:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:11.0:sp4:*:*:*:*:*:*
+  - id: 158275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:*:*:*:*:*:*:*
+  - id: 159019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp1:*:*:*:*:*:*
+  - id: 592684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11.0:sp2:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11.0:sp2:*:*:lts:*:*:*
+  - id: 544665
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11.0:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11.0:sp3:*:*:*:*:*:*
+  - id: 592685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11.0:sp3:*:*:*:vmware:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11.0:sp3:*:*:*:vmware:*:*
+  - id: 592686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11.0:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11.0:sp4:*:*:*:*:*:*
+  - id: 159020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp1:*:*:*:*:*:*
+  - id: 592687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:11.0:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:11.0:sp3:*:*:*:*:*:*
+  - id: 592688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:11.0:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:11.0:sp4:*:*:*:*:*:*
+  - id: 158281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:*:*:*:*:*:*:*
+  - id: 159021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:sp1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:sp1:*:*:*:*:*:*
+  - id: 159022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_server:12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_server:12:*:*:*:*:*:*:*
+  - id: 614437
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-7547
+    reference_id: CVE-2015-7547
+  - id: 175890
+    url: https://access.redhat.com/errata/RHSA-2016:0175
+    reference_id: RHSA-2016:0175
+  - id: 175891
+    url: https://access.redhat.com/errata/RHSA-2016:0176
+    reference_id: RHSA-2016:0176
+  - id: 175893
+    url: https://access.redhat.com/errata/RHSA-2016:0225
+    reference_id: RHSA-2016:0225
+  - id: 175892
+    url: https://access.redhat.com/errata/RHSA-2016:0277
+    reference_id: RHSA-2016:0277
+weaknesses: []

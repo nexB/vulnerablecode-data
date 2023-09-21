@@ -1,0 +1,49 @@
+vulnerability_id: VCID-16b8-7aps-aaak
+aliases:
+  - CVE-2021-3505
+summary: A flaw was found in libtpms in versions before 0.8.0. The TPM 2 implementation returns
+  2048 bit keys with ~1984 bit strength due to a bug in the TCG specification. The bug is in
+  the key creation algorithm in RsaAdjustPrimeCandidate(), which is called before the prime
+  number check. The highest threat from this vulnerability is to data confidentiality.
+severities:
+  - id: 51802
+    reference_id: 176509
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 546252
+    reference_id: 888669
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 546250
+    reference_id: 888669
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 176509
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3505.json
+    reference_id:
+  - id: 888666
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1950046
+    reference_id:
+  - id: 888667
+    url: https://github.com/stefanberger/libtpms/issues/183
+    reference_id:
+  - id: 888668
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NUCZX4S53TUNTSGTCRDNOQZV2V2RI4RJ/
+    reference_id:
+  - id: 887200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtpms_project:libtpms:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtpms_project:libtpms:*:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 772353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+  - id: 888669
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3505
+    reference_id: CVE-2021-3505
+weaknesses: []

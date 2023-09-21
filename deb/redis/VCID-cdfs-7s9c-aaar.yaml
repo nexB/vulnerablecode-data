@@ -1,0 +1,24 @@
+affected_purls: []
+aliases:
+- CVE-2021-29478
+fixed_purl:
+- pkg:deb/debian/redis@0?distro=sid
+- pkg:deb/debian/redis@5:5.0.14-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/redis@5:6.0.13-1?distro=sid
+- pkg:deb/debian/redis@5:6.0.16-1%2Bdeb11u2?distro=sid
+- pkg:deb/debian/redis@5:7.0.11-1?distro=sid
+references:
+- id: 129748
+  reference_id: '988045'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=988045
+severities: []
+summary: Redis is an open source (BSD licensed), in-memory data structure store, used
+  as a database, cache, and message broker. An integer overflow bug in Redis 6.2 before
+  6.2.3 could be exploited to corrupt the heap and potentially result with remote
+  code execution. Redis 6.0 and earlier are not directly affected by this issue. The
+  problem is fixed in version 6.2.3. An additional workaround to mitigate the problem
+  without patching the `redis-server` executable is to prevent users from modifying
+  the `set-max-intset-entries` configuration parameter. This can be done using ACL
+  to restrict unprivileged users from using the `CONFIG SET` command.
+vulnerability_id: VCID-cdfs-7s9c-aaar
+weaknesses: []

@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2012-3406
+fixed_purl:
+- pkg:deb/debian/glibc@2.19-14?distro=sid
+- pkg:deb/debian/glibc@2.28-10%2Bdeb10u1?distro=sid
+- pkg:deb/debian/glibc@2.31-13%2Bdeb11u6?distro=sid
+- pkg:deb/debian/glibc@2.36-9?distro=sid
+references:
+- id: 124742
+  reference_id: '681888'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681888
+severities: []
+summary: The vfprintf function in stdio-common/vfprintf.c in GNU C Library (aka glibc)
+  2.5, 2.12, and probably other versions does not "properly restrict the use of" the
+  alloca function when allocating the SPECS array, which allows context-dependent
+  attackers to bypass the FORTIFY_SOURCE format-string protection mechanism and cause
+  a denial of service (crash) or possibly execute arbitrary code via a crafted format
+  string using positional parameters and a large number of format specifiers, a different
+  vulnerability than CVE-2012-3404 and CVE-2012-3405.
+vulnerability_id: VCID-xv3m-wcrj-aaad
+weaknesses: []

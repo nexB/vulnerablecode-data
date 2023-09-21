@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2020-11742
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B24-gddaaccbbab-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.13.x, allowing guest OS users to
+  cause a denial of service because of bad continuation handling in GNTTABOP_copy.
+  Grant table operations are expected to return 0 for success, and a negative number
+  for errors. The fix for CVE-2017-12135 introduced a path through grant copy handling
+  where success may be returned to the caller without any action taken. In particular,
+  the status fields of individual operations are left uninitialised, and may result
+  in errant behaviour in the caller of GNTTABOP_copy. A buggy or malicious guest can
+  construct its grant table in such a way that, when a backend domain tries to copy
+  a grant, it hits the incorrect exit path. This returns success to the caller without
+  doing anything, which may cause crashes or other incorrect behaviour.
+vulnerability_id: VCID-9hm4-ntyt-aaag
+weaknesses: []

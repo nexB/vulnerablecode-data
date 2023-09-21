@@ -1,0 +1,27 @@
+affected_purls: []
+aliases:
+- CVE-2020-11739
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B24-gddaaccbbab-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.13.x, allowing guest OS users to
+  cause a denial of service or possibly gain privileges because of missing memory
+  barriers in read-write unlock paths. The read-write unlock paths don't contain a
+  memory barrier. On Arm, this means a processor is allowed to re-order the memory
+  access with the preceding ones. In other words, the unlock may be seen by another
+  processor before all the memory accesses within the "critical" section. As a consequence,
+  it may be possible to have a writer executing a critical section at the same time
+  as readers or another writer. In other words, many of the assumptions (e.g., a variable
+  cannot be modified after a check) in the critical sections are not safe anymore.
+  The read-write locks are used in hypercalls (such as grant-table ones), so a malicious
+  guest could exploit the race. For instance, there is a small window where Xen can
+  leak memory if XENMAPSPACE_grant_table is used concurrently. A malicious guest may
+  be able to leak memory, or cause a hypervisor crash resulting in a Denial of Service
+  (DoS). Information leak and privilege escalation cannot be excluded.
+vulnerability_id: VCID-thur-eg19-aaas
+weaknesses: []

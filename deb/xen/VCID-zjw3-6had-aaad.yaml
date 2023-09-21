@@ -1,0 +1,29 @@
+affected_purls: []
+aliases:
+- CVE-2020-15565
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B24-gddaaccbbab-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B24-gddaaccbbab-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.13.x, allowing x86 Intel HVM guest
+  OS users to cause a host OS denial of service or possibly gain privileges because
+  of insufficient cache write-back under VT-d. When page tables are shared between
+  IOMMU and CPU, changes to them require flushing of both TLBs. Furthermore, IOMMUs
+  may be non-coherent, and hence prior to flushing IOMMU TLBs, a CPU cache also needs
+  writing back to memory after changes were made. Such writing back of cached data
+  was missing in particular when splitting large page mappings into smaller granularity
+  ones. A malicious guest may be able to retain read/write DMA access to frames returned
+  to Xen's free pool, and later reused for another purpose. Host crashes (leading
+  to a Denial of Service) and privilege escalation cannot be ruled out. Xen versions
+  from at least 3.2 onwards are affected. Only x86 Intel systems are affected. x86
+  AMD as well as Arm systems are not affected. Only x86 HVM guests using hardware
+  assisted paging (HAP), having a passed through PCI device assigned, and having page
+  table sharing enabled can leverage the vulnerability. Note that page table sharing
+  will be enabled (by default) only if Xen considers IOMMU and CPU large page size
+  support compatible.
+vulnerability_id: VCID-zjw3-6had-aaad
+weaknesses: []

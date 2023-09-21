@@ -1,0 +1,395 @@
+vulnerability_id: VCID-63aw-51wp-aaaq
+aliases:
+  - CVE-2020-10711
+summary: A NULL pointer dereference flaw was found in the Linux kernel's SELinux subsystem in
+  versions before 5.7. This flaw occurs while importing the Commercial IP Security Option (CIPSO)
+  protocol's category bitmap into the SELinux extensible bitmap via the' ebitmap_netlbl_import'
+  routine. While processing the CIPSO restricted bitmap tag in the 'cipso_v4_parsetag_rbm' routine,
+  it sets the security attribute to indicate that the category bitmap is present, even if it
+  has not been allocated. This issue leads to a NULL pointer dereference issue while importing
+  the same category bitmap into SELinux. This flaw allows a remote network user to crash the
+  system kernel, resulting in a denial of service.
+severities:
+  - id: 695350
+    reference_id: 1455712
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 49226
+    reference_id: 173523
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 695351
+    reference_id: 1455713
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695352
+    reference_id: 1455714
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695353
+    reference_id: 1455715
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695354
+    reference_id: 1455716
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695355
+    reference_id: 1455717
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 690581
+    reference_id: 1451946
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695356
+    reference_id: 1455718
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695395
+    reference_id: 1455748
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695413
+    reference_id: 1455762
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695414
+    reference_id: 1455763
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 690580
+    reference_id: 1451945
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 696130
+    reference_id: 1456315
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 695357
+    reference_id: 812159
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 49207
+    reference_id: 173504
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 430443
+    reference_id: 812160
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 430441
+    reference_id: 812160
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 49223
+    reference_id: 173520
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49222
+    reference_id: 173519
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49216
+    reference_id: 173513
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49208
+    reference_id: 173505
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49210
+    reference_id: 173507
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49209
+    reference_id: 173506
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49225
+    reference_id: 173522
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49218
+    reference_id: 173515
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49213
+    reference_id: 173510
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49211
+    reference_id: 173508
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49217
+    reference_id: 173514
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49214
+    reference_id: 173511
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49219
+    reference_id: 173516
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49215
+    reference_id: 173512
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49224
+    reference_id: 173521
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49221
+    reference_id: 173518
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49220
+    reference_id: 173517
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 49212
+    reference_id: 173509
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 721689
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00022.html
+    reference_id:
+  - id: 793212
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00008.html
+    reference_id:
+  - id: 1455712
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-10711.html
+    reference_id:
+  - id: 173523
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-10711.json
+    reference_id:
+  - id: 812154
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-10711
+    reference_id:
+  - id: 1455713
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10711
+    reference_id:
+  - id: 789835
+    url: https://lists.debian.org/debian-lts-announce/2020/06/msg00012.html
+    reference_id:
+  - id: 1455714
+    url: https://lore.kernel.org/netdev/07d99ae197bfdb2964931201db67b6cd0b38db5b.1589276729.git.pabeni@redhat.com/T/#u
+    reference_id:
+  - id: 771150
+    url: https://security.netapp.com/advisory/ntap-20200608-0001/
+    reference_id:
+  - id: 1455715
+    url: https://ubuntu.com/security/notices/USN-4411-1
+    reference_id:
+  - id: 1455716
+    url: https://ubuntu.com/security/notices/USN-4412-1
+    reference_id:
+  - id: 1455717
+    url: https://ubuntu.com/security/notices/USN-4413-1
+    reference_id:
+  - id: 1451946
+    url: https://ubuntu.com/security/notices/USN-4414-1
+    reference_id:
+  - id: 1455718
+    url: https://ubuntu.com/security/notices/USN-4419-1
+    reference_id:
+  - id: 812155
+    url: https://usn.ubuntu.com/4411-1/
+    reference_id:
+  - id: 812156
+    url: https://usn.ubuntu.com/4412-1/
+    reference_id:
+  - id: 812157
+    url: https://usn.ubuntu.com/4413-1/
+    reference_id:
+  - id: 773082
+    url: https://usn.ubuntu.com/4414-1/
+    reference_id:
+  - id: 812158
+    url: https://usn.ubuntu.com/4419-1/
+    reference_id:
+  - id: 1455748
+    url: https://usn.ubuntu.com/usn/usn-4411-1
+    reference_id:
+  - id: 1455762
+    url: https://usn.ubuntu.com/usn/usn-4412-1
+    reference_id:
+  - id: 1455763
+    url: https://usn.ubuntu.com/usn/usn-4413-1
+    reference_id:
+  - id: 1451945
+    url: https://usn.ubuntu.com/usn/usn-4414-1
+    reference_id:
+  - id: 1456315
+    url: https://usn.ubuntu.com/usn/usn-4419-1
+    reference_id:
+  - id: 789837
+    url: https://www.debian.org/security/2020/dsa-4698
+    reference_id:
+  - id: 795072
+    url: https://www.debian.org/security/2020/dsa-4699
+    reference_id:
+  - id: 812159
+    url: https://www.openwall.com/lists/oss-security/2020/05/12/2
+    reference_id:
+  - id: 173504
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1825116
+    reference_id: 1825116
+  - id: 812161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:3scale:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:3scale:2.0:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 637845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 622158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 168171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 664118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 779122
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:messaging_realtime_grid:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:messaging_realtime_grid:2.0:*:*:*:*:*:*:*
+  - id: 812160
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-10711
+    reference_id: CVE-2020-10711
+  - id: 173520
+    url: https://access.redhat.com/errata/RHSA-2020:2082
+    reference_id: RHSA-2020:2082
+  - id: 173519
+    url: https://access.redhat.com/errata/RHSA-2020:2085
+    reference_id: RHSA-2020:2085
+  - id: 173513
+    url: https://access.redhat.com/errata/RHSA-2020:2102
+    reference_id: RHSA-2020:2102
+  - id: 173505
+    url: https://access.redhat.com/errata/RHSA-2020:2103
+    reference_id: RHSA-2020:2103
+  - id: 173507
+    url: https://access.redhat.com/errata/RHSA-2020:2104
+    reference_id: RHSA-2020:2104
+  - id: 173506
+    url: https://access.redhat.com/errata/RHSA-2020:2125
+    reference_id: RHSA-2020:2125
+  - id: 173522
+    url: https://access.redhat.com/errata/RHSA-2020:2171
+    reference_id: RHSA-2020:2171
+  - id: 173515
+    url: https://access.redhat.com/errata/RHSA-2020:2199
+    reference_id: RHSA-2020:2199
+  - id: 173510
+    url: https://access.redhat.com/errata/RHSA-2020:2203
+    reference_id: RHSA-2020:2203
+  - id: 173508
+    url: https://access.redhat.com/errata/RHSA-2020:2214
+    reference_id: RHSA-2020:2214
+  - id: 173514
+    url: https://access.redhat.com/errata/RHSA-2020:2242
+    reference_id: RHSA-2020:2242
+  - id: 173511
+    url: https://access.redhat.com/errata/RHSA-2020:2277
+    reference_id: RHSA-2020:2277
+  - id: 173516
+    url: https://access.redhat.com/errata/RHSA-2020:2285
+    reference_id: RHSA-2020:2285
+  - id: 173512
+    url: https://access.redhat.com/errata/RHSA-2020:2289
+    reference_id: RHSA-2020:2289
+  - id: 173521
+    url: https://access.redhat.com/errata/RHSA-2020:2291
+    reference_id: RHSA-2020:2291
+  - id: 173518
+    url: https://access.redhat.com/errata/RHSA-2020:2429
+    reference_id: RHSA-2020:2429
+  - id: 173517
+    url: https://access.redhat.com/errata/RHSA-2020:2519
+    reference_id: RHSA-2020:2519
+  - id: 173509
+    url: https://access.redhat.com/errata/RHSA-2020:2522
+    reference_id: RHSA-2020:2522
+weaknesses: []

@@ -1,0 +1,159 @@
+vulnerability_id: VCID-rmhp-gze6-aaar
+aliases:
+  - CVE-2018-15471
+summary: An issue was discovered in xenvif_set_hash_mapping in drivers/net/xen-netback/hash.c
+  in the Linux kernel through 4.18.1, as used in Xen through 4.11.x and other products. The
+  Linux netback driver allows frontends to control mapping of requests to request queues. When
+  processing a request to set or change this mapping, some input validation (e.g., for an integer
+  overflow) was missing or flawed, leading to OOB access in hash handling. A malicious or buggy
+  frontend may cause the (usually privileged) backend to make out of bounds memory accesses,
+  potentially resulting in one or more of privilege escalation, Denial of Service (DoS), or
+  information leaks.
+severities:
+  - id: 684697
+    reference_id: 1447209
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 614866
+    reference_id: 934921
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H
+  - id: 684698
+    reference_id: 736575
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684699
+    reference_id: 1447210
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 687970
+    reference_id: 693368
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684700
+    reference_id: 1447211
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 674915
+    reference_id: 1439811
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674916
+    reference_id: 1439812
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674917
+    reference_id: 1439813
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684701
+    reference_id: 1447212
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684702
+    reference_id: 1447213
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 614865
+    reference_id: 934920
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 326542
+    reference_id: 736578
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:L/AC:L/Au:S/C:C/I:C/A:C
+  - id: 326540
+    reference_id: 736578
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1447209
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-15471.html
+    reference_id:
+  - id: 934921
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-15471.json
+    reference_id:
+  - id: 736575
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=1607
+    reference_id:
+  - id: 1447210
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15471
+    reference_id:
+  - id: 693368
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html
+    reference_id:
+  - id: 1447211
+    url: https://ubuntu.com/security/notices/USN-3819-1
+    reference_id:
+  - id: 1439811
+    url: https://ubuntu.com/security/notices/USN-3820-1
+    reference_id:
+  - id: 1439812
+    url: https://ubuntu.com/security/notices/USN-3820-2
+    reference_id:
+  - id: 1439813
+    url: https://ubuntu.com/security/notices/USN-3820-3
+    reference_id:
+  - id: 736576
+    url: https://usn.ubuntu.com/3819-1/
+    reference_id:
+  - id: 679661
+    url: https://usn.ubuntu.com/3820-1/
+    reference_id:
+  - id: 679662
+    url: https://usn.ubuntu.com/3820-2/
+    reference_id:
+  - id: 679663
+    url: https://usn.ubuntu.com/3820-3/
+    reference_id:
+  - id: 736577
+    url: https://www.debian.org/security/2018/dsa-4313
+    reference_id:
+  - id: 1447212
+    url: https://www.spinics.net/lists/netdev/msg520271.html
+    reference_id:
+  - id: 1447213
+    url: https://xenbits.xen.org/xsa/advisory-270.html
+    reference_id:
+  - id: 736574
+    url: http://xenbits.xen.org/xsa/advisory-270.html
+    reference_id:
+  - id: 934920
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1610555
+    reference_id: 1610555
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 171673
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*
+  - id: 736578
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-15471
+    reference_id: CVE-2018-15471
+weaknesses: []

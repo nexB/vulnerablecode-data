@@ -1,0 +1,38 @@
+vulnerability_id: VCID-ba3v-2qyg-aaas
+aliases:
+  - CVE-2018-14663
+summary: An issue has been found in PowerDNS DNSDist before 1.3.3 allowing a remote attacker
+  to craft a DNS query with trailing data such that the addition of a record by dnsdist, for
+  example an OPT record when adding EDNS Client Subnet, might result in the trailing data being
+  smuggled to the backend as a valid record while not seen by dnsdist. This is an issue when
+  dnsdist is deployed as a DNS Firewall and used to filter some records that should not be received
+  by the backend. This issue occurs only when either the 'useClientSubnet' or the experimental
+  'addXPF' parameters are used when declaring a new backend.
+severities:
+  - id: 324347
+    reference_id: 734953
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 324345
+    reference_id: 734953
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 734951
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14663
+    reference_id:
+  - id: 734952
+    url: https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2018-08.html
+    reference_id:
+  - id: 40526
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913231
+    reference_id: 913231
+  - id: 734954
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:powerdns:dnsdist:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:powerdns:dnsdist:*:*:*:*:*:*:*:*
+  - id: 734953
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14663
+    reference_id: CVE-2018-14663
+weaknesses: []

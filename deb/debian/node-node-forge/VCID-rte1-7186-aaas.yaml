@@ -1,0 +1,110 @@
+vulnerability_id: VCID-rte1-7186-aaas
+aliases:
+  - CVE-2020-7720
+  - GHSA-92xj-mqp7-vmcj
+  - GHSA-wxgw-qj99-44c2
+  - GMS-2022-68
+summary: |
+  Prototype Pollution in node-forge util.setPath API
+  ### Impact
+  `forge.util.setPath` had a potential prototype pollution issue if called with untrusted keys. This API was not used by forge itself.
+
+  ### Patches
+  The `forge.util.setPath` API and related functions were removed in 0.10.0.
+
+  ### Workarounds
+  Don't call `forge.util.setPath` directly or indirectly with untrusted keys.
+
+  ### References
+  - https://security.snyk.io/vuln/SNYK-JS-NODEFORGE-598677
+  - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7720
+
+  ### For more information
+  If you have any questions or comments about this advisory:
+  * Open an issue in [forge](https://github.com/digitalbazaar/forge).
+  * Email us at support@digitalbazaar.com.
+severities:
+  - id: 609940
+    reference_id: 931299
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 609938
+    reference_id: 931297
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 489481
+    reference_id: 32954
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 489479
+    reference_id: 32954
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 706395
+    reference_id: 1467971
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 705253
+    reference_id: 32939
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 705252
+    reference_id: 32938
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 609939
+    reference_id: 931298
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 931299
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-7720.json
+    reference_id:
+  - id: 852899
+    url: https://github.com/digitalbazaar/forge/blob/master/CHANGELOG.md
+    reference_id:
+  - id: 1467970
+    url: https://github.com/digitalbazaar/forge/blob/master/CHANGELOG.md#removed
+    reference_id:
+  - id: 1472545
+    url: https://github.com/digitalbazaar/forge/commit/6a1e3ef74f6eb345bcff1b82184201d1e28b6756
+    reference_id:
+  - id: 852900
+    url: https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-609293
+    reference_id:
+  - id: 852901
+    url: https://snyk.io/vuln/SNYK-JS-NODEFORGE-598677
+    reference_id:
+  - id: 931297
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1874606
+    reference_id: 1874606
+  - id: 78673
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969669
+    reference_id: 969669
+  - id: 852902
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digitalbazaar:forge:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:digitalbazaar:forge:*:*:*:*:*:node.js:*:*
+  - id: 32954
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-7720
+    reference_id: CVE-2020-7720
+  - id: 1467971
+    url: https://github.com/advisories/GHSA-92xj-mqp7-vmcj
+    reference_id: GHSA-92xj-mqp7-vmcj
+  - id: 32939
+    url: https://github.com/advisories/GHSA-wxgw-qj99-44c2
+    reference_id: GHSA-wxgw-qj99-44c2
+  - id: 32938
+    url: https://github.com/digitalbazaar/forge/security/advisories/GHSA-wxgw-qj99-44c2
+    reference_id: GHSA-wxgw-qj99-44c2
+  - id: 931298
+    url: https://access.redhat.com/errata/RHSA-2020:5605
+    reference_id: RHSA-2020:5605
+weaknesses: []

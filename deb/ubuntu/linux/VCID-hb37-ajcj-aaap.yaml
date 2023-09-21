@@ -1,0 +1,186 @@
+vulnerability_id: VCID-hb37-ajcj-aaap
+aliases:
+  - CVE-2017-15129
+summary: A use-after-free vulnerability was found in network namespaces code affecting the Linux
+  kernel before 4.14.11. The function get_net_ns_by_id() in net/core/net_namespace.c does not
+  check for the net::count value after it has found a peer network in netns_ids idr, which could
+  lead to double free and memory corruption. This vulnerability could allow an unprivileged
+  local user to induce kernel memory corruption on the system, leading to a crash. Due to the
+  nature of the flaw, privilege escalation cannot be fully ruled out, although it is thought
+  to be unlikely.
+severities:
+  - id: 675860
+    reference_id: 1440499
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619295
+    reference_id: 938095
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H
+  - id: 675861
+    reference_id: 1440500
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 675862
+    reference_id: 1440501
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672917
+    reference_id: 1438146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672918
+    reference_id: 1438147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672919
+    reference_id: 1438148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672922
+    reference_id: 1438151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619294
+    reference_id: 938094
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 266864
+    reference_id: 685003
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 266862
+    reference_id: 685003
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 614297
+    reference_id: 934511
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 684994
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=21b5944350052d2583e82dd59b19a9ba94a007f0
+    reference_id:
+  - id: 1440499
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15129.html
+    reference_id:
+  - id: 668576
+    url: https://access.redhat.com/errata/RHSA-2018:0654
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 938095
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15129.json
+    reference_id:
+  - id: 684997
+    url: https://access.redhat.com/security/cve/CVE-2017-15129
+    reference_id:
+  - id: 1440500
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15129
+    reference_id:
+  - id: 684995
+    url: http://seclists.org/oss-sec/2018/q1/7
+    reference_id:
+  - id: 684999
+    url: https://github.com/torvalds/linux/commit/21b5944350052d2583e82dd59b19a9ba94a007f0
+    reference_id:
+  - id: 1440501
+    url: https://git.kernel.org/linus/21b5944350052d2583e82dd59b19a9ba94a007f0
+    reference_id:
+  - id: 685000
+    url: https://marc.info/?l=linux-netdev&m=151370451121029&w=2
+    reference_id:
+  - id: 685001
+    url: https://marc.info/?t=151370468900001&r=1&w=2
+    reference_id:
+  - id: 1438146
+    url: https://ubuntu.com/security/notices/USN-3617-1
+    reference_id:
+  - id: 1438147
+    url: https://ubuntu.com/security/notices/USN-3617-2
+    reference_id:
+  - id: 1438148
+    url: https://ubuntu.com/security/notices/USN-3617-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1438151
+    url: https://ubuntu.com/security/notices/USN-3632-1
+    reference_id:
+  - id: 666768
+    url: https://usn.ubuntu.com/3617-1/
+    reference_id:
+  - id: 666769
+    url: https://usn.ubuntu.com/3617-2/
+    reference_id:
+  - id: 666770
+    url: https://usn.ubuntu.com/3617-3/
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 666773
+    url: https://usn.ubuntu.com/3632-1/
+    reference_id:
+  - id: 685002
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.11
+    reference_id:
+  - id: 684996
+    url: http://www.securityfocus.com/bid/102485
+    reference_id:
+  - id: 938094
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1531174
+    reference_id: 1531174
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 685003
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15129
+    reference_id: CVE-2017-15129
+  - id: 934511
+    url: https://access.redhat.com/errata/RHSA-2019:1946
+    reference_id: RHSA-2019:1946
+weaknesses: []

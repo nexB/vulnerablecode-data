@@ -1,0 +1,481 @@
+vulnerability_id: VCID-hsq5-y6va-aaae
+aliases:
+  - CVE-2013-1619
+summary: The TLS implementation in GnuTLS before 2.12.23, 3.0.x before 3.0.28, and 3.1.x before
+  3.1.7 does not properly consider timing side-channel attacks on a noncompliant MAC check operation
+  during the processing of malformed CBC padding, which allows remote attackers to conduct distinguishing
+  attacks and plaintext-recovery attacks via statistical analysis of timing data for crafted
+  packets, a related issue to CVE-2013-0169.
+severities:
+  - id: 651670
+    reference_id: 519200
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651671
+    reference_id: 512157
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651672
+    reference_id: 1421596
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651674
+    reference_id: 1421597
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651675
+    reference_id: 1421598
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 651673
+    reference_id: 512159
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 63047
+    reference_id: '191155'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 163813
+    reference_id: 519206
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:H/Au:N/C:P/I:P/A:N
+  - id: 63048
+    reference_id: '191156'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 63002
+    reference_id: '191103'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 408813
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00001.html
+    reference_id:
+  - id: 408814
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00003.html
+    reference_id:
+  - id: 519198
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00009.html
+    reference_id:
+  - id: 519199
+    url: http://lists.opensuse.org/opensuse-updates/2013-05/msg00023.html
+    reference_id:
+  - id: 519200
+    url: http://nmav.gnutls.org/2013/02/time-is-money-for-cbc-ciphersuites.html
+    reference_id:
+  - id: 512157
+    url: http://openwall.com/lists/oss-security/2013/02/05/24
+    reference_id:
+  - id: 1421596
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1619.html
+    reference_id:
+  - id: 519201
+    url: http://rhn.redhat.com/errata/RHSA-2013-0588.html
+    reference_id:
+  - id: '191157'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-1619.json
+    reference_id:
+  - id: 1421597
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1619
+    reference_id:
+  - id: 408818
+    url: http://secunia.com/advisories/57260
+    reference_id:
+  - id: 408819
+    url: http://secunia.com/advisories/57274
+    reference_id:
+  - id: 519204
+    url: https://gitorious.org/gnutls/gnutls/commit/328ee22c1b3951e060c7124c7cb1cee592c59bc0
+    reference_id:
+  - id: 519205
+    url: https://gitorious.org/gnutls/gnutls/commit/b8391806cd79095fe566f2401d8c7ad85a64b198
+    reference_id:
+  - id: 1421598
+    url: https://ubuntu.com/security/notices/USN-1752-1
+    reference_id:
+  - id: 519202
+    url: http://www.gnutls.org/security.html#GNUTLS-SA-2013-1
+    reference_id:
+  - id: 512159
+    url: http://www.isg.rhul.ac.uk/tls/TLStiming.pdf
+    reference_id:
+  - id: 519203
+    url: http://www.ubuntu.com/usn/USN-1752-1
+    reference_id:
+  - id: '191155'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=908238
+    reference_id: 908238
+  - id: 153771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.0.0:*:*:*:*:*:*:*
+  - id: 153772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.0.1:*:*:*:*:*:*:*
+  - id: 153773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.0.2:*:*:*:*:*:*:*
+  - id: 153774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.0.3:*:*:*:*:*:*:*
+  - id: 153775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.0.4:*:*:*:*:*:*:*
+  - id: 153776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.0:*:*:*:*:*:*:*
+  - id: 479519
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.0:*:*:*:*:*:*:*
+  - id: 479521
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.1:*:*:*:*:*:*:*
+  - id: 479523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.2:*:*:*:*:*:*:*
+  - id: 479524
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.3:*:*:*:*:*:*:*
+  - id: 479525
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.4:*:*:*:*:*:*:*
+  - id: 479527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.10.5:*:*:*:*:*:*:*
+  - id: 153777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.1:*:*:*:*:*:*:*
+  - id: 153778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.2:*:*:*:*:*:*:*
+  - id: 470214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.0:*:*:*:*:*:*:*
+  - id: 470219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.1:*:*:*:*:*:*:*
+  - id: 470215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.10:*:*:*:*:*:*:*
+  - id: 470216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.11:*:*:*:*:*:*:*
+  - id: 470217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.12:*:*:*:*:*:*:*
+  - id: 470218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.13:*:*:*:*:*:*:*
+  - id: 479528
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.14:*:*:*:*:*:*:*
+  - id: 486477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.15:*:*:*:*:*:*:*
+  - id: 519207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.16:*:*:*:*:*:*:*
+  - id: 519208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.17:*:*:*:*:*:*:*
+  - id: 519209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.18:*:*:*:*:*:*:*
+  - id: 519210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.19:*:*:*:*:*:*:*
+  - id: 470220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.2:*:*:*:*:*:*:*
+  - id: 519211
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.20:*:*:*:*:*:*:*
+  - id: 519212
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.21:*:*:*:*:*:*:*
+  - id: 519213
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.22:*:*:*:*:*:*:*
+  - id: 470221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.3:*:*:*:*:*:*:*
+  - id: 470222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.4:*:*:*:*:*:*:*
+  - id: 470223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.5:*:*:*:*:*:*:*
+  - id: 470225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.6:*:*:*:*:*:*:*
+  - id: 470224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.6.1:*:*:*:*:*:*:*
+  - id: 470226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.7:*:*:*:*:*:*:*
+  - id: 470227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.8:*:*:*:*:*:*:*
+  - id: 470228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.12.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.12.9:*:*:*:*:*:*:*
+  - id: 153779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.3:*:*:*:*:*:*:*
+  - id: 153780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.4:*:*:*:*:*:*:*
+  - id: 153781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.5:*:*:*:*:*:*:*
+  - id: 153782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.6:*:*:*:*:*:*:*
+  - id: 153783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.7:*:*:*:*:*:*:*
+  - id: 153784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.1.8:*:*:*:*:*:*:*
+  - id: 153785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.0:*:*:*:*:*:*:*
+  - id: 153786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.1:*:*:*:*:*:*:*
+  - id: 153787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.2:*:*:*:*:*:*:*
+  - id: 153788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.3:*:*:*:*:*:*:*
+  - id: 153789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.4:*:*:*:*:*:*:*
+  - id: 153790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.2.5:*:*:*:*:*:*:*
+  - id: 153791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.0:*:*:*:*:*:*:*
+  - id: 153794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.1:*:*:*:*:*:*:*
+  - id: 153792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.10:*:*:*:*:*:*:*
+  - id: 153793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.11:*:*:*:*:*:*:*
+  - id: 153795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.2:*:*:*:*:*:*:*
+  - id: 153796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.3:*:*:*:*:*:*:*
+  - id: 153797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.4:*:*:*:*:*:*:*
+  - id: 153798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.5:*:*:*:*:*:*:*
+  - id: 153799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.6:*:*:*:*:*:*:*
+  - id: 153800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.7:*:*:*:*:*:*:*
+  - id: 153801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.8:*:*:*:*:*:*:*
+  - id: 153802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.3.9:*:*:*:*:*:*:*
+  - id: 153803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.4.0:*:*:*:*:*:*:*
+  - id: 153804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.4.1:*:*:*:*:*:*:*
+  - id: 153805
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.4.2:*:*:*:*:*:*:*
+  - id: 479529
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.4.3:*:*:*:*:*:*:*
+  - id: 153806
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.5.0:*:*:*:*:*:*:*
+  - id: 153807
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.0:*:*:*:*:*:*:*
+  - id: 153808
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.1:*:*:*:*:*:*:*
+  - id: 153809
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.2:*:*:*:*:*:*:*
+  - id: 156977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.3:*:*:*:*:*:*:*
+  - id: 156978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.4:*:*:*:*:*:*:*
+  - id: 156979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.5:*:*:*:*:*:*:*
+  - id: 156980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.6.6:*:*:*:*:*:*:*
+  - id: 153810
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.7.4:*:*:*:*:*:*:*
+  - id: 156981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.0:*:*:*:*:*:*:*
+  - id: 479530
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.1:*:*:*:*:*:*:*
+  - id: 479531
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.2:*:*:*:*:*:*:*
+  - id: 479532
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.3:*:*:*:*:*:*:*
+  - id: 479533
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.4:*:*:*:*:*:*:*
+  - id: 479534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.5:*:*:*:*:*:*:*
+  - id: 479535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:2.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:2.8.6:*:*:*:*:*:*:*
+  - id: 486387
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0:*:*:*:*:*:*:*
+  - id: 470229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.0:*:*:*:*:*:*:*
+  - id: 470230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.1:*:*:*:*:*:*:*
+  - id: 486382
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.10:*:*:*:*:*:*:*
+  - id: 486383
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.11:*:*:*:*:*:*:*
+  - id: 486384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.12:*:*:*:*:*:*:*
+  - id: 486385
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.13:*:*:*:*:*:*:*
+  - id: 486386
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.14:*:*:*:*:*:*:*
+  - id: 519214
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.15:*:*:*:*:*:*:*
+  - id: 519215
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.16:*:*:*:*:*:*:*
+  - id: 519216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.17:*:*:*:*:*:*:*
+  - id: 519217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.18:*:*:*:*:*:*:*
+  - id: 519218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.19:*:*:*:*:*:*:*
+  - id: 470231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.2:*:*:*:*:*:*:*
+  - id: 519219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.20:*:*:*:*:*:*:*
+  - id: 519220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.21:*:*:*:*:*:*:*
+  - id: 519221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.22:*:*:*:*:*:*:*
+  - id: 519222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.23:*:*:*:*:*:*:*
+  - id: 519223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.24:*:*:*:*:*:*:*
+  - id: 519224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.25:*:*:*:*:*:*:*
+  - id: 519225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.26:*:*:*:*:*:*:*
+  - id: 519226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.27:*:*:*:*:*:*:*
+  - id: 470232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.3:*:*:*:*:*:*:*
+  - id: 470233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.4:*:*:*:*:*:*:*
+  - id: 470234
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.5:*:*:*:*:*:*:*
+  - id: 470235
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.6:*:*:*:*:*:*:*
+  - id: 479536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.7:*:*:*:*:*:*:*
+  - id: 479537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.8:*:*:*:*:*:*:*
+  - id: 479538
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.0.9:*:*:*:*:*:*:*
+  - id: 519227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.0:*:*:*:*:*:*:*
+  - id: 519228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.1:*:*:*:*:*:*:*
+  - id: 519229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.2:*:*:*:*:*:*:*
+  - id: 519230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.3:*:*:*:*:*:*:*
+  - id: 519231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.4:*:*:*:*:*:*:*
+  - id: 519232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.5:*:*:*:*:*:*:*
+  - id: 519233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gnutls:3.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gnutls:3.1.6:*:*:*:*:*:*:*
+  - id: 519206
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-1619
+    reference_id: CVE-2013-1619
+  - id: '191156'
+    url: https://access.redhat.com/errata/RHSA-2013:0588
+    reference_id: RHSA-2013:0588
+  - id: '191103'
+    url: https://access.redhat.com/errata/RHSA-2013:0636
+    reference_id: RHSA-2013:0636
+weaknesses: []

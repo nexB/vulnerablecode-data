@@ -1,0 +1,54 @@
+vulnerability_id: VCID-a62w-7fj1-aaad
+aliases:
+  - CVE-2019-10127
+summary: A vulnerability was found in postgresql versions 11.x prior to 11.3. The Windows installer
+  for BigSQL-supplied PostgreSQL does not lock down the ACL of the binary installation directory
+  or the ACL of the data directory; it keeps the inherited ACL. In the default configuration,
+  an attacker having both an unprivileged Windows account and an unprivileged PostgreSQL account
+  can cause the PostgreSQL service account to execute arbitrary code. An attacker having only
+  the unprivileged Windows account can read arbitrary data directory files, essentially bypassing
+  database-imposed read access limitations. An attacker having only the unprivileged Windows
+  account can also delete certain data directory files.
+severities:
+  - id: 612329
+    reference_id: 933038
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
+  - id: 689500
+    reference_id: 766191
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612328
+    reference_id: 933037
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 366920
+    reference_id: 766192
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:L/AC:L/Au:S/C:P/I:P/A:P
+  - id: 366918
+    reference_id: 766192
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+references:
+  - id: 933038
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-10127.json
+    reference_id:
+  - id: 766190
+    url: https://security.netapp.com/advisory/ntap-20210430-0004/
+    reference_id:
+  - id: 766191
+    url: https://www.postgresql.org/about/news/1939/
+    reference_id:
+  - id: 933037
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1707098
+    reference_id: 1707098
+  - id: 766192
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10127
+    reference_id: CVE-2019-10127
+weaknesses: []

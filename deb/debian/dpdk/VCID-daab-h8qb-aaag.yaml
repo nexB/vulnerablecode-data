@@ -1,0 +1,100 @@
+vulnerability_id: VCID-daab-h8qb-aaag
+aliases:
+  - CVE-2020-14378
+summary: An integer underflow in dpdk versions before 18.11.10 and before 19.11.5 in the `move_desc`
+  function can lead to large amounts of CPU cycles being eaten up in a long running loop. An
+  attacker could cause `move_desc` to get stuck in a 4,294,967,295-count iteration loop. Depending
+  on how `vhost_crypto` is being used this could prevent other VMs or network tasks from being
+  serviced by the busy DPDK lcore for an extended period.
+severities:
+  - id: 696468
+    reference_id: 1456580
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 605011
+    reference_id: 927681
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 696469
+    reference_id: 1456581
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 696461
+    reference_id: 1456573
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 605010
+    reference_id: 927680
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 442051
+    reference_id: 820911
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 442049
+    reference_id: 820911
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+references:
+  - id: 820892
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00004.html
+    reference_id:
+  - id: 820893
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00006.html
+    reference_id:
+  - id: 1456580
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-14378.html
+    reference_id:
+  - id: 927681
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-14378.json
+    reference_id:
+  - id: 1456581
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14378
+    reference_id:
+  - id: 1456573
+    url: https://ubuntu.com/security/notices/USN-4550-1
+    reference_id:
+  - id: 820901
+    url: https://usn.ubuntu.com/4550-1/
+    reference_id:
+  - id: 820898
+    url: https://www.openwall.com/lists/oss-security/2020/09/28/3
+    reference_id:
+  - id: 820894
+    url: http://www.openwall.com/lists/oss-security/2021/01/04/1
+    reference_id:
+  - id: 820895
+    url: http://www.openwall.com/lists/oss-security/2021/01/04/2
+    reference_id:
+  - id: 820896
+    url: http://www.openwall.com/lists/oss-security/2021/01/04/5
+    reference_id:
+  - id: 927680
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1879473
+    reference_id: 1879473
+  - id: 40604
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=971269
+    reference_id: 971269
+  - id: 724179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dpdk:data_plane_development_kit:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dpdk:data_plane_development_kit:*:*:*:*:*:*:*:*
+  - id: 637846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 168171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*
+  - id: 820911
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-14378
+    reference_id: CVE-2020-14378
+weaknesses: []

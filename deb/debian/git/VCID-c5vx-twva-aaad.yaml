@@ -1,0 +1,590 @@
+vulnerability_id: VCID-c5vx-twva-aaad
+aliases:
+  - CVE-2010-3906
+summary: Cross-site scripting (XSS) vulnerability in Gitweb 1.7.3.3 and earlier allows remote
+  attackers to inject arbitrary web script or HTML via the (1) f and (2) fp parameters.
+severities:
+  - id: 68633
+    reference_id: '198193'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 137007
+    reference_id: 434411
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 68634
+    reference_id: '198194'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 434399
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052518.html
+    reference_id:
+  - id: 434400
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2011-January/052782.html
+    reference_id:
+  - id: 425546
+    url: http://lists.opensuse.org/opensuse-security-announce/2011-02/msg00004.html
+    reference_id:
+  - id: '198195'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2010-3906.json
+    reference_id:
+  - id: 434401
+    url: http://secunia.com/advisories/42645
+    reference_id:
+  - id: 434402
+    url: http://secunia.com/advisories/42731
+    reference_id:
+  - id: 434403
+    url: http://secunia.com/advisories/42743
+    reference_id:
+  - id: 425547
+    url: http://secunia.com/advisories/43457
+    reference_id:
+  - id: 434404
+    url: http://www.exploit-db.com/exploits/15744
+    reference_id:
+  - id: 434405
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2010:256
+    reference_id:
+  - id: 434406
+    url: http://www.redhat.com/support/errata/RHSA-2010-1003.html
+    reference_id:
+  - id: 434407
+    url: http://www.securityfocus.com/bid/45439
+    reference_id:
+  - id: 434408
+    url: http://www.securitytracker.com/id?1024905
+    reference_id:
+  - id: 434409
+    url: http://www.vupen.com/english/advisories/2010/3323
+    reference_id:
+  - id: 434410
+    url: http://www.vupen.com/english/advisories/2011/0010
+    reference_id:
+  - id: 425552
+    url: http://www.vupen.com/english/advisories/2011/0464
+    reference_id:
+  - id: '198193'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=663609
+    reference_id: 663609
+  - id: 434419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:0.99.9j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:0.99.9j:*:*:*:*:*:*:*
+  - id: 434420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:0.99.9k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:0.99.9k:*:*:*:*:*:*:*
+  - id: 434421
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:0.99.9l:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:0.99.9l:*:*:*:*:*:*:*
+  - id: 434422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:0.99.9m:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:0.99.9m:*:*:*:*:*:*:*
+  - id: 434423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:0.99.9n:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:0.99.9n:*:*:*:*:*:*:*
+  - id: 218988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.0:*:*:*:*:*:*:*
+  - id: 218989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.0b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.0b:*:*:*:*:*:*:*
+  - id: 218990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.3:*:*:*:*:*:*:*
+  - id: 218991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.4:*:*:*:*:*:*:*
+  - id: 218992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.5:*:*:*:*:*:*:*
+  - id: 218993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.6:*:*:*:*:*:*:*
+  - id: 218994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.7:*:*:*:*:*:*:*
+  - id: 218995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.0.8:*:*:*:*:*:*:*
+  - id: 218996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.0:*:*:*:*:*:*:*
+  - id: 218997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.1:*:*:*:*:*:*:*
+  - id: 218998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.2:*:*:*:*:*:*:*
+  - id: 218999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.3:*:*:*:*:*:*:*
+  - id: 219000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.4:*:*:*:*:*:*:*
+  - id: 434424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.5:*:*:*:*:*:*:*
+  - id: 434425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.1.6:*:*:*:*:*:*:*
+  - id: 434426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.0:*:*:*:*:*:*:*
+  - id: 434427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.1:*:*:*:*:*:*:*
+  - id: 434428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.2:*:*:*:*:*:*:*
+  - id: 434429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.3:*:*:*:*:*:*:*
+  - id: 434430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.4:*:*:*:*:*:*:*
+  - id: 434431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.5:*:*:*:*:*:*:*
+  - id: 434432
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.2.6:*:*:*:*:*:*:*
+  - id: 434433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.3.0:*:*:*:*:*:*:*
+  - id: 434434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.3.1:*:*:*:*:*:*:*
+  - id: 434435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.3.2:*:*:*:*:*:*:*
+  - id: 434436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.3.3:*:*:*:*:*:*:*
+  - id: 434437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.0:*:*:*:*:*:*:*
+  - id: 434439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.1:*:*:*:*:*:*:*
+  - id: 434438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.1.1:*:*:*:*:*:*:*
+  - id: 434444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.2:*:*:*:*:*:*:*
+  - id: 434440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.2.1:*:*:*:*:*:*:*
+  - id: 434441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.2.2:*:*:*:*:*:*:*
+  - id: 434442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.2.3:*:*:*:*:*:*:*
+  - id: 434443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.2.4:*:*:*:*:*:*:*
+  - id: 434445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3:*:*:*:*:*:*:*
+  - id: 370265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3.1:*:*:*:*:*:*:*
+  - id: 370266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3.2:*:*:*:*:*:*:*
+  - id: 370267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3.3:*:*:*:*:*:*:*
+  - id: 370268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3.4:*:*:*:*:*:*:*
+  - id: 370269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.3.5:*:*:*:*:*:*:*
+  - id: 370274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4:*:*:*:*:*:*:*
+  - id: 370270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4.1:*:*:*:*:*:*:*
+  - id: 370271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4.2:*:*:*:*:*:*:*
+  - id: 370272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4.3:*:*:*:*:*:*:*
+  - id: 370273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4.4:*:*:*:*:*:*:*
+  - id: 150629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.4.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.4.4.5:*:*:*:*:*:*:*
+  - id: 150637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0:*:*:*:*:*:*:*
+  - id: 150630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.1:*:*:*:*:*:*:*
+  - id: 150631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.2:*:*:*:*:*:*:*
+  - id: 150632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.3:*:*:*:*:*:*:*
+  - id: 150633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.4:*:*:*:*:*:*:*
+  - id: 150634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.5:*:*:*:*:*:*:*
+  - id: 150635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.6:*:*:*:*:*:*:*
+  - id: 150636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0.7:*:*:*:*:*:*:*
+  - id: 150638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0:rc2:*:*:*:*:*:*
+  - id: 150639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0:rc3:*:*:*:*:*:*
+  - id: 150640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.0:rc4:*:*:*:*:*:*
+  - id: 150646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1:*:*:*:*:*:*:*
+  - id: 150641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.1:*:*:*:*:*:*:*
+  - id: 150642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.2:*:*:*:*:*:*:*
+  - id: 150643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.3:*:*:*:*:*:*:*
+  - id: 150644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.4:*:*:*:*:*:*:*
+  - id: 150645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.5:*:*:*:*:*:*:*
+  - id: 366906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.1.6:*:*:*:*:*:*:*
+  - id: 150651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2:*:*:*:*:*:*:*
+  - id: 366907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2.1:*:*:*:*:*:*:*
+  - id: 150647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2.2:*:*:*:*:*:*:*
+  - id: 150648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2.3:*:*:*:*:*:*:*
+  - id: 150649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2.4:*:*:*:*:*:*:*
+  - id: 150650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.2.5:*:*:*:*:*:*:*
+  - id: 150656
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3:*:*:*:*:*:*:*
+  - id: 366908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.1:*:*:*:*:*:*:*
+  - id: 150652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.2:*:*:*:*:*:*:*
+  - id: 366909
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.3:*:*:*:*:*:*:*
+  - id: 150653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.4:*:*:*:*:*:*:*
+  - id: 366910
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.5:*:*:*:*:*:*:*
+  - id: 150654
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.6:*:*:*:*:*:*:*
+  - id: 366911
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.7:*:*:*:*:*:*:*
+  - id: 150655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3.8:*:*:*:*:*:*:*
+  - id: 366912
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3:rc4:*:*:*:*:*:*
+  - id: 150657
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3:rc5:*:*:*:*:*:*
+  - id: 150658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.3:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.3:rc7:*:*:*:*:*:*
+  - id: 366916
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:*:*:*:*:*:*:*
+  - id: 150659
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.1:*:*:*:*:*:*:*
+  - id: 150660
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.2:*:*:*:*:*:*:*
+  - id: 366913
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.3:*:*:*:*:*:*:*
+  - id: 150661
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.4:*:*:*:*:*:*:*
+  - id: 366914
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.5:*:*:*:*:*:*:*
+  - id: 366915
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.6:*:*:*:*:*:*:*
+  - id: 150662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4.7:*:*:*:*:*:*:*
+  - id: 150663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc0:*:*:*:*:*:*
+  - id: 150665
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc1:*:*:*:*:*:*
+  - id: 150664
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc1.1136.g2794:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc1.1136.g2794:*:*:*:*:*:*
+  - id: 366917
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc2:*:*:*:*:*:*
+  - id: 150666
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc3:*:*:*:*:*:*
+  - id: 150667
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc4:*:*:*:*:*:*
+  - id: 366918
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.4:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.4:rc5:*:*:*:*:*:*
+  - id: 150674
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5:*:*:*:*:*:*:*
+  - id: 150668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.1:*:*:*:*:*:*:*
+  - id: 370275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.2:*:*:*:*:*:*:*
+  - id: 150669
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.3:*:*:*:*:*:*:*
+  - id: 150670
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.3:r1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.3:r1:*:*:*:*:*:*
+  - id: 150671
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.4:*:*:*:*:*:*:*
+  - id: 150672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.5:*:*:*:*:*:*:*
+  - id: 150673
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5.6:*:*:*:*:*:*:*
+  - id: 150675
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5:rc1:*:*:*:*:*:*
+  - id: 150676
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5:rc2:*:*:*:*:*:*
+  - id: 150677
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.5:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.5:rc3:*:*:*:*:*:*
+  - id: 150687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6:*:*:*:*:*:*:*
+  - id: 150678
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.1:*:*:*:*:*:*:*
+  - id: 150679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.2:*:*:*:*:*:*:*
+  - id: 150680
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.3:*:*:*:*:*:*:*
+  - id: 150681
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.4:*:*:*:*:*:*:*
+  - id: 150682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.5:*:*:*:*:*:*:*
+  - id: 150683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.6:*:*:*:*:*:*:*
+  - id: 150684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.6:rc0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.6:rc0:*:*:*:*:*:*
+  - id: 150685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.6:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.6:rc2:*:*:*:*:*:*
+  - id: 150686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.5.6.6:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.5.6.6:rc3:*:*:*:*:*:*
+  - id: 150694
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0:*:*:*:*:*:*:*
+  - id: 150688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.1:*:*:*:*:*:*:*
+  - id: 150689
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.2:*:*:*:*:*:*:*
+  - id: 150690
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.3:*:*:*:*:*:*:*
+  - id: 150691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.4:*:*:*:*:*:*:*
+  - id: 150692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.5:*:*:*:*:*:*:*
+  - id: 150693
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0.6:*:*:*:*:*:*:*
+  - id: 150695
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0:rc1:*:*:*:*:*:*
+  - id: 150696
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0:rc2:*:*:*:*:*:*
+  - id: 150697
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.0:rc3:*:*:*:*:*:*
+  - id: 150699
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1:*:*:*:*:*:*:*
+  - id: 150698
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1.4:*:*:*:*:*:*:*
+  - id: 150700
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1:rc1:*:*:*:*:*:*
+  - id: 150701
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1:rc2:*:*:*:*:*:*
+  - id: 150702
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1:rc3:*:*:*:*:*:*
+  - id: 150703
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.1:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.1:rc4:*:*:*:*:*:*
+  - id: 150709
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2:*:*:*:*:*:*:*
+  - id: 150704
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2.1:*:*:*:*:*:*:*
+  - id: 150705
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2.2:*:*:*:*:*:*:*
+  - id: 150706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2.3:*:*:*:*:*:*:*
+  - id: 150707
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2.4:*:*:*:*:*:*:*
+  - id: 150708
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2.5:*:*:*:*:*:*:*
+  - id: 150710
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.2:rc1:*:*:*:*:*:*
+  - id: 150713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3:*:*:*:*:*:*:*
+  - id: 150711
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3.1:*:*:*:*:*:*:*
+  - id: 150712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3.2:*:*:*:*:*:*:*
+  - id: 150714
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3:rc1:*:*:*:*:*:*
+  - id: 150715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3:rc2:*:*:*:*:*:*
+  - id: 150716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3:rc3:*:*:*:*:*:*
+  - id: 150717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.6.3:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.6.3:rc4:*:*:*:*:*:*
+  - id: 434451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2:*:*:*:*:*:*:*
+  - id: 434446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2.1:*:*:*:*:*:*:*
+  - id: 434447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2.2:*:*:*:*:*:*:*
+  - id: 434448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2.3:*:*:*:*:*:*:*
+  - id: 434449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2.4:*:*:*:*:*:*:*
+  - id: 434450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.2.5:*:*:*:*:*:*:*
+  - id: 434454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.3:*:*:*:*:*:*:*
+  - id: 434452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.3.1:*:*:*:*:*:*:*
+  - id: 434453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git:git:1.7.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git:git:1.7.3.2:*:*:*:*:*:*:*
+  - id: 425555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:*:*:*:*:*:*:*:*
+  - id: 434412
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.01:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.01:*:*:*:*:*:*:*
+  - id: 434413
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.02:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.02:*:*:*:*:*:*:*
+  - id: 434414
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.03:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.03:*:*:*:*:*:*:*
+  - id: 434415
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.04:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.04:*:*:*:*:*:*:*
+  - id: 434416
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.5:*:*:*:*:*:*:*
+  - id: 434417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.6.0:*:*:*:*:*:*:*
+  - id: 434418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:git-scm:git:0.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:git-scm:git:0.7.0:*:*:*:*:*:*:*
+  - id: 434411
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-3906
+    reference_id: CVE-2010-3906
+  - id: '198194'
+    url: https://access.redhat.com/errata/RHSA-2010:1003
+    reference_id: RHSA-2010:1003
+weaknesses: []

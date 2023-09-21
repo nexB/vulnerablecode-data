@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2019-13012
+fixed_purl:
+- pkg:deb/debian/glib2.0@2.58.3-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/glib2.0@2.58.3-2%2Bdeb10u3?distro=sid
+- pkg:deb/debian/glib2.0@2.60.5-1?distro=sid
+- pkg:deb/debian/glib2.0@2.66.8-1?distro=sid
+- pkg:deb/debian/glib2.0@2.74.6-2?distro=sid
+references:
+- id: 128554
+  reference_id: '931234'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=931234
+severities: []
+summary: The keyfile settings backend in GNOME GLib (aka glib2.0) before 2.60.0 creates
+  directories using g_file_make_directory_with_parents (kfsb->dir, NULL, NULL) and
+  files using g_file_replace_contents (kfsb->file, contents, length, NULL, FALSE,
+  G_FILE_CREATE_REPLACE_DESTINATION, NULL, NULL, NULL). Consequently, it does not
+  properly restrict directory (and file) permissions. Instead, for directories, 0777
+  permissions are used; for files, default file permissions are used. This is similar
+  to CVE-2019-12450.
+vulnerability_id: VCID-u8zu-hktc-aaae
+weaknesses: []

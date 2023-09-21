@@ -1,0 +1,59 @@
+vulnerability_id: VCID-q5f4-ud36-aaac
+aliases:
+  - CVE-2022-21681
+  - GHSA-5v2h-r2cx-5xgj
+summary: |
+  Inefficient Regular Expression Complexity
+  The regular expression `inline.reflinkSearch` may cause catastrophic backtracking against some strings and lead to a denial of service (DoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources.
+severities:
+  - id: 350010
+    reference_id: 753519
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 350009
+    reference_id: 753518
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 582793
+    reference_id: 32862
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 582791
+    reference_id: 32862
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 706953
+    reference_id: 1468596
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 753519
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-21681.json
+    reference_id:
+  - id: 32864
+    url: https://github.com/markedjs/marked/commit/8f806573a3f6c6b7a39b8cdb66ab5ebb8d55a5f5
+    reference_id:
+  - id: 912904
+    url: https://github.com/markedjs/marked/security/advisories/GHSA-5v2h-r2cx-5xgj
+    reference_id:
+  - id: 1468594
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AIXDMC3CSHYW3YWVSQOXAWLUYQHAO5UX/
+    reference_id:
+  - id: 753518
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2082706
+    reference_id: 2082706
+  - id: 568624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:marked_project:marked:*:*:*:*:*:node.js:*:*
+  - id: 32862
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-21681
+    reference_id: CVE-2022-21681
+  - id: 1468596
+    url: https://github.com/advisories/GHSA-5v2h-r2cx-5xgj
+    reference_id: GHSA-5v2h-r2cx-5xgj
+weaknesses: []

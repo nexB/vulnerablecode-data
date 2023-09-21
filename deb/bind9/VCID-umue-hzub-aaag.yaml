@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2019-6477
+fixed_purl:
+- pkg:deb/debian/bind9@1:9.11.14%2Bdfsg-1?distro=sid
+- pkg:deb/debian/bind9@1:9.11.5.P4%2Bdfsg-5.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/bind9@1:9.11.5.P4%2Bdfsg-5.1%2Bdeb10u7?distro=sid
+- pkg:deb/debian/bind9@1:9.16.37-1~deb11u1?distro=sid
+- pkg:deb/debian/bind9@1:9.18.12-1?distro=sid
+- pkg:deb/debian/bind9@1:9.18.13-1?distro=sid
+references:
+- id: 128941
+  reference_id: '945171'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=945171
+severities: []
+summary: With pipelining enabled each incoming query on a TCP connection requires
+  a similar resource allocation to a query received via UDP or via TCP without pipelining
+  enabled. A client using a TCP-pipelined connection to a server could consume more
+  resources than the server has been provisioned to handle. When a TCP connection
+  with a large number of pipelined queries is closed, the load on the server releasing
+  these multiple resources can cause it to become unresponsive, even for queries that
+  can be answered authoritatively or from cache. (This is most likely to be perceived
+  as an intermittent server problem).
+vulnerability_id: VCID-umue-hzub-aaag
+weaknesses: []

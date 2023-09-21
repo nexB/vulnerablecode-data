@@ -1,0 +1,169 @@
+vulnerability_id: VCID-ydyy-nmc8-aaaf
+aliases:
+  - CVE-2021-31829
+summary: kernel/bpf/verifier.c in the Linux kernel through 5.12.1 performs undesirable speculative
+  loads, leading to disclosure of stack content via side-channel attacks, aka CID-801c6058d14a.
+  The specific concern is not protecting the BPF stack area against speculative loads. Also,
+  the BPF stack can contain uninitialized data that might represent sensitive information previously
+  operated on by the kernel.
+severities:
+  - id: 702163
+    reference_id: 1461460
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605696
+    reference_id: 928174
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 702164
+    reference_id: 1461461
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701567
+    reference_id: 1460944
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697598
+    reference_id: 1457568
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697599
+    reference_id: 1457569
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697600
+    reference_id: 1457570
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697601
+    reference_id: 1457571
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697602
+    reference_id: 1457572
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 697604
+    reference_id: 1457574
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 702165
+    reference_id: 1461462
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 605695
+    reference_id: 928173
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 538395
+    reference_id: 883265
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 538393
+    reference_id: 883265
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1461460
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-31829.html
+    reference_id:
+  - id: 928174
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-31829.json
+    reference_id:
+  - id: 1461461
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31829
+    reference_id:
+  - id: 883261
+    url: https://github.com/torvalds/linux/commit/801c6058d14a82179a7ee17a4b532cac6fad067f
+    reference_id:
+  - id: 171247
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00019.html
+    reference_id:
+  - id: 883262
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VWCZ6LJLENL2C3URW5ICARTACXPFCFN2/
+    reference_id:
+  - id: 883263
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y4X2G5YAPYJGI3PFEZZNOTRYI33GOCCZ/
+    reference_id:
+  - id: 883264
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZI7OBCJQDNWMKLBP6MZ5NV4EUTDAMX6Q/
+    reference_id:
+  - id: 1460944
+    url: https://ubuntu.com/security/notices/USN-4983-1
+    reference_id:
+  - id: 1457568
+    url: https://ubuntu.com/security/notices/USN-4997-1
+    reference_id:
+  - id: 1457569
+    url: https://ubuntu.com/security/notices/USN-4997-2
+    reference_id:
+  - id: 1457570
+    url: https://ubuntu.com/security/notices/USN-4999-1
+    reference_id:
+  - id: 1457571
+    url: https://ubuntu.com/security/notices/USN-5000-1
+    reference_id:
+  - id: 1457572
+    url: https://ubuntu.com/security/notices/USN-5000-2
+    reference_id:
+  - id: 1457574
+    url: https://ubuntu.com/security/notices/USN-5018-1
+    reference_id:
+  - id: 1461462
+    url: https://www.openwall.com/lists/oss-security/2021/05/04/4
+    reference_id:
+  - id: 883260
+    url: http://www.openwall.com/lists/oss-security/2021/05/04/4
+    reference_id:
+  - id: 928173
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1957788
+    reference_id: '1957788'
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 171672
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 883265
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-31829
+    reference_id: CVE-2021-31829
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+weaknesses: []

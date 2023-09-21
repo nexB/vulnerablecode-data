@@ -1,0 +1,615 @@
+vulnerability_id: VCID-8cyj-ttsy-aaaj
+aliases:
+  - CVE-2013-5607
+summary: Integer overflow in the PL_ArenaAllocate function in Mozilla Netscape Portable Runtime
+  (NSPR) before 4.10.2, as used in Firefox before 25.0.1, Firefox ESR 17.x before 17.0.11 and
+  24.x before 24.1.1, and SeaMonkey before 2.22.1, allows remote attackers to cause a denial
+  of service (application crash) or possibly have unspecified other impact via a crafted X.509
+  certificate, a related issue to CVE-2013-1741.
+severities:
+  - id: 652233
+    reference_id: 159588
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 60910
+    reference_id: 188321
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 165463
+    reference_id: 525418
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 60904
+    reference_id: 188314
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 60905
+    reference_id: 188315
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 159588
+    url: http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10761
+    reference_id:
+  - id: 519983
+    url: http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00000.html
+    reference_id:
+  - id: 519984
+    url: http://lists.opensuse.org/opensuse-updates/2013-11/msg00080.html
+    reference_id:
+  - id: 519940
+    url: http://rhn.redhat.com/errata/RHSA-2013-1791.html
+    reference_id:
+  - id: 519941
+    url: http://rhn.redhat.com/errata/RHSA-2013-1829.html
+    reference_id:
+  - id: 188322
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-5607.json
+    reference_id:
+  - id: 525416
+    url: https://bugzilla.mozilla.org/show_bug.cgi?id=927687
+    reference_id:
+  - id: 519234
+    url: http://security.gentoo.org/glsa/glsa-201406-19.xml
+    reference_id:
+  - id: 525417
+    url: https://groups.google.com/forum/message/raw?msg=mozilla.dev.tech.nspr/_8AcygMEjSA/mm_cqQzLPFQJ
+    reference_id:
+  - id: 519992
+    url: https://security.gentoo.org/glsa/201504-01
+    reference_id:
+  - id: 525413
+    url: http://www.debian.org/security/2013/dsa-2820
+    reference_id:
+  - id: 519986
+    url: http://www.mozilla.org/security/announce/2013/mfsa2013-103.html
+    reference_id:
+  - id: 159099
+    url: http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
+    reference_id:
+  - id: 525414
+    url: http://www.securityfocus.com/bid/63802
+    reference_id:
+  - id: 519988
+    url: http://www.ubuntu.com/usn/USN-2031-1
+    reference_id:
+  - id: 519989
+    url: http://www.ubuntu.com/usn/USN-2032-1
+    reference_id:
+  - id: 525415
+    url: http://www.ubuntu.com/usn/USN-2087-1
+    reference_id:
+  - id: 188321
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1031461
+    reference_id: 1031461
+  - id: 42527
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*
+  - id: 512359
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:19.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:19.0:*:*:*:*:*:*:*
+  - id: 512357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:19.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:19.0.1:*:*:*:*:*:*:*
+  - id: 512358
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:19.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:19.0.2:*:*:*:*:*:*:*
+  - id: 512361
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:20.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:20.0:*:*:*:*:*:*:*
+  - id: 512360
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:20.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:20.0.1:*:*:*:*:*:*:*
+  - id: 512362
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:21.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:21.0:*:*:*:*:*:*:*
+  - id: 512363
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:22.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:22.0:*:*:*:*:*:*:*
+  - id: 512364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:23.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:23.0:*:*:*:*:*:*:*
+  - id: 525141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:23.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:23.0.1:*:*:*:*:*:*:*
+  - id: 525419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox:24.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox:24.0:*:*:*:*:*:*:*
+  - id: 512692
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0:*:*:*:*:*:*:*
+  - id: 512684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.1:*:*:*:*:*:*:*
+  - id: 525420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.10:*:*:*:*:*:*:*
+  - id: 512685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.2:*:*:*:*:*:*:*
+  - id: 512686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.3:*:*:*:*:*:*:*
+  - id: 512687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.4:*:*:*:*:*:*:*
+  - id: 512688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.5:*:*:*:*:*:*:*
+  - id: 512689
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.6:*:*:*:*:*:*:*
+  - id: 512690
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.7:*:*:*:*:*:*:*
+  - id: 512691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.8:*:*:*:*:*:*:*
+  - id: 525254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:17.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:17.0.9:*:*:*:*:*:*:*
+  - id: 525144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:24.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:24.0:*:*:*:*:*:*:*
+  - id: 525142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:24.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:24.0.1:*:*:*:*:*:*:*
+  - id: 525143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:firefox_esr:24.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:firefox_esr:24.0.2:*:*:*:*:*:*:*
+  - id: 525421
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:*:*:*:*:*:*:*:*
+  - id: 525424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.10:*:*:*:*:*:*:*
+  - id: 525422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.1.1:*:*:*:*:*:*:*
+  - id: 525423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.1.2:*:*:*:*:*:*:*
+  - id: 525426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.2:*:*:*:*:*:*:*
+  - id: 525425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.2.2:*:*:*:*:*:*:*
+  - id: 525427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.3:*:*:*:*:*:*:*
+  - id: 525428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.4.1:*:*:*:*:*:*:*
+  - id: 525429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.5.1:*:*:*:*:*:*:*
+  - id: 525438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6:*:*:*:*:*:*:*
+  - id: 525430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.1:*:*:*:*:*:*:*
+  - id: 525431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.2:*:*:*:*:*:*:*
+  - id: 525432
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.3:*:*:*:*:*:*:*
+  - id: 525433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.4:*:*:*:*:*:*:*
+  - id: 525434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.5:*:*:*:*:*:*:*
+  - id: 525435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.6:*:*:*:*:*:*:*
+  - id: 525436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.7:*:*:*:*:*:*:*
+  - id: 525437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.6.8:*:*:*:*:*:*:*
+  - id: 525445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7:*:*:*:*:*:*:*
+  - id: 525439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.1:*:*:*:*:*:*:*
+  - id: 525440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.2:*:*:*:*:*:*:*
+  - id: 525441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.3:*:*:*:*:*:*:*
+  - id: 525442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.4:*:*:*:*:*:*:*
+  - id: 525443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.5:*:*:*:*:*:*:*
+  - id: 525444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.7.6:*:*:*:*:*:*:*
+  - id: 525454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8:*:*:*:*:*:*:*
+  - id: 525446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.2:*:*:*:*:*:*:*
+  - id: 525447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.3:*:*:*:*:*:*:*
+  - id: 525448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.4:*:*:*:*:*:*:*
+  - id: 525449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.5:*:*:*:*:*:*:*
+  - id: 525450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.6:*:*:*:*:*:*:*
+  - id: 525451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.7:*:*:*:*:*:*:*
+  - id: 525452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.8:*:*:*:*:*:*:*
+  - id: 525453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.8.9:*:*:*:*:*:*:*
+  - id: 525461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9:*:*:*:*:*:*:*
+  - id: 525455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.1:*:*:*:*:*:*:*
+  - id: 525456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.2:*:*:*:*:*:*:*
+  - id: 525457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.3:*:*:*:*:*:*:*
+  - id: 525458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.4:*:*:*:*:*:*:*
+  - id: 525459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.5:*:*:*:*:*:*:*
+  - id: 525460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:netscape_portable_runtime:4.9.6:*:*:*:*:*:*:*
+  - id: 151583
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:*:*:*:*:*:*:*:*
+  - id: 42637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:*:*:*:*:*:*:*
+  - id: 42628
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.1:*:*:*:*:*:*:*
+  - id: 42623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.10:*:*:*:*:*:*:*
+  - id: 42624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.11:*:*:*:*:*:*:*
+  - id: 42625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.12:*:*:*:*:*:*:*
+  - id: 42626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.13:*:*:*:*:*:*:*
+  - id: 42627
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.14:*:*:*:*:*:*:*
+  - id: 42629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.2:*:*:*:*:*:*:*
+  - id: 42630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.3:*:*:*:*:*:*:*
+  - id: 42631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.4:*:*:*:*:*:*:*
+  - id: 42632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.5:*:*:*:*:*:*:*
+  - id: 42633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.6:*:*:*:*:*:*:*
+  - id: 42634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.7:*:*:*:*:*:*:*
+  - id: 42635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.8:*:*:*:*:*:*:*
+  - id: 42636
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0.9:*:*:*:*:*:*:*
+  - id: 42638
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:alpha_1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:alpha_1:*:*:*:*:*:*
+  - id: 42639
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:alpha_2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:alpha_2:*:*:*:*:*:*
+  - id: 42640
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:alpha_3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:alpha_3:*:*:*:*:*:*
+  - id: 42641
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:beta_1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:beta_1:*:*:*:*:*:*
+  - id: 42642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:beta_2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:beta_2:*:*:*:*:*:*
+  - id: 42643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:rc1:*:*:*:*:*:*
+  - id: 42644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.0:rc2:*:*:*:*:*:*
+  - id: 456765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:*:*:*:*:*:*:*
+  - id: 488671
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.10:*:*:*:*:*:*:*
+  - id: 499536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.10.1:*:*:*:*:*:*:*
+  - id: 499537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.10:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.10:beta1:*:*:*:*:*:*
+  - id: 499538
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.10:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.10:beta2:*:*:*:*:*:*
+  - id: 499539
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.10:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.10:beta3:*:*:*:*:*:*
+  - id: 499540
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:*:*:*:*:*:*:*
+  - id: 499541
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta1:*:*:*:*:*:*
+  - id: 499542
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta2:*:*:*:*:*:*
+  - id: 499543
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta3:*:*:*:*:*:*
+  - id: 499544
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta4:*:*:*:*:*:*
+  - id: 499545
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta5:*:*:*:*:*:*
+  - id: 499546
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.11:beta6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.11:beta6:*:*:*:*:*:*
+  - id: 499548
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:*:*:*:*:*:*:*
+  - id: 499547
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12.1:*:*:*:*:*:*:*
+  - id: 499549
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta1:*:*:*:*:*:*
+  - id: 499550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta2:*:*:*:*:*:*
+  - id: 499551
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta3:*:*:*:*:*:*
+  - id: 499552
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta4:*:*:*:*:*:*
+  - id: 499553
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta5:*:*:*:*:*:*
+  - id: 499554
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.12:beta6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.12:beta6:*:*:*:*:*:*
+  - id: 500316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:*:*:*:*:*:*:*
+  - id: 512365
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13.1:*:*:*:*:*:*:*
+  - id: 512366
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13.2:*:*:*:*:*:*:*
+  - id: 499555
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta1:*:*:*:*:*:*
+  - id: 499556
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta2:*:*:*:*:*:*
+  - id: 499557
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta3:*:*:*:*:*:*
+  - id: 499558
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta4:*:*:*:*:*:*
+  - id: 499559
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta5:*:*:*:*:*:*
+  - id: 512367
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.13:beta6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.13:beta6:*:*:*:*:*:*
+  - id: 512368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:*:*:*:*:*:*:*
+  - id: 512369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:beta1:*:*:*:*:*:*
+  - id: 512370
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:beta2:*:*:*:*:*:*
+  - id: 512371
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:beta3:*:*:*:*:*:*
+  - id: 512372
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:beta4:*:*:*:*:*:*
+  - id: 512373
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.14:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.14:beta5:*:*:*:*:*:*
+  - id: 512376
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:*:*:*:*:*:*:*
+  - id: 512374
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15.1:*:*:*:*:*:*:*
+  - id: 512375
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15.2:*:*:*:*:*:*:*
+  - id: 512377
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta1:*:*:*:*:*:*
+  - id: 512378
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta2:*:*:*:*:*:*
+  - id: 512379
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta3:*:*:*:*:*:*
+  - id: 512380
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta4:*:*:*:*:*:*
+  - id: 512381
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta5:*:*:*:*:*:*
+  - id: 512382
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.15:beta6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.15:beta6:*:*:*:*:*:*
+  - id: 512385
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:*:*:*:*:*:*:*
+  - id: 512383
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16.1:*:*:*:*:*:*:*
+  - id: 512384
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16.2:*:*:*:*:*:*:*
+  - id: 512386
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:beta1:*:*:*:*:*:*
+  - id: 512387
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:beta2:*:*:*:*:*:*
+  - id: 512388
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:beta3:*:*:*:*:*:*
+  - id: 512389
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:beta4:*:*:*:*:*:*
+  - id: 512390
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.16:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.16:beta5:*:*:*:*:*:*
+  - id: 512392
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17:*:*:*:*:*:*:*
+  - id: 512391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17.1:*:*:*:*:*:*:*
+  - id: 512393
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17:beta1:*:*:*:*:*:*
+  - id: 512394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17:beta2:*:*:*:*:*:*
+  - id: 512395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17:beta3:*:*:*:*:*:*
+  - id: 512396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.17:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.17:beta4:*:*:*:*:*:*
+  - id: 512397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.18:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.18:beta1:*:*:*:*:*:*
+  - id: 512398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.18:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.18:beta2:*:*:*:*:*:*
+  - id: 512399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.18:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.18:beta3:*:*:*:*:*:*
+  - id: 512400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.18:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.18:beta4:*:*:*:*:*:*
+  - id: 512401
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.19:*:*:*:*:*:*:*
+  - id: 512402
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.19:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.19:beta1:*:*:*:*:*:*
+  - id: 512403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.19:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.19:beta2:*:*:*:*:*:*
+  - id: 42646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:alpha1:*:*:*:*:*:*
+  - id: 42647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:alpha2:*:*:*:*:*:*
+  - id: 444651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:alpha3:*:*:*:*:*:*
+  - id: 456766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:beta1:*:*:*:*:*:*
+  - id: 456767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:beta2:*:*:*:*:*:*
+  - id: 456768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:beta3:*:*:*:*:*:*
+  - id: 456769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:rc1:*:*:*:*:*:*
+  - id: 456770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.1:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.1:rc2:*:*:*:*:*:*
+  - id: 525146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.20:*:*:*:*:*:*:*
+  - id: 512404
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.20:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.20:beta1:*:*:*:*:*:*
+  - id: 512405
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.20:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.20:beta2:*:*:*:*:*:*
+  - id: 512406
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.20:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.20:beta3:*:*:*:*:*:*
+  - id: 525462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.21:*:*:*:*:*:*:*
+  - id: 525147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.21:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.21:beta1:*:*:*:*:*:*
+  - id: 525148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.21:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.21:beta2:*:*:*:*:*:*
+  - id: 525149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.22:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.22:beta1:*:*:*:*:*:*
+  - id: 525463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mozilla:seamonkey:2.22:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mozilla:seamonkey:2.22:beta2:*:*:*:*:*:*
+  - id: 525418
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-5607
+    reference_id: CVE-2013-5607
+  - id: 188314
+    url: https://access.redhat.com/errata/RHSA-2013:1791
+    reference_id: RHSA-2013:1791
+  - id: 188315
+    url: https://access.redhat.com/errata/RHSA-2013:1829
+    reference_id: RHSA-2013:1829
+weaknesses: []

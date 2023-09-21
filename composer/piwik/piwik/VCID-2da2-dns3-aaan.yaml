@@ -1,0 +1,12 @@
+vulnerability_id: VCID-2da2-dns3-aaan
+aliases:
+  - GMS-2016-85
+summary: |
+  PHP Object Injection Vulnerability
+  There's a PHP Object Injection vulnerability that can be triggered through the `saveLayout()` method defined into the `/plugins/Dashboard/Controller.php` script. Since Piwik is not using "utf8mb4" collations for its database, this can be exploited in combination with a MySQL UTF8 truncation issue in order to corrupt the session array, allowing unauthenticated attackers to inject arbitrary PHP objects into the application scope and carry out Server-Side Request Forgery (SSRF) attacks, delete arbitrary files, execute arbitrary PHP code, and possibly other attacks.
+severities: []
+references:
+  - id: 25195
+    url: http://karmainsecurity.com/KIS-2016-13
+    reference_id:
+weaknesses: []

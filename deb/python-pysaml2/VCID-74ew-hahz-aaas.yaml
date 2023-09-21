@@ -1,0 +1,94 @@
+affected_purls:
+- pkg:pypi/pysaml2@0.4.3
+- pkg:pypi/pysaml2@1.0.1
+- pkg:pypi/pysaml2@1.0.2
+- pkg:pypi/pysaml2@1.0.3
+- pkg:pypi/pysaml2@1.1.0
+- pkg:pypi/pysaml2@2.0.0
+- pkg:pypi/pysaml2@2.1.0
+- pkg:pypi/pysaml2@2.2.0
+- pkg:pypi/pysaml2@2.3.0
+- pkg:pypi/pysaml2@2.4.0
+- pkg:pypi/pysaml2@3.0.0
+- pkg:pypi/pysaml2@3.0.2
+- pkg:pypi/pysaml2@4.0.0
+- pkg:pypi/pysaml2@4.0.1
+- pkg:pypi/pysaml2@4.0.2
+- pkg:pypi/pysaml2@4.0.3
+- pkg:pypi/pysaml2@4.0.4
+- pkg:pypi/pysaml2@4.0.5
+- pkg:pypi/pysaml2@4.0.5rc1
+- pkg:pypi/pysaml2@4.1.0
+- pkg:pypi/pysaml2@4.2.0
+- pkg:pypi/pysaml2@4.3.0
+- pkg:pypi/pysaml2@4.4.0
+- pkg:pypi/pysaml2@4.5.0
+- pkg:pypi/pysaml2@4.6.0
+- pkg:pypi/pysaml2@4.6.1
+- pkg:pypi/pysaml2@4.6.2
+- pkg:pypi/pysaml2@4.6.3
+- pkg:pypi/pysaml2@4.6.4
+- pkg:pypi/pysaml2@4.6.5
+- pkg:pypi/pysaml2@4.7.0
+- pkg:pypi/pysaml2@4.8.0
+- pkg:pypi/pysaml2@4.9.0
+aliases:
+- CVE-2020-5390
+- GHSA-qf7v-8hj3-4xw7
+fixed_purl:
+- pkg:deb/debian/python-pysaml2@4.5.0-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/python-pysaml2@4.5.0-7?distro=sid
+- pkg:deb/debian/python-pysaml2@6.5.1-1?distro=sid
+- pkg:deb/debian/python-pysaml2@7.0.1-2?distro=sid
+- pkg:pypi/pysaml2@5.0.0
+references:
+- id: 154964
+  reference_id: ''
+  url: https://github.com/IdentityPython/pysaml2/blob/master/CHANGELOG.md#500-2020-01-13
+- id: 154962
+  reference_id: ''
+  url: https://github.com/IdentityPython/pysaml2/commit/5e9d5acbcd8ae45c4e736ac521fd2df5b1c62e25
+- id: 154963
+  reference_id: ''
+  url: https://github.com/IdentityPython/pysaml2/commit/f27c7e7a7010f83380566a219fd6a290a00f2b6e
+- id: 154965
+  reference_id: ''
+  url: https://github.com/IdentityPython/pysaml2/releases
+- id: 154966
+  reference_id: ''
+  url: https://github.com/IdentityPython/pysaml2/releases/tag/v5.0.0
+- id: 154969
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/02/msg00025.html
+- id: 154967
+  reference_id: ''
+  url: https://pypi.org/project/pysaml2/5.0.0/
+- id: 154968
+  reference_id: ''
+  url: https://usn.ubuntu.com/4245-1/
+- id: 154970
+  reference_id: ''
+  url: https://www.debian.org/security/2020/dsa-4630
+- id: 129472
+  reference_id: '949322'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=949322
+- id: 154961
+  reference_id: CVE-2020-5390
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-5390
+- id: 154971
+  reference_id: GHSA-qf7v-8hj3-4xw7
+  url: https://github.com/advisories/GHSA-qf7v-8hj3-4xw7
+severities:
+- id: 22293
+  reference_id: 154971
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: PySAML2 before 5.0.0 does not check that the signature in a SAML document
+  is enveloped and thus signature wrapping is effective, i.e., it is affected by XML
+  Signature Wrapping (XSW). The signature information and the node/object that is
+  signed can be in different places and thus the signature verification will succeed,
+  but the wrong data will be used. This specifically affects the verification of assertion
+  that have been signed.
+vulnerability_id: VCID-74ew-hahz-aaas
+weaknesses: []

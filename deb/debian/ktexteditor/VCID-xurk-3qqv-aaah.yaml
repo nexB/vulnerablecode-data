@@ -1,0 +1,39 @@
+vulnerability_id: VCID-xurk-3qqv-aaah
+aliases:
+  - CVE-2022-23853
+summary: The LSP (Language Server Protocol) plugin in KDE Kate before 21.12.2 and KTextEditor
+  before 5.91.0 tries to execute the associated LSP server binary when opening a file of a given
+  type. If this binary is absent from the PATH, it will try running the LSP server binary in
+  the directory of the file that was just opened (due to a misunderstanding of the QProcess
+  API, that was never intended). This can be an untrusted directory.
+severities:
+  - id: 587593
+    reference_id: 916067
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 587591
+    reference_id: 916067
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 916065
+    url: https://apps.kde.org/kate/
+    reference_id:
+  - id: 916066
+    url: https://kde.org/info/security/advisory-20220131-1.txt
+    reference_id:
+  - id: 42386
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1010180
+    reference_id: 1010180
+  - id: 916068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:kate:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:kate:*:*:*:*:*:*:*:*
+  - id: 723623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:ktexteditor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:ktexteditor:*:*:*:*:*:*:*:*
+  - id: 916067
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-23853
+    reference_id: CVE-2022-23853
+weaknesses: []

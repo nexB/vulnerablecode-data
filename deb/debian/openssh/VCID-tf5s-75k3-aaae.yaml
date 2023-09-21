@@ -1,0 +1,262 @@
+vulnerability_id: VCID-tf5s-75k3-aaae
+aliases:
+  - CVE-2008-3259
+summary: OpenSSH before 5.1 sets the SO_REUSEADDR socket option when the X11UseLocalhost configuration
+  setting is disabled, which allows local users on some platforms to hijack the X11 forwarding
+  port via a bind to a single IP address, as demonstrated on the HP-UX platform.
+severities:
+  - id: 75109
+    reference_id: 206031
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 114058
+    reference_id: 348549
+    scoring_system: cvssv2
+    value: '1.2'
+    scoring_elements: AV:L/AC:H/Au:N/C:P/I:N/A:N
+references:
+  - id: 348542
+    url: http://openssh.com/security.html
+    reference_id:
+  - id: 206032
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2008-3259.json
+    reference_id:
+  - id: 348543
+    url: http://secunia.com/advisories/31179
+    reference_id:
+  - id: 348548
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/43940
+    reference_id:
+  - id: 348544
+    url: http://www.openssh.com/txt/release-5.1
+    reference_id:
+  - id: 348545
+    url: http://www.securityfocus.com/bid/30339
+    reference_id:
+  - id: 348546
+    url: http://www.securitytracker.com/id?1020537
+    reference_id:
+  - id: 348547
+    url: http://www.vupen.com/english/advisories/2008/2148
+    reference_id:
+  - id: 206031
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=456426
+    reference_id: 456426
+  - id: 49449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:*:*:*:*:*:*:*:*
+  - id: 49450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.2:*:*:*:*:*:*:*
+  - id: 89882
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.2.1:*:*:*:*:*:*:*
+  - id: 55767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.2.2:*:*:*:*:*:*:*
+  - id: 46308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.2.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.2.27:*:*:*:*:*:*:*
+  - id: 51217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.2.3:*:*:*:*:*:*:*
+  - id: 89883
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.3:*:*:*:*:*:*:*
+  - id: 89886
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.5:*:*:*:*:*:*:*
+  - id: 89884
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.5.7:*:*:*:*:*:*:*
+  - id: 89885
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:1.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:1.5.8:*:*:*:*:*:*:*
+  - id: 51218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.1:*:*:*:*:*:*:*
+  - id: 55768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.1.1:*:*:*:*:*:*:*
+  - id: 54479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.2:*:*:*:*:*:*:*
+  - id: 63134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.3:*:*:*:*:*:*:*
+  - id: 63798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.3.1:*:*:*:*:*:*:*
+  - id: 63137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.5:*:*:*:*:*:*:*
+  - id: 63135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.5.1:*:*:*:*:*:*:*
+  - id: 63136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.5.2:*:*:*:*:*:*:*
+  - id: 63138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.9:*:*:*:*:*:*:*
+  - id: 64642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.9.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.9.9:*:*:*:*:*:*:*
+  - id: 89887
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.9.9p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.9.9p2:*:*:*:*:*:*:*
+  - id: 64643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.9p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.9p1:*:*:*:*:*:*:*
+  - id: 64644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:2.9p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:2.9p2:*:*:*:*:*:*:*
+  - id: 63425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0:*:*:*:*:*:*:*
+  - id: 64645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0.1:*:*:*:*:*:*:*
+  - id: 68182
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0.1p1:*:*:*:*:*:*:*
+  - id: 67847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0.2:*:*:*:*:*:*:*
+  - id: 68183
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0.2p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0.2p1:*:*:*:*:*:*:*
+  - id: 63426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.0p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.0p1:*:*:*:*:*:*:*
+  - id: 67848
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.1:*:*:*:*:*:*:*
+  - id: 68184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.1p1:*:*:*:*:*:*:*
+  - id: 67849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.2:*:*:*:*:*:*:*
+  - id: 69016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.2.2:*:*:*:*:*:*:*
+  - id: 68185
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.2.2p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.2.2p1:*:*:*:*:*:*:*
+  - id: 68186
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.2.3p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.2.3p1:*:*:*:*:*:*:*
+  - id: 68187
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.3:*:*:*:*:*:*:*
+  - id: 68188
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.3p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.3p1:*:*:*:*:*:*:*
+  - id: 89889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.4:*:*:*:*:*:*:*
+  - id: 81067
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.4p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.4p1:*:*:*:*:*:*:*
+  - id: 89890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.5:*:*:*:*:*:*:*
+  - id: 89891
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.5p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.5p1:*:*:*:*:*:*:*
+  - id: 89893
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.6:*:*:*:*:*:*:*
+  - id: 82227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.6.1:*:*:*:*:*:*:*
+  - id: 81068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.6.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.6.1p1:*:*:*:*:*:*:*
+  - id: 89892
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.6.1p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.6.1p2:*:*:*:*:*:*:*
+  - id: 129681
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.7:*:*:*:*:*:*:*
+  - id: 84563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.7.1:*:*:*:*:*:*:*
+  - id: 84564
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.7.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.7.1p1:*:*:*:*:*:*:*
+  - id: 106111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.7.1p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.7.1p2:*:*:*:*:*:*:*
+  - id: 129684
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.8:*:*:*:*:*:*:*
+  - id: 129682
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.8.1:*:*:*:*:*:*:*
+  - id: 129683
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.8.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.8.1p1:*:*:*:*:*:*:*
+  - id: 129687
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.9:*:*:*:*:*:*:*
+  - id: 129685
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.9.1:*:*:*:*:*:*:*
+  - id: 129686
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:3.9.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:3.9.1p1:*:*:*:*:*:*:*
+  - id: 130841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.0:*:*:*:*:*:*:*
+  - id: 130853
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.0p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.0p1:*:*:*:*:*:*:*
+  - id: 287238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.1:*:*:*:*:*:*:*
+  - id: 130854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.1p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.1p1:*:*:*:*:*:*:*
+  - id: 254447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.2:*:*:*:*:*:*:*
+  - id: 217150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.2p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.2p1:*:*:*:*:*:*:*
+  - id: 254448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.3:*:*:*:*:*:*:*
+  - id: 254449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.3p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.3p1:*:*:*:*:*:*:*
+  - id: 287239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.3p2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.3p2:*:*:*:*:*:*:*
+  - id: 287240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.4:*:*:*:*:*:*:*
+  - id: 287241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.4p1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.4p1:*:*:*:*:*:*:*
+  - id: 53680
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.5:*:*:*:*:*:*:*
+  - id: 287242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.6:*:*:*:*:*:*:*
+  - id: 335937
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.7:*:*:*:*:*:*:*
+  - id: 335938
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.8:*:*:*:*:*:*:*
+  - id: 348550
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openbsd:openssh:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openbsd:openssh:4.9:*:*:*:*:*:*:*
+  - id: 348549
+    url: https://nvd.nist.gov/vuln/detail/CVE-2008-3259
+    reference_id: CVE-2008-3259
+weaknesses: []

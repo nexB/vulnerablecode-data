@@ -1,0 +1,202 @@
+vulnerability_id: VCID-wskw-ybfv-aaad
+aliases:
+  - CVE-2015-1593
+summary: The stack randomization feature in the Linux kernel before 3.19.1 on 64-bit platforms
+  uses incorrect data types for the results of bitwise left-shift operations, which makes it
+  easier for attackers to bypass the ASLR protection mechanism by predicting the address of
+  the top of the stack, related to the randomize_stack_top function in fs/binfmt_elf.c and the
+  stack_maxrandom_size function in arch/x86/mm/mmap.c.
+severities:
+  - id: 660687
+    reference_id: 600078
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660688
+    reference_id: 1428194
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660689
+    reference_id: 1428195
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660691
+    reference_id: 1428196
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660692
+    reference_id: 1428197
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 658209
+    reference_id: 1426285
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660601
+    reference_id: 1428133
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660602
+    reference_id: 1428134
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 660693
+    reference_id: 1428198
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660694
+    reference_id: 1428199
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 660690
+    reference_id: 600080
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: '195854'
+    reference_id: 600089
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 55331
+    reference_id: 180550
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55330
+    reference_id: 180549
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55329
+    reference_id: 180548
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 55628
+    reference_id: 180957
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 600077
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4e7c22d447bb6d7e37bfe39ff658486ae78e8d77
+    reference_id:
+  - id: 600078
+    url: http://hmarco.org/bugs/linux-ASLR-integer-overflow.html
+    reference_id:
+  - id: 1428194
+    url: http://hmarco.org/bugs/patches/fix_randomize_stack_top_properly_linux_3-17.1.patch
+    reference_id:
+  - id: 584411
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-04/msg00009.html
+    reference_id:
+  - id: 547820
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-04/msg00015.html
+    reference_id:
+  - id: 1428195
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-1593.html
+    reference_id:
+  - id: 590895
+    url: http://rhn.redhat.com/errata/RHSA-2015-1137.html
+    reference_id:
+  - id: 590896
+    url: http://rhn.redhat.com/errata/RHSA-2015-1138.html
+    reference_id:
+  - id: 476377
+    url: http://rhn.redhat.com/errata/RHSA-2015-1221.html
+    reference_id:
+  - id: 600085
+    url: https://access.redhat.com/errata/RHSA-2019:3517
+    reference_id:
+  - id: 182152
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-1593.json
+    reference_id:
+  - id: 600086
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1192519
+    reference_id:
+  - id: 1428196
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1593
+    reference_id:
+  - id: 600087
+    url: https://github.com/torvalds/linux/commit/4e7c22d447bb6d7e37bfe39ff658486ae78e8d77
+    reference_id:
+  - id: 600088
+    url: https://lkml.org/lkml/2015/1/7/811
+    reference_id:
+  - id: 1428197
+    url: https://ubuntu.com/security/notices/USN-2560-1
+    reference_id:
+  - id: 1426285
+    url: https://ubuntu.com/security/notices/USN-2561-1
+    reference_id:
+  - id: 1428133
+    url: https://ubuntu.com/security/notices/USN-2562-1
+    reference_id:
+  - id: 1428134
+    url: https://ubuntu.com/security/notices/USN-2563-1
+    reference_id:
+  - id: 1428198
+    url: https://ubuntu.com/security/notices/USN-2564-1
+    reference_id:
+  - id: 1428199
+    url: https://ubuntu.com/security/notices/USN-2565-1
+    reference_id:
+  - id: 548645
+    url: http://www.debian.org/security/2015/dsa-3170
+    reference_id:
+  - id: 600079
+    url: http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.19.1
+    reference_id:
+  - id: 600080
+    url: http://www.openwall.com/lists/oss-security/2015/02/13/13
+    reference_id:
+  - id: 600081
+    url: http://www.securityfocus.com/bid/72607
+    reference_id:
+  - id: 600082
+    url: http://www.ubuntu.com/usn/USN-2560-1
+    reference_id:
+  - id: 586260
+    url: http://www.ubuntu.com/usn/USN-2561-1
+    reference_id:
+  - id: 599412
+    url: http://www.ubuntu.com/usn/USN-2562-1
+    reference_id:
+  - id: 599413
+    url: http://www.ubuntu.com/usn/USN-2563-1
+    reference_id:
+  - id: 600083
+    url: http://www.ubuntu.com/usn/USN-2564-1
+    reference_id:
+  - id: 600084
+    url: http://www.ubuntu.com/usn/USN-2565-1
+    reference_id:
+  - id: 428328
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:x64:*
+  - id: 600089
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-1593
+    reference_id: CVE-2015-1593
+  - id: 180550
+    url: https://access.redhat.com/errata/RHSA-2015:1137
+    reference_id: RHSA-2015:1137
+  - id: 180549
+    url: https://access.redhat.com/errata/RHSA-2015:1138
+    reference_id: RHSA-2015:1138
+  - id: 180548
+    url: https://access.redhat.com/errata/RHSA-2015:1139
+    reference_id: RHSA-2015:1139
+  - id: 180957
+    url: https://access.redhat.com/errata/RHSA-2015:1221
+    reference_id: RHSA-2015:1221
+weaknesses: []

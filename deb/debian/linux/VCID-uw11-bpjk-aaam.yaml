@@ -1,0 +1,43 @@
+vulnerability_id: VCID-uw11-bpjk-aaam
+aliases:
+  - CVE-2021-4001
+summary: A race condition was found in the Linux kernel's ebpf verifier between bpf_map_update_elem
+  and bpf_map_freeze due to a missing lock in kernel/bpf/syscall.c. In this flaw, a local user
+  with a special privilege (cap_sys_admin or cap_bpf) can modify the frozen mapped address space.
+  This flaw affects kernel versions prior to 5.16 rc2.
+severities:
+  - id: 542291
+    reference_id: 885923
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 559025
+    reference_id: 896750
+    scoring_system: cvssv2
+    value: '4.7'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:C/A:N
+  - id: 559023
+    reference_id: 896750
+    scoring_system: cvssv3
+    value: '4.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 885923
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4001.json
+    reference_id:
+  - id: 896748
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2025645
+    reference_id:
+  - id: 896749
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=353050be4c19e102178ccc05988101887c25ae53
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 866861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+  - id: 896750
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4001
+    reference_id: CVE-2021-4001
+weaknesses: []

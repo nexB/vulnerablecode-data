@@ -1,0 +1,68 @@
+affected_purls:
+- pkg:maven/org.apache.solr/solr-core@5.3.0
+- pkg:maven/org.apache.solr/solr-core@5.3.1
+- pkg:maven/org.apache.solr/solr-core@5.3.2
+- pkg:maven/org.apache.solr/solr-core@5.4.0
+- pkg:maven/org.apache.solr/solr-core@5.4.1
+- pkg:maven/org.apache.solr/solr-core@5.5.0
+- pkg:maven/org.apache.solr/solr-core@5.5.1
+- pkg:maven/org.apache.solr/solr-core@5.5.2
+- pkg:maven/org.apache.solr/solr-core@5.5.3
+- pkg:maven/org.apache.solr/solr-core@5.5.4
+- pkg:maven/org.apache.solr/solr-core@6.0.0
+- pkg:maven/org.apache.solr/solr-core@6.0.1
+- pkg:maven/org.apache.solr/solr-core@6.1.0
+- pkg:maven/org.apache.solr/solr-core@6.2.0
+- pkg:maven/org.apache.solr/solr-core@6.2.1
+- pkg:maven/org.apache.solr/solr-core@6.3.0
+- pkg:maven/org.apache.solr/solr-core@6.4.0
+- pkg:maven/org.apache.solr/solr-core@6.4.1
+- pkg:maven/org.apache.solr/solr-core@6.4.2
+- pkg:maven/org.apache.solr/solr-core@6.5.0
+- pkg:maven/org.apache.solr/solr-core@6.5.1
+aliases:
+- CVE-2017-7660
+- GHSA-c82r-qg3w-q5mv
+fixed_purl:
+- pkg:deb/debian/lucene-solr@0?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-20%2Bdeb10u2?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-24?distro=sid
+- pkg:deb/debian/lucene-solr@3.6.2%2Bdfsg-26?distro=sid
+- pkg:maven/org.apache.solr/solr-core@5.5.5
+- pkg:maven/org.apache.solr/solr-core@6.6.0
+references:
+- id: 181435
+  reference_id: ''
+  url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7660
+- id: 142879
+  reference_id: ''
+  url: https://issues.apache.org/jira/browse/SOLR-10624
+- id: 142880
+  reference_id: ''
+  url: https://lists.apache.org/thread/o0g7vpz5sz4yy0pyf1z94vkpv40x6h44
+- id: 142878
+  reference_id: ''
+  url: https://security.netapp.com/advisory/ntap-20181127-0003/
+- id: 142877
+  reference_id: CVE-2017-7660
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-7660
+- id: 142881
+  reference_id: GHSA-c82r-qg3w-q5mv
+  url: https://github.com/advisories/GHSA-c82r-qg3w-q5mv
+severities:
+- id: 19902
+  reference_id: 142881
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Apache Solr uses a PKI based mechanism to secure inter-node communication
+  when security is enabled. It is possible to create a specially crafted node name
+  that does not exist as part of the cluster and point it to a malicious node. This
+  can trick the nodes in cluster to believe that the malicious node is a member of
+  the cluster. So, if Solr users have enabled BasicAuth authentication mechanism using
+  the BasicAuthPlugin or if the user has implemented a custom Authentication plugin,
+  which does not implement either "HttpClientInterceptorPlugin" or "HttpClientBuilderPlugin",
+  his/her servers are vulnerable to this attack. Users who only use SSL without basic
+  authentication or those who use Kerberos are not affected.
+vulnerability_id: VCID-4jmk-gugp-aaaj
+weaknesses: []

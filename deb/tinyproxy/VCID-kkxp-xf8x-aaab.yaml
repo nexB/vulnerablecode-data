@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-11747
+fixed_purl:
+- pkg:deb/debian/tinyproxy@1.10.0-1?distro=sid
+- pkg:deb/debian/tinyproxy@1.10.0-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/tinyproxy@1.10.0-5?distro=sid
+- pkg:deb/debian/tinyproxy@1.11.1-2.1?distro=sid
+references:
+- id: 126799
+  reference_id: '870307'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=870307
+severities: []
+summary: main.c in Tinyproxy 1.8.4 and earlier creates a /run/tinyproxy/tinyproxy.pid
+  file after dropping privileges to a non-root account, which might allow local users
+  to kill arbitrary processes by leveraging access to this non-root account for tinyproxy.pid
+  modification before a root script executes a "kill `cat /run/tinyproxy/tinyproxy.pid`"
+  command.
+vulnerability_id: VCID-kkxp-xf8x-aaab
+weaknesses: []

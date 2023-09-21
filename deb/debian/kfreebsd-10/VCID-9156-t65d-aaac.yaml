@@ -1,0 +1,44 @@
+vulnerability_id: VCID-9156-t65d-aaac
+aliases:
+  - CVE-2016-1887
+summary: Integer signedness error in the sockargs function in sys/kern/uipc_syscalls.c in FreeBSD
+  10.1 before p34, 10.2 before p17, and 10.3 before p3 allows local users to cause a denial
+  of service (memory overwrite and kernel panic) or gain privileges via a negative buflen argument,
+  which triggers a heap-based buffer overflow.
+severities:
+  - id: 219885
+    reference_id: 636641
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 219883
+    reference_id: 636641
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 636638
+    url: http://cturt.github.io/sendmsg.html
+    reference_id:
+  - id: 636640
+    url: https://security.FreeBSD.org/advisories/FreeBSD-SA-16:19.sendmsg.asc
+    reference_id:
+  - id: 636639
+    url: http://www.securitytracker.com/id/1035906
+    reference_id:
+  - id: 42473
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=824605
+    reference_id: 824605
+  - id: 161664
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:10.1:*:*:*:*:*:*:*
+  - id: 161665
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:10.2:*:*:*:*:*:*:*
+  - id: 636637
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:10.3:*:*:*:*:*:*:*
+  - id: 636641
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-1887
+    reference_id: CVE-2016-1887
+weaknesses: []

@@ -1,0 +1,76 @@
+vulnerability_id: VCID-8g1k-usta-aaaa
+aliases:
+  - CVE-2022-26520
+  - GHSA-727h-hrw8-jg8q
+summary: '** DISPUTED ** In pgjdbc before 42.3.3, an attacker (who controls the jdbc URL or
+  properties) can call java.util.logging.FileHandler to write to arbitrary files through the
+  loggerFile and loggerLevel connection properties. An example situation is that an attacker
+  could create an executable JSP file under a Tomcat web root. NOTE: the vendor''s position
+  is that there is no pgjdbc vulnerability; instead, it is a vulnerability for any application
+  to use the pgjdbc driver with untrusted connection properties.'
+severities:
+  - id: 41676
+    reference_id: 166476
+    scoring_system: cvssv3
+    value: '6.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+  - id: 41675
+    reference_id: 166475
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 593145
+    reference_id: 919633
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 593143
+    reference_id: 919633
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 647198
+    reference_id: 1416373
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 638825
+    reference_id: 951961
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 166476
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-26520.json
+    reference_id:
+  - id: 919629
+    url: https://github.com/pgjdbc/pgjdbc/pull/2454/commits/017b929977b4f85795f9ad2fa5de6e80978b8ccc
+    reference_id:
+  - id: 919630
+    url: https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-673j-qm5f-xpv8
+    reference_id:
+  - id: 919631
+    url: https://jdbc.postgresql.org/documentation/changelog.html#version_42.3.3
+    reference_id:
+  - id: 919632
+    url: https://jdbc.postgresql.org/documentation/head/tomcat.html
+    reference_id:
+  - id: 1181157
+    url: https://www.debian.org/security/2022/dsa-5196
+    reference_id:
+  - id: 166475
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2064007
+    reference_id: 2064007
+  - id: 725409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:postgresql:postgresql_jdbc_driver:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:postgresql:postgresql_jdbc_driver:*:*:*:*:*:*:*:*
+  - id: 919633
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-26520
+    reference_id: CVE-2022-26520
+  - id: 1416373
+    url: https://github.com/advisories/GHSA-727h-hrw8-jg8q
+    reference_id: GHSA-727h-hrw8-jg8q
+  - id: 951961
+    url: https://access.redhat.com/errata/RHSA-2022:5532
+    reference_id: RHSA-2022:5532
+weaknesses: []

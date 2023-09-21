@@ -1,0 +1,103 @@
+vulnerability_id: VCID-2wug-ez9w-aaae
+aliases:
+  - CVE-2019-5443
+summary: A non-privileged user or program can put code and a config file in a known non-privileged
+  path (under C:/usr/local/) that will make curl <= 7.65.1 automatically run the code (as an
+  openssl "engine") on invocation. If that curl is invoked by a privileged user it can do anything
+  it wants.
+severities:
+  - id: 60526
+    reference_id: 187707
+    scoring_system: cvssv3
+    value: '8.4'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 697874
+    reference_id: 495
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696630
+    reference_id: 278
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 60525
+    reference_id: 187706
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 410243
+    reference_id: 799050
+    scoring_system: cvssv2
+    value: '4.4'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:P/A:P
+  - id: 410241
+    reference_id: 799050
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 187707
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-5443.json
+    reference_id:
+  - id: 799049
+    url: https://curl.haxx.se/docs/CVE-2019-5443.html
+    reference_id:
+  - id: 794937
+    url: https://security.netapp.com/advisory/ntap-20191017-0002/
+    reference_id:
+  - id: 495
+    url: https://www.oracle.com/security-alerts/cpuapr2020.html
+    reference_id:
+  - id: 278
+    url: https://www.oracle.com/security-alerts/cpuoct2020.html
+    reference_id:
+  - id: 2747
+    url: https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html
+    reference_id:
+  - id: 799047
+    url: http://www.openwall.com/lists/oss-security/2019/06/24/1
+    reference_id:
+  - id: 799048
+    url: http://www.securityfocus.com/bid/108881
+    reference_id:
+  - id: 187706
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1772100
+    reference_id: 1772100
+  - id: 169589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_insight:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_insight:-:*:*:*:*:*:*:*
+  - id: 726316
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:vmware_vsphere:*:*
+  - id: 170261
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:windows:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:windows:*:*
+  - id: 169590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*
+  - id: 169591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:snapcenter:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:snapcenter:-:*:*:*:*:*:*:*
+  - id: 170015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_manager_ops_center:12.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_manager_ops_center:12.3.3:*:*:*:*:*:*:*
+  - id: 725884
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_manager_ops_center:12.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_manager_ops_center:12.4.0:*:*:*:*:*:*:*
+  - id: 169280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:http_server:12.2.1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:http_server:12.2.1.3.0:*:*:*:*:*:*:*
+  - id: 749919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:http_server:12.2.1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:http_server:12.2.1.4.0:*:*:*:*:*:*:*
+  - id: 767054
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:mysql_server:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:mysql_server:*:*:*:*:*:*:*:*
+  - id: 799039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:oss_support_tools:20.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:oss_support_tools:20.0:*:*:*:*:*:*:*
+  - id: 799050
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-5443
+    reference_id: CVE-2019-5443
+weaknesses: []

@@ -1,0 +1,826 @@
+vulnerability_id: VCID-vkat-mpxv-aaad
+aliases:
+  - CVE-2006-4339
+  - VC-OPENSSL-20060905-CVE-2006-4339
+summary: 'Daniel Bleichenbacher discovered an attack on PKCS #1 v1.5 signatures where under
+  certain circumstances it may be possible for an attacker to forge a PKCS #1 v1.5 signature
+  that would be incorrectly verified by OpenSSL.'
+severities:
+  - id: 77999
+    reference_id: 209326
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 89251
+    reference_id: 250302
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 78000
+    reference_id: 209327
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 68373
+    reference_id: '197896'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 68203
+    reference_id: '197690'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 68374
+    reference_id: '197897'
+    scoring_system: rhas
+    value: Critical
+    scoring_elements:
+  - id: 77371
+    reference_id: 208301
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 77373
+    reference_id: 208303
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 77372
+    reference_id: 208302
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 224589
+    url: ftp://patches.sgi.com/support/free/security/advisories/20060901-01-P.asc
+    reference_id:
+  - id: 250181
+    url: http://dev2dev.bea.com/pub/advisory/238
+    reference_id:
+  - id: 140030
+    url: http://docs.info.apple.com/article.html?artnum=304829
+    reference_id:
+  - id: 250182
+    url: http://docs.info.apple.com/article.html?artnum=307177
+    reference_id:
+  - id: 250183
+    url: http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c01070495
+    reference_id:
+  - id: 238803
+    url: http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01118771
+    reference_id:
+  - id: 132059
+    url: http://itrc.hp.com/service/cki/docDisplay.do?docId=c00849540
+    reference_id:
+  - id: 250185
+    url: http://jvndb.jvn.jp/ja/contents/2012/JVNDB-2012-000079.html
+    reference_id:
+  - id: 250184
+    url: http://jvn.jp/en/jp/JVN51615542/index.html
+    reference_id:
+  - id: 140031
+    url: http://lists.apple.com/archives/security-announce/2006/Nov/msg00001.html
+    reference_id:
+  - id: 250186
+    url: http://lists.apple.com/archives/Security-announce/2007/Dec/msg00001.html
+    reference_id:
+  - id: 238807
+    url: http://lists.vmware.com/pipermail/security-announce/2008/000008.html
+    reference_id:
+  - id: 238808
+    url: http://marc.info/?l=bind-announce&m=116253119512445&w=2
+    reference_id:
+  - id: 69486
+    url: http://marc.info/?l=bugtraq&m=130497311408250&w=2
+    reference_id:
+  - id: 128591
+    url: http://openvpn.net/changelog.html
+    reference_id:
+  - id: 209328
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2006-4339.json
+    reference_id:
+  - id: 1464557
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4339
+    reference_id:
+  - id: 250187
+    url: http://secunia.com/advisories/21709
+    reference_id:
+  - id: 250188
+    url: http://secunia.com/advisories/21767
+    reference_id:
+  - id: 250189
+    url: http://secunia.com/advisories/21776
+    reference_id:
+  - id: 250190
+    url: http://secunia.com/advisories/21778
+    reference_id:
+  - id: 250191
+    url: http://secunia.com/advisories/21785
+    reference_id:
+  - id: 250192
+    url: http://secunia.com/advisories/21791
+    reference_id:
+  - id: 250193
+    url: http://secunia.com/advisories/21812
+    reference_id:
+  - id: 250194
+    url: http://secunia.com/advisories/21823
+    reference_id:
+  - id: 250195
+    url: http://secunia.com/advisories/21846
+    reference_id:
+  - id: 250196
+    url: http://secunia.com/advisories/21852
+    reference_id:
+  - id: 250197
+    url: http://secunia.com/advisories/21870
+    reference_id:
+  - id: 250198
+    url: http://secunia.com/advisories/21873
+    reference_id:
+  - id: 246472
+    url: http://secunia.com/advisories/21906
+    reference_id:
+  - id: 250199
+    url: http://secunia.com/advisories/21927
+    reference_id:
+  - id: 250200
+    url: http://secunia.com/advisories/21930
+    reference_id:
+  - id: 250201
+    url: http://secunia.com/advisories/21982
+    reference_id:
+  - id: 224598
+    url: http://secunia.com/advisories/22036
+    reference_id:
+  - id: 250202
+    url: http://secunia.com/advisories/22044
+    reference_id:
+  - id: 214513
+    url: http://secunia.com/advisories/22066
+    reference_id:
+  - id: 250203
+    url: http://secunia.com/advisories/22161
+    reference_id:
+  - id: 250204
+    url: http://secunia.com/advisories/22226
+    reference_id:
+  - id: 250205
+    url: http://secunia.com/advisories/22232
+    reference_id:
+  - id: 238823
+    url: http://secunia.com/advisories/22259
+    reference_id:
+  - id: 238824
+    url: http://secunia.com/advisories/22260
+    reference_id:
+  - id: 238825
+    url: http://secunia.com/advisories/22284
+    reference_id:
+  - id: 250206
+    url: http://secunia.com/advisories/22325
+    reference_id:
+  - id: 250207
+    url: http://secunia.com/advisories/22446
+    reference_id:
+  - id: 250208
+    url: http://secunia.com/advisories/22509
+    reference_id:
+  - id: 250209
+    url: http://secunia.com/advisories/22513
+    reference_id:
+  - id: 130031
+    url: http://secunia.com/advisories/22523
+    reference_id:
+  - id: 250210
+    url: http://secunia.com/advisories/22545
+    reference_id:
+  - id: 250211
+    url: http://secunia.com/advisories/22585
+    reference_id:
+  - id: 238833
+    url: http://secunia.com/advisories/22671
+    reference_id:
+  - id: 250212
+    url: http://secunia.com/advisories/22689
+    reference_id:
+  - id: 250213
+    url: http://secunia.com/advisories/22711
+    reference_id:
+  - id: 250214
+    url: http://secunia.com/advisories/22733
+    reference_id:
+  - id: 238834
+    url: http://secunia.com/advisories/22758
+    reference_id:
+  - id: 238836
+    url: http://secunia.com/advisories/22799
+    reference_id:
+  - id: 221386
+    url: http://secunia.com/advisories/22932
+    reference_id:
+  - id: 250215
+    url: http://secunia.com/advisories/22934
+    reference_id:
+  - id: 250216
+    url: http://secunia.com/advisories/22936
+    reference_id:
+  - id: 250217
+    url: http://secunia.com/advisories/22937
+    reference_id:
+  - id: 250218
+    url: http://secunia.com/advisories/22938
+    reference_id:
+  - id: 250219
+    url: http://secunia.com/advisories/22939
+    reference_id:
+  - id: 250220
+    url: http://secunia.com/advisories/22940
+    reference_id:
+  - id: 250221
+    url: http://secunia.com/advisories/22948
+    reference_id:
+  - id: 250222
+    url: http://secunia.com/advisories/22949
+    reference_id:
+  - id: 140045
+    url: http://secunia.com/advisories/23155
+    reference_id:
+  - id: 250223
+    url: http://secunia.com/advisories/23455
+    reference_id:
+  - id: 82216
+    url: http://secunia.com/advisories/23680
+    reference_id:
+  - id: 58707
+    url: http://secunia.com/advisories/23794
+    reference_id:
+  - id: 250224
+    url: http://secunia.com/advisories/23841
+    reference_id:
+  - id: 132087
+    url: http://secunia.com/advisories/23915
+    reference_id:
+  - id: 250225
+    url: http://secunia.com/advisories/24099
+    reference_id:
+  - id: 238841
+    url: http://secunia.com/advisories/24930
+    reference_id:
+  - id: 238842
+    url: http://secunia.com/advisories/24950
+    reference_id:
+  - id: 250226
+    url: http://secunia.com/advisories/25284
+    reference_id:
+  - id: 246407
+    url: http://secunia.com/advisories/25399
+    reference_id:
+  - id: 250227
+    url: http://secunia.com/advisories/25649
+    reference_id:
+  - id: 238844
+    url: http://secunia.com/advisories/26329
+    reference_id:
+  - id: 132089
+    url: http://secunia.com/advisories/26893
+    reference_id:
+  - id: 250228
+    url: http://secunia.com/advisories/28115
+    reference_id:
+  - id: 123856
+    url: http://secunia.com/advisories/31492
+    reference_id:
+  - id: 250229
+    url: http://secunia.com/advisories/38567
+    reference_id:
+  - id: 154930
+    url: http://secunia.com/advisories/38568
+    reference_id:
+  - id: 154931
+    url: http://secunia.com/advisories/41818
+    reference_id:
+  - id: 250230
+    url: http://secunia.com/advisories/60799
+    reference_id:
+  - id: 250231
+    url: http://security.freebsd.org/advisories/FreeBSD-SA-06:19.openssl.asc
+    reference_id:
+  - id: 250232
+    url: http://security.gentoo.org/glsa/glsa-200609-05.xml
+    reference_id:
+  - id: 250233
+    url: http://security.gentoo.org/glsa/glsa-200609-18.xml
+    reference_id:
+  - id: 250234
+    url: http://securitytracker.com/id?1016791
+    reference_id:
+  - id: 58708
+    url: http://securitytracker.com/id?1017522
+    reference_id:
+  - id: 250298
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/28755
+    reference_id:
+  - id: 132115
+    url: https://issues.rpath.com/browse/RPL-1633
+    reference_id:
+  - id: 250299
+    url: https://issues.rpath.com/browse/RPL-616
+    reference_id:
+  - id: 250235
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.566955
+    reference_id:
+  - id: 250236
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.605306
+    reference_id:
+  - id: 250300
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11656
+    reference_id:
+  - id: 250301
+    url: https://secure-support.novell.com/KanisaPlatform/Publishing/41/3143224_f.SAL_Public.html
+    reference_id:
+  - id: 250237
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102648-1
+    reference_id:
+  - id: 250238
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102656-1
+    reference_id:
+  - id: 250239
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102657-1
+    reference_id:
+  - id: 250240
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102686-1
+    reference_id:
+  - id: 250241
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102696-1
+    reference_id:
+  - id: 250242
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102722-1
+    reference_id:
+  - id: 250243
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102744-1
+    reference_id:
+  - id: 250244
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-26-102759-1
+    reference_id:
+  - id: 250245
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-200708-1
+    reference_id:
+  - id: 250246
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-201247-1
+    reference_id:
+  - id: 238855
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-66-201534-1
+    reference_id:
+  - id: 250247
+    url: http://sunsolve.sun.com/search/document.do?assetkey=1-77-1000148.1-1
+    reference_id:
+  - id: 250248
+    url: http://support.attachmate.com/techdocs/2127.html
+    reference_id:
+  - id: 250249
+    url: http://support.attachmate.com/techdocs/2128.html
+    reference_id:
+  - id: 250250
+    url: http://support.attachmate.com/techdocs/2137.html
+    reference_id:
+  - id: 250251
+    url: http://support.avaya.com/elmodocs2/security/ASA-2006-188.htm
+    reference_id:
+  - id: 238917
+    url: https://www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00967144
+    reference_id:
+  - id: 3730
+    url: https://www.openssl.org/news/secadv/20060905.txt
+    reference_id:
+  - id: 130042
+    url: http://www14.software.ibm.com/webapp/set2/subscriptions/pqvcmjd?mode=18&ID=3117
+    reference_id:
+  - id: 214560
+    url: http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00771742
+    reference_id:
+  - id: 250252
+    url: http://www.arkoon.fr/upload/alertes/40AK-2006-04-FR-1.1_SSL360_OPENSSL_RSA.pdf
+    reference_id:
+  - id: 250253
+    url: http://www.bluecoat.com/support/knowledge/openSSL_RSA_Signature_forgery.html
+    reference_id:
+  - id: 238860
+    url: http://www.cisco.com/en/US/products/hw/contnetw/ps4162/tsd_products_security_response09186a008077af1b.html
+    reference_id:
+  - id: 238861
+    url: http://www.cisco.com/warp/public/707/cisco-sr-20061108-openssl.shtml
+    reference_id:
+  - id: 250254
+    url: http://www.debian.org/security/2006/dsa-1174
+    reference_id:
+  - id: 250255
+    url: http://www.gentoo.org/security/en/glsa/glsa-200610-06.xml
+    reference_id:
+  - id: 250256
+    url: http://www.gentoo.org/security/en/glsa/glsa-201408-19.xml
+    reference_id:
+  - id: 250257
+    url: http://www.imc.org/ietf-openpgp/mail-archive/msg14307.html
+    reference_id:
+  - id: 250258
+    url: http://www.kb.cert.org/vuls/id/845620
+    reference_id:
+  - id: 250259
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:161
+    reference_id:
+  - id: 238867
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:177
+    reference_id:
+  - id: 238868
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:178
+    reference_id:
+  - id: 250260
+    url: http://www.mandriva.com/security/advisories?name=MDKSA-2006:207
+    reference_id:
+  - id: 250261
+    url: http://www.matasano.com/log/469/many-rsa-signatures-may-be-forgeable-in-openssl-and-elsewhere/
+    reference_id:
+  - id: 221387
+    url: http://www.novell.com/linux/security/advisories/2006_26_sr.html
+    reference_id:
+  - id: 250262
+    url: http://www.novell.com/linux/security/advisories/2006_55_ssl.html
+    reference_id:
+  - id: 250263
+    url: http://www.novell.com/linux/security/advisories/2006_61_opera.html
+    reference_id:
+  - id: 250264
+    url: http://www.novell.com/linux/security/advisories/2007_10_ibmjava.html
+    reference_id:
+  - id: 91892
+    url: http://www.openbsd.org/errata.html
+    reference_id:
+  - id: 250265
+    url: http://www.openoffice.org/security/cves/CVE-2006-4339.html
+    reference_id:
+  - id: 250266
+    url: http://www.openpkg.com/security/advisories/OpenPKG-SA-2006.018.html
+    reference_id:
+  - id: 250267
+    url: http://www.openpkg.org/security/advisories/OpenPKG-SA-2006.029-bind.html
+    reference_id:
+  - id: 250268
+    url: http://www.openssl.org/news/secadv_20060905.txt
+    reference_id:
+  - id: 250269
+    url: http://www.opera.com/support/search/supsearch.dml?index=845
+    reference_id:
+  - id: 58710
+    url: http://www.oracle.com/technetwork/topics/security/cpujan2007-101493.html
+    reference_id:
+  - id: 250270
+    url: http://www.osvdb.org/28549
+    reference_id:
+  - id: 250271
+    url: http://www.redhat.com/support/errata/RHSA-2006-0661.html
+    reference_id:
+  - id: 250272
+    url: http://www.redhat.com/support/errata/RHSA-2007-0062.html
+    reference_id:
+  - id: 250273
+    url: http://www.redhat.com/support/errata/RHSA-2007-0072.html
+    reference_id:
+  - id: 250274
+    url: http://www.redhat.com/support/errata/RHSA-2007-0073.html
+    reference_id:
+  - id: 123869
+    url: http://www.redhat.com/support/errata/RHSA-2008-0629.html
+    reference_id:
+  - id: 250275
+    url: http://www.securityfocus.com/archive/1/445231/100/0/threaded
+    reference_id:
+  - id: 250276
+    url: http://www.securityfocus.com/archive/1/445822/100/0/threaded
+    reference_id:
+  - id: 250277
+    url: http://www.securityfocus.com/archive/1/450327/100/0/threaded
+    reference_id:
+  - id: 238877
+    url: http://www.securityfocus.com/archive/1/456546/100/200/threaded
+    reference_id:
+  - id: 238878
+    url: http://www.securityfocus.com/archive/1/489739/100/0/threaded
+    reference_id:
+  - id: 250278
+    url: http://www.securityfocus.com/bid/19849
+    reference_id:
+  - id: 58711
+    url: http://www.securityfocus.com/bid/22083
+    reference_id:
+  - id: 238880
+    url: http://www.securityfocus.com/bid/28276
+    reference_id:
+  - id: 238881
+    url: http://www.serv-u.com/releasenotes/
+    reference_id:
+  - id: 250279
+    url: http://www.sybase.com/detail?id=1047991
+    reference_id:
+  - id: 250280
+    url: http://www.ubuntu.com/usn/usn-339-1
+    reference_id:
+  - id: 140063
+    url: http://www.us-cert.gov/cas/techalerts/TA06-333A.html
+    reference_id:
+  - id: 250281
+    url: http://www.us.debian.org/security/2006/dsa-1173
+    reference_id:
+  - id: 238884
+    url: http://www.vmware.com/security/advisories/VMSA-2008-0005.html
+    reference_id:
+  - id: 238885
+    url: http://www.vmware.com/support/ace2/doc/releasenotes_ace2.html
+    reference_id:
+  - id: 238887
+    url: http://www.vmware.com/support/esx21/doc/esx-213-200612-patch.html
+    reference_id:
+  - id: 238888
+    url: http://www.vmware.com/support/esx25/doc/esx-253-200612-patch.html
+    reference_id:
+  - id: 238889
+    url: http://www.vmware.com/support/esx25/doc/esx-254-200612-patch.html
+    reference_id:
+  - id: 238886
+    url: http://www.vmware.com/support/esx2/doc/esx-202-200612-patch.html
+    reference_id:
+  - id: 238891
+    url: http://www.vmware.com/support/player2/doc/releasenotes_player2.html
+    reference_id:
+  - id: 238890
+    url: http://www.vmware.com/support/player/doc/releasenotes_player.html
+    reference_id:
+  - id: 238892
+    url: http://www.vmware.com/support/server/doc/releasenotes_server.html
+    reference_id:
+  - id: 82223
+    url: http://www.vmware.com/support/vi3/doc/esx-3069097-patch.html
+    reference_id:
+  - id: 82224
+    url: http://www.vmware.com/support/vi3/doc/esx-9986131-patch.html
+    reference_id:
+  - id: 238893
+    url: http://www.vmware.com/support/ws55/doc/releasenotes_ws55.html
+    reference_id:
+  - id: 238894
+    url: http://www.vmware.com/support/ws6/doc/releasenotes_ws6.html
+    reference_id:
+  - id: 250282
+    url: http://www.vupen.com/english/advisories/2006/3453
+    reference_id:
+  - id: 250283
+    url: http://www.vupen.com/english/advisories/2006/3566
+    reference_id:
+  - id: 250284
+    url: http://www.vupen.com/english/advisories/2006/3730
+    reference_id:
+  - id: 214555
+    url: http://www.vupen.com/english/advisories/2006/3748
+    reference_id:
+  - id: 250285
+    url: http://www.vupen.com/english/advisories/2006/3793
+    reference_id:
+  - id: 250286
+    url: http://www.vupen.com/english/advisories/2006/3899
+    reference_id:
+  - id: 238899
+    url: http://www.vupen.com/english/advisories/2006/3936
+    reference_id:
+  - id: 250287
+    url: http://www.vupen.com/english/advisories/2006/4205
+    reference_id:
+  - id: 250288
+    url: http://www.vupen.com/english/advisories/2006/4206
+    reference_id:
+  - id: 130041
+    url: http://www.vupen.com/english/advisories/2006/4207
+    reference_id:
+  - id: 250289
+    url: http://www.vupen.com/english/advisories/2006/4216
+    reference_id:
+  - id: 238903
+    url: http://www.vupen.com/english/advisories/2006/4327
+    reference_id:
+  - id: 238904
+    url: http://www.vupen.com/english/advisories/2006/4329
+    reference_id:
+  - id: 250290
+    url: http://www.vupen.com/english/advisories/2006/4366
+    reference_id:
+  - id: 238906
+    url: http://www.vupen.com/english/advisories/2006/4417
+    reference_id:
+  - id: 250291
+    url: http://www.vupen.com/english/advisories/2006/4586
+    reference_id:
+  - id: 250292
+    url: http://www.vupen.com/english/advisories/2006/4744
+    reference_id:
+  - id: 140067
+    url: http://www.vupen.com/english/advisories/2006/4750
+    reference_id:
+  - id: 250293
+    url: http://www.vupen.com/english/advisories/2006/5146
+    reference_id:
+  - id: 250294
+    url: http://www.vupen.com/english/advisories/2007/0254
+    reference_id:
+  - id: 132112
+    url: http://www.vupen.com/english/advisories/2007/0343
+    reference_id:
+  - id: 238909
+    url: http://www.vupen.com/english/advisories/2007/1401
+    reference_id:
+  - id: 250295
+    url: http://www.vupen.com/english/advisories/2007/1815
+    reference_id:
+  - id: 246414
+    url: http://www.vupen.com/english/advisories/2007/1945
+    reference_id:
+  - id: 250296
+    url: http://www.vupen.com/english/advisories/2007/2163
+    reference_id:
+  - id: 238910
+    url: http://www.vupen.com/english/advisories/2007/2315
+    reference_id:
+  - id: 238911
+    url: http://www.vupen.com/english/advisories/2007/2783
+    reference_id:
+  - id: 250297
+    url: http://www.vupen.com/english/advisories/2007/4224
+    reference_id:
+  - id: 238912
+    url: http://www.vupen.com/english/advisories/2008/0905/references
+    reference_id:
+  - id: 154945
+    url: http://www.vupen.com/english/advisories/2010/0366
+    reference_id:
+  - id: 209326
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=430659
+    reference_id: 430659
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 61127
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.1c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.1c:*:*:*:*:*:*:*
+  - id: 61128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.2b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.2b:*:*:*:*:*:*:*
+  - id: 61129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.3:*:*:*:*:*:*:*
+  - id: 131787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.3a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.3a:*:*:*:*:*:*:*
+  - id: 51278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.4:*:*:*:*:*:*:*
+  - id: 61130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5:*:*:*:*:*:*:*
+  - id: 68251
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5a:*:*:*:*:*:*:*
+  - id: 131790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5a:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5a:beta1:*:*:*:*:*:*
+  - id: 131791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5a:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5a:beta2:*:*:*:*:*:*
+  - id: 131788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5:beta1:*:*:*:*:*:*
+  - id: 131789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.5:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.5:beta2:*:*:*:*:*:*
+  - id: 61131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6:*:*:*:*:*:*:*
+  - id: 61132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6a:*:*:*:*:*:*:*
+  - id: 131795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6a:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6a:beta1:*:*:*:*:*:*
+  - id: 131796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6a:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6a:beta2:*:*:*:*:*:*
+  - id: 131797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6a:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6a:beta3:*:*:*:*:*:*
+  - id: 68252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6b:*:*:*:*:*:*:*
+  - id: 131792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6:beta1:*:*:*:*:*:*
+  - id: 131793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6:beta2:*:*:*:*:*:*
+  - id: 131794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6:beta3:*:*:*:*:*:*
+  - id: 68253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6c:*:*:*:*:*:*:*
+  - id: 68254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6d:*:*:*:*:*:*:*
+  - id: 74174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6e:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6e:*:*:*:*:*:*:*
+  - id: 97977
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6f:*:*:*:*:*:*:*
+  - id: 80005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6g:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6g:*:*:*:*:*:*:*
+  - id: 80006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6h:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6h:*:*:*:*:*:*:*
+  - id: 80562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6i:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6i:*:*:*:*:*:*:*
+  - id: 97978
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6j:*:*:*:*:*:*:*
+  - id: 97979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6k:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6k:*:*:*:*:*:*:*
+  - id: 97980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6l:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6l:*:*:*:*:*:*:*
+  - id: 97981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.6m:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.6m:*:*:*:*:*:*:*
+  - id: 80563
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7a:*:*:*:*:*:*:*
+  - id: 123615
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7b:*:*:*:*:*:*:*
+  - id: 97982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7c:*:*:*:*:*:*:*
+  - id: 97983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7d:*:*:*:*:*:*:*
+  - id: 131801
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7e:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7e:*:*:*:*:*:*:*
+  - id: 131802
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7f:*:*:*:*:*:*:*
+  - id: 131803
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7g:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7g:*:*:*:*:*:*:*
+  - id: 238919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7h:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7h:*:*:*:*:*:*:*
+  - id: 238920
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7i:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7i:*:*:*:*:*:*:*
+  - id: 238921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.7j:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.7j:*:*:*:*:*:*:*
+  - id: 132118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.8:*:*:*:*:*:*:*
+  - id: 153811
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.8a:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.8a:*:*:*:*:*:*:*
+  - id: 153812
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:0.9.8b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:0.9.8b:*:*:*:*:*:*:*
+  - id: 250302
+    url: https://nvd.nist.gov/vuln/detail/CVE-2006-4339
+    reference_id: CVE-2006-4339
+  - id: 209327
+    url: https://access.redhat.com/errata/RHSA-2006:0661
+    reference_id: RHSA-2006:0661
+  - id: '197896'
+    url: https://access.redhat.com/errata/RHSA-2007:0062
+    reference_id: RHSA-2007:0062
+  - id: '197690'
+    url: https://access.redhat.com/errata/RHSA-2007:0072
+    reference_id: RHSA-2007:0072
+  - id: '197897'
+    url: https://access.redhat.com/errata/RHSA-2007:0073
+    reference_id: RHSA-2007:0073
+  - id: 208301
+    url: https://access.redhat.com/errata/RHSA-2008:0264
+    reference_id: RHSA-2008:0264
+  - id: 208303
+    url: https://access.redhat.com/errata/RHSA-2008:0525
+    reference_id: RHSA-2008:0525
+  - id: 208302
+    url: https://access.redhat.com/errata/RHSA-2008:0629
+    reference_id: RHSA-2008:0629
+weaknesses: []

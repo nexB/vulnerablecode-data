@@ -1,0 +1,24 @@
+affected_purls:
+- pkg:conan/openjpeg@2.3.1
+aliases:
+- CVE-2020-15389
+fixed_purl:
+- pkg:conan/openjpeg@2.4.0
+- pkg:deb/debian/openjpeg2@2.3.0-2%2Bdeb10u2?distro=sid
+- pkg:deb/debian/openjpeg2@2.4.0-1?distro=sid
+- pkg:deb/debian/openjpeg2@2.4.0-3?distro=sid
+- pkg:deb/debian/openjpeg2@2.5.0-2?distro=sid
+references:
+- id: 129204
+  reference_id: '965220'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=965220
+- id: 182856
+  reference_id: CVE-2020-15389
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-15389
+severities: []
+summary: jp2/opj_decompress.c in OpenJPEG through 2.3.1 has a use-after-free that
+  can be triggered if there is a mix of valid and invalid files in a directory operated
+  on by the decompressor. Triggering a double-free may also be possible. This is related
+  to calling opj_image_destroy twice.
+vulnerability_id: VCID-4f8x-whst-aaaq
+weaknesses: []

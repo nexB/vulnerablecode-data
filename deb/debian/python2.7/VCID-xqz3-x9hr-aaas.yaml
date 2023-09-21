@@ -1,0 +1,363 @@
+vulnerability_id: VCID-xqz3-x9hr-aaas
+aliases:
+  - CVE-2014-9365
+summary: The HTTP clients in the (1) httplib, (2) urllib, (3) urllib2, and (4) xmlrpclib libraries
+  in CPython (aka Python) 2.x before 2.7.9 and 3.x before 3.4.3, when accessing an HTTPS URL,
+  do not (a) check the certificate against a trust store or verify that the server hostname
+  matches a domain name in the subject's (b) Common Name or (c) subjectAltName field of the
+  X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary
+  valid certificate.
+severities:
+  - id: 658722
+    reference_id: 1426709
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57414
+    reference_id: 183444
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N
+  - id: 658724
+    reference_id: 1426711
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658723
+    reference_id: 1426710
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 57411
+    reference_id: 183441
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: '190898'
+    reference_id: 590739
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:N
+references:
+  - id: 590732
+    url: http://bugs.python.org/issue22417
+    reference_id:
+  - id: 161186
+    url: http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html
+    reference_id:
+  - id: 1426709
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-9365.html
+    reference_id:
+  - id: 523088
+    url: https://access.redhat.com/errata/RHSA-2016:1166
+    reference_id:
+  - id: 590735
+    url: https://access.redhat.com/errata/RHSA-2017:1162
+    reference_id:
+  - id: 590736
+    url: https://access.redhat.com/errata/RHSA-2017:1868
+    reference_id:
+  - id: 183444
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-9365.json
+    reference_id:
+  - id: 1426711
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9365
+    reference_id:
+  - id: 1426710
+    url: http://seclists.org/oss-sec/2014/q4/1022
+    reference_id:
+  - id: 548258
+    url: https://security.gentoo.org/glsa/201503-10
+    reference_id:
+  - id: 161200
+    url: https://support.apple.com/kb/HT205031
+    reference_id:
+  - id: 590737
+    url: https://www.python.org/dev/peps/pep-0476/
+    reference_id:
+  - id: 590738
+    url: https://www.python.org/downloads/release/python-279/
+    reference_id:
+  - id: 590733
+    url: http://www.openwall.com/lists/oss-security/2014/12/11/1
+    reference_id:
+  - id: 98394
+    url: http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html
+    reference_id:
+  - id: 4729
+    url: http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html
+    reference_id:
+  - id: 590734
+    url: http://www.securityfocus.com/bid/71639
+    reference_id:
+  - id: 183441
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1173041
+    reference_id: 1173041
+  - id: 454282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.0:*:*:*:*:*:*:*
+  - id: 454281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.0.1:*:*:*:*:*:*:*
+  - id: 454286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.1:*:*:*:*:*:*:*
+  - id: 454283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.1.1:*:*:*:*:*:*:*
+  - id: 454284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.1.2:*:*:*:*:*:*:*
+  - id: 454285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.1.3:*:*:*:*:*:*:*
+  - id: 454289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.2:*:*:*:*:*:*:*
+  - id: 454287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.2.1:*:*:*:*:*:*:*
+  - id: 454288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.2.2:*:*:*:*:*:*:*
+  - id: 363084
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.2.3:*:*:*:*:*:*:*
+  - id: 454290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.1:*:*:*:*:*:*:*
+  - id: 454291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.2:*:*:*:*:*:*:*
+  - id: 454292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.3:*:*:*:*:*:*:*
+  - id: 454293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.4:*:*:*:*:*:*:*
+  - id: 454294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.5:*:*:*:*:*:*:*
+  - id: 363085
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.3.7:*:*:*:*:*:*:*
+  - id: 454295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.4.1:*:*:*:*:*:*:*
+  - id: 454296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.4.2:*:*:*:*:*:*:*
+  - id: 454297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.4.3:*:*:*:*:*:*:*
+  - id: 454298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.4.4:*:*:*:*:*:*:*
+  - id: 363086
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.4.6:*:*:*:*:*:*:*
+  - id: 363087
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.1:*:*:*:*:*:*:*
+  - id: 482029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.150:*:*:*:*:*:*:*
+  - id: 454299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.2:*:*:*:*:*:*:*
+  - id: 454300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.3:*:*:*:*:*:*:*
+  - id: 454301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.4:*:*:*:*:*:*:*
+  - id: 482030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.5.6:*:*:*:*:*:*:*
+  - id: 454302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.1:*:*:*:*:*:*:*
+  - id: 474188
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.2:*:*:*:*:*:*:*
+  - id: 474221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.2150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.2150:*:*:*:*:*:*:*
+  - id: 474189
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.3:*:*:*:*:*:*:*
+  - id: 454303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.4:*:*:*:*:*:*:*
+  - id: 454304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.5:*:*:*:*:*:*:*
+  - id: 454305
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.6:*:*:*:*:*:*:*
+  - id: 474222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.6150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.6150:*:*:*:*:*:*:*
+  - id: 454306
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.7:*:*:*:*:*:*:*
+  - id: 474223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.6.8:*:*:*:*:*:*:*
+  - id: 454307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.1:*:*:*:*:*:*:*
+  - id: 474224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.1150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.1150:*:*:*:*:*:*:*
+  - id: 474225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.1150:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:a:python:python:2.7.1150:*:*:*:*:*:x64:*
+  - id: 474190
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.1:rc1:*:*:*:*:*:*
+  - id: 474226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.2150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.2150:*:*:*:*:*:*:*
+  - id: 474191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.2:rc1:*:*:*:*:*:*
+  - id: 474227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.3:*:*:*:*:*:*:*
+  - id: 546835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.4:*:*:*:*:*:*:*
+  - id: 546836
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.5:*:*:*:*:*:*:*
+  - id: 546837
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.6:*:*:*:*:*:*:*
+  - id: 546838
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.7:*:*:*:*:*:*:*
+  - id: 572690
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:2.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:2.7.8:*:*:*:*:*:*:*
+  - id: 450285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.0:*:*:*:*:*:*:*
+  - id: 454308
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.0.1:*:*:*:*:*:*:*
+  - id: 419730
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1:*:*:*:*:*:*:*
+  - id: 454309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.1:*:*:*:*:*:*:*
+  - id: 454310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.2:*:*:*:*:*:*:*
+  - id: 474228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.2150:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:a:python:python:3.1.2150:*:*:*:*:*:x64:*
+  - id: 454311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.3:*:*:*:*:*:*:*
+  - id: 474229
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.4:*:*:*:*:*:*:*
+  - id: 474230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.1.5:*:*:*:*:*:*:*
+  - id: 419731
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2:*:*:*:*:*:*:*
+  - id: 523091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.0:*:*:*:*:*:*:*
+  - id: 523092
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.1:*:*:*:*:*:*:*
+  - id: 523093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.2:*:*:*:*:*:*:*
+  - id: 482031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.2150:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.2150:*:*:*:*:*:*:*
+  - id: 489840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.3:*:*:*:*:*:*:*
+  - id: 523094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.4:*:*:*:*:*:*:*
+  - id: 523095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.5:*:*:*:*:*:*:*
+  - id: 548843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2.6:*:*:*:*:*:*:*
+  - id: 432183
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.2:alpha:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.2:alpha:*:*:*:*:*:*
+  - id: 489841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3:*:*:*:*:*:*:*
+  - id: 523096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.0:*:*:*:*:*:*:*
+  - id: 523097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.1:*:*:*:*:*:*:*
+  - id: 546839
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.1:rc1:*:*:*:*:*:*
+  - id: 523098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.2:*:*:*:*:*:*:*
+  - id: 546840
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.3:*:*:*:*:*:*:*
+  - id: 546841
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.3:rc1:*:*:*:*:*:*
+  - id: 546842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.3:rc2:*:*:*:*:*:*
+  - id: 546843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.4:*:*:*:*:*:*:*
+  - id: 546844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.4:rc1:*:*:*:*:*:*
+  - id: 546845
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.5:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.5:-:*:*:*:*:*:*
+  - id: 546846
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.5:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.5:rc1:*:*:*:*:*:*
+  - id: 546847
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.5:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.5:rc2:*:*:*:*:*:*
+  - id: 590740
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3.6:rc1:*:*:*:*:*:*
+  - id: 489842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.3:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.3:beta2:*:*:*:*:*:*
+  - id: 562242
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.0:*:*:*:*:*:*:*
+  - id: 562243
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.1:*:*:*:*:*:*:*
+  - id: 562244
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4.2:*:*:*:*:*:*:*
+  - id: 533700
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:python:3.4:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:python:3.4:alpha1:*:*:*:*:*:*
+  - id: 44904
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*
+  - id: 590739
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-9365
+    reference_id: CVE-2014-9365
+weaknesses: []

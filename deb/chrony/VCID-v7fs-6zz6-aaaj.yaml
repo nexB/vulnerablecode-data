@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2020-14367
+fixed_purl:
+- pkg:deb/debian/chrony@3.4-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/chrony@3.4-4%2Bdeb10u2?distro=sid
+- pkg:deb/debian/chrony@3.5.1-1?distro=sid
+- pkg:deb/debian/chrony@4.0-8%2Bdeb11u2?distro=sid
+- pkg:deb/debian/chrony@4.3-2%2Bdeb12u1?distro=sid
+references: []
+severities: []
+summary: A flaw was found in chrony versions before 3.5.1 when creating the PID file
+  under the /var/run/chrony folder. The file is created during chronyd startup while
+  still running as the root user, and when it's opened for writing, chronyd does not
+  check for an existing symbolic link with the same file name. This flaw allows an
+  attacker with privileged access to create a symlink with the default PID file name
+  pointing to any destination file in the system, resulting in data loss and a denial
+  of service due to the path traversal.
+vulnerability_id: VCID-v7fs-6zz6-aaaj
+weaknesses: []

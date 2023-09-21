@@ -1,0 +1,134 @@
+affected_purls:
+- pkg:deb/debian/ruby-faye@1.2.4-1
+- pkg:gem/faye@0.1.0
+- pkg:gem/faye@0.1.1
+- pkg:gem/faye@0.2.2
+- pkg:gem/faye@0.3.0
+- pkg:gem/faye@0.3.1
+- pkg:gem/faye@0.3.2
+- pkg:gem/faye@0.3.3
+- pkg:gem/faye@0.3.4
+- pkg:gem/faye@0.5.0
+- pkg:gem/faye@0.5.1
+- pkg:gem/faye@0.5.2
+- pkg:gem/faye@0.5.3
+- pkg:gem/faye@0.5.4
+- pkg:gem/faye@0.5.5
+- pkg:gem/faye@0.6.0
+- pkg:gem/faye@0.6.1
+- pkg:gem/faye@0.6.2
+- pkg:gem/faye@0.6.3
+- pkg:gem/faye@0.6.4
+- pkg:gem/faye@0.6.5
+- pkg:gem/faye@0.6.6
+- pkg:gem/faye@0.6.7
+- pkg:gem/faye@0.6.8
+- pkg:gem/faye@0.7.0
+- pkg:gem/faye@0.7.1
+- pkg:gem/faye@0.7.2
+- pkg:gem/faye@0.8.0
+- pkg:gem/faye@0.8.1
+- pkg:gem/faye@0.8.11
+- pkg:gem/faye@0.8.2
+- pkg:gem/faye@0.8.3
+- pkg:gem/faye@0.8.4
+- pkg:gem/faye@0.8.5
+- pkg:gem/faye@0.8.6
+- pkg:gem/faye@0.8.8
+- pkg:gem/faye@0.8.9
+- pkg:gem/faye@1.0.0
+- pkg:gem/faye@1.0.1
+- pkg:gem/faye@1.0.3
+- pkg:gem/faye@1.0.4
+- pkg:gem/faye@1.1.0
+- pkg:gem/faye@1.1.1
+- pkg:gem/faye@1.1.2
+- pkg:gem/faye@1.1.3
+- pkg:gem/faye@1.2.0
+- pkg:gem/faye@1.2.1
+- pkg:gem/faye@1.2.2
+- pkg:gem/faye@1.2.3
+- pkg:gem/faye@1.2.4
+- pkg:gem/faye@1.2.5
+- pkg:gem/faye@1.3.0
+aliases:
+- CVE-2020-15134
+- GHSA-3q49-h8f9-9fr9
+fixed_purl:
+- pkg:deb/debian/ruby-faye@1.4.0-1
+- pkg:gem/faye@1.4.0
+references:
+- id: 151476
+  reference_id: ''
+  url: https://blog.jcoglan.com/2020/07/31/missing-tls-verification-in-faye/
+- id: 151470
+  reference_id: ''
+  url: https://github.com/eventmachine/eventmachine/issues/275
+- id: 151471
+  reference_id: ''
+  url: https://github.com/eventmachine/eventmachine/issues/814
+- id: 151473
+  reference_id: ''
+  url: https://github.com/eventmachine/eventmachine/pull/378
+- id: 151472
+  reference_id: ''
+  url: https://github.com/faye/faye/issues/524
+- id: 151474
+  reference_id: ''
+  url: https://github.com/faye/faye-websocket-ruby/pull/129
+- id: 151475
+  reference_id: ''
+  url: https://github.com/igrigorik/em-http-request/pull/340
+- id: 150760
+  reference_id: ''
+  url: https://securitylab.github.com/advisories/GHSL-2020-094-igrigorik-em-http-request
+- id: 151477
+  reference_id: ''
+  url: https://www.rubydoc.info/github/eventmachine/eventmachine/EventMachine/Connection:ssl_verify_peer
+- id: 151478
+  reference_id: ''
+  url: https://www.rubydoc.info/github/eventmachine/eventmachine/EventMachine/Connection:start_tls
+- id: 129191
+  reference_id: '967063'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=967063
+- id: 151483
+  reference_id: CVE-2020-15134
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-15134
+- id: 151484
+  reference_id: CVE-2020-15134.YML
+  url: https://github.com/rubysec/ruby-advisory-db/blob/master/gems/faye/CVE-2020-15134.yml
+- id: 151485
+  reference_id: GHSA-3q49-h8f9-9fr9
+  url: https://github.com/advisories/GHSA-3q49-h8f9-9fr9
+- id: 151482
+  reference_id: GHSA-3q49-h8f9-9fr9
+  url: https://github.com/faye/faye/security/advisories/GHSA-3q49-h8f9-9fr9
+severities:
+- id: 21490
+  reference_id: 151485
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 21489
+  reference_id: 151482
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: Faye before version 1.4.0, there is a lack of certification validation in
+  TLS handshakes. Faye uses em-http-request and faye-websocket in the Ruby version
+  of its client. Those libraries both use the `EM::Connection#start_tls` method in
+  EventMachine to implement the TLS handshake whenever a `wss:` URL is used for the
+  connection. This method does not implement certificate verification by default,
+  meaning that it does not check that the server presents a valid and trusted TLS
+  certificate for the expected hostname. That means that any `https:` or `wss:` connection
+  made using these libraries is vulnerable to a man-in-the-middle attack, since it
+  does not confirm the identity of the server it is connected to. The first request
+  a Faye client makes is always sent via normal HTTP, but later messages may be sent
+  via WebSocket. Therefore it is vulnerable to the same problem that these underlying
+  libraries are, and we needed both libraries to support TLS verification before Faye
+  could claim to do the same. Your client would still be insecure if its initial HTTPS
+  request was verified, but later WebSocket connections were not. This is fixed in
+  Faye v1.4.0, which enables verification by default. For further background information
+  on this issue, please see the referenced GitHub Advisory.
+vulnerability_id: VCID-ngh9-t136-aaah
+weaknesses: []

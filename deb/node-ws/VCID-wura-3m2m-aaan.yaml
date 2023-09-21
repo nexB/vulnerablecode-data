@@ -1,0 +1,103 @@
+affected_purls:
+- pkg:npm/ws@0.2.6
+- pkg:npm/ws@0.2.8
+- pkg:npm/ws@0.2.9
+- pkg:npm/ws@0.3.0
+- pkg:npm/ws@0.3.1
+- pkg:npm/ws@0.3.2
+- pkg:npm/ws@0.3.3
+- pkg:npm/ws@0.3.4
+- pkg:npm/ws@0.3.4-2
+- pkg:npm/ws@0.3.5
+- pkg:npm/ws@0.3.5-2
+- pkg:npm/ws@0.3.5-3
+- pkg:npm/ws@0.3.5-4
+- pkg:npm/ws@0.3.6
+- pkg:npm/ws@0.3.7
+- pkg:npm/ws@0.3.8
+- pkg:npm/ws@0.3.9
+- pkg:npm/ws@0.4.0
+- pkg:npm/ws@0.4.1
+- pkg:npm/ws@0.4.10
+- pkg:npm/ws@0.4.11
+- pkg:npm/ws@0.4.12
+- pkg:npm/ws@0.4.13
+- pkg:npm/ws@0.4.14
+- pkg:npm/ws@0.4.15
+- pkg:npm/ws@0.4.16
+- pkg:npm/ws@0.4.17
+- pkg:npm/ws@0.4.18
+- pkg:npm/ws@0.4.19
+- pkg:npm/ws@0.4.2
+- pkg:npm/ws@0.4.20
+- pkg:npm/ws@0.4.21
+- pkg:npm/ws@0.4.22
+- pkg:npm/ws@0.4.23
+- pkg:npm/ws@0.4.24
+- pkg:npm/ws@0.4.25
+- pkg:npm/ws@0.4.27
+- pkg:npm/ws@0.4.28
+- pkg:npm/ws@0.4.29
+- pkg:npm/ws@0.4.3
+- pkg:npm/ws@0.4.30
+- pkg:npm/ws@0.4.31
+- pkg:npm/ws@0.4.32
+- pkg:npm/ws@0.4.5
+- pkg:npm/ws@0.4.6
+- pkg:npm/ws@0.4.7
+- pkg:npm/ws@0.4.8
+- pkg:npm/ws@0.4.9
+- pkg:npm/ws@0.5.0
+- pkg:npm/ws@0.6.0
+- pkg:npm/ws@0.6.1
+- pkg:npm/ws@0.6.2
+- pkg:npm/ws@0.6.3
+- pkg:npm/ws@0.6.4
+- pkg:npm/ws@0.6.5
+- pkg:npm/ws@0.7.0
+- pkg:npm/ws@0.7.1
+- pkg:npm/ws@0.7.2
+- pkg:npm/ws@0.8.0
+- pkg:npm/ws@0.8.1
+- pkg:npm/ws@1.0.0
+aliases:
+- CVE-2016-10518
+- GHSA-2mhh-w6q8-5hxw
+fixed_purl:
+- pkg:deb/debian/node-ws@1.0.1%2Bds1.e6ddaae4-1?distro=sid
+- pkg:deb/debian/node-ws@1.1.0%2Bds1.e6ddaae4-5%2Bdeb10u1?distro=sid
+- pkg:deb/debian/node-ws@7.4.2%2B~cs18.0.8-2?distro=sid
+- pkg:deb/debian/node-ws@8.11.0%2B~cs13.7.3-1?distro=sid
+- pkg:npm/ws@1.0.1
+references:
+- id: 138758
+  reference_id: ''
+  url: https://gist.github.com/c0nrad/e92005446c480707a74a
+- id: 138760
+  reference_id: ''
+  url: https://github.com/websockets/ws/releases/tag/1.0.1
+- id: 138761
+  reference_id: ''
+  url: https://www.npmjs.com/advisories/67
+- id: 138757
+  reference_id: CVE-2016-10518
+  url: https://nvd.nist.gov/vuln/detail/CVE-2016-10518
+- id: 138759
+  reference_id: GHSA-2mhh-w6q8-5hxw
+  url: https://github.com/advisories/GHSA-2mhh-w6q8-5hxw
+severities:
+- id: 19075
+  reference_id: 138759
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+summary: A vulnerability was found in the ping functionality of the ws module before
+  1.0.0 which allowed clients to allocate memory by sending a ping frame. The ping
+  functionality by default responds with a pong frame and the previously given payload
+  of the ping frame. This is exactly what you expect, but internally ws always transforms
+  all data that we need to send to a Buffer instance and that is where the vulnerability
+  existed. ws didn't do any checks for the type of data it was sending. With buffers
+  in node when you allocate it when a number instead of a string it will allocate
+  the amount of bytes.
+vulnerability_id: VCID-wura-3m2m-aaan
+weaknesses: []

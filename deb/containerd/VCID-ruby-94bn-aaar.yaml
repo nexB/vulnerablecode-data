@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2021-32760
+fixed_purl:
+- pkg:deb/debian/containerd@1.4.13~ds1-1~deb11u4?distro=sid
+- pkg:deb/debian/containerd@1.4.5~ds1-2?distro=sid
+- pkg:deb/debian/containerd@1.6.20~ds1-1?distro=sid
+references: []
+severities: []
+summary: "containerd is a container runtime. A bug was found in containerd versions\
+  \ prior to 1.4.8 and 1.5.4 where pulling and extracting a specially-crafted container\
+  \ image can result in Unix file permission changes for existing files in the host\u2019\
+  s filesystem. Changes to file permissions can deny access to the expected owner\
+  \ of the file, widen access to others, or set extended bits like setuid, setgid,\
+  \ and sticky. This bug does not directly allow files to be read, modified, or executed\
+  \ without an additional cooperating process. This bug has been fixed in containerd\
+  \ 1.5.4 and 1.4.8. As a workaround, ensure that users only pull images from trusted\
+  \ sources. Linux security modules (LSMs) like SELinux and AppArmor can limit the\
+  \ files potentially affected by this bug through policies and profiles that prevent\
+  \ containerd from interacting with specific files."
+vulnerability_id: VCID-ruby-94bn-aaar
+weaknesses: []

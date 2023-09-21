@@ -1,0 +1,25 @@
+affected_purls: []
+aliases:
+- CVE-2017-3736
+fixed_purl:
+- pkg:deb/debian/openssl@1.1.0g-1?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb10u3?distro=sid
+- pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u4?distro=sid
+- pkg:deb/debian/openssl@3.0.8-1?distro=sid
+- pkg:deb/debian/openssl@3.0.9-1?distro=sid
+references: []
+severities: []
+summary: There is a carry propagating bug in the x86_64 Montgomery squaring procedure
+  in OpenSSL before 1.0.2m and 1.1.0 before 1.1.0g. No EC algorithms are affected.
+  Analysis suggests that attacks against RSA and DSA as a result of this defect would
+  be very difficult to perform and are not believed likely. Attacks against DH are
+  considered just feasible (although very difficult) because most of the work necessary
+  to deduce information about a private key may be performed offline. The amount of
+  resources required for such an attack would be very significant and likely only
+  accessible to a limited number of attackers. An attacker would additionally need
+  online access to an unpatched system using the target private key in a scenario
+  with persistent DH parameters and a private key that is shared between multiple
+  clients. This only affects processors that support the BMI1, BMI2 and ADX extensions
+  like Intel Broadwell (5th generation) and later or AMD Ryzen.
+vulnerability_id: VCID-8pkx-bu2d-aaag
+weaknesses: []

@@ -1,0 +1,100 @@
+affected_purls:
+- pkg:deb/debian/python-reportlab@3.5.13-1%2Bdeb10u1
+- pkg:pypi/reportlab@2.3
+- pkg:pypi/reportlab@2.4
+- pkg:pypi/reportlab@2.5
+- pkg:pypi/reportlab@2.6
+- pkg:pypi/reportlab@2.7
+- pkg:pypi/reportlab@3.0
+- pkg:pypi/reportlab@3.1.44
+- pkg:pypi/reportlab@3.1.8
+- pkg:pypi/reportlab@3.2.0
+- pkg:pypi/reportlab@3.3.0
+- pkg:pypi/reportlab@3.4.0
+- pkg:pypi/reportlab@3.5.0
+- pkg:pypi/reportlab@3.5.1
+- pkg:pypi/reportlab@3.5.10
+- pkg:pypi/reportlab@3.5.11
+- pkg:pypi/reportlab@3.5.12
+- pkg:pypi/reportlab@3.5.13
+- pkg:pypi/reportlab@3.5.16
+- pkg:pypi/reportlab@3.5.17
+- pkg:pypi/reportlab@3.5.18
+- pkg:pypi/reportlab@3.5.19
+- pkg:pypi/reportlab@3.5.2
+- pkg:pypi/reportlab@3.5.20
+- pkg:pypi/reportlab@3.5.21
+- pkg:pypi/reportlab@3.5.23
+- pkg:pypi/reportlab@3.5.26
+- pkg:pypi/reportlab@3.5.28
+- pkg:pypi/reportlab@3.5.31
+- pkg:pypi/reportlab@3.5.32
+- pkg:pypi/reportlab@3.5.34
+- pkg:pypi/reportlab@3.5.4
+- pkg:pypi/reportlab@3.5.42
+- pkg:pypi/reportlab@3.5.44
+- pkg:pypi/reportlab@3.5.45
+- pkg:pypi/reportlab@3.5.46
+- pkg:pypi/reportlab@3.5.47
+- pkg:pypi/reportlab@3.5.48
+- pkg:pypi/reportlab@3.5.49
+- pkg:pypi/reportlab@3.5.5
+- pkg:pypi/reportlab@3.5.50
+- pkg:pypi/reportlab@3.5.51
+- pkg:pypi/reportlab@3.5.52
+- pkg:pypi/reportlab@3.5.53
+- pkg:pypi/reportlab@3.5.54
+- pkg:pypi/reportlab@3.5.6
+- pkg:pypi/reportlab@3.5.8
+- pkg:pypi/reportlab@3.5.9
+aliases:
+- CVE-2020-28463
+- GHSA-mpvw-25mg-59vx
+fixed_purl:
+- pkg:deb/debian/python-reportlab@3.5.59-2
+- pkg:pypi/reportlab@3.5.55
+references:
+- id: 153991
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1930417
+- id: 153996
+  reference_id: ''
+  url: https://hg.reportlab.com/hg-public/reportlab/file/f094d273903a/CHANGES.md#l71
+- id: 153992
+  reference_id: ''
+  url: https://hg.reportlab.com/hg-public/reportlab/rev/7f2231703dc7
+- id: 153994
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HMUJA5GZTPQ5WRYUCCK2GEZM4W43N7HH/
+- id: 153995
+  reference_id: ''
+  url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YZQSFCID67K6BTC655EQY6MNOF35QI44/
+- id: 153993
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-PYTHON-REPORTLAB-1022145
+- id: 153997
+  reference_id: ''
+  url: https://www.reportlab.com/docs/reportlab-userguide.pdf
+- id: 153990
+  reference_id: CVE-2020-28463
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-28463
+- id: 153998
+  reference_id: GHSA-mpvw-25mg-59vx
+  url: https://github.com/advisories/GHSA-mpvw-25mg-59vx
+severities:
+- id: 22027
+  reference_id: 153998
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: 'All versions of package reportlab are vulnerable to Server-side Request
+  Forgery (SSRF) via img tags. In order to reduce risk, use trustedSchemes & trustedHosts
+  (see in Reportlab''s documentation) Steps to reproduce by Karan Bamal: 1. Download
+  and install the latest package of reportlab 2. Go to demos -> odyssey -> dodyssey
+  3. In the text file odyssey.txt that needs to be converted to pdf inject <img src="http://127.0.0.1:5000"
+  valign="top"/> 4. Create a nc listener nc -lp 5000 5. Run python3 dodyssey.py 6.
+  You will get a hit on your nc showing we have successfully proceded to send a server
+  side request 7. dodyssey.py will show error since there is no img file on the url,
+  but we are able to do SSRF'
+vulnerability_id: VCID-m3sp-msbm-aaaf
+weaknesses: []

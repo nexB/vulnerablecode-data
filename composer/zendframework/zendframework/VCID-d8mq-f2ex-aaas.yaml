@@ -1,0 +1,64 @@
+vulnerability_id: VCID-d8mq-f2ex-aaas
+aliases:
+  - CVE-2015-7503
+summary: |
+  Potential Information Disclosure in Zend\Crypt\PublicKey\Rsa\PublicKey
+  Zend\Crypt\PublicKey\Rsa\PublicKey has a call to `openssl_public_encrypt()` which uses PHP's default `$padding` argument, which specifies `OPENSSL_PKCS1_PADDING`, indicating usage of PKCS1v1.5 padding. This padding has a known vulnerability, the Bleichenbacher's chosen-ciphertext attack, which can be used to decrypt arbitrary ciphertexts. Users should upgrade to a fixed version unless there are not using the RSA public key functionality.
+severities:
+  - id: 203479
+    reference_id: 614175
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 203477
+    reference_id: 614175
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 24792
+    url: http://framework.zend.com/security/advisory/ZF2015-10
+    reference_id:
+  - id: 614173
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1283137
+    reference_id:
+  - id: 614174
+    url: https://framework.zend.com/security/advisory/ZF2015-10
+    reference_id:
+  - id: 612998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.0:*:*:*:*:*:*:*
+  - id: 612999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.1:*:*:*:*:*:*:*
+  - id: 613000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.2:*:*:*:*:*:*:*
+  - id: 613001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.3:*:*:*:*:*:*:*
+  - id: 613002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.4:*:*:*:*:*:*:*
+  - id: 613003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.5:*:*:*:*:*:*:*
+  - id: 614176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.6:*:*:*:*:*:*:*
+  - id: 614177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.7:*:*:*:*:*:*:*
+  - id: 614178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.4.8:*:*:*:*:*:*:*
+  - id: 613004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.5.0:*:*:*:*:*:*:*
+  - id: 613005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:2.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:2.5.1:*:*:*:*:*:*:*
+  - id: 614175
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-7503
+    reference_id: CVE-2015-7503
+weaknesses: []

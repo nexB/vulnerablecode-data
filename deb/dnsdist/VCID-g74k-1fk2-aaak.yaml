@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2018-14663
+fixed_purl:
+- pkg:deb/debian/dnsdist@1.3.3-1?distro=sid
+- pkg:deb/debian/dnsdist@1.3.3-3?distro=sid
+- pkg:deb/debian/dnsdist@1.5.1-3?distro=sid
+- pkg:deb/debian/dnsdist@1.7.3-2?distro=sid
+references:
+- id: 127967
+  reference_id: '913231'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913231
+severities: []
+summary: An issue has been found in PowerDNS DNSDist before 1.3.3 allowing a remote
+  attacker to craft a DNS query with trailing data such that the addition of a record
+  by dnsdist, for example an OPT record when adding EDNS Client Subnet, might result
+  in the trailing data being smuggled to the backend as a valid record while not seen
+  by dnsdist. This is an issue when dnsdist is deployed as a DNS Firewall and used
+  to filter some records that should not be received by the backend. This issue occurs
+  only when either the 'useClientSubnet' or the experimental 'addXPF' parameters are
+  used when declaring a new backend.
+vulnerability_id: VCID-g74k-1fk2-aaak
+weaknesses: []

@@ -1,0 +1,109 @@
+vulnerability_id: VCID-38ff-ym6u-aaak
+aliases:
+  - CVE-2018-14779
+summary: 'A buffer overflow issue was discovered in the Yubico-Piv 1.5.0 smartcard driver. The
+  file lib/ykpiv.c contains the following code in the function `ykpiv_transfer_data()`: {% highlight
+  c %} if(*out_len + recv_len - 2 > max_out) { fprintf(stderr, "Output buffer to small, wanted
+  to write %lu, max was %lu.", *out_len + recv_len - 2, max_out); } if(out_data) { memcpy(out_data,
+  data, recv_len - 2); out_data += recv_len - 2; *out_len += recv_len - 2; } {% endhighlight
+  %} -- it is clearly checked whether the buffer is big enough to hold the data copied using
+  `memcpy()`, but no error handling happens to avoid the `memcpy()` in such cases. This code
+  path can be triggered with malicious data coming from a smartcard.'
+severities:
+  - id: 684627
+    reference_id: 1447151
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684628
+    reference_id: 1447152
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684631
+    reference_id: 1447154
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684629
+    reference_id: 1447153
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684630
+    reference_id: 735189
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 324675
+    reference_id: 735191
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 324673
+    reference_id: 735191
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1447151
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14779.html
+    reference_id:
+  - id: 1447152
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14779
+    reference_id:
+  - id: 1447154
+    url: https://ubuntu.com/security/notices/USN-4276-1
+    reference_id:
+  - id: 735188
+    url: https://usn.ubuntu.com/4276-1/
+    reference_id:
+  - id: 1447153
+    url: https://usn.ubuntu.com/usn/usn-4276-1
+    reference_id:
+  - id: 735189
+    url: https://www.x41-dsec.de/lab/advisories/x41-2018-001-Yubico-Piv/
+    reference_id:
+  - id: 735190
+    url: https://www.yubico.com/support/security-advisories/ysa-2018-03/
+    reference_id:
+  - id: 735187
+    url: http://www.openwall.com/lists/oss-security/2018/08/14/2
+    reference_id:
+  - id: 147352
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=906128
+    reference_id: 906128
+  - id: 735192
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:*:*:*:*:*:*:*:*
+  - id: 735193
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2:*:*:*:*:*:*:*
+  - id: 735194
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2b:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2b:*:*:*:*:*:*:*
+  - id: 735195
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2c:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2c:*:*:*:*:*:*:*
+  - id: 735196
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2d:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2d:*:*:*:*:*:*:*
+  - id: 735197
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2e:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2e:*:*:*:*:*:*:*
+  - id: 735198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2f:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2f:*:*:*:*:*:*:*
+  - id: 735199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_manager:1.4.2g:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_manager:1.4.2g:*:*:*:*:*:*:*
+  - id: 735200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:piv_tool:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:piv_tool:*:*:*:*:*:*:*:*
+  - id: 735201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:smart_card_minidriver:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:yubico:smart_card_minidriver:*:*:*:*:*:*:*:*
+  - id: 735191
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14779
+    reference_id: CVE-2018-14779
+weaknesses: []

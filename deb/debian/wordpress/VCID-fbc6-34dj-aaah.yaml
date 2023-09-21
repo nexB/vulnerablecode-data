@@ -1,0 +1,77 @@
+vulnerability_id: VCID-fbc6-34dj-aaah
+aliases:
+  - CVE-2018-12895
+summary: WordPress through 4.9.6 allows Author users to execute arbitrary code by leveraging
+  directory traversal in the wp-admin/post.php thumb parameter, which is passed to the PHP unlink
+  function and can delete the wp-config.php file. This is related to missing filename validation
+  in the wp-includes/post.php wp_delete_attachment function. The attacker must have capabilities
+  for files and posts that are normally available only to the Author, Editor, and Administrator
+  roles. The attack methodology is to delete wp-config.php and then launch a new installation
+  process to increase the attacker's privileges.
+severities:
+  - id: 683994
+    reference_id: 1446694
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683995
+    reference_id: 730643
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683996
+    reference_id: 1446695
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 318661
+    reference_id: 730646
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+  - id: 318659
+    reference_id: 730646
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 730641
+    url: http://packetstormsecurity.com/files/164633/WordPress-4.9.6-Arbitrary-File-Deletion.html
+    reference_id:
+  - id: 1446694
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-12895.html
+    reference_id:
+  - id: 730643
+    url: https://blog.ripstech.com/2018/wordpress-file-delete-to-code-execution/
+    reference_id:
+  - id: 1446695
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12895
+    reference_id:
+  - id: 650501
+    url: https://lists.debian.org/debian-lts-announce/2018/07/msg00046.html
+    reference_id:
+  - id: 730644
+    url: https://wpvulndb.com/vulnerabilities/9100
+    reference_id:
+  - id: 730645
+    url: https://www.debian.org/security/2018/dsa-4250
+    reference_id:
+  - id: 730642
+    url: http://www.securityfocus.com/bid/104569
+    reference_id:
+  - id: 147147
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=902876
+    reference_id: 902876
+  - id: 90100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 730646
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-12895
+    reference_id: CVE-2018-12895
+weaknesses: []

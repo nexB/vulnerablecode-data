@@ -1,0 +1,654 @@
+vulnerability_id: VCID-u4qv-snzv-aaaq
+aliases:
+  - CVE-2009-1890
+summary: The stream_reqbody_cl function in mod_proxy_http.c in the mod_proxy module in the Apache
+  HTTP Server before 2.3.3, when a reverse proxy is configured, does not properly handle an
+  amount of streamed data that exceeds the Content-Length value, which allows remote attackers
+  to cause a denial of service (CPU consumption) via crafted requests.
+severities:
+  - id: 72341
+    reference_id: 202824
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 707751
+    reference_id: 1470905
+    scoring_system: apache_httpd
+    value: important
+    scoring_elements:
+  - id: 125320
+    reference_id: 393466
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 72343
+    reference_id: 202826
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 72344
+    reference_id: 202827
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 72345
+    reference_id: 202828
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 72342
+    reference_id: 202825
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 148476
+    url: http://lists.apple.com/archives/security-announce/2009/Nov/msg00000.html
+    reference_id:
+  - id: 153922
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-10/msg00006.html
+    reference_id:
+  - id: 148479
+    url: http://marc.info/?l=bugtraq&m=129190899612998&w=2
+    reference_id:
+  - id: 393446
+    url: http://osvdb.org/55553
+    reference_id:
+  - id: 202829
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-1890.json
+    reference_id:
+  - id: 393447
+    url: http://secunia.com/advisories/35691
+    reference_id:
+  - id: 387690
+    url: http://secunia.com/advisories/35721
+    reference_id:
+  - id: 393448
+    url: http://secunia.com/advisories/35793
+    reference_id:
+  - id: 393449
+    url: http://secunia.com/advisories/35865
+    reference_id:
+  - id: 153929
+    url: http://secunia.com/advisories/37152
+    reference_id:
+  - id: 148491
+    url: http://secunia.com/advisories/37221
+    reference_id:
+  - id: 387691
+    url: http://security.gentoo.org/glsa/glsa-200907-04.xml
+    reference_id:
+  - id: 148515
+    url: https://lists.apache.org/thread.html/8d63cb8e9100f28a99429b4328e4e7cebce861d5772ac9863ba2ae6f@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 148516
+    url: https://lists.apache.org/thread.html/f7f95ac1cd9895db2714fa3ebaa0b94d0c6df360f742a40951384a53@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 148518
+    url: https://lists.apache.org/thread.html/r57608dc51b79102f3952ae06f54d5277b649c86d6533dcd6a7d201f7@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 135212
+    url: https://lists.apache.org/thread.html/r75cbe9ea3e2114e4271bbeca7aff96117b50c1b6eb7c4772b0337c1f@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 306089
+    url: https://lists.apache.org/thread.html/r7dd6be4dc38148704f2edafb44a8712abaa3a2be120d6c3314d55919@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 306090
+    url: https://lists.apache.org/thread.html/r84d043c2115176958562133d96d851495d712aa49da155d81f6733be@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 148519
+    url: https://lists.apache.org/thread.html/r9ea3538f229874c80a10af473856a81fbf5f694cd7f471cc679ba70b@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 47177
+    url: https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 135300
+    url: https://lists.apache.org/thread.html/rad01d817195e6cc871cb1d73b207ca326379a20a6e7f30febaf56d24@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 393461
+    url: https://lists.apache.org/thread.html/rb33be0aa9bd8cac9536293e3821dcd4cf8180ad95a8036eedd46365e@%3Cusers.mina.apache.org%3E
+    reference_id:
+  - id: 148520
+    url: https://lists.apache.org/thread.html/rc4c53a0d57b2771ecd4b965010580db355e38137c8711311ee1073a8@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 135213
+    url: https://lists.apache.org/thread.html/rdca61ae990660bacb682295f2a09d34612b7bb5f457577fe17f4d064@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 47179
+    url: https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 148522
+    url: https://lists.apache.org/thread.html/rfbaf647d52c1cb843e726a0933f156366a806cead84fbd430951591b@%3Ccvs.httpd.apache.org%3E
+    reference_id:
+  - id: 393462
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12330
+    reference_id:
+  - id: 393463
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A8616
+    reference_id:
+  - id: 393464
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9403
+    reference_id:
+  - id: 393465
+    url: https://rhn.redhat.com/errata/RHSA-2009-1148.html
+    reference_id:
+  - id: 148494
+    url: http://support.apple.com/kb/HT3937
+    reference_id:
+  - id: 393450
+    url: http://svn.apache.org/viewvc/httpd/httpd/trunk/CHANGES?r1=790587&r2=790586&pathrev=790587
+    reference_id:
+  - id: 393451
+    url: http://svn.apache.org/viewvc/httpd/httpd/trunk/CHANGES?revision=790587
+    reference_id:
+  - id: 393452
+    url: http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/proxy/mod_proxy_http.c?r1=790587&r2=790586&pathrev=790587
+    reference_id:
+  - id: 393453
+    url: http://svn.apache.org/viewvc?view=rev&revision=790587
+    reference_id:
+  - id: 387752
+    url: https://www.redhat.com/archives/fedora-package-announce/2009-August/msg01363.html
+    reference_id:
+  - id: 387739
+    url: http://wiki.rpath.com/Advisories:rPSA-2009-0142
+    reference_id:
+  - id: 393454
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg1PK91259
+    reference_id:
+  - id: 393455
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg1PK99480
+    reference_id:
+  - id: 393456
+    url: http://www.debian.org/security/2009/dsa-1834
+    reference_id:
+  - id: 393457
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2009:149
+    reference_id:
+  - id: 56544
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2013:150
+    reference_id:
+  - id: 148505
+    url: http://www.oracle.com/technetwork/topics/security/cpuapr2013-1899555.html
+    reference_id:
+  - id: 387741
+    url: http://www.redhat.com/support/errata/RHSA-2009-1156.html
+    reference_id:
+  - id: 387742
+    url: http://www.securityfocus.com/archive/1/507852/100/0/threaded
+    reference_id:
+  - id: 387743
+    url: http://www.securityfocus.com/archive/1/507857/100/0/threaded
+    reference_id:
+  - id: 393458
+    url: http://www.securityfocus.com/bid/35565
+    reference_id:
+  - id: 393459
+    url: http://www.securitytracker.com/id?1022509
+    reference_id:
+  - id: 393460
+    url: http://www.ubuntu.com/usn/USN-802-1
+    reference_id:
+  - id: 148513
+    url: http://www.vupen.com/english/advisories/2009/3184
+    reference_id:
+  - id: 202824
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=509375
+    reference_id: 509375
+  - id: 39486
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=536718
+    reference_id: 536718
+  - id: 43733
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:*:*:*:*:*:*:*:*
+  - id: 44206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:-:*:*:*:*:*:*:*
+  - id: 43600
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:0.8.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:0.8.11:*:*:*:*:*:*:*
+  - id: 43601
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:0.8.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:0.8.14:*:*:*:*:*:*:*
+  - id: 43605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.0:*:*:*:*:*:*:*
+  - id: 43602
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.0.2:*:*:*:*:*:*:*
+  - id: 43603
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.0.3:*:*:*:*:*:*:*
+  - id: 43604
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.0.5:*:*:*:*:*:*:*
+  - id: 43606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.1:*:*:*:*:*:*:*
+  - id: 43735
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.1.1:*:*:*:*:*:*:*
+  - id: 91459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.2:*:*:*:*:*:*:*
+  - id: 322413
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.2.4:*:*:*:*:*:*:*
+  - id: 43825
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.2.5:*:*:*:*:*:*:*
+  - id: 322414
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.2.6:*:*:*:*:*:*:*
+  - id: 322415
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.2.9:*:*:*:*:*:*:*
+  - id: 55184
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3:*:*:*:*:*:*:*
+  - id: 54653
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.0:*:*:*:*:*:*:*
+  - id: 54655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.1:*:*:*:*:*:*:*
+  - id: 54654
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.10:*:*:*:*:*:*:*
+  - id: 322416
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.1.1:*:*:*:*:*:*:*
+  - id: 54645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.11:*:*:*:*:*:*:*
+  - id: 51106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.11:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.11:*:win32:*:*:*:*:*
+  - id: 52967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.12:*:*:*:*:*:*:*
+  - id: 51107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.12:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.12:*:win32:*:*:*:*:*
+  - id: 76830
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.13:*:*:*:*:*:*:*
+  - id: 135216
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.13:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.13:*:win32:*:*:*:*:*
+  - id: 55663
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.14:*:*:*:*:*:*:*
+  - id: 135217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.14:*:mac_os:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.14:*:mac_os:*:*:*:*:*
+  - id: 62270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.14:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.14:*:win32:*:*:*:*:*
+  - id: 76831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.15:*:*:*:*:*:*:*
+  - id: 62271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.15:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.15:*:win32:*:*:*:*:*
+  - id: 76832
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.16:*:*:*:*:*:*:*
+  - id: 62272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.16:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.16:*:win32:*:*:*:*:*
+  - id: 59813
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.17:*:*:*:*:*:*:*
+  - id: 62273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.17:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.17:*:win32:*:*:*:*:*
+  - id: 63080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.18:*:*:*:*:*:*:*
+  - id: 62274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.18:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.18:*:win32:*:*:*:*:*
+  - id: 60775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.19:*:*:*:*:*:*:*
+  - id: 62275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.19:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.19:*:win32:*:*:*:*:*
+  - id: 54656
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.2:*:*:*:*:*:*:*
+  - id: 58713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.20:*:*:*:*:*:*:*
+  - id: 72030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.20:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.20:*:win32:*:*:*:*:*
+  - id: 65815
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.22:*:*:*:*:*:*:*
+  - id: 72031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.22:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.22:*:win32:*:*:*:*:*
+  - id: 64398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.23:*:*:*:*:*:*:*
+  - id: 72032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.23:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.23:*:win32:*:*:*:*:*
+  - id: 69498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.24:*:*:*:*:*:*:*
+  - id: 72033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.24:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.24:*:win32:*:*:*:*:*
+  - id: 69499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.25:*:*:*:*:*:*:*
+  - id: 72034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.25:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.25:*:win32:*:*:*:*:*
+  - id: 69500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.26:*:*:*:*:*:*:*
+  - id: 72035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.26:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.26:*:win32:*:*:*:*:*
+  - id: 72036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.27:*:*:*:*:*:*:*
+  - id: 83230
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.28:*:*:*:*:*:*:*
+  - id: 85973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.29:*:*:*:*:*:*:*
+  - id: 54657
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.3:*:*:*:*:*:*:*
+  - id: 125534
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.30:*:*:*:*:*:*:*
+  - id: 94020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.31:*:*:*:*:*:*:*
+  - id: 97706
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.32:*:*:*:*:*:*:*
+  - id: 125535
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.33:*:*:*:*:*:*:*
+  - id: 322417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.34:*:*:*:*:*:*:*
+  - id: 322418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.35:*:*:*:*:*:*:*
+  - id: 322419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.36:*:*:*:*:*:*:*
+  - id: 295302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.37:*:*:*:*:*:*:*
+  - id: 319966
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.38:*:*:*:*:*:*:*
+  - id: 319967
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.39:*:*:*:*:*:*:*
+  - id: 54658
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.4:*:*:*:*:*:*:*
+  - id: 54659
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.5:*:*:*:*:*:*:*
+  - id: 54660
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.6:*:*:*:*:*:*:*
+  - id: 322422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.65:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.65:*:*:*:*:*:*:*
+  - id: 322423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.68:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.68:*:*:*:*:*:*:*
+  - id: 51108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.6:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.6:*:win32:*:*:*:*:*
+  - id: 54661
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.7:*:*:*:*:*:*:*
+  - id: 85974
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.7:*:dev:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.7:*:dev:*:*:*:*:*
+  - id: 54662
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.8:*:*:*:*:*:*:*
+  - id: 46523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.9:*:*:*:*:*:*:*
+  - id: 51109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.3.9:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.3.9:*:win32:*:*:*:*:*
+  - id: 322424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.4.0:*:*:*:*:*:*:*
+  - id: 322425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:1.99:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:1.99:*:*:*:*:*:*:*
+  - id: 68327
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0:*:*:*:*:*:*:*
+  - id: 68317
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.28:*:*:*:*:*:*:*
+  - id: 64399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.28:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.28:beta:*:*:*:*:*:*
+  - id: 68318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.28:beta:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.28:beta:win32:*:*:*:*:*
+  - id: 68319
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.32:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.32:*:*:*:*:*:*:*
+  - id: 304629
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.32:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.32:beta:*:*:*:*:*:*
+  - id: 68320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.32:beta:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.32:beta:win32:*:*:*:*:*
+  - id: 304630
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.34:beta:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.34:beta:*:*:*:*:*:*
+  - id: 68321
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.34:beta:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.34:beta:win32:*:*:*:*:*
+  - id: 68322
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.35:*:*:*:*:*:*:*
+  - id: 68323
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.36:*:*:*:*:*:*:*
+  - id: 68324
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.37:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.37:*:*:*:*:*:*:*
+  - id: 68325
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.38:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.38:*:*:*:*:*:*:*
+  - id: 68326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.39:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.39:*:*:*:*:*:*:*
+  - id: 69514
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.40:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.40:*:*:*:*:*:*:*
+  - id: 69515
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.41:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.41:*:*:*:*:*:*:*
+  - id: 69516
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.42:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.42:*:*:*:*:*:*:*
+  - id: 79523
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.43:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.43:*:*:*:*:*:*:*
+  - id: 80589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.44:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.44:*:*:*:*:*:*:*
+  - id: 80590
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.45:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.45:*:*:*:*:*:*:*
+  - id: 81075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.46:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.46:*:*:*:*:*:*:*
+  - id: 88332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.46:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.46:*:win32:*:*:*:*:*
+  - id: 83231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.47:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.47:*:*:*:*:*:*:*
+  - id: 88333
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.48:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.48:*:*:*:*:*:*:*
+  - id: 94021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.49:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.49:*:*:*:*:*:*:*
+  - id: 96037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.50:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.50:*:*:*:*:*:*:*
+  - id: 96655
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.51:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.51:*:*:*:*:*:*:*
+  - id: 97209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.52:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.52:*:*:*:*:*:*:*
+  - id: 125536
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.53:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.53:*:*:*:*:*:*:*
+  - id: 125537
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.54:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.54:*:*:*:*:*:*:*
+  - id: 135218
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.55:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.55:*:*:*:*:*:*:*
+  - id: 245381
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.56:*:*:*:*:*:*:*
+  - id: 245382
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.57:*:*:*:*:*:*:*
+  - id: 245383
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.58:*:*:*:*:*:*:*
+  - id: 248205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.58:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.58:*:win32:*:*:*:*:*
+  - id: 295303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.59:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.59:*:*:*:*:*:*:*
+  - id: 304631
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.60:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.60:*:*:*:*:*:*:*
+  - id: 304632
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.61:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.61:*:*:*:*:*:*:*
+  - id: 80591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.0.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.0.9:*:*:*:*:*:*:*
+  - id: 130057
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1:*:*:*:*:*:*:*
+  - id: 130051
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.1:*:*:*:*:*:*:*
+  - id: 130052
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.2:*:*:*:*:*:*:*
+  - id: 130053
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.3:*:*:*:*:*:*:*
+  - id: 130054
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.4:*:*:*:*:*:*:*
+  - id: 130055
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.5:*:*:*:*:*:*:*
+  - id: 130056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.6:*:*:*:*:*:*:*
+  - id: 304633
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.7:*:*:*:*:*:*:*
+  - id: 304634
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.8:*:*:*:*:*:*:*
+  - id: 322427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.1.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.1.9:*:*:*:*:*:*:*
+  - id: 246671
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2:*:*:*:*:*:*:*
+  - id: 309414
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.0:*:*:*:*:*:*:*
+  - id: 246670
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.1:*:*:*:*:*:*:*
+  - id: 322428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.10:*:*:*:*:*:*:*
+  - id: 322429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.11:*:*:*:*:*:*:*
+  - id: 304635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.2:*:*:*:*:*:*:*
+  - id: 248206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.2:*:windows:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.2:*:windows:*:*:*:*:*
+  - id: 283647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.3:*:*:*:*:*:*:*
+  - id: 248207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.3:*:windows:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.3:*:windows:*:*:*:*:*
+  - id: 284635
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.4:*:*:*:*:*:*:*
+  - id: 309056
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.6:*:*:*:*:*:*:*
+  - id: 387754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.7:*:*:*:*:*:*:*
+  - id: 309415
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*
+  - id: 309416
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.2.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.2.9:*:*:*:*:*:*:*
+  - id: 299848
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.3.0:*:*:*:*:*:*:*
+  - id: 393468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:2.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:2.3.1:*:*:*:*:*:*:*
+  - id: 393467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:apache:http_server:*:*:win32:*:*:*:*:*
+    reference_id: cpe:2.3:a:apache:http_server:*:*:win32:*:*:*:*:*
+  - id: 1470905
+    url: https://httpd.apache.org/security/json/CVE-2009-1890.json
+    reference_id: CVE-2009-1890
+  - id: 393466
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-1890
+    reference_id: CVE-2009-1890
+  - id: 202826
+    url: https://access.redhat.com/errata/RHSA-2009:1148
+    reference_id: RHSA-2009:1148
+  - id: 202827
+    url: https://access.redhat.com/errata/RHSA-2009:1155
+    reference_id: RHSA-2009:1155
+  - id: 202828
+    url: https://access.redhat.com/errata/RHSA-2009:1156
+    reference_id: RHSA-2009:1156
+  - id: 202825
+    url: https://access.redhat.com/errata/RHSA-2009:1160
+    reference_id: RHSA-2009:1160
+weaknesses: []

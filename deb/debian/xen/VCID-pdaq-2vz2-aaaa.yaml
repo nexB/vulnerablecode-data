@@ -1,0 +1,49 @@
+vulnerability_id: VCID-pdaq-2vz2-aaaa
+aliases:
+  - CVE-2015-8615
+summary: The hvm_set_callback_via function in arch/x86/hvm/irq.c in Xen 4.6 does not limit the
+  number of printk console messages when logging the new callback method, which allows local
+  HVM guest OS users to cause a denial of service via a large number of changes to the callback
+  method (HVM_PARAM_CALLBACK_IRQ).
+severities:
+  - id: 52081
+    reference_id: 176822
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 205857
+    reference_id: 619162
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:P
+  - id: 205855
+    reference_id: 619162
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L
+references:
+  - id: 176823
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2015-8615.json
+    reference_id:
+  - id: 619159
+    url: http://www.securityfocus.com/bid/79644
+    reference_id:
+  - id: 619160
+    url: http://www.securitytracker.com/id/1034512
+    reference_id:
+  - id: 619161
+    url: http://xenbits.xen.org/xsa/advisory-169.html
+    reference_id:
+  - id: 176822
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1293675
+    reference_id: 1293675
+  - id: 51395
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=823620
+    reference_id: 823620
+  - id: 159131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:xen:xen:4.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:xen:xen:4.6.0:*:*:*:*:*:*:*
+  - id: 619162
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-8615
+    reference_id: CVE-2015-8615
+weaknesses: []

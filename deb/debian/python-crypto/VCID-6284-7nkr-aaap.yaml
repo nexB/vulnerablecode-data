@@ -1,0 +1,79 @@
+vulnerability_id: VCID-6284-7nkr-aaap
+aliases:
+  - CVE-2013-1445
+  - PYSEC-2013-29
+summary: The Crypto.Random.atfork function in PyCrypto before 2.6.1 does not properly reseed
+  the pseudo-random number generator (PRNG) before allowing a child process to access it, which
+  makes it easier for context-dependent attackers to obtain sensitive information by leveraging
+  a race condition in which a child process is created and accesses the PRNG within the same
+  rate-limit period as another process.
+severities:
+  - id: 61142
+    reference_id: 188631
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 163473
+    reference_id: 518506
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+references:
+  - id: 188632
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-1445.json
+    reference_id:
+  - id: 23164
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-1445
+    reference_id:
+  - id: 4371
+    url: https://github.com/dlitz/pycrypto/commit/19dcf7b15d61b7dc1a125a367151de40df6ef175
+    reference_id:
+  - id: 4372
+    url: http://www.debian.org/security/2013/dsa-2781
+    reference_id:
+  - id: 4373
+    url: http://www.openwall.com/lists/oss-security/2013/10/17/3
+    reference_id:
+  - id: 188631
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1020814
+    reference_id: 1020814
+  - id: 491747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:*:*:*:*:*:*:*:*
+  - id: 491748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:1.0.0:*:*:*:*:*:*:*
+  - id: 491749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:1.0.1:*:*:*:*:*:*:*
+  - id: 491750
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:1.0.2:*:*:*:*:*:*:*
+  - id: 491759
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.0:*:*:*:*:*:*:*
+  - id: 491758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.0.1:*:*:*:*:*:*:*
+  - id: 491760
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.1.0:*:*:*:*:*:*:*
+  - id: 491764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.2:*:*:*:*:*:*:*
+  - id: 491765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.3:*:*:*:*:*:*:*
+  - id: 491767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.4:*:*:*:*:*:*:*
+  - id: 491766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.4.1:*:*:*:*:*:*:*
+  - id: 518507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:dlitz:pycrypto:2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:dlitz:pycrypto:2.5:*:*:*:*:*:*:*
+  - id: 518506
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-1445
+    reference_id: CVE-2013-1445
+weaknesses: []

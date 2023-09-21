@@ -1,0 +1,205 @@
+vulnerability_id: VCID-nyy8-ehzn-aaan
+aliases:
+  - CVE-2017-18344
+summary: The timer_create syscall implementation in kernel/time/posix-timers.c in the Linux
+  kernel before 4.14.8 doesn't properly validate the sigevent->sigev_notify field, which leads
+  to out-of-bounds access in the show_timer function (called when /proc/$PID/timers is read).
+  This allows userspace applications to read arbitrary kernel memory (on a kernel built with
+  CONFIG_POSIX_TIMERS and CONFIG_CHECKPOINT_RESTORE).
+severities:
+  - id: 677574
+    reference_id: 1441589
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687967
+    reference_id: 620010
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687968
+    reference_id: 620011
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619324
+    reference_id: 938115
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N
+  - id: 676719
+    reference_id: 689632
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 677576
+    reference_id: 1441591
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 677577
+    reference_id: 693555
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 677578
+    reference_id: 1441592
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 677579
+    reference_id: 1441593
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 677575
+    reference_id: 1441590
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 619323
+    reference_id: 938114
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 276984
+    reference_id: 693559
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 276982
+    reference_id: 693559
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+  - id: 614869
+    reference_id: 934923
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 614260
+    reference_id: 934482
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1441589
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-18344.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 620010
+    url: https://access.redhat.com/errata/RHSA-2018:3083
+    reference_id:
+  - id: 620011
+    url: https://access.redhat.com/errata/RHSA-2018:3096
+    reference_id:
+  - id: 693551
+    url: https://access.redhat.com/errata/RHSA-2018:3540
+    reference_id:
+  - id: 693552
+    url: https://access.redhat.com/errata/RHSA-2018:3586
+    reference_id:
+  - id: 693553
+    url: https://access.redhat.com/errata/RHSA-2018:3590
+    reference_id:
+  - id: 938115
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18344.json
+    reference_id:
+  - id: 689632
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8
+    reference_id:
+  - id: 1441591
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18344
+    reference_id:
+  - id: 693555
+    url: https://github.com/torvalds/linux/commit/cef31d9af908243421258f1df35a4a644604efbe
+    reference_id:
+  - id: 1441592
+    url: https://ubuntu.com/security/notices/USN-3742-1
+    reference_id:
+  - id: 1441593
+    url: https://ubuntu.com/security/notices/USN-3742-2
+    reference_id:
+  - id: 693556
+    url: https://usn.ubuntu.com/3742-1/
+    reference_id:
+  - id: 693557
+    url: https://usn.ubuntu.com/3742-2/
+    reference_id:
+  - id: 693558
+    url: https://www.exploit-db.com/exploits/45175/
+    reference_id:
+  - id: 1441590
+    url: http://www.openwall.com/lists/oss-security/2018/08/09/6
+    reference_id:
+  - id: 693548
+    url: http://www.securityfocus.com/bid/104909
+    reference_id:
+  - id: 693549
+    url: http://www.securitytracker.com/id/1041414
+    reference_id:
+  - id: 938114
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1610958
+    reference_id: 1610958
+  - id: 582844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 158200
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*
+  - id: 162136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 693559
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18344
+    reference_id: CVE-2017-18344
+  - id: 934923
+    url: https://access.redhat.com/errata/RHSA-2018:3459
+    reference_id: RHSA-2018:3459
+  - id: 934482
+    url: https://access.redhat.com/errata/RHSA-2018:3591
+    reference_id: RHSA-2018:3591
+weaknesses: []

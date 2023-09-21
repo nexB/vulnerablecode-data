@@ -1,0 +1,66 @@
+vulnerability_id: VCID-3xxq-w2tb-aaac
+aliases:
+  - CVE-2018-10361
+summary: An issue was discovered in KTextEditor 5.34.0 through 5.45.0. Insecure handling of
+  temporary files in the KTextEditor's kauth_ktexteditor_helper service (as utilized in the
+  Kate text editor) can allow other unprivileged users on the local system to gain root privileges.
+  The attack occurs when one user (who has an unprivileged account but is also able to authenticate
+  as root) writes a text file using Kate into a directory owned by a another unprivileged user.
+  The latter unprivileged user conducts a symlink attack to achieve privilege escalation.
+severities:
+  - id: 682631
+    reference_id: 1445615
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682633
+    reference_id: 723621
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682634
+    reference_id: 1445616
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682632
+    reference_id: 723619
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 309913
+    reference_id: 723622
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 309911
+    reference_id: 723622
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1445615
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10361.html
+    reference_id:
+  - id: 723621
+    url: https://bugzilla.suse.com/show_bug.cgi?id=1033055
+    reference_id:
+  - id: 1445616
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10361
+    reference_id:
+  - id: 723619
+    url: http://www.openwall.com/lists/oss-security/2018/04/24/1
+    reference_id:
+  - id: 723620
+    url: http://www.openwall.com/lists/oss-security/2019/07/09/3
+    reference_id:
+  - id: 42756
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=896836
+    reference_id: 896836
+  - id: 723623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kde:ktexteditor:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kde:ktexteditor:*:*:*:*:*:*:*:*
+  - id: 723622
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10361
+    reference_id: CVE-2018-10361
+weaknesses: []

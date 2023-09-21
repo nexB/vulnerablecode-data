@@ -1,0 +1,91 @@
+vulnerability_id: VCID-p9g4-6q4d-aaaj
+aliases:
+  - CVE-2021-42716
+summary: An issue was discovered in stb stb_image.h 2.27. The PNM loader incorrectly interpreted
+  16-bit PGM files as 8-bit when converting to RGBA, leading to a buffer overflow when later
+  reinterpreting the result as a 16-bit buffer. An attacker could potentially have crashed a
+  service using stb_image, or read up to 1024 bytes of non-consecutive heap data without control
+  over the read location.
+severities:
+  - id: 603695
+    reference_id: 926710
+    scoring_system: cvssv3
+    value: '8.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H
+  - id: 603694
+    reference_id: 926709
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 565547
+    reference_id: 901623
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:P
+  - id: 565545
+    reference_id: 901623
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H
+references:
+  - id: 926710
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-42716.json
+    reference_id:
+  - id: 901621
+    url: https://github.com/nothings/stb/issues/1166
+    reference_id:
+  - id: 901622
+    url: https://github.com/nothings/stb/issues/1225
+    reference_id:
+  - id: 901615
+    url: https://github.com/nothings/stb/pull/1223
+    reference_id:
+  - id: 876903
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3TDGZFLBOP27LZKLH45WQLSNPSPP7S7Z/
+    reference_id:
+  - id: 876904
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AF2CNP4FVC6LDKNOO4WDCGNDYIP3MPK6/
+    reference_id:
+  - id: 876905
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BEGXBDEMTFGINETMJENBZ6SCHVEJQJSY/
+    reference_id:
+  - id: 901616
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CI23LXPEV2GCDQTJSKO6CIILBDTI3R42/
+    reference_id:
+  - id: 901617
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FTZXHFZD36BGE5P6JF252NZZLKMGCY4T/
+    reference_id:
+  - id: 876906
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/G2M5CRSGPRF7G3YB5CLU4FXW7ANNHAYT/
+    reference_id:
+  - id: 901618
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ID6II3RIKAMVGVMC6ZAQIXXYYDMTVC4N/
+    reference_id:
+  - id: 876907
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TXX76TJMZBPN3NU542MGN6B7C7QHRFGB/
+    reference_id:
+  - id: 876908
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VP2YEXEAJWI76FPM7D7VXHWD3WESQEYC/
+    reference_id:
+  - id: 945246
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1014532
+    reference_id: 1014532
+  - id: 926709
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2017913
+    reference_id: 2017913
+  - id: 901624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nothings:stb_image.h:2.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nothings:stb_image.h:2.27:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 901623
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-42716
+    reference_id: CVE-2021-42716
+weaknesses: []

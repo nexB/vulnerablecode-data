@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2010-2450
+fixed_purl:
+- pkg:deb/debian/shibboleth-sp@0?distro=sid
+- pkg:deb/debian/shibboleth-sp@3.0.4%2Bdfsg1-1%2Bdeb10u2?distro=sid
+- pkg:deb/debian/shibboleth-sp@3.2.2%2Bdfsg1-1?distro=sid
+- pkg:deb/debian/shibboleth-sp@3.4.1%2Bdfsg-2?distro=sid
+references:
+- id: 124239
+  reference_id: '571631'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=571631
+severities: []
+summary: The keygen.sh script in Shibboleth SP 2.0 (located in /usr/local/etc/shibboleth
+  by default) uses OpenSSL to create a DES private key which is placed in sp-key.pm.
+  It relies on the root umask (default 22) instead of chmoding the resulting file
+  itself, so the generated private key is world readable by default.
+vulnerability_id: VCID-gpk6-ngk8-aaaa
+weaknesses: []

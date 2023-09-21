@@ -1,0 +1,68 @@
+vulnerability_id: VCID-5s9t-5zss-aaab
+aliases:
+  - CVE-2019-11251
+summary: The Kubernetes kubectl cp command in versions 1.1-1.12, and versions prior to 1.13.11,
+  1.14.7, and 1.15.4 allows a combination of two symlinks provided by tar output of a malicious
+  container to place a file outside of the destination directory specified in the kubectl cp
+  invocation. This could be used to allow an attacker to place a nefarious file using a symlink,
+  outside of the destination tree.
+severities:
+  - id: 73870
+    reference_id: 204711
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
+  - id: 73867
+    reference_id: 204708
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 371391
+    reference_id: 769815
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 371389
+    reference_id: 769815
+    scoring_system: cvssv3
+    value: '5.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N
+  - id: 73868
+    reference_id: 204709
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 73869
+    reference_id: 204710
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 204711
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11251.json
+    reference_id:
+  - id: 769813
+    url: https://github.com/kubernetes/kubernetes/issues/87773
+    reference_id:
+  - id: 769814
+    url: https://groups.google.com/d/msg/kubernetes-announce/YYtEFdFimZ4/nZnOezZuBgAJ
+    reference_id:
+  - id: 204708
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1753495
+    reference_id: 1753495
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 769816
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.1-1.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.1-1.12:*:*:*:*:*:*:*
+  - id: 769815
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11251
+    reference_id: CVE-2019-11251
+  - id: 204709
+    url: https://access.redhat.com/errata/RHSA-2019:3266
+    reference_id: RHSA-2019:3266
+  - id: 204710
+    url: https://access.redhat.com/errata/RHSA-2019:3267
+    reference_id: RHSA-2019:3267
+weaknesses: []

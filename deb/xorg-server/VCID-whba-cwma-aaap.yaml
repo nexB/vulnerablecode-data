@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-2624
+fixed_purl:
+- pkg:deb/debian/xorg-server@2:1.19.2-1?distro=sid
+- pkg:deb/debian/xorg-server@2:1.20.11-1%2Bdeb11u6?distro=sid
+- pkg:deb/debian/xorg-server@2:1.20.4-1%2Bdeb10u4?distro=sid
+- pkg:deb/debian/xorg-server@2:21.1.7-3?distro=sid
+references:
+- id: 127208
+  reference_id: '856398'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=856398
+severities: []
+summary: It was found that xorg-x11-server before 1.19.0 including uses memcmp() to
+  check the received MIT cookie against a series of valid cookies. If the cookie is
+  correct, it is allowed to attach to the Xorg session. Since most memcmp() implementations
+  return after an invalid byte is seen, this causes a time difference between a valid
+  and invalid byte, which could allow an efficient brute force attack.
+vulnerability_id: VCID-whba-cwma-aaap
+weaknesses: []

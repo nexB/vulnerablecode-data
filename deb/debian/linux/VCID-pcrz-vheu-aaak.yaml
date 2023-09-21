@@ -1,0 +1,115 @@
+vulnerability_id: VCID-pcrz-vheu-aaak
+aliases:
+  - CVE-2017-15537
+summary: The x86/fpu (Floating Point Unit) subsystem in the Linux kernel before 4.13.5, when
+  a processor supports the xsave feature but not the xsaves feature, does not correctly handle
+  attempts to set reserved bits in the xstate header via the ptrace() or rt_sigreturn() system
+  call, allowing local users to read the FPU registers of other processes on the system, related
+  to arch/x86/kernel/fpu/regset.c and arch/x86/kernel/fpu/signal.c.
+severities:
+  - id: 676105
+    reference_id: 686057
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676106
+    reference_id: 1440668
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616716
+    reference_id: 936264
+    scoring_system: cvssv3
+    value: '5.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 676108
+    reference_id: 1440669
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676109
+    reference_id: 686058
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674921
+    reference_id: 666742
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673555
+    reference_id: 1438693
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673556
+    reference_id: 1438694
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673106
+    reference_id: 1438297
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676107
+    reference_id: 676068
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 616715
+    reference_id: 936263
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 268032
+    reference_id: 686059
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 268030
+    reference_id: 686059
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 686057
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=814fb7bb7db5433757d76f4c4502c96fc53b0b5e
+    reference_id:
+  - id: 1440668
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15537.html
+    reference_id:
+  - id: 936264
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15537.json
+    reference_id:
+  - id: 1440669
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15537
+    reference_id:
+  - id: 686058
+    url: https://github.com/torvalds/linux/commit/814fb7bb7db5433757d76f4c4502c96fc53b0b5e
+    reference_id:
+  - id: 666742
+    url: https://source.android.com/security/bulletin/pixel/2018-01-01
+    reference_id:
+  - id: 1438693
+    url: https://ubuntu.com/security/notices/USN-3469-1
+    reference_id:
+  - id: 1438694
+    url: https://ubuntu.com/security/notices/USN-3469-2
+    reference_id:
+  - id: 1438297
+    url: https://ubuntu.com/security/notices/USN-3487-1
+    reference_id:
+  - id: 676068
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.5
+    reference_id:
+  - id: 936263
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1529302
+    reference_id: 1529302
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 686059
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15537
+    reference_id: CVE-2017-15537
+weaknesses: []

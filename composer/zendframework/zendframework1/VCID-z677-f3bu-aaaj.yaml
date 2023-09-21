@@ -1,0 +1,49 @@
+vulnerability_id: VCID-z677-f3bu-aaaj
+aliases:
+  - CVE-2015-7695
+summary: |
+  SQL injection vector using null byte for PDO
+  The PDO adapters of Zend Framework 1 do not filter null bytes values in SQL statements. A PDO adapter can treat null bytes in a query as a string terminator, allowing an attacker to add arbitrary SQL following a null byte, and thus create a SQL injection. This only impacts MsSql and SQLite adapters.
+severities:
+  - id: 203933
+    reference_id: 615039
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 203931
+    reference_id: 615039
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 24839
+    url: http://framework.zend.com/security/advisory/ZF2015-08
+    reference_id:
+  - id: 161982
+    url: http://www.debian.org/security/2015/dsa-3369
+    reference_id:
+  - id: 615035
+    url: http://www.openwall.com/lists/oss-security/2015/09/30/6
+    reference_id:
+  - id: 615036
+    url: http://www.openwall.com/lists/oss-security/2015/09/30/8
+    reference_id:
+  - id: 615037
+    url: http://www.openwall.com/lists/oss-security/2015/10/11/3
+    reference_id:
+  - id: 615038
+    url: http://www.securityfocus.com/bid/76784
+    reference_id:
+  - id: 162006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:zend:zend_framework:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:zend:zend_framework:*:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 615039
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-7695
+    reference_id: CVE-2015-7695
+weaknesses: []

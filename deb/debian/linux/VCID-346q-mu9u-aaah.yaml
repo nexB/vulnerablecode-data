@@ -1,0 +1,156 @@
+vulnerability_id: VCID-346q-mu9u-aaah
+aliases:
+  - CVE-2018-1128
+summary: It was found that cephx authentication protocol did not verify ceph clients correctly
+  and was vulnerable to replay attack. Any attacker having access to ceph cluster network who
+  is able to sniff packets on network can use this vulnerability to authenticate with ceph service
+  and perform actions allowed by ceph service. Ceph branches master, mimic, luminous and jewel
+  are believed to be vulnerable.
+severities:
+  - id: 683227
+    reference_id: 1446085
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 615356
+    reference_id: 935281
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L
+  - id: 683228
+    reference_id: 1446086
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687970
+    reference_id: 693368
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 615351
+    reference_id: 935276
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 313124
+    reference_id: 726520
+    scoring_system: cvssv2
+    value: '5.4'
+    scoring_elements: AV:A/AC:M/Au:N/C:P/I:P/A:P
+  - id: 313122
+    reference_id: 726520
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 615354
+    reference_id: 935279
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 615353
+    reference_id: 935278
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 615352
+    reference_id: 935277
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 615355
+    reference_id: 935280
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 724951
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00100.html
+    reference_id:
+  - id: 1446085
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1128.html
+    reference_id:
+  - id: 935281
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1128.json
+    reference_id:
+  - id: 1446086
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1128
+    reference_id:
+  - id: 726519
+    url: https://github.com/ceph/ceph/commit/5ead97120e07054d80623dada90a5cc764c28468
+    reference_id:
+  - id: 693368
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html
+    reference_id:
+  - id: 709584
+    url: https://www.debian.org/security/2018/dsa-4339
+    reference_id:
+  - id: 726515
+    url: http://tracker.ceph.com/issues/24836
+    reference_id:
+  - id: 726516
+    url: http://www.openwall.com/lists/oss-security/2020/11/17/3
+    reference_id:
+  - id: 726517
+    url: http://www.openwall.com/lists/oss-security/2020/11/17/4
+    reference_id:
+  - id: 935276
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1575866
+    reference_id: 1575866
+  - id: 40045
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=913471
+    reference_id: 913471
+  - id: 158318
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph:*:*:*:*:*:*:*:*
+  - id: 724983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage:3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage:3:*:*:*:*:*:*:*
+  - id: 663071
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage_mon:2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage_mon:2:*:*:*:*:*:*:*
+  - id: 724984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage_mon:3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage_mon:3:*:*:*:*:*:*:*
+  - id: 663072
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage_osd:2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage_osd:2:*:*:*:*:*:*:*
+  - id: 724985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:ceph_storage_osd:3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:ceph_storage_osd:3:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 726520
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1128
+    reference_id: CVE-2018-1128
+  - id: 935279
+    url: https://access.redhat.com/errata/RHSA-2018:2177
+    reference_id: RHSA-2018:2177
+  - id: 935278
+    url: https://access.redhat.com/errata/RHSA-2018:2179
+    reference_id: RHSA-2018:2179
+  - id: 935277
+    url: https://access.redhat.com/errata/RHSA-2018:2261
+    reference_id: RHSA-2018:2261
+  - id: 935280
+    url: https://access.redhat.com/errata/RHSA-2018:2274
+    reference_id: RHSA-2018:2274
+weaknesses: []

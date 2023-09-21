@@ -1,0 +1,47 @@
+vulnerability_id: VCID-bmcw-tvde-aaak
+aliases:
+  - CVE-2011-3145
+summary: When mount.ecrpytfs_private before version 87-0ubuntu1.2 calls setreuid() it doesn't
+  also set the effective group id. So when it creates the new version, mtab.tmp, it's created
+  with the group id of the user running mount.ecryptfs_private.
+severities:
+  - id: 66915
+    reference_id: '196081'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 145636
+    reference_id: 464506
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 145634
+    reference_id: 464506
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 66916
+    reference_id: '196082'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 464505
+    url: http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/revision/558
+    reference_id:
+  - id: '196083'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2011-3145.json
+    reference_id:
+  - id: '196081'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=732607
+    reference_id: 732607
+  - id: 464507
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mount.ecrpytfs_private_project:mount.ecrpytfs_private:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mount.ecrpytfs_private_project:mount.ecrpytfs_private:-:*:*:*:*:*:*:*
+  - id: 464506
+    url: https://nvd.nist.gov/vuln/detail/CVE-2011-3145
+    reference_id: CVE-2011-3145
+  - id: '196082'
+    url: https://access.redhat.com/errata/RHSA-2011:1241
+    reference_id: RHSA-2011:1241
+weaknesses: []

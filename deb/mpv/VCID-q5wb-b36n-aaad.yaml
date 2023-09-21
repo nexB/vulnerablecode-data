@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2018-6360
+fixed_purl:
+- pkg:deb/debian/mpv@0.27.0-3?distro=sid
+- pkg:deb/debian/mpv@0.29.1-1?distro=sid
+- pkg:deb/debian/mpv@0.32.0-3?distro=sid
+- pkg:deb/debian/mpv@0.35.1-4?distro=sid
+references:
+- id: 128282
+  reference_id: '888654'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=888654
+severities: []
+summary: mpv through 0.28.0 allows remote attackers to execute arbitrary code via
+  a crafted web site, because it reads HTML documents containing VIDEO elements, and
+  accepts arbitrary URLs in a src attribute without a protocol whitelist in player/lua/ytdl_hook.lua.
+  For example, an av://lavfi:ladspa=file= URL signifies that the product should call
+  dlopen on a shared object file located at an arbitrary local pathname. The issue
+  exists because the product does not consider that youtube-dl can provide a potentially
+  unsafe URL.
+vulnerability_id: VCID-q5wb-b36n-aaad
+weaknesses: []

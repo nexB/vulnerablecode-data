@@ -1,0 +1,133 @@
+vulnerability_id: VCID-p2vb-vfqf-aaan
+aliases:
+  - CVE-2017-11671
+summary: Under certain circumstances, the ix86_expand_builtin function in i386.c in GNU Compiler
+  Collection (GCC) version 4.6, 4.7, 4.8, 4.9, 5 before 5.5, and 6 before 6.4 will generate
+  instruction sequences that clobber the status flag of the RDRAND and RDSEED intrinsics before
+  it can be read, potentially causing failures of these instructions to go unreported. This
+  could potentially lead to less randomness in random number generation.
+severities:
+  - id: 674025
+    reference_id: 1439056
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 623729
+    reference_id: 941208
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 674027
+    reference_id: 1439058
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674028
+    reference_id: 674489
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674029
+    reference_id: 674490
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 674026
+    reference_id: 1439057
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 623727
+    reference_id: 941206
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 255999
+    reference_id: 674491
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 255997
+    reference_id: 674491
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 623728
+    reference_id: 941207
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+references:
+  - id: 674486
+    url: http://openwall.com/lists/oss-security/2017/07/27/2
+    reference_id:
+  - id: 1439056
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11671.html
+    reference_id:
+  - id: 941208
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-11671.json
+    reference_id:
+  - id: 1439058
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11671
+    reference_id:
+  - id: 674489
+    url: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=80180
+    reference_id:
+  - id: 674490
+    url: https://gcc.gnu.org/ml/gcc-patches/2017-03/msg01349.html
+    reference_id:
+  - id: 1439057
+    url: http://www.openwall.com/lists/oss-security/2017/07/27/2
+    reference_id:
+  - id: 674487
+    url: http://www.securityfocus.com/bid/100018
+    reference_id:
+  - id: 941206
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1475733
+    reference_id: 1475733
+  - id: 674492
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:4.6:*:*:*:*:*:*:*
+  - id: 674493
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:4.7:*:*:*:*:*:*:*
+  - id: 674494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:4.8:*:*:*:*:*:*:*
+  - id: 674495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:4.9:*:*:*:*:*:*:*
+  - id: 674496
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:5.0:*:*:*:*:*:*:*
+  - id: 674497
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:5.1:*:*:*:*:*:*:*
+  - id: 674498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:5.2:*:*:*:*:*:*:*
+  - id: 674499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:5.3:*:*:*:*:*:*:*
+  - id: 674500
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:5.4:*:*:*:*:*:*:*
+  - id: 674501
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:6.0:*:*:*:*:*:*:*
+  - id: 674502
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:6.1:*:*:*:*:*:*:*
+  - id: 674503
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:6.2:*:*:*:*:*:*:*
+  - id: 674504
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:gcc:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:gcc:6.3:*:*:*:*:*:*:*
+  - id: 674491
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11671
+    reference_id: CVE-2017-11671
+  - id: 941207
+    url: https://access.redhat.com/errata/RHSA-2018:0849
+    reference_id: RHSA-2018:0849
+weaknesses: []

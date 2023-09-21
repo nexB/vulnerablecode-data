@@ -1,0 +1,86 @@
+vulnerability_id: VCID-b8s9-81r7-aaas
+aliases:
+  - CVE-2021-3667
+summary: An improper locking issue was found in the virStoragePoolLookupByTargetPath API of
+  libvirt. It occurs in the storagePoolLookupByTargetPath function where a locked virStoragePoolObj
+  object is not properly released on ACL permission failure. Clients connecting to the read-write
+  socket with limited ACL permissions could use this flaw to acquire the lock and prevent other
+  users from accessing storage pool/volume APIs, resulting in a denial of service condition.
+  The highest threat from this vulnerability is to system availability.
+severities:
+  - id: 603471
+    reference_id: 926545
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 603469
+    reference_id: 926543
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 549467
+    reference_id: 890785
+    scoring_system: cvssv2
+    value: '3.5'
+    scoring_elements: AV:N/AC:M/Au:S/C:N/I:N/A:P
+  - id: 549465
+    reference_id: 890785
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 602765
+    reference_id: 926033
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 602764
+    reference_id: 926032
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 603470
+    reference_id: 926544
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 926545
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3667.json
+    reference_id:
+  - id: 890782
+    url: https://gitlab.com/libvirt/libvirt/-/commit/447f69dec47e1b0bd15ecd7cd49a9fd3b050fb87
+    reference_id:
+  - id: 890783
+    url: https://libvirt.org/git/?p=libvirt.git;a=commit;h=447f69dec47e1b0bd15ecd7cd49a9fd3b050fb87
+    reference_id:
+  - id: 890784
+    url: https://security.netapp.com/advisory/ntap-20220331-0005/
+    reference_id:
+  - id: 926543
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1986094
+    reference_id: '1986094'
+  - id: 46295
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991594
+    reference_id: 991594
+  - id: 169117
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*
+  - id: 453779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+  - id: 772353
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:advanced_virtualization:*:*:*
+  - id: 890785
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3667
+    reference_id: CVE-2021-3667
+  - id: 926033
+    url: https://access.redhat.com/errata/RHSA-2021:3703
+    reference_id: RHSA-2021:3703
+  - id: 926032
+    url: https://access.redhat.com/errata/RHSA-2021:3704
+    reference_id: RHSA-2021:3704
+  - id: 926544
+    url: https://access.redhat.com/errata/RHSA-2021:4191
+    reference_id: RHSA-2021:4191
+weaknesses: []

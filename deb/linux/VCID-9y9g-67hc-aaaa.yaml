@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2018-1000200
+fixed_purl:
+- pkg:deb/debian/linux@4.16.12-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: The Linux Kernel versions 4.14, 4.15, and 4.16 has a null pointer dereference
+  which can result in an out of memory (OOM) killing of large mlocked processes. The
+  issue arises from an oom killed process's final thread calling exit_mmap(), which
+  calls munlock_vma_pages_all() for mlocked vmas.This can happen synchronously with
+  the oom reaper's unmap_page_range() since the vma's VM_LOCKED bit is cleared before
+  munlocking (to determine if any other vmas share the memory and are mlocked).
+vulnerability_id: VCID-9y9g-67hc-aaaa
+weaknesses: []

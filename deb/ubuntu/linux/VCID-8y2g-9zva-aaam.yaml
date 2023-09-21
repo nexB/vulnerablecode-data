@@ -1,0 +1,146 @@
+vulnerability_id: VCID-8y2g-9zva-aaam
+aliases:
+  - CVE-2021-26708
+summary: A local privilege escalation was discovered in the Linux kernel before 5.10.13. Multiple
+  race conditions in the AF_VSOCK implementation are caused by wrong locking in net/vmw_vsock/af_vsock.c.
+  The race conditions were implicitly introduced in the commits that added VSOCK multi-transport
+  support.
+severities:
+  - id: 701332
+    reference_id: 1460776
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 607173
+    reference_id: 929272
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 701334
+    reference_id: 874426
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701335
+    reference_id: 1460777
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701336
+    reference_id: 1460778
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701337
+    reference_id: 874427
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701338
+    reference_id: 1460779
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701339
+    reference_id: 874429
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 701333
+    reference_id: 874423
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 607172
+    reference_id: 929271
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 524658
+    reference_id: 874430
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 524656
+    reference_id: 874430
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 606594
+    reference_id: 928847
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 606597
+    reference_id: 928850
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1460776
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-26708.html
+    reference_id:
+  - id: 929272
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-26708.json
+    reference_id:
+  - id: 874426
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.13
+    reference_id:
+  - id: 1460777
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-26708
+    reference_id:
+  - id: 1460778
+    url: https://git.kernel.org/linus/c518adafa39f37858697ac9309c6cf1805581446
+    reference_id:
+  - id: 874427
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c518adafa39f37858697ac9309c6cf1805581446
+    reference_id:
+  - id: 874428
+    url: https://security.netapp.com/advisory/ntap-20210312-0008/
+    reference_id:
+  - id: 1460779
+    url: https://ubuntu.com/security/notices/USN-4727-1
+    reference_id:
+  - id: 874429
+    url: https://www.openwall.com/lists/oss-security/2021/02/04/5
+    reference_id:
+  - id: 874423
+    url: http://www.openwall.com/lists/oss-security/2021/02/05/6
+    reference_id:
+  - id: 874424
+    url: http://www.openwall.com/lists/oss-security/2021/04/09/2
+    reference_id:
+  - id: 874425
+    url: http://www.openwall.com/lists/oss-security/2022/01/25/14
+    reference_id:
+  - id: 929271
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1925588
+    reference_id: '1925588'
+  - id: 736595
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:aff_baseboard_management_controller:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:aff_baseboard_management_controller:-:*:*:*:*:*:*:*
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 736596
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:fas_baseboard_management_controller:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:fas_baseboard_management_controller:-:*:*:*:*:*:*:*
+  - id: 172255
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_baseboard_management_controller:-:*:*:*:*:*:*:*
+  - id: 172254
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire_\&_hci_management_node:-:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 874430
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-26708
+    reference_id: CVE-2021-26708
+  - id: 928847
+    url: https://access.redhat.com/errata/RHSA-2021:1081
+    reference_id: RHSA-2021:1081
+  - id: 928850
+    url: https://access.redhat.com/errata/RHSA-2021:1093
+    reference_id: RHSA-2021:1093
+weaknesses: []

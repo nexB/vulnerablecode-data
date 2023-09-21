@@ -1,0 +1,93 @@
+vulnerability_id: VCID-dvwg-nbsk-aaag
+aliases:
+  - CVE-2017-6347
+summary: The ip_cmsg_recv_checksum function in net/ipv4/ip_sockglue.c in the Linux kernel before
+  4.10.1 has incorrect expectations about skb data layout, which allows local users to cause
+  a denial of service (buffer over-read) or possibly have unspecified other impact via crafted
+  system calls, as demonstrated by use of the MSG_MORE flag in conjunction with loopback UDP
+  transmission.
+severities:
+  - id: 679610
+    reference_id: 1443390
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 64045
+    reference_id: '192478'
+    scoring_system: cvssv3
+    value: '5.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L
+  - id: 679611
+    reference_id: 1443391
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 679262
+    reference_id: 1443080
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 679263
+    reference_id: 1443081
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 660540
+    reference_id: 1428089
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 290285
+    reference_id: 705333
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 290283
+    reference_id: 705333
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 705327
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ca4ef4574f1ee5252e2cd365f8f5d5bafd048f32
+    reference_id:
+  - id: 1443390
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-6347.html
+    reference_id:
+  - id: '192478'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-6347.json
+    reference_id:
+  - id: 705331
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1427984
+    reference_id:
+  - id: 1443391
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6347
+    reference_id:
+  - id: 705332
+    url: https://github.com/torvalds/linux/commit/ca4ef4574f1ee5252e2cd365f8f5d5bafd048f32
+    reference_id:
+  - id: 1443080
+    url: https://ubuntu.com/security/notices/USN-3265-1
+    reference_id:
+  - id: 1443081
+    url: https://ubuntu.com/security/notices/USN-3265-2
+    reference_id:
+  - id: 1428089
+    url: https://ubuntu.com/security/notices/USN-3361-1
+    reference_id:
+  - id: 705328
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.1
+    reference_id:
+  - id: 705329
+    url: http://www.openwall.com/lists/oss-security/2017/02/28/5
+    reference_id:
+  - id: 705330
+    url: http://www.securityfocus.com/bid/96487
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 705333
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-6347
+    reference_id: CVE-2017-6347
+weaknesses: []

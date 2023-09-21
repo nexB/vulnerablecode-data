@@ -1,0 +1,110 @@
+vulnerability_id: VCID-sgy6-e9yc-aaaj
+aliases:
+  - CVE-2020-8834
+summary: 'KVM in the Linux kernel on Power8 processors has a conflicting use of HSTATE_HOST_R1
+  to store r1 state in kvmppc_hv_entry plus in kvmppc_{save,restore}_tm, leading to a stack
+  corruption. Because of this, an attacker with the ability run code in kernel space of a guest
+  VM can cause the host kernel to panic. There were two commits that, according to the reporter,
+  introduced the vulnerability: f024ee098476 ("KVM: PPC: Book3S HV: Pull out TM state save/restore
+  into separate procedures") 87a11bb6a7f7 ("KVM: PPC: Book3S HV: Work around XER[SO] bug in
+  fake suspend mode") The former landed in 4.8, the latter in 4.17. This was fixed without realizing
+  the impact in 4.18 with the following three commits, though it''s believed the first is the
+  only strictly necessary commit: 6f597c6b63b6 ("KVM: PPC: Book3S PR: Add guest MSR parameter
+  for kvmppc_save_tm()/kvmppc_restore_tm()") 7b0e827c6970 ("KVM: PPC: Book3S HV: Factor fake-suspend
+  handling out of kvmppc_save/restore_tm") 009c872a8bc4 ("KVM: PPC: Book3S PR: Move kvmppc_save_tm/kvmppc_restore_tm
+  to separate file")'
+severities:
+  - id: 699936
+    reference_id: 1459553
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52478
+    reference_id: 177333
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H
+  - id: 699937
+    reference_id: 1459554
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699817
+    reference_id: 1459458
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 699812
+    reference_id: 855614
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 699938
+    reference_id: 855615
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 52477
+    reference_id: 177332
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 492864
+    reference_id: 855616
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 492862
+    reference_id: 855616
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H
+  - id: 48956
+    reference_id: 173266
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 790953
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00035.html
+    reference_id:
+  - id: 1459553
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8834.html
+    reference_id:
+  - id: 177333
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8834.json
+    reference_id:
+  - id: 855613
+    url: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1867717
+    reference_id:
+  - id: 1459554
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8834
+    reference_id:
+  - id: 1459458
+    url: https://ubuntu.com/security/notices/USN-4318-1
+    reference_id:
+  - id: 854499
+    url: https://usn.ubuntu.com/4318-1/
+    reference_id:
+  - id: 855614
+    url: https://usn.ubuntu.com/usn/usn-4318-1
+    reference_id:
+  - id: 855615
+    url: https://www.openwall.com/lists/oss-security/2020/04/06/2
+    reference_id:
+  - id: 177332
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1819615
+    reference_id: 1819615
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 855616
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8834
+    reference_id: CVE-2020-8834
+  - id: 173266
+    url: https://access.redhat.com/errata/RHSA-2020:2854
+    reference_id: RHSA-2020:2854
+weaknesses: []

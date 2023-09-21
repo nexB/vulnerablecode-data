@@ -1,0 +1,33 @@
+vulnerability_id: VCID-8qqw-rzk5-aaap
+aliases:
+  - CVE-2020-28619
+summary: Multiple code execution vulnerabilities exists in the Nef polygon-parsing functionality
+  of CGAL libcgal CGAL-5.1.1. A specially crafted malformed file can lead to an out-of-bounds
+  read and type confusion, which could lead to code execution. An attacker can provide malicious
+  input to trigger any of these vulnerabilities. An oob read vulnerability exists in Nef_S2/SNC_io_parser.h
+  SNC_io_parser<EW>::read_edge() eh->twin().
+severities:
+  - id: 469582
+    reference_id: 839236
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 469580
+    reference_id: 839236
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 839215
+    url: https://talosintelligence.com/vulnerability_reports/TALOS-2020-1225
+    reference_id:
+  - id: 40070
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=985671
+    reference_id: 985671
+  - id: 839217
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cgal:computational_geometry_algorithms_library:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cgal:computational_geometry_algorithms_library:5.1.1:*:*:*:*:*:*:*
+  - id: 839236
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-28619
+    reference_id: CVE-2020-28619
+weaknesses: []

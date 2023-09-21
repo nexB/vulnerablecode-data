@@ -1,0 +1,90 @@
+vulnerability_id: VCID-j4vm-98vq-aaac
+aliases:
+  - CVE-2018-1079
+summary: pcs before version 0.9.164 and 0.10 is vulnerable to a privilege escalation via authorized
+  user malicious REST call. The REST interface of the pcsd service did not properly sanitize
+  the file name from the /remote/put_file query. If the /etc/booth directory exists, an authenticated
+  attacker with write permissions could create or overwrite arbitrary files with arbitrary data
+  outside of the /etc/booth directory, in the context of the pcsd process.
+severities:
+  - id: 682798
+    reference_id: 1445742
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 63183
+    reference_id: '191325'
+    scoring_system: cvssv3
+    value: '8.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:H
+  - id: 682800
+    reference_id: 1445744
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682799
+    reference_id: 1445743
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 63182
+    reference_id: '191324'
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 311281
+    reference_id: 724736
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:P/A:N
+  - id: 311279
+    reference_id: 724736
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+  - id: 55366
+    reference_id: 180600
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1445742
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1079.html
+    reference_id:
+  - id: '191325'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1079.json
+    reference_id:
+  - id: 724735
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-1079
+    reference_id:
+  - id: 1445744
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1079
+    reference_id:
+  - id: 1445743
+    url: http://www.openwall.com/lists/oss-security/2018/04/09/2
+    reference_id:
+  - id: '191324'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1550243
+    reference_id: 1550243
+  - id: 92272
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=895314
+    reference_id: 895314
+  - id: 724737
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:clusterlabs:pacemaker_command_line_interface:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:clusterlabs:pacemaker_command_line_interface:*:*:*:*:*:*:*:*
+  - id: 724738
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:clusterlabs:pacemaker_command_line_interface:0.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:clusterlabs:pacemaker_command_line_interface:0.10:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 462177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.5:*:*:*:*:*:*:*
+  - id: 724736
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1079
+    reference_id: CVE-2018-1079
+  - id: 180600
+    url: https://access.redhat.com/errata/RHSA-2018:1060
+    reference_id: RHSA-2018:1060
+weaknesses: []

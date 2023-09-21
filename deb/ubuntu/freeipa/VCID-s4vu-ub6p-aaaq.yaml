@@ -1,0 +1,103 @@
+vulnerability_id: VCID-s4vu-ub6p-aaaq
+aliases:
+  - CVE-2017-2590
+summary: A vulnerability was found in ipa before 4.4. IdM's ca-del, ca-disable, and ca-enable
+  commands did not properly check the user's permissions while modifying CAs in Dogtag. An authenticated,
+  unauthorized attacker could use this flaw to delete, disable, or enable CAs causing various
+  denial of service problems with certificate issuance, OCSP signing, and deletion of secret
+  keys.
+severities:
+  - id: 677853
+    reference_id: 1441806
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624125
+    reference_id: 941484
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+  - id: 677854
+    reference_id: 1441807
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624123
+    reference_id: 941482
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 280967
+    reference_id: 696221
+    scoring_system: cvssv2
+    value: '5.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:P/A:P
+  - id: 280965
+    reference_id: 696221
+    scoring_system: cvssv3
+    value: '8.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+  - id: 624124
+    reference_id: 941483
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1441806
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-2590.html
+    reference_id:
+  - id: 696218
+    url: http://rhn.redhat.com/errata/RHSA-2017-0388.html
+    reference_id:
+  - id: 941484
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-2590.json
+    reference_id:
+  - id: 696220
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2590
+    reference_id:
+  - id: 1441807
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2590
+    reference_id:
+  - id: 696219
+    url: http://www.securityfocus.com/bid/96557
+    reference_id:
+  - id: 941482
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1413137
+    reference_id: 1413137
+  - id: 157735
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:freeipa:freeipa:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:freeipa:freeipa:*:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 696221
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2590
+    reference_id: CVE-2017-2590
+  - id: 941483
+    url: https://access.redhat.com/errata/RHSA-2017:0388
+    reference_id: RHSA-2017:0388
+weaknesses: []

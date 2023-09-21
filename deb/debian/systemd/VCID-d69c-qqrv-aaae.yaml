@@ -1,0 +1,139 @@
+vulnerability_id: VCID-d69c-qqrv-aaae
+aliases:
+  - CVE-2018-1049
+summary: In systemd prior to 234 a race condition exists between .mount and .automount units
+  such that automount requests from kernel may not be serviced by systemd resulting in kernel
+  holding the mountpoint and any processes that try to use said mount will hang. A race condition
+  like this may lead to denial of service, until mount points are unmounted.
+severities:
+  - id: 682650
+    reference_id: 1445629
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 623046
+    reference_id: 940732
+    scoring_system: cvssv3
+    value: '4.5'
+    scoring_elements: CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+  - id: 682651
+    reference_id: 1445630
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682652
+    reference_id: 1445631
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676279
+    reference_id: 1440786
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 623044
+    reference_id: 940730
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 310209
+    reference_id: 723871
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 310207
+    reference_id: 723871
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 623045
+    reference_id: 940731
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1445629
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-1049.html
+    reference_id:
+  - id: 940732
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1049.json
+    reference_id:
+  - id: 1445630
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1049
+    reference_id:
+  - id: 1445631
+    url: https://github.com/systemd/systemd/pull/5916
+    reference_id:
+  - id: 723870
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00017.html
+    reference_id:
+  - id: 1440786
+    url: https://ubuntu.com/security/notices/USN-3558-1
+    reference_id:
+  - id: 687047
+    url: https://usn.ubuntu.com/3558-1/
+    reference_id:
+  - id: 723867
+    url: http://www.securitytracker.com/id/1041520
+    reference_id:
+  - id: 940730
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1534701
+    reference_id: 1534701
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 664118
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:7.4:*:*:*:*:*:*:*
+  - id: 723872
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_aus:7.6:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 169419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 723871
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1049
+    reference_id: CVE-2018-1049
+  - id: 940731
+    url: https://access.redhat.com/errata/RHSA-2018:0260
+    reference_id: RHSA-2018:0260
+weaknesses: []

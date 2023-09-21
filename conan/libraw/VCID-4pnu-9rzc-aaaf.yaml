@@ -1,0 +1,25 @@
+affected_purls:
+- pkg:conan/libraw@0.19.5
+- pkg:conan/libraw@0.20.0
+aliases:
+- CVE-2020-15503
+fixed_purl:
+- pkg:conan/libraw@0.20.2
+- pkg:deb/debian/libraw@0.19.2-2?distro=sid
+- pkg:deb/debian/libraw@0.19.2-2%2Bdeb10u2?distro=sid
+- pkg:deb/debian/libraw@0.20.0-4?distro=sid
+- pkg:deb/debian/libraw@0.20.2-1?distro=sid
+- pkg:deb/debian/libraw@0.20.2-2.1?distro=sid
+references:
+- id: 129208
+  reference_id: '964747'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964747
+- id: 182858
+  reference_id: CVE-2020-15503
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-15503
+severities: []
+summary: LibRaw before 0.20-RC1 lacks a thumbnail size range check. This affects decoders/unpack_thumb.cpp,
+  postprocessing/mem_image.cpp, and utils/thumb_utils.cpp. For example, malloc(sizeof(libraw_processed_image_t)+T.tlength)
+  occurs without validating T.tlength.
+vulnerability_id: VCID-4pnu-9rzc-aaaf
+weaknesses: []

@@ -1,0 +1,289 @@
+vulnerability_id: VCID-bz9d-dv6f-aaag
+aliases:
+  - CVE-2014-5120
+summary: gd_ctx.c in the GD component in PHP 5.4.x before 5.4.32 and 5.5.x before 5.5.16 does
+  not ensure that pathnames lack %00 sequences, which might allow remote attackers to overwrite
+  arbitrary files via crafted input to an application that calls the (1) imagegd, (2) imagegd2,
+  (3) imagegif, (4) imagejpeg, (5) imagepng, (6) imagewbmp, or (7) imagewebp function.
+severities:
+  - id: 660991
+    reference_id: 161092
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 58946
+    reference_id: 185407
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 183566
+    reference_id: 574719
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:P
+  - id: 58696
+    reference_id: 185104
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58030
+    reference_id: 184214
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 58029
+    reference_id: 184213
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 540904
+    url: http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html
+    reference_id:
+  - id: 567745
+    url: http://lists.opensuse.org/opensuse-updates/2014-09/msg00024.html
+    reference_id:
+  - id: 161092
+    url: http://php.net/ChangeLog-5.php
+    reference_id:
+  - id: 561279
+    url: http://rhn.redhat.com/errata/RHSA-2014-1327.html
+    reference_id:
+  - id: 545316
+    url: http://rhn.redhat.com/errata/RHSA-2014-1765.html
+    reference_id:
+  - id: 550852
+    url: http://rhn.redhat.com/errata/RHSA-2014-1766.html
+    reference_id:
+  - id: 185408
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-5120.json
+    reference_id:
+  - id: 574718
+    url: https://bugs.php.net/bug.php?id=67730
+    reference_id:
+  - id: 540924
+    url: https://support.apple.com/HT204659
+    reference_id:
+  - id: 98394
+    url: http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html
+    reference_id:
+  - id: 185407
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1132793
+    reference_id: 1132793
+  - id: 284829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.0:*:*:*:*:*:*:*
+  - id: 486948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.0:beta2:*:*:*:*:*:*
+  - id: 472100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.0:beta2:32-bit:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.0:beta2:32-bit:*:*:*:*:*
+  - id: 501458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.0:rc2:*:*:*:*:*:*
+  - id: 473142
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.1:*:*:*:*:*:*:*
+  - id: 473131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.10:*:*:*:*:*:*:*
+  - id: 473132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.11:*:*:*:*:*:*:*
+  - id: 473133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.12:*:*:*:*:*:*:*
+  - id: 473134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.12:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.12:rc1:*:*:*:*:*:*
+  - id: 473135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.12:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.12:rc2:*:*:*:*:*:*
+  - id: 473136
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.13:*:*:*:*:*:*:*
+  - id: 473137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.13:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.13:rc1:*:*:*:*:*:*
+  - id: 473138
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.14:*:*:*:*:*:*:*
+  - id: 473139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.14:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.14:rc1:*:*:*:*:*:*
+  - id: 523153
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.15:*:*:*:*:*:*:*
+  - id: 473140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.15:rc1:*:*:*:*:*:*
+  - id: 473141
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.16:rc1:*:*:*:*:*:*
+  - id: 484440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.17:*:*:*:*:*:*:*
+  - id: 484441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.18:*:*:*:*:*:*:*
+  - id: 484442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.19:*:*:*:*:*:*:*
+  - id: 473143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.2:*:*:*:*:*:*:*
+  - id: 484443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.20:*:*:*:*:*:*:*
+  - id: 484444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.21:*:*:*:*:*:*:*
+  - id: 484445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.22:*:*:*:*:*:*:*
+  - id: 484446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.23:*:*:*:*:*:*:*
+  - id: 550866
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.24:*:*:*:*:*:*:*
+  - id: 550867
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.25:*:*:*:*:*:*:*
+  - id: 550868
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.26:*:*:*:*:*:*:*
+  - id: 550869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.27:*:*:*:*:*:*:*
+  - id: 550870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.28:*:*:*:*:*:*:*
+  - id: 567278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.29:*:*:*:*:*:*:*
+  - id: 473144
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.3:*:*:*:*:*:*:*
+  - id: 567279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.30:*:*:*:*:*:*:*
+  - id: 568204
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.31:*:*:*:*:*:*:*
+  - id: 473145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.4:*:*:*:*:*:*:*
+  - id: 473146
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.5:*:*:*:*:*:*:*
+  - id: 473147
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.6:*:*:*:*:*:*:*
+  - id: 473148
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.7:*:*:*:*:*:*:*
+  - id: 473149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.8:*:*:*:*:*:*:*
+  - id: 473150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.4.9:*:*:*:*:*:*:*
+  - id: 161097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:*:*:*:*:*:*:*
+  - id: 161098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha1:*:*:*:*:*:*
+  - id: 161099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha2:*:*:*:*:*:*
+  - id: 161100
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha3:*:*:*:*:*:*
+  - id: 161101
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha4:*:*:*:*:*:*
+  - id: 161102
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha5:*:*:*:*:*:*
+  - id: 161103
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:alpha6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:alpha6:*:*:*:*:*:*
+  - id: 161104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:beta1:*:*:*:*:*:*
+  - id: 161105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:beta2:*:*:*:*:*:*
+  - id: 161106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:beta3:*:*:*:*:*:*
+  - id: 161107
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:beta4:*:*:*:*:*:*
+  - id: 161108
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:rc1:*:*:*:*:*:*
+  - id: 161109
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.0:rc2:*:*:*:*:*:*
+  - id: 161120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.1:*:*:*:*:*:*:*
+  - id: 161110
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.10:*:*:*:*:*:*:*
+  - id: 161111
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.11:*:*:*:*:*:*:*
+  - id: 161112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.12:*:*:*:*:*:*:*
+  - id: 161113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.13:*:*:*:*:*:*:*
+  - id: 161114
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.14:*:*:*:*:*:*:*
+  - id: 161115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.15:*:*:*:*:*:*:*
+  - id: 161128
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.2:*:*:*:*:*:*:*
+  - id: 161129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.3:*:*:*:*:*:*:*
+  - id: 161130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.4:*:*:*:*:*:*:*
+  - id: 161131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.5:*:*:*:*:*:*:*
+  - id: 161132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.6:*:*:*:*:*:*:*
+  - id: 161133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.7:*:*:*:*:*:*:*
+  - id: 161134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.8:*:*:*:*:*:*:*
+  - id: 161135
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:php:php:5.5.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:php:php:5.5.9:*:*:*:*:*:*:*
+  - id: 574719
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-5120
+    reference_id: CVE-2014-5120
+  - id: 185104
+    url: https://access.redhat.com/errata/RHSA-2014:1327
+    reference_id: RHSA-2014:1327
+  - id: 184214
+    url: https://access.redhat.com/errata/RHSA-2014:1765
+    reference_id: RHSA-2014:1765
+  - id: 184213
+    url: https://access.redhat.com/errata/RHSA-2014:1766
+    reference_id: RHSA-2014:1766
+weaknesses: []

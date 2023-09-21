@@ -1,0 +1,76 @@
+affected_purls:
+- pkg:pypi/pyyaml@3.10
+- pkg:pypi/pyyaml@3.11
+- pkg:pypi/pyyaml@3.12
+- pkg:pypi/pyyaml@3.13
+- pkg:pypi/pyyaml@3.13b1
+- pkg:pypi/pyyaml@3.13rc1
+- pkg:pypi/pyyaml@4.2b1
+- pkg:pypi/pyyaml@4.2b2
+- pkg:pypi/pyyaml@4.2b4
+- pkg:pypi/pyyaml@5.1
+- pkg:pypi/pyyaml@5.1.1
+- pkg:pypi/pyyaml@5.1.2
+- pkg:pypi/pyyaml@5.1b1
+- pkg:pypi/pyyaml@5.1b3
+- pkg:pypi/pyyaml@5.1b5
+- pkg:pypi/pyyaml@5.1b7
+- pkg:pypi/pyyaml@5.2
+- pkg:pypi/pyyaml@5.2b1
+- pkg:pypi/pyyaml@5.3
+- pkg:pypi/pyyaml@5.3.1
+- pkg:pypi/pyyaml@5.3b1
+- pkg:pypi/pyyaml@5.4b1
+- pkg:pypi/pyyaml@5.4b2
+aliases:
+- CVE-2020-14343
+- GHSA-8q59-q68h-6hv4
+fixed_purl:
+- pkg:deb/debian/pyyaml@0?distro=sid
+- pkg:deb/debian/pyyaml@3.13-2?distro=sid
+- pkg:deb/debian/pyyaml@5.3.1-4?distro=sid
+- pkg:deb/debian/pyyaml@5.3.1-5?distro=sid
+- pkg:deb/debian/pyyaml@6.0-3?distro=sid
+- pkg:pypi/pyyaml@5.4
+references:
+- id: 151300
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1860466
+- id: 151299
+  reference_id: ''
+  url: https://github.com/yaml/pyyaml/commit/a001f2782501ad2d24986959f0239a354675f9dc
+- id: 151302
+  reference_id: ''
+  url: https://github.com/yaml/pyyaml/issues/420#issuecomment-663673966
+- id: 151301
+  reference_id: ''
+  url: https://pypi.org/project/PyYAML/
+- id: 134611
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpuapr2022.html
+- id: 138518
+  reference_id: ''
+  url: https://www.oracle.com/security-alerts/cpujul2022.html
+- id: 129168
+  reference_id: '966233'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=966233
+- id: 151298
+  reference_id: CVE-2020-14343
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-14343
+- id: 151303
+  reference_id: GHSA-8q59-q68h-6hv4
+  url: https://github.com/advisories/GHSA-8q59-q68h-6hv4
+severities:
+- id: 21431
+  reference_id: 151303
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: CRITICAL
+summary: A vulnerability was discovered in the PyYAML library in versions before 5.4,
+  where it is susceptible to arbitrary code execution when it processes untrusted
+  YAML files through the full_load method or with the FullLoader loader. Applications
+  that use the library to process untrusted input may be vulnerable to this flaw.
+  This flaw allows an attacker to execute arbitrary code on the system by abusing
+  the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.
+vulnerability_id: VCID-tyjf-fka2-aaas
+weaknesses: []

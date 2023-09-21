@@ -1,0 +1,75 @@
+vulnerability_id: VCID-ytzz-r4np-aaar
+aliases:
+  - CVE-2017-14929
+summary: In Poppler 0.59.0, memory corruption occurs in a call to Object::dictLookup() in Object.h
+  after a repeating series of Gfx::display, Gfx::go, Gfx::execOp, Gfx::opFill, Gfx::doPatternFill,
+  Gfx::doTilingPatternFill and Gfx::drawForm calls (aka a Gfx.cc infinite loop), a different
+  vulnerability than CVE-2017-14519.
+severities:
+  - id: 675655
+    reference_id: 1440347
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617031
+    reference_id: 936495
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 675656
+    reference_id: 1440348
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 675465
+    reference_id: 1440214
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617030
+    reference_id: 936494
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 266228
+    reference_id: 684321
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 266226
+    reference_id: 684321
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1440347
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-14929.html
+    reference_id:
+  - id: 936495
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-14929.json
+    reference_id:
+  - id: 684320
+    url: https://bugs.freedesktop.org/show_bug.cgi?id=102969
+    reference_id:
+  - id: 1440348
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14929
+    reference_id:
+  - id: 1440214
+    url: https://ubuntu.com/security/notices/USN-3440-1
+    reference_id:
+  - id: 669034
+    url: https://www.debian.org/security/2018/dsa-4097
+    reference_id:
+  - id: 936494
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1499167
+    reference_id: 1499167
+  - id: 102429
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=877222
+    reference_id: 877222
+  - id: 682758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:freedesktop:poppler:0.59.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:freedesktop:poppler:0.59.0:*:*:*:*:*:*:*
+  - id: 684321
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-14929
+    reference_id: CVE-2017-14929
+weaknesses: []

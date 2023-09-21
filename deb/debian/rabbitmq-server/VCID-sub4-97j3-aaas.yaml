@@ -1,0 +1,111 @@
+vulnerability_id: VCID-sub4-97j3-aaas
+aliases:
+  - CVE-2019-11287
+summary: Pivotal RabbitMQ, versions 3.7.x prior to 3.7.21 and 3.8.x prior to 3.8.1, and RabbitMQ
+  for Pivotal Platform, 1.16.x versions prior to 1.16.7 and 1.17.x versions prior to 1.17.4,
+  contain a web management plugin that is vulnerable to a denial of service attack. The "X-Reason"
+  HTTP Header can be leveraged to insert a malicious Erlang format string that will expand and
+  consume the heap, resulting in the server crashing.
+severities:
+  - id: 689959
+    reference_id: 1451449
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 61632
+    reference_id: 189287
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 689960
+    reference_id: 1451450
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689961
+    reference_id: 769904
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 689962
+    reference_id: 1451451
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 61630
+    reference_id: 189285
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 371495
+    reference_id: 769905
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 371493
+    reference_id: 769905
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1451449
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-11287.html
+    reference_id:
+  - id: 769884
+    url: https://access.redhat.com/errata/RHSA-2020:0078
+    reference_id:
+  - id: 189287
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-11287.json
+    reference_id:
+  - id: 1451450
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11287
+    reference_id:
+  - id: 769903
+    url: https://github.com/DrunkenShells/Disclosures/tree/master/CVE-2019-11287-DoS%20via%20Heap%20Overflow-RabbitMQ%20Web%20Management%20Plugin
+    reference_id:
+  - id: 700621
+    url: https://lists.debian.org/debian-lts-announce/2021/07/msg00011.html
+    reference_id:
+  - id: 769885
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EEQ6O7PMNJKYFMQYHAB55L423GYK63SO/
+    reference_id:
+  - id: 769886
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PYTGR3D5FW2O25RXZOTIZMOD2HAUVBE4/
+    reference_id:
+  - id: 769904
+    url: https://pivotal.io/security/cve-2019-11287
+    reference_id:
+  - id: 1451451
+    url: https://ubuntu.com/security/notices/USN-5004-1
+    reference_id:
+  - id: 189285
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1783318
+    reference_id: 1783318
+  - id: 112853
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=945600
+    reference_id: 945600
+  - id: 591368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:*:*:*
+  - id: 730364
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:*
+    reference_id: cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:*
+  - id: 769906
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:15:*:*:*:*:*:*:*
+  - id: 769907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:vmware:rabbitmq:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:vmware:rabbitmq:*:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 641050
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 769905
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-11287
+    reference_id: CVE-2019-11287
+weaknesses: []

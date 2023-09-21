@@ -1,0 +1,143 @@
+vulnerability_id: VCID-4wre-8kkw-aaad
+aliases:
+  - CVE-2018-14646
+summary: The Linux kernel before 4.15-rc8 was found to be vulnerable to a NULL pointer dereference
+  bug in the __netlink_ns_capable() function in the net/netlink/af_netlink.c file. A local attacker
+  could exploit this when a net namespace with a netnsid is assigned to cause a kernel panic
+  and a denial of service.
+severities:
+  - id: 684561
+    reference_id: 1447100
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613694
+    reference_id: 934067
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 684562
+    reference_id: 1447101
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684563
+    reference_id: 734875
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684564
+    reference_id: 734876
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613690
+    reference_id: 934063
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 324263
+    reference_id: 734877
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 324261
+    reference_id: 734877
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 613693
+    reference_id: 934066
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 613692
+    reference_id: 934065
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 613691
+    reference_id: 934064
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1447100
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14646.html
+    reference_id:
+  - id: 934067
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14646.json
+    reference_id:
+  - id: 734874
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14646
+    reference_id:
+  - id: 1447101
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14646
+    reference_id:
+  - id: 734875
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f428fe4a04cc339166c8bbd489789760de3a0cee
+    reference_id:
+  - id: 734876
+    url: https://marc.info/?l=linux-netdev&m=151500466401174&w=2
+    reference_id:
+  - id: 934063
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1630124
+    reference_id: 1630124
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 668889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc1:*:*:*:*:*:*
+  - id: 668890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc2:*:*:*:*:*:*
+  - id: 668907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc3:*:*:*:*:*:*
+  - id: 668908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc4:*:*:*:*:*:*
+  - id: 668909
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc5:*:*:*:*:*:*
+  - id: 668910
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc6:*:*:*:*:*:*
+  - id: 668911
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc7:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 734877
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14646
+    reference_id: CVE-2018-14646
+  - id: 934066
+    url: https://access.redhat.com/errata/RHSA-2018:3651
+    reference_id: RHSA-2018:3651
+  - id: 934065
+    url: https://access.redhat.com/errata/RHSA-2018:3666
+    reference_id: RHSA-2018:3666
+  - id: 934064
+    url: https://access.redhat.com/errata/RHSA-2018:3843
+    reference_id: RHSA-2018:3843
+weaknesses: []

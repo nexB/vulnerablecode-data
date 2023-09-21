@@ -1,0 +1,70 @@
+vulnerability_id: VCID-9h1d-rw51-aaam
+aliases:
+  - CVE-2019-13590
+summary: An issue was discovered in libsox.a in SoX 14.4.2. In sox-fmt.h (startread function),
+  there is an integer overflow on the result of integer addition (wraparound to 0) fed into
+  the lsx_calloc macro that wraps malloc. When a NULL pointer is returned, it is used without
+  a prior check that it is a valid pointer, leading to a NULL pointer dereference on lsx_readbuf
+  in formats_i.c.
+severities:
+  - id: 691122
+    reference_id: 1452345
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 76671
+    reference_id: 207580
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 691123
+    reference_id: 1452346
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 691124
+    reference_id: 776632
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 76670
+    reference_id: 207579
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 379424
+    reference_id: 776633
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 379422
+    reference_id: 776633
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1452345
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-13590.html
+    reference_id:
+  - id: 207580
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-13590.json
+    reference_id:
+  - id: 1452346
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13590
+    reference_id:
+  - id: 776632
+    url: https://sourceforge.net/p/sox/bugs/325/
+    reference_id:
+  - id: 207579
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1737764
+    reference_id: 1737764
+  - id: 125861
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=932082
+    reference_id: 932082
+  - id: 672646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sound_exchange_project:sound_exchange:14.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sound_exchange_project:sound_exchange:14.4.2:*:*:*:*:*:*:*
+  - id: 776633
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13590
+    reference_id: CVE-2019-13590
+weaknesses: []

@@ -1,0 +1,20 @@
+affected_purls:
+- pkg:deb/debian/golang-github-sylabs-sif@1.0.9-2.1
+aliases:
+- CVE-2021-29499
+fixed_purl:
+- pkg:deb/debian/golang-github-sylabs-sif@2.8.3-1
+references:
+- id: 129750
+  reference_id: '991664'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991664
+severities: []
+summary: SIF is an open source implementation of the Singularity Container Image Format.
+  The `siftool new` command and func siftool.New() produce predictable UUID identifiers
+  due to insecure randomness in the version of the `github.com/satori/go.uuid` module
+  used as a dependency. A patch is available in version >= v1.2.3 of the module. Users
+  are encouraged to upgrade. As a workaround, users passing CreateInfo struct should
+  ensure the `ID` field is generated using a version of `github.com/satori/go.uuid`
+  that is not vulnerable to this issue.
+vulnerability_id: VCID-mcn6-nfrt-aaam
+weaknesses: []

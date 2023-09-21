@@ -1,0 +1,487 @@
+vulnerability_id: VCID-s6dd-eykb-aaak
+aliases:
+  - CVE-2018-10938
+summary: A flaw was found in the Linux kernel present since v4.0-rc1 and through v4.13-rc4.
+  A crafted network packet sent remotely by an attacker may force the kernel to enter an infinite
+  loop in the cipso_v4_optptr() function in net/ipv4/cipso_ipv4.c leading to a denial-of-service.
+  A certain non-default configuration of LSM (Linux Security Module) and NetLabel should be
+  set up on a system before an attacker could leverage this flaw.
+severities:
+  - id: 683059
+    reference_id: 1445950
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 614689
+    reference_id: 934791
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 683062
+    reference_id: 1445952
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 683060
+    reference_id: 725415
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 683063
+    reference_id: 725419
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 683064
+    reference_id: 1445953
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 683065
+    reference_id: 1445954
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 683066
+    reference_id: 1445955
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683067
+    reference_id: 1445956
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 683061
+    reference_id: 1445951
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 614688
+    reference_id: 934790
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 311845
+    reference_id: 725422
+    scoring_system: cvssv2
+    value: '7.1'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:C
+  - id: 311843
+    reference_id: 725422
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1445950
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10938.html
+    reference_id:
+  - id: 934791
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10938.json
+    reference_id:
+  - id: 725418
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10938
+    reference_id:
+  - id: 1445952
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10938
+    reference_id:
+  - id: 725415
+    url: http://seclists.org/oss-sec/2018/q3/179
+    reference_id:
+  - id: 725419
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=40413955ee265a5e42f710940ec78f5450d49149
+    reference_id:
+  - id: 725216
+    url: https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html
+    reference_id:
+  - id: 1445953
+    url: https://marc.info/?t=153719718600001&r=1&w=2
+    reference_id:
+  - id: 1445954
+    url: https://marc.info/?t=153720664100001&r=1&w=2
+    reference_id:
+  - id: 1445955
+    url: https://ubuntu.com/security/notices/USN-3797-1
+    reference_id:
+  - id: 1445956
+    url: https://ubuntu.com/security/notices/USN-3797-2
+    reference_id:
+  - id: 725420
+    url: https://usn.ubuntu.com/3797-1/
+    reference_id:
+  - id: 725421
+    url: https://usn.ubuntu.com/3797-2/
+    reference_id:
+  - id: 725220
+    url: https://www.debian.org/security/2018/dsa-4308
+    reference_id:
+  - id: 1445951
+    url: http://www.openwall.com/lists/oss-security/2018/08/27/1
+    reference_id:
+  - id: 725416
+    url: http://www.securityfocus.com/bid/105154
+    reference_id:
+  - id: 725417
+    url: http://www.securitytracker.com/id/1041569
+    reference_id:
+  - id: 934790
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1622404
+    reference_id: 1622404
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 620016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:*:*:*:*:*:*:*
+  - id: 725423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc1:*:*:*:*:*:*
+  - id: 725424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc2:*:*:*:*:*:*
+  - id: 725425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc3:*:*:*:*:*:*
+  - id: 725426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc4:*:*:*:*:*:*
+  - id: 725427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc5:*:*:*:*:*:*
+  - id: 725428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc6:*:*:*:*:*:*
+  - id: 725429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.0:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.0:rc7:*:*:*:*:*:*
+  - id: 725446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:*:*:*:*:*:*:*
+  - id: 708479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:*:*:*:*:*:*:*
+  - id: 725430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc1:*:*:*:*:*:*
+  - id: 725431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc2:*:*:*:*:*:*
+  - id: 725432
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc3:*:*:*:*:*:*
+  - id: 725433
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc4:*:*:*:*:*:*
+  - id: 725434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc5:*:*:*:*:*:*
+  - id: 725435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc6:*:*:*:*:*:*
+  - id: 725436
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc7:*:*:*:*:*:*
+  - id: 725437
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.10:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.10:rc8:*:*:*:*:*:*
+  - id: 725438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:*:*:*:*:*:*:*
+  - id: 663193
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc1:*:*:*:*:*:*
+  - id: 663194
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc2:*:*:*:*:*:*
+  - id: 663195
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc3:*:*:*:*:*:*
+  - id: 663196
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc4:*:*:*:*:*:*
+  - id: 663197
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc5:*:*:*:*:*:*
+  - id: 663198
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc6:*:*:*:*:*:*
+  - id: 663199
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc7:*:*:*:*:*:*
+  - id: 725439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.11:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.11:rc8:*:*:*:*:*:*
+  - id: 678232
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:*:*:*:*:*:*:*
+  - id: 668688
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc1:*:*:*:*:*:*
+  - id: 725440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc2:*:*:*:*:*:*
+  - id: 725441
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc3:*:*:*:*:*:*
+  - id: 725442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc4:*:*:*:*:*:*
+  - id: 725443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc5:*:*:*:*:*:*
+  - id: 725444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc6:*:*:*:*:*:*
+  - id: 725445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.12:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.12:rc7:*:*:*:*:*:*
+  - id: 673667
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.13:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.13:rc1:*:*:*:*:*:*
+  - id: 680219
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.13:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.13:rc2:*:*:*:*:*:*
+  - id: 680220
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.13:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.13:rc3:*:*:*:*:*:*
+  - id: 680221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.13:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.13:rc4:*:*:*:*:*:*
+  - id: 725447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc1:*:*:*:*:*:*
+  - id: 725448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc2:*:*:*:*:*:*
+  - id: 725449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc3:*:*:*:*:*:*
+  - id: 725450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc4:*:*:*:*:*:*
+  - id: 725451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc5:*:*:*:*:*:*
+  - id: 725452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc6:*:*:*:*:*:*
+  - id: 725453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc7:*:*:*:*:*:*
+  - id: 725454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.1:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.1:rc8:*:*:*:*:*:*
+  - id: 725455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:*:*:*:*:*:*:*
+  - id: 725456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc1:*:*:*:*:*:*
+  - id: 725457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc2:*:*:*:*:*:*
+  - id: 725458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc3:*:*:*:*:*:*
+  - id: 725459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc4:*:*:*:*:*:*
+  - id: 725460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc5:*:*:*:*:*:*
+  - id: 725461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc6:*:*:*:*:*:*
+  - id: 725462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc7:*:*:*:*:*:*
+  - id: 725463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.2:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.2:rc8:*:*:*:*:*:*
+  - id: 159221
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:*:*:*:*:*:*:*
+  - id: 159222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc1:*:*:*:*:*:*
+  - id: 159223
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc2:*:*:*:*:*:*
+  - id: 159224
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc3:*:*:*:*:*:*
+  - id: 159225
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc4:*:*:*:*:*:*
+  - id: 159226
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc5:*:*:*:*:*:*
+  - id: 159227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc6:*:*:*:*:*:*
+  - id: 159228
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.3:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.3:rc7:*:*:*:*:*:*
+  - id: 725464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:*:*:*:*:*:*:*
+  - id: 614205
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc1:*:*:*:*:*:*
+  - id: 614206
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc2:*:*:*:*:*:*
+  - id: 614207
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc3:*:*:*:*:*:*
+  - id: 614208
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc4:*:*:*:*:*:*
+  - id: 614209
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc5:*:*:*:*:*:*
+  - id: 614210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc6:*:*:*:*:*:*
+  - id: 614233
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc7:*:*:*:*:*:*
+  - id: 614234
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.4:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.4:rc8:*:*:*:*:*:*
+  - id: 725465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:*:*:*:*:*:*:*
+  - id: 620093
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc1:*:*:*:*:*:*
+  - id: 620094
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc2:*:*:*:*:*:*
+  - id: 620095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc3:*:*:*:*:*:*
+  - id: 620096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc4:*:*:*:*:*:*
+  - id: 620097
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc5:*:*:*:*:*:*
+  - id: 620098
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc6:*:*:*:*:*:*
+  - id: 620099
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5:rc7:*:*:*:*:*:*
+  - id: 708503
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:*:*:*:*:*:*:*
+  - id: 725466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc1:*:*:*:*:*:*
+  - id: 725467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc2:*:*:*:*:*:*
+  - id: 725468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc3:*:*:*:*:*:*
+  - id: 725469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc4:*:*:*:*:*:*
+  - id: 725470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc5:*:*:*:*:*:*
+  - id: 725471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc6:*:*:*:*:*:*
+  - id: 725472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.6:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.6:rc7:*:*:*:*:*:*
+  - id: 708506
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:*:*:*:*:*:*:*
+  - id: 709774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc1:*:*:*:*:*:*
+  - id: 709775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc2:*:*:*:*:*:*
+  - id: 709776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc3:*:*:*:*:*:*
+  - id: 709777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc4:*:*:*:*:*:*
+  - id: 709778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc5:*:*:*:*:*:*
+  - id: 651668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc6:*:*:*:*:*:*
+  - id: 709779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.7:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.7:rc7:*:*:*:*:*:*
+  - id: 702289
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:*:*:*:*:*:*:*
+  - id: 725473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc1:*:*:*:*:*:*
+  - id: 725474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc2:*:*:*:*:*:*
+  - id: 725475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc3:*:*:*:*:*:*
+  - id: 725476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc4:*:*:*:*:*:*
+  - id: 725477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc5:*:*:*:*:*:*
+  - id: 725478
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc6:*:*:*:*:*:*
+  - id: 725479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc7:*:*:*:*:*:*
+  - id: 725480
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.8:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.8:rc8:*:*:*:*:*:*
+  - id: 627475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+  - id: 725481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc1:*:*:*:*:*:*
+  - id: 725482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc2:*:*:*:*:*:*
+  - id: 725483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc3:*:*:*:*:*:*
+  - id: 725484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc4:*:*:*:*:*:*
+  - id: 725485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc5:*:*:*:*:*:*
+  - id: 725486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc6:*:*:*:*:*:*
+  - id: 725487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc7:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc7:*:*:*:*:*:*
+  - id: 725488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:rc8:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:rc8:*:*:*:*:*:*
+  - id: 725422
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10938
+    reference_id: CVE-2018-10938
+weaknesses: []

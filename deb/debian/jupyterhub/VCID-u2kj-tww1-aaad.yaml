@@ -1,0 +1,50 @@
+vulnerability_id: VCID-u2kj-tww1-aaad
+aliases:
+  - CVE-2021-41247
+  - GHSA-cw7p-q79f-m2v7
+  - PYSEC-2021-386
+summary: JupyterHub is an open source multi-user server for Jupyter notebooks. In affected versions
+  users who have multiple JupyterLab tabs open in the same browser session, may see incomplete
+  logout from the single-user server, as fresh credentials (for the single-user server only,
+  not the Hub) reinstated after logout, if another active JupyterLab session is open while the
+  logout takes place. Upgrade to JupyterHub 1.5. For distributed deployments, it is jupyterhub
+  in the _user_ environment that needs patching. There are no patches necessary in the Hub environment.
+  The only workaround is to make sure that only one JupyterLab tab is open when you log out.
+severities:
+  - id: 562411
+    reference_id: 21750
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:N
+  - id: 562409
+    reference_id: 21750
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+  - id: 3765
+    reference_id: 21751
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+  - id: 3764
+    reference_id: 21749
+    scoring_system: cvssv3.1_qr
+    value: LOW
+    scoring_elements:
+references:
+  - id: 8125
+    url: https://github.com/jupyterhub/jupyterhub/commit/5ac9e7f73a6e1020ffddc40321fc53336829fe27
+    reference_id:
+  - id: 767222
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:jupyter:jupyterhub:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:jupyter:jupyterhub:*:*:*:*:*:*:*:*
+  - id: 21750
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-41247
+    reference_id: CVE-2021-41247
+  - id: 21751
+    url: https://github.com/advisories/GHSA-cw7p-q79f-m2v7
+    reference_id: GHSA-cw7p-q79f-m2v7
+  - id: 21749
+    url: https://github.com/jupyterhub/jupyterhub/security/advisories/GHSA-cw7p-q79f-m2v7
+    reference_id: GHSA-cw7p-q79f-m2v7
+weaknesses: []

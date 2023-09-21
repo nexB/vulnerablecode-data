@@ -1,0 +1,45 @@
+vulnerability_id: VCID-43jz-k3fc-aaar
+aliases:
+  - CVE-2007-6741
+  - GHSA-8xgx-75qw-6268
+  - PYSEC-2010-25
+summary: The ftp_PORT function in FTPServer.py in pyftpdlib before 0.2.0 does not prevent TCP
+  connections to privileged ports if the destination IP address matches the source IP address
+  of the connection from the FTP client, which might allow remote authenticated users to conduct
+  FTP bounce attacks via crafted FTP data, as demonstrated by an FTP bounce attack against a
+  NAT server, a related issue to CVE-1999-0017.
+severities:
+  - id: 107731
+    reference_id: 20312
+    scoring_system: cvssv2
+    value: '6.5'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:P/A:P
+references:
+  - id: 1708
+    url: http://code.google.com/p/pyftpdlib/issues/detail?id=11
+    reference_id:
+  - id: 1707
+    url: http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY
+    reference_id:
+  - id: 1706
+    url: http://code.google.com/p/pyftpdlib/source/detail?r=32
+    reference_id:
+  - id: 1709
+    url: http://code.google.com/p/pyftpdlib/source/diff?spec=svn32&r=32&format=side&path=/trunk/pyftpdlib/FTPServer.py
+    reference_id:
+  - id: 1416668
+    url: https://github.com/advisories/GHSA-8xgx-75qw-6268
+    reference_id:
+  - id: 20313
+    url: https://github.com/giampaolo/pyftpdlib/issues/11
+    reference_id:
+  - id: 322368
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:g.rodola:pyftpdlib:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:g.rodola:pyftpdlib:*:*:*:*:*:*:*:*
+  - id: 322369
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:g.rodola:pyftpdlib:0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:g.rodola:pyftpdlib:0.1:*:*:*:*:*:*:*
+  - id: 20312
+    url: https://nvd.nist.gov/vuln/detail/CVE-2007-6741
+    reference_id: CVE-2007-6741
+weaknesses: []

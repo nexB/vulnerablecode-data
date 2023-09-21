@@ -1,0 +1,33 @@
+vulnerability_id: VCID-ytgf-5wcg-aaam
+aliases:
+  - CVE-2017-2922
+summary: An exploitable memory corruption vulnerability exists in the Websocket protocol implementation
+  of Cesanta Mongoose 6.8. A specially crafted websocket packet can cause a buffer to be allocated
+  while leaving stale pointers which leads to a use-after-free vulnerability which can be exploited
+  to achieve remote code execution. An attacker needs to send a specially crafted websocket
+  packet over the network to trigger this vulnerability.
+severities:
+  - id: 282131
+    reference_id: 697250
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 282129
+    reference_id: 697250
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 697249
+    url: https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0429
+    reference_id:
+  - id: 125107
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=898943
+    reference_id: 898943
+  - id: 697185
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cesanta:mongoose:6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cesanta:mongoose:6.8:*:*:*:*:*:*:*
+  - id: 697250
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-2922
+    reference_id: CVE-2017-2922
+weaknesses: []

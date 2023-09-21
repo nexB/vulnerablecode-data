@@ -1,0 +1,204 @@
+vulnerability_id: VCID-x2ue-ssub-aaas
+aliases:
+  - CVE-2018-19985
+summary: The function hso_get_config_data in drivers/net/usb/hso.c in the Linux kernel through
+  4.19.8 reads if_num from the USB device (as a u8) and uses it to index a small array, resulting
+  in an object out-of-bounds (OOB) read that potentially allows arbitrary read in the kernel
+  address space.
+severities:
+  - id: 686140
+    reference_id: 1448373
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 613471
+    reference_id: 933905
+    scoring_system: cvssv3
+    value: '4.6'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 686141
+    reference_id: 1448374
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686142
+    reference_id: 1448375
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687971
+    reference_id: 629035
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 687972
+    reference_id: 629036
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 677504
+    reference_id: 1441544
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677505
+    reference_id: 1441545
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686146
+    reference_id: 1448379
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684054
+    reference_id: 1446739
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686143
+    reference_id: 1448376
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686144
+    reference_id: 1448377
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 686145
+    reference_id: 1448378
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684066
+    reference_id: 1446746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613470
+    reference_id: 933904
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 340308
+    reference_id: 747345
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 340306
+    reference_id: 747345
+    scoring_system: cvssv3
+    value: '4.6'
+    scoring_elements: CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 50033
+    reference_id: 174506
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 50032
+    reference_id: 174505
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 747340
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-01/msg00023.html
+    reference_id:
+  - id: 747341
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-02/msg00007.html
+    reference_id:
+  - id: 731102
+    url: http://packetstormsecurity.com/files/151420/Slackware-Security-Advisory-Slackware-14.2-kernel-Updates.html
+    reference_id:
+  - id: 1448373
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-19985.html
+    reference_id:
+  - id: 727325
+    url: https://access.redhat.com/errata/RHSA-2019:3309
+    reference_id:
+  - id: 600085
+    url: https://access.redhat.com/errata/RHSA-2019:3517
+    reference_id:
+  - id: 933905
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-19985.json
+    reference_id:
+  - id: 1448374
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-19985
+    reference_id:
+  - id: 1448375
+    url: https://git.kernel.org/linus/5146f95df782b0ac61abde36567e718692725c89
+    reference_id:
+  - id: 747342
+    url: https://hexhive.epfl.ch/projects/perifuzz/
+    reference_id:
+  - id: 629035
+    url: https://lists.debian.org/debian-lts-announce/2019/03/msg00034.html
+    reference_id:
+  - id: 629036
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00004.html
+    reference_id:
+  - id: 721206
+    url: https://lists.debian.org/debian-lts-announce/2019/05/msg00002.html
+    reference_id:
+  - id: 731106
+    url: https://seclists.org/bugtraq/2019/Jan/52
+    reference_id:
+  - id: 747343
+    url: https://security.netapp.com/advisory/ntap-20190404-0002/
+    reference_id:
+  - id: 1441544
+    url: https://ubuntu.com/security/notices/USN-3910-1
+    reference_id:
+  - id: 1441545
+    url: https://ubuntu.com/security/notices/USN-3910-2
+    reference_id:
+  - id: 1448379
+    url: https://ubuntu.com/security/notices/USN-4115-1
+    reference_id:
+  - id: 1446739
+    url: https://ubuntu.com/security/notices/USN-4118-1
+    reference_id:
+  - id: 747344
+    url: https://usn.ubuntu.com/4115-1/
+    reference_id:
+  - id: 730976
+    url: https://usn.ubuntu.com/4118-1/
+    reference_id:
+  - id: 1448376
+    url: https://usn.ubuntu.com/usn/usn-3910-1
+    reference_id:
+  - id: 1448377
+    url: https://usn.ubuntu.com/usn/usn-3910-2
+    reference_id:
+  - id: 1448378
+    url: https://usn.ubuntu.com/usn/usn-4115-1
+    reference_id:
+  - id: 1446746
+    url: https://usn.ubuntu.com/usn/usn-4118-1
+    reference_id:
+  - id: 933904
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1666106
+    reference_id: 1666106
+  - id: 728605
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_performance_analytics_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_performance_analytics_services:-:*:*:*:*:*:*:*
+  - id: 697779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:element_software_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:element_software_management_node:-:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 747345
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-19985
+    reference_id: CVE-2018-19985
+  - id: 174506
+    url: https://access.redhat.com/errata/RHSA-2020:1016
+    reference_id: RHSA-2020:1016
+  - id: 174505
+    url: https://access.redhat.com/errata/RHSA-2020:1070
+    reference_id: RHSA-2020:1070
+weaknesses: []

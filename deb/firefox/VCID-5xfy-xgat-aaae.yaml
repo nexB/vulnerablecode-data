@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2020-15254
+fixed_purl:
+- pkg:deb/debian/firefox@113.0.2-1?distro=sid
+- pkg:deb/debian/firefox@82.0-1?distro=sid
+- pkg:deb/debian/rust-crossbeam-channel@0?distro=sid
+- pkg:deb/debian/rust-crossbeam-channel@0.3.8-1?distro=sid
+- pkg:deb/debian/rust-crossbeam-channel@0.4.4-1?distro=sid
+- pkg:deb/debian/rust-crossbeam-channel@0.5.6-1?distro=sid
+references: []
+severities: []
+summary: Crossbeam is a set of tools for concurrent programming. In crossbeam-channel
+  before version 0.4.4, the bounded channel incorrectly assumes that `Vec::from_iter`
+  has allocated capacity that same as the number of iterator elements. `Vec::from_iter`
+  does not actually guarantee that and may allocate extra memory. The destructor of
+  the `bounded` channel reconstructs `Vec` from the raw pointer based on the incorrect
+  assumes described above. This is unsound and causing deallocation with the incorrect
+  capacity when `Vec::from_iter` has allocated different sizes with the number of
+  iterator elements. This has been fixed in crossbeam-channel 0.4.4.
+vulnerability_id: VCID-5xfy-xgat-aaae
+weaknesses: []

@@ -1,0 +1,166 @@
+vulnerability_id: VCID-5uk8-gxpt-aaad
+aliases:
+  - CVE-2018-20615
+summary: An out-of-bounds read issue was discovered in the HTTP/2 protocol decoder in HAProxy
+  1.8.x and 1.9.x through 1.9.0 which can result in a crash. The processing of the PRIORITY
+  flag in a HEADERS frame requires 5 extra bytes, and while these bytes are skipped, the total
+  frame length was not re-checked to make sure they were present in the frame.
+severities:
+  - id: 686497
+    reference_id: 1448608
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 613284
+    reference_id: 933764
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 686498
+    reference_id: 1448609
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 686218
+    reference_id: 1448430
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 342432
+    reference_id: 749168
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 342430
+    reference_id: 749168
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 613281
+    reference_id: 933760
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 613282
+    reference_id: 933761
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 613283
+    reference_id: 933762
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 749164
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-02/msg00018.html
+    reference_id:
+  - id: 1448608
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-20615.html
+    reference_id:
+  - id: 689882
+    url: https://access.redhat.com/errata/RHBA-2019:0327
+    reference_id:
+  - id: 933764
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-20615.json
+    reference_id:
+  - id: 1448609
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20615
+    reference_id:
+  - id: 1448430
+    url: https://ubuntu.com/security/notices/USN-3858-1
+    reference_id:
+  - id: 747697
+    url: https://usn.ubuntu.com/3858-1/
+    reference_id:
+  - id: 749167
+    url: https://www.mail-archive.com/haproxy@formilux.org/msg32304.html
+    reference_id:
+  - id: 749165
+    url: http://www.securityfocus.com/bid/106645
+    reference_id:
+  - id: 494651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:*:*:*:*:*:*:*:*
+  - id: 749169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:-:*:*:*:*:*:*
+  - id: 749170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev0:*:*:*:*:*:*
+  - id: 749173
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev1:*:*:*:*:*:*
+  - id: 749171
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev10:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev10:*:*:*:*:*:*
+  - id: 749172
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev11:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev11:*:*:*:*:*:*
+  - id: 749174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev2:*:*:*:*:*:*
+  - id: 749175
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev3:*:*:*:*:*:*
+  - id: 749176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev4:*:*:*:*:*:*
+  - id: 749177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev5:*:*:*:*:*:*
+  - id: 749178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev6:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev6:*:*:*:*:*:*
+  - id: 749179
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev7:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev7:*:*:*:*:*:*
+  - id: 749180
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev8:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev8:*:*:*:*:*:*
+  - id: 749181
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:haproxy:haproxy:1.9.0:dev9:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:haproxy:haproxy:1.9.0:dev9:*:*:*:*:*:*
+  - id: 625785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 462176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.4:*:*:*:*:*:*:*
+  - id: 462177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.5:*:*:*:*:*:*:*
+  - id: 462178
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.6:*:*:*:*:*:*:*
+  - id: 749168
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-20615
+    reference_id: CVE-2018-20615
+  - id: 933763
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1663060
+    reference_id: RHBA-2019:0326
+  - id: 933760
+    url: https://access.redhat.com/errata/RHSA-2019:0275
+    reference_id: RHSA-2019:0275
+  - id: 933761
+    url: https://access.redhat.com/errata/RHSA-2019:0547
+    reference_id: RHSA-2019:0547
+  - id: 933762
+    url: https://access.redhat.com/errata/RHSA-2019:0548
+    reference_id: RHSA-2019:0548
+weaknesses: []

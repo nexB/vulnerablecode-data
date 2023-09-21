@@ -1,0 +1,163 @@
+vulnerability_id: VCID-bmaz-7gds-aaan
+aliases:
+  - CVE-2017-18509
+summary: 'An issue was discovered in net/ipv6/ip6mr.c in the Linux kernel before 4.11. By setting
+  a specific socket option, an attacker can control a pointer in kernel land and cause an inet_csk_listen_stop
+  general protection fault, or potentially execute arbitrary code under certain circumstances.
+  The issue can be triggered as root (e.g., inside a default LXC container or with the CAP_NET_ADMIN
+  capability) or after namespace unsharing. This occurs because sk_type and protocol are not
+  checked in the appropriate part of the ip6_mroute_* functions. NOTE: this affects Linux distributions
+  that use 4.9.x longterm kernels before 4.9.187.'
+severities:
+  - id: 677591
+    reference_id: 1441601
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 75657
+    reference_id: 206586
+    scoring_system: cvssv3
+    value: '7.2'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 677592
+    reference_id: 1441602
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677595
+    reference_id: 693839
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677593
+    reference_id: 693838
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677594
+    reference_id: 1441603
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677596
+    reference_id: 693840
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677597
+    reference_id: 693842
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677598
+    reference_id: 693843
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677599
+    reference_id: 693844
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 666766
+    reference_id: 1433107
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677600
+    reference_id: 618848
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 75656
+    reference_id: 206585
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 277576
+    reference_id: 693848
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 277574
+    reference_id: 693848
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 693837
+    url: http://packetstormsecurity.com/files/154059/Slackware-Security-Advisory-Slackware-14.2-kernel-Updates.html
+    reference_id:
+  - id: 1441601
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-18509.html
+    reference_id:
+  - id: 206586
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-18509.json
+    reference_id:
+  - id: 1441602
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18509
+    reference_id:
+  - id: 693839
+    url: https://github.com/torvalds/linux/commit/99253eb750fda6a644d5188fb26c43bad8d5a745
+    reference_id:
+  - id: 693838
+    url: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=99253eb750fda6a644d5188fb26c43bad8d5a745
+    reference_id:
+  - id: 1441603
+    url: https://git.kernel.org/linus/99253eb750fda6a644d5188fb26c43bad8d5a745
+    reference_id:
+  - id: 693840
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00016.html
+    reference_id:
+  - id: 693841
+    url: https://lists.debian.org/debian-lts-announce/2019/08/msg00017.html
+    reference_id:
+  - id: 693842
+    url: https://lists.openwall.net/netdev/2017/12/04/40
+    reference_id:
+  - id: 693843
+    url: https://pulsesecurity.co.nz/advisories/linux-kernel-4.9-inetcsklistenstop-gpf
+    reference_id:
+  - id: 693844
+    url: https://salsa.debian.org/kernel-team/linux/commit/baefcdc2f29923e7325ce4e1a72c3ff0a9800f32
+    reference_id:
+  - id: 693845
+    url: https://seclists.org/bugtraq/2019/Aug/26
+    reference_id:
+  - id: 693846
+    url: https://support.f5.com/csp/article/K41582535
+    reference_id:
+  - id: 693847
+    url: https://support.f5.com/csp/article/K41582535?utm_source=f5support&amp;utm_medium=RSS
+    reference_id:
+  - id: 1433107
+    url: https://ubuntu.com/security/notices/USN-4145-1
+    reference_id:
+  - id: 629319
+    url: https://usn.ubuntu.com/4145-1/
+    reference_id:
+  - id: 618848
+    url: https://www.debian.org/security/2019/dsa-4497
+    reference_id:
+  - id: 206585
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1743520
+    reference_id: 1743520
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 693848
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18509
+    reference_id: CVE-2017-18509
+weaknesses: []

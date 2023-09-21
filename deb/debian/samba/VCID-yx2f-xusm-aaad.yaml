@@ -1,0 +1,155 @@
+vulnerability_id: VCID-yx2f-xusm-aaad
+aliases:
+  - CVE-2017-9461
+summary: smbd in Samba before 4.4.10 and 4.5.x before 4.5.6 has a denial of service vulnerability
+  (fd_open_atomic infinite loop with high CPU usage and memory consumption) due to wrongly handling
+  dangling symlinks.
+severities:
+  - id: 681761
+    reference_id: 1444999
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624252
+    reference_id: 941578
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 681762
+    reference_id: 1445000
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681763
+    reference_id: 1445001
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624250
+    reference_id: 941576
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 301153
+    reference_id: 715776
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:L/Au:S/C:N/I:N/A:C
+  - id: 301151
+    reference_id: 715776
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 624251
+    reference_id: 941577
+    scoring_system: rhas
+    value: Low
+    scoring_elements:
+  - id: 623756
+    reference_id: 941226
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 623757
+    reference_id: 941227
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1444999
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-9461.html
+    reference_id:
+  - id: 941578
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-9461.json
+    reference_id:
+  - id: 715772
+    url: https://bugs.debian.org/864291
+    reference_id:
+  - id: 715773
+    url: https://bugzilla.samba.org/show_bug.cgi?id=12572
+    reference_id:
+  - id: 1445000
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9461
+    reference_id:
+  - id: 715774
+    url: https://git.samba.org/?p=samba.git;a=commit;h=10c3e3923022485c720f322ca4f0aca5d7501310
+    reference_id:
+  - id: 715775
+    url: https://lists.debian.org/debian-lts-announce/2019/04/msg00013.html
+    reference_id:
+  - id: 1445001
+    url: https://ubuntu.com/security/notices/USN-3348-1
+    reference_id:
+  - id: 715770
+    url: http://www.securityfocus.com/bid/99455
+    reference_id:
+  - id: 941576
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1459464
+    reference_id: 1459464
+  - id: 122015
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=864291
+    reference_id: 864291
+  - id: 56945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*
+  - id: 637880
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.0:*:*:*:*:*:*:*
+  - id: 637881
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.1:*:*:*:*:*:*:*
+  - id: 637882
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.2:*:*:*:*:*:*:*
+  - id: 709398
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.3:*:*:*:*:*:*:*
+  - id: 709399
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.4:*:*:*:*:*:*:*
+  - id: 709400
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:samba:samba:4.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:samba:samba:4.5.5:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 715776
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-9461
+    reference_id: CVE-2017-9461
+  - id: 941577
+    url: https://access.redhat.com/errata/RHSA-2017:1950
+    reference_id: RHSA-2017:1950
+  - id: 941226
+    url: https://access.redhat.com/errata/RHSA-2017:2338
+    reference_id: RHSA-2017:2338
+  - id: 941227
+    url: https://access.redhat.com/errata/RHSA-2017:2778
+    reference_id: RHSA-2017:2778
+weaknesses: []

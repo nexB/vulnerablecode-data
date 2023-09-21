@@ -1,0 +1,49 @@
+vulnerability_id: VCID-k43d-zmn1-aaab
+aliases:
+  - CVE-2019-18792
+summary: An issue was discovered in Suricata 5.0.0. It is possible to bypass/evade any tcp based
+  signature by overlapping a TCP segment with a fake FIN packet. The fake FIN packet is injected
+  just before the PUSH ACK packet we want to bypass. The PUSH ACK packet (containing the data)
+  will be ignored by Suricata because it overlaps the FIN packet (the sequence and ack number
+  are identical in the two packets). The client will ignore the fake FIN packet because the
+  ACK flag is not set. Both linux and windows clients are ignoring the injected packet.
+severities:
+  - id: 394254
+    reference_id: 788443
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:P
+  - id: 394252
+    reference_id: 788443
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+references:
+  - id: 788439
+    url: https://github.com/OISF/suricata/commit/1c63d3905852f746ccde7e2585600b2199cefb4b
+    reference_id:
+  - id: 788440
+    url: https://github.com/OISF/suricata/commit/fa692df37a796c3330c81988d15ef1a219afc006
+    reference_id:
+  - id: 788125
+    url: https://lists.debian.org/debian-lts-announce/2020/01/msg00032.html
+    reference_id:
+  - id: 788441
+    url: https://redmine.openinfosecfoundation.org/issues/3324
+    reference_id:
+  - id: 788442
+    url: https://redmine.openinfosecfoundation.org/issues/3394
+    reference_id:
+  - id: 629010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suricata-ids:suricata:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suricata-ids:suricata:*:*:*:*:*:*:*:*
+  - id: 788444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:suricata-ids:suricata:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:suricata-ids:suricata:5.0.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 788443
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18792
+    reference_id: CVE-2019-18792
+weaknesses: []

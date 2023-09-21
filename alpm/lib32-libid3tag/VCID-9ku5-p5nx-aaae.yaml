@@ -1,0 +1,94 @@
+affected_purls:
+- pkg:alpm/archlinux/lib32-libid3tag@0.15.1a-1
+- pkg:alpm/archlinux/libid3tag@0.15.1b-5
+- pkg:deb/debian/libid3tag@0.15.1b-4.1
+aliases:
+- CVE-2004-2779
+fixed_purl:
+- pkg:alpm/archlinux/lib32-libid3tag@0.15.1b-1
+- pkg:alpm/archlinux/libid3tag@0.15.1b-6
+- pkg:deb/debian/libid3tag@0.15.1b-10
+- pkg:deb/debian/libid3tag@0.15.1b-14?distro=sid
+- pkg:deb/debian/libid3tag@0.15.1b-5?distro=sid
+references:
+- id: 70676
+  reference_id: ''
+  url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2004-2779.json
+- id: 70671
+  reference_id: ''
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=304913
+- id: 70670
+  reference_id: ''
+  url: https://bugzilla.gnome.org/show_bug.cgi?id=162647
+- id: 70672
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2779
+- id: 24396
+  reference_id: ''
+  url: https://ftp.suse.com/pub/projects/security/yaml/suse-cvss-scores.yaml
+- id: 70669
+  reference_id: ''
+  url: https://sources.debian.org/patches/libid3tag/0.15.1b-13/10_utf16.dpatch/
+- id: 70675
+  reference_id: '1561983'
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=1561983
+- id: 70673
+  reference_id: AVG-632
+  url: https://security.archlinux.org/AVG-632
+- id: 70674
+  reference_id: AVG-633
+  url: https://security.archlinux.org/AVG-633
+- id: 70667
+  reference_id: cpe:2.3:a:underbit:libid3tag:*:*:*:*:*:*:*:*
+  url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:underbit:libid3tag:*:*:*:*:*:*:*:*
+- id: 70668
+  reference_id: CVE-2004-2779
+  url: https://nvd.nist.gov/vuln/detail/CVE-2004-2779
+severities:
+- id: 10468
+  reference_id: 70676
+  scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  scoring_system: cvssv3
+  value: '3.3'
+- id: 4539
+  reference_id: 24396
+  scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  scoring_system: cvssv2
+  value: '5'
+- id: 7915
+  reference_id: 24396
+  scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  scoring_system: cvssv3
+  value: '5.5'
+- id: 6004
+  reference_id: 24396
+  scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  scoring_system: cvssv3.1
+  value: '5.3'
+- id: 10466
+  reference_id: 70673
+  scoring_elements: ''
+  scoring_system: archlinux
+  value: Medium
+- id: 10467
+  reference_id: 70674
+  scoring_elements: ''
+  scoring_system: archlinux
+  value: Medium
+- id: 10465
+  reference_id: 70668
+  scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  scoring_system: cvssv2
+  value: '5.0'
+- id: 10464
+  reference_id: 70668
+  scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  scoring_system: cvssv3
+  value: '7.5'
+summary: id3_utf16_deserialize() in utf16.c in libid3tag through 0.15.1b misparses
+  ID3v2 tags encoded in UTF-16 with an odd number of bytes, triggering an endless
+  loop allocating memory until an OOM condition is reached, leading to denial-of-service
+  (DoS).
+vulnerability_id: VCID-9ku5-p5nx-aaae
+weaknesses:
+- CWE-399

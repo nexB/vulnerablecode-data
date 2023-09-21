@@ -1,0 +1,175 @@
+vulnerability_id: VCID-as1d-uj3p-aaaq
+aliases:
+  - CVE-2016-4020
+summary: The patch_instruction function in hw/i386/kvmvapic.c in QEMU does not initialize the
+  imm32 variable, which allows local guest OS administrators to obtain sensitive information
+  from host stack memory by accessing the Task Priority Register (TPR).
+severities:
+  - id: 668736
+    reference_id: 1434700
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 50344
+    reference_id: 174880
+    scoring_system: cvssv3
+    value: '3.4'
+    scoring_elements: CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:C/C:L/I:N/A:N
+  - id: 668738
+    reference_id: 1434702
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 668739
+    reference_id: 643867
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 667924
+    reference_id: 1434073
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 668737
+    reference_id: 1434701
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 226637
+    reference_id: 643868
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 226635
+    reference_id: 643868
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
+references:
+  - id: 643862
+    url: http://git.qemu.org/?p=qemu.git;a=commit;h=691a02e2ce0c413236a78dee6f2651c937b09fb0
+    reference_id:
+  - id: 1434700
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4020.html
+    reference_id:
+  - id: 643864
+    url: https://access.redhat.com/errata/RHSA-2017:1856
+    reference_id:
+  - id: 627486
+    url: https://access.redhat.com/errata/RHSA-2017:2392
+    reference_id:
+  - id: 627487
+    url: https://access.redhat.com/errata/RHSA-2017:2408
+    reference_id:
+  - id: 174880
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-4020.json
+    reference_id:
+  - id: 643865
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1313686
+    reference_id:
+  - id: 1434702
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4020
+    reference_id:
+  - id: 638999
+    url: https://lists.debian.org/debian-lts-announce/2018/11/msg00038.html
+    reference_id:
+  - id: 643866
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-04/msg01106.html
+    reference_id:
+  - id: 643867
+    url: https://lists.gnu.org/archive/html/qemu-devel/2016-04/msg01118.html
+    reference_id:
+  - id: 639973
+    url: https://security.gentoo.org/glsa/201609-01
+    reference_id:
+  - id: 1434073
+    url: https://ubuntu.com/security/notices/USN-2974-1
+    reference_id:
+  - id: 1434701
+    url: http://www.openwall.com/lists/oss-security/2016/04/13/6
+    reference_id:
+  - id: 643863
+    url: http://www.securityfocus.com/bid/86067
+    reference_id:
+  - id: 638997
+    url: http://www.ubuntu.com/usn/USN-2974-1
+    reference_id:
+  - id: 111872
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=821062
+    reference_id: 821062
+  - id: 158174
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 643869
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*
+  - id: 158176
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*
+  - id: 158177
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*
+  - id: 162143
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:8:*:*:*:*:*:*:*
+  - id: 640062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:9:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 540942
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*
+  - id: 540943
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*
+  - id: 540944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*
+  - id: 540945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162130
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*
+  - id: 540946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*
+  - id: 162137
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*
+  - id: 540947
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:7.7:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 643868
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-4020
+    reference_id: CVE-2016-4020
+weaknesses: []

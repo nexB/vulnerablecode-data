@@ -1,0 +1,33 @@
+vulnerability_id: VCID-1ddh-ffv3-aaak
+aliases:
+  - CVE-2017-16882
+summary: Icinga Core through 1.14.0 initially executes bin/icinga as root but supports configuration
+  options in which this file is owned by a non-root account (and similarly can have etc/icinga.cfg
+  owned by a non-root account), which allows local users to gain privileges by leveraging access
+  to this non-root account, a related issue to CVE-2017-14312. This also affects bin/icingastats,
+  bin/ido2db, and bin/log2ido.
+severities:
+  - id: 272328
+    reference_id: 689547
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 272326
+    reference_id: 689547
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 689545
+    url: https://github.com/Icinga/icinga-core/issues/1601
+    reference_id:
+  - id: 689546
+    url: https://security.gentoo.org/glsa/202007-31
+    reference_id:
+  - id: 458449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:icinga:icinga:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:icinga:icinga:*:*:*:*:*:*:*:*
+  - id: 689547
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16882
+    reference_id: CVE-2017-16882
+weaknesses: []

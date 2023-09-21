@@ -1,0 +1,102 @@
+vulnerability_id: VCID-gm72-zyaz-aaac
+aliases:
+  - CVE-2017-7418
+summary: ProFTPD before 1.3.5e and 1.3.6 before 1.3.6rc5 controls whether the home directory
+  of a user could contain a symbolic link through the AllowChrootSymlinks configuration option,
+  but checks only the last path component when enforcing AllowChrootSymlinks. Attackers with
+  local access could bypass the AllowChrootSymlinks control by replacing a path component (other
+  than the last one) with a symbolic link. The threat model includes an attacker who is not
+  granted full filesystem access by a hosting provider, but can reconfigure the home directory
+  of an FTP user.
+severities:
+  - id: 680281
+    reference_id: 1443894
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680282
+    reference_id: 1443895
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680283
+    reference_id: 709033
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680284
+    reference_id: 709034
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680285
+    reference_id: 709035
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 293860
+    reference_id: 709036
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:N
+  - id: 293858
+    reference_id: 709036
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+references:
+  - id: 709028
+    url: http://bugs.proftpd.org/show_bug.cgi?id=4295
+    reference_id:
+  - id: 709029
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00004.html
+    reference_id:
+  - id: 709030
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00022.html
+    reference_id:
+  - id: 709031
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00009.html
+    reference_id:
+  - id: 1443894
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-7418.html
+    reference_id:
+  - id: 1443895
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7418
+    reference_id:
+  - id: 709033
+    url: https://github.com/proftpd/proftpd/commit/ecff21e0d0e84f35c299ef91d7fda088e516d4ed
+    reference_id:
+  - id: 709034
+    url: https://github.com/proftpd/proftpd/commit/f59593e6ff730b832dbe8754916cb5c821db579f
+    reference_id:
+  - id: 709035
+    url: https://github.com/proftpd/proftpd/pull/444/commits/349addc3be4fcdad9bd4ec01ad1ccd916c898ed8
+    reference_id:
+  - id: 709032
+    url: http://www.securityfocus.com/bid/97409
+    reference_id:
+  - id: 104449
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=859592
+    reference_id: 859592
+  - id: 709037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:*:*:*:*:*:*:*
+  - id: 641145
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc1:*:*:*:*:*:*
+  - id: 709038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc2:*:*:*:*:*:*
+  - id: 709039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc3:*:*:*:*:*:*
+  - id: 709040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:1.3.6:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:1.3.6:rc4:*:*:*:*:*:*
+  - id: 451240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:proftpd:proftpd:*:d:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:proftpd:proftpd:*:d:*:*:*:*:*:*
+  - id: 709036
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-7418
+    reference_id: CVE-2017-7418
+weaknesses: []

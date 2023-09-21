@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2017-9445
+fixed_purl:
+- pkg:deb/debian/systemd@233-10?distro=sid
+- pkg:deb/debian/systemd@241-7~deb10u8?distro=sid
+- pkg:deb/debian/systemd@247.3-7%2Bdeb11u2?distro=sid
+- pkg:deb/debian/systemd@252.6-1?distro=sid
+references:
+- id: 127623
+  reference_id: '866147'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=866147
+severities: []
+summary: In systemd through 233, certain sizes passed to dns_packet_new in systemd-resolved
+  can cause it to allocate a buffer that's too small. A malicious DNS server can exploit
+  this via a response with a specially crafted TCP payload to trick systemd-resolved
+  into allocating a buffer that's too small, and subsequently write arbitrary data
+  beyond the end of it.
+vulnerability_id: VCID-wby1-m8d5-aaak
+weaknesses: []

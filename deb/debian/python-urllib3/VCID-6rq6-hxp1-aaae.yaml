@@ -1,0 +1,146 @@
+vulnerability_id: VCID-6rq6-hxp1-aaae
+aliases:
+  - CVE-2021-33503
+  - GHSA-q2q7-5pp4-w6pg
+  - PYSEC-2021-108
+summary: |
+  Uncontrolled Resource Consumption
+  An issue was discovered in urllib3, when provided with a URL containing many `@` characters in the authority component, the authority regular expression exhibits catastrophic backtracking, causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.
+severities:
+  - id: 604701
+    reference_id: 927457
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 701265
+    reference_id: 387
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604699
+    reference_id: 927455
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 541969
+    reference_id: 4115
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 541967
+    reference_id: 4115
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 4077
+    reference_id: 23451
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 4076
+    reference_id: 23450
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 433794
+    reference_id: 814294
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 604700
+    reference_id: 927456
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 603195
+    reference_id: 926344
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 66826
+    reference_id: '195965'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 60398
+    reference_id: 187507
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 927457
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-33503.json
+    reference_id:
+  - id: 7434
+    url: https://github.com/urllib3/urllib3/commit/2d4a3fee6de2fa45eb82169361918f759269b4ec
+    reference_id:
+  - id: 1416936
+    url: https://github.com/urllib3/urllib3/commit/5b047b645f5f93900d5e2fc31230848c25eb1f5f#diff-52026d639119bf1e0364836b4e8a18bd9ed3c95c6ba39b26534a5057a65e35bbR65
+    reference_id:
+  - id: 23453
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6SCV7ZNAHS3E6PBFLJGENCDRDRWRZZ6W/
+    reference_id:
+  - id: 23452
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FMUGWEAUYGGHTPPXT6YBD53WYXQGVV73/
+    reference_id:
+  - id: 21796
+    url: https://security.gentoo.org/glsa/202107-36
+    reference_id:
+  - id: 387
+    url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_id:
+  - id: 927455
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1968074
+    reference_id: '1968074'
+  - id: 108902
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989848
+    reference_id: 989848
+  - id: 765566
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:enterprise_manager_ops_center:12.4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:enterprise_manager_ops_center:12.4.0.0:*:*:*:*:*:*:*
+  - id: 171286
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:instantis_enterprisetrack:17.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:instantis_enterprisetrack:17.1:*:*:*:*:*:*:*
+  - id: 171287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:instantis_enterprisetrack:17.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:instantis_enterprisetrack:17.2:*:*:*:*:*:*:*
+  - id: 171288
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:instantis_enterprisetrack:17.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:instantis_enterprisetrack:17.3:*:*:*:*:*:*:*
+  - id: 172227
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:zfs_storage_appliance_kit:8.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:zfs_storage_appliance_kit:8.8:*:*:*:*:*:*:*
+  - id: 747593
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:python:urllib3:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:python:urllib3:*:*:*:*:*:*:*:*
+  - id: 172256
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 4115
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-33503
+    reference_id: CVE-2021-33503
+  - id: 23451
+    url: https://github.com/advisories/GHSA-q2q7-5pp4-w6pg
+    reference_id: GHSA-q2q7-5pp4-w6pg
+  - id: 23450
+    url: https://github.com/urllib3/urllib3/security/advisories/GHSA-q2q7-5pp4-w6pg
+    reference_id: GHSA-q2q7-5pp4-w6pg
+  - id: 814294
+    url: https://access.redhat.com/errata/RHSA-2021:3254
+    reference_id: RHSA-2021:3254
+  - id: 927456
+    url: https://access.redhat.com/errata/RHSA-2021:3473
+    reference_id: RHSA-2021:3473
+  - id: 926344
+    url: https://access.redhat.com/errata/RHSA-2021:4160
+    reference_id: RHSA-2021:4160
+  - id: '195965'
+    url: https://access.redhat.com/errata/RHSA-2021:4162
+    reference_id: RHSA-2021:4162
+  - id: 187507
+    url: https://access.redhat.com/errata/RHSA-2021:4702
+    reference_id: RHSA-2021:4702
+weaknesses: []

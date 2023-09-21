@@ -1,0 +1,38 @@
+vulnerability_id: VCID-fd2x-ne6p-aaam
+aliases:
+  - CVE-2018-9275
+summary: In check_user_token in util.c in the Yubico PAM module (aka pam_yubico) 2.18 through
+  2.25, successful logins can leak file descriptors to the auth mapping file, which can lead
+  to information disclosure (serial number of a device) and/or DoS (reaching the maximum number
+  of file descriptors).
+severities:
+  - id: 361334
+    reference_id: 762114
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 361332
+    reference_id: 762114
+    scoring_system: cvssv3
+    value: '8.2'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H
+references:
+  - id: 762111
+    url: https://bugzilla.opensuse.org/show_bug.cgi?id=1088027
+    reference_id:
+  - id: 762112
+    url: https://github.com/Yubico/yubico-pam/commit/0f6ceabab0a8849b47f67d727aa526c2656089ba
+    reference_id:
+  - id: 762113
+    url: https://github.com/Yubico/yubico-pam/issues/136
+    reference_id:
+  - id: 147351
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=896491
+    reference_id: 896491
+  - id: 762115
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:yubico:yubico_pam:*:*:*:*:*:yubico:*:*
+    reference_id: cpe:2.3:a:yubico:yubico_pam:*:*:*:*:*:yubico:*:*
+  - id: 762114
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-9275
+    reference_id: CVE-2018-9275
+weaknesses: []

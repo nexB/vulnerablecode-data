@@ -1,0 +1,75 @@
+vulnerability_id: VCID-w587-v6fz-aaaf
+aliases:
+  - CVE-2018-16984
+  - GHSA-6mx3-3vqg-hpp2
+  - PYSEC-2018-3
+summary: An issue was discovered in Django 2.1 before 2.1.2, in which unprivileged users can
+  read the password hashes of arbitrary accounts. The read-only password widget used by the
+  Django Admin to display an obfuscated password hash was bypassed if a user has only the "view"
+  permission (new in Django 2.1), resulting in display of the entire password hash to those
+  users. This may result in a vulnerability for sites with legacy user accounts using insecure
+  hashes.
+severities:
+  - id: 54673
+    reference_id: 179804
+    scoring_system: cvssv3
+    value: '2.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N
+  - id: 54672
+    reference_id: 179803
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 331324
+    reference_id: 22126
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 331322
+    reference_id: 22126
+    scoring_system: cvssv3
+    value: '4.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N
+  - id: 4807
+    reference_id: 26463
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 179804
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-16984.json
+    reference_id:
+  - id: 22127
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16984
+    reference_id:
+  - id: 22128
+    url: https://cwe.mitre.org/data/definitions/200.html
+    reference_id:
+  - id: 22129
+    url: https://github.com/django/django/commit/f5335bc745d4f86d355b69549712885fd1634574
+    reference_id:
+  - id: 22130
+    url: https://github.com/django/django/pull/10449
+    reference_id:
+  - id: 5579
+    url: https://security.netapp.com/advisory/ntap-20190502-0009/
+    reference_id:
+  - id: 5577
+    url: https://www.djangoproject.com/weblog/2018/oct/01/security-release/
+    reference_id:
+  - id: 5578
+    url: http://www.securitytracker.com/id/1041749
+    reference_id:
+  - id: 179803
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1639398
+    reference_id: 1639398
+  - id: 172257
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*
+  - id: 22126
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16984
+    reference_id: CVE-2018-16984
+  - id: 26463
+    url: https://github.com/advisories/GHSA-6mx3-3vqg-hpp2
+    reference_id: GHSA-6mx3-3vqg-hpp2
+weaknesses: []

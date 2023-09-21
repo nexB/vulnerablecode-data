@@ -1,0 +1,18 @@
+affected_purls: []
+aliases:
+- CVE-2017-12190
+fixed_purl:
+- pkg:deb/debian/linux@4.13.10-1?distro=sid
+- pkg:deb/debian/linux@4.19.249-2?distro=sid
+- pkg:deb/debian/linux@5.10.178-3?distro=sid
+- pkg:deb/debian/linux@6.1.27-1?distro=sid
+references: []
+severities: []
+summary: The bio_map_user_iov and bio_unmap_user functions in block/bio.c in the Linux
+  kernel before 4.13.8 do unbalanced refcounting when a SCSI I/O vector has small
+  consecutive buffers belonging to the same page. The bio_add_pc_page function merges
+  them into one, but the page reference is never dropped. This causes a memory leak
+  and possible system lockup (exploitable against the host OS by a guest OS user,
+  if a SCSI disk is passed through to a virtual machine) due to an out-of-memory condition.
+vulnerability_id: VCID-g97v-mbar-aaaa
+weaknesses: []

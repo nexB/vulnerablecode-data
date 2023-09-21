@@ -1,0 +1,60 @@
+vulnerability_id: VCID-re7p-72g2-aaae
+aliases:
+  - CVE-2019-19590
+summary: In radare2 through 4.0, there is an integer overflow for the variable new_token_size
+  in the function r_asm_massemble at libr/asm/asm.c. This integer overflow will result in a
+  Use-After-Free for the buffer tokens, which can be filled with arbitrary malicious data after
+  the free. This allows remote attackers to cause a denial of service (application crash) or
+  possibly execute arbitrary code via crafted input.
+severities:
+  - id: 692728
+    reference_id: 1453526
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692729
+    reference_id: 1453527
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692730
+    reference_id: 790527
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 396862
+    reference_id: 790528
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 396860
+    reference_id: 790528
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1453526
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-19590.html
+    reference_id:
+  - id: 1453527
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19590
+    reference_id:
+  - id: 790527
+    url: https://github.com/radareorg/radare2/issues/15543
+    reference_id:
+  - id: 790440
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WRQXCOVFWZIIMAZIAAFAVQGZOS7LGHXP/
+    reference_id:
+  - id: 790441
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YQTOWEDFXDTGTD6D4NHRB4FUURQSTTEN/
+    reference_id:
+  - id: 113308
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947791
+    reference_id: 947791
+  - id: 737569
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:radare:radare2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:radare:radare2:*:*:*:*:*:*:*:*
+  - id: 790528
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-19590
+    reference_id: CVE-2019-19590
+weaknesses: []

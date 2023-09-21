@@ -1,0 +1,41 @@
+vulnerability_id: VCID-1hqx-8qf5-aaaa
+aliases:
+  - CVE-2010-2450
+summary: The keygen.sh script in Shibboleth SP 2.0 (located in /usr/local/etc/shibboleth by
+  default) uses OpenSSL to create a DES private key which is placed in sp-key.pm. It relies
+  on the root umask (default 22) instead of chmoding the resulting file itself, so the generated
+  private key is world readable by default.
+severities:
+  - id: 134171
+    reference_id: 424834
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 134169
+    reference_id: 424834
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 424831
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=571631
+    reference_id:
+  - id: 424832
+    url: https://security-tracker.debian.org/tracker/CVE-2010-2450
+    reference_id:
+  - id: 424833
+    url: https://todos.internet2.edu/browse/SSPCPP-106
+    reference_id:
+  - id: 424835
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:shibboleth:service_provider:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:shibboleth:service_provider:2.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 424834
+    url: https://nvd.nist.gov/vuln/detail/CVE-2010-2450
+    reference_id: CVE-2010-2450
+weaknesses: []

@@ -1,0 +1,145 @@
+vulnerability_id: VCID-dp2p-ae3s-aaab
+aliases:
+  - CVE-2018-13093
+summary: An issue was discovered in fs/xfs/xfs_icache.c in the Linux kernel through 4.17.3.
+  There is a NULL pointer dereference and panic in lookup_slow() on a NULL inode->i_ops pointer
+  when doing pathwalks on a corrupted xfs image. This occurs because of a lack of proper validation
+  that cached inodes are free during allocation.
+severities:
+  - id: 684060
+    reference_id: 1446743
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 617380
+    reference_id: 936741
+    scoring_system: cvssv3
+    value: '5.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H
+  - id: 684061
+    reference_id: 731086
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684062
+    reference_id: 1446744
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684064
+    reference_id: 731088
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684063
+    reference_id: 731087
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684053
+    reference_id: 1446738
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684054
+    reference_id: 1446739
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684067
+    reference_id: 1446747
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684068
+    reference_id: 1446748
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 684065
+    reference_id: 1446745
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684066
+    reference_id: 1446746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617379
+    reference_id: 936740
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 319249
+    reference_id: 731090
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 319247
+    reference_id: 731090
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 1446743
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-13093.html
+    reference_id:
+  - id: 724908
+    url: https://access.redhat.com/errata/RHSA-2019:2029
+    reference_id:
+  - id: 724909
+    url: https://access.redhat.com/errata/RHSA-2019:2043
+    reference_id:
+  - id: 936741
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-13093.json
+    reference_id:
+  - id: 731086
+    url: https://bugzilla.kernel.org/show_bug.cgi?id=199367
+    reference_id:
+  - id: 1446744
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-13093
+    reference_id:
+  - id: 731088
+    url: https://github.com/torvalds/linux/commit/afca6c5b2595fc44383919fba740c194b0b76aff
+    reference_id:
+  - id: 731087
+    url: https://git.kernel.org/pub/scm/fs/xfs/xfs-linux.git/commit/?h=for-next&id=afca6c5b2595fc44383919fba740c194b0b76aff
+    reference_id:
+  - id: 731089
+    url: https://lists.debian.org/debian-lts-announce/2020/03/msg00001.html
+    reference_id:
+  - id: 1446738
+    url: https://ubuntu.com/security/notices/USN-4094-1
+    reference_id:
+  - id: 1446739
+    url: https://ubuntu.com/security/notices/USN-4118-1
+    reference_id:
+  - id: 1446747
+    url: https://ubuntu.com/security/notices/USN-4708-1
+    reference_id:
+  - id: 1446748
+    url: https://ubuntu.com/security/notices/USN-4709-1
+    reference_id:
+  - id: 730975
+    url: https://usn.ubuntu.com/4094-1/
+    reference_id:
+  - id: 730976
+    url: https://usn.ubuntu.com/4118-1/
+    reference_id:
+  - id: 1446745
+    url: https://usn.ubuntu.com/usn/usn-4094-1
+    reference_id:
+  - id: 1446746
+    url: https://usn.ubuntu.com/usn/usn-4118-1
+    reference_id:
+  - id: 936740
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1597766
+    reference_id: 1597766
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 731090
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-13093
+    reference_id: CVE-2018-13093
+weaknesses: []

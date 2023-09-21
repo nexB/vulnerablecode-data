@@ -1,0 +1,41 @@
+vulnerability_id: VCID-yzkq-1ue1-aaah
+aliases:
+  - CVE-2022-36032
+  - GHSA-w3w9-vrf5-8mx8
+summary: ReactPHP HTTP is a streaming HTTP client and server implementation for ReactPHP. In
+  ReactPHP's HTTP server component versions starting with 0.7.0 and prior to 1.7.0, when ReactPHP
+  is processing incoming HTTP cookie values, the cookie names are url-decoded. This may lead
+  to cookies with prefixes like `__Host-` and `__Secure-` confused with cookies that decode
+  to such prefix, thus leading to an attacker being able to forge cookie which is supposed to
+  be secure. This issue is fixed in ReactPHP HTTP version 1.7.0. As a workaround, Infrastructure
+  or DevOps can place a reverse proxy in front of the ReactPHP HTTP server to filter out any
+  unexpected `Cookie` request headers.
+severities:
+  - id: 647757
+    reference_id: 1417435
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1416211
+    url: https://github.com/reactphp/http/commit/663c9a3b77b71463fa7fcb76a6676ffd16979dd6
+    reference_id:
+  - id: 1416212
+    url: https://github.com/reactphp/http/pull/175
+    reference_id:
+  - id: 1416213
+    url: https://github.com/reactphp/http/releases/tag/v1.7.0
+    reference_id:
+  - id: 1416214
+    url: https://github.com/reactphp/http/security/advisories/GHSA-w3w9-vrf5-8mx8
+    reference_id:
+  - id: 1416215
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-36032
+    reference_id: CVE-2022-36032
+  - id: 1417434
+    url: https://github.com/FriendsOfPHP/security-advisories/blob/master/react/http/CVE-2022-36032.yaml
+    reference_id: CVE-2022-36032.YAML
+  - id: 1417435
+    url: https://github.com/advisories/GHSA-w3w9-vrf5-8mx8
+    reference_id: GHSA-w3w9-vrf5-8mx8
+weaknesses: []

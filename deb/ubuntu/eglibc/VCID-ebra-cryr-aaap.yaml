@@ -1,0 +1,145 @@
+vulnerability_id: VCID-ebra-cryr-aaap
+aliases:
+  - CVE-2017-16997
+summary: 'elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles
+  RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which
+  allows local users to gain privileges via a Trojan horse library in the current working directory,
+  related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion
+  of an empty RPATH/RUNPATH token as the "./" directory. NOTE: this configuration of RPATH/RUNPATH
+  for a privileged program is apparently very uncommon; most likely, no such program is shipped
+  with any common Linux distribution.'
+severities:
+  - id: 676797
+    reference_id: 1441087
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619315
+    reference_id: 938109
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 676798
+    reference_id: 689884
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676799
+    reference_id: 1441088
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676800
+    reference_id: 689885
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 676801
+    reference_id: 689886
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 673198
+    reference_id: 1438380
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 673197
+    reference_id: 1438379
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 619314
+    reference_id: 938108
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 272632
+    reference_id: 689887
+    scoring_system: cvssv2
+    value: '9.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:C/I:C/A:C
+  - id: 272630
+    reference_id: 689887
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 616042
+    reference_id: 935771
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1441087
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16997.html
+    reference_id:
+  - id: 689882
+    url: https://access.redhat.com/errata/RHBA-2019:0327
+    reference_id:
+  - id: 938109
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-16997.json
+    reference_id:
+  - id: 689884
+    url: https://bugs.debian.org/884615
+    reference_id:
+  - id: 1441088
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16997
+    reference_id:
+  - id: 689885
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=22625
+    reference_id:
+  - id: 689886
+    url: https://sourceware.org/ml/libc-alpha/2017-12/msg00528.html
+    reference_id:
+  - id: 1438380
+    url: https://ubuntu.com/security/notices/USN-3534-1
+    reference_id:
+  - id: 1438379
+    url: https://usn.ubuntu.com/usn/usn-3534-1
+    reference_id:
+  - id: 689881
+    url: http://www.securityfocus.com/bid/102228
+    reference_id:
+  - id: 938108
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1526865
+    reference_id: 1526865
+  - id: 41367
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884615
+    reference_id: 884615
+  - id: 614438
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.19:*:*:*:*:*:*:*
+  - id: 614439
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.20:*:*:*:*:*:*:*
+  - id: 584378
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.21:*:*:*:*:*:*:*
+  - id: 614440
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.22:*:*:*:*:*:*:*
+  - id: 689888
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.23:*:*:*:*:*:*:*
+  - id: 689889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.25:*:*:*:*:*:*:*
+  - id: 689890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:2.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:2.26:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 689887
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-16997
+    reference_id: CVE-2017-16997
+  - id: 935771
+    url: https://access.redhat.com/errata/RHSA-2018:3092
+    reference_id: RHSA-2018:3092
+weaknesses: []

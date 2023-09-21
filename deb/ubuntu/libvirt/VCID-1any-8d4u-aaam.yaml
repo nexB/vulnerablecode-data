@@ -1,0 +1,141 @@
+vulnerability_id: VCID-1any-8d4u-aaam
+aliases:
+  - CVE-2013-7336
+summary: The qemuMigrationWaitForSpice function in qemu/qemu_migration.c in libvirt before 1.1.3
+  does not properly enter a monitor when performing seamless SPICE migration, which allows local
+  users to cause a denial of service (NULL pointer dereference and libvirtd crash) by causing
+  domblkstat to be called at the same time as the qemuMonitorGetSpiceMigrationStatus function.
+severities:
+  - id: 657293
+    reference_id: 423322
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 653797
+    reference_id: 1423081
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653800
+    reference_id: 1423084
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653798
+    reference_id: 1423082
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653563
+    reference_id: 1422923
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 653799
+    reference_id: 1423083
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 173529
+    reference_id: 548249
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:N/I:N/A:P
+references:
+  - id: 548245
+    url: http://libvirt.org/git/?p=libvirt.git;a=commit;h=484cc321
+    reference_id:
+  - id: 423322
+    url: http://libvirt.org/news.html
+    reference_id:
+  - id: 544376
+    url: http://lists.opensuse.org/opensuse-updates/2014-05/msg00004.html
+    reference_id:
+  - id: 1423081
+    url: http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-7336.html
+    reference_id:
+  - id: 188970
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2013-7336.json
+    reference_id:
+  - id: 548248
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1077620
+    reference_id:
+  - id: 1423084
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7336
+    reference_id:
+  - id: 534095
+    url: http://secunia.com/advisories/60895
+    reference_id:
+  - id: 534096
+    url: http://security.gentoo.org/glsa/glsa-201412-04.xml
+    reference_id:
+  - id: 1423082
+    url: http://security.libvirt.org/2013/0021.html
+    reference_id:
+  - id: 1422923
+    url: https://ubuntu.com/security/notices/USN-2209-1
+    reference_id:
+  - id: 548246
+    url: http://www.openwall.com/lists/oss-security/2014/03/18/1
+    reference_id:
+  - id: 548247
+    url: http://www.openwall.com/lists/oss-security/2014/03/18/3
+    reference_id:
+  - id: 1423083
+    url: http://www.redhat.com/archives/libvir-list/2013-September/msg01208.html
+    reference_id:
+  - id: 453779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
+  - id: 520112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.0:*:*:*:*:*:*:*
+  - id: 520113
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.1:*:*:*:*:*:*:*
+  - id: 524237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.2:*:*:*:*:*:*:*
+  - id: 524238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.3:*:*:*:*:*:*:*
+  - id: 524239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.4:*:*:*:*:*:*:*
+  - id: 521997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5:*:*:*:*:*:*:*
+  - id: 534131
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.1:*:*:*:*:*:*:*
+  - id: 534132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.2:*:*:*:*:*:*:*
+  - id: 534133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.3:*:*:*:*:*:*:*
+  - id: 534134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.4:*:*:*:*:*:*:*
+  - id: 534091
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.5:*:*:*:*:*:*:*
+  - id: 534919
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.5.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.5.6:*:*:*:*:*:*:*
+  - id: 524158
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.0.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.0.6:*:*:*:*:*:*:*
+  - id: 533166
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.0:*:*:*:*:*:*:*
+  - id: 533705
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:libvirt:1.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:libvirt:1.1.1:*:*:*:*:*:*:*
+  - id: 157777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+  - id: 548249
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-7336
+    reference_id: CVE-2013-7336
+weaknesses: []

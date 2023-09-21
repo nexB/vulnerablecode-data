@@ -1,0 +1,18 @@
+affected_purls:
+- pkg:deb/debian/juce@5.4.1%2Breally5.4.1~repack-3
+- pkg:deb/debian/juce@5.4.7~ds0-2
+aliases:
+- CVE-2021-23521
+fixed_purl:
+- pkg:deb/debian/juce@6.1.3~ds0-1~exp1
+references: []
+severities: []
+summary: This affects the package juce-framework/JUCE before 6.1.5. This vulnerability
+  is triggered when a malicious archive is crafted with an entry containing a symbolic
+  link. When extracted, the symbolic link is followed outside of the target dir allowing
+  writing arbitrary files on the target host. In some cases, this can allow an attacker
+  to execute arbitrary code. The vulnerable code is in the ZipFile::uncompressEntry
+  function in juce_ZipFile.cpp and is executed when the archive is extracted upon
+  calling uncompressTo() on a ZipFile object.
+vulnerability_id: VCID-1arb-kev5-aaaj
+weaknesses: []

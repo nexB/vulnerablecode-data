@@ -1,0 +1,38 @@
+vulnerability_id: VCID-kd7a-x9cb-aaas
+aliases:
+  - CVE-2021-40524
+summary: In Pure-FTPd before 1.0.50, an incorrect max_filesize quota mechanism in the server
+  allows attackers to upload files of unbounded size, which may lead to denial of service or
+  a server hang. This occurs because a certain greater-than-zero test does not anticipate an
+  initial -1 value. (Versions 1.0.23 through 1.0.49 are affected.)
+severities:
+  - id: 560343
+    reference_id: 897677
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 560341
+    reference_id: 897677
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 897674
+    url: https://github.com/jedisct1/pure-ftpd/commit/37ad222868e52271905b94afea4fc780d83294b4
+    reference_id:
+  - id: 897675
+    url: https://github.com/jedisct1/pure-ftpd/compare/1.0.49...1.0.50
+    reference_id:
+  - id: 897676
+    url: https://github.com/jedisct1/pure-ftpd/pull/158
+    reference_id:
+  - id: 105833
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=993810
+    reference_id: 993810
+  - id: 445908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:pureftpd:pure-ftpd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:pureftpd:pure-ftpd:*:*:*:*:*:*:*:*
+  - id: 897677
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-40524
+    reference_id: CVE-2021-40524
+weaknesses: []

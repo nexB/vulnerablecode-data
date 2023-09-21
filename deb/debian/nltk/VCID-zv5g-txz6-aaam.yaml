@@ -1,0 +1,63 @@
+vulnerability_id: VCID-zv5g-txz6-aaam
+aliases:
+  - CVE-2021-43854
+  - GHSA-f8m6-h2c7-8h9x
+  - PYSEC-2021-859
+summary: NLTK (Natural Language Toolkit) is a suite of open source Python modules, data sets,
+  and tutorials supporting research and development in Natural Language Processing. Versions
+  prior to 3.6.5 are vulnerable to regular expression denial of service (ReDoS) attacks. The
+  vulnerability is present in PunktSentenceTokenizer, sent_tokenize and word_tokenize. Any users
+  of this class, or these two functions, are vulnerable to the ReDoS attack. In short, a specifically
+  crafted long input to any of these vulnerable functions will cause them to take a significant
+  amount of execution time. If your program relies on any of the vulnerable functions for tokenizing
+  unpredictable user input, then we would strongly recommend upgrading to a version of NLTK
+  without the vulnerability. For users unable to upgrade the execution time can be bounded by
+  limiting the maximum length of an input to any of the vulnerable functions. Our recommendation
+  is to implement such a limit.
+severities:
+  - id: 568113
+    reference_id: 21516
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 568111
+    reference_id: 21516
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 3654
+    reference_id: 21517
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+  - id: 3653
+    reference_id: 21515
+    scoring_system: cvssv3.1_qr
+    value: HIGH
+    scoring_elements:
+references:
+  - id: 8528
+    url: https://github.com/nltk/nltk/commit/1405aad979c6b8080dbbc8e0858f89b2e3690341
+    reference_id:
+  - id: 8530
+    url: https://github.com/nltk/nltk/issues/2866
+    reference_id:
+  - id: 8527
+    url: https://github.com/nltk/nltk/pull/2869
+    reference_id:
+  - id: 78025
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1002623
+    reference_id: 1002623
+  - id: 778992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nltk:nltk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nltk:nltk:*:*:*:*:*:*:*:*
+  - id: 21516
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-43854
+    reference_id: CVE-2021-43854
+  - id: 21517
+    url: https://github.com/advisories/GHSA-f8m6-h2c7-8h9x
+    reference_id: GHSA-f8m6-h2c7-8h9x
+  - id: 21515
+    url: https://github.com/nltk/nltk/security/advisories/GHSA-f8m6-h2c7-8h9x
+    reference_id: GHSA-f8m6-h2c7-8h9x
+weaknesses: []

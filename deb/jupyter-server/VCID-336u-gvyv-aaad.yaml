@@ -1,0 +1,92 @@
+affected_purls:
+- pkg:pypi/jupyter-server@0.0.1
+- pkg:pypi/jupyter-server@0.0.2
+- pkg:pypi/jupyter-server@0.0.3
+- pkg:pypi/jupyter-server@0.0.4
+- pkg:pypi/jupyter-server@0.0.5
+- pkg:pypi/jupyter-server@0.1.0
+- pkg:pypi/jupyter-server@0.1.1
+- pkg:pypi/jupyter-server@0.2.0
+- pkg:pypi/jupyter-server@0.2.1
+- pkg:pypi/jupyter-server@0.3.0
+- pkg:pypi/jupyter-server@1.0.0
+- pkg:pypi/jupyter-server@1.0.0rc0
+- pkg:pypi/jupyter-server@1.0.0rc1
+- pkg:pypi/jupyter-server@1.0.0rc10
+- pkg:pypi/jupyter-server@1.0.0rc11
+- pkg:pypi/jupyter-server@1.0.0rc12
+- pkg:pypi/jupyter-server@1.0.0rc13
+- pkg:pypi/jupyter-server@1.0.0rc14
+- pkg:pypi/jupyter-server@1.0.0rc15
+- pkg:pypi/jupyter-server@1.0.0rc16
+- pkg:pypi/jupyter-server@1.0.0rc2
+- pkg:pypi/jupyter-server@1.0.0rc3
+- pkg:pypi/jupyter-server@1.0.0rc4
+- pkg:pypi/jupyter-server@1.0.0rc5
+- pkg:pypi/jupyter-server@1.0.0rc6
+- pkg:pypi/jupyter-server@1.0.0rc7
+- pkg:pypi/jupyter-server@1.0.0rc8
+- pkg:pypi/jupyter-server@1.0.0rc9
+- pkg:pypi/jupyter-server@1.0.1
+- pkg:pypi/jupyter-server@1.0.10
+- pkg:pypi/jupyter-server@1.0.11
+- pkg:pypi/jupyter-server@1.0.2
+- pkg:pypi/jupyter-server@1.0.3
+- pkg:pypi/jupyter-server@1.0.4
+- pkg:pypi/jupyter-server@1.0.5
+- pkg:pypi/jupyter-server@1.0.6
+- pkg:pypi/jupyter-server@1.0.7
+- pkg:pypi/jupyter-server@1.0.8
+- pkg:pypi/jupyter-server@1.0.9
+- pkg:pypi/jupyter-server@1.1.0
+aliases:
+- CVE-2020-26275
+- GHSA-9f66-54xg-pc2c
+fixed_purl:
+- pkg:deb/debian/jupyter-server@1.1.1-1?distro=sid
+- pkg:deb/debian/jupyter-server@1.2.2-1?distro=sid
+- pkg:deb/debian/jupyter-server@1.23.3-1?distro=sid
+- pkg:pypi/jupyter-server@1.1.1
+references:
+- id: 153253
+  reference_id: ''
+  url: https://advisory.checkmarx.net/advisory/CX-2020-4291
+- id: 153250
+  reference_id: ''
+  url: https://github.com/jupyter-server/jupyter_server/commit/85e4abccf6ea9321d29153f73b0bd72ccb3a6bca
+- id: 153251
+  reference_id: ''
+  url: https://pypi.org/project/jupyter-server/
+- id: 153252
+  reference_id: CVE-2020-26275
+  url: https://nvd.nist.gov/vuln/detail/CVE-2020-26275
+- id: 153254
+  reference_id: GHSA-9f66-54xg-pc2c
+  url: https://github.com/advisories/GHSA-9f66-54xg-pc2c
+- id: 153249
+  reference_id: GHSA-9f66-54xg-pc2c
+  url: https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-9f66-54xg-pc2c
+severities:
+- id: 21927
+  reference_id: 153254
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+- id: 21926
+  reference_id: 153249
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: MODERATE
+summary: 'The Jupyter Server provides the backend (i.e. the core services, APIs, and
+  REST endpoints) for Jupyter web applications like Jupyter notebook, JupyterLab,
+  and Voila. In Jupyter Server before version 1.1.1, an open redirect vulnerability
+  could cause the jupyter server to redirect the browser to a different malicious
+  website. All jupyter servers running without a base_url prefix are technically affected,
+  however, these maliciously crafted links can only be reasonably made for known jupyter
+  server hosts. A link to your jupyter server may *appear* safe, but ultimately redirect
+  to a spoofed server on the public internet. This same vulnerability was patched
+  in upstream notebook v5.7.8. This is fixed in jupyter_server 1.1.1. If upgrade is
+  not available, a workaround can be to run your server on a url prefix: "jupyter
+  server --ServerApp.base_url=/jupyter/".'
+vulnerability_id: VCID-336u-gvyv-aaad
+weaknesses: []

@@ -1,0 +1,203 @@
+vulnerability_id: VCID-61a2-2kj9-aaah
+aliases:
+  - CVE-2017-17449
+summary: The __netlink_deliver_tap_skb function in net/netlink/af_netlink.c in the Linux kernel
+  through 4.14.4, when CONFIG_NLMON is enabled, does not restrict observations of Netlink messages
+  to a single net namespace, which allows local users to obtain sensitive information by leveraging
+  the CAP_NET_ADMIN capability to sniff an nlmon interface for all Netlink activity on the system.
+severities:
+  - id: 676928
+    reference_id: 1441167
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681837
+    reference_id: 642884
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681838
+    reference_id: 642885
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681839
+    reference_id: 668608
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 681840
+    reference_id: 668902
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619554
+    reference_id: 938277
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N
+  - id: 676929
+    reference_id: 1441168
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676930
+    reference_id: 1441169
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676931
+    reference_id: 690977
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674936
+    reference_id: 170159
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676932
+    reference_id: 1441170
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676933
+    reference_id: 1441171
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674147
+    reference_id: 1439150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 674148
+    reference_id: 1439151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 676934
+    reference_id: 1441172
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619553
+    reference_id: 938276
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 273772
+    reference_id: 690981
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 273770
+    reference_id: 690981
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 1441167
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17449.html
+    reference_id:
+  - id: 668576
+    url: https://access.redhat.com/errata/RHSA-2018:0654
+    reference_id:
+  - id: 642884
+    url: https://access.redhat.com/errata/RHSA-2018:0676
+    reference_id:
+  - id: 642885
+    url: https://access.redhat.com/errata/RHSA-2018:1062
+    reference_id:
+  - id: 668608
+    url: https://access.redhat.com/errata/RHSA-2018:1130
+    reference_id:
+  - id: 668902
+    url: https://access.redhat.com/errata/RHSA-2018:1170
+    reference_id:
+  - id: 938277
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17449.json
+    reference_id:
+  - id: 1441168
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17449
+    reference_id:
+  - id: 1441169
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=93c647643b48f0131f02e45da3bd367d80443291
+    reference_id:
+  - id: 690977
+    url: https://lkml.org/lkml/2017/12/5/950
+    reference_id:
+  - id: 170159
+    url: https://source.android.com/security/bulletin/pixel/2018-04-01
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1441170
+    url: https://ubuntu.com/security/notices/USN-3653-1
+    reference_id:
+  - id: 1441171
+    url: https://ubuntu.com/security/notices/USN-3653-2
+    reference_id:
+  - id: 1439150
+    url: https://ubuntu.com/security/notices/USN-3655-1
+    reference_id:
+  - id: 1439151
+    url: https://ubuntu.com/security/notices/USN-3655-2
+    reference_id:
+  - id: 1441172
+    url: https://ubuntu.com/security/notices/USN-3657-1
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 690978
+    url: https://usn.ubuntu.com/3653-1/
+    reference_id:
+  - id: 690979
+    url: https://usn.ubuntu.com/3653-2/
+    reference_id:
+  - id: 675735
+    url: https://usn.ubuntu.com/3655-1/
+    reference_id:
+  - id: 675736
+    url: https://usn.ubuntu.com/3655-2/
+    reference_id:
+  - id: 690980
+    url: https://usn.ubuntu.com/3657-1/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 668886
+    url: https://www.debian.org/security/2018/dsa-4082
+    reference_id:
+  - id: 690976
+    url: http://www.securityfocus.com/bid/102122
+    reference_id:
+  - id: 938276
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1525762
+    reference_id: 1525762
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 690981
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17449
+    reference_id: CVE-2017-17449
+weaknesses: []

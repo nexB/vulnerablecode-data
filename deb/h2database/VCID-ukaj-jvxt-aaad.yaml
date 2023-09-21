@@ -1,0 +1,51 @@
+affected_purls:
+- pkg:maven/com.h2database/h2@1.4.198
+- pkg:maven/com.h2database/h2@1.4.199
+- pkg:maven/com.h2database/h2@1.4.200
+aliases:
+- CVE-2021-23463
+- GHSA-7rpj-hg47-cx62
+fixed_purl:
+- pkg:deb/debian/h2database@0?distro=sid
+- pkg:deb/debian/h2database@1.4.197-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/h2database@1.4.197-4%2Bdeb11u1?distro=sid
+- pkg:deb/debian/h2database@2.1.214-1?distro=sid
+- pkg:maven/com.h2database/h2@2.0.202
+references:
+- id: 158317
+  reference_id: ''
+  url: https://github.com/boris-unckel/h2database/commit/f9ad6aef2bfa59eba2b4d3e7c4c32d2cce8e8b05
+- id: 158314
+  reference_id: ''
+  url: https://github.com/h2database/h2database/commit/d83285fd2e48fb075780ee95badee6f5a15ea7f8%23diff-008c2e4462609982199cd83e7cf6f1d6b41296b516783f6752c44b9f15dc7bc3
+- id: 158312
+  reference_id: ''
+  url: https://github.com/h2database/h2database/issues/3195
+- id: 158313
+  reference_id: ''
+  url: https://github.com/h2database/h2database/pull/3199
+- id: 158316
+  reference_id: ''
+  url: https://github.com/h2database/h2database/pull/3199#issuecomment-1002830390
+- id: 158315
+  reference_id: ''
+  url: https://snyk.io/vuln/SNYK-JAVA-COMH2DATABASE-1769238
+- id: 158311
+  reference_id: CVE-2021-23463
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-23463
+- id: 158318
+  reference_id: GHSA-7rpj-hg47-cx62
+  url: https://github.com/advisories/GHSA-7rpj-hg47-cx62
+severities:
+- id: 22991
+  reference_id: 158318
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: The package com.h2database:h2 from 1.4.198 and before 2.0.202 are vulnerable
+  to XML External Entity (XXE) Injection via the org.h2.jdbc.JdbcSQLXML class object,
+  when it receives parsed string data from org.h2.jdbc.JdbcResultSet.getSQLXML() method.
+  If it executes the getSource() method when the parameter is DOMSource.class it will
+  trigger the vulnerability.
+vulnerability_id: VCID-ukaj-jvxt-aaad
+weaknesses: []

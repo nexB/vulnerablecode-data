@@ -1,0 +1,81 @@
+affected_purls:
+- pkg:deb/debian/abiword@0.7.7-1
+- pkg:deb/debian/abiword@1.0.2%2Bcvs.2002.06.05-1woody2
+- pkg:deb/debian/abiword@2.2.7-3sarge2
+aliases:
+- CVE-2005-2972
+fixed_purl:
+- pkg:deb/debian/abiword@2.4.1-1?distro=sid
+- pkg:deb/debian/abiword@2.4.6-1.1
+- pkg:deb/debian/abiword@3.0.2-8?distro=sid
+- pkg:deb/debian/abiword@3.0.4~dfsg-3?distro=sid
+- pkg:deb/debian/abiword@3.0.5~dfsg-3.2?distro=sid
+references:
+- id: 91411
+  reference_id: ''
+  url: http://scary.beasts.org/security/CESA-2005-006.txt
+- id: 91423
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2972
+- id: 91417
+  reference_id: ''
+  url: http://secunia.com/advisories/17199
+- id: 91418
+  reference_id: ''
+  url: http://secunia.com/advisories/17200
+- id: 91419
+  reference_id: ''
+  url: http://secunia.com/advisories/17213
+- id: 91420
+  reference_id: ''
+  url: http://secunia.com/advisories/17264
+- id: 91232
+  reference_id: ''
+  url: http://secunia.com/advisories/17551
+- id: 91422
+  reference_id: ''
+  url: https://usn.ubuntu.com/203-1/
+- id: 91414
+  reference_id: ''
+  url: http://www.abisource.com/changelogs/2.2.11.phtml
+- id: 91228
+  reference_id: ''
+  url: http://www.debian.org/security/2005/dsa-894
+- id: 91413
+  reference_id: ''
+  url: http://www.gentoo.org/security/en/glsa/glsa-200510-17.xml
+- id: 91412
+  reference_id: ''
+  url: http://www.mail-archive.com/debian-bugs-rc@lists.debian.org/msg28251.html
+- id: 91416
+  reference_id: ''
+  url: http://www.osvdb.org/20015
+- id: 91415
+  reference_id: ''
+  url: http://www.securityfocus.com/bid/15096
+- id: 91421
+  reference_id: ''
+  url: http://www.vupen.com/english/advisories/2005/2086
+- id: 91424
+  reference_id: '333740'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=333740
+- id: 91219
+  reference_id: cpe:2.3:a:abisource:community_abiword:*:*:*:*:*:*:*:*
+  url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:abisource:community_abiword:*:*:*:*:*:*:*:*
+- id: 91410
+  reference_id: CVE-2005-2972
+  url: https://nvd.nist.gov/vuln/detail/CVE-2005-2972
+severities:
+- id: 13216
+  reference_id: 91410
+  scoring_elements: AV:N/AC:H/Au:N/C:P/I:P/A:P
+  scoring_system: cvssv2
+  value: '5.1'
+summary: Multiple stack-based buffer overflows in the RTF import feature in AbiWord
+  before 2.2.11 allow user-assisted attackers to execute arbitrary code via an RTF
+  file with long identifiers, which are not properly handled in the (1) ParseLevelText,
+  (2) getCharsInsideBrace, (3) HandleLists, (4) or (5) HandleAbiLists functions in
+  ie_imp_RTF.cpp, a different vulnerability than CVE-2005-2964.
+vulnerability_id: VCID-n9hm-g2bs-aaas
+weaknesses:
+- CWE-119

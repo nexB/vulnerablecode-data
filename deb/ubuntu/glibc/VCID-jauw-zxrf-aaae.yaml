@@ -1,0 +1,66 @@
+vulnerability_id: VCID-jauw-zxrf-aaae
+aliases:
+  - CVE-2017-15671
+summary: The glob function in glob.c in the GNU C Library (aka glibc or libc6) before 2.27,
+  when invoked with GLOB_TILDE, could skip freeing allocated memory when processing the ~ operator
+  with a long user name, potentially leading to a denial of service (memory leak).
+severities:
+  - id: 676219
+    reference_id: 1440737
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619989
+    reference_id: 938578
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  - id: 676220
+    reference_id: 1440738
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619988
+    reference_id: 938577
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 268468
+    reference_id: 686446
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 268466
+    reference_id: 686446
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 1440737
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15671.html
+    reference_id:
+  - id: 938578
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-15671.json
+    reference_id:
+  - id: 1440738
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15671
+    reference_id:
+  - id: 686445
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=22325
+    reference_id:
+  - id: 686444
+    url: http://www.securityfocus.com/bid/101517
+    reference_id:
+  - id: 938577
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1504806
+    reference_id: 1504806
+  - id: 41365
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=879500
+    reference_id: 879500
+  - id: 44112
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*
+  - id: 686446
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15671
+    reference_id: CVE-2017-15671
+weaknesses: []

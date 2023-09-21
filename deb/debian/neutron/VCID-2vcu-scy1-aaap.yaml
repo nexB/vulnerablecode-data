@@ -1,0 +1,51 @@
+vulnerability_id: VCID-2vcu-scy1-aaap
+aliases:
+  - CVE-2021-38598
+  - PYSEC-2021-360
+summary: OpenStack Neutron before 16.4.1, 17.x before 17.1.3, and 18.0.0 allows hardware address
+  impersonation when the linuxbridge driver with ebtables-nft is used on a Netfilter-based platform.
+  By sending carefully crafted packets, anyone in control of a server instance connected to
+  the virtual switch can impersonate the hardware addresses of other systems on the network,
+  resulting in denial of service or in some cases possibly interception of traffic intended
+  for other destinations.
+severities:
+  - id: 603200
+    reference_id: 926348
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H
+  - id: 603199
+    reference_id: 926347
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 554901
+    reference_id: 22590
+    scoring_system: cvssv2
+    value: '5.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:P
+  - id: 554899
+    reference_id: 22590
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+references:
+  - id: 926348
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-38598.json
+    reference_id:
+  - id: 8089
+    url: https://launchpad.net/bugs/1938670
+    reference_id:
+  - id: 926347
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1995273
+    reference_id: '1995273'
+  - id: 544201
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:neutron:*:*:*:*:*:*:*:*
+  - id: 894150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:neutron:18.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:neutron:18.0.0:*:*:*:*:*:*:*
+  - id: 22590
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-38598
+    reference_id: CVE-2021-38598
+weaknesses: []

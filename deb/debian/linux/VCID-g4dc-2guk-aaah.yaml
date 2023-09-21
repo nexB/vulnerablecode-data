@@ -1,0 +1,103 @@
+vulnerability_id: VCID-g4dc-2guk-aaah
+aliases:
+  - CVE-2018-14619
+summary: A flaw was found in the crypto subsystem of the Linux kernel before version kernel-4.15-rc4.
+  The "null skcipher" was being dropped when each af_alg_ctx was freed instead of when the aead_tfm
+  was freed. This can cause the null skcipher to be freed while it is still in use leading to
+  a local user being able to crash the system or possibly escalate privileges.
+severities:
+  - id: 684503
+    reference_id: 1447050
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 614665
+    reference_id: 934774
+    scoring_system: cvssv3
+    value: '6.2'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 684505
+    reference_id: 1447052
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684506
+    reference_id: 1447053
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684504
+    reference_id: 1447051
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614664
+    reference_id: 934773
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 324139
+    reference_id: 734754
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 324137
+    reference_id: 734754
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1447050
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-14619.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 934774
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14619.json
+    reference_id:
+  - id: 734751
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14619
+    reference_id:
+  - id: 1447052
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14619
+    reference_id:
+  - id: 1447053
+    url: https://git.kernel.org/linus/b32a7dc8aef1882fbf983eb354837488cc9d54dc
+    reference_id:
+  - id: 734752
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b32a7dc8aef1882fbf983eb354837488cc9d54dc
+    reference_id:
+  - id: 734753
+    url: https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0013
+    reference_id:
+  - id: 1447051
+    url: http://www.openwall.com/lists/oss-security/2018/08/28/1
+    reference_id:
+  - id: 734750
+    url: http://www.securityfocus.com/bid/105200
+    reference_id:
+  - id: 934773
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1622004
+    reference_id: 1622004
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 668889
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc1:*:*:*:*:*:*
+  - id: 668890
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc2:*:*:*:*:*:*
+  - id: 668907
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.15:rc3:*:*:*:*:*:*
+  - id: 734754
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14619
+    reference_id: CVE-2018-14619
+weaknesses: []

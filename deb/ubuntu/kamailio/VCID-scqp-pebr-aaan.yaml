@@ -1,0 +1,66 @@
+vulnerability_id: VCID-scqp-pebr-aaan
+aliases:
+  - CVE-2018-16657
+summary: 'In Kamailio before 5.0.7 and 5.1.x before 5.1.4, a crafted SIP message with an invalid
+  Via header causes a segmentation fault and crashes Kamailio. The reason is missing input validation
+  in the crcitt_string_array core function for calculating a CRC hash for To tags. (An additional
+  error is present in the check_via_address core function: this function also misses input validation.)
+  This could result in denial of service and potentially the execution of arbitrary code.'
+severities:
+  - id: 685063
+    reference_id: 1447511
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685064
+    reference_id: 1447512
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685065
+    reference_id: 739509
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 330452
+    reference_id: 739511
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 330450
+    reference_id: 739511
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 1447511
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-16657.html
+    reference_id:
+  - id: 1447512
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16657
+    reference_id:
+  - id: 739508
+    url: https://lists.debian.org/debian-lts-announce/2018/09/msg00013.html
+    reference_id:
+  - id: 739509
+    url: https://skalatan.de/blog/advisory-hw-2018-06
+    reference_id:
+  - id: 739510
+    url: https://www.debian.org/security/2018/dsa-4292
+    reference_id:
+  - id: 42383
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=908324
+    reference_id: 908324
+  - id: 600062
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 739511
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16657
+    reference_id: CVE-2018-16657
+weaknesses: []

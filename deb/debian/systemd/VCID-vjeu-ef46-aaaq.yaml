@@ -1,0 +1,107 @@
+vulnerability_id: VCID-vjeu-ef46-aaaq
+aliases:
+  - CVE-2018-6954
+summary: systemd-tmpfiles in systemd through 237 mishandles symlinks present in non-terminal
+  path components, which allows local users to obtain ownership of arbitrary files via vectors
+  involving creation of a directory and a file under that directory, and later replacing that
+  directory with a symlink. This occurs even if the fs.protected_symlinks sysctl is turned on.
+severities:
+  - id: 688496
+    reference_id: 1450412
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618774
+    reference_id: 937732
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 688497
+    reference_id: 1450413
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684743
+    reference_id: 1447240
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 688498
+    reference_id: 1450414
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 618773
+    reference_id: 937731
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 354750
+    reference_id: 757192
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 354748
+    reference_id: 757192
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 757189
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00062.html
+    reference_id:
+  - id: 1450412
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-6954.html
+    reference_id:
+  - id: 937732
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-6954.json
+    reference_id:
+  - id: 1450413
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6954
+    reference_id:
+  - id: 757190
+    url: https://github.com/systemd/systemd/issues/7986
+    reference_id:
+  - id: 29651
+    url: https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 29652
+    url: https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    reference_id:
+  - id: 1447240
+    url: https://ubuntu.com/security/notices/USN-3816-1
+    reference_id:
+  - id: 1450414
+    url: https://ubuntu.com/security/notices/USN-3816-2
+    reference_id:
+  - id: 737243
+    url: https://usn.ubuntu.com/3816-1/
+    reference_id:
+  - id: 757191
+    url: https://usn.ubuntu.com/3816-2/
+    reference_id:
+  - id: 937731
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1545017
+    reference_id: 1545017
+  - id: 133287
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=890779
+    reference_id: 890779
+  - id: 482253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:systemd_project:systemd:*:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 614332
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.3:*:*:*:*:*:*:*
+  - id: 757192
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-6954
+    reference_id: CVE-2018-6954
+weaknesses: []

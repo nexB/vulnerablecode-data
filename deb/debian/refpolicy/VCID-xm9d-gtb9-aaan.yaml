@@ -1,0 +1,50 @@
+vulnerability_id: VCID-xm9d-gtb9-aaan
+aliases:
+  - CVE-2020-24612
+summary: An issue was discovered in the selinux-policy (aka Reference Policy) package 3.14 through
+  2020-08-24 because the .config/Yubico directory is mishandled. Consequently, when SELinux
+  is in enforced mode, pam-u2f is not allowed to read the user's U2F configuration file. If
+  configured with the nouserok option (the default when configured by the authselect tool),
+  and that file cannot be read, the second factor is disabled. An attacker with only the knowledge
+  of the password can then log in, bypassing 2FA.
+severities:
+  - id: 610724
+    reference_id: 931873
+    scoring_system: cvssv3
+    value: '4.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+  - id: 610723
+    reference_id: 931872
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 459420
+    reference_id: 832265
+    scoring_system: cvssv2
+    value: '1.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:P/I:N/A:N
+  - id: 459418
+    reference_id: 832265
+    scoring_system: cvssv3
+    value: '4.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 931873
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-24612.json
+    reference_id:
+  - id: 832263
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1860888
+    reference_id:
+  - id: 832264
+    url: https://github.com/fedora-selinux/selinux-policy/commit/71e1989028802c7875d3436fd3966c587fa383fb
+    reference_id:
+  - id: 931872
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1871217
+    reference_id: 1871217
+  - id: 832266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:fedoraproject:selinux-policy:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:fedoraproject:selinux-policy:*:*:*:*:*:*:*:*
+  - id: 832265
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-24612
+    reference_id: CVE-2020-24612
+weaknesses: []

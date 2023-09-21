@@ -1,0 +1,20 @@
+affected_purls: []
+aliases:
+- CVE-2020-14004
+fixed_purl:
+- pkg:deb/debian/icinga2@2.10.3-2%2Bdeb10u1?distro=sid
+- pkg:deb/debian/icinga2@2.11.5-1?distro=sid
+- pkg:deb/debian/icinga2@2.12.3-1?distro=sid
+- pkg:deb/debian/icinga2@2.13.6-2?distro=sid
+references:
+- id: 129152
+  reference_id: '970252'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970252
+severities: []
+summary: An issue was discovered in Icinga2 before v2.12.0-rc1. The prepare-dirs script
+  (run as part of the icinga2 systemd service) executes chmod 2750 /run/icinga2/cmd.
+  /run/icinga2 is under control of an unprivileged user by default. If /run/icinga2/cmd
+  is a symlink, then it will by followed and arbitrary files can be changed to mode
+  2750 by the unprivileged icinga2 user.
+vulnerability_id: VCID-3afm-ghgg-aaaa
+weaknesses: []

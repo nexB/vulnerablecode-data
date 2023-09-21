@@ -1,0 +1,34 @@
+vulnerability_id: VCID-uekr-hfgp-aaae
+aliases:
+  - CVE-2020-11558
+summary: An issue was discovered in libgpac.a in GPAC 0.8.0, as demonstrated by MP4Box. audio_sample_entry_Read
+  in isomedia/box_code_base.c does not properly decide when to make gf_isom_box_del calls. This
+  leads to various use-after-free outcomes involving mdia_Read, gf_isom_delete_movie, and gf_isom_parse_movie_boxes.
+severities:
+  - id: 433257
+    reference_id: 814004
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 433255
+    reference_id: 814004
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 814002
+    url: https://github.com/gpac/gpac/commit/6063b1a011c3f80cee25daade18154e15e4c058c
+    reference_id:
+  - id: 814003
+    url: https://github.com/gpac/gpac/issues/1440
+    reference_id:
+  - id: 39942
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=972053
+    reference_id: 972053
+  - id: 791938
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:gpac:gpac:0.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:gpac:gpac:0.8.0:*:*:*:*:*:*:*
+  - id: 814004
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-11558
+    reference_id: CVE-2020-11558
+weaknesses: []

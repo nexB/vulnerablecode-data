@@ -1,0 +1,376 @@
+vulnerability_id: VCID-zfpg-d4tb-aaaj
+aliases:
+  - CVE-2009-0037
+summary: 'The redirect implementation in curl and libcurl 5.11 through 7.19.3, when CURLOPT_FOLLOWLOCATION
+  is enabled, accepts arbitrary Location values, which might allow remote HTTP servers to (1)
+  trigger arbitrary requests to intranet servers, (2) read or overwrite arbitrary files via
+  a redirect to a file: URL, or (3) execute arbitrary commands via a redirect to an scp: URL.'
+severities:
+  - id: 73243
+    reference_id: 203832
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 121869
+    reference_id: 378978
+    scoring_system: cvssv2
+    value: '6.8'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:P/A:P
+  - id: 73244
+    reference_id: 203833
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 378955
+    url: http://curl.haxx.se/docs/adv_20090303.html
+    reference_id:
+  - id: 378956
+    url: http://curl.haxx.se/lxr/source/CHANGES
+    reference_id:
+  - id: 29844
+    url: http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+    reference_id:
+  - id: 322273
+    url: http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00001.html
+    reference_id:
+  - id: 378916
+    url: http://lists.vmware.com/pipermail/security-announce/2009/000060.html
+    reference_id:
+  - id: 203834
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2009-0037.json
+    reference_id:
+  - id: 378957
+    url: http://secunia.com/advisories/34138
+    reference_id:
+  - id: 378958
+    url: http://secunia.com/advisories/34202
+    reference_id:
+  - id: 378959
+    url: http://secunia.com/advisories/34237
+    reference_id:
+  - id: 378960
+    url: http://secunia.com/advisories/34251
+    reference_id:
+  - id: 378961
+    url: http://secunia.com/advisories/34255
+    reference_id:
+  - id: 322275
+    url: http://secunia.com/advisories/34259
+    reference_id:
+  - id: 378962
+    url: http://secunia.com/advisories/34399
+    reference_id:
+  - id: 378921
+    url: http://secunia.com/advisories/35766
+    reference_id:
+  - id: 378963
+    url: http://security.gentoo.org/glsa/glsa-200903-21.xml
+    reference_id:
+  - id: 378975
+    url: https://exchange.xforce.ibmcloud.com/vulnerabilities/49030
+    reference_id:
+  - id: 378964
+    url: http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.476602
+    reference_id:
+  - id: 378976
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11054
+    reference_id:
+  - id: 378977
+    url: https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6074
+    reference_id:
+  - id: 9065
+    url: http://support.apple.com/kb/HT4077
+    reference_id:
+  - id: 378965
+    url: http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0042
+    reference_id:
+  - id: 378966
+    url: http://www.debian.org/security/2009/dsa-1738
+    reference_id:
+  - id: 378967
+    url: http://www.redhat.com/support/errata/RHSA-2009-0341.html
+    reference_id:
+  - id: 378968
+    url: http://www.securityfocus.com/archive/1/501757/100/0/threaded
+    reference_id:
+  - id: 378927
+    url: http://www.securityfocus.com/archive/1/504849/100/0/threaded
+    reference_id:
+  - id: 378969
+    url: http://www.securityfocus.com/bid/33962
+    reference_id:
+  - id: 378970
+    url: http://www.securitytracker.com/id?1021783
+    reference_id:
+  - id: 378971
+    url: http://www.ubuntu.com/usn/USN-726-1
+    reference_id:
+  - id: 378931
+    url: http://www.vmware.com/security/advisories/VMSA-2009-0009.html
+    reference_id:
+  - id: 378972
+    url: http://www.vupen.com/english/advisories/2009/0581
+    reference_id:
+  - id: 378932
+    url: http://www.vupen.com/english/advisories/2009/1865
+    reference_id:
+  - id: 378973
+    url: http://www.withdk.com/2009/03/03/curllibcurl-redirect-arbitrary-file-access/
+    reference_id:
+  - id: 378974
+    url: http://www.withdk.com/archives/Libcurl_arbitrary_file_access.pdf
+    reference_id:
+  - id: 203832
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=485271
+    reference_id: 485271
+  - id: 40405
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=518423
+    reference_id: 518423
+  - id: 378979
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:5.11:*:*:*:*:*:*:*
+  - id: 378980
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.0:*:*:*:*:*:*:*
+  - id: 378981
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.1beta:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.1beta:*:*:*:*:*:*:*
+  - id: 378982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.2:*:*:*:*:*:*:*
+  - id: 378984
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.3:*:*:*:*:*:*:*
+  - id: 378983
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.3.1:*:*:*:*:*:*:*
+  - id: 378985
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.4:*:*:*:*:*:*:*
+  - id: 378988
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.5:*:*:*:*:*:*:*
+  - id: 378986
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.5.1:*:*:*:*:*:*:*
+  - id: 378987
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:6.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:6.5.2:*:*:*:*:*:*:*
+  - id: 379013
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.1:*:*:*:*:*:*:*
+  - id: 378998
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10:*:*:*:*:*:*:*
+  - id: 378990
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.1:*:*:*:*:*:*:*
+  - id: 378991
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.2:*:*:*:*:*:*:*
+  - id: 378992
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.3:*:*:*:*:*:*:*
+  - id: 378993
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.4:*:*:*:*:*:*:*
+  - id: 378994
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.5:*:*:*:*:*:*:*
+  - id: 378995
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.6:*:*:*:*:*:*:*
+  - id: 378996
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.7:*:*:*:*:*:*:*
+  - id: 378997
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.10.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.10.8:*:*:*:*:*:*:*
+  - id: 378989
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.1.1:*:*:*:*:*:*:*
+  - id: 378999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.11.1:*:*:*:*:*:*:*
+  - id: 379001
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.12:*:*:*:*:*:*:*
+  - id: 115763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.12.1:*:*:*:*:*:*:*
+  - id: 379000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.12.2:*:*:*:*:*:*:*
+  - id: 379002
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.13:*:*:*:*:*:*:*
+  - id: 133842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.13.2:*:*:*:*:*:*:*
+  - id: 379004
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.14:*:*:*:*:*:*:*
+  - id: 379003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.14.1:*:*:*:*:*:*:*
+  - id: 379007
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.15:*:*:*:*:*:*:*
+  - id: 379005
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.15.1:*:*:*:*:*:*:*
+  - id: 379006
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.15.3:*:*:*:*:*:*:*
+  - id: 379008
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.16.3:*:*:*:*:*:*:*
+  - id: 379009
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.16.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.16.4:*:*:*:*:*:*:*
+  - id: 379010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.17:*:*:*:*:*:*:*
+  - id: 379011
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.18:*:*:*:*:*:*:*
+  - id: 379012
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.19.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.19.3:*:*:*:*:*:*:*
+  - id: 379015
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.2:*:*:*:*:*:*:*
+  - id: 379014
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.2.1:*:*:*:*:*:*:*
+  - id: 379016
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.3:*:*:*:*:*:*:*
+  - id: 379019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.4:*:*:*:*:*:*:*
+  - id: 379017
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.4.1:*:*:*:*:*:*:*
+  - id: 379018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.4.2:*:*:*:*:*:*:*
+  - id: 379022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.5:*:*:*:*:*:*:*
+  - id: 379020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.5.1:*:*:*:*:*:*:*
+  - id: 379021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.5.2:*:*:*:*:*:*:*
+  - id: 379024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.6:*:*:*:*:*:*:*
+  - id: 379023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.6.1:*:*:*:*:*:*:*
+  - id: 379028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.7:*:*:*:*:*:*:*
+  - id: 379025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.7.1:*:*:*:*:*:*:*
+  - id: 379026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.7.2:*:*:*:*:*:*:*
+  - id: 379027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.7.3:*:*:*:*:*:*:*
+  - id: 379031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.8:*:*:*:*:*:*:*
+  - id: 379029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.8.1:*:*:*:*:*:*:*
+  - id: 379030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.8.2:*:*:*:*:*:*:*
+  - id: 379040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9:*:*:*:*:*:*:*
+  - id: 379032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.1:*:*:*:*:*:*:*
+  - id: 379033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.2:*:*:*:*:*:*:*
+  - id: 379034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.3:*:*:*:*:*:*:*
+  - id: 379035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.4:*:*:*:*:*:*:*
+  - id: 379036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.5:*:*:*:*:*:*:*
+  - id: 379037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.6:*:*:*:*:*:*:*
+  - id: 379038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.7:*:*:*:*:*:*:*
+  - id: 379039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:curl:7.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:curl:7.9.8:*:*:*:*:*:*:*
+  - id: 379041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:5.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:5.11:*:*:*:*:*:*:*
+  - id: 154070
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.12:*:*:*:*:*:*:*
+  - id: 154067
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.12.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.12.1:*:*:*:*:*:*:*
+  - id: 154068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.12.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.12.2:*:*:*:*:*:*:*
+  - id: 154069
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.12.3:*:*:*:*:*:*:*
+  - id: 154073
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.13:*:*:*:*:*:*:*
+  - id: 154071
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.13.1:*:*:*:*:*:*:*
+  - id: 154072
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.13.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.13.2:*:*:*:*:*:*:*
+  - id: 154075
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.14:*:*:*:*:*:*:*
+  - id: 154074
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.14.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.14.1:*:*:*:*:*:*:*
+  - id: 154079
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.15:*:*:*:*:*:*:*
+  - id: 154076
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.15.1:*:*:*:*:*:*:*
+  - id: 154077
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.15.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.15.2:*:*:*:*:*:*:*
+  - id: 154078
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.15.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.15.3:*:*:*:*:*:*:*
+  - id: 154080
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.16.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.16.3:*:*:*:*:*:*:*
+  - id: 154089
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:curl:libcurl:7.19.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:curl:libcurl:7.19.3:*:*:*:*:*:*:*
+  - id: 378978
+    url: https://nvd.nist.gov/vuln/detail/CVE-2009-0037
+    reference_id: CVE-2009-0037
+  - id: 203833
+    url: https://access.redhat.com/errata/RHSA-2009:0341
+    reference_id: RHSA-2009:0341
+weaknesses: []

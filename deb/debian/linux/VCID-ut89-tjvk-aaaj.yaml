@@ -1,0 +1,100 @@
+vulnerability_id: VCID-ut89-tjvk-aaaj
+aliases:
+  - CVE-2017-8068
+summary: drivers/net/usb/pegasus.c in the Linux kernel 4.9.x before 4.9.11 interacts incorrectly
+  with the CONFIG_VMAP_STACK option, which allows local users to cause a denial of service (system
+  crash or memory corruption) or possibly have unspecified other impact by leveraging use of
+  more than one virtual page for a DMA scatterlist.
+severities:
+  - id: 624429
+    reference_id: 941698
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 679533
+    reference_id: 704316
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 680880
+    reference_id: 710831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 624428
+    reference_id: 941697
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 296271
+    reference_id: 711617
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 296269
+    reference_id: 711617
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 941698
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-8068.json
+    reference_id:
+  - id: 711616
+    url: https://github.com/torvalds/linux/commit/5593523f968bc86d42a035c6df47d5e0979b5ace
+    reference_id:
+  - id: 711615
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5593523f968bc86d42a035c6df47d5e0979b5ace
+    reference_id:
+  - id: 704316
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.11
+    reference_id:
+  - id: 710831
+    url: http://www.openwall.com/lists/oss-security/2017/04/16/4
+    reference_id:
+  - id: 711613
+    url: http://www.securityfocus.com/bid/98000
+    reference_id:
+  - id: 711614
+    url: http://www.securityfocus.com/bid/98008
+    reference_id:
+  - id: 941697
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1445341
+    reference_id: 1445341
+  - id: 54170
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=852556
+    reference_id: 852556
+  - id: 627475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*
+  - id: 627470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.1:*:*:*:*:*:*:*
+  - id: 678310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.10:*:*:*:*:*:*:*
+  - id: 627471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.2:*:*:*:*:*:*:*
+  - id: 627472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.3:*:*:*:*:*:*:*
+  - id: 627473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.4:*:*:*:*:*:*:*
+  - id: 627474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.5:*:*:*:*:*:*:*
+  - id: 678345
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*
+  - id: 678347
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.8:*:*:*:*:*:*:*
+  - id: 678348
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.9.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.9.9:*:*:*:*:*:*:*
+  - id: 711617
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8068
+    reference_id: CVE-2017-8068
+weaknesses: []

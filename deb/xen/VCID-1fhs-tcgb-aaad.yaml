@@ -1,0 +1,28 @@
+affected_purls: []
+aliases:
+- CVE-2020-25603
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B37-g3263f257ca-1?distro=sid
+- pkg:deb/debian/xen@4.14.0%2B80-gd101b417b7-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Xen through 4.14.x. There are missing memory barriers
+  when accessing/allocating an event channel. Event channels control structures can
+  be accessed lockless as long as the port is considered to be valid. Such a sequence
+  is missing an appropriate memory barrier (e.g., smp_*mb()) to prevent both the compiler
+  and CPU from re-ordering access. A malicious guest may be able to cause a hypervisor
+  crash resulting in a Denial of Service (DoS). Information leak and privilege escalation
+  cannot be excluded. Systems running all versions of Xen are affected. Whether a
+  system is vulnerable will depend on the CPU and compiler used to build Xen. For
+  all systems, the presence and the scope of the vulnerability depend on the precise
+  re-ordering performed by the compiler used to build Xen. We have not been able to
+  survey compilers; consequently we cannot say which compiler(s) might produce vulnerable
+  code (with which code generation options). GCC documentation clearly suggests that
+  re-ordering is possible. Arm systems will also be vulnerable if the CPU is able
+  to re-order memory access. Please consult your CPU vendor. x86 systems are only
+  vulnerable if a compiler performs re-ordering.
+vulnerability_id: VCID-1fhs-tcgb-aaad
+weaknesses: []

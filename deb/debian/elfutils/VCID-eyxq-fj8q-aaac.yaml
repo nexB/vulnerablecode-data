@@ -1,0 +1,128 @@
+vulnerability_id: VCID-eyxq-fj8q-aaac
+aliases:
+  - CVE-2018-18520
+summary: An Invalid Memory Address Dereference exists in the function elf_end in libelf in elfutils
+  through v0.174. Although eu-size is intended to support ar files inside ar files, handle_ar
+  in size.c closes the outer ar file before handling all inner entries. The vulnerability allows
+  attackers to cause a denial of service (application crash) with a crafted ELF file.
+severities:
+  - id: 685711
+    reference_id: 1448049
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 54231
+    reference_id: 179434
+    scoring_system: cvssv3
+    value: '3.3'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
+  - id: 685712
+    reference_id: 1448050
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 685713
+    reference_id: 743812
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684832
+    reference_id: 1447312
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 684831
+    reference_id: 1447311
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 335603
+    reference_id: 743813
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 335601
+    reference_id: 743813
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 709956
+    url: http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00052.html
+    reference_id:
+  - id: 1448049
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-18520.html
+    reference_id:
+  - id: 738128
+    url: https://access.redhat.com/errata/RHSA-2019:2197
+    reference_id:
+  - id: 179434
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-18520.json
+    reference_id:
+  - id: 1448050
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-18520
+    reference_id:
+  - id: 709964
+    url: https://lists.debian.org/debian-lts-announce/2019/02/msg00036.html
+    reference_id:
+  - id: 738129
+    url: https://lists.debian.org/debian-lts-announce/2021/10/msg00030.html
+    reference_id:
+  - id: 743811
+    url: https://sourceware.org/bugzilla/show_bug.cgi?id=23787
+    reference_id:
+  - id: 743812
+    url: https://sourceware.org/ml/elfutils-devel/2018-q4/msg00057.html
+    reference_id:
+  - id: 1447312
+    url: https://ubuntu.com/security/notices/USN-4012-1
+    reference_id:
+  - id: 738132
+    url: https://usn.ubuntu.com/4012-1/
+    reference_id:
+  - id: 1447311
+    url: https://usn.ubuntu.com/usn/usn-4012-1
+    reference_id:
+  - id: 40723
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=911414
+    reference_id: 911414
+  - id: 628022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:elfutils_project:elfutils:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:elfutils_project:elfutils:*:*:*:*:*:*:*:*
+  - id: 168168
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:esm:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 168170
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 629025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*
+  - id: 662472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*
+  - id: 157854
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*
+  - id: 157857
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*
+  - id: 157858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*
+  - id: 743813
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-18520
+    reference_id: CVE-2018-18520
+  - id: 179432
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1646477
+    reference_id: RHBA-2020:0547
+weaknesses: []

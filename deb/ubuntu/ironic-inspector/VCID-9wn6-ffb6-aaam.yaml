@@ -1,0 +1,133 @@
+vulnerability_id: VCID-9wn6-ffb6-aaam
+aliases:
+  - CVE-2019-10141
+  - PYSEC-2019-152
+summary: A vulnerability was found in openstack-ironic-inspector all versions excluding 5.0.2,
+  6.0.3, 7.2.4, 8.0.3 and 8.2.1. A SQL-injection vulnerability was found in openstack-ironic-inspector's
+  node_cache.find_node(). This function makes a SQL query using unfiltered data from a server
+  reporting inspection results (by a POST to the /v1/continue endpoint). Because the API is
+  unauthenticated, the flaw could be exploited by an attacker with access to the network on
+  which ironic-inspector is listening. Because of how ironic-inspector uses the query results,
+  it is unlikely that data could be obtained. However, the attacker could pass malicious data
+  and create a denial of service.
+severities:
+  - id: 689507
+    reference_id: 1451117
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612317
+    reference_id: 933029
+    scoring_system: cvssv3
+    value: '8.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:H
+  - id: 689508
+    reference_id: 1451118
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 689509
+    reference_id: 1451119
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 612312
+    reference_id: 933024
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 366984
+    reference_id: 766240
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:P/A:P
+  - id: 366982
+    reference_id: 766240
+    scoring_system: cvssv3
+    value: '9.1'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+  - id: 612313
+    reference_id: 933025
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 612316
+    reference_id: 933028
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 612315
+    reference_id: 933027
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 612314
+    reference_id: 933026
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1451117
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-10141.html
+    reference_id:
+  - id: 933029
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-10141.json
+    reference_id:
+  - id: 6196
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10141
+    reference_id:
+  - id: 1451118
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10141
+    reference_id:
+  - id: 6193
+    url: https://docs.openstack.org/releasenotes/ironic-inspector/ocata.html#relnotes-5-0-2-7-origin-stable-ocata
+    reference_id:
+  - id: 6198
+    url: https://docs.openstack.org/releasenotes/ironic-inspector/pike.html#relnotes-6-0-3-4-stable-pike
+    reference_id:
+  - id: 6195
+    url: https://docs.openstack.org/releasenotes/ironic-inspector/queens.html#relnotes-7-2-4-stable-queens
+    reference_id:
+  - id: 6197
+    url: https://docs.openstack.org/releasenotes/ironic-inspector/rocky.html#relnotes-8-0-3-stable-rocky
+    reference_id:
+  - id: 6194
+    url: https://docs.openstack.org/releasenotes/ironic-inspector/stein.html#relnotes-8-2-1-stable-stein
+    reference_id:
+  - id: 1451119
+    url: https://review.opendev.org/#/c/660234/
+    reference_id:
+  - id: 933024
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1711722
+    reference_id: 1711722
+  - id: 42239
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=929332
+    reference_id: 929332
+  - id: 766241
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openstack:ironic-inspector:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openstack:ironic-inspector:*:*:*:*:*:*:*:*
+  - id: 637831
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*
+  - id: 637842
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:13:*:*:*:*:*:*:*
+  - id: 739950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:openstack:14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:openstack:14:*:*:*:*:*:*:*
+  - id: 766240
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10141
+    reference_id: CVE-2019-10141
+  - id: 933025
+    url: https://access.redhat.com/errata/RHSA-2019:1669
+    reference_id: RHSA-2019:1669
+  - id: 933028
+    url: https://access.redhat.com/errata/RHSA-2019:1722
+    reference_id: RHSA-2019:1722
+  - id: 933027
+    url: https://access.redhat.com/errata/RHSA-2019:1734
+    reference_id: RHSA-2019:1734
+  - id: 933026
+    url: https://access.redhat.com/errata/RHSA-2019:2505
+    reference_id: RHSA-2019:2505
+weaknesses: []

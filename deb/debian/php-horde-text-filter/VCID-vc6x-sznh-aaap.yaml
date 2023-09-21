@@ -1,0 +1,53 @@
+vulnerability_id: VCID-vc6x-sznh-aaap
+aliases:
+  - CVE-2021-26929
+summary: An XSS issue was discovered in Horde Groupware Webmail Edition through 5.2.22 (where
+  the Horde_Text_Filter library before 2.3.7 is used). The attacker can send a plain text e-mail
+  message, with JavaScript encoded as a link or email that is mishandled by preProcess in Text2html.php,
+  because bespoke use of \x00\x00\x00 and \x01\x01\x01 interferes with XSS defenses.
+severities:
+  - id: 525194
+    reference_id: 874840
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:P/A:N
+  - id: 525192
+    reference_id: 874840
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+references:
+  - id: 874833
+    url: http://packetstormsecurity.com/files/162187/Webmail-Edition-5.2.22-XSS-Remote-Code-Execution.html
+    reference_id:
+  - id: 874834
+    url: http://packetstormsecurity.com/files/162194/Horde-Groupware-Webmail-5.2.22-Cross-Site-Scripting.html
+    reference_id:
+  - id: 874835
+    url: https://github.com/horde/webmail/releases
+    reference_id:
+  - id: 874836
+    url: https://lists.debian.org/debian-lts-announce/2021/02/msg00028.html
+    reference_id:
+  - id: 874837
+    url: https://lists.horde.org/archives/announce/2021/001298.html
+    reference_id:
+  - id: 874838
+    url: https://www.alexbirnberg.com/horde-xss.html
+    reference_id:
+  - id: 874839
+    url: https://www.horde.org/apps/webmail
+    reference_id:
+  - id: 94459
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982769
+    reference_id: 982769
+  - id: 543357
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:horde:groupware:*:*:*:*:webmail:*:*:*
+    reference_id: cpe:2.3:a:horde:groupware:*:*:*:*:webmail:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 874840
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-26929
+    reference_id: CVE-2021-26929
+weaknesses: []

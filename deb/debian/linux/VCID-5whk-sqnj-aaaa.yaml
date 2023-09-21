@@ -1,0 +1,41 @@
+vulnerability_id: VCID-5whk-sqnj-aaaa
+aliases:
+  - CVE-2017-8244
+summary: In core_info_read and inst_info_read in all Android releases from CAF using the Linux
+  kernel, variable "dbg_buf", "dbg_buf->curr" and "dbg_buf->filled_size" could be modified by
+  different threads at the same time, but they are not protected with mutex or locks. Buffer
+  overflow is possible on race conditions. "buffer->curr" itself could also be overwritten,
+  which means that it may point to anywhere of kernel memory (for write).
+severities:
+  - id: 674905
+    reference_id: 648794
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 296899
+    reference_id: 712024
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 296897
+    reference_id: 712024
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 648794
+    url: https://source.android.com/security/bulletin/pixel/2017-12-01
+    reference_id:
+  - id: 712023
+    url: https://www.codeaurora.org/buffer-overflow-msmvidc-debugfs-driver-coreinforead-and-instinforead-cve-2017-8244
+    reference_id:
+  - id: 712022
+    url: http://www.securityfocus.com/bid/98547
+    reference_id:
+  - id: 170161
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:google:android:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:google:android:-:*:*:*:*:*:*:*
+  - id: 712024
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-8244
+    reference_id: CVE-2017-8244
+weaknesses: []

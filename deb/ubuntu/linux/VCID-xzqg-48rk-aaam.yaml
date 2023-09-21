@@ -1,0 +1,74 @@
+vulnerability_id: VCID-xzqg-48rk-aaam
+aliases:
+  - CVE-2012-6704
+summary: The sock_setsockopt function in net/core/sock.c in the Linux kernel before 3.5 mishandles
+  negative values of sk_sndbuf and sk_rcvbuf, which allows local users to cause a denial of
+  service (memory corruption and system crash) or possibly have unspecified other impact by
+  leveraging the CAP_NET_ADMIN capability for a crafted setsockopt system call with the (1)
+  SO_SNDBUF or (2) SO_RCVBUF option.
+severities:
+  - id: 651167
+    reference_id: 1421162
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 65229
+    reference_id: '194045'
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 651169
+    reference_id: 1421164
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 651168
+    reference_id: 1421163
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 160728
+    reference_id: 511679
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 160726
+    reference_id: 511679
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 511674
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=82981930125abfd39d7c8378a9cfdf5e1be2002b
+    reference_id:
+  - id: 1421162
+    url: http://people.canonical.com/~ubuntu-security/cve/2012/CVE-2012-6704.html
+    reference_id:
+  - id: '194045'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2012-6704.json
+    reference_id:
+  - id: 511677
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1402024
+    reference_id:
+  - id: 1421164
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6704
+    reference_id:
+  - id: 511678
+    url: https://github.com/torvalds/linux/commit/82981930125abfd39d7c8378a9cfdf5e1be2002b
+    reference_id:
+  - id: 1421163
+    url: http://www.openwall.com/lists/oss-security/2016/12/02
+    reference_id:
+  - id: 511675
+    url: http://www.openwall.com/lists/oss-security/2016/12/03/1
+    reference_id:
+  - id: 511676
+    url: http://www.securityfocus.com/bid/95135
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 511679
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-6704
+    reference_id: CVE-2012-6704
+weaknesses: []

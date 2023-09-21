@@ -1,0 +1,69 @@
+vulnerability_id: VCID-3dje-y7af-aaap
+aliases:
+  - CVE-2016-1551
+summary: ntpd in NTP 4.2.8p3 and NTPsec a5fb34b9cc89b92a8fef2f459004865c93bb7f92 relies on the
+  underlying operating system to protect it from requests that impersonate reference clocks.
+  Because reference clocks are treated like other peers and stored in the same structure, any
+  packet with a source ip address of a reference clock (127.127.1.1 for example) that reaches
+  the receive() function will match that reference clock's peer record and will be treated as
+  a trusted peer. Any system that lacks the typical martian packet filtering which would block
+  these packets is in danger of having its time controlled by an attacker.
+severities:
+  - id: 665112
+    reference_id: 4696
+    scoring_system: generic_textual
+    value: Negligible
+    scoring_elements:
+  - id: 50002
+    reference_id: 174475
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 218598
+    reference_id: 635487
+    scoring_system: cvssv2
+    value: '2.6'
+    scoring_elements: AV:N/AC:H/Au:N/C:N/I:P/A:N
+  - id: 218596
+    reference_id: 635487
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+references:
+  - id: 174476
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-1551.json
+    reference_id:
+  - id: 635463
+    url: https://security.FreeBSD.org/advisories/FreeBSD-SA-16:16.ntp.asc
+    reference_id:
+  - id: 615009
+    url: https://security.gentoo.org/glsa/201607-15
+    reference_id:
+  - id: 615083
+    url: https://security.netapp.com/advisory/ntap-20171004-0002/
+    reference_id:
+  - id: 4696
+    url: http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    reference_id:
+  - id: 635485
+    url: http://www.securityfocus.com/bid/88219
+    reference_id:
+  - id: 635461
+    url: http://www.securitytracker.com/id/1035705
+    reference_id:
+  - id: 635486
+    url: http://www.talosintelligence.com/reports/TALOS-2016-0132/
+    reference_id:
+  - id: 174475
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1331465
+    reference_id: 1331465
+  - id: 615025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ntp:ntp:4.2.8:p3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ntp:ntp:4.2.8:p3:*:*:*:*:*:*
+  - id: 635488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:ntpsec:ntpsec:a5fb34b9cc89b92a8fef2f459004865c93bb7f92:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:ntpsec:ntpsec:a5fb34b9cc89b92a8fef2f459004865c93bb7f92:*:*:*:*:*:*:*
+  - id: 635487
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-1551
+    reference_id: CVE-2016-1551
+weaknesses: []

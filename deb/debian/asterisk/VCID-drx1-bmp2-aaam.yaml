@@ -1,0 +1,41 @@
+vulnerability_id: VCID-drx1-bmp2-aaam
+aliases:
+  - CVE-2018-7285
+summary: A NULL pointer access issue was discovered in Asterisk 15.x through 15.2.1. The RTP
+  support in Asterisk maintains its own registry of dynamic codecs and desired payload numbers.
+  While an SDP negotiation may result in a codec using a different payload number, these desired
+  ones are still stored internally. When an RTP packet was received, this registry would be
+  consulted if the payload number was not found in the negotiated SDP. This registry was incorrectly
+  consulted for all packets, even those which are dynamic. If the payload number resulted in
+  a codec of a different type than the RTP stream (for example, the payload number resulted
+  in a video codec but the stream carried audio), a crash could occur if no stream of that type
+  had been negotiated. This was due to the code incorrectly assuming that a stream of that type
+  would always exist.
+severities:
+  - id: 355577
+    reference_id: 757862
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 355575
+    reference_id: 757862
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 757859
+    url: http://downloads.asterisk.org/pub/security/AST-2018-001.html
+    reference_id:
+  - id: 757860
+    url: http://www.securityfocus.com/bid/103149
+    reference_id:
+  - id: 757861
+    url: http://www.securitytracker.com/id/1040415
+    reference_id:
+  - id: 229597
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:digium:asterisk:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:digium:asterisk:*:*:*:*:*:*:*:*
+  - id: 757862
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-7285
+    reference_id: CVE-2018-7285
+weaknesses: []

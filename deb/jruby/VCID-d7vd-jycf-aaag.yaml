@@ -1,0 +1,74 @@
+affected_purls:
+- pkg:gem/rubygems-update@2.6.0
+- pkg:gem/rubygems-update@2.6.1
+- pkg:gem/rubygems-update@2.6.10
+- pkg:gem/rubygems-update@2.6.11
+- pkg:gem/rubygems-update@2.6.12
+- pkg:gem/rubygems-update@2.6.13
+- pkg:gem/rubygems-update@2.6.14
+- pkg:gem/rubygems-update@2.6.2
+- pkg:gem/rubygems-update@2.6.3
+- pkg:gem/rubygems-update@2.6.4
+- pkg:gem/rubygems-update@2.6.5
+- pkg:gem/rubygems-update@2.6.6
+- pkg:gem/rubygems-update@2.6.7
+- pkg:gem/rubygems-update@2.6.8
+- pkg:gem/rubygems-update@2.6.9
+- pkg:gem/rubygems-update@2.7.0
+- pkg:gem/rubygems-update@2.7.1
+- pkg:gem/rubygems-update@2.7.10
+- pkg:gem/rubygems-update@2.7.2
+- pkg:gem/rubygems-update@2.7.3
+- pkg:gem/rubygems-update@2.7.4
+- pkg:gem/rubygems-update@2.7.4.pre1
+- pkg:gem/rubygems-update@2.7.5
+- pkg:gem/rubygems-update@2.7.6
+- pkg:gem/rubygems-update@2.7.7
+- pkg:gem/rubygems-update@2.7.8
+- pkg:gem/rubygems-update@3.0.0
+- pkg:gem/rubygems-update@3.0.1
+aliases:
+- CVE-2019-8324
+- GHSA-76wm-422q-92mq
+fixed_purl:
+- pkg:deb/debian/jruby@9.1.17.0-3?distro=sid
+- pkg:deb/debian/jruby@9.3.9.0%2Bds-8?distro=sid
+- pkg:deb/debian/ruby2.5@2.5.5-1?distro=buster
+- pkg:deb/debian/ruby2.5@2.5.5-3%2Bdeb10u4?distro=buster
+- pkg:deb/debian/rubygems@3.2.0~rc.1-1?distro=sid
+- pkg:deb/debian/rubygems@3.2.5-2?distro=sid
+- pkg:deb/debian/rubygems@3.3.15-2?distro=sid
+- pkg:gem/rubygems-update@2.7.9
+- pkg:gem/rubygems-update@3.0.2
+- pkg:gem/rubygems-update@3.0.3
+references:
+- id: 143234
+  reference_id: ''
+  url: http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00036.html
+- id: 149750
+  reference_id: ''
+  url: https://access.redhat.com/errata/RHSA-2019:1972
+- id: 149741
+  reference_id: ''
+  url: https://lists.debian.org/debian-lts-announce/2020/08/msg00027.html
+- id: 128974
+  reference_id: '925987'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=925987
+- id: 149749
+  reference_id: CVE-2019-8324
+  url: https://nvd.nist.gov/vuln/detail/CVE-2019-8324
+- id: 149751
+  reference_id: GHSA-76wm-422q-92mq
+  url: https://github.com/advisories/GHSA-76wm-422q-92mq
+severities:
+- id: 21156
+  reference_id: 149751
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: An issue was discovered in RubyGems 2.6 and later through 3.0.2. A crafted
+  gem with a multi-line name is not handled correctly. Therefore, an attacker could
+  inject arbitrary code to the stub line of gemspec, which is eval-ed by code in ensure_loadable_spec
+  during the preinstall check.
+vulnerability_id: VCID-d7vd-jycf-aaag
+weaknesses: []

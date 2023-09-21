@@ -1,0 +1,91 @@
+vulnerability_id: VCID-ysdh-a9zj-aaak
+aliases:
+  - CVE-2014-9717
+summary: fs/namespace.c in the Linux kernel before 4.0.2 processes MNT_DETACH umount2 system
+  calls without verifying that the MNT_LOCKED flag is unset, which allows local users to bypass
+  intended access restrictions and navigate to filesystem locations beneath a mount by calling
+  umount2 within a user namespace.
+severities:
+  - id: 659049
+    reference_id: 1426964
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659051
+    reference_id: 1426965
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659052
+    reference_id: 1426966
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 659050
+    reference_id: 592359
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: '191646'
+    reference_id: 592365
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:N
+  - id: '191644'
+    reference_id: 592365
+    scoring_system: cvssv3
+    value: '6.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N
+references:
+  - id: 592355
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ce07d891a0891d3c0d0c2d73d577490486b809e1
+    reference_id:
+  - id: 592356
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00054.html
+    reference_id:
+  - id: 592357
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00056.html
+    reference_id:
+  - id: 592358
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00000.html
+    reference_id:
+  - id: 1426964
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-9717.html
+    reference_id:
+  - id: 184693
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-9717.json
+    reference_id:
+  - id: 592362
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1226751
+    reference_id:
+  - id: 1426965
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9717
+    reference_id:
+  - id: 592363
+    url: https://github.com/torvalds/linux/commit/ce07d891a0891d3c0d0c2d73d577490486b809e1
+    reference_id:
+  - id: 592364
+    url: https://groups.google.com/forum/message/raw?msg=linux.kernel/HnegnbXk0Vs/RClojwJzAFEJ
+    reference_id:
+  - id: 1426966
+    url: https://groups.google.com/forum/#!topic/linux.kernel/HnegnbXk0Vs
+    reference_id:
+  - id: 165721
+    url: http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.0.2
+    reference_id:
+  - id: 592359
+    url: http://www.openwall.com/lists/oss-security/2015/04/17/4
+    reference_id:
+  - id: 592360
+    url: http://www.securityfocus.com/bid/74226
+    reference_id:
+  - id: 592361
+    url: http://www.spinics.net/lists/linux-containers/msg30786.html
+    reference_id:
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 592365
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-9717
+    reference_id: CVE-2014-9717
+weaknesses: []

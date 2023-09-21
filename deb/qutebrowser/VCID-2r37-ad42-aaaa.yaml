@@ -1,0 +1,72 @@
+affected_purls:
+- pkg:pypi/qutebrowser@1.10.0
+- pkg:pypi/qutebrowser@1.10.1
+- pkg:pypi/qutebrowser@1.10.2
+- pkg:pypi/qutebrowser@1.11.0
+- pkg:pypi/qutebrowser@1.11.1
+- pkg:pypi/qutebrowser@1.12.0
+- pkg:pypi/qutebrowser@1.13.0
+- pkg:pypi/qutebrowser@1.13.1
+- pkg:pypi/qutebrowser@1.14.0
+- pkg:pypi/qutebrowser@1.14.1
+- pkg:pypi/qutebrowser@1.7.0
+- pkg:pypi/qutebrowser@1.8.0
+- pkg:pypi/qutebrowser@1.8.1
+- pkg:pypi/qutebrowser@1.8.2
+- pkg:pypi/qutebrowser@1.8.3
+- pkg:pypi/qutebrowser@1.9.0
+- pkg:pypi/qutebrowser@2.0.0
+- pkg:pypi/qutebrowser@2.0.1
+- pkg:pypi/qutebrowser@2.0.2
+- pkg:pypi/qutebrowser@2.1.0
+- pkg:pypi/qutebrowser@2.1.1
+- pkg:pypi/qutebrowser@2.2.0
+- pkg:pypi/qutebrowser@2.2.1
+- pkg:pypi/qutebrowser@2.2.2
+- pkg:pypi/qutebrowser@2.2.3
+- pkg:pypi/qutebrowser@2.3.0
+- pkg:pypi/qutebrowser@2.3.1
+aliases:
+- CVE-2021-41146
+- GHSA-vw27-fwjf-5qxm
+fixed_purl:
+- pkg:deb/debian/qutebrowser@0?distro=sid
+- pkg:deb/debian/qutebrowser@1.6.1-2?distro=sid
+- pkg:deb/debian/qutebrowser@2.0.2-2?distro=sid
+- pkg:deb/debian/qutebrowser@2.5.3-1?distro=sid
+- pkg:pypi/qutebrowser@2.4.0
+references:
+- id: 163521
+  reference_id: ''
+  url: https://github.com/qutebrowser/qutebrowser/commit/8f46ba3f6dc7b18375f7aa63c48a1fe461190430
+- id: 163520
+  reference_id: CVE-2021-41146
+  url: https://nvd.nist.gov/vuln/detail/CVE-2021-41146
+- id: 163522
+  reference_id: GHSA-vw27-fwjf-5qxm
+  url: https://github.com/advisories/GHSA-vw27-fwjf-5qxm
+- id: 163519
+  reference_id: GHSA-vw27-fwjf-5qxm
+  url: https://github.com/qutebrowser/qutebrowser/security/advisories/GHSA-vw27-fwjf-5qxm
+severities:
+- id: 24409
+  reference_id: 163522
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+- id: 24408
+  reference_id: 163519
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: HIGH
+summary: qutebrowser is an open source keyboard-focused browser with a minimal GUI.
+  Starting with qutebrowser v1.7.0, the Windows installer for qutebrowser registers
+  a `qutebrowserurl:` URL handler. With certain applications, opening a specially
+  crafted `qutebrowserurl:...` URL can lead to execution of qutebrowser commands,
+  which in turn allows arbitrary code execution via commands such as `:spawn` or `:debug-pyeval`.
+  Only Windows installs where qutebrowser is registered as URL handler are affected.
+  The issue has been fixed in qutebrowser v2.4.0. The fix also adds additional hardening
+  for potential similar issues on Linux (by adding the new --untrusted-args flag to
+  the .desktop file), though no such vulnerabilities are known.
+vulnerability_id: VCID-2r37-ad42-aaaa
+weaknesses: []

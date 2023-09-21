@@ -1,0 +1,34 @@
+vulnerability_id: VCID-3dqt-d1es-aaak
+aliases:
+  - CVE-2021-29499
+summary: SIF is an open source implementation of the Singularity Container Image Format. The
+  `siftool new` command and func siftool.New() produce predictable UUID identifiers due to insecure
+  randomness in the version of the `github.com/satori/go.uuid` module used as a dependency.
+  A patch is available in version >= v1.2.3 of the module. Users are encouraged to upgrade.
+  As a workaround, users passing CreateInfo struct should ensure the `ID` field is generated
+  using a version of `github.com/satori/go.uuid` that is not vulnerable to this issue.
+severities:
+  - id: 531701
+    reference_id: 879105
+    scoring_system: cvssv2
+    value: '4.0'
+    scoring_elements: AV:N/AC:L/Au:S/C:P/I:N/A:N
+  - id: 531699
+    reference_id: 879105
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 879104
+    url: https://github.com/sylabs/sif/security/advisories/GHSA-4gh8-x3vv-phhg
+    reference_id:
+  - id: 41494
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=991664
+    reference_id: 991664
+  - id: 879106
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:sylabs:singularity_image_format:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:sylabs:singularity_image_format:*:*:*:*:*:*:*:*
+  - id: 879105
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-29499
+    reference_id: CVE-2021-29499
+weaknesses: []

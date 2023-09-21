@@ -1,0 +1,46 @@
+vulnerability_id: VCID-bnrk-1fhr-aaac
+aliases:
+  - CVE-2022-2869
+summary: libtiff's tiffcrop tool has a uint32_t underflow which leads to out of bounds read
+  and write in the extractContigSamples8bits routine. An attacker who supplies a crafted file
+  to tiffcrop could trigger this flaw, most likely by tricking a user into opening the crafted
+  file with tiffcrop. Triggering this flaw could cause a crash or potentially further exploitation.
+severities:
+  - id: 645049
+    reference_id: 1345433
+    scoring_system: cvssv3
+    value: '7.3'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:L
+  - id: 645048
+    reference_id: 1345432
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 644104
+    reference_id: 1342756
+    scoring_system: cvssv3
+    value: '8.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+references:
+  - id: 1345433
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2022-2869.json
+    reference_id:
+  - id: 1345432
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2118869
+    reference_id: 2118869
+  - id: 96575
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*
+  - id: 1342748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtiff:libtiff:4.4.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtiff:libtiff:4.4.0:-:*:*:*:*:*:*
+  - id: 169239
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:35:*:*:*:*:*:*:*
+  - id: 169240
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:36:*:*:*:*:*:*:*
+  - id: 1342756
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-2869
+    reference_id: CVE-2022-2869
+weaknesses: []

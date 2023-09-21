@@ -1,0 +1,242 @@
+vulnerability_id: VCID-desn-25n4-aaac
+aliases:
+  - CVE-2013-6832
+summary: The nand_ioctl function in sys/dev/nand/nand_geom.c in the nand driver in the kernel
+  in FreeBSD 10 and earlier does not properly initialize a certain data structure, which allows
+  local users to obtain sensitive information from kernel memory via a crafted ioctl call.
+severities:
+  - id: 172741
+    reference_id: 545888
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:N/A:N
+references:
+  - id: 545887
+    url: http://archives.neohapsis.com/archives/fulldisclosure/2013-11/0106.html
+    reference_id:
+  - id: 42454
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=730518
+    reference_id: 730518
+  - id: 47594
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:*:*:*:*:*:*:*:*
+  - id: 359943
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:0.4_1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:0.4_1:*:*:*:*:*:*:*
+  - id: 43265
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.0:*:*:*:*:*:*:*
+  - id: 43267
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.1:*:*:*:*:*:*:*
+  - id: 359944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.1.5:*:*:*:*:*:*:*
+  - id: 43266
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.1.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.1.5.1:*:*:*:*:*:*:*
+  - id: 43268
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.2:*:*:*:*:*:*:*
+  - id: 55425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:1.5:*:*:*:*:*:*:*
+  - id: 43271
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.0:*:*:*:*:*:*:*
+  - id: 43269
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.0.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.0.1:*:*:*:*:*:*:*
+  - id: 43270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.0.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.0.5:*:*:*:*:*:*:*
+  - id: 489768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1:*:*:*:*:*:*:*
+  - id: 43435
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.0:*:*:*:*:*:*:*
+  - id: 43272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.5:*:*:*:*:*:*:*
+  - id: 43274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.6:*:*:*:*:*:*:*
+  - id: 43273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.6.1:*:*:*:*:*:*:*
+  - id: 43276
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.7:*:*:*:*:*:*:*
+  - id: 43275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.1.7.1:*:*:*:*:*:*:*
+  - id: 43283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2:*:*:*:*:*:*:*
+  - id: 57858
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.1:*:*:*:*:*:*:*
+  - id: 43277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.2:*:*:*:*:*:*:*
+  - id: 43278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.3:*:*:*:*:*:*:*
+  - id: 43279
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.4:*:*:*:*:*:*:*
+  - id: 43280
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.5:*:*:*:*:*:*:*
+  - id: 43281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.6:*:*:*:*:*:*:*
+  - id: 57859
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.7:*:*:*:*:*:*:*
+  - id: 43282
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:2.2.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:2.2.8:*:*:*:*:*:*:*
+  - id: 43284
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.0:*:*:*:*:*:*:*
+  - id: 44610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.1:*:*:*:*:*:*:*
+  - id: 44611
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.2:*:*:*:*:*:*:*
+  - id: 45429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.3:*:*:*:*:*:*:*
+  - id: 49277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.4:*:*:*:*:*:*:*
+  - id: 51003
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.5:*:*:*:*:*:*:*
+  - id: 53434
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:3.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:3.5.1:*:*:*:*:*:*:*
+  - id: 50726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.0:*:*:*:*:*:*:*
+  - id: 52320
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.1:*:*:*:*:*:*:*
+  - id: 87829
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.10:*:*:*:*:*:*:*
+  - id: 53191
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.1.1:*:*:*:*:*:*:*
+  - id: 87833
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.11:*:*:*:*:*:*:*
+  - id: 53740
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.2:*:*:*:*:*:*:*
+  - id: 57862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.3:*:*:*:*:*:*:*
+  - id: 60518
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.4:*:*:*:*:*:*:*
+  - id: 66870
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.5:*:*:*:*:*:*:*
+  - id: 69326
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.6:*:*:*:*:*:*:*
+  - id: 79679
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.6.2:*:*:*:*:*:*:*
+  - id: 71921
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.7:*:*:*:*:*:*:*
+  - id: 82747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.8:*:*:*:*:*:*:*
+  - id: 85403
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:4.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:4.9:*:*:*:*:*:*:*
+  - id: 50727
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.0:*:*:*:*:*:*:*
+  - id: 84657
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.1:*:*:*:*:*:*:*
+  - id: 90139
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.2:*:*:*:*:*:*:*
+  - id: 119095
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.2.1:*:*:*:*:*:*:*
+  - id: 98742
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.3:*:*:*:*:*:*:*
+  - id: 119096
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.4:*:*:*:*:*:*:*
+  - id: 249875
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:5.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:5.5:*:*:*:*:*:*:*
+  - id: 156068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.0:*:*:*:*:*:*:*
+  - id: 236150
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.1:*:*:*:*:*:*:*
+  - id: 318000
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.2:*:*:*:*:*:*:*
+  - id: 148272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.3:*:*:*:*:*:*:*
+  - id: 148275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:6.4:*:*:*:*:*:*:*
+  - id: 324210
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.0:*:*:*:*:*:*:*
+  - id: 148278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.1:*:*:*:*:*:*:*
+  - id: 148285
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.2:*:*:*:*:*:*:*
+  - id: 426562
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.3:*:*:*:*:*:*:*
+  - id: 455762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:7.4:*:*:*:*:*:*:*
+  - id: 156069
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:8.0:*:*:*:*:*:*:*
+  - id: 440804
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:8.1:*:*:*:*:*:*:*
+  - id: 455763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:8.2:*:*:*:*:*:*:*
+  - id: 489769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:8.3:*:*:*:*:*:*:*
+  - id: 537626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:8.4:*:*:*:*:*:*:*
+  - id: 523752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:9.0:*:*:*:*:*:*:*
+  - id: 523753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:9.1:*:*:*:*:*:*:*
+  - id: 540795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:freebsd:freebsd:9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:freebsd:freebsd:9.2:*:*:*:*:*:*:*
+  - id: 545888
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-6832
+    reference_id: CVE-2013-6832
+weaknesses: []

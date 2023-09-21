@@ -1,0 +1,65 @@
+vulnerability_id: VCID-z1nh-sgwe-aaag
+aliases:
+  - CVE-2018-1002102
+summary: Improper validation of URL redirection in the Kubernetes API server in versions prior
+  to v1.14.0 allows an attacker-controlled Kubelet to redirect API server requests from streaming
+  endpoints to arbitrary hosts. Impacted API servers will follow the redirect as a GET request
+  with client-certificate credentials for authenticating to the Kubelet.
+severities:
+  - id: 63963
+    reference_id: '192385'
+    scoring_system: cvssv3
+    value: '2.6'
+    scoring_elements: CVSS:3.0/AV:N/AC:H/PR:H/UI:R/S:C/C:L/I:N/A:N
+  - id: 63961
+    reference_id: '192383'
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 308850
+    reference_id: 722745
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:N/AC:H/Au:S/C:P/I:N/A:N
+  - id: 308848
+    reference_id: 722745
+    scoring_system: cvssv3
+    value: '2.6'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:L/I:N/A:N
+  - id: 63962
+    reference_id: '192384'
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: '192385'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-1002102.json
+    reference_id:
+  - id: 722743
+    url: https://github.com/kubernetes/kubernetes/issues/85867
+    reference_id:
+  - id: 722744
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q56CULSH7F7BC4NPS67ZS23ZCLL5TIVK/
+    reference_id:
+  - id: '192383'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1784602
+    reference_id: 1784602
+  - id: 669448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*
+  - id: 722746
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha0:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha0:*:*:*:*:*:*
+  - id: 722747
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:kubernetes:kubernetes:1.14.0:alpha1:*:*:*:*:*:*
+  - id: 622149
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*
+  - id: 722745
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1002102
+    reference_id: CVE-2018-1002102
+  - id: '192384'
+    url: https://access.redhat.com/errata/RHSA-2020:5363
+    reference_id: RHSA-2020:5363
+weaknesses: []

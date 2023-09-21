@@ -1,0 +1,140 @@
+vulnerability_id: VCID-ghbz-62ev-aaag
+aliases:
+  - CVE-2019-18282
+summary: The flow_dissector feature in the Linux kernel 4.3 through 5.x before 5.3.10 has a
+  device tracking vulnerability, aka CID-55667441c84f. This occurs because the auto flowlabel
+  of a UDP IPv6 packet relies on a 32-bit hashrnd value as a secret, and because jhash (instead
+  of siphash) is used. The hashrnd value remains the same starting from boot time, and can be
+  inferred by an attacker. This affects net/core/flow_dissector.c and related code.
+severities:
+  - id: 692140
+    reference_id: 1453126
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 68674
+    reference_id: '198249'
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 692141
+    reference_id: 787502
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692142
+    reference_id: 1453127
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 692143
+    reference_id: 787503
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 68673
+    reference_id: '198248'
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 393112
+    reference_id: 787505
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 393110
+    reference_id: 787505
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+  - id: 53852
+    reference_id: 178976
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53851
+    reference_id: 178975
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 67145
+    reference_id: '196384'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 67146
+    reference_id: '196385'
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1453126
+    url: http://people.canonical.com/~ubuntu-security/cve/2019/CVE-2019-18282.html
+    reference_id:
+  - id: '198249'
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2019-18282.json
+    reference_id:
+  - id: 787502
+    url: https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.3.10
+    reference_id:
+  - id: 1453127
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18282
+    reference_id:
+  - id: 787503
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=55667441c84fa5e0911a0aac44fb059c15ba6da2
+    reference_id:
+  - id: 731089
+    url: https://lists.debian.org/debian-lts-announce/2020/03/msg00001.html
+    reference_id:
+  - id: 307297
+    url: https://security.netapp.com/advisory/ntap-20200204-0002/
+    reference_id:
+  - id: 787504
+    url: https://www.computer.org/csdl/proceedings-article/sp/2020/349700b594/1j2LgrHDR2o
+    reference_id:
+  - id: '198248'
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1796360
+    reference_id: 1796360
+  - id: 766417
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+    reference_id: cpe:2.3:a:netapp:active_iq_unified_manager:-:*:*:*:*:vmware_vsphere:*:*
+  - id: 169169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*
+  - id: 727343
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:data_availability_services:-:*:*:*:*:*:*:*
+  - id: 170302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:e-series_santricity_os_controller:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:e-series_santricity_os_controller:*:*:*:*:*:*:*:*
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 408940
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 787505
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-18282
+    reference_id: CVE-2019-18282
+  - id: 178976
+    url: https://access.redhat.com/errata/RHSA-2020:1567
+    reference_id: RHSA-2020:1567
+  - id: 178975
+    url: https://access.redhat.com/errata/RHSA-2020:1769
+    reference_id: RHSA-2020:1769
+  - id: '196384'
+    url: https://access.redhat.com/errata/RHSA-2020:5437
+    reference_id: RHSA-2020:5437
+  - id: '196385'
+    url: https://access.redhat.com/errata/RHSA-2020:5441
+    reference_id: RHSA-2020:5441
+weaknesses: []

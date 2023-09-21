@@ -1,0 +1,110 @@
+vulnerability_id: VCID-gj4y-f7vz-aaas
+aliases:
+  - CVE-2018-10540
+summary: An issue was discovered in WavPack 5.1.0 and earlier for W64 input. Out-of-bounds writes
+  can occur because ParseWave64HeaderConfig in wave64.c does not validate the sizes of unknown
+  chunks before attempting memory allocation, related to a lack of integer-overflow protection
+  within a bytes_to_copy calculation and subsequent malloc call, leading to insufficient memory
+  allocation.
+severities:
+  - id: 682690
+    reference_id: 1445660
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617007
+    reference_id: 936478
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+  - id: 682691
+    reference_id: 1445661
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682683
+    reference_id: 724001
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682684
+    reference_id: 724002
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682678
+    reference_id: 1445651
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 617006
+    reference_id: 936477
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 310405
+    reference_id: 724009
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+  - id: 310403
+    reference_id: 724009
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+references:
+  - id: 723988
+    url: http://packetstormsecurity.com/files/155743/Slackware-Security-Advisory-wavpack-Updates.html
+    reference_id:
+  - id: 1445660
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-10540.html
+    reference_id:
+  - id: 936478
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-10540.json
+    reference_id:
+  - id: 1445661
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10540
+    reference_id:
+  - id: 724001
+    url: https://github.com/dbry/WavPack/commit/6f8bb34c2993a48ab9afbe353e6d0cff7c8d821d
+    reference_id:
+  - id: 724002
+    url: https://github.com/dbry/WavPack/issues/33
+    reference_id:
+  - id: 723993
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6CFFFWIWALGQPKINRDW3PRGRD5LOLGZA/
+    reference_id:
+  - id: 723994
+    url: https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BRWQNE3TH5UF64IKHKKHVCHJHUOVKJUH/
+    reference_id:
+  - id: 723995
+    url: https://seclists.org/bugtraq/2019/Dec/37
+    reference_id:
+  - id: 1445651
+    url: https://ubuntu.com/security/notices/USN-3637-1
+    reference_id:
+  - id: 723996
+    url: https://usn.ubuntu.com/3637-1/
+    reference_id:
+  - id: 723997
+    url: https://www.debian.org/security/2018/dsa-4197
+    reference_id:
+  - id: 936477
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1574731
+    reference_id: 1574731
+  - id: 147009
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=897271
+    reference_id: 897271
+  - id: 723999
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:wavpack:wavpack:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:wavpack:wavpack:*:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 724009
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-10540
+    reference_id: CVE-2018-10540
+weaknesses: []

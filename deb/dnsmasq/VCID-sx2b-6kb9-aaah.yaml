@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2017-13704
+fixed_purl:
+- pkg:deb/debian/dnsmasq@2.78-1?distro=sid
+- pkg:deb/debian/dnsmasq@2.80-1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/dnsmasq@2.85-1?distro=sid
+- pkg:deb/debian/dnsmasq@2.89-1?distro=sid
+references:
+- id: 126915
+  reference_id: '877102'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=877102
+severities: []
+summary: In dnsmasq before 2.78, if the DNS packet size does not match the expected
+  size, the size parameter in a memset call gets a negative value. As it is an unsigned
+  value, memset ends up writing up to 0xffffffff zero's (0xffffffffffffffff in 64
+  bit platforms), making dnsmasq crash.
+vulnerability_id: VCID-sx2b-6kb9-aaah
+weaknesses: []

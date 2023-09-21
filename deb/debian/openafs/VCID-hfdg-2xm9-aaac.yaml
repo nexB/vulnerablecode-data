@@ -1,0 +1,209 @@
+vulnerability_id: VCID-hfdg-2xm9-aaac
+aliases:
+  - CVE-2015-7763
+summary: rx/rx.c in OpenAFS 1.5.75 through 1.5.78, 1.6.x before 1.6.15, and 1.7.x before 1.7.33
+  does not properly initialize padding at the end of an Rx acknowledgement (ACK) packet, which
+  allows remote attackers to obtain sensitive information by (1) conducting a replay attack
+  or (2) sniffing the network.
+severities:
+  - id: 663947
+    reference_id: 1430910
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663948
+    reference_id: 1430911
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663945
+    reference_id: 615289
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 663946
+    reference_id: 1430909
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 204067
+    reference_id: 615297
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+references:
+  - id: 1430910
+    url: http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-7763.html
+    reference_id:
+  - id: 1430911
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7763
+    reference_id:
+  - id: 615287
+    url: https://lists.openafs.org/pipermail/openafs-announce/2015/000493.html
+    reference_id:
+  - id: 615288
+    url: https://www.openafs.org/dl/openafs/1.6.15/RELNOTES-1.6.15
+    reference_id:
+  - id: 615289
+    url: https://www.openafs.org/pages/security/OPENAFS-SA-2015-007.txt
+    reference_id:
+  - id: 1430909
+    url: https://www.openafs.org/security
+    reference_id:
+  - id: 615285
+    url: http://www.debian.org/security/2015/dsa-3387
+    reference_id:
+  - id: 615286
+    url: http://www.securitytracker.com/id/1034039
+    reference_id:
+  - id: 520406
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.5.75:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.5.75:*:*:*:*:*:*:*
+  - id: 520407
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.5.76:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.5.76:*:*:*:*:*:*:*
+  - id: 520408
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.5.77:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.5.77:*:*:*:*:*:*:*
+  - id: 520409
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.5.78:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.5.78:*:*:*:*:*:*:*
+  - id: 520410
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.0:*:*:*:*:*:*:*
+  - id: 533018
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.1:*:*:*:*:*:*:*
+  - id: 615298
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.10:*:*:*:*:*:*:*
+  - id: 615299
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.11:*:*:*:*:*:*:*
+  - id: 615300
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.12:*:*:*:*:*:*:*
+  - id: 615301
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.13:*:*:*:*:*:*:*
+  - id: 615302
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.14:*:*:*:*:*:*:*
+  - id: 533020
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.2:*:*:*:*:*:*:*
+  - id: 533019
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.2.1:*:*:*:*:*:*:*
+  - id: 533021
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.3:*:*:*:*:*:*:*
+  - id: 533022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.4:*:*:*:*:*:*:*
+  - id: 550312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.5:*:*:*:*:*:*:*
+  - id: 550310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.5.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.5.1:*:*:*:*:*:*:*
+  - id: 550311
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.5.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.5.2:*:*:*:*:*:*:*
+  - id: 550313
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.6:*:*:*:*:*:*:*
+  - id: 615303
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.7:*:*:*:*:*:*:*
+  - id: 570483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.8:*:*:*:*:*:*:*
+  - id: 615304
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.6.9:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.6.9:*:*:*:*:*:*:*
+  - id: 533033
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.1:*:*:*:*:*:*:*
+  - id: 533023
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.10:*:*:*:*:*:*:*
+  - id: 533024
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.11:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.11:*:*:*:*:*:*:*
+  - id: 533025
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.12:*:*:*:*:*:*:*
+  - id: 533026
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.13:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.13:*:*:*:*:*:*:*
+  - id: 533027
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.14:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.14:*:*:*:*:*:*:*
+  - id: 533028
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.15:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.15:*:*:*:*:*:*:*
+  - id: 533029
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.16:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.16:*:*:*:*:*:*:*
+  - id: 533030
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.17:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.17:*:*:*:*:*:*:*
+  - id: 533031
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.18:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.18:*:*:*:*:*:*:*
+  - id: 533032
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.19:*:*:*:*:*:*:*
+  - id: 533040
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.2:*:*:*:*:*:*:*
+  - id: 533034
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.20:*:*:*:*:*:*:*
+  - id: 533035
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.21:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.21:*:*:*:*:*:*:*
+  - id: 533036
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.22:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.22:*:*:*:*:*:*:*
+  - id: 533037
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.23:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.23:*:*:*:*:*:*:*
+  - id: 533038
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.24:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.24:*:*:*:*:*:*:*
+  - id: 533039
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.25:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.25:*:*:*:*:*:*:*
+  - id: 615291
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.26:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.26:*:*:*:*:*:*:*
+  - id: 615292
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.27:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.27:*:*:*:*:*:*:*
+  - id: 615293
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.28:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.28:*:*:*:*:*:*:*
+  - id: 615294
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.29:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.29:*:*:*:*:*:*:*
+  - id: 533041
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.3:*:*:*:*:*:*:*
+  - id: 615295
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.30:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.30:*:*:*:*:*:*:*
+  - id: 615296
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.31:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.31:*:*:*:*:*:*:*
+  - id: 533042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.4:*:*:*:*:*:*:*
+  - id: 533043
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openafs:openafs:1.7.8:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openafs:openafs:1.7.8:*:*:*:*:*:*:*
+  - id: 615297
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-7763
+    reference_id: CVE-2015-7763
+weaknesses: []

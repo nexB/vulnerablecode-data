@@ -1,0 +1,253 @@
+vulnerability_id: VCID-6tp7-bmaj-aaaf
+aliases:
+  - CVE-2021-4083
+summary: A read-after-free memory flaw was found in the Linux kernel's garbage collection for
+  Unix domain socket file handlers in the way users call close() and fget() simultaneously and
+  can potentially trigger a race condition. This flaw allows a local user to crash the system
+  or escalate their privileges on the system. This flaw affects Linux kernel versions prior
+  to 5.16-rc4.
+severities:
+  - id: 507893
+    reference_id: 863707
+    scoring_system: cvssv3
+    value: '7.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  - id: 561060
+    reference_id: 898062
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 561058
+    reference_id: 898062
+    scoring_system: cvssv3
+    value: '7.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 163318
+    reference_id: 518012
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 163317
+    reference_id: 518011
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 163315
+    reference_id: 518009
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 239787
+    reference_id: 658442
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 239785
+    reference_id: 658440
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 239784
+    reference_id: 658439
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 264814
+    reference_id: 682794
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 278527
+    reference_id: 694383
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 264810
+    reference_id: 682790
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 507892
+    reference_id: 863706
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 507891
+    reference_id: 863705
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 507890
+    reference_id: 863704
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 149511
+    reference_id: 476429
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 264813
+    reference_id: 682793
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 264816
+    reference_id: 682796
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 181812
+    reference_id: 570984
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 181810
+    reference_id: 570982
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 181814
+    reference_id: 570986
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53305
+    reference_id: 178338
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53304
+    reference_id: 178337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 239789
+    reference_id: 658444
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 27568
+    reference_id: 115449
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 863707
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4083.json
+    reference_id:
+  - id: 898059
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2029923
+    reference_id:
+  - id: 898060
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=054aa8d439b9
+    reference_id:
+  - id: 878010
+    url: https://lists.debian.org/debian-lts-announce/2022/03/msg00011.html
+    reference_id:
+  - id: 840302
+    url: https://lists.debian.org/debian-lts-announce/2022/03/msg00012.html
+    reference_id:
+  - id: 898061
+    url: https://security.netapp.com/advisory/ntap-20220217-0005/
+    reference_id:
+  - id: 840304
+    url: https://www.debian.org/security/2022/dsa-5096
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 637252
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*
+  - id: 637253
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*
+  - id: 127309
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 866861
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc1:*:*:*:*:*:*
+  - id: 866862
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc2:*:*:*:*:*:*
+  - id: 866863
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.16:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.16:rc3:*:*:*:*:*:*
+  - id: 898062
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4083
+    reference_id: CVE-2021-4083
+  - id: 518012
+    url: https://access.redhat.com/errata/RHSA-2022:0820
+    reference_id: RHSA-2022:0820
+  - id: 518011
+    url: https://access.redhat.com/errata/RHSA-2022:0821
+    reference_id: RHSA-2022:0821
+  - id: 518009
+    url: https://access.redhat.com/errata/RHSA-2022:0823
+    reference_id: RHSA-2022:0823
+  - id: 658442
+    url: https://access.redhat.com/errata/RHSA-2022:0851
+    reference_id: RHSA-2022:0851
+  - id: 658440
+    url: https://access.redhat.com/errata/RHSA-2022:0925
+    reference_id: RHSA-2022:0925
+  - id: 658439
+    url: https://access.redhat.com/errata/RHSA-2022:0958
+    reference_id: RHSA-2022:0958
+  - id: 682794
+    url: https://access.redhat.com/errata/RHSA-2022:1103
+    reference_id: RHSA-2022:1103
+  - id: 694383
+    url: https://access.redhat.com/errata/RHSA-2022:1104
+    reference_id: RHSA-2022:1104
+  - id: 682790
+    url: https://access.redhat.com/errata/RHSA-2022:1107
+    reference_id: RHSA-2022:1107
+  - id: 863706
+    url: https://access.redhat.com/errata/RHSA-2022:1185
+    reference_id: RHSA-2022:1185
+  - id: 863705
+    url: https://access.redhat.com/errata/RHSA-2022:1198
+    reference_id: RHSA-2022:1198
+  - id: 863704
+    url: https://access.redhat.com/errata/RHSA-2022:1199
+    reference_id: RHSA-2022:1199
+  - id: 476429
+    url: https://access.redhat.com/errata/RHSA-2022:1263
+    reference_id: RHSA-2022:1263
+  - id: 682793
+    url: https://access.redhat.com/errata/RHSA-2022:1324
+    reference_id: RHSA-2022:1324
+  - id: 682796
+    url: https://access.redhat.com/errata/RHSA-2022:1373
+    reference_id: RHSA-2022:1373
+  - id: 570984
+    url: https://access.redhat.com/errata/RHSA-2022:1413
+    reference_id: RHSA-2022:1413
+  - id: 570982
+    url: https://access.redhat.com/errata/RHSA-2022:1418
+    reference_id: RHSA-2022:1418
+  - id: 570986
+    url: https://access.redhat.com/errata/RHSA-2022:1455
+    reference_id: RHSA-2022:1455
+  - id: 178338
+    url: https://access.redhat.com/errata/RHSA-2022:1975
+    reference_id: RHSA-2022:1975
+  - id: 178337
+    url: https://access.redhat.com/errata/RHSA-2022:1988
+    reference_id: RHSA-2022:1988
+  - id: 658444
+    url: https://access.redhat.com/errata/RHSA-2022:2189
+    reference_id: RHSA-2022:2189
+  - id: 115449
+    url: https://access.redhat.com/errata/RHSA-2022:4896
+    reference_id: RHSA-2022:4896
+weaknesses: []

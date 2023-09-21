@@ -1,0 +1,30 @@
+vulnerability_id: VCID-6tvj-rqtp-aaam
+aliases:
+  - CVE-2022-2652
+summary: Depending on the way the format strings in the card label are crafted it's possible
+  to leak kernel stack memory. There is also the possibility for DoS due to the v4l2loopback
+  kernel module crashing when providing the card label on request (reproduce e.g. with many
+  %s modifiers in a row).
+severities:
+  - id: 642647
+    reference_id: 1182003
+    scoring_system: cvssv3
+    value: '6.0'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:H
+references:
+  - id: 1182001
+    url: https://github.com/umlaeute/v4l2loopback/commit/e4cd225557486c420f6a34411f98c575effd43dd
+    reference_id:
+  - id: 1182002
+    url: https://huntr.dev/bounties/1b055da5-7a9e-4409-99d7-030280d242d5
+    reference_id:
+  - id: 1182146
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1016685
+    reference_id: 1016685
+  - id: 1183391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:v4l2loopback_project:v4l2loopback:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:v4l2loopback_project:v4l2loopback:*:*:*:*:*:*:*:*
+  - id: 1182003
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-2652
+    reference_id: CVE-2022-2652
+weaknesses: []

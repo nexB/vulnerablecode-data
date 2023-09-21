@@ -1,0 +1,223 @@
+vulnerability_id: VCID-dpvn-hxg3-aaas
+aliases:
+  - CVE-2012-0885
+summary: chan_sip.c in Asterisk Open Source 1.8.x before 1.8.8.2 and 10.x before 10.0.1, when
+  the res_srtp module is used and media support is improperly configured, allows remote attackers
+  to cause a denial of service (NULL pointer dereference and daemon crash) via a crafted SDP
+  message with a crypto attribute and a (1) video or (2) text media type, as demonstrated by
+  CSipSimple.
+severities:
+  - id: 151272
+    reference_id: 482441
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:N/I:N/A:P
+references:
+  - id: 482434
+    url: http://downloads.asterisk.org/pub/security/AST-2012-001-10.diff
+    reference_id:
+  - id: 482433
+    url: http://downloads.asterisk.org/pub/security/AST-2012-001-1.8.diff
+    reference_id:
+  - id: 482435
+    url: http://downloads.asterisk.org/pub/security/AST-2012-001.html
+    reference_id:
+  - id: 482438
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=783487
+    reference_id:
+  - id: 482439
+    url: https://issues.asterisk.org/jira/browse/ASTERISK-19202
+    reference_id:
+  - id: 482440
+    url: https://issues.asterisk.org/jira/secure/attachment/42202/issueA19202_crypto_if_uninited_text_or_video.patch
+    reference_id:
+  - id: 482436
+    url: http://www.openwall.com/lists/oss-security/2012/01/20/16
+    reference_id:
+  - id: 482437
+    url: http://www.openwall.com/lists/oss-security/2012/01/20/18
+    reference_id:
+  - id: 39592
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=656596
+    reference_id: 656596
+  - id: 469676
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:*:*:*:*:*:*:*
+  - id: 482495
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:beta1:*:*:*:*:*:*
+  - id: 482496
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:beta2:*:*:*:*:*:*
+  - id: 482497
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:rc1:*:*:*:*:*:*
+  - id: 482498
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:rc2:*:*:*:*:*:*
+  - id: 482499
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:10.0.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:10.0.0:rc3:*:*:*:*:*:*
+  - id: 482442
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:*:*:*:*:*:*:*
+  - id: 482443
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:beta1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:beta1:*:*:*:*:*:*
+  - id: 482444
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:beta2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:beta2:*:*:*:*:*:*
+  - id: 482445
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:beta3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:beta3:*:*:*:*:*:*
+  - id: 482446
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:beta4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:beta4:*:*:*:*:*:*
+  - id: 482447
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:beta5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:beta5:*:*:*:*:*:*
+  - id: 482448
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:rc2:*:*:*:*:*:*
+  - id: 482449
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:rc3:*:*:*:*:*:*
+  - id: 482450
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:rc4:*:*:*:*:*:*
+  - id: 482451
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.0:rc5:*:*:*:*:*:*
+  - id: 482454
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.1:*:*:*:*:*:*:*
+  - id: 482452
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.1.1:*:*:*:*:*:*:*
+  - id: 482453
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.1.2:*:*:*:*:*:*:*
+  - id: 482455
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.1:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.1:rc1:*:*:*:*:*:*
+  - id: 482460
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2:*:*:*:*:*:*:*
+  - id: 482456
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2.1:*:*:*:*:*:*:*
+  - id: 482457
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2.2:*:*:*:*:*:*:*
+  - id: 482458
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2.3:*:*:*:*:*:*:*
+  - id: 482459
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2.4:*:*:*:*:*:*:*
+  - id: 482461
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.2:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.2:rc1:*:*:*:*:*:*
+  - id: 482465
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3:*:*:*:*:*:*:*
+  - id: 482462
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3.1:*:*:*:*:*:*:*
+  - id: 482463
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3.2:*:*:*:*:*:*:*
+  - id: 482464
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3.3:*:*:*:*:*:*:*
+  - id: 482466
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3:rc1:*:*:*:*:*:*
+  - id: 482467
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3:rc2:*:*:*:*:*:*
+  - id: 482468
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.3:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.3:rc3:*:*:*:*:*:*
+  - id: 482473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4:*:*:*:*:*:*:*
+  - id: 482469
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4.1:*:*:*:*:*:*:*
+  - id: 482470
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4.2:*:*:*:*:*:*:*
+  - id: 482471
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4.3:*:*:*:*:*:*:*
+  - id: 482472
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4.4:*:*:*:*:*:*:*
+  - id: 482474
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4:rc1:*:*:*:*:*:*
+  - id: 482475
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4:rc2:*:*:*:*:*:*
+  - id: 482476
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.4:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.4:rc3:*:*:*:*:*:*
+  - id: 482477
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.5.0:*:*:*:*:*:*:*
+  - id: 482478
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.5:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.5:rc1:*:*:*:*:*:*
+  - id: 482479
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.6.0:*:*:*:*:*:*:*
+  - id: 482480
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.6.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.6.0:rc1:*:*:*:*:*:*
+  - id: 482481
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.6.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.6.0:rc2:*:*:*:*:*:*
+  - id: 482482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.6.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.6.0:rc3:*:*:*:*:*:*
+  - id: 482483
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.7.0:*:*:*:*:*:*:*
+  - id: 482484
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.7.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.7.0:rc1:*:*:*:*:*:*
+  - id: 482485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.7.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.7.0:rc2:*:*:*:*:*:*
+  - id: 482486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.7.1:*:*:*:*:*:*:*
+  - id: 482487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.7.2:*:*:*:*:*:*:*
+  - id: 482488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:*:*:*:*:*:*:*
+  - id: 482489
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:rc1:*:*:*:*:*:*
+  - id: 482490
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:rc2:*:*:*:*:*:*
+  - id: 482491
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:rc3:*:*:*:*:*:*
+  - id: 482492
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:rc4:*:*:*:*:*:*
+  - id: 482493
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.0:rc5:*:*:*:*:*:*
+  - id: 482494
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:asterisk:open_source:1.8.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:asterisk:open_source:1.8.8.1:*:*:*:*:*:*:*
+  - id: 482441
+    url: https://nvd.nist.gov/vuln/detail/CVE-2012-0885
+    reference_id: CVE-2012-0885
+weaknesses: []

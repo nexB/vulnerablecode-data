@@ -1,0 +1,187 @@
+vulnerability_id: VCID-fkcv-c2bf-aaaj
+aliases:
+  - CVE-2018-18021
+summary: arch/arm64/kvm/guest.c in KVM in the Linux kernel before 4.18.12 on the arm64 platform
+  mishandles the KVM_SET_ON_REG ioctl. This is exploitable by attackers who can create virtual
+  machines. An attacker can arbitrarily redirect the hypervisor flow of control (with full register
+  control). An attacker can also cause a denial of service (hypervisor panic) via an illegal
+  exception return. This occurs because of insufficient restrictions on userspace access to
+  the core register file, and because PSTATE.M validation does not prevent unintended execution
+  modes.
+severities:
+  - id: 685451
+    reference_id: 742602
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685452
+    reference_id: 742603
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685453
+    reference_id: 1447831
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614136
+    reference_id: 934387
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 685454
+    reference_id: 742605
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685455
+    reference_id: 1447832
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685458
+    reference_id: 742606
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685459
+    reference_id: 742607
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685456
+    reference_id: 1447833
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685457
+    reference_id: 1447834
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682924
+    reference_id: 1445847
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 682925
+    reference_id: 1445848
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684598
+    reference_id: 1447129
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 684599
+    reference_id: 1447130
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 685460
+    reference_id: 742608
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 614135
+    reference_id: 934386
+    scoring_system: rhbs
+    value: high
+    scoring_elements:
+  - id: 334369
+    reference_id: 742609
+    scoring_system: cvssv2
+    value: '3.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:P/A:P
+  - id: 334367
+    reference_id: 742609
+    scoring_system: cvssv3
+    value: '7.1'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H
+references:
+  - id: 742602
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2a3f93459d689d990b3ecfbe782fec89b97d3279
+    reference_id:
+  - id: 742603
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d26c25a9d19b5976b319af528886f89cf455692d
+    reference_id:
+  - id: 1447831
+    url: http://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-18021.html
+    reference_id:
+  - id: 740786
+    url: https://access.redhat.com/errata/RHSA-2018:3656
+    reference_id:
+  - id: 934387
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-18021.json
+    reference_id:
+  - id: 742605
+    url: https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.18.12
+    reference_id:
+  - id: 1447832
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-18021
+    reference_id:
+  - id: 742606
+    url: https://github.com/torvalds/linux/commit/2a3f93459d689d990b3ecfbe782fec89b97d3279
+    reference_id:
+  - id: 742607
+    url: https://github.com/torvalds/linux/commit/d26c25a9d19b5976b319af528886f89cf455692d
+    reference_id:
+  - id: 1447833
+    url: https://git.kernel.org/linus/2a3f93459d689d990b3ecfbe782fec89b97d3279
+    reference_id:
+  - id: 1447834
+    url: https://git.kernel.org/linus/d26c25a9d19b5976b319af528886f89cf455692d
+    reference_id:
+  - id: 1445847
+    url: https://ubuntu.com/security/notices/USN-3821-1
+    reference_id:
+  - id: 1445848
+    url: https://ubuntu.com/security/notices/USN-3821-2
+    reference_id:
+  - id: 1447129
+    url: https://ubuntu.com/security/notices/USN-3931-1
+    reference_id:
+  - id: 1447130
+    url: https://ubuntu.com/security/notices/USN-3931-2
+    reference_id:
+  - id: 725098
+    url: https://usn.ubuntu.com/3821-1/
+    reference_id:
+  - id: 725099
+    url: https://usn.ubuntu.com/3821-2/
+    reference_id:
+  - id: 734994
+    url: https://usn.ubuntu.com/3931-1/
+    reference_id:
+  - id: 734995
+    url: https://usn.ubuntu.com/3931-2/
+    reference_id:
+  - id: 736577
+    url: https://www.debian.org/security/2018/dsa-4313
+    reference_id:
+  - id: 742608
+    url: https://www.openwall.com/lists/oss-security/2018/10/02/2
+    reference_id:
+  - id: 742604
+    url: http://www.securityfocus.com/bid/105550
+    reference_id:
+  - id: 934386
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1635475
+    reference_id: 1635475
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 742609
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-18021
+    reference_id: CVE-2018-18021
+weaknesses: []

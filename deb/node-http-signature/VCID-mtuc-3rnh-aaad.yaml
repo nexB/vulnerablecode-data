@@ -1,0 +1,47 @@
+affected_purls:
+- pkg:npm/http-signature@0.9.0
+- pkg:npm/http-signature@0.9.10
+- pkg:npm/http-signature@0.9.11
+- pkg:npm/http-signature@0.9.2
+- pkg:npm/http-signature@0.9.3
+- pkg:npm/http-signature@0.9.4
+- pkg:npm/http-signature@0.9.5
+- pkg:npm/http-signature@0.9.6
+- pkg:npm/http-signature@0.9.7
+- pkg:npm/http-signature@0.9.8
+- pkg:npm/http-signature@0.9.9
+aliases:
+- CVE-2017-16005
+- GHSA-q257-vv4p-fg92
+fixed_purl:
+- pkg:deb/debian/node-http-signature@0?distro=sid
+- pkg:deb/debian/node-http-signature@1.2.0-1?distro=sid
+- pkg:deb/debian/node-http-signature@1.3.5-1?distro=sid
+- pkg:deb/debian/node-http-signature@1.3.6-2?distro=sid
+- pkg:npm/http-signature@0.10.0
+references:
+- id: 141226
+  reference_id: ''
+  url: https://github.com/joyent/node-http-signature/issues/10
+- id: 141228
+  reference_id: ''
+  url: https://www.npmjs.com/advisories/318
+- id: 141225
+  reference_id: CVE-2017-16005
+  url: https://nvd.nist.gov/vuln/detail/CVE-2017-16005
+- id: 141227
+  reference_id: GHSA-q257-vv4p-fg92
+  url: https://github.com/advisories/GHSA-q257-vv4p-fg92
+severities:
+- id: 19566
+  reference_id: 141227
+  scoring_elements: ''
+  scoring_system: cvssv3.1_qr
+  value: LOW
+summary: Http-signature is a "Reference implementation of Joyent's HTTP Signature
+  Scheme". In versions <=0.9.11, http-signature signs only the header values, but
+  not the header names. This makes http-signature vulnerable to header forgery. Thus,
+  if an attacker can intercept a request, he can swap header names and change the
+  meaning of the request without changing the signature.
+vulnerability_id: VCID-mtuc-3rnh-aaad
+weaknesses: []

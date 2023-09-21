@@ -1,0 +1,41 @@
+vulnerability_id: VCID-fmjn-kk6g-aaam
+aliases:
+  - CVE-2021-3907
+summary: OctoRPKI does not escape a URI with a filename containing "..", this allows a repository
+  to create a file, (ex. rsync://example.org/repo/../../etc/cron.daily/evil.roa), which would
+  then be written to disk outside the base cache folder. This could allow for remote code execution
+  on the host machine OctoRPKI is running on.
+severities:
+  - id: 555985
+    reference_id: 894976
+    scoring_system: cvssv2
+    value: '7.5'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:P/A:P
+  - id: 555983
+    reference_id: 894976
+    scoring_system: cvssv3
+    value: '9.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 947950
+    url: https://github.com/cloudflare/cfrpki/security/advisories/GHSA-3jhm-87m6-x959
+    reference_id:
+  - id: 894974
+    url: https://github.com/cloudflare/cfrpki/security/advisories/GHSA-cqh2-vc2f-q4fh
+    reference_id:
+  - id: 894975
+    url: https://www.debian.org/security/2021/dsa-5033
+    reference_id:
+  - id: 892310
+    url: https://www.debian.org/security/2022/dsa-5041
+    reference_id:
+  - id: 892312
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:cloudflare:octorpki:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:cloudflare:octorpki:*:*:*:*:*:*:*:*
+  - id: 169237
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*
+  - id: 894976
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3907
+    reference_id: CVE-2021-3907
+weaknesses: []

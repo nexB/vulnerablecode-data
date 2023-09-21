@@ -1,0 +1,27 @@
+affected_purls:
+- pkg:deb/debian/pulseaudio@0.9.5-5
+- pkg:deb/debian/pulseaudio@0.9.5-5etch1
+aliases:
+- CVE-2007-1804
+fixed_purl:
+- pkg:deb/debian/pulseaudio@0.9.10-3%2Blenny2
+- pkg:deb/debian/pulseaudio@0.9.6-1?distro=sid
+- pkg:deb/debian/pulseaudio@12.2-4%2Bdeb10u1?distro=sid
+- pkg:deb/debian/pulseaudio@14.2-2?distro=sid
+- pkg:deb/debian/pulseaudio@16.1%2Bdfsg1-2?distro=sid
+references:
+- id: 185381
+  reference_id: ''
+  url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1804
+severities: []
+summary: PulseAudio 0.9.5 allows remote attackers to cause a denial of service (daemon
+  crash) via (1) a PA_PSTREAM_DESCRIPTOR_LENGTH value of FRAME_SIZE_MAX_ALLOW sent
+  on TCP port 9875, which triggers a p->export assertion failure in do_read; (2) a
+  PA_PSTREAM_DESCRIPTOR_LENGTH value of 0 sent on TCP port 9875, which triggers a
+  length assertion failure in pa_memblock_new; or (3) an empty packet on UDP port
+  9875, which triggers a t assertion failure in pa_sdp_parse; and allows remote authenticated
+  users to cause a denial of service (daemon crash) via a crafted packet on TCP port
+  9875 that (4) triggers a maxlength assertion failure in pa_memblockq_new, (5) triggers
+  a size assertion failure in pa_xmalloc, or (6) plays a certain sound file.
+vulnerability_id: VCID-bvn2-v38n-aaab
+weaknesses: []

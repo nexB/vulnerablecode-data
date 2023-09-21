@@ -1,0 +1,31 @@
+affected_purls: []
+aliases:
+- CVE-2019-19577
+fixed_purl:
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1?distro=sid
+- pkg:deb/debian/xen@4.11.3%2B24-g14b62ab3e5-1~deb10u1?distro=sid
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references:
+- id: 127877
+  reference_id: '947944'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947944
+severities: []
+summary: An issue was discovered in Xen through 4.12.x allowing x86 AMD HVM guest
+  OS users to cause a denial of service or possibly gain privileges by triggering
+  data-structure access during pagetable-height updates. When running on AMD systems
+  with an IOMMU, Xen attempted to dynamically adapt the number of levels of pagetables
+  (the pagetable height) in the IOMMU according to the guest's address space size.
+  The code to select and update the height had several bugs. Notably, the update was
+  done without taking a lock which is necessary for safe operation. A malicious guest
+  administrator can cause Xen to access data structures while they are being modified,
+  causing Xen to crash. Privilege escalation is thought to be very difficult but cannot
+  be ruled out. Additionally, there is a potential memory leak of 4kb per guest boot,
+  under memory pressure. Only Xen on AMD CPUs is vulnerable. Xen running on Intel
+  CPUs is not vulnerable. ARM systems are not vulnerable. Only systems where guests
+  are given direct access to physical devices are vulnerable. Systems which do not
+  use PCI pass-through are not vulnerable. Only HVM guests can exploit the vulnerability.
+  PV and PVH guests cannot. All versions of Xen with IOMMU support are vulnerable.
+vulnerability_id: VCID-kn2f-ebc1-aaad
+weaknesses: []

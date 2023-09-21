@@ -1,0 +1,94 @@
+vulnerability_id: VCID-hrks-swvp-aaag
+aliases:
+  - CVE-2018-14622
+summary: A null-pointer dereference vulnerability was found in libtirpc before version 0.3.3-rc3.
+  The return value of makefd_xprt() was not checked in all instances, which could lead to a
+  crash when the server exhausted the maximum number of available file descriptors. A remote
+  attacker could cause an rpc-based application to crash by flooding it with new connections.
+severities:
+  - id: 50945
+    reference_id: 175560
+    scoring_system: cvssv3
+    value: '5.3'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  - id: 324155
+    reference_id: 734768
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 324153
+    reference_id: 734768
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 734764
+    url: http://git.linux-nfs.org/?p=steved/libtirpc.git;a=commit;h=1c77f7a869bdea2a34799d774460d1f9983d45f0
+    reference_id:
+  - id: 734765
+    url: https://access.redhat.com/errata/RHBA-2017:1991
+    reference_id:
+  - id: 175560
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2018-14622.json
+    reference_id:
+  - id: 734760
+    url: https://bugzilla.novell.com/show_bug.cgi?id=968175
+    reference_id:
+  - id: 734766
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14622
+    reference_id:
+  - id: 734767
+    url: https://lists.debian.org/debian-lts-announce/2018/08/msg00034.html
+    reference_id:
+  - id: 645179
+    url: https://usn.ubuntu.com/3759-1/
+    reference_id:
+  - id: 645180
+    url: https://usn.ubuntu.com/3759-2/
+    reference_id:
+  - id: 45685
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=907608
+    reference_id: 907608
+  - id: 713725
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:libtirpc_project:libtirpc:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:libtirpc_project:libtirpc:*:*:*:*:*:*:*:*
+  - id: 147843
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 734769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:x64:*
+  - id: 162129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*
+  - id: 162132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*
+  - id: 162133
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*
+  - id: 162134
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*
+  - id: 734770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:x64:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:x64:*
+  - id: 734768
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14622
+    reference_id: CVE-2018-14622
+  - id: 175559
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1620293
+    reference_id: RHBA-2017:1991
+weaknesses: []

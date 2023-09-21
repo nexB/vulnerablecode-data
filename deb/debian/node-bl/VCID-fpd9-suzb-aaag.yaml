@@ -1,0 +1,105 @@
+vulnerability_id: VCID-fpd9-suzb-aaag
+aliases:
+  - CVE-2020-8244
+  - GHSA-pp7h-53gx-mx7r
+summary: |
+  Out-of-bounds Read
+  A buffer over-read vulnerability exists in bl which could allow an attacker to supply user input (even typed) that if it ends up in `consume()` argument and can become negative, the BufferList state can be corrupted, tricking it into exposing uninitialized memory via regular `.slice()` calls.
+severities:
+  - id: 699788
+    reference_id: 1459436
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609957
+    reference_id: 931311
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+  - id: 699789
+    reference_id: 1459437
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699790
+    reference_id: 1459438
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699791
+    reference_id: 854229
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 699792
+    reference_id: 1459439
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609956
+    reference_id: 931310
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 491153
+    reference_id: 36351
+    scoring_system: cvssv2
+    value: '6.4'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:P
+  - id: 491151
+    reference_id: 36351
+    scoring_system: cvssv3
+    value: '6.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
+  - id: 706485
+    reference_id: 1468093
+    scoring_system: cvssv3.1_qr
+    value: MODERATE
+    scoring_elements:
+references:
+  - id: 1459436
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8244.html
+    reference_id:
+  - id: 931311
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-8244.json
+    reference_id:
+  - id: 1459437
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8244
+    reference_id:
+  - id: 1468091
+    url: https://github.com/rvagg/bl/commit/8a8c13c880e2bef519133ea43e0e9b78b5d0c91e
+    reference_id:
+  - id: 1459438
+    url: https://github.com/rvagg/bl/commit/d3e240e3b8ba4048d3c76ef5fb9dd1f8872d3190
+    reference_id:
+  - id: 1468092
+    url: https://github.com/rvagg/bl/commit/dacc4ac7d5fcd6201bcf26fbd886951be9537466
+    reference_id:
+  - id: 854229
+    url: https://hackerone.com/reports/966347
+    reference_id:
+  - id: 854230
+    url: https://lists.debian.org/debian-lts-announce/2021/06/msg00028.html
+    reference_id:
+  - id: 1459439
+    url: https://ubuntu.com/security/notices/USN-5098-1
+    reference_id:
+  - id: 931310
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1874775
+    reference_id: 1874775
+  - id: 78104
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=969309
+    reference_id: 969309
+  - id: 854231
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:bufferlist_project:bufferlist:*:*:*:*:*:node.js:*:*
+    reference_id: cpe:2.3:a:bufferlist_project:bufferlist:*:*:*:*:*:node.js:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 36351
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-8244
+    reference_id: CVE-2020-8244
+  - id: 1468093
+    url: https://github.com/advisories/GHSA-pp7h-53gx-mx7r
+    reference_id: GHSA-pp7h-53gx-mx7r
+weaknesses: []

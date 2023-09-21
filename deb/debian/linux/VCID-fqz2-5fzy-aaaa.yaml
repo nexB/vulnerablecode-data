@@ -1,0 +1,190 @@
+vulnerability_id: VCID-fqz2-5fzy-aaaa
+aliases:
+  - CVE-2020-25641
+summary: A flaw was found in the Linux kernel's implementation of biovecs in versions before
+  5.9-rc7. A zero-length biovec request issued by the block subsystem could cause the kernel
+  to enter an infinite loop, causing a denial of service. This flaw allows a local attacker
+  with basic privileges to issue requests to a block device, resulting in a denial of service.
+  The highest threat from this vulnerability is to system availability.
+severities:
+  - id: 697716
+    reference_id: 1457647
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 609492
+    reference_id: 930972
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 697717
+    reference_id: 1457648
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697718
+    reference_id: 1457649
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696381
+    reference_id: 1456505
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696425
+    reference_id: 1456542
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 696382
+    reference_id: 1456506
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 609487
+    reference_id: 930967
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 461966
+    reference_id: 834021
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 461964
+    reference_id: 834021
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 49231
+    reference_id: 173526
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 49232
+    reference_id: 173527
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609489
+    reference_id: 930969
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609490
+    reference_id: 930970
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609488
+    reference_id: 930968
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 609491
+    reference_id: 930971
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 809330
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00021.html
+    reference_id:
+  - id: 833408
+    url: http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00042.html
+    reference_id:
+  - id: 1457647
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-25641.html
+    reference_id:
+  - id: 930972
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-25641.json
+    reference_id:
+  - id: 1457648
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25641
+    reference_id:
+  - id: 1457649
+    url: https://git.kernel.org/linus/7e24969022cbd61ddc586f14824fc205661bb124
+    reference_id:
+  - id: 834019
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7e24969022cbd61ddc586f14824fc205661bb124
+    reference_id:
+  - id: 789248
+    url: https://lists.debian.org/debian-lts-announce/2020/10/msg00032.html
+    reference_id:
+  - id: 789249
+    url: https://lists.debian.org/debian-lts-announce/2020/10/msg00034.html
+    reference_id:
+  - id: 1456505
+    url: https://ubuntu.com/security/notices/USN-4576-1
+    reference_id:
+  - id: 1456542
+    url: https://ubuntu.com/security/notices/USN-4660-1
+    reference_id:
+  - id: 1456506
+    url: https://ubuntu.com/security/notices/USN-4752-1
+    reference_id:
+  - id: 820646
+    url: https://usn.ubuntu.com/4576-1/
+    reference_id:
+  - id: 834020
+    url: https://www.kernel.org/doc/html/latest/block/biovecs.html
+    reference_id:
+  - id: 834017
+    url: http://www.openwall.com/lists/oss-security/2020/10/06/9
+    reference_id:
+  - id: 930967
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1881424
+    reference_id: 1881424
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 820948
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:-:*:*:*:*:*:*
+  - id: 820648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc1:*:*:*:*:*:*
+  - id: 820949
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc2:*:*:*:*:*:*
+  - id: 820950
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc3:*:*:*:*:*:*
+  - id: 820972
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc4:*:*:*:*:*:*
+  - id: 820973
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc5:*:*:*:*:*:*
+  - id: 834022
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.9.0:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.9.0:rc6:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 834021
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-25641
+    reference_id: CVE-2020-25641
+  - id: 173526
+    url: https://access.redhat.com/errata/RHSA-2020:4431
+    reference_id: RHSA-2020:4431
+  - id: 173527
+    url: https://access.redhat.com/errata/RHSA-2020:4609
+    reference_id: RHSA-2020:4609
+  - id: 930969
+    url: https://access.redhat.com/errata/RHSA-2020:5079
+    reference_id: RHSA-2020:5079
+  - id: 930970
+    url: https://access.redhat.com/errata/RHSA-2020:5374
+    reference_id: RHSA-2020:5374
+  - id: 930968
+    url: https://access.redhat.com/errata/RHSA-2021:0073
+    reference_id: RHSA-2021:0073
+  - id: 930971
+    url: https://access.redhat.com/errata/RHSA-2021:0136
+    reference_id: RHSA-2021:0136
+weaknesses: []

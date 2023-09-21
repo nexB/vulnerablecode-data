@@ -1,0 +1,112 @@
+vulnerability_id: VCID-97c2-211e-aaam
+aliases:
+  - CVE-2021-4203
+summary: A use-after-free read flaw was found in sock_getsockopt() in net/core/sock.c due to
+  SO_PEERCRED and SO_PEERGROUPS race with listen() (and connect()) in the Linux kernel. In this
+  flaw, an attacker with a user privileges may crash the system or leak internal kernel information.
+severities:
+  - id: 602421
+    reference_id: 925776
+    scoring_system: cvssv3
+    value: '5.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:L
+  - id: 602420
+    reference_id: 925775
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 564172
+    reference_id: 900452
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:N/AC:M/Au:S/C:P/I:N/A:P
+  - id: 564170
+    reference_id: 900452
+    scoring_system: cvssv3
+    value: '6.8'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:H
+  - id: 53305
+    reference_id: 178338
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 53304
+    reference_id: 178337
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 638861
+    reference_id: 951990
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 638859
+    reference_id: 951988
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 925776
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4203.json
+    reference_id:
+  - id: 900448
+    url: https://bugs.chromium.org/p/project-zero/issues/detail?id=2230&can=7&q=modified-after%3Atoday-30&sort=-modified&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary%20Modified%20Cve&cells=tiles&redir=1
+    reference_id:
+  - id: 900450
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=35306eb23814
+    reference_id:
+  - id: 900451
+    url: https://lore.kernel.org/netdev/20210929225750.2548112-1-eric.dumazet@gmail.com/T/
+    reference_id:
+  - id: 945268
+    url: https://www.oracle.com/security-alerts/cpujul2022.html
+    reference_id:
+  - id: 925775
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2036934
+    reference_id: 2036934
+  - id: 890042
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 899485
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+  - id: 899486
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+  - id: 899487
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+  - id: 899488
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 861606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+  - id: 861607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+  - id: 861608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+  - id: 861612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+  - id: 900452
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4203
+    reference_id: CVE-2021-4203
+  - id: 178338
+    url: https://access.redhat.com/errata/RHSA-2022:1975
+    reference_id: RHSA-2022:1975
+  - id: 178337
+    url: https://access.redhat.com/errata/RHSA-2022:1988
+    reference_id: RHSA-2022:1988
+  - id: 951990
+    url: https://access.redhat.com/errata/RHSA-2022:5626
+    reference_id: RHSA-2022:5626
+  - id: 951988
+    url: https://access.redhat.com/errata/RHSA-2022:5633
+    reference_id: RHSA-2022:5633
+weaknesses: []

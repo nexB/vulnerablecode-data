@@ -1,0 +1,17 @@
+affected_purls: []
+aliases:
+- CVE-2019-15296
+fixed_purl:
+- pkg:deb/debian/faad2@2.10.0-1?distro=sid
+- pkg:deb/debian/faad2@2.10.0-1~deb10u1?distro=sid
+- pkg:deb/debian/faad2@2.10.1-1?distro=sid
+- pkg:deb/debian/faad2@2.8.8-3?distro=sid
+references: []
+severities: []
+summary: An issue was discovered in Freeware Advanced Audio Decoder 2 (FAAD2) 2.8.8.
+  The faad_resetbits function in libfaad/bits.c is affected by a buffer overflow vulnerability.
+  The number of bits to be read is determined by ld->buffer_size - words*4, cast to
+  uint32. If ld->buffer_size - words*4 is negative, a buffer overflow is later performed
+  via getdword_n(&ld->start[words], ld->bytes_left).
+vulnerability_id: VCID-x3wd-2v14-aaad
+weaknesses: []

@@ -1,0 +1,23 @@
+affected_purls: []
+aliases:
+- CVE-2019-13465
+fixed_purl:
+- pkg:deb/debian/ros-ros-comm@1.14.3%2Bds1-10?distro=sid
+- pkg:deb/debian/ros-ros-comm@1.14.3%2Bds1-5%2Bdeb10u1?distro=sid
+- pkg:deb/debian/ros-ros-comm@1.14.3%2Bds1-5%2Bdeb10u3?distro=sid
+- pkg:deb/debian/ros-ros-comm@1.15.15%2Bds-2?distro=sid
+- pkg:deb/debian/ros-ros-comm@1.15.9%2Bds1-7%2Bdeb11u1?distro=sid
+references:
+- id: 128596
+  reference_id: '947946'
+  url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947946
+severities: []
+summary: 'An issue was discovered in the ROS communications-related packages (aka
+  ros_comm or ros-melodic-ros-comm) through 1.14.3. ROS_ASSERT_MSG only works when
+  ROS_ASSERT_ENABLED is defined. This leads to a problem in the remove() function
+  in clients/roscpp/src/libros/spinner.cpp. When ROS_ASSERT_ENABLED is not defined,
+  the iterator loop will run out of the scope of the array, and cause denial of service
+  for other components (that depend on the communication-related functions of this
+  package). NOTE: The reporter of this issue now believes it was a false alarm.'
+vulnerability_id: VCID-akxc-ndw3-aaaf
+weaknesses: []

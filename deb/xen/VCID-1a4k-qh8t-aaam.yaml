@@ -1,0 +1,22 @@
+affected_purls: []
+aliases:
+- CVE-2021-28692
+fixed_purl:
+- pkg:deb/debian/xen@4.11.4%2B107-gef32c7afa2-1?distro=sid
+- pkg:deb/debian/xen@4.14.2%2B25-gb6a8c4f72d-1?distro=sid
+- pkg:deb/debian/xen@4.14.5%2B94-ge49571868d-1?distro=sid
+- pkg:deb/debian/xen@4.17.1%2B2-gb773c48e36-1?distro=sid
+references: []
+severities: []
+summary: 'inappropriate x86 IOMMU timeout detection / handling IOMMUs process commands
+  issued to them in parallel with the operation of the CPU(s) issuing such commands.
+  In the current implementation in Xen, asynchronous notification of the completion
+  of such commands is not used. Instead, the issuing CPU spin-waits for the completion
+  of the most recently issued command(s). Some of these waiting loops try to apply
+  a timeout to fail overly-slow commands. The course of action upon a perceived timeout
+  actually being detected is inappropriate: - on Intel hardware guests which did not
+  originally cause the timeout may be marked as crashed, - on AMD hardware higher
+  layer callers would not be notified of the issue, making them continue as if the
+  IOMMU operation succeeded.'
+vulnerability_id: VCID-1a4k-qh8t-aaam
+weaknesses: []

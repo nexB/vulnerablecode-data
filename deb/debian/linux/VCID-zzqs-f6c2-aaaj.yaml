@@ -1,0 +1,70 @@
+vulnerability_id: VCID-zzqs-f6c2-aaaj
+aliases:
+  - CVE-2021-4032
+summary: A vulnerability was found in the Linux kernel's KVM subsystem in arch/x86/kvm/lapic.c
+  kvm_free_lapic when a failure allocation was detected. In this flaw the KVM subsystem may
+  crash the kernel due to mishandling of memory errors that happens during VCPU construction,
+  which allows an attacker with special user privilege to cause a denial of service. This flaw
+  affects kernel versions prior to 5.15 rc7.
+severities:
+  - id: 602643
+    reference_id: 925942
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+  - id: 602642
+    reference_id: 925941
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 559661
+    reference_id: 897103
+    scoring_system: cvssv2
+    value: '4.9'
+    scoring_elements: AV:L/AC:L/Au:N/C:N/I:N/A:C
+  - id: 559659
+    reference_id: 897103
+    scoring_system: cvssv3
+    value: '4.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H
+references:
+  - id: 925942
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-4032.json
+    reference_id:
+  - id: 897101
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f7d8a19f9a056a05c5c509fa65af472a322abfee
+    reference_id:
+  - id: 897102
+    url: https://lkml.org/lkml/2021/9/8/587
+    reference_id:
+  - id: 925941
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=2027403
+    reference_id: 2027403
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 861606
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:-:*:*:*:*:*:*
+  - id: 861607
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc1:*:*:*:*:*:*
+  - id: 861608
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc2:*:*:*:*:*:*
+  - id: 861612
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc3:*:*:*:*:*:*
+  - id: 861613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc4:*:*:*:*:*:*
+  - id: 897104
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc5:*:*:*:*:*:*
+  - id: 897105
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.15:rc6:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.15:rc6:*:*:*:*:*:*
+  - id: 897103
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-4032
+    reference_id: CVE-2021-4032
+weaknesses: []

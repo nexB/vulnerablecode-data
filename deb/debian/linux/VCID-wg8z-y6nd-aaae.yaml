@@ -1,0 +1,116 @@
+vulnerability_id: VCID-wg8z-y6nd-aaae
+aliases:
+  - CVE-2016-2383
+summary: The adjust_branches function in kernel/bpf/verifier.c in the Linux kernel before 4.5
+  does not consider the delta in the backward-jump case, which allows local users to obtain
+  sensitive information from kernel memory by creating a packet filter and then loading crafted
+  BPF instructions.
+severities:
+  - id: 667907
+    reference_id: 1434061
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 667909
+    reference_id: 1434062
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663997
+    reference_id: 1430952
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663998
+    reference_id: 1430953
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 663999
+    reference_id: 1430954
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 667908
+    reference_id: 638940
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 221521
+    reference_id: 638943
+    scoring_system: cvssv2
+    value: '2.1'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:N/A:N
+  - id: 221519
+    reference_id: 638943
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+references:
+  - id: 638939
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a1b14d27ed0965838350f1377ff97c93ee383492
+    reference_id:
+  - id: 90113
+    url: http://lists.opensuse.org/opensuse-security-announce/2016-04/msg00015.html
+    reference_id:
+  - id: 1434061
+    url: http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-2383.html
+    reference_id:
+  - id: 175913
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2016-2383.json
+    reference_id:
+  - id: 638941
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1308452
+    reference_id:
+  - id: 1434062
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2383
+    reference_id:
+  - id: 638942
+    url: https://github.com/torvalds/linux/commit/a1b14d27ed0965838350f1377ff97c93ee383492
+    reference_id:
+  - id: 1430952
+    url: https://ubuntu.com/security/notices/USN-2947-1
+    reference_id:
+  - id: 1430953
+    url: https://ubuntu.com/security/notices/USN-2947-2
+    reference_id:
+  - id: 1430954
+    url: https://ubuntu.com/security/notices/USN-2947-3
+    reference_id:
+  - id: 638940
+    url: http://www.openwall.com/lists/oss-security/2016/02/14/1
+    reference_id:
+  - id: 615574
+    url: http://www.ubuntu.com/usn/USN-2947-1
+    reference_id:
+  - id: 615575
+    url: http://www.ubuntu.com/usn/USN-2947-2
+    reference_id:
+  - id: 615576
+    url: http://www.ubuntu.com/usn/USN-2947-3
+    reference_id:
+  - id: 79270
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*
+  - id: 79272
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 638944
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5.0:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5.0:rc1:*:*:*:*:*:*
+  - id: 638945
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5.0:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5.0:rc2:*:*:*:*:*:*
+  - id: 638946
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:4.5.0:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:4.5.0:rc3:*:*:*:*:*:*
+  - id: 158132
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*
+  - id: 638943
+    url: https://nvd.nist.gov/vuln/detail/CVE-2016-2383
+    reference_id: CVE-2016-2383
+weaknesses: []

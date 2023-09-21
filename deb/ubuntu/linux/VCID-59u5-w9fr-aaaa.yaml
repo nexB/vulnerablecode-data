@@ -1,0 +1,167 @@
+vulnerability_id: VCID-59u5-w9fr-aaaa
+aliases:
+  - CVE-2021-3573
+summary: A use-after-free in function hci_sock_bound_ioctl() of the Linux kernel HCI subsystem
+  was found in the way user calls ioct HCIUNBLOCKADDR or other way triggers race condition of
+  the call hci_unregister_dev() together with one of the calls hci_sock_blacklist_add(), hci_sock_blacklist_del(),
+  hci_get_conn_info(), hci_get_auth_info(). A privileged local user could use this flaw to crash
+  the system or escalate their privileges on the system. This flaw affects the Linux kernel
+  versions prior to 5.13-rc5.
+severities:
+  - id: 704070
+    reference_id: 1465599
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604414
+    reference_id: 927241
+    scoring_system: cvssv3
+    value: '6.7'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 704071
+    reference_id: 1465600
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701508
+    reference_id: 1460906
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 704045
+    reference_id: 1465575
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 702448
+    reference_id: 1461685
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697969
+    reference_id: 1457872
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 697970
+    reference_id: 1457873
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 704072
+    reference_id: 889699
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 604413
+    reference_id: 927240
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 547724
+    reference_id: 889700
+    scoring_system: cvssv2
+    value: '6.9'
+    scoring_elements: AV:L/AC:M/Au:N/C:C/I:C/A:C
+  - id: 547722
+    reference_id: 889700
+    scoring_system: cvssv3
+    value: '6.4'
+    scoring_elements: CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+  - id: 58708
+    reference_id: 185126
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 58709
+    reference_id: 185127
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+  - id: 264812
+    reference_id: 682792
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 264811
+    reference_id: 682791
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 1465599
+    url: http://people.canonical.com/~ubuntu-security/cve/2021/CVE-2021-3573.html
+    reference_id:
+  - id: 927241
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-3573.json
+    reference_id:
+  - id: 1465600
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3573
+    reference_id:
+  - id: 889698
+    url: https://git.kernel.org/pub/scm/linux/kernel/git/bluetooth/bluetooth.git/commit/?id=e305509e678b3a4af2b3cfd410f409f7cdaabb52
+    reference_id:
+  - id: 1460906
+    url: https://ubuntu.com/security/notices/USN-5015-1
+    reference_id:
+  - id: 1465575
+    url: https://ubuntu.com/security/notices/USN-5044-1
+    reference_id:
+  - id: 1461685
+    url: https://ubuntu.com/security/notices/USN-5045-1
+    reference_id:
+  - id: 1457872
+    url: https://ubuntu.com/security/notices/USN-5046-1
+    reference_id:
+  - id: 1457873
+    url: https://ubuntu.com/security/notices/USN-5050-1
+    reference_id:
+  - id: 889699
+    url: https://www.openwall.com/lists/oss-security/2021/06/08/2
+    reference_id:
+  - id: 927240
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1966578
+    reference_id: '1966578'
+  - id: 169238
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 888394
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc1:*:*:*:*:*:*
+  - id: 888395
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc2:*:*:*:*:*:*
+  - id: 888396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc3:*:*:*:*:*:*
+  - id: 889701
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:5.13:rc4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:5.13:rc4:*:*:*:*:*:*
+  - id: 111851
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*
+  - id: 111852
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*
+  - id: 169119
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*
+  - id: 889700
+    url: https://nvd.nist.gov/vuln/detail/CVE-2021-3573
+    reference_id: CVE-2021-3573
+  - id: 185126
+    url: https://access.redhat.com/errata/RHSA-2021:4140
+    reference_id: RHSA-2021:4140
+  - id: 185127
+    url: https://access.redhat.com/errata/RHSA-2021:4356
+    reference_id: RHSA-2021:4356
+  - id: 682792
+    url: https://access.redhat.com/errata/RHSA-2022:0620
+    reference_id: RHSA-2022:0620
+  - id: 682791
+    url: https://access.redhat.com/errata/RHSA-2022:0622
+    reference_id: RHSA-2022:0622
+weaknesses: []

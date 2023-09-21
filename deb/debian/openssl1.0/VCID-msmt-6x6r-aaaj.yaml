@@ -1,0 +1,137 @@
+vulnerability_id: VCID-msmt-6x6r-aaaj
+aliases:
+  - CVE-2020-1968
+  - VC-OPENSSL-20200909-CVE-2020-1968
+summary: The Raccoon attack exploits a flaw in the TLS specification which can lead to an attacker
+  being able to compute the pre-master secret in connections which have used a Diffie-Hellman
+  (DH) based ciphersuite. In such a case this would result in the attacker being able to eavesdrop
+  on all encrypted communications sent over that TLS connection. The attack can only be exploited
+  if an implementation re-uses a DH secret across multiple TLS connections. Note that this issue
+  only impacts DH ciphersuites and not ECDH ciphersuites. This issue affects OpenSSL 1.0.2 which
+  is out of support and no longer receiving public updates. OpenSSL 1.1.1 is not vulnerable
+  to this issue.
+severities:
+  - id: 697535
+    reference_id: 1457519
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 608861
+    reference_id: 930515
+    scoring_system: cvssv3
+    value: '5.9'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 697536
+    reference_id: 1457520
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 697537
+    reference_id: 1457521
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 602
+    reference_id: 3527
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 700199
+    reference_id: 277
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 701265
+    reference_id: 387
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 608860
+    reference_id: 930514
+    scoring_system: rhbs
+    value: low
+    scoring_elements:
+  - id: 453400
+    reference_id: 828727
+    scoring_system: cvssv2
+    value: '4.3'
+    scoring_elements: AV:N/AC:M/Au:N/C:P/I:N/A:N
+  - id: 453398
+    reference_id: 828727
+    scoring_system: cvssv3
+    value: '3.7'
+    scoring_elements: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+references:
+  - id: 1457519
+    url: http://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-1968.html
+    reference_id:
+  - id: 930515
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2020-1968.json
+    reference_id:
+  - id: 1457520
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1968
+    reference_id:
+  - id: 1345140
+    url: https://github.com/openssl/openssl/commit/258aa8181ec01ae2e955318385d1bdd99d37a848
+    reference_id:
+  - id: 828725
+    url: https://lists.debian.org/debian-lts-announce/2020/09/msg00016.html
+    reference_id:
+  - id: 828726
+    url: https://security.netapp.com/advisory/ntap-20200911-0004/
+    reference_id:
+  - id: 1457521
+    url: https://ubuntu.com/security/notices/USN-4504-1
+    reference_id:
+  - id: 780794
+    url: https://usn.ubuntu.com/4504-1/
+    reference_id:
+  - id: 3527
+    url: https://www.openssl.org/news/secadv/20200909.txt
+    reference_id:
+  - id: 420
+    url: https://www.oracle.com/security-alerts/cpuApr2021.html
+    reference_id:
+  - id: 389
+    url: https://www.oracle.com/security-alerts/cpuapr2022.html
+    reference_id:
+  - id: 277
+    url: https://www.oracle.com/security-alerts/cpujan2021.html
+    reference_id:
+  - id: 386
+    url: https://www.oracle.com//security-alerts/cpujul2021.html
+    reference_id:
+  - id: 387
+    url: https://www.oracle.com/security-alerts/cpuoct2021.html
+    reference_id:
+  - id: 930514
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1877458
+    reference_id: 1877458
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 699297
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:jd_edwards_world_security:a9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:jd_edwards_world_security:a9.4:*:*:*:*:*:*:*
+  - id: 169482
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.56:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.56:*:*:*:*:*:*:*
+  - id: 621376
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.57:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.57:*:*:*:*:*:*:*
+  - id: 759307
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.58:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.58:*:*:*:*:*:*:*
+  - id: 147844
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*
+  - id: 168169
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 828727
+    url: https://nvd.nist.gov/vuln/detail/CVE-2020-1968
+    reference_id: CVE-2020-1968
+weaknesses: []

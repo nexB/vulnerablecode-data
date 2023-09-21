@@ -1,0 +1,236 @@
+vulnerability_id: VCID-knez-dww1-aaac
+aliases:
+  - CVE-2017-17806
+summary: The HMAC implementation (crypto/hmac.c) in the Linux kernel before 4.14.8 does not
+  validate that the underlying cryptographic hash algorithm is unkeyed, allowing a local attacker
+  able to use the AF_ALG-based hash interface (CONFIG_CRYPTO_USER_API_HASH) and the SHA-3 hash
+  algorithm (CONFIG_CRYPTO_SHA3) to cause a kernel stack buffer overflow by executing a crafted
+  sequence of system calls that encounter a missing SHA-3 initialization.
+severities:
+  - id: 677126
+    reference_id: 692144
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677127
+    reference_id: 1441298
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 687966
+    reference_id: 679655
+    scoring_system: generic_textual
+    value: Low
+    scoring_elements:
+  - id: 619612
+    reference_id: 938316
+    scoring_system: cvssv3
+    value: '5.5'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H
+  - id: 677128
+    reference_id: 1441299
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677129
+    reference_id: 692146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672902
+    reference_id: 1438134
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672903
+    reference_id: 1438135
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672917
+    reference_id: 1438146
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672918
+    reference_id: 1438147
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672919
+    reference_id: 1438148
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672920
+    reference_id: 1438149
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672921
+    reference_id: 1438150
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 672922
+    reference_id: 1438151
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 677125
+    reference_id: 692138
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 619611
+    reference_id: 938315
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 275052
+    reference_id: 692147
+    scoring_system: cvssv2
+    value: '7.2'
+    scoring_elements: AV:L/AC:L/Au:N/C:C/I:C/A:C
+  - id: 275050
+    reference_id: 692147
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+references:
+  - id: 692144
+    url: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=af3ff8045bbf3e32f1a448542e73abb4c8ceb6f1
+    reference_id:
+  - id: 692131
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00006.html
+    reference_id:
+  - id: 674208
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00007.html
+    reference_id:
+  - id: 692132
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00008.html
+    reference_id:
+  - id: 692133
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00014.html
+    reference_id:
+  - id: 692134
+    url: http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00016.html
+    reference_id:
+  - id: 1441298
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-17806.html
+    reference_id:
+  - id: 679655
+    url: https://access.redhat.com/errata/RHSA-2018:2948
+    reference_id:
+  - id: 938316
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-17806.json
+    reference_id:
+  - id: 1441299
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17806
+    reference_id:
+  - id: 692146
+    url: https://github.com/torvalds/linux/commit/af3ff8045bbf3e32f1a448542e73abb4c8ceb6f1
+    reference_id:
+  - id: 691264
+    url: https://lists.debian.org/debian-lts-announce/2018/01/msg00004.html
+    reference_id:
+  - id: 1438134
+    url: https://ubuntu.com/security/notices/USN-3583-1
+    reference_id:
+  - id: 1438135
+    url: https://ubuntu.com/security/notices/USN-3583-2
+    reference_id:
+  - id: 1438146
+    url: https://ubuntu.com/security/notices/USN-3617-1
+    reference_id:
+  - id: 1438147
+    url: https://ubuntu.com/security/notices/USN-3617-2
+    reference_id:
+  - id: 1438148
+    url: https://ubuntu.com/security/notices/USN-3617-3
+    reference_id:
+  - id: 1438149
+    url: https://ubuntu.com/security/notices/USN-3619-1
+    reference_id:
+  - id: 1438150
+    url: https://ubuntu.com/security/notices/USN-3619-2
+    reference_id:
+  - id: 1438151
+    url: https://ubuntu.com/security/notices/USN-3632-1
+    reference_id:
+  - id: 666591
+    url: https://usn.ubuntu.com/3583-1/
+    reference_id:
+  - id: 666592
+    url: https://usn.ubuntu.com/3583-2/
+    reference_id:
+  - id: 666768
+    url: https://usn.ubuntu.com/3617-1/
+    reference_id:
+  - id: 666769
+    url: https://usn.ubuntu.com/3617-2/
+    reference_id:
+  - id: 666770
+    url: https://usn.ubuntu.com/3617-3/
+    reference_id:
+  - id: 666771
+    url: https://usn.ubuntu.com/3619-1/
+    reference_id:
+  - id: 666772
+    url: https://usn.ubuntu.com/3619-2/
+    reference_id:
+  - id: 666773
+    url: https://usn.ubuntu.com/3632-1/
+    reference_id:
+  - id: 668885
+    url: https://www.debian.org/security/2017/dsa-4073
+    reference_id:
+  - id: 668886
+    url: https://www.debian.org/security/2018/dsa-4082
+    reference_id:
+  - id: 692138
+    url: https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8
+    reference_id:
+  - id: 692145
+    url: http://www.securityfocus.com/bid/102293
+    reference_id:
+  - id: 938315
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1528323
+    reference_id: 1528323
+  - id: 127310
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 157932
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:leap:42.2:*:*:*:*:*:*:*
+  - id: 692140
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse_project:leap:42.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse_project:leap:42.3:*:*:*:*:*:*:*
+  - id: 662473
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp2:*:*:*:*:*:*
+  - id: 678982
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_desktop:12:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_desktop:12:sp3:*:*:*:*:*:*
+  - id: 648259
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:extra:*:*:*:*:*:*
+  - id: 158277
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*
+  - id: 611420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp2:*:*:*:*:*:*
+  - id: 688129
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server:12:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server:12:sp3:*:*:*:*:*:*
+  - id: 668737
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_server_for_raspberry_pi:12:sp2:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_server_for_raspberry_pi:12:sp2:*:*:*:*:*:*
+  - id: 692147
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17806
+    reference_id: CVE-2017-17806
+weaknesses: []

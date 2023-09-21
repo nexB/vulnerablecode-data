@@ -1,0 +1,560 @@
+vulnerability_id: VCID-zenr-u2eq-aaap
+aliases:
+  - CVE-2014-0160
+  - VC-OPENSSL-20140407-CVE-2014-0160
+summary: A missing bounds check in the handling of the TLS heartbeat extension can be used to
+  reveal up to 64kB of memory to a connected client or server (a.k.a. Heartbleed). This issue
+  did not affect versions of OpenSSL prior to 1.0.1.
+severities:
+  - id: 655521
+    reference_id: 13681
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 174287
+    reference_id: 550417
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:P/I:N/A:N
+  - id: 174285
+    reference_id: 550417
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+  - id: 59975
+    reference_id: 186851
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59973
+    reference_id: 186849
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59974
+    reference_id: 186850
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59977
+    reference_id: 186853
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+  - id: 59976
+    reference_id: 186852
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 548724
+    url: http://advisories.mageia.org/MGASA-2014-0165.html
+    reference_id:
+  - id: 550314
+    url: http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/
+    reference_id:
+  - id: 550315
+    url: http://cogentdatahub.com/ReleaseNotes.html
+    reference_id:
+  - id: 550316
+    url: http://download.schneider-electric.com/files?p_Doc_Ref=SEVD%202014-119-01
+    reference_id:
+  - id: 550317
+    url: http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=96db9023b881d7cd9f379b0c154650d6c108e9a3
+    reference_id:
+  - id: 550318
+    url: http://heartbleed.com/
+    reference_id:
+  - id: 550319
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-April/131221.html
+    reference_id:
+  - id: 550320
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-April/131291.html
+    reference_id:
+  - id: 443469
+    url: http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136473.html
+    reference_id:
+  - id: 550321
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-04/msg00004.html
+    reference_id:
+  - id: 550322
+    url: http://lists.opensuse.org/opensuse-security-announce/2014-04/msg00005.html
+    reference_id:
+  - id: 550323
+    url: http://lists.opensuse.org/opensuse-updates/2014-04/msg00061.html
+    reference_id:
+  - id: 550324
+    url: http://marc.info/?l=bugtraq&m=139722163017074&w=2
+    reference_id:
+  - id: 550325
+    url: http://marc.info/?l=bugtraq&m=139757726426985&w=2
+    reference_id:
+  - id: 550326
+    url: http://marc.info/?l=bugtraq&m=139757819327350&w=2
+    reference_id:
+  - id: 550327
+    url: http://marc.info/?l=bugtraq&m=139757919027752&w=2
+    reference_id:
+  - id: 550328
+    url: http://marc.info/?l=bugtraq&m=139758572430452&w=2
+    reference_id:
+  - id: 550329
+    url: http://marc.info/?l=bugtraq&m=139765756720506&w=2
+    reference_id:
+  - id: 550330
+    url: http://marc.info/?l=bugtraq&m=139774054614965&w=2
+    reference_id:
+  - id: 550331
+    url: http://marc.info/?l=bugtraq&m=139774703817488&w=2
+    reference_id:
+  - id: 550332
+    url: http://marc.info/?l=bugtraq&m=139808058921905&w=2
+    reference_id:
+  - id: 550333
+    url: http://marc.info/?l=bugtraq&m=139817685517037&w=2
+    reference_id:
+  - id: 550334
+    url: http://marc.info/?l=bugtraq&m=139817727317190&w=2
+    reference_id:
+  - id: 550335
+    url: http://marc.info/?l=bugtraq&m=139817782017443&w=2
+    reference_id:
+  - id: 550336
+    url: http://marc.info/?l=bugtraq&m=139824923705461&w=2
+    reference_id:
+  - id: 550337
+    url: http://marc.info/?l=bugtraq&m=139824993005633&w=2
+    reference_id:
+  - id: 550338
+    url: http://marc.info/?l=bugtraq&m=139833395230364&w=2
+    reference_id:
+  - id: 550339
+    url: http://marc.info/?l=bugtraq&m=139835815211508&w=2
+    reference_id:
+  - id: 550340
+    url: http://marc.info/?l=bugtraq&m=139835844111589&w=2
+    reference_id:
+  - id: 550341
+    url: http://marc.info/?l=bugtraq&m=139836085512508&w=2
+    reference_id:
+  - id: 550342
+    url: http://marc.info/?l=bugtraq&m=139842151128341&w=2
+    reference_id:
+  - id: 550343
+    url: http://marc.info/?l=bugtraq&m=139843768401936&w=2
+    reference_id:
+  - id: 550344
+    url: http://marc.info/?l=bugtraq&m=139869720529462&w=2
+    reference_id:
+  - id: 550345
+    url: http://marc.info/?l=bugtraq&m=139869891830365&w=2
+    reference_id:
+  - id: 550346
+    url: http://marc.info/?l=bugtraq&m=139889113431619&w=2
+    reference_id:
+  - id: 550347
+    url: http://marc.info/?l=bugtraq&m=139889295732144&w=2
+    reference_id:
+  - id: 550348
+    url: http://marc.info/?l=bugtraq&m=139905202427693&w=2
+    reference_id:
+  - id: 550349
+    url: http://marc.info/?l=bugtraq&m=139905243827825&w=2
+    reference_id:
+  - id: 550350
+    url: http://marc.info/?l=bugtraq&m=139905295427946&w=2
+    reference_id:
+  - id: 550351
+    url: http://marc.info/?l=bugtraq&m=139905351928096&w=2
+    reference_id:
+  - id: 550352
+    url: http://marc.info/?l=bugtraq&m=139905405728262&w=2
+    reference_id:
+  - id: 550353
+    url: http://marc.info/?l=bugtraq&m=139905458328378&w=2
+    reference_id:
+  - id: 550354
+    url: http://marc.info/?l=bugtraq&m=139905653828999&w=2
+    reference_id:
+  - id: 550355
+    url: http://marc.info/?l=bugtraq&m=139905868529690&w=2
+    reference_id:
+  - id: 550356
+    url: http://marc.info/?l=bugtraq&m=140015787404650&w=2
+    reference_id:
+  - id: 550357
+    url: http://marc.info/?l=bugtraq&m=140075368411126&w=2
+    reference_id:
+  - id: 550358
+    url: http://marc.info/?l=bugtraq&m=140724451518351&w=2
+    reference_id:
+  - id: 443477
+    url: http://marc.info/?l=bugtraq&m=140752315422991&w=2
+    reference_id:
+  - id: 550359
+    url: http://marc.info/?l=bugtraq&m=141287864628122&w=2
+    reference_id:
+  - id: 397920
+    url: http://marc.info/?l=bugtraq&m=142660345230545&w=2
+    reference_id:
+  - id: 550360
+    url: http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=1
+    reference_id:
+  - id: 550361
+    url: http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=3
+    reference_id:
+  - id: 550362
+    url: http://rhn.redhat.com/errata/RHSA-2014-0376.html
+    reference_id:
+  - id: 550363
+    url: http://rhn.redhat.com/errata/RHSA-2014-0377.html
+    reference_id:
+  - id: 550364
+    url: http://rhn.redhat.com/errata/RHSA-2014-0378.html
+    reference_id:
+  - id: 550365
+    url: http://rhn.redhat.com/errata/RHSA-2014-0396.html
+    reference_id:
+  - id: 186854
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-0160.json
+    reference_id:
+  - id: 550404
+    url: https://blog.torproject.org/blog/openssl-bug-cve-2014-0160
+    reference_id:
+  - id: 550405
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1084875
+    reference_id:
+  - id: 550406
+    url: https://cert-portal.siemens.com/productcert/pdf/ssa-635659.pdf
+    reference_id:
+  - id: 550407
+    url: https://code.google.com/p/mod-spdy/issues/detail?id=85
+    reference_id:
+  - id: 550366
+    url: http://seclists.org/fulldisclosure/2014/Apr/109
+    reference_id:
+  - id: 550367
+    url: http://seclists.org/fulldisclosure/2014/Apr/173
+    reference_id:
+  - id: 550368
+    url: http://seclists.org/fulldisclosure/2014/Apr/190
+    reference_id:
+  - id: 550369
+    url: http://seclists.org/fulldisclosure/2014/Apr/90
+    reference_id:
+  - id: 550370
+    url: http://seclists.org/fulldisclosure/2014/Apr/91
+    reference_id:
+  - id: 13643
+    url: http://seclists.org/fulldisclosure/2014/Dec/23
+    reference_id:
+  - id: 550371
+    url: http://secunia.com/advisories/57347
+    reference_id:
+  - id: 550372
+    url: http://secunia.com/advisories/57483
+    reference_id:
+  - id: 550373
+    url: http://secunia.com/advisories/57721
+    reference_id:
+  - id: 30598
+    url: http://secunia.com/advisories/57836
+    reference_id:
+  - id: 550187
+    url: http://secunia.com/advisories/57966
+    reference_id:
+  - id: 550188
+    url: http://secunia.com/advisories/57968
+    reference_id:
+  - id: 550374
+    url: http://secunia.com/advisories/59139
+    reference_id:
+  - id: 550375
+    url: http://secunia.com/advisories/59243
+    reference_id:
+  - id: 550376
+    url: http://secunia.com/advisories/59347
+    reference_id:
+  - id: 550408
+    url: https://filezilla-project.org/versions.php?type=server
+    reference_id:
+  - id: 550409
+    url: https://gist.github.com/chapmajs/10473815
+    reference_id:
+  - id: 550410
+    url: https://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?spf_p.tpst=kbDocDisplay&spf_p.prp_kbDocDisplay=wsrp-navigationalState%3DdocId%253Demr_na-c04260637-4%257CdocLocale%253Den_US%257CcalledBy%253DSearch_Result&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken
+    reference_id:
+  - id: 269638
+    url: https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 13136
+    url: https://lists.apache.org/thread.html/f8e0814e11c7f21f42224b6de111cb3f5e5ab5c15b78924c516d4ec2@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 13137
+    url: https://lists.apache.org/thread.html/re3b72cbb13e1dfe85c4a06959a3b6ca6d939b407ecca80db12b54220@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 269640
+    url: https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E
+    reference_id:
+  - id: 550411
+    url: https://lists.balabit.hu/pipermail/syslog-ng-announce/2014-April/000184.html
+    reference_id:
+  - id: 550412
+    url: https://sku11army.blogspot.com/2020/01/heartbleed-hearts-continue-to-bleed.html
+    reference_id:
+  - id: 550413
+    url: https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html
+    reference_id:
+  - id: 550414
+    url: https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html?sr=36517217
+    reference_id:
+  - id: 550377
+    url: http://support.citrix.com/article/CTX140605
+    reference_id:
+  - id: 550415
+    url: https://www.cert.fi/en/reports/2014/vulnerability788210.html
+    reference_id:
+  - id: 550416
+    url: https://www.mitel.com/en-ca/support/security-advisories/mitel-product-security-advisory-17-0008
+    reference_id:
+  - id: 3759
+    url: https://www.openssl.org/news/secadv/20140407.txt
+    reference_id:
+  - id: 550378
+    url: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140409-heartbleed
+    reference_id:
+  - id: 534583
+    url: http://www-01.ibm.com/support/docview.wss?uid=isg400001841
+    reference_id:
+  - id: 534584
+    url: http://www-01.ibm.com/support/docview.wss?uid=isg400001843
+    reference_id:
+  - id: 550379
+    url: http://www-01.ibm.com/support/docview.wss?uid=ssg1S1004661
+    reference_id:
+  - id: 550380
+    url: http://www-01.ibm.com/support/docview.wss?uid=swg21670161
+    reference_id:
+  - id: 466180
+    url: http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf
+    reference_id:
+  - id: 550381
+    url: http://www.blackberry.com/btsc/KB35882
+    reference_id:
+  - id: 550382
+    url: http://www.debian.org/security/2014/dsa-2896
+    reference_id:
+  - id: 550383
+    url: http://www.exploit-db.com/exploits/32745
+    reference_id:
+  - id: 550384
+    url: http://www.exploit-db.com/exploits/32764
+    reference_id:
+  - id: 550385
+    url: http://www.f-secure.com/en/web/labs_global/fsc-2014-1
+    reference_id:
+  - id: 550192
+    url: http://www.getchef.com/blog/2014/04/09/chef-server-11-0-12-release/
+    reference_id:
+  - id: 550386
+    url: http://www.getchef.com/blog/2014/04/09/chef-server-heartbleed-cve-2014-0160-releases/
+    reference_id:
+  - id: 30600
+    url: http://www.getchef.com/blog/2014/04/09/enterprise-chef-11-1-3-release/
+    reference_id:
+  - id: 550193
+    url: http://www.getchef.com/blog/2014/04/09/enterprise-chef-1-4-9-release/
+    reference_id:
+  - id: 550387
+    url: http://www.innominate.com/data/downloads/manuals/mdm_1.5.2.1_Release_Notes.pdf
+    reference_id:
+  - id: 550388
+    url: http://www.kb.cert.org/vuls/id/720951
+    reference_id:
+  - id: 550389
+    url: http://www.kerio.com/support/kerio-control/release-history
+    reference_id:
+  - id: 443528
+    url: http://www.mandriva.com/security/advisories?name=MDVSA-2015:062
+    reference_id:
+  - id: 550390
+    url: http://www.openssl.org/news/secadv_20140407.txt
+    reference_id:
+  - id: 13681
+    url: http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html
+    reference_id:
+  - id: 550391
+    url: http://www.oracle.com/technetwork/topics/security/opensslheartbleedcve-2014-0160-2188454.html
+    reference_id:
+  - id: 13683
+    url: http://www.securityfocus.com/archive/1/534161/100/0/threaded
+    reference_id:
+  - id: 550392
+    url: http://www.securityfocus.com/bid/66690
+    reference_id:
+  - id: 550393
+    url: http://www.securitytracker.com/id/1030026
+    reference_id:
+  - id: 550394
+    url: http://www.securitytracker.com/id/1030074
+    reference_id:
+  - id: 550395
+    url: http://www.securitytracker.com/id/1030077
+    reference_id:
+  - id: 550396
+    url: http://www.securitytracker.com/id/1030078
+    reference_id:
+  - id: 550397
+    url: http://www.securitytracker.com/id/1030079
+    reference_id:
+  - id: 550398
+    url: http://www.securitytracker.com/id/1030080
+    reference_id:
+  - id: 550399
+    url: http://www.securitytracker.com/id/1030081
+    reference_id:
+  - id: 550400
+    url: http://www.securitytracker.com/id/1030082
+    reference_id:
+  - id: 534587
+    url: http://www.splunk.com/view/SP-CAAAMB3
+    reference_id:
+  - id: 550401
+    url: http://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20160512_00
+    reference_id:
+  - id: 548749
+    url: http://www.ubuntu.com/usn/USN-2165-1
+    reference_id:
+  - id: 550402
+    url: http://www.us-cert.gov/ncas/alerts/TA14-098A
+    reference_id:
+  - id: 13686
+    url: http://www.vmware.com/security/advisories/VMSA-2014-0012.html
+    reference_id:
+  - id: 550403
+    url: http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0
+    reference_id:
+  - id: 89644
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=743883
+    reference_id: 743883
+  - id: 117908
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:filezilla-project:filezilla_server:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:filezilla-project:filezilla_server:*:*:*:*:*:*:*:*
+  - id: 550418
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:6.0:*:*:*:*:*:*:*
+  - id: 550419
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:7.0:*:*:*:*:*:*:*
+  - id: 550420
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:7.1:*:*:*:*:*:*:*
+  - id: 550421
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:7.2:*:*:*:*:*:*:*
+  - id: 550423
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:7.3:*:*:*:*:*:*:*
+  - id: 550422
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:micollab:7.3.0.104:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:mitel:micollab:7.3.0.104:*:*:*:*:*:*:*
+  - id: 550424
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:mivoice:1.1.2.5:*:*:*:*:lync:*:*
+    reference_id: cpe:2.3:a:mitel:mivoice:1.1.2.5:*:*:*:*:lync:*:*
+  - id: 550425
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:mivoice:1.1.3.3:*:*:*:*:skype_for_business:*:*
+    reference_id: cpe:2.3:a:mitel:mivoice:1.1.3.3:*:*:*:*:skype_for_business:*:*
+  - id: 550426
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:mivoice:1.2.0.11:*:*:*:*:skype_for_business:*:*
+    reference_id: cpe:2.3:a:mitel:mivoice:1.2.0.11:*:*:*:*:skype_for_business:*:*
+  - id: 550427
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:mivoice:1.3.2.2:*:*:*:*:skype_for_business:*:*
+    reference_id: cpe:2.3:a:mitel:mivoice:1.3.2.2:*:*:*:*:skype_for_business:*:*
+  - id: 550428
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:mitel:mivoice:1.4.0.102:*:*:*:*:skype_for_business:*:*
+    reference_id: cpe:2.3:a:mitel:mivoice:1.4.0.102:*:*:*:*:skype_for_business:*:*
+  - id: 44668
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - id: 550429
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:gluster_storage:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:gluster_storage:2.1:*:*:*:*:*:*:*
+  - id: 534010
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:storage:2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:storage:2.1:*:*:*:*:*:*:*
+  - id: 497783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:redhat:virtualization:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:redhat:virtualization:6.0:*:*:*:*:*:*:*
+  - id: 550430
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:siemens:elan-8.2:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:siemens:elan-8.2:*:*:*:*:*:*:*:*
+  - id: 550431
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:siemens:wincc_open_architecture:3.12:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:siemens:wincc_open_architecture:3.12:*:*:*:*:*:*:*
+  - id: 161849
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*
+  - id: 322397
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*
+  - id: 478391
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*
+  - id: 79273
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 79275
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*
+  - id: 79278
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*
+  - id: 443591
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*
+  - id: 79281
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*
+  - id: 157777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*
+  - id: 79283
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*
+  - id: 79287
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*
+  - id: 159624
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_aus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_aus:6.5:*:*:*:*:*:*:*
+  - id: 540396
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_eus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_eus:6.5:*:*:*:*:*:*:*
+  - id: 536064
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_server_tus:6.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_server_tus:6.5:*:*:*:*:*:*:*
+  - id: 79290
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*
+  - id: 550417
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-0160
+    reference_id: CVE-2014-0160
+  - id: 186851
+    url: https://access.redhat.com/errata/RHSA-2014:0376
+    reference_id: RHSA-2014:0376
+  - id: 186849
+    url: https://access.redhat.com/errata/RHSA-2014:0377
+    reference_id: RHSA-2014:0377
+  - id: 186850
+    url: https://access.redhat.com/errata/RHSA-2014:0378
+    reference_id: RHSA-2014:0378
+  - id: 186853
+    url: https://access.redhat.com/errata/RHSA-2014:0396
+    reference_id: RHSA-2014:0396
+  - id: 186852
+    url: https://access.redhat.com/errata/RHSA-2014:0416
+    reference_id: RHSA-2014:0416
+weaknesses: []

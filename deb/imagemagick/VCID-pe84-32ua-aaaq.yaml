@@ -1,0 +1,19 @@
+affected_purls: []
+aliases:
+- CVE-2020-25663
+fixed_purl:
+- pkg:deb/debian/imagemagick@0?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.10.23%2Bdfsg-2.1%2Bdeb10u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.3%2Bdeb11u1?distro=sid
+- pkg:deb/debian/imagemagick@8:6.9.11.60%2Bdfsg-1.6?distro=sid
+references: []
+severities: []
+summary: A call to ConformPixelInfo() in the SetImageAlphaChannel() routine of /MagickCore/channel.c
+  caused a subsequent heap-use-after-free or heap-buffer-overflow READ when GetPixelRed()
+  or GetPixelBlue() was called. This could occur if an attacker is able to submit
+  a malicious image file to be processed by ImageMagick and could lead to denial of
+  service. It likely would not lead to anything further because the memory is used
+  as pixel data and not e.g. a function pointer. This flaw affects ImageMagick versions
+  prior to 7.0.9-0.
+vulnerability_id: VCID-pe84-32ua-aaaq
+weaknesses: []

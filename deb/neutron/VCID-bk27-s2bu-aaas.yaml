@@ -1,0 +1,44 @@
+affected_purls:
+- pkg:pypi/neutron@10.0.5
+- pkg:pypi/neutron@10.0.6
+- pkg:pypi/neutron@10.0.7
+- pkg:pypi/neutron@11.0.3
+- pkg:pypi/neutron@11.0.4
+- pkg:pypi/neutron@12.0.0
+- pkg:pypi/neutron@12.0.1
+- pkg:pypi/neutron@12.0.2
+- pkg:pypi/neutron@13.0.0
+aliases:
+- CVE-2018-14636
+fixed_purl:
+- pkg:deb/debian/neutron@2:13.0.0-1?distro=sid
+- pkg:deb/debian/neutron@2:13.0.7%2Bgit.2021.09.27.bace3d1890-0%2Bdeb10u1?distro=sid
+- pkg:deb/debian/neutron@2:17.2.1-0%2Bdeb11u1?distro=sid
+- pkg:deb/debian/neutron@2:21.0.0-7?distro=sid
+- pkg:pypi/neutron@11.0.5
+- pkg:pypi/neutron@12.0.3
+references:
+- id: 181806
+  reference_id: ''
+  url: https://bugs.launchpad.net/neutron/+bug/1734320
+- id: 181807
+  reference_id: ''
+  url: https://bugs.launchpad.net/neutron/+bug/1767422
+- id: 181808
+  reference_id: ''
+  url: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14636
+- id: 181805
+  reference_id: CVE-2018-14636
+  url: https://nvd.nist.gov/vuln/detail/CVE-2018-14636
+severities: []
+summary: Live-migrated instances are briefly able to inspect traffic for other instances
+  on the same hypervisor. This brief window could be extended indefinitely if the
+  instance's port is set administratively down prior to live-migration and kept down
+  after the migration is complete. This is possible due to the Open vSwitch integration
+  bridge being connected to the instance during migration. When connected to the integration
+  bridge, all traffic for instances using the same Open vSwitch instance would potentially
+  be visible to the migrated guest, as the required Open vSwitch VLAN filters are
+  only applied post-migration. Versions of openstack-neutron before 13.0.0.0b2, 12.0.3,
+  11.0.5 are vulnerable.
+vulnerability_id: VCID-bk27-s2bu-aaas
+weaknesses: []

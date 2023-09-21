@@ -1,0 +1,161 @@
+vulnerability_id: VCID-4c5t-q2a5-aaaq
+aliases:
+  - CVE-2014-8369
+summary: 'The kvm_iommu_map_pages function in virt/kvm/iommu.c in the Linux kernel through 3.17.2
+  miscalculates the number of pages during the handling of a mapping failure, which allows guest
+  OS users to cause a denial of service (host OS page unpinning) or possibly have unspecified
+  other impact by leveraging guest OS privileges.  NOTE: this vulnerability exists because of
+  an incorrect fix for CVE-2014-3601.'
+severities:
+  - id: 658263
+    reference_id: 1426334
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658264
+    reference_id: 1426335
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 658265
+    reference_id: 586923
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 656615
+    reference_id: 1425042
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 656616
+    reference_id: 1425043
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 656617
+    reference_id: 1425044
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 656618
+    reference_id: 1425045
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 657876
+    reference_id: 1426049
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 657877
+    reference_id: 1426050
+    scoring_system: generic_textual
+    value: High
+    scoring_elements:
+  - id: 189364
+    reference_id: 586924
+    scoring_system: cvssv2
+    value: '4.6'
+    scoring_elements: AV:L/AC:L/Au:N/C:P/I:P/A:P
+  - id: 189362
+    reference_id: 586924
+    scoring_system: cvssv3
+    value: '7.8'
+    scoring_elements: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+  - id: 56155
+    reference_id: 181716
+    scoring_system: rhas
+    value: Important
+    scoring_elements:
+references:
+  - id: 586917
+    url: http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3d32e4dbe71374a6780eaf51d719d76f9a9bf22f
+    reference_id:
+  - id: 501497
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00010.html
+    reference_id:
+  - id: 501498
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00025.html
+    reference_id:
+  - id: 547820
+    url: http://lists.opensuse.org/opensuse-security-announce/2015-04/msg00015.html
+    reference_id:
+  - id: 1426334
+    url: http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-8369.html
+    reference_id:
+  - id: 584413
+    url: http://rhn.redhat.com/errata/RHSA-2015-0674.html
+    reference_id:
+  - id: 184181
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2014-8369.json
+    reference_id:
+  - id: 586921
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1156518
+    reference_id:
+  - id: 1426335
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8369
+    reference_id:
+  - id: 584511
+    url: http://secunia.com/advisories/62326
+    reference_id:
+  - id: 584512
+    url: http://secunia.com/advisories/62336
+    reference_id:
+  - id: 586922
+    url: https://github.com/torvalds/linux/commit/3d32e4dbe71374a6780eaf51d719d76f9a9bf22f
+    reference_id:
+  - id: 586923
+    url: https://lkml.org/lkml/2014/10/24/460
+    reference_id:
+  - id: 1425042
+    url: https://ubuntu.com/security/notices/USN-2445-1
+    reference_id:
+  - id: 1425043
+    url: https://ubuntu.com/security/notices/USN-2446-1
+    reference_id:
+  - id: 1425044
+    url: https://ubuntu.com/security/notices/USN-2447-1
+    reference_id:
+  - id: 1425045
+    url: https://ubuntu.com/security/notices/USN-2448-1
+    reference_id:
+  - id: 1426049
+    url: https://ubuntu.com/security/notices/USN-2463-1
+    reference_id:
+  - id: 1426050
+    url: https://ubuntu.com/security/notices/USN-2464-1
+    reference_id:
+  - id: 584503
+    url: http://www.debian.org/security/2014/dsa-3093
+    reference_id:
+  - id: 586918
+    url: http://www.openwall.com/lists/oss-security/2014/10/24/7
+    reference_id:
+  - id: 586919
+    url: http://www.securityfocus.com/bid/70747
+    reference_id:
+  - id: 586920
+    url: http://www.securityfocus.com/bid/70749
+    reference_id:
+  - id: 79274
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*
+  - id: 44691
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*
+  - id: 550120
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:opensuse:evergreen:11.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:opensuse:evergreen:11.4:*:*:*:*:*:*:*
+  - id: 550589
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:linux_enterprise_real_time_extension:11:sp3:*:*:*:*:*:*
+    reference_id: cpe:2.3:o:suse:linux_enterprise_real_time_extension:11:sp3:*:*:*:*:*:*
+  - id: 161875
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp2:*:*:ltss:*:*:*
+    reference_id: cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp2:*:*:ltss:*:*:*
+  - id: 586924
+    url: https://nvd.nist.gov/vuln/detail/CVE-2014-8369
+    reference_id: CVE-2014-8369
+  - id: 181716
+    url: https://access.redhat.com/errata/RHSA-2015:0674
+    reference_id: RHSA-2015:0674
+weaknesses: []

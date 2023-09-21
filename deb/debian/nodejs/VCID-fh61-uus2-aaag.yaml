@@ -1,0 +1,397 @@
+vulnerability_id: VCID-fh61-uus2-aaag
+aliases:
+  - CVE-2017-11499
+summary: Node.js v4.0 through v4.8.3, all versions of v5.x, v6.0 through v6.11.0, v7.0 through
+  v7.10.0, and v8.0 through v8.1.3 was susceptible to hash flooding remote DoS attacks as the
+  HashTable seed was constant across a given released version of Node.js. This was a result
+  of building with V8 snapshots enabled by default which caused the initially randomized seed
+  to be overwritten on startup.
+severities:
+  - id: 673874
+    reference_id: 1438933
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622189
+    reference_id: 940139
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 673875
+    reference_id: 1438934
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673876
+    reference_id: 1438935
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673877
+    reference_id: 1438936
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 673878
+    reference_id: 673746
+    scoring_system: generic_textual
+    value: Medium
+    scoring_elements:
+  - id: 622187
+    reference_id: 940137
+    scoring_system: rhbs
+    value: medium
+    scoring_elements:
+  - id: 255399
+    reference_id: 673747
+    scoring_system: cvssv2
+    value: '5.0'
+    scoring_elements: AV:N/AC:L/Au:N/C:N/I:N/A:P
+  - id: 255397
+    reference_id: 673747
+    scoring_system: cvssv3
+    value: '7.5'
+    scoring_elements: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  - id: 622188
+    reference_id: 940138
+    scoring_system: rhas
+    value: Moderate
+    scoring_elements:
+references:
+  - id: 1438933
+    url: http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-11499.html
+    reference_id:
+  - id: 673744
+    url: https://access.redhat.com/errata/RHSA-2017:2908
+    reference_id:
+  - id: 940139
+    url: https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2017-11499.json
+    reference_id:
+  - id: 1438934
+    url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11499
+    reference_id:
+  - id: 1438935
+    url: https://nodejs.org/en/blog/release/v4.8.4/
+    reference_id:
+  - id: 1438936
+    url: https://nodejs.org/en/blog/release/v6.11.1/
+    reference_id:
+  - id: 673746
+    url: https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/
+    reference_id:
+  - id: 673743
+    url: http://www.securityfocus.com/bid/99959
+    reference_id:
+  - id: 940137
+    url: https://bugzilla.redhat.com/show_bug.cgi?id=1475327
+    reference_id: 1475327
+  - id: 79303
+    url: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=868162
+    reference_id: 868162
+  - id: 613616
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.0.0:*:*:*:*:*:*:*
+  - id: 613617
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.1.0:*:*:*:*:*:*:*
+  - id: 613618
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.1.1:*:*:*:*:*:*:*
+  - id: 637642
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.1.2:*:*:*:*:*:*:*
+  - id: 617064
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.0:*:*:*:*:*:*:*
+  - id: 617065
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.1:*:*:*:*:*:*:*
+  - id: 617066
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.2:*:*:*:*:*:*:*
+  - id: 637643
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.3:*:*:*:*:*:*:*
+  - id: 637644
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.4:*:*:*:*:*:*:*
+  - id: 637645
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.5:*:*:*:*:*:*:*
+  - id: 637646
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.2.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.2.6:*:*:*:*:*:*:*
+  - id: 643609
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.3.0:*:*:*:*:*:*:*
+  - id: 643610
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.3.1:*:*:*:*:*:*:*
+  - id: 643613
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.3.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.3.2:*:*:*:*:*:*:*
+  - id: 643614
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.0:*:*:*:*:*:*:*
+  - id: 643619
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.1:*:*:*:*:*:*:*
+  - id: 648712
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.2:*:*:*:*:*:*:*
+  - id: 648713
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.3:*:*:*:*:*:*:*
+  - id: 648714
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.4:*:*:*:*:*:*:*
+  - id: 648715
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.5:*:*:*:*:*:*:*
+  - id: 648716
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.6:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.6:*:*:*:*:*:*:*
+  - id: 648717
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.4.7:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.4.7:*:*:*:*:*:*:*
+  - id: 648718
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.5.0:*:*:*:*:*:*:*
+  - id: 673748
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.6.0:*:*:*:*:*:*:*
+  - id: 673749
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.6.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.6.1:*:*:*:*:*:*:*
+  - id: 673750
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.6.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.6.2:*:*:*:*:*:*:*
+  - id: 673751
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.7.0:*:*:*:*:*:*:*
+  - id: 673752
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.7.1:*:*:*:*:*:*:*
+  - id: 673753
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.7.2:*:*:*:*:*:*:*
+  - id: 673754
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.7.3:*:*:*:*:*:*:*
+  - id: 673755
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.8.0:*:*:*:*:*:*:*
+  - id: 673756
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.8.1:*:*:*:*:*:*:*
+  - id: 673757
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.8.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.8.2:*:*:*:*:*:*:*
+  - id: 673758
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:4.8.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:4.8.3:*:*:*:*:*:*:*
+  - id: 617067
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.0.0:*:*:*:*:*:*:*
+  - id: 617068
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.1.0:*:*:*:*:*:*:*
+  - id: 673759
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.10.0:*:*:*:*:*:*:*
+  - id: 673760
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.10.1:*:*:*:*:*:*:*
+  - id: 637647
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.1.1:*:*:*:*:*:*:*
+  - id: 673761
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.11.0:*:*:*:*:*:*:*
+  - id: 673762
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.11.1:*:*:*:*:*:*:*
+  - id: 673763
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.12.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.12.0:*:*:*:*:*:*:*
+  - id: 637648
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.2.0:*:*:*:*:*:*:*
+  - id: 637649
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.3.0:*:*:*:*:*:*:*
+  - id: 637650
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.4.0:*:*:*:*:*:*:*
+  - id: 637651
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.4.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.4.1:*:*:*:*:*:*:*
+  - id: 637652
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.5.0:*:*:*:*:*:*:*
+  - id: 643620
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.6.0:*:*:*:*:*:*:*
+  - id: 643621
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.7.0:*:*:*:*:*:*:*
+  - id: 643622
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.7.1:*:*:*:*:*:*:*
+  - id: 643623
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.8.0:*:*:*:*:*:*:*
+  - id: 643625
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.9.0:*:*:*:*:*:*:*
+  - id: 643626
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:5.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:5.9.1:*:*:*:*:*:*:*
+  - id: 648719
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.0.0:*:*:*:*:*:*:*
+  - id: 648720
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.1.0:*:*:*:*:*:*:*
+  - id: 673764
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.10.0:*:*:*:*:*:*:*
+  - id: 673765
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.10.1:*:*:*:*:*:*:*
+  - id: 673766
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.10.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.10.2:*:*:*:*:*:*:*
+  - id: 673767
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.10.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.10.3:*:*:*:*:*:*:*
+  - id: 673768
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.11.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.11.0:*:*:*:*:*:*:*
+  - id: 673769
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.11.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.11.1:*:*:*:*:*:*:*
+  - id: 648721
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.2.0:*:*:*:*:*:*:*
+  - id: 648722
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.2.1:*:*:*:*:*:*:*
+  - id: 648723
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.2.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.2.2:*:*:*:*:*:*:*
+  - id: 648724
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.3.0:*:*:*:*:*:*:*
+  - id: 648725
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.3.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.3.1:*:*:*:*:*:*:*
+  - id: 648726
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.4.0:*:*:*:*:*:*:*
+  - id: 648727
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.5.0:*:*:*:*:*:*:*
+  - id: 648728
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.6.0:*:*:*:*:*:*:*
+  - id: 673770
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.7.0:*:*:*:*:*:*:*
+  - id: 673771
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.8.0:*:*:*:*:*:*:*
+  - id: 673772
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.8.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.8.1:*:*:*:*:*:*:*
+  - id: 673773
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.0:*:*:*:*:*:*:*
+  - id: 673774
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.1:*:*:*:*:*:*:*
+  - id: 673775
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.2:*:*:*:*:*:*:*
+  - id: 673776
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.3:*:*:*:*:*:*:*
+  - id: 673777
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.4:*:*:*:*:*:*:*
+  - id: 673778
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:6.9.5:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:6.9.5:*:*:*:*:*:*:*
+  - id: 673779
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.0.0:*:*:*:*:*:*:*
+  - id: 673780
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.1.0:*:*:*:*:*:*:*
+  - id: 673781
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.10.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.10.0:*:*:*:*:*:*:*
+  - id: 673782
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.10.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.10.1:*:*:*:*:*:*:*
+  - id: 673783
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.2.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.2.0:*:*:*:*:*:*:*
+  - id: 673784
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.2.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.2.1:*:*:*:*:*:*:*
+  - id: 673785
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.3.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.3.0:*:*:*:*:*:*:*
+  - id: 673786
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.4.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.4.0:*:*:*:*:*:*:*
+  - id: 673787
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.5.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.5.0:*:*:*:*:*:*:*
+  - id: 673788
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.6.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.6.0:*:*:*:*:*:*:*
+  - id: 673789
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.7.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.7.0:*:*:*:*:*:*:*
+  - id: 673790
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.7.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.7.1:*:*:*:*:*:*:*
+  - id: 673791
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.7.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.7.2:*:*:*:*:*:*:*
+  - id: 673792
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.7.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.7.3:*:*:*:*:*:*:*
+  - id: 673793
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.7.4:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.7.4:*:*:*:*:*:*:*
+  - id: 673794
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.8.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.8.0:*:*:*:*:*:*:*
+  - id: 673795
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:7.9.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:7.9.0:*:*:*:*:*:*:*
+  - id: 673796
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:8.0.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:8.0.0:*:*:*:*:*:*:*
+  - id: 673797
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:8.1.0:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:8.1.0:*:*:*:*:*:*:*
+  - id: 673798
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:8.1.1:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:8.1.1:*:*:*:*:*:*:*
+  - id: 673799
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:8.1.2:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:8.1.2:*:*:*:*:*:*:*
+  - id: 673800
+    url: https://nvd.nist.gov/vuln/search/results?adv_search=true&isCpeNameSearch=true&query=cpe:2.3:a:nodejs:node.js:8.1.3:*:*:*:*:*:*:*
+    reference_id: cpe:2.3:a:nodejs:node.js:8.1.3:*:*:*:*:*:*:*
+  - id: 673747
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-11499
+    reference_id: CVE-2017-11499
+  - id: 940138
+    url: https://access.redhat.com/errata/RHSA-2017:3002
+    reference_id: RHSA-2017:3002
+weaknesses: []
